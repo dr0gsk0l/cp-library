@@ -1,10 +1,3 @@
-[![Actions Status](https://github.com/dr0gsk0l/library/workflows/verify/badge.svg)](https://github.com/dr0gsk0l/library/actions) 
-[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://dr0gsk0l.github.io/akinator/game.html)
-[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://dr0gsk0l.github.io/library/) 
-[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://dr0gsk0l.github.io/kaibungenerator/tmp.html)
-[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://dr0gsk0l.github.io/othello/othello/)
-[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://dr0gsk0l.github.io/game/game.html)
-
 ### ライブラリのディレクトリ名
 全て小文字  
 単語間は _ で繋げても良い（スネークケース）が、そのまま繋げても良い（formalpowerseriesなど）
