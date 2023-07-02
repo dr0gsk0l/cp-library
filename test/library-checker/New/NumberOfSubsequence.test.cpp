@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "mod/Modint.cpp"
-#include "util/Subsequence.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/util/Subsequence.cpp"
 using mint=Mint<long long>;
 
 int main(){

@@ -2,10 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/group/Affine.cpp"
-#include "algebra/Reverse.cpp"
-#include "datastructure/SWAG.cpp"
-#include "mod/Modint.cpp"
+#include "library/algebra/group/Affine.cpp"
+#include "library/algebra/Reverse.cpp"
+#include "library/datastructure/SWAG.cpp"
+#include "library/mod/Modint.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

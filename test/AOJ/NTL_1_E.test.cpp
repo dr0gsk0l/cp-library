@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "math/ExtraGCD.cpp"
+#include "library/math/ExtraGCD.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

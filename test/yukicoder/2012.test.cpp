@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "linearalgebra/ConvexHullTrick.cpp"
-#include "r2/XY.cpp"
+#include "library/linearalgebra/ConvexHullTrick.cpp"
+#include "library/r2/XY.cpp"
 using ll=long long;
 using ld = long double;
 void chmax(ld&a,ld b){ if(a<b)a=b; }

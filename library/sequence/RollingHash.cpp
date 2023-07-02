@@ -1,7 +1,7 @@
 // reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
 #pragma once
-#include "mod/Modint61.cpp"
-#include "sequence/ForString.cpp"
+#include "library/mod/Modint61.cpp"
+#include "library/sequence/ForString.cpp"
 
 random_device rollonghash_rnd;
 mt19937 rollonghash_mt(rollonghash_rnd());

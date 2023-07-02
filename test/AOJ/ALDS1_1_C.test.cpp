@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "util/PrimeUtil.cpp"
+#include "library/util/PrimeUtil.cpp"
 PrimeUtil<1000000> PU;
 
 int main(){

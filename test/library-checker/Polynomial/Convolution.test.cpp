@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "mod/Modint.cpp"
-#include "convolution/NTT.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/convolution/NTT.cpp"
 
 using mint = Mint<long long,998244353>;
 

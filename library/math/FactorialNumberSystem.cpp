@@ -1,5 +1,5 @@
 #pragma once
-#include "datastructure/FenwickTree.cpp"
+#include "library/datastructure/FenwickTree.cpp"
 namespace factorial_number_system{
   // vector<int> で表す
   // v[i]*i! の総和を表現している(0<=v[i]<=i)

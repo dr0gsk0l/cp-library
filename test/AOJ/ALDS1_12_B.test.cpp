@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "graph/WeightedGraph.cpp"
-#include "graph/shortest_path/Dial.cpp"
+#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/shortest_path/Dial.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/unionfind/PotentialUnionFind.cpp"
-#include "algebra/group/Xor.cpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
+#include "library/algebra/group/Xor.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "tree/WeightedTree.cpp"
-#include "tree/CentroidDecomposition.cpp"
+#include "library/tree/WeightedTree.cpp"
+#include "library/tree/CentroidDecomposition.cpp"
 
 using ll=long long;
 

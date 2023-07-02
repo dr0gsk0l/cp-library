@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/WaveletMatrix.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

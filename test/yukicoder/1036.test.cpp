@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/monoid/Gcd.cpp"
-#include "datastructure/SWAG.cpp"
+#include "library/algebra/monoid/Gcd.cpp"
+#include "library/datastructure/SWAG.cpp"
 
 using ll=long long;
 

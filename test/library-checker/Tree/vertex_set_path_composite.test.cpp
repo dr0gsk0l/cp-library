@@ -2,10 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/group/Affine.cpp"
-#include "tree/Tree.cpp"
-#include "tree/TreeMonoid.cpp"
-#include "mod/Modint.cpp"
+#include "library/algebra/group/Affine.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/TreeMonoid.cpp"
+#include "library/mod/Modint.cpp"
 using mint=Mint<long long>;
 
 int main(){

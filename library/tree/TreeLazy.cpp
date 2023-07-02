@@ -1,7 +1,7 @@
 #pragma once
-#include "segtree/LazySegmentTree.cpp"
-#include "algebra/lazy/Reverse.cpp"
-#include "tree/HLD.cpp"
+#include "library/segtree/LazySegmentTree.cpp"
+#include "library/algebra/lazy/Reverse.cpp"
+#include "library/tree/HLD.cpp"
 template<typename TREE,typename Lazy>
 struct TreeLazy{
   using MX=typename Lazy::MX;

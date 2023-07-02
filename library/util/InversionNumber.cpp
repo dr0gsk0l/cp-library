@@ -1,7 +1,7 @@
 #include <atcoder/fenwicktree>
 using namespace atcoder;
 
-#include "util/Compress.cpp"
+#include "library/util/Compress.cpp"
 
 template <typename T>
 long long inversion_number(const vector<T> &v){

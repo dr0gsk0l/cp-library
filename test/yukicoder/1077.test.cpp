@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/SlopeTrick.cpp"
+#include "library/datastructure/SlopeTrick.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

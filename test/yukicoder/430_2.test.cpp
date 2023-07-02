@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "sequence/AhoCorasick.cpp"
+#include "library/sequence/AhoCorasick.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

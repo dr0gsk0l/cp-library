@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "tree/Tree.cpp"
-#include "tree/HLD.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/HLD.cpp"
 
 int main(){
   int n,q;cin>>n>>q;

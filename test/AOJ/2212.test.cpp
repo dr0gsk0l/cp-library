@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "sequence/AhoCorasick.cpp"
-#include "graph/Grid.cpp"
+#include "library/sequence/AhoCorasick.cpp"
+#include "library/graph/Grid.cpp"
 
 const map<char,int> mp{{'D',0},{'R',1},{'U',2},{'L',3}};
 

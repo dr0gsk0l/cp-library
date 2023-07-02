@@ -1,5 +1,5 @@
 #pragma once
-#include "geometry/Base.cpp"
+#include "library/geometry/Base.cpp"
 namespace geometry{
   double cross(Vector a,Vector b){
     //cerr << a <<" "<<b<<":"<<a.x*b.y-a.y*b.x<<endl;

@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/lazy/AddSum.cpp"
-#include "segtree/LazySegmentTree.cpp"
+#include "library/algebra/lazy/AddSum.cpp"
+#include "library/segtree/LazySegmentTree.cpp"
 
 using ll=long long;
 

@@ -1,6 +1,6 @@
 #pragma once
-#include "algebra/group/CntSum.cpp"
-#include "algebra/monoid/Set.cpp"
+#include "library/algebra/group/CntSum.cpp"
+#include "library/algebra/monoid/Set.cpp"
 template<typename X>
 struct LazySetSum{
   using MX=GroupCntSum<X>;

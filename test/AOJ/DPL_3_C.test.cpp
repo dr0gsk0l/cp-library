@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "tree/CartesianTree.cpp"
+#include "library/tree/CartesianTree.cpp"
 
 using ll=long long;
 void chmax(ll&a,ll b){ a=max(a,b); }

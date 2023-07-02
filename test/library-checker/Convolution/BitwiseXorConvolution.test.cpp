@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "mod/Modint.cpp"
-#include "bitwise/Xor.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/bitwise/Xor.cpp"
 
 using mint=Mint<long long>;
 

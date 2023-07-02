@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/lazy/SetMin.cpp"
-#include "segtree/DualSegmentTree.cpp"
+#include "library/algebra/lazy/SetMin.cpp"
+#include "library/segtree/DualSegmentTree.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

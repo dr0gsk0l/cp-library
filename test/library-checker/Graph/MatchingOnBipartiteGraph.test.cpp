@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/matching/BipartiteMatching.cpp"
+#include "library/graph/matching/BipartiteMatching.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

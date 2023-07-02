@@ -1,6 +1,6 @@
 #pragma once
-#include "formalpowerseries/Base.cpp"
-#include "formalpowerseries/RationalSum.cpp"
+#include "library/formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/RationalSum.cpp"
 // f(e^x)
 template<typename FPS>
 void compose_exp(FPS&f){

@@ -1,6 +1,6 @@
 #pragma once
-#include "geometry/Base.cpp"
-#include "geometry/UtilFunction.cpp"
+#include "library/geometry/Base.cpp"
+#include "library/geometry/UtilFunction.cpp"
 namespace geometry{
   bool is_orthogonal(Vector a,Vector b){
     return is_equal(dot(a,b),0.0);

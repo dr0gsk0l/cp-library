@@ -2,9 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/group/Add.cpp"
-#include "tree/Tree.cpp"
-#include "tree/TreeMonoid.cpp"
+#include "library/algebra/group/Add.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/TreeMonoid.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

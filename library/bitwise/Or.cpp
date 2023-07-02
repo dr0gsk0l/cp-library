@@ -1,5 +1,5 @@
 #pragma once
-#include "bitwise/Util.cpp"
+#include "library/bitwise/Util.cpp"
 #define REP_(i,n) for(int i=0;i<(n);i++)
 struct BitwiseOr{
   template<typename T>

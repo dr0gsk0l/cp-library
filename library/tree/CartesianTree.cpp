@@ -1,4 +1,4 @@
-#include "tree/WeightedTree.cpp"
+#include "library/tree/WeightedTree.cpp"
 
 // 最小値で分割 根付き木を渡す 根が最小値のindex
 // 等しい値に関しては index の大小を比較する

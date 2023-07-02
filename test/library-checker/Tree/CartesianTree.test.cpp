@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "tree/CartesianTree.cpp"
+#include "library/tree/CartesianTree.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

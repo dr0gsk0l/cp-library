@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "graph/Graph.cpp"
-#include "graph/shortest_path/BFS.cpp"
+#include "library/graph/Graph.cpp"
+#include "library/graph/shortest_path/BFS.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

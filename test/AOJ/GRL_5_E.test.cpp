@@ -3,9 +3,9 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "algebra/lazy/AddSum.cpp"
-#include "tree/Tree.cpp"
-#include "tree/TreeLazy.cpp"
+#include "library/algebra/lazy/AddSum.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/TreeLazy.cpp"
 using ll=long long;
 
 int main(){

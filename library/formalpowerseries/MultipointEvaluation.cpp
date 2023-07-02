@@ -1,6 +1,6 @@
 #pragma once
-#include "formalpowerseries/Base.cpp"
-#include "formalpowerseries/DivMod.cpp"
+#include "library/formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/DivMod.cpp"
 template<typename FPS,typename T=typename FPS::value_type>
 vector<T> multipoint_evaluation(const FPS&f,vector<T> v){
   int m=v.size();

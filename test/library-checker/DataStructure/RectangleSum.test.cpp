@@ -3,10 +3,10 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "datastructure/GroupWaveletMatrix.cpp"
-#include "r2/XY.cpp"
-#include "r2/Projection.cpp"
-#include "algebra/group/Add.cpp"
+#include "library/datastructure/GroupWaveletMatrix.cpp"
+#include "library/r2/XY.cpp"
+#include "library/r2/Projection.cpp"
+#include "library/algebra/group/Add.cpp"
 
 using ll=long long;
 using r2=XY<ll>;

@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "mod/Modint.cpp"
-#include "mod/MintUtility.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/mod/MintUtility.cpp"
 
 using mint=Mint<long long,1000'000'007>;
 MintUtility<mint> M;

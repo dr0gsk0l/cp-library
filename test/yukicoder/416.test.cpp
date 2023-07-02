@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/unionfind/PartialPersistentUnionFind.cpp"
+#include "library/datastructure/unionfind/PartialPersistentUnionFind.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

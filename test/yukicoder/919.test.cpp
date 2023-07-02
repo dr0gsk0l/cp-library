@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/WaveletMatrix.cpp"
 
 using ll=long long;
 const int INF=1000'000'000;

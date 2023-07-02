@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "tree/Tree.cpp"
-#include "tree/RootedTreeIsomorphism.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/RootedTreeIsomorphism.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

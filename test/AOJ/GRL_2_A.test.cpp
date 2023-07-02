@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/WeightedGraph.cpp"
-#include "graph/MinimumSpanningTree.cpp"
+#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/MinimumSpanningTree.cpp"
 
 int main(){
   int n,m;cin>>n>>m;

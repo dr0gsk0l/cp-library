@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/BinaryTrie.cpp"
+#include "library/datastructure/BinaryTrie.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

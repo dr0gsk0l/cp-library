@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/Graph.cpp"
-#include "graph/SCC.cpp"
+#include "library/graph/Graph.cpp"
+#include "library/graph/SCC.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

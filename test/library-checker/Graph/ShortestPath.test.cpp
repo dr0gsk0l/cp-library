@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/WeightedGraph.cpp"
-#include "graph/shortest_path/Dijkstra.cpp"
+#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/shortest_path/Dijkstra.cpp"
 
 using ll=long long;
 

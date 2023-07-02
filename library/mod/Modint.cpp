@@ -1,5 +1,5 @@
 #pragma once
-#include "math/ExtraGCD.cpp"
+#include "library/math/ExtraGCD.cpp"
 template<typename T,T MOD=998244353>
 struct Mint{
   inline static constexpr T mod = MOD;

@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "bitwise/Ranked.cpp"
-#include "mod/Modint.cpp"
+#include "library/bitwise/Ranked.cpp"
+#include "library/mod/Modint.cpp"
 using mint=Mint<long long>;
 
 int main(){

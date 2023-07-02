@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/WaveletMatrix.cpp"
 const int INF=1e9;
 
 int main(){

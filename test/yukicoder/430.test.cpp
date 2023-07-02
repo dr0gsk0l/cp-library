@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "sequence/Trie.cpp"
+#include "library/sequence/Trie.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

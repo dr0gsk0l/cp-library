@@ -1,6 +1,6 @@
 #pragma once
-#include "algebra/monoid/Min.cpp"
-#include "algebra/monoid/Set.cpp"
+#include "library/algebra/monoid/Min.cpp"
+#include "library/algebra/monoid/Set.cpp"
 template<typename X>
 struct LazySetMin{
   using MX=MonoidMin<X>;

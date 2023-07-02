@@ -1,7 +1,7 @@
 #pragma once
-#include "segtree/SegmentTree.cpp"
-#include "algebra/Reverse.cpp"
-#include "tree/HLD.cpp"
+#include "library/segtree/SegmentTree.cpp"
+#include "library/algebra/Reverse.cpp"
+#include "library/tree/HLD.cpp"
 template<typename TREE,typename Monoid>
 struct TreeMonoid{
   using X=typename Monoid::value_type;

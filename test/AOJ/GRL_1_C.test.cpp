@@ -2,9 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/WeightedGraph.cpp"
-#include "graph/NegativeCycleFind.cpp"
-#include "graph/shortest_path/WarshallFloyd.cpp"
+#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/NegativeCycleFind.cpp"
+#include "library/graph/shortest_path/WarshallFloyd.cpp"
 
 using ll=long long;
 

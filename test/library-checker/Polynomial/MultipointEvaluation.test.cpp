@@ -12,9 +12,9 @@ istream& operator>>(istream &is,mint &a){
   long long b;is>>b;a=b;
   return is;
 }
-#include "formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/Base.cpp"
 using FPS=FormalPowerSeries<mint,(1<<17)+1>;
-#include "formalpowerseries/MultipointEvaluation.cpp"
+#include "library/formalpowerseries/MultipointEvaluation.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

@@ -1,6 +1,6 @@
 #pragma once
-#include "sequence/ForString.cpp"
-#include "algebra/group/Add.cpp"
+#include "library/sequence/ForString.cpp"
+#include "library/algebra/group/Add.cpp"
 template<typename CHAR,int SIGMA,typename AbelMonoid=GroupAdd<int>>
 class Trie{
 protected:

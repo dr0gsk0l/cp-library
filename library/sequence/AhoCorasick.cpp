@@ -1,5 +1,5 @@
 #pragma once
-#include "sequence/Trie.cpp"
+#include "library/sequence/Trie.cpp"
 template<typename CHAR,int SIGMA,typename AbelMonoid=GroupAdd<int>>
 class AhoCorasick:Trie<CHAR,SIGMA,AbelMonoid>{
   using super=Trie<CHAR,SIGMA,AbelMonoid>;

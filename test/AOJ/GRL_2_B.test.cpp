@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/WeightedGraph.cpp"
-#include "graph/MinimumSpanningArborescence.cpp"
+#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/MinimumSpanningArborescence.cpp"
 
 int main(){
   int n,m,r;cin>>n>>m>>r;

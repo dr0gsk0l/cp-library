@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "flow/Dinic.cpp"
+#include "library/flow/Dinic.cpp"
 
 int main(){
   int n,m;cin>>n>>m;

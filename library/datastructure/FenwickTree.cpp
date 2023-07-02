@@ -1,5 +1,5 @@
 #pragma once
-#include "algebra/group/Add.cpp"
+#include "library/algebra/group/Add.cpp"
 template<typename AbelGroup=GroupAdd<long long>>
 class FenwickTree{
   using G=AbelGroup;

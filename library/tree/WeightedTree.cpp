@@ -1,5 +1,5 @@
 #pragma once
-#include "graph/WeightedGraph.cpp"
+#include "library/graph/WeightedGraph.cpp"
 template<typename T>
 struct WeightedTree:WeightedGraph<T>{
   using WeightedGraph<T>::WeightedGraph;

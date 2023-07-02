@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "graph/WeightedGraph.cpp"
-#include "graph/MinimumSpanningArborescence.cpp"
+#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/MinimumSpanningArborescence.cpp"
 using ll=long long;
 
 int main(){

@@ -1,6 +1,6 @@
 #pragma once
-#include "datastructure/FullyIndexableDictionary.cpp"
-#include "util/Compress.cpp"
+#include "library/datastructure/FullyIndexableDictionary.cpp"
+#include "library/util/Compress.cpp"
 #define REP_(i,n) for(int i=0;i<(n);i++)
 template<typename T,bool COMPRESS=true>
 class WaveletMatrix{

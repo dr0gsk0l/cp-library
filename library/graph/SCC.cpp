@@ -1,6 +1,6 @@
 #pragma once
-#include "graph/Graph.cpp"
-#include "graph/ReverseGraph.cpp"
+#include "library/graph/Graph.cpp"
+#include "library/graph/ReverseGraph.cpp"
 #define ALL_(v) v.begin(),v.end()
 #define REP_(i,n) for(int i=0;i<(n);i++)
 template<typename DirectedGraph>

@@ -1,5 +1,5 @@
 #pragma once
-#include "graph/Graph.cpp"
+#include "library/graph/Graph.cpp"
 class EdgeVertex{
   int n,N;
   vector<tuple<int,int,int>> edges;

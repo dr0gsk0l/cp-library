@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "mod/Modint.cpp"
-#include "bitwise/And.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/bitwise/And.cpp"
 
 using mint=Mint<long long>;
 

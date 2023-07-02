@@ -1,5 +1,5 @@
 #pragma once
-#include "graph/WeightedGraph.cpp"
+#include "library/graph/WeightedGraph.cpp"
 #define REP_(i,n) for(int i=0;i<(n);i++)
 template<typename T>
 class Grid{

@@ -1,5 +1,5 @@
 #pragma once
-#include "bitwise/Util.cpp"
+#include "library/bitwise/Util.cpp"
 #define REP_(i,n) for(int i=0;i<(n);i++)
 #define RREP_(i,n) for(int i=(n)-1;i>=0;i--)
 class BitwiseRanked{

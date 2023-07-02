@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "sequence/RollingHash.cpp"
+#include "library/sequence/RollingHash.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

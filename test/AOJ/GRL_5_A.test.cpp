@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "tree/WeightedTree.cpp"
-#include "tree/ReRooting.cpp"
+#include "library/tree/WeightedTree.cpp"
+#include "library/tree/ReRooting.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

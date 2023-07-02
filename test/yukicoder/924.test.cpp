@@ -3,8 +3,8 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "datastructure/GroupWaveletMatrix.cpp"
-#include "algebra/group/Add.cpp"
+#include "library/datastructure/GroupWaveletMatrix.cpp"
+#include "library/algebra/group/Add.cpp"
 
 using ll=long long;
 constexpr ll LINF=1e18;

@@ -1,6 +1,6 @@
 #pragma once
-#include "algebra/group/Add.cpp"
-#include "algebra/monoid/Min.cpp"
+#include "library/algebra/group/Add.cpp"
+#include "library/algebra/monoid/Min.cpp"
 template<typename X>
 struct LazyAddMin{
   using MX=MonoidMin<X>;

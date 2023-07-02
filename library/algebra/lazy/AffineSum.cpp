@@ -1,6 +1,6 @@
 #pragma once
-#include "algebra/group/CntSum.cpp"
-#include "algebra/group/Affine.cpp"
+#include "library/algebra/group/CntSum.cpp"
+#include "library/algebra/group/Affine.cpp"
 template<typename X>
 struct LazyAffineSum{
   using MX=GroupCntSum<X>;

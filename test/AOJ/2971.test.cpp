@@ -2,9 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/unionfind/PotentialUnionFind.cpp"
-#include "mod/Modint.cpp"
-#include "algebra/group/Multiply.cpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/algebra/group/Multiply.cpp"
 using ll=long long;
 using mint1=Mint<ll,998244341>;
 using mint2=Mint<ll,998244389>;

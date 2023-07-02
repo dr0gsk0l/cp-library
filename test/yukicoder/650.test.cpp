@@ -4,12 +4,12 @@ using namespace std;
 
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "mod/Modint.cpp"
-#include "tree/Tree.cpp"
-#include "tree/EdgeVertex.cpp"
-#include "tree/TreeMonoid.cpp"
-#include "linearalgebra/SquareMatrix.cpp"
-#include "algebra/group/Multiply.cpp"
+#include "library/mod/Modint.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/EdgeVertex.cpp"
+#include "library/tree/TreeMonoid.cpp"
+#include "library/linearalgebra/SquareMatrix.cpp"
+#include "library/algebra/group/Multiply.cpp"
 
 using mint=Mint<long long,1000'000'007>;
 using MAT=SquareMatrix<mint,2>;

@@ -3,10 +3,10 @@
 using namespace std;
 #define REP(i,n) for(int i=0;i<(n);i++)
 
-#include "tree/Tree.cpp"
-#include "tree/CentroidDecomposition.cpp"
-#include "segtree/DualSegmentTree.cpp"
-#include "algebra/lazy/AddMin.cpp"
+#include "library/tree/Tree.cpp"
+#include "library/tree/CentroidDecomposition.cpp"
+#include "library/segtree/DualSegmentTree.cpp"
+#include "library/algebra/lazy/AddMin.cpp"
 
 using ll=long long;
 

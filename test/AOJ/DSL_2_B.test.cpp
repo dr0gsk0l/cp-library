@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/group/Add.cpp"
-#include "datastructure/FenwickTree.cpp"
+#include "library/algebra/group/Add.cpp"
+#include "library/datastructure/FenwickTree.cpp"
 
 int main(){
   ios::sync_with_stdio(false);

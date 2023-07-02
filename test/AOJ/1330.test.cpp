@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "datastructure/unionfind/PotentialUnionFind.cpp"
-#include "algebra/group/Add.cpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
+#include "library/algebra/group/Add.cpp"
 
 using ll=long long;
 

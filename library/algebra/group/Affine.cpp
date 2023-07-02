@@ -1,5 +1,5 @@
 #pragma once
-#include "linearalgebra/Linear.cpp"
+#include "library/linearalgebra/Linear.cpp"
 template<typename T>
 struct GroupAffine{
   using L = Line<T>;

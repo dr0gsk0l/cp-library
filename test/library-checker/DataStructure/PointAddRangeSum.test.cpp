@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "segtree/SegmentTree.cpp"
-#include "algebra/group/Add.cpp"
+#include "library/segtree/SegmentTree.cpp"
+#include "library/algebra/group/Add.cpp"
 
 using ll=long long;
 using G=GroupAdd<ll>;

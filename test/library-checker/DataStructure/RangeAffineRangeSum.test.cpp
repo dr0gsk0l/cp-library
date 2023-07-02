@@ -2,9 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "algebra/lazy/AffineSum.cpp"
-#include "segtree/LazySegmentTree.cpp"
-#include "mod/Modint.cpp"
+#include "library/algebra/lazy/AffineSum.cpp"
+#include "library/segtree/LazySegmentTree.cpp"
+#include "library/mod/Modint.cpp"
 
 using mint=Mint<long long>;
 

@@ -2,10 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "segtree/SegmentTree.cpp"
-#include "algebra/group/Affine.cpp"
-#include "algebra/Reverse.cpp"
-#include "mod/Modint.cpp"
+#include "library/segtree/SegmentTree.cpp"
+#include "library/algebra/group/Affine.cpp"
+#include "library/algebra/Reverse.cpp"
+#include "library/mod/Modint.cpp"
 
 using ll=long long;
 using mint=Mint<ll>;
