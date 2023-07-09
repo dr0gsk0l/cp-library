@@ -1,0 +1,1 @@
+ [![Actions Status](https://github.com/dr0gsk0l/cp-library/workflows/verify/badge.svg)](https://github.com/dr0gsk0l/cp-library/actions) 
