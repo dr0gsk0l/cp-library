@@ -38,7 +38,7 @@ data:
   timestamp: '2022-09-07 12:14:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/library-checker/DataStructure/StaticRangeSum.test.cpp
+documentation_of: library/test/library-checker/DataStructure/StaticRangeSum.test.cpp
 layout: document
 redirect_from:
 - /verify/test/library-checker/DataStructure/StaticRangeSum.test.cpp

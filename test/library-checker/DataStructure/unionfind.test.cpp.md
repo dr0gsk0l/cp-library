@@ -40,7 +40,7 @@ data:
   timestamp: '2022-09-06 17:50:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/library-checker/DataStructure/unionfind.test.cpp
+documentation_of: library/test/library-checker/DataStructure/unionfind.test.cpp
 layout: document
 redirect_from:
 - /verify/test/library-checker/DataStructure/unionfind.test.cpp
