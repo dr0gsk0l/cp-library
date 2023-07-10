@@ -30,19 +30,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Det.test.cpp
     title: test/library-checker/Matrix/Det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Inverse.test.cpp
     title: test/library-checker/Matrix/Inverse.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Product.test.cpp
     title: test/library-checker/Matrix/Product.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/New/NumberOfSubsequence.test.cpp
     title: test/library-checker/New/NumberOfSubsequence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Convolution.test.cpp
     title: test/library-checker/Polynomial/Convolution.test.cpp
   - icon: ':x:'

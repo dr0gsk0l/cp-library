@@ -5,7 +5,7 @@ data:
   - icon: ':warning:'
     path: library/graph/EdgeVertex.cpp
     title: library/graph/EdgeVertex.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
   - icon: ':x:'
@@ -21,7 +21,7 @@ data:
   - icon: ':x:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/SCC.test.cpp
     title: test/library-checker/Graph/SCC.test.cpp
   - icon: ':x:'

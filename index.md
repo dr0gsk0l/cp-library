@@ -85,7 +85,7 @@ data:
       title: library/bitwise/Xor.cpp
   - name: library/convolution
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/convolution/NTT.cpp
       title: library/convolution/NTT.cpp
     - icon: ':warning:'
@@ -169,7 +169,7 @@ data:
       title: library/datetime/DateTime.cpp
   - name: library/flow
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/flow/Dinic.cpp
       title: library/flow/Dinic.cpp
     - icon: ':heavy_check_mark:'
@@ -235,10 +235,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/NegativeCycleFind.cpp
       title: library/graph/NegativeCycleFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/ReverseGraph.cpp
       title: library/graph/ReverseGraph.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/SCC.cpp
       title: library/graph/SCC.cpp
     - icon: ':question:'
@@ -246,7 +246,7 @@ data:
       title: library/graph/WeightedGraph.cpp
   - name: library/graph/matching
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/matching/BipartiteMatching.cpp
       title: library/graph/matching/BipartiteMatching.cpp
     - icon: ':heavy_check_mark:'
@@ -266,7 +266,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/Dial.cpp
       title: library/graph/shortest_path/Dial.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/Dijkstra.cpp
       title: library/graph/shortest_path/Dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -283,7 +283,7 @@ data:
     - icon: ':question:'
       path: library/linearalgebra/Linear.cpp
       title: library/linearalgebra/Linear.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/linearalgebra/Matrix.cpp
       title: library/linearalgebra/Matrix.cpp
     - icon: ':x:'
@@ -397,7 +397,7 @@ data:
       title: library/superstd/Vector.cpp
   - name: library/tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/CartesianTree.cpp
       title: library/tree/CartesianTree.cpp
     - icon: ':x:'
@@ -447,7 +447,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/util/PrimeUtil.cpp
       title: library/util/PrimeUtil.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/util/Subsequence.cpp
       title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
   verificationCategories:
@@ -612,13 +612,13 @@ data:
     - icon: ':x:'
       path: test/library-checker/Graph/DirectedMST.test.cpp
       title: test/library-checker/Graph/DirectedMST.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
       title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/SCC.test.cpp
       title: test/library-checker/Graph/SCC.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/ShortestPath.test.cpp
       title: test/library-checker/Graph/ShortestPath.test.cpp
   - name: test/library-checker/Math
@@ -628,18 +628,18 @@ data:
       title: test/library-checker/Math/2Sat.test.cpp
   - name: test/library-checker/Matrix
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Matrix/Det.test.cpp
       title: test/library-checker/Matrix/Det.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Matrix/Inverse.test.cpp
       title: test/library-checker/Matrix/Inverse.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Matrix/Product.test.cpp
       title: test/library-checker/Matrix/Product.test.cpp
   - name: test/library-checker/New
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/New/NumberOfSubsequence.test.cpp
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
@@ -647,7 +647,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
     - icon: ':x:'
@@ -681,7 +681,7 @@ data:
       title: test/library-checker/String/RunEnumerate.test.cpp
   - name: test/library-checker/Tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/CartesianTree.test.cpp
       title: test/library-checker/Tree/CartesianTree.test.cpp
     - icon: ':x:'

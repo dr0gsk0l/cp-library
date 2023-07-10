@@ -13,7 +13,7 @@ data:
   bundledCode: "#line 1 \"test/library-checker/String/RunEnumerate.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/runenumerate\"\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 2 \"library/sequence/RunEnumerate.cpp\"\n#include\
-    \ <library/atcoder/string>\nusing namespace atcoder;\n\n#define SIZE_(s) int(s.size())\n\
+    \ <atcoder/string>\nusing namespace atcoder;\n\n#define SIZE_(s) int(s.size())\n\
     \nstruct RunEnumerate{\n  string s;\n  RunEnumerate(const string&s):s(s){ build();\
     \ }\n\n  struct Run{\n    int t,l,r;\n    Run()=default;\n    Run(int t,int l,int\
     \ r):t(t),l(l),r(r){}\n  };\n  vector<Run> ans;\n\n  queue<pair<int,int>> que;\n\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/String/RunEnumerate.test.cpp
   requiredBy: []
-  timestamp: '2023-07-10 23:12:59+09:00'
+  timestamp: '2023-07-11 07:06:07+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/String/RunEnumerate.test.cpp

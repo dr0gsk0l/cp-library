@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"library/sequence/RunEnumerate.cpp\"\n#include <library/atcoder/string>\n\
+  bundledCode: "#line 2 \"library/sequence/RunEnumerate.cpp\"\n#include <atcoder/string>\n\
     using namespace atcoder;\n\n#define SIZE_(s) int(s.size())\n\nstruct RunEnumerate{\n\
     \  string s;\n  RunEnumerate(const string&s):s(s){ build(); }\n\n  struct Run{\n\
     \    int t,l,r;\n    Run()=default;\n    Run(int t,int l,int r):t(t),l(l),r(r){}\n\
@@ -42,8 +42,8 @@ data:
     \   }\n    ans=fans;\n  }\n\n  void build(){\n    que.emplace(0,int(s.size()));\n\
     \    while(que.size()){\n      auto[l,r]=que.front();que.pop();\n      if(l+1==r)continue;\n\
     \      solve(l,r);\n    }\n    arrangement();\n  }\n};\n#undef SIZE_\n"
-  code: "#pragma once\n#include <library/atcoder/string>\nusing namespace atcoder;\n\
-    \n#define SIZE_(s) int(s.size())\n\nstruct RunEnumerate{\n  string s;\n  RunEnumerate(const\
+  code: "#pragma once\n#include <atcoder/string>\nusing namespace atcoder;\n\n#define\
+    \ SIZE_(s) int(s.size())\n\nstruct RunEnumerate{\n  string s;\n  RunEnumerate(const\
     \ string&s):s(s){ build(); }\n\n  struct Run{\n    int t,l,r;\n    Run()=default;\n\
     \    Run(int t,int l,int r):t(t),l(l),r(r){}\n  };\n  vector<Run> ans;\n\n  queue<pair<int,int>>\
     \ que;\n  string REV(string s){ reverse(s.begin(),s.end()); return s; }\n  void\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: library/sequence/RunEnumerate.cpp
   requiredBy: []
-  timestamp: '2023-07-10 23:12:59+09:00'
+  timestamp: '2023-07-11 07:06:07+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/String/RunEnumerate.test.cpp

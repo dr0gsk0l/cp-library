@@ -17,7 +17,7 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/util/InversionNumber.cpp\"\n#include <library/atcoder/fenwicktree>\n\
+  bundledCode: "#line 1 \"library/util/InversionNumber.cpp\"\n#include <atcoder/fenwicktree>\n\
     using namespace atcoder;\n\n#line 2 \"library/util/Compress.cpp\"\n#define ALL_(v)\
     \ v.begin(),v.end()\ntemplate<typename T,bool Sentinel=false>\nclass Compress{\n\
     \  vector<T> v;\n  bool prepared;\npublic:\n  Compress():prepared(false){\n  \
@@ -47,18 +47,18 @@ data:
     \ Compress cmp(v);\n  fenwick_tree<int> ft(cmp.size());\n  long long res=0;\n\
     \  for(int i=int(v.size())-1;i>=0;i--){\n    int j=cmp[v[i]];\n    res+=ft.sum(0,j);\n\
     \    ft.add(j,1);\n  }\n  return res;\n}\n"
-  code: "#include <library/atcoder/fenwicktree>\nusing namespace atcoder;\n\n#include\
-    \ \"library/util/Compress.cpp\"\n\ntemplate <typename T>\nlong long inversion_number(const\
-    \ vector<T> &v){\n  Compress cmp(v);\n  fenwick_tree<int> ft(cmp.size());\n  long\
-    \ long res=0;\n  for(int i=int(v.size())-1;i>=0;i--){\n    int j=cmp[v[i]];\n\
-    \    res+=ft.sum(0,j);\n    ft.add(j,1);\n  }\n  return res;\n}"
+  code: "#include <atcoder/fenwicktree>\nusing namespace atcoder;\n\n#include \"library/util/Compress.cpp\"\
+    \n\ntemplate <typename T>\nlong long inversion_number(const vector<T> &v){\n \
+    \ Compress cmp(v);\n  fenwick_tree<int> ft(cmp.size());\n  long long res=0;\n\
+    \  for(int i=int(v.size())-1;i>=0;i--){\n    int j=cmp[v[i]];\n    res+=ft.sum(0,j);\n\
+    \    ft.add(j,1);\n  }\n  return res;\n}"
   dependsOn:
   - library/util/Compress.cpp
   isVerificationFile: false
   path: library/util/InversionNumber.cpp
   requiredBy:
   - library/util/BubbleNumber.cpp
-  timestamp: '2023-07-10 23:12:59+09:00'
+  timestamp: '2023-07-11 07:06:07+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

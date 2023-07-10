@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Det.test.cpp
     title: test/library-checker/Matrix/Det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Inverse.test.cpp
     title: test/library-checker/Matrix/Inverse.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Product.test.cpp
     title: test/library-checker/Matrix/Product.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/Matrix.cpp\"\n#define REP_(i,n) for(int\
@@ -90,7 +90,7 @@ data:
   path: library/linearalgebra/Matrix.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Matrix/Product.test.cpp
   - test/library-checker/Matrix/Det.test.cpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
   - icon: ':heavy_check_mark:'
@@ -17,7 +17,7 @@ data:
   - icon: ':warning:'
     path: library/graph/Grid8.cpp
     title: library/graph/Grid8.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
   - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/shortest_path/Dial.cpp
     title: library/graph/shortest_path/Dial.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
   - icon: ':question:'
@@ -84,13 +84,13 @@ data:
   - icon: ':x:'
     path: test/library-checker/Graph/DirectedMST.test.cpp
     title: test/library-checker/Graph/DirectedMST.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/ShortestPath.test.cpp
     title: test/library-checker/Graph/ShortestPath.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
   - icon: ':x:'
