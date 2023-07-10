@@ -4,8 +4,8 @@ using namespace std;
 
 #include <library/formalpowerseries/Base.cpp>
 
-#include <library/atcoder/modint>
-#include <library/atcoder/convolution>
+#include <atcoder/modint>
+#include <atcoder/convolution>
 using namespace atcoder;
 using mint=modint998244353;
 ostream& operator<<(ostream &os,mint a){os<<a.val();return os;}

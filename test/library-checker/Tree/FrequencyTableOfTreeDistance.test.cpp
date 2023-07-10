@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include <library/atcoder/convolution>
+#include <atcoder/convolution>
 using namespace atcoder;
 
 #include "library/tree/Tree.cpp"

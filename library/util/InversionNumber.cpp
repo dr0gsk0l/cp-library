@@ -1,4 +1,4 @@
-#include <library/atcoder/fenwicktree>
+#include <atcoder/fenwicktree>
 using namespace atcoder;
 
 #include "library/util/Compress.cpp"
