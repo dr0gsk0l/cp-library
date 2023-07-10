@@ -22,11 +22,26 @@ data:
     title: library/formalpowerseries/Sqrt.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
+    path: test/library-checker/Polynomial/Composition.test.cpp
+    title: test/library-checker/Polynomial/Composition.test.cpp
+  - icon: ':x:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - icon: ':x:'
+    path: test/library-checker/Polynomial/Exp.test.cpp
+    title: test/library-checker/Polynomial/Exp.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Inv.test.cpp
+    title: test/library-checker/Polynomial/Inv.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Log.test.cpp
+    title: test/library-checker/Polynomial/Log.test.cpp
+  - icon: ':x:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Pow.test.cpp
+    title: test/library-checker/Polynomial/Pow.test.cpp
   - icon: ':x:'
     path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
     title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
@@ -215,10 +230,15 @@ data:
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/library-checker/Polynomial/Exp.test.cpp
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - test/library-checker/Polynomial/Composition.test.cpp
+  - test/library-checker/Polynomial/Pow.test.cpp
+  - test/library-checker/Polynomial/Inv.test.cpp
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   - test/library-checker/Polynomial/TaylorShift.test.cpp
+  - test/library-checker/Polynomial/Log.test.cpp
 documentation_of: library/formalpowerseries/Base.cpp
 layout: document
 redirect_from:

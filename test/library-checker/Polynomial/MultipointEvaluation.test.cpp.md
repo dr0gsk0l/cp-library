@@ -19,30 +19,31 @@ data:
   bundledCode: "#line 1 \"test/library-checker/Polynomial/MultipointEvaluation.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#define REP(i,n) for(int i=0;i<(n);i++)\n\
-    \n#include <atcoder/modint>\n#include <atcoder/convolution>\nusing namespace atcoder;\n\
-    using mint=modint998244353;\nostream& operator<<(ostream &os,mint a){os<<a.val();return\
-    \ os;}\nistream& operator>>(istream &is,mint &a){\n  long long b;is>>b;a=b;\n\
-    \  return is;\n}\n#line 2 \"library/formalpowerseries/Base.cpp\"\n#define REP_(i,n)\
-    \ for(int i=0;i<(n);i++)\ntemplate<typename T,int MX>\nstruct FormalPowerSeries:vector<T>{\n\
-    \  using FPS=FormalPowerSeries;\n  using vector<T>::resize;\n  using vector<T>::size;\n\
-    \  using vector<T>::at;\n  using vector<T>::assign;\n  using vector<T>::vector;\n\
-    \  using vector<T>::begin;\n  using vector<T>::end;\n  using vector<T>::back;\n\
-    \  using vector<T>::pop_back;\n  using value_type=T;\n\n  void strict(int n){\
-    \ if(size()>n)resize(n); }\n  void shrink(){ while(size() and back()==0)pop_back();\
-    \ }\n\n  FormalPowerSeries(const vector<T>&f){\n    int n=min(MX,int(f.size()));\n\
-    \    resize(n);\n    REP_(i,n)at(i)=f[i];\n    shrink();\n  }\n\n  static FPS\
-    \ unit(){ return {1}; }\n  static FPS x(){ return {0,1}; }\n#pragma region operator\n\
-    \  FPS operator-()const{\n    FPS g=*this;\n    for(T&a:g)a=-a;\n    return g;\n\
-    \  }\n  \n  FPS &operator+=(const FPS&g){\n    if(size()<g.size())resize(g.size());\n\
-    \    REP_(i,g.size())at(i)+=g[i];\n    return *this;\n  }\n  FPS operator+(const\
-    \ FPS &g)const{return FPS(*this)+=g;}\n\n  FPS &operator+=(const T &a){\n    if(!size())resize(1);\n\
-    \    at(0)+=a;\n    return *this;\n  }\n  FPS operator+(const T& a)const{return\
-    \ FPS(*this)+=a;}\n  friend FPS operator+(const T&a,const FPS&f){return f+a;}\n\
-    \n  FPS &operator-=(const FPS &g){\n    if(size()<g.size())resize(g.size());\n\
-    \    REP_(i,g.size())at(i)-=g[i];\n    return *this;\n  }\n  FPS operator-(const\
-    \ FPS &g)const{return FPS(*this)-=g;}\n\n  FPS &operator-=(const T &a){\n    if(!size())resize(1);\n\
-    \    at(0)-=a;\n    return *this;\n  }\n  FPS operator-(const T& a){return FPS(*this)-=a;}\n\
-    \  friend FPS operator-(const T&a,const FPS&f){return a+(-f);}\n  \n  FPS operator*(const\
+    \n#include <library/atcoder/modint>\n#include <library/atcoder/convolution>\n\
+    using namespace atcoder;\nusing mint=modint998244353;\nostream& operator<<(ostream\
+    \ &os,mint a){os<<a.val();return os;}\nistream& operator>>(istream &is,mint &a){\n\
+    \  long long b;is>>b;a=b;\n  return is;\n}\n#line 2 \"library/formalpowerseries/Base.cpp\"\
+    \n#define REP_(i,n) for(int i=0;i<(n);i++)\ntemplate<typename T,int MX>\nstruct\
+    \ FormalPowerSeries:vector<T>{\n  using FPS=FormalPowerSeries;\n  using vector<T>::resize;\n\
+    \  using vector<T>::size;\n  using vector<T>::at;\n  using vector<T>::assign;\n\
+    \  using vector<T>::vector;\n  using vector<T>::begin;\n  using vector<T>::end;\n\
+    \  using vector<T>::back;\n  using vector<T>::pop_back;\n  using value_type=T;\n\
+    \n  void strict(int n){ if(size()>n)resize(n); }\n  void shrink(){ while(size()\
+    \ and back()==0)pop_back(); }\n\n  FormalPowerSeries(const vector<T>&f){\n   \
+    \ int n=min(MX,int(f.size()));\n    resize(n);\n    REP_(i,n)at(i)=f[i];\n   \
+    \ shrink();\n  }\n\n  static FPS unit(){ return {1}; }\n  static FPS x(){ return\
+    \ {0,1}; }\n#pragma region operator\n  FPS operator-()const{\n    FPS g=*this;\n\
+    \    for(T&a:g)a=-a;\n    return g;\n  }\n  \n  FPS &operator+=(const FPS&g){\n\
+    \    if(size()<g.size())resize(g.size());\n    REP_(i,g.size())at(i)+=g[i];\n\
+    \    return *this;\n  }\n  FPS operator+(const FPS &g)const{return FPS(*this)+=g;}\n\
+    \n  FPS &operator+=(const T &a){\n    if(!size())resize(1);\n    at(0)+=a;\n \
+    \   return *this;\n  }\n  FPS operator+(const T& a)const{return FPS(*this)+=a;}\n\
+    \  friend FPS operator+(const T&a,const FPS&f){return f+a;}\n\n  FPS &operator-=(const\
+    \ FPS &g){\n    if(size()<g.size())resize(g.size());\n    REP_(i,g.size())at(i)-=g[i];\n\
+    \    return *this;\n  }\n  FPS operator-(const FPS &g)const{return FPS(*this)-=g;}\n\
+    \n  FPS &operator-=(const T &a){\n    if(!size())resize(1);\n    at(0)-=a;\n \
+    \   return *this;\n  }\n  FPS operator-(const T& a){return FPS(*this)-=a;}\n \
+    \ friend FPS operator-(const T&a,const FPS&f){return a+(-f);}\n  \n  FPS operator*(const\
     \ FPS&g)const{ return FPS(convolution(*this,g)); }\n  FPS&operator*=(const FPS&g){\
     \ return (*this)=(*this)*g; }\n\n  FPS&operator*=(const T &a){\n    REP_(i,size())at(i)*=a;\n\
     \    return *this;\n  }\n  FPS operator*(const T &a)const{ return FPS(*this)*=a;\
@@ -123,13 +124,13 @@ data:
     n \"[j+1<m];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\n#define REP(i,n) for(int i=0;i<(n);i++)\n\
-    \n#include <atcoder/modint>\n#include <atcoder/convolution>\nusing namespace atcoder;\n\
-    using mint=modint998244353;\nostream& operator<<(ostream &os,mint a){os<<a.val();return\
-    \ os;}\nistream& operator>>(istream &is,mint &a){\n  long long b;is>>b;a=b;\n\
-    \  return is;\n}\n#include \"library/formalpowerseries/Base.cpp\"\nusing FPS=FormalPowerSeries<mint,(1<<17)+1>;\n\
-    #include \"library/formalpowerseries/MultipointEvaluation.cpp\"\n\nint main(){\n\
-    \  ios::sync_with_stdio(false);\n  cin.tie(nullptr);\n\n  int n,m;cin>>n>>m;\n\
-    \  FPS f(n);\n  REP(i,n)cin>>f[i];\n  vector<mint> p(m);\n  REP(j,m)cin>>p[j];\n\
+    \n#include <library/atcoder/modint>\n#include <library/atcoder/convolution>\n\
+    using namespace atcoder;\nusing mint=modint998244353;\nostream& operator<<(ostream\
+    \ &os,mint a){os<<a.val();return os;}\nistream& operator>>(istream &is,mint &a){\n\
+    \  long long b;is>>b;a=b;\n  return is;\n}\n#include \"library/formalpowerseries/Base.cpp\"\
+    \nusing FPS=FormalPowerSeries<mint,(1<<17)+1>;\n#include \"library/formalpowerseries/MultipointEvaluation.cpp\"\
+    \n\nint main(){\n  ios::sync_with_stdio(false);\n  cin.tie(nullptr);\n\n  int\
+    \ n,m;cin>>n>>m;\n  FPS f(n);\n  REP(i,n)cin>>f[i];\n  vector<mint> p(m);\n  REP(j,m)cin>>p[j];\n\
     \n  vector<mint> ans=multipoint_evaluation(f,p);\n  REP(j,m)cout<<ans[j]<<\"\\\
     n \"[j+1<m];\n}"
   dependsOn:
@@ -139,7 +140,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-07-10 23:12:59+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/MultipointEvaluation.test.cpp

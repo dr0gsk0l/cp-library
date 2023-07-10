@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   - icon: ':x:'
@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/util/InversionNumber.cpp\"\n#include <atcoder/fenwicktree>\n\
+  bundledCode: "#line 1 \"library/util/InversionNumber.cpp\"\n#include <library/atcoder/fenwicktree>\n\
     using namespace atcoder;\n\n#line 2 \"library/util/Compress.cpp\"\n#define ALL_(v)\
     \ v.begin(),v.end()\ntemplate<typename T,bool Sentinel=false>\nclass Compress{\n\
     \  vector<T> v;\n  bool prepared;\npublic:\n  Compress():prepared(false){\n  \
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: library/util/BubbleNumber.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-07-10 23:12:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/BubbleNumber.cpp

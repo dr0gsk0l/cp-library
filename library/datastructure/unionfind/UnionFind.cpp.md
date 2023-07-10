@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/unionfind.test.cpp
     title: test/library-checker/DataStructure/unionfind.test.cpp
   - icon: ':x:'

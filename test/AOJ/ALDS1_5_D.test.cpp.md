@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   - icon: ':x:'
@@ -15,10 +15,10 @@ data:
   attributes: {}
   bundledCode: "#line 1 \"test/AOJ/ALDS1_5_D.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D&lang=ja\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"library/util/InversionNumber.cpp\"\
-    \n#include <atcoder/fenwicktree>\nusing namespace atcoder;\n\n#line 2 \"library/util/Compress.cpp\"\
-    \n#define ALL_(v) v.begin(),v.end()\ntemplate<typename T,bool Sentinel=false>\n\
-    class Compress{\n  vector<T> v;\n  bool prepared;\npublic:\n  Compress():prepared(false){\n\
-    \    if constexpr(Sentinel){\n      static_assert(std::numeric_limits<T>::is_specialized,\"\
+    \n#include <library/atcoder/fenwicktree>\nusing namespace atcoder;\n\n#line 2\
+    \ \"library/util/Compress.cpp\"\n#define ALL_(v) v.begin(),v.end()\ntemplate<typename\
+    \ T,bool Sentinel=false>\nclass Compress{\n  vector<T> v;\n  bool prepared;\n\
+    public:\n  Compress():prepared(false){\n    if constexpr(Sentinel){\n      static_assert(std::numeric_limits<T>::is_specialized,\"\
     cannot use Sentinel\");\n      v={numeric_limits<T>::min(),numeric_limits<T>::max()};\n\
     \    }\n  }\n  Compress(const vector<T>&w):v(w),prepared(false){\n    if constexpr(Sentinel){\n\
     \      static_assert(std::numeric_limits<T>::is_specialized,\"cannot use Sentinel\"\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-07-10 23:12:59+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp

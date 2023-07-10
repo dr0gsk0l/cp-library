@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy:
   - icon: ':question:'
     path: library/sequence/AhoCorasick.cpp
-    title: library/sequence/AhoCorasick.cpp
+    title: AhoCorasick
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2212.test.cpp

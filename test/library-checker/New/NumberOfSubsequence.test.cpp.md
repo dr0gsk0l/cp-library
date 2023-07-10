@@ -9,7 +9,7 @@ data:
     title: library/mod/Modint.cpp
   - icon: ':x:'
     path: library/util/Subsequence.cpp
-    title: library/util/Subsequence.cpp
+    title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true

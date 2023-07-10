@@ -18,7 +18,7 @@ data:
   attributes: {}
   bundledCode: "#line 1 \"test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include <atcoder/convolution>\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include <library/atcoder/convolution>\n\
     using namespace atcoder;\n\n#line 2 \"library/graph/Graph.cpp\"\nstruct Edge{\n\
     \  int from,to;\n  Edge()=default;\n  Edge(int from,int to):from(from),to(to){}\n\
     \  operator int()const{ return to; }\n};\n\nstruct Graph{\n  int n;\n  using edge_type=Edge;\n\
@@ -100,7 +100,7 @@ data:
     \ else ans[i]-=D2[i];\n    D=vector<ll>{0};\n  };\n\n  CD.all_calc(0,next_val,action,finish);\n\
     \n  for(int i=1;i<n;i++)cout<< ans[i]/2 <<\"\\n \"[i+1<n];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include <atcoder/convolution>\n\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include <library/atcoder/convolution>\n\
     using namespace atcoder;\n\n#include \"library/tree/Tree.cpp\"\n#include \"library/tree/CentroidDecomposition.cpp\"\
     \n\nusing ll=long long;\n\nint main(){\n  ios::sync_with_stdio(false);\n  cin.tie(nullptr);\n\
     \n  int n;cin>>n;\n  Tree T(n);\n  T.scan(0);\n\n  CentroidDecomposition CD(T);\n\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-07-10 23:12:59+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

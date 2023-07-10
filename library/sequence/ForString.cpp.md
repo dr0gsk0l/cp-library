@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':question:'
     path: library/sequence/AhoCorasick.cpp
-    title: library/sequence/AhoCorasick.cpp
+    title: AhoCorasick
   - icon: ':x:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp

@@ -6,7 +6,7 @@ data:
     title: library/graph/WeightedGraph.cpp
   - icon: ':heavy_check_mark:'
     path: library/tree/ReRooting.cpp
-    title: library/tree/ReRooting.cpp
+    title: ReRooting
   - icon: ':question:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
