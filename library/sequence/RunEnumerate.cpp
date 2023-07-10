@@ -1,5 +1,5 @@
 #pragma once
-#include <atcoder/string>
+#include <library/atcoder/string>
 using namespace atcoder;
 
 #define SIZE_(s) int(s.size())

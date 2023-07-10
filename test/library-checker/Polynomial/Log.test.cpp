@@ -2,10 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include <formalpowerseries/Base.cpp>
+#include <library/formalpowerseries/Base.cpp>
 
-#include <atcoder/modint>
-#include <atcoder/convolution>
+#include <library/atcoder/modint>
+#include <library/atcoder/convolution>
 using namespace atcoder;
 using mint=modint998244353;
 ostream& operator<<(ostream &os,mint a){os<<a.val();return os;}

@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include <atcoder/twosat>
+#include <library/atcoder/twosat>
 using namespace atcoder;
 
 int main(){
