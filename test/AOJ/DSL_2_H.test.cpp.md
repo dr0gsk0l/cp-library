@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Min.cpp
     title: library/algebra/monoid/Min.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []

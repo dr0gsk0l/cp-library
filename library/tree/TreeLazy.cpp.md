@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/Reverse.cpp
     title: library/algebra/lazy/Reverse.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/segtree/LazySegmentTree.cpp\"\n\ntemplate<typename\
@@ -84,9 +84,9 @@ data:
     \ Lazy::MF;\n  using X=typename MX::value_type;\n  using F=typename MF::value_type;\n\
     \  using Lazy_r=LazyReverse<Lazy>;\n  int n;\n  TREE T;\n  HLD<Tree> hld;\n  vector<int>\
     \ hld_id,euler_in,euler_out;\n  LazySegmentTree<Lazy> seg;\n  LazySegmentTree<Lazy_r>\
-    \ seg_r; \n  \n  TreeLazy(const TREE&T,int r=0):T(T),hld(T),n(T.n),seg(n),seg_r(n){\n\
-    \    T.build(r);\n    hld_id=hld.build(r);\n  }\n  TreeLazy(const TREE&T,vector<X>\
-    \ a,int r=0):T(T),hld(T),n(T.n){\n    T.build(r);\n    hld_id=hld.build(r);\n\
+    \ seg_r; \n  \n  TreeLazy(const TREE&T_,int r=0):T(T_),hld(T_),n(T_.n),seg(n),seg_r(n){\n\
+    \    T.build(r);\n    hld_id=hld.build(r);\n  }\n  TreeLazy(const TREE&T_,vector<X>\
+    \ a,int r=0):T(T_),hld(T_),n(T_.n){\n    T.build(r);\n    hld_id=hld.build(r);\n\
     \    vector<X> hld_a(n);\n    for(int v=0;v<n;v++)hld_a[hld_id[v]]=a[v];\n   \
     \ seg=LazySegmentTree<Lazy>(hld_a);\n    if(!MX::commute)seg_r=LazySegmentTree<Lazy_r>(hld_a);\n\
     \  }\n\n  void set(int v,X x){\n    seg.set(hld_id[v],x);\n    if(!MX::commute)seg_r.set(hld_id[v],x);\n\
@@ -112,9 +112,9 @@ data:
     \ MF=typename Lazy::MF;\n  using X=typename MX::value_type;\n  using F=typename\
     \ MF::value_type;\n  using Lazy_r=LazyReverse<Lazy>;\n  int n;\n  TREE T;\n  HLD<Tree>\
     \ hld;\n  vector<int> hld_id,euler_in,euler_out;\n  LazySegmentTree<Lazy> seg;\n\
-    \  LazySegmentTree<Lazy_r> seg_r; \n  \n  TreeLazy(const TREE&T,int r=0):T(T),hld(T),n(T.n),seg(n),seg_r(n){\n\
-    \    T.build(r);\n    hld_id=hld.build(r);\n  }\n  TreeLazy(const TREE&T,vector<X>\
-    \ a,int r=0):T(T),hld(T),n(T.n){\n    T.build(r);\n    hld_id=hld.build(r);\n\
+    \  LazySegmentTree<Lazy_r> seg_r; \n  \n  TreeLazy(const TREE&T_,int r=0):T(T_),hld(T_),n(T_.n),seg(n),seg_r(n){\n\
+    \    T.build(r);\n    hld_id=hld.build(r);\n  }\n  TreeLazy(const TREE&T_,vector<X>\
+    \ a,int r=0):T(T_),hld(T_),n(T_.n){\n    T.build(r);\n    hld_id=hld.build(r);\n\
     \    vector<X> hld_a(n);\n    for(int v=0;v<n;v++)hld_a[hld_id[v]]=a[v];\n   \
     \ seg=LazySegmentTree<Lazy>(hld_a);\n    if(!MX::commute)seg_r=LazySegmentTree<Lazy_r>(hld_a);\n\
     \  }\n\n  void set(int v,X x){\n    seg.set(hld_id[v],x);\n    if(!MX::commute)seg_r.set(hld_id[v],x);\n\
@@ -142,8 +142,8 @@ data:
   isVerificationFile: false
   path: library/tree/TreeLazy.cpp
   requiredBy: []
-  timestamp: '2023-07-23 21:04:15+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-07-23 21:10:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/tree/TreeLazy.cpp

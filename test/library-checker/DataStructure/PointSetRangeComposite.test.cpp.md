@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
   - icon: ':heavy_check_mark:'

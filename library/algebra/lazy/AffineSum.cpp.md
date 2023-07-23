@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   - icon: ':heavy_check_mark:'

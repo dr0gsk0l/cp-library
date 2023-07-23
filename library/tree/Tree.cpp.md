@@ -9,7 +9,7 @@ data:
     path: library/tree/EdgeVertex.cpp
     title: library/tree/EdgeVertex.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
   - icon: ':x:'

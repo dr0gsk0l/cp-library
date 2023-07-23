@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddMin.cpp
     title: library/algebra/lazy/AddMin.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
   - icon: ':question:'
@@ -48,7 +48,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_H.test.cpp
     title: test/AOJ/DSL_2_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
   - icon: ':heavy_check_mark:'

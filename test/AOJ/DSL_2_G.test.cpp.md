@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []

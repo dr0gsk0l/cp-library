@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   _extendedRequiredBy: []
@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/CntSum.cpp\"\ntemplate<typename X>\n\
@@ -53,7 +53,7 @@ data:
   path: library/algebra/lazy/AddSum.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
   - test/AOJ/DSL_2_G.test.cpp

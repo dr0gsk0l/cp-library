@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
   - icon: ':question:'

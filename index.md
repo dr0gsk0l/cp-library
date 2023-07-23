@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library/algebra
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/Reverse.cpp
       title: library/algebra/Reverse.cpp
   - name: library/algebra/group
@@ -14,7 +14,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/algebra/group/Affine.cpp
       title: library/algebra/group/Affine.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
     - icon: ':heavy_check_mark:'
@@ -28,13 +28,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AddMin.cpp
       title: library/algebra/lazy/AddMin.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AddSum.cpp
       title: library/algebra/lazy/AddSum.cpp
     - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AffineSum.cpp
       title: library/algebra/lazy/AffineSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/Reverse.cpp
       title: library/algebra/lazy/Reverse.cpp
     - icon: ':heavy_check_mark:'
@@ -358,7 +358,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/segtree/DualSegmentTree.cpp
       title: library/segtree/DualSegmentTree.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/segtree/LazySegmentTree.cpp
       title: library/segtree/LazySegmentTree.cpp
     - icon: ':heavy_check_mark:'
@@ -406,7 +406,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/tree/EdgeVertex.cpp
       title: library/tree/EdgeVertex.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/HLD.cpp
       title: library/tree/HLD.cpp
     - icon: ':heavy_check_mark:'
@@ -418,7 +418,7 @@ data:
     - icon: ':question:'
       path: library/tree/Tree.cpp
       title: library/tree/Tree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/TreeLazy.cpp
       title: library/tree/TreeLazy.cpp
     - icon: ':heavy_check_mark:'
@@ -534,7 +534,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_E.test.cpp
       title: test/AOJ/GRL_5_E.test.cpp
     - icon: ':heavy_check_mark:'
