@@ -11,21 +11,21 @@ data:
     - icon: ':question:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Affine.cpp
       title: library/algebra/group/Affine.cpp
     - icon: ':question:'
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Multiply.cpp
       title: library/algebra/group/Multiply.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Xor.cpp
       title: library/algebra/group/Xor.cpp
   - name: library/algebra/lazy
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AddMin.cpp
       title: library/algebra/lazy/AddMin.cpp
     - icon: ':question:'
@@ -45,7 +45,7 @@ data:
       title: library/algebra/lazy/SetSum.cpp
   - name: library/algebra/monoid
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/monoid/Gcd.cpp
       title: library/algebra/monoid/Gcd.cpp
     - icon: ':warning:'
@@ -57,7 +57,7 @@ data:
     - icon: ':warning:'
       path: library/algebra/monoid/MaxIndex.cpp
       title: library/algebra/monoid/MaxIndex.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/monoid/Min.cpp
       title: library/algebra/monoid/Min.cpp
     - icon: ':warning:'
@@ -93,7 +93,7 @@ data:
       title: library/convolution/OnlineNTT.cpp
   - name: library/datastructure/2D
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/2D/CumulativeSum.cpp
       title: library/datastructure/2D/CumulativeSum.cpp
   - name: library/datastructure
@@ -110,7 +110,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/datastructure/CumulativeSum.cpp
       title: library/datastructure/CumulativeSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/Doubling.cpp
       title: library/datastructure/Doubling.cpp
     - icon: ':question:'
@@ -125,7 +125,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/Imos.cpp
       title: library/datastructure/Imos.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/SWAG.cpp
       title: library/datastructure/SWAG.cpp
     - icon: ':x:'
@@ -147,16 +147,16 @@ data:
     - icon: ':warning:'
       path: library/datastructure/unionfind/ApplyUnionFind.cpp
       title: library/datastructure/unionfind/ApplyUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
       title: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
     - icon: ':warning:'
       path: library/datastructure/unionfind/MonoidUnionFind.cpp
       title: library/datastructure/unionfind/MonoidUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
       title: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/PotentialUnionFind.cpp
       title: library/datastructure/unionfind/PotentialUnionFind.cpp
     - icon: ':question:'
@@ -164,7 +164,7 @@ data:
       title: library/datastructure/unionfind/UnionFind.cpp
   - name: library/datetime
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datetime/DateTime.cpp
       title: library/datetime/DateTime.cpp
   - name: library/flow
@@ -203,13 +203,13 @@ data:
       title: library/formalpowerseries/Sqrt.cpp
   - name: library/geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/Base.cpp
       title: library/geometry/Base.cpp
     - icon: ':warning:'
       path: library/geometry/Judge.cpp
       title: library/geometry/Judge.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/UtilFunction.cpp
       title: library/geometry/UtilFunction.cpp
   - name: library/graph
@@ -274,19 +274,19 @@ data:
       title: library/graph/shortest_path/WarshallFloyd.cpp
   - name: library/linearalgebra
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/linearalgebra/ConvexHullTrick.cpp
       title: library/linearalgebra/ConvexHullTrick.cpp
     - icon: ':warning:'
       path: library/linearalgebra/InsertConvexHullTrick.cpp
       title: library/linearalgebra/InsertConvexHullTrick.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/linearalgebra/Linear.cpp
       title: library/linearalgebra/Linear.cpp
     - icon: ':heavy_check_mark:'
       path: library/linearalgebra/Matrix.cpp
       title: library/linearalgebra/Matrix.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/linearalgebra/SquareMatrix.cpp
       title: library/linearalgebra/SquareMatrix.cpp
   - name: library/local
@@ -305,7 +305,7 @@ data:
       title: library/local/hack.py
   - name: library/math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/math/ExtraGCD.cpp
       title: library/math/ExtraGCD.cpp
     - icon: ':warning:'
@@ -328,13 +328,13 @@ data:
     - icon: ':warning:'
       path: library/mod/CompositeMintUtility.cpp
       title: library/mod/CompositeMintUtility.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/mod/MintUtility.cpp
       title: library/mod/MintUtility.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/mod/Modint.cpp
       title: library/mod/Modint.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/mod/Modint61.cpp
       title: library/mod/Modint61.cpp
   - name: library/query
@@ -347,7 +347,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/r2/Projection.cpp
       title: library/r2/Projection.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/r2/XY.cpp
       title: library/r2/XY.cpp
     - icon: ':warning:'
@@ -355,30 +355,30 @@ data:
       title: library/r2/YX.cpp
   - name: library/segtree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/segtree/DualSegmentTree.cpp
       title: library/segtree/DualSegmentTree.cpp
     - icon: ':question:'
       path: library/segtree/LazySegmentTree.cpp
       title: library/segtree/LazySegmentTree.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/segtree/SegmentTree.cpp
       title: library/segtree/SegmentTree.cpp
   - name: library/sequence
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/AhoCorasick.cpp
       title: AhoCorasick
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/ForString.cpp
       title: library/sequence/ForString.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/RollingHash.cpp
       title: library/sequence/RollingHash.cpp
     - icon: ':x:'
       path: library/sequence/RunEnumerate.cpp
       title: library/sequence/RunEnumerate.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/Trie.cpp
       title: library/sequence/Trie.cpp
   - name: library/superstd
@@ -400,31 +400,31 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/tree/CartesianTree.cpp
       title: library/tree/CartesianTree.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/CentroidDecomposition.cpp
       title: library/tree/CentroidDecomposition.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/EdgeVertex.cpp
       title: library/tree/EdgeVertex.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/HLD.cpp
       title: library/tree/HLD.cpp
     - icon: ':heavy_check_mark:'
       path: library/tree/ReRooting.cpp
       title: ReRooting
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/RootedTreeIsomorphism.cpp
       title: library/tree/RootedTreeIsomorphism.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/Tree.cpp
       title: library/tree/Tree.cpp
     - icon: ':x:'
       path: library/tree/TreeLazy.cpp
       title: library/tree/TreeLazy.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/TreeMonoid.cpp
       title: library/tree/TreeMonoid.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/WeightedTree.cpp
       title: library/tree/WeightedTree.cpp
   - name: library/util
@@ -477,7 +477,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_12_B.test.cpp
       title: test/AOJ/ALDS1_12_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_14_B.test.cpp
       title: test/AOJ/ALDS1_14_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -486,7 +486,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_4_A.test.cpp
       title: test/AOJ/CGL_4_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -687,72 +687,72 @@ data:
     - icon: ':x:'
       path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
       title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
       title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
       title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
       title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
       title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
       title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1002.test.cpp
       title: test/yukicoder/1002.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1036.test.cpp
       title: test/yukicoder/1036.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1038.test.cpp
       title: test/yukicoder/1038.test.cpp
     - icon: ':x:'
       path: test/yukicoder/1077.test.cpp
       title: test/yukicoder/1077.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1097.test.cpp
       title: test/yukicoder/1097.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/117.test.cpp
       title: test/yukicoder/117.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1332.test.cpp
       title: test/yukicoder/1332.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1420.test.cpp
       title: test/yukicoder/1420.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1502.test.cpp
       title: test/yukicoder/1502.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/2012.test.cpp
       title: test/yukicoder/2012.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/2109.test.cpp
       title: test/yukicoder/2109.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/416.test.cpp
       title: test/yukicoder/416.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/430.test.cpp
       title: test/yukicoder/430.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/430_2.test.cpp
       title: test/yukicoder/430_2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/650.test.cpp
       title: test/yukicoder/650.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/755.test.cpp
       title: test/yukicoder/755.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/919.test.cpp
       title: test/yukicoder/919.test.cpp
     - icon: ':x:'

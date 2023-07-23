@@ -4,26 +4,26 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/sequence/ForString.cpp\"\ntemplate<char MARGIN>\n\
@@ -119,7 +119,7 @@ data:
   requiredBy:
   - library/sequence/AhoCorasick.cpp
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/430_2.test.cpp
   - test/yukicoder/430.test.cpp

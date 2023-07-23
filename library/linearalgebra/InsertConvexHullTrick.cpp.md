@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []

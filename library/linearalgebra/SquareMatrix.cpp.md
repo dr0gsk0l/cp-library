@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/SquareMatrix.cpp\"\n#define REP_(i,n)\
@@ -99,7 +99,7 @@ data:
   path: library/linearalgebra/SquareMatrix.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp
 documentation_of: library/linearalgebra/SquareMatrix.cpp

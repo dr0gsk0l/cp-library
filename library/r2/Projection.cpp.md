@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   - icon: ':question:'

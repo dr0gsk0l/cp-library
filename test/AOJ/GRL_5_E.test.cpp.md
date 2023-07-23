@@ -22,10 +22,10 @@ data:
   - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   - icon: ':x:'

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2109.test.cpp
     title: test/yukicoder/2109.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datetime/DateTime.cpp\"\nclass DateTime{\n  static\
@@ -89,7 +89,7 @@ data:
   path: library/datetime/DateTime.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2109.test.cpp
 documentation_of: library/datetime/DateTime.cpp

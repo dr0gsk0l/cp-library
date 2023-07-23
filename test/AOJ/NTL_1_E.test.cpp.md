@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
   _extendedRequiredBy: []

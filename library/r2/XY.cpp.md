@@ -2,20 +2,20 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
   - icon: ':warning:'
     path: library/geometry/Judge.cpp
     title: library/geometry/Judge.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/UtilFunction.cpp
     title: library/geometry/UtilFunction.cpp
   - icon: ':heavy_check_mark:'
     path: library/r2/Projection.cpp
     title: library/r2/Projection.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/CGL_4_A.test.cpp
     title: test/AOJ/CGL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -27,12 +27,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2012.test.cpp
     title: test/yukicoder/2012.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/r2/XY.cpp\"\ntemplate<typename T>\nstruct XY{\n\
@@ -106,7 +106,7 @@ data:
   - library/geometry/UtilFunction.cpp
   - library/geometry/Base.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2012.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp

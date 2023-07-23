@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/UtilFunction.cpp
     title: library/geometry/UtilFunction.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy: []

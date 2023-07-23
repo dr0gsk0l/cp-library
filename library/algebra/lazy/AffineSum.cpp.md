@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
   - icon: ':question:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []

@@ -58,7 +58,7 @@ data:
   path: library/util/InversionNumber.cpp
   requiredBy:
   - library/util/BubbleNumber.cpp
-  timestamp: '2023-07-11 07:06:07+09:00'
+  timestamp: '2023-07-23 20:46:23+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

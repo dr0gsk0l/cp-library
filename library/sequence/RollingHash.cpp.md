@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint61.cpp
     title: library/mod/Modint61.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_14_B.test.cpp
     title: test/AOJ/ALDS1_14_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
@@ -49,7 +49,7 @@ data:
   path: library/sequence/RollingHash.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp
 documentation_of: library/sequence/RollingHash.cpp

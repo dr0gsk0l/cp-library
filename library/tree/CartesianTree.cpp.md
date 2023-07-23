@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedRequiredBy: []

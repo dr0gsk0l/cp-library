@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []

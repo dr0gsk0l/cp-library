@@ -32,7 +32,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedVerifiedWith:
@@ -93,7 +93,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
   _isVerificationFailed: true

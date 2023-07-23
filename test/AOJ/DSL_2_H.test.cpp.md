@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddMin.cpp
     title: library/algebra/lazy/AddMin.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Min.cpp
     title: library/algebra/monoid/Min.cpp
   - icon: ':question:'

@@ -4,17 +4,17 @@ data:
   - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
@@ -112,7 +112,7 @@ data:
   path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/LowestCommonAncestor.test.cpp
 layout: document

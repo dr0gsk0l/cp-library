@@ -8,10 +8,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/EdgeVertex.cpp
     title: library/tree/EdgeVertex.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedVerifiedWith:
@@ -27,25 +27,25 @@ data:
   - icon: ':x:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
     title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
     title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true

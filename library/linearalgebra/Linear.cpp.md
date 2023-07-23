@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AffineSum.cpp
     title: library/algebra/lazy/AffineSum.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/linearalgebra/ConvexHullTrick.cpp
     title: library/linearalgebra/ConvexHullTrick.cpp
   - icon: ':warning:'
@@ -24,15 +24,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2012.test.cpp
     title: test/yukicoder/2012.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/Linear.cpp\"\ntemplate<typename T>\n\
@@ -88,7 +88,7 @@ data:
   - library/algebra/lazy/AffineSum.cpp
   - library/algebra/group/Affine.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2012.test.cpp
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

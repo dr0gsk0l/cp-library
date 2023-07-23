@@ -4,29 +4,29 @@ data:
   - icon: ':question:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/segtree/SegmentTree.cpp\"\ntemplate<class Monoid>\n\
@@ -144,7 +144,7 @@ data:
   path: library/tree/TreeMonoid.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

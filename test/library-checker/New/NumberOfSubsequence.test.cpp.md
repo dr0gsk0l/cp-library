@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   - icon: ':heavy_check_mark:'

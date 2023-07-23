@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_14_B.test.cpp
     title: test/AOJ/ALDS1_14_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/mod/Modint61.cpp\"\nstruct Modint61{\n  using ll=long\
@@ -63,7 +63,7 @@ data:
   requiredBy:
   - library/sequence/RollingHash.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp
 documentation_of: library/mod/Modint61.cpp

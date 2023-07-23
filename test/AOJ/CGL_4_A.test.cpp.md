@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/UtilFunction.cpp
     title: library/geometry/UtilFunction.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
@@ -93,7 +93,7 @@ data:
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp
 layout: document

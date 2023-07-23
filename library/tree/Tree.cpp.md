@@ -5,7 +5,7 @@ data:
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/EdgeVertex.cpp
     title: library/tree/EdgeVertex.cpp
   _extendedVerifiedWith:
@@ -15,30 +15,30 @@ data:
   - icon: ':x:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
     title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
     title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.cpp\"\nstruct Edge{\n  int from,to;\n\
@@ -112,7 +112,7 @@ data:
   requiredBy:
   - library/tree/EdgeVertex.cpp
   timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1038.test.cpp
   - test/yukicoder/650.test.cpp

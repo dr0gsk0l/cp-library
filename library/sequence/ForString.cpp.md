@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_14_B.test.cpp
     title: test/AOJ/ALDS1_14_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/sequence/ForString.cpp\"\ntemplate<char MARGIN>\n\
@@ -67,7 +67,7 @@ data:
   - library/sequence/RollingHash.cpp
   - library/sequence/Trie.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/430_2.test.cpp
   - test/yukicoder/430.test.cpp

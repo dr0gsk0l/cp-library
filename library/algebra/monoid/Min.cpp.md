@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddMin.cpp
     title: library/algebra/lazy/AddMin.cpp
   - icon: ':heavy_check_mark:'
@@ -21,12 +21,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_H.test.cpp
     title: test/AOJ/DSL_2_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/monoid/Min.cpp\"\ntemplate<typename X>\n\
@@ -47,7 +47,7 @@ data:
   - library/algebra/lazy/AddMin.cpp
   - library/algebra/lazy/SetMin.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1038.test.cpp
   - test/AOJ/DSL_2_E.test.cpp

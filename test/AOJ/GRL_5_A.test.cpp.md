@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/ReRooting.cpp
     title: ReRooting
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedRequiredBy: []

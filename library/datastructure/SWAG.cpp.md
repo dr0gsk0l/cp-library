@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1036.test.cpp
     title: test/yukicoder/1036.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/datastructure/SWAG.cpp\"\ntemplate<typename Monoid>\n\
@@ -43,7 +43,7 @@ data:
   path: library/datastructure/SWAG.cpp
   requiredBy: []
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1036.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

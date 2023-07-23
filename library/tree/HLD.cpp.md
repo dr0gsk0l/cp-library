@@ -5,31 +5,31 @@ data:
   - icon: ':x:'
     path: library/tree/TreeLazy.cpp
     title: library/tree/TreeLazy.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
     title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/tree/HLD.cpp\"\ntemplate<typename TREE>\nstruct\
@@ -90,7 +90,7 @@ data:
   - library/tree/TreeMonoid.cpp
   - library/tree/TreeLazy.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/650.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

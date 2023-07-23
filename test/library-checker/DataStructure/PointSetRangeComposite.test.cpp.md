@@ -4,19 +4,19 @@ data:
   - icon: ':question:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
   _extendedRequiredBy: []

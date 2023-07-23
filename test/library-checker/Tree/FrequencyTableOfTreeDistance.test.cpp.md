@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/CentroidDecomposition.cpp
     title: library/tree/CentroidDecomposition.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedRequiredBy: []

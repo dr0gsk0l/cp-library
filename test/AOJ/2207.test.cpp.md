@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/unionfind/PotentialUnionFind.cpp
     title: library/datastructure/unionfind/PotentialUnionFind.cpp
   _extendedRequiredBy: []

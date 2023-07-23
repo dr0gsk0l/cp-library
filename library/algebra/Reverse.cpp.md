@@ -8,7 +8,7 @@ data:
   - icon: ':x:'
     path: library/tree/TreeLazy.cpp
     title: library/tree/TreeLazy.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
@@ -21,16 +21,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
