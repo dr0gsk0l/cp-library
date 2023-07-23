@@ -55,7 +55,7 @@ $C(v)$ : $v$ の子
 $\oplus$ : 可換 monoid
 
 ---
-* ```ReRooting<TREE,Data>(const TREE&T)```
+* ```ReRooting<TREE,Data>(const TREE&T)```  
 コンストラクタ  
 ```Data``` は dp の型
 
