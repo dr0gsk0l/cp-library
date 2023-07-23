@@ -16,11 +16,11 @@ struct TreeLazy{
   LazySegmentTree<Lazy> seg;
   LazySegmentTree<Lazy_r> seg_r; 
   
-  TreeLazy(const TREE&T,int r=0):T(T),hld(T),n(T.n),seg(n),seg_r(n){
+  TreeLazy(const TREE&T_,int r=0):T(T_),hld(T_),n(T_.n),seg(n),seg_r(n){
     T.build(r);
     hld_id=hld.build(r);
   }
-  TreeLazy(const TREE&T,vector<X> a,int r=0):T(T),hld(T),n(T.n){
+  TreeLazy(const TREE&T_,vector<X> a,int r=0):T(T_),hld(T_),n(T_.n){
     T.build(r);
     hld_id=hld.build(r);
     vector<X> hld_a(n);
