@@ -170,7 +170,7 @@ data:
     \ \n  }\n};\n#line 5 \"library/tree/TreeLazy.cpp\"\ntemplate<typename TREE,typename\
     \ Lazy>\nstruct TreeLazy{\n  using MX=typename Lazy::MX;\n  using MF=typename\
     \ Lazy::MF;\n  using X=typename MX::value_type;\n  using F=typename MF::value_type;\n\
-    \  using Lazy_r=LazyReverse<Lazy>;\n  int n;\n  TREE&T;\n  HLD<Tree> hld;\n  vector<int>\
+    \  using Lazy_r=LazyReverse<Lazy>;\n  int n;\n  TREE T;\n  HLD<Tree> hld;\n  vector<int>\
     \ hld_id,euler_in,euler_out;\n  LazySegmentTree<Lazy> seg;\n  LazySegmentTree<Lazy_r>\
     \ seg_r; \n  \n  TreeLazy(const TREE&T,int r=0):T(T),hld(T),n(T.n),seg(n),seg_r(n){\n\
     \    T.build(r);\n    hld_id=hld.build(r);\n  }\n  TreeLazy(const TREE&T,vector<X>\
@@ -238,7 +238,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-07-23 21:04:15+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_E.test.cpp
