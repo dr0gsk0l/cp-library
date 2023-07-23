@@ -10,7 +10,7 @@ struct TreeLazy{
   using F=typename MF::value_type;
   using Lazy_r=LazyReverse<Lazy>;
   int n;
-  TREE&T;
+  TREE T;
   HLD<Tree> hld;
   vector<int> hld_id,euler_in,euler_out;
   LazySegmentTree<Lazy> seg;
