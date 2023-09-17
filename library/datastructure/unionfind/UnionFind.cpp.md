@@ -54,16 +54,16 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/UnionFind.cpp
   requiredBy:
-  - library/graph/MinimumSpanningArborescence.cpp
   - library/graph/MinimumSpanningTree.cpp
+  - library/graph/MinimumSpanningArborescence.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/AOJ/2647.test.cpp
+  - test/AOJ/GRL_2_B.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
   - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/DataStructure/unionfind.test.cpp
-  - test/AOJ/GRL_2_B.test.cpp
-  - test/AOJ/2647.test.cpp
-  - test/AOJ/GRL_2_A.test.cpp
 documentation_of: library/datastructure/unionfind/UnionFind.cpp
 layout: document
 redirect_from:

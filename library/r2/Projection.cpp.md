@@ -103,9 +103,9 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
 documentation_of: library/r2/Projection.cpp
 layout: document
 redirect_from:

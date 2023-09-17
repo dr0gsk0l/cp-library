@@ -91,10 +91,10 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/924.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/AOJ/DSL_2_B.test.cpp
+  - test/yukicoder/924.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
 documentation_of: library/datastructure/FenwickTree.cpp
 layout: document
 redirect_from:

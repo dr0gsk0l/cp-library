@@ -147,9 +147,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp
-  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
 documentation_of: library/tree/TreeMonoid.cpp
 layout: document
 redirect_from:

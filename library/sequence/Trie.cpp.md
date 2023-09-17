@@ -121,9 +121,9 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/430_2.test.cpp
-  - test/yukicoder/430.test.cpp
   - test/AOJ/2212.test.cpp
+  - test/yukicoder/430.test.cpp
+  - test/yukicoder/430_2.test.cpp
 documentation_of: library/sequence/Trie.cpp
 layout: document
 redirect_from:

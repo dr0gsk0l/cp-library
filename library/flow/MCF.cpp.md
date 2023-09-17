@@ -170,8 +170,8 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Graph/AssignmentProblem.test.cpp
   - test/AOJ/GRL_6_B.test.cpp
+  - test/library-checker/Graph/AssignmentProblem.test.cpp
 documentation_of: library/flow/MCF.cpp
 layout: document
 redirect_from:

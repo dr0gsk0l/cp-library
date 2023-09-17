@@ -55,16 +55,16 @@ data:
   isVerificationFile: false
   path: library/algebra/group/CntSum.cpp
   requiredBy:
-  - library/algebra/lazy/AffineSum.cpp
-  - library/algebra/lazy/SetSum.cpp
   - library/algebra/lazy/AddSum.cpp
+  - library/algebra/lazy/SetSum.cpp
+  - library/algebra/lazy/AffineSum.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - test/AOJ/GRL_5_E.test.cpp
-  - test/AOJ/DSL_2_G.test.cpp
   - test/AOJ/DSL_2_I.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
+  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
 documentation_of: library/algebra/group/CntSum.cpp
 layout: document
 redirect_from:

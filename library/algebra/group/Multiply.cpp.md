@@ -38,8 +38,8 @@ data:
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/650.test.cpp
   - test/AOJ/2971.test.cpp
+  - test/yukicoder/650.test.cpp
 documentation_of: library/algebra/group/Multiply.cpp
 layout: document
 redirect_from:

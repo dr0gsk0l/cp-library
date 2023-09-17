@@ -124,8 +124,8 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   - test/AOJ/GRL_7_A.test.cpp
+  - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
 documentation_of: library/graph/matching/BipartiteMatching.cpp
 layout: document
 redirect_from:

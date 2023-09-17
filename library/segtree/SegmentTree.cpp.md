@@ -116,11 +116,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
-  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
 documentation_of: library/segtree/SegmentTree.cpp
 layout: document
 redirect_from:

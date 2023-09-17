@@ -49,7 +49,7 @@ title: ReRooting
 $n$ 頂点無向グラフ $T$ を入力にとる  
 各頂点 $r\in[n]$ に対して $r$ を根とした時の以下の $dp[r]$ を返す
 
-$dp[v] = \oplus_{c\in C(v)} f(dp[v],e_{vc})$
+$dp[v] = \oplus_{c\in C(v)} f(dp[c],e_{vc})$
 ### 補足
 $C(v)$ : $v$ の子  
 $\oplus$ : 可換 monoid

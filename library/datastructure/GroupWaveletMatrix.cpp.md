@@ -225,8 +225,8 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/924.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
 documentation_of: library/datastructure/GroupWaveletMatrix.cpp
 layout: document
 redirect_from:
