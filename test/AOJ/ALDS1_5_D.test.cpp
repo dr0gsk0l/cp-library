@@ -1,15 +1,14 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
 #include <bits/stdc++.h>
-using namespace std;
 
 #include "library/util/InversionNumber.cpp"
 
 int main()
 {
   int n;
-  cin >> n;
-  vector<int> v(n);
+  std::cin >> n;
+  std::vector<int> v(n);
   for (int i = 0; i < n; i++)
-    cin >> v[i];
-  cout << inversion_number(v) << endl;
+    std::cin >> v[i];
+  std::cout << inversion_number(v) << std::endl;
 }
