@@ -51,8 +51,8 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/DSL_2_H.test.cpp
   - test/AOJ/DSL_2_E.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
   - test/yukicoder/1038.test.cpp
 documentation_of: library/algebra/lazy/AddMin.cpp
 layout: document

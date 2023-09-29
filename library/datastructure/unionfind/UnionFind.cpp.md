@@ -59,9 +59,9 @@ data:
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/AOJ/2647.test.cpp
   - test/AOJ/GRL_2_B.test.cpp
   - test/AOJ/GRL_2_A.test.cpp
+  - test/AOJ/2647.test.cpp
   - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/DataStructure/unionfind.test.cpp
 documentation_of: library/datastructure/unionfind/UnionFind.cpp

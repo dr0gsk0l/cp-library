@@ -93,8 +93,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Matrix/Inverse.test.cpp
-  - test/library-checker/Matrix/Det.test.cpp
   - test/library-checker/Matrix/Product.test.cpp
+  - test/library-checker/Matrix/Det.test.cpp
 documentation_of: library/linearalgebra/Matrix.cpp
 layout: document
 redirect_from:

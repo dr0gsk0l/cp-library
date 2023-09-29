@@ -231,14 +231,14 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yukicoder/919.test.cpp
   - test/yukicoder/924.test.cpp
   - test/yukicoder/1332.test.cpp
-  - test/yukicoder/919.test.cpp
-  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
 documentation_of: library/datastructure/WaveletMatrix.cpp
 layout: document
 redirect_from:

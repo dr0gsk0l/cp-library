@@ -79,8 +79,8 @@ data:
   isVerificationFile: false
   path: library/geometry/Base.cpp
   requiredBy:
-  - library/geometry/Judge.cpp
   - library/geometry/UtilFunction.cpp
+  - library/geometry/Judge.cpp
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

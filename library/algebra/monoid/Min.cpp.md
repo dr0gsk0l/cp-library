@@ -44,15 +44,15 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/Min.cpp
   requiredBy:
-  - library/algebra/lazy/SetMin.cpp
   - library/algebra/lazy/AddMin.cpp
+  - library/algebra/lazy/SetMin.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/DSL_2_H.test.cpp
-  - test/AOJ/DSL_2_D.test.cpp
-  - test/AOJ/DSL_2_E.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/DSL_2_E.test.cpp
+  - test/AOJ/DSL_2_D.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
   - test/yukicoder/1038.test.cpp
 documentation_of: library/algebra/monoid/Min.cpp
 layout: document

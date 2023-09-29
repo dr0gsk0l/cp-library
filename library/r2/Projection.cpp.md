@@ -104,8 +104,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
 documentation_of: library/r2/Projection.cpp
 layout: document
 redirect_from:

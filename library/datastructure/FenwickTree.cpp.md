@@ -86,8 +86,8 @@ data:
   isVerificationFile: false
   path: library/datastructure/FenwickTree.cpp
   requiredBy:
-  - library/math/FactorialNumberSystem.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
+  - library/math/FactorialNumberSystem.cpp
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

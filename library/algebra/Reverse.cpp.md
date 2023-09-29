@@ -53,15 +53,15 @@ data:
   path: library/algebra/Reverse.cpp
   requiredBy:
   - library/algebra/lazy/Reverse.cpp
-  - library/tree/TreeLazy.cpp
   - library/tree/TreeMonoid.cpp
+  - library/tree/TreeLazy.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
   - test/yukicoder/650.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp

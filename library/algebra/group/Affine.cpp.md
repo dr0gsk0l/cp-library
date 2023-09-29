@@ -78,8 +78,8 @@ data:
   verifiedWith:
   - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
 documentation_of: library/algebra/group/Affine.cpp
 layout: document
 redirect_from:

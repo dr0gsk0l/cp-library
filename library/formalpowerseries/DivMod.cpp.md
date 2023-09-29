@@ -123,8 +123,8 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
 documentation_of: library/formalpowerseries/DivMod.cpp
 layout: document
 redirect_from:

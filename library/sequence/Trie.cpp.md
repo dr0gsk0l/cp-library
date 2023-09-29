@@ -122,8 +122,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2212.test.cpp
-  - test/yukicoder/430.test.cpp
   - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: library/sequence/Trie.cpp
 layout: document
 redirect_from:

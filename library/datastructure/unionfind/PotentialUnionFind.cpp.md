@@ -74,10 +74,10 @@ data:
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/DSL_1_B.test.cpp
   - test/AOJ/2971.test.cpp
   - test/AOJ/2207.test.cpp
   - test/AOJ/1330.test.cpp
+  - test/AOJ/DSL_1_B.test.cpp
   - test/yukicoder/1420.test.cpp
 documentation_of: library/datastructure/unionfind/PotentialUnionFind.cpp
 layout: document

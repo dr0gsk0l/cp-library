@@ -39,16 +39,16 @@ data:
   isVerificationFile: false
   path: library/bitwise/Util.cpp
   requiredBy:
+  - library/bitwise/Or.cpp
   - library/bitwise/Ranked.cpp
   - library/bitwise/Xor.cpp
   - library/bitwise/And.cpp
-  - library/bitwise/Or.cpp
   timestamp: '2023-07-02 19:12:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - test/library-checker/Convolution/SubsetConvolution.test.cpp
   - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
+  - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
 documentation_of: library/bitwise/Util.cpp
 layout: document
 redirect_from:

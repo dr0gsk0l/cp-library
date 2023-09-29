@@ -115,8 +115,8 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/DPL_3_B.test.cpp
   - test/AOJ/GRL_5_A.test.cpp
+  - test/AOJ/DPL_3_B.test.cpp
   - test/AOJ/DPL_3_C.test.cpp
   - test/yukicoder/1002.test.cpp
   - test/library-checker/Tree/CartesianTree.test.cpp

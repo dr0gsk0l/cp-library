@@ -55,8 +55,8 @@ data:
   timestamp: '2023-07-02 19:20:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/GRL_5_E.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/algebra/lazy/AddSum.cpp
 layout: document
 redirect_from:

@@ -115,14 +115,14 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
-  - test/yukicoder/1038.test.cpp
   - test/yukicoder/650.test.cpp
-  - test/library-checker/Tree/LowestCommonAncestor.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/yukicoder/1038.test.cpp
   - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
+  - test/library-checker/Tree/LowestCommonAncestor.test.cpp
 documentation_of: library/tree/Tree.cpp
 layout: document
 redirect_from:
