@@ -1,2 +1,4 @@
+exclude: [ac-library/]
+
 title: Perfect library
 theme: jekyll-theme-cayman
