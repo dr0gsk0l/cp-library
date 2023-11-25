@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   _extendedRequiredBy: []
@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AddSum.cpp
   requiredBy: []
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_G.test.cpp

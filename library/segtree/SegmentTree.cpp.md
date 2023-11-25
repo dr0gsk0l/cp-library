@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - icon: ':x:'
@@ -112,7 +112,7 @@ data:
   path: library/segtree/SegmentTree.cpp
   requiredBy:
   - library/tree/TreeMonoid.cpp
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp

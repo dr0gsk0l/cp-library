@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_11_C.test.cpp

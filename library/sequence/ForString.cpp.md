@@ -66,7 +66,7 @@ data:
   - library/sequence/AhoCorasick.cpp
   - library/sequence/RollingHash.cpp
   - library/sequence/Trie.cpp
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

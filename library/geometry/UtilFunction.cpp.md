@@ -91,7 +91,7 @@ data:
   path: library/geometry/UtilFunction.cpp
   requiredBy:
   - library/geometry/Judge.cpp
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp

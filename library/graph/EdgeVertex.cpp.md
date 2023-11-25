@@ -67,7 +67,7 @@ data:
   isVerificationFile: false
   path: library/graph/EdgeVertex.cpp
   requiredBy: []
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/EdgeVertex.cpp

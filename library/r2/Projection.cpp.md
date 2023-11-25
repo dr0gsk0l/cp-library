@@ -100,7 +100,7 @@ data:
   isVerificationFile: false
   path: library/r2/Projection.cpp
   requiredBy: []
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
     title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - icon: ':x:'
@@ -228,7 +228,7 @@ data:
   path: library/datastructure/WaveletMatrix.cpp
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp

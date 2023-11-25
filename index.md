@@ -11,10 +11,10 @@ data:
     - icon: ':question:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/group/Affine.cpp
       title: library/algebra/group/Affine.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
     - icon: ':question:'
@@ -31,7 +31,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AddSum.cpp
       title: library/algebra/lazy/AddSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AffineSum.cpp
       title: library/algebra/lazy/AffineSum.cpp
     - icon: ':heavy_check_mark:'
@@ -125,7 +125,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/Imos.cpp
       title: library/datastructure/Imos.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/SWAG.cpp
       title: library/datastructure/SWAG.cpp
     - icon: ':x:'
@@ -280,7 +280,7 @@ data:
     - icon: ':warning:'
       path: library/linearalgebra/InsertConvexHullTrick.cpp
       title: library/linearalgebra/InsertConvexHullTrick.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/linearalgebra/Linear.cpp
       title: library/linearalgebra/Linear.cpp
     - icon: ':x:'
@@ -358,7 +358,7 @@ data:
     - icon: ':question:'
       path: library/segtree/DualSegmentTree.cpp
       title: library/segtree/DualSegmentTree.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/segtree/LazySegmentTree.cpp
       title: library/segtree/LazySegmentTree.cpp
     - icon: ':question:'
@@ -389,7 +389,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/superstd/Multiset.cpp
       title: library/superstd/Multiset.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/superstd/Set.cpp
       title: library/superstd/Set.cpp
     - icon: ':warning:'
@@ -600,19 +600,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
       title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
       title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
       title: test/library-checker/DataStructure/PredecessorProblem.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
       title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
       title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
       title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
     - icon: ':x:'

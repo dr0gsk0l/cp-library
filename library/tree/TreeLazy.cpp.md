@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/Reverse.cpp
     title: library/algebra/lazy/Reverse.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   - icon: ':question:'
@@ -142,7 +142,7 @@ data:
   isVerificationFile: false
   path: library/tree/TreeLazy.cpp
   requiredBy: []
-  timestamp: '2023-11-25 18:30:09+09:00'
+  timestamp: '2023-11-25 19:56:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
