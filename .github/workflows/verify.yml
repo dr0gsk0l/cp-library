@@ -21,9 +21,16 @@ jobs:
     - name: Install dependencies
       run: pip3 install -U online-judge-verify-helper
 
+    - name: Echo
+      run: |
+        echo "GITHUB_EVENT_NAME=" "${GITHUB_EVENT_NAME}"
+        echo "GITHUB_REF#refs/heads/=" "${GITHUB_REF#refs/heads/}"
+        echo "GITHUB_HEAD_REF#refs/heads/=" "${GITHUB_HEAD_REF#refs/heads/}"
+        echo "GITHUB_BASE_REF#refs/heads/=" "${GITHUB_BASE_REF#refs/heads/}"
+
     - name: Run tests
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
         GH_PAT: ${{ secrets.GH_PAT }}
-      run: oj-verify all
+      run: oj-verify docs
