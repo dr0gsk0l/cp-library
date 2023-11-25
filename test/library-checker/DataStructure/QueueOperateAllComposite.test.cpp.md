@@ -128,7 +128,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:03:31+09:00'
+  timestamp: '2023-11-25 17:38:17+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

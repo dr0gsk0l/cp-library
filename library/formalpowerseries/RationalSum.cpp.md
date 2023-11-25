@@ -113,7 +113,7 @@ data:
   path: library/formalpowerseries/RationalSum.cpp
   requiredBy:
   - library/formalpowerseries/ComposeEXP.cpp
-  timestamp: '2023-11-25 17:03:31+09:00'
+  timestamp: '2023-11-25 17:38:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/RationalSum.cpp

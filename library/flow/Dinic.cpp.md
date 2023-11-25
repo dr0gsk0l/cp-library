@@ -144,7 +144,7 @@ data:
   path: library/flow/Dinic.cpp
   requiredBy:
   - library/graph/matching/BipartiteMatching.cpp
-  timestamp: '2023-11-25 17:03:31+09:00'
+  timestamp: '2023-11-25 17:38:17+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

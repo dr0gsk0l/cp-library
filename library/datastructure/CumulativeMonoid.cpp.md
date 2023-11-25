@@ -30,7 +30,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/CumulativeMonoid.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:03:31+09:00'
+  timestamp: '2023-11-25 17:38:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/CumulativeMonoid.cpp
