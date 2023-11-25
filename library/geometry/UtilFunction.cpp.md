@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
     path: library/geometry/Judge.cpp
     title: library/geometry/Judge.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/CGL_4_A.test.cpp
     title: test/AOJ/CGL_4_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/r2/XY.cpp\"\ntemplate<typename T>\nstruct XY{\n\
@@ -91,8 +91,8 @@ data:
   path: library/geometry/UtilFunction.cpp
   requiredBy:
   - library/geometry/Judge.cpp
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp
 documentation_of: library/geometry/UtilFunction.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   - icon: ':x:'
@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: library/util/BubbleNumber.cpp
   requiredBy: []
-  timestamp: '2023-07-23 20:46:23+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/BubbleNumber.cpp

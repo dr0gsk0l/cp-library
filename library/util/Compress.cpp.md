@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/r2/Projection.cpp
     title: library/r2/Projection.cpp
   - icon: ':warning:'
@@ -21,25 +21,25 @@ data:
   - icon: ':x:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
     title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
     title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1332.test.cpp
     title: test/yukicoder/1332.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/919.test.cpp
     title: test/yukicoder/919.test.cpp
   - icon: ':x:'
@@ -47,7 +47,7 @@ data:
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/util/Compress.cpp\"\n#define ALL_(v) v.begin(),v.end()\n\
@@ -103,23 +103,23 @@ data:
   isVerificationFile: false
   path: library/util/Compress.cpp
   requiredBy:
-  - library/util/BubbleNumber.cpp
-  - library/util/InversionNumber.cpp
+  - library/r2/Projection.cpp
   - library/datastructure/WaveletMatrix.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
-  - library/r2/Projection.cpp
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  - library/util/InversionNumber.cpp
+  - library/util/BubbleNumber.cpp
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/ALDS1_5_D.test.cpp
-  - test/yukicoder/919.test.cpp
-  - test/yukicoder/924.test.cpp
-  - test/yukicoder/1332.test.cpp
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/AOJ/ALDS1_5_D.test.cpp
+  - test/yukicoder/919.test.cpp
+  - test/yukicoder/1332.test.cpp
+  - test/yukicoder/924.test.cpp
 documentation_of: library/util/Compress.cpp
 layout: document
 redirect_from:

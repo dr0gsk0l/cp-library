@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://misawa.github.io/others/flow/dinic_time_complexity.html
@@ -144,12 +144,12 @@ data:
   path: library/flow/Dinic.cpp
   requiredBy:
   - library/graph/matching/BipartiteMatching.cpp
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/GRL_7_A.test.cpp
-  - test/AOJ/GRL_6_A.test.cpp
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
+  - test/AOJ/GRL_6_A.test.cpp
+  - test/AOJ/GRL_7_A.test.cpp
 documentation_of: library/flow/Dinic.cpp
 layout: document
 redirect_from:

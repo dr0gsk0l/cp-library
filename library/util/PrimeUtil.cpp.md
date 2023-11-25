@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/ALDS1_1_C.test.cpp
     title: test/AOJ/ALDS1_1_C.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://twitter.com/climpet/status/1598974781138694144
@@ -57,8 +57,8 @@ data:
   isVerificationFile: false
   path: library/util/PrimeUtil.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_1_C.test.cpp
 documentation_of: library/util/PrimeUtil.cpp

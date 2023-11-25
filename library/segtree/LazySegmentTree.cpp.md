@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/tree/TreeLazy.cpp
     title: library/tree/TreeLazy.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_H.test.cpp
     title: test/AOJ/DSL_2_H.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_I.test.cpp
     title: test/AOJ/DSL_2_I.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/segtree/LazySegmentTree.cpp\"\n\ntemplate<typename\
@@ -85,15 +85,15 @@ data:
   path: library/segtree/LazySegmentTree.cpp
   requiredBy:
   - library/tree/TreeLazy.cpp
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
   - test/AOJ/GRL_5_E.test.cpp
-  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/DSL_2_H.test.cpp
-  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
 documentation_of: library/segtree/LazySegmentTree.cpp
 layout: document
 redirect_from:

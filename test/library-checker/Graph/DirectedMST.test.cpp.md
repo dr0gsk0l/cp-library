@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/MinimumSpanningArborescence.cpp
     title: library/graph/MinimumSpanningArborescence.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
@@ -118,7 +118,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/DirectedMST.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/DirectedMST.test.cpp

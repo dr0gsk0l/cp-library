@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/ALDS1_14_B.test.cpp
     title: test/AOJ/ALDS1_14_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/sequence/ForString.cpp\"\ntemplate<char MARGIN>\n\
@@ -63,16 +63,16 @@ data:
   isVerificationFile: false
   path: library/sequence/ForString.cpp
   requiredBy:
-  - library/sequence/Trie.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/RollingHash.cpp
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/sequence/Trie.cpp
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/2212.test.cpp
   - test/AOJ/ALDS1_14_B.test.cpp
-  - test/yukicoder/430_2.test.cpp
+  - test/AOJ/2212.test.cpp
   - test/yukicoder/430.test.cpp
+  - test/yukicoder/430_2.test.cpp
 documentation_of: library/sequence/ForString.cpp
 layout: document
 redirect_from:

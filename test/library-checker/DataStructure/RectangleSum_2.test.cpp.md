@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/datastructure/CumulativeSum.cpp
     title: library/datastructure/CumulativeSum.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/r2/Projection.cpp
     title: library/r2/Projection.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
@@ -223,8 +223,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp
 layout: document

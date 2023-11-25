@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/matching/BipartiteMatching.cpp\"\n\n// \u91CD\
@@ -121,11 +121,11 @@ data:
   isVerificationFile: false
   path: library/graph/matching/BipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/GRL_7_A.test.cpp
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
+  - test/AOJ/GRL_7_A.test.cpp
 documentation_of: library/graph/matching/BipartiteMatching.cpp
 layout: document
 redirect_from:

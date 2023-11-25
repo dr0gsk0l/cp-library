@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/util/Subsequence.cpp
     title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/number_of_subsequences
@@ -71,8 +71,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/New/NumberOfSubsequence.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/New/NumberOfSubsequence.test.cpp
 layout: document

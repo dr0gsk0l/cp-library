@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: test/library-checker/Graph/DirectedMST.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UnionFind.cpp\"\nclass UnionFind{\n\
@@ -85,12 +85,12 @@ data:
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/GRL_2_B.test.cpp
-  - test/AOJ/2647.test.cpp
   - test/library-checker/Graph/DirectedMST.test.cpp
+  - test/AOJ/2647.test.cpp
+  - test/AOJ/GRL_2_B.test.cpp
 documentation_of: library/graph/MinimumSpanningArborescence.cpp
 layout: document
 redirect_from:

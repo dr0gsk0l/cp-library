@@ -2,23 +2,23 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/MinimumSpanningArborescence.cpp
     title: library/graph/MinimumSpanningArborescence.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/MinimumSpanningTree.cpp
     title: library/graph/MinimumSpanningTree.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/unionfind.test.cpp
     title: test/library-checker/DataStructure/unionfind.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: test/library-checker/Graph/DirectedMST.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UnionFind.cpp\"\nclass UnionFind{\n\
@@ -54,16 +54,16 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/UnionFind.cpp
   requiredBy:
-  - library/graph/MinimumSpanningTree.cpp
   - library/graph/MinimumSpanningArborescence.cpp
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  - library/graph/MinimumSpanningTree.cpp
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/GRL_2_B.test.cpp
-  - test/AOJ/GRL_2_A.test.cpp
-  - test/AOJ/2647.test.cpp
   - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/DataStructure/unionfind.test.cpp
+  - test/AOJ/2647.test.cpp
+  - test/AOJ/GRL_2_B.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
 documentation_of: library/datastructure/unionfind/UnionFind.cpp
 layout: document
 redirect_from:

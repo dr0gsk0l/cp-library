@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/ReverseGraph.cpp
     title: library/graph/ReverseGraph.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
@@ -90,8 +90,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/SCC.test.cpp
 layout: document

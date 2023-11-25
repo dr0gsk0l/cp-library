@@ -2,103 +2,103 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/flow/MCF.cpp
     title: library/flow/MCF.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/flow/NondecreasingMCF.cpp
     title: library/flow/NondecreasingMCF.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/Grid.cpp
     title: library/graph/Grid.cpp
   - icon: ':warning:'
     path: library/graph/Grid8.cpp
     title: library/graph/Grid8.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/matching/WeightedBipartiteMatching.cpp
     title: library/graph/matching/WeightedBipartiteMatching.cpp
   - icon: ':warning:'
     path: library/graph/shortest_path/01BFS.cpp
     title: library/graph/shortest_path/01BFS.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/shortest_path/Dial.cpp
     title: library/graph/shortest_path/Dial.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/3297.test.cpp
     title: test/AOJ/3297.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/ALDS1_12_B.test.cpp
     title: test/AOJ/ALDS1_12_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DPL_3_B.test.cpp
     title: test/AOJ/DPL_3_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DPL_3_C.test.cpp
     title: test/AOJ/DPL_3_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_1_B.test.cpp
     title: test/AOJ/GRL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_1_C.test.cpp
     title: test/AOJ/GRL_1_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_6_B.test.cpp
     title: test/AOJ/GRL_6_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Graph/AssignmentProblem.test.cpp
     title: test/library-checker/Graph/AssignmentProblem.test.cpp
   - icon: ':x:'
     path: test/library-checker/Graph/DirectedMST.test.cpp
     title: test/library-checker/Graph/DirectedMST.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Graph/ShortestPath.test.cpp
     title: test/library-checker/Graph/ShortestPath.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate<typename T>\n\
@@ -180,40 +180,40 @@ data:
   isVerificationFile: false
   path: library/graph/WeightedGraph.cpp
   requiredBy:
-  - library/graph/Grid.cpp
-  - library/graph/matching/WeightedBipartiteMatching.cpp
-  - library/graph/matching/BipartiteMatching.cpp
-  - library/graph/Grid8.cpp
-  - library/graph/shortest_path/Dial.cpp
-  - library/graph/shortest_path/01BFS.cpp
-  - library/flow/Dinic.cpp
-  - library/flow/MCF.cpp
-  - library/flow/NondecreasingMCF.cpp
   - library/tree/WeightedTree.cpp
   - library/tree/CartesianTree.cpp
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  - library/graph/shortest_path/Dial.cpp
+  - library/graph/shortest_path/01BFS.cpp
+  - library/graph/Grid.cpp
+  - library/graph/Grid8.cpp
+  - library/graph/matching/BipartiteMatching.cpp
+  - library/graph/matching/WeightedBipartiteMatching.cpp
+  - library/flow/MCF.cpp
+  - library/flow/Dinic.cpp
+  - library/flow/NondecreasingMCF.cpp
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/GRL_5_A.test.cpp
-  - test/AOJ/GRL_6_B.test.cpp
-  - test/AOJ/GRL_2_B.test.cpp
-  - test/AOJ/2212.test.cpp
-  - test/AOJ/GRL_2_A.test.cpp
-  - test/AOJ/2647.test.cpp
-  - test/AOJ/DPL_3_B.test.cpp
-  - test/AOJ/ALDS1_12_B.test.cpp
-  - test/AOJ/DPL_3_C.test.cpp
-  - test/AOJ/3297.test.cpp
-  - test/AOJ/GRL_7_A.test.cpp
-  - test/AOJ/GRL_6_A.test.cpp
-  - test/AOJ/GRL_1_C.test.cpp
-  - test/AOJ/GRL_1_B.test.cpp
-  - test/yukicoder/1002.test.cpp
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-  - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/Graph/ShortestPath.test.cpp
   - test/library-checker/Graph/AssignmentProblem.test.cpp
+  - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/Tree/CartesianTree.test.cpp
+  - test/AOJ/GRL_6_A.test.cpp
+  - test/AOJ/2647.test.cpp
+  - test/AOJ/GRL_1_B.test.cpp
+  - test/AOJ/3297.test.cpp
+  - test/AOJ/ALDS1_12_B.test.cpp
+  - test/AOJ/DPL_3_B.test.cpp
+  - test/AOJ/2212.test.cpp
+  - test/AOJ/GRL_5_A.test.cpp
+  - test/AOJ/DPL_3_C.test.cpp
+  - test/AOJ/GRL_2_B.test.cpp
+  - test/AOJ/GRL_1_C.test.cpp
+  - test/AOJ/GRL_6_B.test.cpp
+  - test/AOJ/GRL_7_A.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
+  - test/yukicoder/1002.test.cpp
 documentation_of: library/graph/WeightedGraph.cpp
 layout: document
 redirect_from:

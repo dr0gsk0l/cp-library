@@ -12,7 +12,11 @@ data:
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
-  attributes: {}
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/division_of_polynomials
+    links:
+    - https://judge.yosupo.jp/problem/division_of_polynomials
   bundledCode: "#line 1 \"test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/division_of_polynomials\"\n\
     #include <bits/stdc++.h>\nusing namespace std;\n#define REP(i,n) for(int i=0;i<(n);i++)\n\
@@ -130,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   requiredBy: []
-  timestamp: '2023-07-11 07:06:07+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp

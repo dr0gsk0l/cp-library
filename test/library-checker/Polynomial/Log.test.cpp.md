@@ -9,7 +9,11 @@ data:
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
-  attributes: {}
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/log_of_formal_power_series
+    links:
+    - https://judge.yosupo.jp/problem/log_of_formal_power_series
   bundledCode: "#line 1 \"test/library-checker/Polynomial/Log.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include <library/formalpowerseries/Base.cpp>\n\
@@ -34,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Log.test.cpp
   requiredBy: []
-  timestamp: '2023-07-11 07:06:07+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Log.test.cpp

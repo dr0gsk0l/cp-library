@@ -2,37 +2,37 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/lazy/AffineSum.cpp
     title: library/algebra/lazy/AffineSum.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/linearalgebra/ConvexHullTrick.cpp
     title: library/linearalgebra/ConvexHullTrick.cpp
   - icon: ':warning:'
     path: library/linearalgebra/InsertConvexHullTrick.cpp
     title: library/linearalgebra/InsertConvexHullTrick.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/2012.test.cpp
     title: test/yukicoder/2012.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/Linear.cpp\"\ntemplate<typename T>\n\
@@ -83,18 +83,18 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/Linear.cpp
   requiredBy:
-  - library/algebra/lazy/AffineSum.cpp
-  - library/algebra/group/Affine.cpp
-  - library/linearalgebra/ConvexHullTrick.cpp
   - library/linearalgebra/InsertConvexHullTrick.cpp
-  timestamp: '2023-07-02 19:12:22+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/linearalgebra/ConvexHullTrick.cpp
+  - library/algebra/group/Affine.cpp
+  - library/algebra/lazy/AffineSum.cpp
+  timestamp: '2023-11-25 17:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/yukicoder/2012.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/yukicoder/2012.test.cpp
 documentation_of: library/linearalgebra/Linear.cpp
 layout: document
 redirect_from:

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/tree/CentroidDecomposition.cpp
     title: library/tree/CentroidDecomposition.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedRequiredBy: []
@@ -15,7 +15,11 @@ data:
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
-  attributes: {}
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
+    links:
+    - https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
   bundledCode: "#line 1 \"test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include <atcoder/convolution>\n\
@@ -117,7 +121,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   requiredBy: []
-  timestamp: '2023-07-11 07:06:07+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

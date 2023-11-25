@@ -78,7 +78,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/SlopeTrick.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:12:22+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1077.test.cpp

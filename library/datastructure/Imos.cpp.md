@@ -24,7 +24,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/Imos.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:12:22+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/Imos.cpp

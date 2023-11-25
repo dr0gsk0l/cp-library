@@ -118,7 +118,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/ComposeEXP.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:20:41+09:00'
+  timestamp: '2023-11-25 17:03:31+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/ComposeEXP.cpp
