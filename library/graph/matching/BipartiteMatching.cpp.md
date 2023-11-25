@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/matching/BipartiteMatching.cpp\"\n\n// \u91CD\
@@ -121,8 +121,8 @@ data:
   isVerificationFile: false
   path: library/graph/matching/BipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-11-25 18:30:09+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   - test/AOJ/GRL_7_A.test.cpp

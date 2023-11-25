@@ -2,20 +2,20 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/MinimumSpanningArborescence.cpp
     title: library/graph/MinimumSpanningArborescence.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/MinimumSpanningTree.cpp
     title: library/graph/MinimumSpanningTree.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: test/library-checker/Graph/DirectedMST.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UnionFind.cpp\"\nclass UnionFind{\n\
@@ -56,8 +56,8 @@ data:
   requiredBy:
   - library/graph/MinimumSpanningArborescence.cpp
   - library/graph/MinimumSpanningTree.cpp
-  timestamp: '2023-11-25 17:38:17+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-11-25 18:30:09+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/DataStructure/unionfind.test.cpp

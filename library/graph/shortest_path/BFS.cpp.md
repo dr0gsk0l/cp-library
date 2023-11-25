@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_11_C.test.cpp
     title: test/AOJ/ALDS1_11_C.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/shortest_path/BFS.cpp\"\ntemplate<typename\
@@ -26,8 +26,8 @@ data:
   isVerificationFile: false
   path: library/graph/shortest_path/BFS.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-11-25 18:30:09+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_11_C.test.cpp
 documentation_of: library/graph/shortest_path/BFS.cpp

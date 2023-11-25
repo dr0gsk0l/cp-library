@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   - icon: ':x:'
@@ -78,7 +78,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AffineSum.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
+  timestamp: '2023-11-25 18:30:09+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

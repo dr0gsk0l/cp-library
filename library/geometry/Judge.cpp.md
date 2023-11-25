@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/UtilFunction.cpp
     title: library/geometry/UtilFunction.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy: []
@@ -108,7 +108,7 @@ data:
   isVerificationFile: false
   path: library/geometry/Judge.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
+  timestamp: '2023-11-25 18:30:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/Judge.cpp

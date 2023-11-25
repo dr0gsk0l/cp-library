@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
   _extendedRequiredBy: []
@@ -92,7 +92,7 @@ data:
   isVerificationFile: false
   path: library/math/FactorialNumberSystem.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
+  timestamp: '2023-11-25 18:30:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/FactorialNumberSystem.cpp

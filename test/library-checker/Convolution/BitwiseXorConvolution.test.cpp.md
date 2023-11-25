@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Xor.cpp
     title: library/bitwise/Xor.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -85,8 +85,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-11-25 18:30:09+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
 layout: document

@@ -61,7 +61,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/String/RunEnumerate.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 17:38:17+09:00'
+  timestamp: '2023-11-25 18:30:09+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/String/RunEnumerate.test.cpp
