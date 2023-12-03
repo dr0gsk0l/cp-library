@@ -1,10 +1,12 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
+#define PROBLEM                                                                \
+  "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
 #include <bits/stdc++.h>
+
+using namespace std;
 
 #include "library/util/InversionNumber.cpp"
 
-int main()
-{
+int main() {
   int n;
   std::cin >> n;
   std::vector<int> v(n);
