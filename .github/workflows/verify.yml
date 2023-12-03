@@ -34,4 +34,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
         GH_PAT: ${{ secrets.GH_PAT }}
-      run: oj-verify all
+      run: oj-verify all --timeout 100000
+
+    # - name: Run yukicoder
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #     YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
+    #     GH_PAT: ${{ secrets.GH_PAT }}
+    #   run: oj-verify run test/yukicoder/117.test.cpp
+
