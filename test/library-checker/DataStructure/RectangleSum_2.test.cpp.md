@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/datastructure/CumulativeSum.cpp
     title: library/datastructure/CumulativeSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
   - icon: ':heavy_check_mark:'
@@ -16,7 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
@@ -223,7 +223,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 21:15:11+09:00'
+  timestamp: '2023-12-04 07:28:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp

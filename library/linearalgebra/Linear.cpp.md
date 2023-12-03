@@ -87,7 +87,7 @@ data:
   - library/linearalgebra/ConvexHullTrick.cpp
   - library/algebra/group/Affine.cpp
   - library/algebra/lazy/AffineSum.cpp
-  timestamp: '2023-12-03 21:15:11+09:00'
+  timestamp: '2023-12-04 07:28:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

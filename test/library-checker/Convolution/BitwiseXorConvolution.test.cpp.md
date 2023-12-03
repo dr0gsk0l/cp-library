@@ -85,7 +85,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 21:15:11+09:00'
+  timestamp: '2023-12-04 07:28:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp

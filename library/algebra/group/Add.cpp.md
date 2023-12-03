@@ -8,10 +8,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
   - icon: ':warning:'
@@ -78,12 +78,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/group/Add.cpp\"\ntemplate<typename X>\n\
@@ -111,8 +111,8 @@ data:
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2023-12-03 21:15:11+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-12-04 07:28:17+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

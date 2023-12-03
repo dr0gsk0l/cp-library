@@ -137,7 +137,7 @@ data:
   isVerificationFile: false
   path: library/graph/matching/WeightedBipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2023-12-03 21:15:11+09:00'
+  timestamp: '2023-12-04 07:28:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp

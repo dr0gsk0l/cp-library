@@ -8,7 +8,7 @@ data:
       title: library/algebra/Reverse.cpp
   - name: library/algebra/group
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
     - icon: ':heavy_check_mark:'
@@ -113,13 +113,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/datastructure/Doubling.cpp
       title: library/datastructure/Doubling.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/FenwickTree.cpp
       title: library/datastructure/FenwickTree.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/FullyIndexableDictionary.cpp
       title: library/datastructure/FullyIndexableDictionary.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/GroupWaveletMatrix.cpp
       title: library/datastructure/GroupWaveletMatrix.cpp
     - icon: ':warning:'
@@ -131,7 +131,7 @@ data:
     - icon: ':x:'
       path: library/datastructure/SlopeTrick.cpp
       title: SlopeTrick
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/WaveletMatrix.cpp
       title: library/datastructure/WaveletMatrix.cpp
   - name: library/datastructure/binary_search_tree
@@ -381,6 +381,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/sequence/Trie.cpp
       title: library/sequence/Trie.cpp
+  - name: library/setpowerseries
+    pages:
+    - icon: ':warning:'
+      path: library/setpowerseries/Base.cpp
+      title: library/setpowerseries/Base.cpp
+    - icon: ':warning:'
+      path: library/setpowerseries/Compose.cpp
+      title: library/setpowerseries/Compose.cpp
   - name: library/superstd
     pages:
     - icon: ':warning:'
@@ -458,7 +466,7 @@ data:
     - icon: ':warning:'
       path: library/util/BubbleNumber.cpp
       title: library/util/BubbleNumber.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/util/Compress.cpp
       title: library/util/Compress.cpp
     - icon: ':warning:'
@@ -703,6 +711,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/TaylorShift.test.cpp
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
+  - name: test/library-checker/SPS
+    pages:
+    - icon: ':x:'
+      path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+      title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - name: test/library-checker/String
     pages:
     - icon: ':heavy_check_mark:'
@@ -784,7 +797,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/919.test.cpp
       title: test/yukicoder/919.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/924.test.cpp
       title: test/yukicoder/924.test.cpp
 layout: toppage

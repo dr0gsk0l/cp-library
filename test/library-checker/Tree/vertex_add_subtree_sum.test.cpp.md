@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':heavy_check_mark:'
@@ -202,7 +202,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 21:15:11+09:00'
+  timestamp: '2023-12-04 07:28:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

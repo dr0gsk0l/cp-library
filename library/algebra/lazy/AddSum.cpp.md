@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':heavy_check_mark:'
@@ -52,7 +52,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AddSum.cpp
   requiredBy: []
-  timestamp: '2023-12-03 21:15:11+09:00'
+  timestamp: '2023-12-04 07:28:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_G.test.cpp
