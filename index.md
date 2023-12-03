@@ -11,7 +11,7 @@ data:
     - icon: ':question:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
-    - icon: ':question:'
+    - icon: ':x:'
       path: library/algebra/group/Affine.cpp
       title: library/algebra/group/Affine.cpp
     - icon: ':question:'
@@ -280,7 +280,7 @@ data:
     - icon: ':warning:'
       path: library/linearalgebra/InsertConvexHullTrick.cpp
       title: library/linearalgebra/InsertConvexHullTrick.cpp
-    - icon: ':question:'
+    - icon: ':x:'
       path: library/linearalgebra/Linear.cpp
       title: library/linearalgebra/Linear.cpp
     - icon: ':x:'
@@ -600,7 +600,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
       title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
       title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     - icon: ':x:'

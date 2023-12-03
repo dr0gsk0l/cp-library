@@ -88,7 +88,7 @@ data:
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2023-12-03 15:49:28+09:00'
+  timestamp: '2023-12-03 16:05:20+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum.test.cpp

@@ -89,7 +89,7 @@ data:
   requiredBy:
   - library/tree/TreeLazy.cpp
   - library/tree/TreeMonoid.cpp
-  timestamp: '2023-12-03 15:49:28+09:00'
+  timestamp: '2023-12-03 16:05:20+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

@@ -62,43 +62,42 @@ data:
     using vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing pi = ptt<int>;\n\
     using pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\n\
     using pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n#line 4 \"library/template/input.hpp\"\
-    \n\nTYPES(T)\nvoid input(T &...a) { (cin >> ... >> a); }\n\n#define INPUT(T, ...)\
-    \                                                          \\\n  T __VA_ARGS__;\
+    \n\nTYPES(T)\nvoid input(T &...a) { (std::cin >> ... >> a); }\n\n#define INPUT(T,\
+    \ ...)                                                          \\\n  T __VA_ARGS__;\
     \                                                               \\\n  input(__VA_ARGS__);\n\
     \n#define INT(...) INPUT(int, __VA_ARGS__)\n#define STR(...) INPUT(string, __VA_ARGS__)\n\
     #define LL(...) INPUT(long long, __VA_ARGS__)\n#define CHR(...) INPUT(char, __VA_ARGS__)\n\
     #define DBL(...) INPUT(double, __VA_ARGS__)\n\n#define VI2(n, v)             \
     \                                                 \\\n  vi v(n);             \
-    \                                                        \\\n  cin >> v;\n#define\
+    \                                                        \\\n  input(v);\n#define\
     \ VI3(n, v, w)                                                           \\\n\
     \  vi v(n), w(n);                                                            \
-    \   \\\n  cin >> v >> w;\n#define VI4(n, v, w, x)                            \
-    \                            \\\n  vi v(n), w(n), x(n);                      \
-    \                                   \\\n  cin >> v >> w >> x;\n#define VI(...)\
-    \ overload5(__VA_ARGS__, VI4, VI3, VI2)(__VA_ARGS__)\n\n#define VLL2(n, v)   \
-    \                                                          \\\n  vll v(n);   \
-    \                                                                 \\\n  cin >>\
-    \ v;\n#define VLL3(n, v, w)                                                  \
-    \        \\\n  vll v(n), w(n);                                               \
-    \               \\\n  cin >> v >> w;\n#define VLL4(n, v, w, x)               \
-    \                                        \\\n  vll v(n), w(n), x(n);         \
-    \                                               \\\n  cin >> v >> w >> x;\n#define\
-    \ VLL(...) overload5(__VA_ARGS__, VLL4, VLL3, VLL2)(__VA_ARGS__)\n\n#define VS2(n,\
-    \ v)                                                              \\\n  vs v(n);\
-    \                                                                     \\\n  cin\
-    \ >> v;\n#define VS3(n, v, w)                                                \
-    \           \\\n  vs v(n), w(n);                                             \
-    \                  \\\n  cin >> v >> w;\n#define VS4(n, v, w, x)             \
-    \                                           \\\n  vs v(n), w(n), x(n);       \
-    \                                                  \\\n  cin >> v >> w >> x;\n\
-    #define VS(...) overload5(__VA_ARGS__, VS4, VS3, VS2)(__VA_ARGS__)\n\n#define\
-    \ VVI(n, m, v)                                                           \\\n\
-    \  vvi v(n, vi(m));                                                          \
-    \   \\\n  std::cin >> v;\n\n#define VVLL(n, m, v)                            \
-    \                              \\\n  vvll v(n, vll(m));                      \
-    \                                     \\\n  std::cin >> v;\n"
+    \   \\\n  input(v, w);\n#define VI4(n, v, w, x)                              \
+    \                          \\\n  vi v(n), w(n), x(n);                        \
+    \                                 \\\n  input(v, w, x);\n#define VI(...) overload5(__VA_ARGS__,\
+    \ VI4, VI3, VI2)(__VA_ARGS__)\n\n#define VLL2(n, v)                          \
+    \                                   \\\n  vll v(n);                          \
+    \                                          \\\n  input(v);\n#define VLL3(n, v,\
+    \ w)                                                          \\\n  vll v(n),\
+    \ w(n);                                                              \\\n  input(v,\
+    \ w);\n#define VLL4(n, v, w, x)                                              \
+    \         \\\n  vll v(n), w(n), x(n);                                        \
+    \                \\\n  input(v, w, x);\n#define VLL(...) overload5(__VA_ARGS__,\
+    \ VLL4, VLL3, VLL2)(__VA_ARGS__)\n\n#define VS2(n, v)                        \
+    \                                      \\\n  vs v(n);                        \
+    \                                             \\\n  input(v);\n#define VS3(n,\
+    \ v, w)                                                           \\\n  vs v(n),\
+    \ w(n);                                                               \\\n  input(v,\
+    \ w);\n#define VS4(n, v, w, x)                                               \
+    \         \\\n  vs v(n), w(n), x(n);                                         \
+    \                \\\n  input(v, w, x);\n#define VS(...) overload5(__VA_ARGS__,\
+    \ VS4, VS3, VS2)(__VA_ARGS__)\n\n#define VVI(n, m, v)                        \
+    \                                   \\\n  vvi v(n, vi(m));                   \
+    \                                          \\\n  input(v);\n\n#define VVLL(n,\
+    \ m, v)                                                          \\\n  vvll v(n,\
+    \ vll(m));                                                           \\\n  input(v);\n"
   code: "#include \"library/template/base.hpp\"\n#include \"library/template/macro.hpp\"\
-    \n#include \"library/template/type.hpp\"\n\nTYPES(T)\nvoid input(T &...a) { (cin\
+    \n#include \"library/template/type.hpp\"\n\nTYPES(T)\nvoid input(T &...a) { (std::cin\
     \ >> ... >> a); }\n\n#define INPUT(T, ...)                                   \
     \                       \\\n  T __VA_ARGS__;                                 \
     \                              \\\n  input(__VA_ARGS__);\n\n#define INT(...) INPUT(int,\
@@ -106,34 +105,33 @@ data:
     \ long, __VA_ARGS__)\n#define CHR(...) INPUT(char, __VA_ARGS__)\n#define DBL(...)\
     \ INPUT(double, __VA_ARGS__)\n\n#define VI2(n, v)                            \
     \                                  \\\n  vi v(n);                            \
-    \                                         \\\n  cin >> v;\n#define VI3(n, v, w)\
+    \                                         \\\n  input(v);\n#define VI3(n, v, w)\
     \                                                           \\\n  vi v(n), w(n);\
-    \                                                               \\\n  cin >> v\
-    \ >> w;\n#define VI4(n, v, w, x)                                             \
-    \           \\\n  vi v(n), w(n), x(n);                                       \
-    \                  \\\n  cin >> v >> w >> x;\n#define VI(...) overload5(__VA_ARGS__,\
+    \                                                               \\\n  input(v,\
+    \ w);\n#define VI4(n, v, w, x)                                               \
+    \         \\\n  vi v(n), w(n), x(n);                                         \
+    \                \\\n  input(v, w, x);\n#define VI(...) overload5(__VA_ARGS__,\
     \ VI4, VI3, VI2)(__VA_ARGS__)\n\n#define VLL2(n, v)                          \
     \                                   \\\n  vll v(n);                          \
-    \                                          \\\n  cin >> v;\n#define VLL3(n, v,\
+    \                                          \\\n  input(v);\n#define VLL3(n, v,\
     \ w)                                                          \\\n  vll v(n),\
-    \ w(n);                                                              \\\n  cin\
-    \ >> v >> w;\n#define VLL4(n, v, w, x)                                       \
-    \                \\\n  vll v(n), w(n), x(n);                                 \
-    \                       \\\n  cin >> v >> w >> x;\n#define VLL(...) overload5(__VA_ARGS__,\
+    \ w(n);                                                              \\\n  input(v,\
+    \ w);\n#define VLL4(n, v, w, x)                                              \
+    \         \\\n  vll v(n), w(n), x(n);                                        \
+    \                \\\n  input(v, w, x);\n#define VLL(...) overload5(__VA_ARGS__,\
     \ VLL4, VLL3, VLL2)(__VA_ARGS__)\n\n#define VS2(n, v)                        \
     \                                      \\\n  vs v(n);                        \
-    \                                             \\\n  cin >> v;\n#define VS3(n,\
+    \                                             \\\n  input(v);\n#define VS3(n,\
     \ v, w)                                                           \\\n  vs v(n),\
-    \ w(n);                                                               \\\n  cin\
-    \ >> v >> w;\n#define VS4(n, v, w, x)                                        \
-    \                \\\n  vs v(n), w(n), x(n);                                  \
-    \                       \\\n  cin >> v >> w >> x;\n#define VS(...) overload5(__VA_ARGS__,\
+    \ w(n);                                                               \\\n  input(v,\
+    \ w);\n#define VS4(n, v, w, x)                                               \
+    \         \\\n  vs v(n), w(n), x(n);                                         \
+    \                \\\n  input(v, w, x);\n#define VS(...) overload5(__VA_ARGS__,\
     \ VS4, VS3, VS2)(__VA_ARGS__)\n\n#define VVI(n, m, v)                        \
     \                                   \\\n  vvi v(n, vi(m));                   \
-    \                                          \\\n  std::cin >> v;\n\n#define VVLL(n,\
+    \                                          \\\n  input(v);\n\n#define VVLL(n,\
     \ m, v)                                                          \\\n  vvll v(n,\
-    \ vll(m));                                                           \\\n  std::cin\
-    \ >> v;\n"
+    \ vll(m));                                                           \\\n  input(v);\n"
   dependsOn:
   - library/template/base.hpp
   - library/template/macro.hpp
@@ -141,7 +139,7 @@ data:
   isVerificationFile: false
   path: library/template/input.hpp
   requiredBy: []
-  timestamp: '2023-12-03 15:49:28+09:00'
+  timestamp: '2023-12-03 16:05:20+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/input.hpp
