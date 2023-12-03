@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy:
@@ -91,7 +91,7 @@ data:
   path: library/geometry/UtilFunction.cpp
   requiredBy:
   - library/geometry/Judge.cpp
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp

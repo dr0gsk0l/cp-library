@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/MCF.cpp
     title: library/flow/MCF.cpp
   - icon: ':question:'
@@ -123,7 +123,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_6_B.test.cpp

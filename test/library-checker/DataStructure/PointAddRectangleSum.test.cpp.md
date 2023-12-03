@@ -16,10 +16,10 @@ data:
   - icon: ':question:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/Projection.cpp
     title: library/r2/Projection.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   - icon: ':question:'
@@ -272,7 +272,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

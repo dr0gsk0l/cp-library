@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   - icon: ':question:'
@@ -12,15 +12,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/util/Compress.cpp\"\n#define ALL_(v) v.begin(),v.end()\n\
@@ -100,8 +100,8 @@ data:
   isVerificationFile: false
   path: library/r2/Projection.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp

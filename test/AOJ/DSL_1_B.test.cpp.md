@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/unionfind/PotentialUnionFind.cpp
     title: library/datastructure/unionfind/PotentialUnionFind.cpp
   _extendedRequiredBy: []
@@ -66,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_B.test.cpp

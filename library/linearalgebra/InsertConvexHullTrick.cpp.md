@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/InsertConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/linearalgebra/InsertConvexHullTrick.cpp

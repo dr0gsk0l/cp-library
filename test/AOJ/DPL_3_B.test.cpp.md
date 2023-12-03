@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedRequiredBy: []
@@ -113,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DPL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DPL_3_B.test.cpp

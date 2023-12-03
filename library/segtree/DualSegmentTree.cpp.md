@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_E.test.cpp
     title: test/AOJ/DSL_2_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/segtree/DualSegmentTree.cpp\"\ntemplate<typename\
@@ -54,8 +54,8 @@ data:
   isVerificationFile: false
   path: library/segtree/DualSegmentTree.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_D.test.cpp
   - test/AOJ/DSL_2_E.test.cpp

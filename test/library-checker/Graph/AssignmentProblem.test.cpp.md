@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/MCF.cpp
     title: library/flow/MCF.cpp
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/matching/WeightedBipartiteMatching.cpp
     title: library/graph/matching/WeightedBipartiteMatching.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/assignment
@@ -145,8 +145,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/AssignmentProblem.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/AssignmentProblem.test.cpp
 layout: document

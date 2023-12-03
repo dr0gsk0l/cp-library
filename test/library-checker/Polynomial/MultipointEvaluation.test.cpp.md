@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/Base.cpp
     title: library/formalpowerseries/Base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/DivMod.cpp
     title: library/formalpowerseries/DivMod.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/MultipointEvaluation.cpp
     title: library/formalpowerseries/MultipointEvaluation.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
@@ -143,8 +143,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
 layout: document

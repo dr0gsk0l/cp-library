@@ -5,13 +5,13 @@ data:
   - icon: ':warning:'
     path: library/formalpowerseries/ComposeEXP.cpp
     title: library/formalpowerseries/ComposeEXP.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/DivMod.cpp
     title: library/formalpowerseries/DivMod.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/MultipointEvaluation.cpp
     title: library/formalpowerseries/MultipointEvaluation.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/Prod.cpp
     title: library/formalpowerseries/Prod.cpp
   - icon: ':warning:'
@@ -21,36 +21,36 @@ data:
     path: library/formalpowerseries/Sqrt.cpp
     title: library/formalpowerseries/Sqrt.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Composition.test.cpp
     title: test/library-checker/Polynomial/Composition.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Exp.test.cpp
     title: test/library-checker/Polynomial/Exp.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Inv.test.cpp
     title: test/library-checker/Polynomial/Inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Log.test.cpp
     title: test/library-checker/Polynomial/Log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Pow.test.cpp
     title: test/library-checker/Polynomial/Pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
     title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/TaylorShift.test.cpp
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/formalpowerseries/Base.cpp\"\n#define REP_(i,n)\
@@ -227,8 +227,8 @@ data:
   - library/formalpowerseries/DivMod.cpp
   - library/formalpowerseries/MultipointEvaluation.cpp
   - library/formalpowerseries/Prod.cpp
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - test/library-checker/Polynomial/Pow.test.cpp

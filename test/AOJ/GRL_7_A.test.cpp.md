@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
   _extendedRequiredBy: []
@@ -122,7 +122,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_7_A.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_7_A.test.cpp

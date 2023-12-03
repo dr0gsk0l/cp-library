@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetMin.cpp
     title: library/algebra/lazy/SetMin.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Min.cpp
     title: library/algebra/monoid/Min.cpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Set.cpp
     title: library/algebra/monoid/Set.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/DualSegmentTree.cpp
     title: library/segtree/DualSegmentTree.cpp
   _extendedRequiredBy: []
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_D.test.cpp

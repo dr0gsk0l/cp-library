@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/MCF.cpp
     title: library/flow/MCF.cpp
   - icon: ':question:'
@@ -9,12 +9,12 @@ data:
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/AssignmentProblem.test.cpp
     title: test/library-checker/Graph/AssignmentProblem.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate<typename T>\n\
@@ -137,8 +137,8 @@ data:
   isVerificationFile: false
   path: library/graph/matching/WeightedBipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp
 documentation_of: library/graph/matching/WeightedBipartiteMatching.cpp

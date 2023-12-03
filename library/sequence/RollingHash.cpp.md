@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/mod/Modint61.cpp
     title: library/mod/Modint61.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
   _extendedRequiredBy: []
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: library/sequence/RollingHash.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

@@ -18,7 +18,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/unionfind.test.cpp
     title: test/library-checker/DataStructure/unionfind.test.cpp
   - icon: ':x:'
@@ -56,7 +56,7 @@ data:
   requiredBy:
   - library/graph/MinimumSpanningArborescence.cpp
   - library/graph/MinimumSpanningTree.cpp
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp

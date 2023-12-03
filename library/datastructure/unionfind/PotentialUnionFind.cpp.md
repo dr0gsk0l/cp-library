@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1420.test.cpp
     title: test/yukicoder/1420.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/datastructure/unionfind/PotentialUnionFind.cpp\"\
@@ -71,8 +71,8 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.cpp
   requiredBy: []
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/1330.test.cpp
   - test/AOJ/DSL_1_B.test.cpp

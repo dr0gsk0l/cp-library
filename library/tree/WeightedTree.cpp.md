@@ -5,7 +5,7 @@ data:
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
   _extendedVerifiedWith:
@@ -18,15 +18,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate<typename T>\n\
@@ -112,8 +112,8 @@ data:
   path: library/tree/WeightedTree.cpp
   requiredBy:
   - library/tree/CartesianTree.cpp
-  timestamp: '2023-12-03 16:05:20+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-12-03 21:15:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp
   - test/AOJ/DPL_3_B.test.cpp

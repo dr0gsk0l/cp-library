@@ -43,7 +43,7 @@ data:
   - library/bitwise/Xor.cpp
   - library/bitwise/Ranked.cpp
   - library/bitwise/And.cpp
-  timestamp: '2023-12-03 16:05:20+09:00'
+  timestamp: '2023-12-03 21:15:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Convolution/SubsetConvolution.test.cpp
