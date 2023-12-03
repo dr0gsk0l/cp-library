@@ -2,26 +2,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "library/datastructure/Doubling.cpp"
 #include "library/algebra/group/Add.cpp"
+#include "library/datastructure/Doubling.cpp"
 
-using ll=long long;
+using ll = long long;
 
-int main(){
+int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  
-  int n;cin>>n;
-  Doubling<GroupAdd<ll>,40> db(n);
 
-  for(int i=0;i<n;i++){
-    int a;cin>>a;
-    db.add_arc(i,(i+a)%n,a);
+  int n;
+  cin >> n;
+  Doubling<GroupAdd<ll>, 40> db(n);
+
+  for (int i = 0; i < n; i++) {
+    int a;
+    cin >> a;
+    db.add_arc(i, (i + a) % n, a);
   }
 
-  int q;cin>>q;
-  while(q--){
-    ll k;cin>>k;
-    cout<< db.calc(0,k).second <<"\n";
+  int q;
+  cin >> q;
+  while (q--) {
+    ll k;
+    cin >> k;
+    cout << db.calc(0, k).second << "\n";
   }
 }
