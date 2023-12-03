@@ -4,22 +4,23 @@ data:
   - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/util/InversionNumber.cpp
     title: library/util/InversionNumber.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
-  bundledCode: "#line 1 \"test/AOJ/ALDS1_5_D.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
-    \n#include <bits/stdc++.h>\n\n#line 1 \"library/util/InversionNumber.cpp\"\n#include\
-    \ <atcoder/fenwicktree>\nusing namespace atcoder;\n\n#line 2 \"library/util/Compress.cpp\"\
+  bundledCode: "#line 1 \"test/AOJ/ALDS1_5_D.test.cpp\"\n#define PROBLEM         \
+    \                                                       \\\n  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
+    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#line 1 \"library/util/InversionNumber.cpp\"\
+    \n#include <atcoder/fenwicktree>\nusing namespace atcoder;\n\n#line 2 \"library/util/Compress.cpp\"\
     \n#define ALL_(v) v.begin(),v.end()\ntemplate<typename T,bool Sentinel=false>\n\
     class Compress{\n  vector<T> v;\n  bool prepared;\npublic:\n  Compress():prepared(false){\n\
     \    if constexpr(Sentinel){\n      static_assert(std::numeric_limits<T>::is_specialized,\"\
@@ -47,14 +48,15 @@ data:
     \n\ntemplate <typename T>\nlong long inversion_number(const vector<T> &v){\n \
     \ Compress cmp(v);\n  fenwick_tree<int> ft(cmp.size());\n  long long res=0;\n\
     \  for(int i=int(v.size())-1;i>=0;i--){\n    int j=cmp[v[i]];\n    res+=ft.sum(0,j);\n\
-    \    ft.add(j,1);\n  }\n  return res;\n}\n#line 5 \"test/AOJ/ALDS1_5_D.test.cpp\"\
-    \n\nint main()\n{\n  int n;\n  std::cin >> n;\n  std::vector<int> v(n);\n  for\
+    \    ft.add(j,1);\n  }\n  return res;\n}\n#line 8 \"test/AOJ/ALDS1_5_D.test.cpp\"\
+    \n\nint main() {\n  int n;\n  std::cin >> n;\n  std::vector<int> v(n);\n  for\
     \ (int i = 0; i < n; i++)\n    std::cin >> v[i];\n  std::cout << inversion_number(v)\
     \ << std::endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
-    \n#include <bits/stdc++.h>\n\n#include \"library/util/InversionNumber.cpp\"\n\n\
-    int main()\n{\n  int n;\n  std::cin >> n;\n  std::vector<int> v(n);\n  for (int\
-    \ i = 0; i < n; i++)\n    std::cin >> v[i];\n  std::cout << inversion_number(v)\
+  code: "#define PROBLEM                                                         \
+    \       \\\n  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
+    \n#include <bits/stdc++.h>\n\nusing namespace std;\n\n#include \"library/util/InversionNumber.cpp\"\
+    \n\nint main() {\n  int n;\n  std::cin >> n;\n  std::vector<int> v(n);\n  for\
+    \ (int i = 0; i < n; i++)\n    std::cin >> v[i];\n  std::cout << inversion_number(v)\
     \ << std::endl;\n}"
   dependsOn:
   - library/util/InversionNumber.cpp
@@ -62,8 +64,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 14:54:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-12-03 15:49:28+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp
 layout: document

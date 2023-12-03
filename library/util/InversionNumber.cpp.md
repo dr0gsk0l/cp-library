@@ -9,12 +9,12 @@ data:
     path: library/util/BubbleNumber.cpp
     title: library/util/BubbleNumber.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/InversionNumber.cpp\"\n#include <atcoder/fenwicktree>\n\
@@ -58,8 +58,8 @@ data:
   path: library/util/InversionNumber.cpp
   requiredBy:
   - library/util/BubbleNumber.cpp
-  timestamp: '2023-12-03 14:54:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-12-03 15:49:28+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: library/util/InversionNumber.cpp

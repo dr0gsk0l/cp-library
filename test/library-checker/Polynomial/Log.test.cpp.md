@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Log.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 14:54:50+09:00'
+  timestamp: '2023-12-03 15:49:28+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Log.test.cpp

@@ -11,7 +11,7 @@ data:
     - icon: ':question:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/group/Affine.cpp
       title: library/algebra/group/Affine.cpp
     - icon: ':question:'
@@ -280,7 +280,7 @@ data:
     - icon: ':warning:'
       path: library/linearalgebra/InsertConvexHullTrick.cpp
       title: library/linearalgebra/InsertConvexHullTrick.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/linearalgebra/Linear.cpp
       title: library/linearalgebra/Linear.cpp
     - icon: ':x:'
@@ -464,7 +464,7 @@ data:
     - icon: ':warning:'
       path: library/util/ForAllPareto.cpp
       title: for_all_pareto
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/util/InversionNumber.cpp
       title: library/util/InversionNumber.cpp
     - icon: ':warning:'
@@ -512,7 +512,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_1_C.test.cpp
       title: test/AOJ/ALDS1_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
@@ -600,7 +600,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
       title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
       title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     - icon: ':x:'

@@ -14,11 +14,11 @@ data:
   - icon: ':warning:'
     path: library/util/BubbleNumber.cpp
     title: library/util/BubbleNumber.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/util/InversionNumber.cpp
     title: library/util/InversionNumber.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -108,7 +108,7 @@ data:
   - library/datastructure/GroupWaveletMatrix.cpp
   - library/util/InversionNumber.cpp
   - library/util/BubbleNumber.cpp
-  timestamp: '2023-12-03 14:54:50+09:00'
+  timestamp: '2023-12-03 15:49:28+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp

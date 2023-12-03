@@ -42,7 +42,7 @@ data:
   isVerificationFile: false
   path: library/mod/MintUtility.cpp
   requiredBy: []
-  timestamp: '2023-12-03 14:54:50+09:00'
+  timestamp: '2023-12-03 15:49:28+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/117.test.cpp
