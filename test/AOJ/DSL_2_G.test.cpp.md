@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_G.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 19:56:36+09:00'
+  timestamp: '2023-12-03 14:54:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_G.test.cpp

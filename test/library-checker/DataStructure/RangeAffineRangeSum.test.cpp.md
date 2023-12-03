@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/lazy/AffineSum.cpp
     title: library/algebra/lazy/AffineSum.cpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   - icon: ':question:'
@@ -19,14 +19,14 @@ data:
   - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -156,8 +156,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 19:56:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-12-03 14:54:50+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
 layout: document

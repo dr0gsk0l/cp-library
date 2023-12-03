@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/lazy/AffineSum.cpp
     title: library/algebra/lazy/AffineSum.cpp
   - icon: ':heavy_check_mark:'
@@ -21,12 +21,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/CntSum.cpp\"\ntemplate<typename X>\n\
@@ -58,8 +58,8 @@ data:
   - library/algebra/lazy/AffineSum.cpp
   - library/algebra/lazy/AddSum.cpp
   - library/algebra/lazy/SetSum.cpp
-  timestamp: '2023-11-25 19:56:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-12-03 14:54:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - test/AOJ/DSL_2_G.test.cpp

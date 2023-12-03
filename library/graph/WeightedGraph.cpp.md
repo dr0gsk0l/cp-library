@@ -191,7 +191,7 @@ data:
   - library/flow/MCF.cpp
   - library/flow/Dinic.cpp
   - library/flow/NondecreasingMCF.cpp
-  timestamp: '2023-11-25 19:56:36+09:00'
+  timestamp: '2023-12-03 14:54:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

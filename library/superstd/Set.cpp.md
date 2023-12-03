@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
     title: test/library-checker/DataStructure/PredecessorProblem.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/superstd/Set.cpp\"\ntemplate<typename T>\nstruct\
@@ -46,8 +46,8 @@ data:
   isVerificationFile: false
   path: library/superstd/Set.cpp
   requiredBy: []
-  timestamp: '2023-11-25 19:56:36+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-12-03 14:54:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PredecessorProblem.test.cpp
 documentation_of: library/superstd/Set.cpp

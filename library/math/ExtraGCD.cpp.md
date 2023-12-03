@@ -21,13 +21,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/SubsetConvolution.test.cpp
     title: test/library-checker/Convolution/SubsetConvolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - icon: ':x:'
@@ -75,7 +75,7 @@ data:
   path: library/math/ExtraGCD.cpp
   requiredBy:
   - library/mod/Modint.cpp
-  timestamp: '2023-11-25 19:56:36+09:00'
+  timestamp: '2023-12-03 14:54:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

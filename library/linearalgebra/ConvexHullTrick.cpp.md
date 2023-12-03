@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []
@@ -133,7 +133,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/ConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2023-11-25 19:56:36+09:00'
+  timestamp: '2023-12-03 14:54:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2012.test.cpp

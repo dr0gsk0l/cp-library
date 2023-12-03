@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/SetSum.cpp
   requiredBy: []
-  timestamp: '2023-11-25 19:56:36+09:00'
+  timestamp: '2023-12-03 14:54:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_I.test.cpp

@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-11-25 19:56:36+09:00'
+  timestamp: '2023-12-03 14:54:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_B.test.cpp
