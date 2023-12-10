@@ -1,1 +1,2 @@
 ForEachMacros: ['REP', 'RREP', 'FOR', 'AFOR', 'CFOR']
+IndentWidth: 4
