@@ -18,6 +18,9 @@ data:
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
     - icon: ':heavy_check_mark:'
+      path: library/algebra/group/Concepts.cpp
+      title: library/algebra/group/Concepts.cpp
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Multiply.cpp
       title: library/algebra/group/Multiply.cpp
     - icon: ':heavy_check_mark:'
@@ -46,6 +49,9 @@ data:
   - name: library/algebra/monoid
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/algebra/monoid/Concepts.cpp
+      title: library/algebra/monoid/Concepts.cpp
+    - icon: ':heavy_check_mark:'
       path: library/algebra/monoid/Gcd.cpp
       title: library/algebra/monoid/Gcd.cpp
     - icon: ':warning:'
@@ -63,6 +69,9 @@ data:
     - icon: ':warning:'
       path: library/algebra/monoid/MinIndex.cpp
       title: library/algebra/monoid/MinIndex.cpp
+    - icon: ':warning:'
+      path: library/algebra/monoid/RollingHash.cpp
+      title: library/algebra/monoid/RollingHash.cpp
     - icon: ':heavy_check_mark:'
       path: library/algebra/monoid/Set.cpp
       title: library/algebra/monoid/Set.cpp
@@ -334,9 +343,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/mod/Modint.cpp
       title: library/mod/Modint.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/mod/Modint61.cpp
       title: library/mod/Modint61.cpp
+  - name: library/monotone
+    pages:
+    - icon: ':warning:'
+      path: library/monotone/MonotoneMinima.cpp
+      title: monotone_minima
   - name: library/query
     pages:
     - icon: ':warning:'
@@ -369,10 +383,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/sequence/AhoCorasick.cpp
       title: AhoCorasick
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/sequence/ForString.cpp
       title: library/sequence/ForString.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/sequence/RollingHash.cpp
       title: library/sequence/RollingHash.cpp
     - icon: ':heavy_check_mark:'
@@ -514,7 +528,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_12_B.test.cpp
       title: test/AOJ/ALDS1_12_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/AOJ/ALDS1_14_B.test.cpp
       title: test/AOJ/ALDS1_14_B.test.cpp
     - icon: ':heavy_check_mark:'

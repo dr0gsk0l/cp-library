@@ -56,14 +56,14 @@ data:
   requiredBy:
   - library/graph/MinimumSpanningArborescence.cpp
   - library/graph/MinimumSpanningTree.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp
   - test/library-checker/DataStructure/unionfind.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
   - test/AOJ/2647.test.cpp
   - test/AOJ/GRL_2_B.test.cpp
-  - test/AOJ/GRL_2_A.test.cpp
 documentation_of: library/datastructure/unionfind/UnionFind.cpp
 layout: document
 redirect_from:

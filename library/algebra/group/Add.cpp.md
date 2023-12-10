@@ -104,35 +104,35 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Add.cpp
   requiredBy:
+  - library/math/FactorialNumberSystem.cpp
   - library/datastructure/FenwickTree.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
-  - library/algebra/lazy/AddMin.cpp
-  - library/algebra/lazy/AddSum.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
-  - library/math/FactorialNumberSystem.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
+  - library/algebra/lazy/AddMin.cpp
+  - library/algebra/lazy/AddSum.cpp
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - test/AOJ/1330.test.cpp
-  - test/AOJ/DSL_1_B.test.cpp
-  - test/AOJ/DSL_2_G.test.cpp
-  - test/AOJ/2207.test.cpp
   - test/AOJ/DSL_2_B.test.cpp
-  - test/AOJ/DSL_2_E.test.cpp
-  - test/AOJ/GRL_5_E.test.cpp
-  - test/AOJ/2212.test.cpp
   - test/AOJ/DSL_2_H.test.cpp
-  - test/yukicoder/430.test.cpp
-  - test/yukicoder/1097.test.cpp
+  - test/AOJ/DSL_2_E.test.cpp
+  - test/AOJ/1330.test.cpp
+  - test/AOJ/2212.test.cpp
+  - test/AOJ/2207.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
+  - test/AOJ/DSL_1_B.test.cpp
   - test/yukicoder/1038.test.cpp
-  - test/yukicoder/430_2.test.cpp
   - test/yukicoder/924.test.cpp
+  - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/1097.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: library/algebra/group/Add.cpp
 layout: document
 redirect_from:

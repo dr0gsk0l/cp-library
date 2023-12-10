@@ -71,13 +71,13 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.cpp
   requiredBy: []
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/1330.test.cpp
-  - test/AOJ/DSL_1_B.test.cpp
   - test/AOJ/2971.test.cpp
+  - test/AOJ/1330.test.cpp
   - test/AOJ/2207.test.cpp
+  - test/AOJ/DSL_1_B.test.cpp
   - test/yukicoder/1420.test.cpp
 documentation_of: library/datastructure/unionfind/PotentialUnionFind.cpp
 layout: document

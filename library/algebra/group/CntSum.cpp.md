@@ -55,10 +55,10 @@ data:
   isVerificationFile: false
   path: library/algebra/group/CntSum.cpp
   requiredBy:
+  - library/algebra/lazy/SetSum.cpp
   - library/algebra/lazy/AffineSum.cpp
   - library/algebra/lazy/AddSum.cpp
-  - library/algebra/lazy/SetSum.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

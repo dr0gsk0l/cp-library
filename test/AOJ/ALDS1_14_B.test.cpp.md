@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/mod/Modint61.cpp
     title: library/mod/Modint61.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_14_B.test.cpp
   requiredBy: []
-  timestamp: '2023-12-04 07:28:17+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-12-10 20:25:08+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_14_B.test.cpp
 layout: document

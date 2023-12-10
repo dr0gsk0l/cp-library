@@ -85,14 +85,14 @@ data:
   requiredBy:
   - library/linearalgebra/InsertConvexHullTrick.cpp
   - library/linearalgebra/ConvexHullTrick.cpp
-  - library/algebra/group/Affine.cpp
   - library/algebra/lazy/AffineSum.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
+  - library/algebra/group/Affine.cpp
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/yukicoder/2012.test.cpp
 documentation_of: library/linearalgebra/Linear.cpp

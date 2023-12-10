@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
   - icon: ':heavy_check_mark:'
@@ -114,7 +114,7 @@ data:
   isVerificationFile: false
   path: library/sequence/AhoCorasick.cpp
   requiredBy: []
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2212.test.cpp

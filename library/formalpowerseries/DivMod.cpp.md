@@ -120,11 +120,11 @@ data:
   path: library/formalpowerseries/DivMod.cpp
   requiredBy:
   - library/formalpowerseries/MultipointEvaluation.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
 documentation_of: library/formalpowerseries/DivMod.cpp
 layout: document
 redirect_from:

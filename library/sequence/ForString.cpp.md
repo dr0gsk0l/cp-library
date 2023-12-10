@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
   - icon: ':heavy_check_mark:'
@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/ALDS1_14_B.test.cpp
     title: test/AOJ/ALDS1_14_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,9 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/sequence/ForString.cpp\"\ntemplate<char MARGIN>\n\
@@ -66,13 +66,13 @@ data:
   - library/sequence/AhoCorasick.cpp
   - library/sequence/RollingHash.cpp
   - library/sequence/Trie.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-12-10 20:25:08+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/AOJ/ALDS1_14_B.test.cpp
   - test/AOJ/2212.test.cpp
-  - test/yukicoder/430.test.cpp
+  - test/AOJ/ALDS1_14_B.test.cpp
   - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: library/sequence/ForString.cpp
 layout: document
 redirect_from:

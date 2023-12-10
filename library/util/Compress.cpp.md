@@ -103,23 +103,23 @@ data:
   isVerificationFile: false
   path: library/util/Compress.cpp
   requiredBy:
+  - library/util/BubbleNumber.cpp
+  - library/util/InversionNumber.cpp
   - library/r2/Projection.cpp
   - library/datastructure/WaveletMatrix.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
-  - library/util/InversionNumber.cpp
-  - library/util/BubbleNumber.cpp
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
-  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/AOJ/ALDS1_5_D.test.cpp
-  - test/yukicoder/919.test.cpp
   - test/yukicoder/1332.test.cpp
   - test/yukicoder/924.test.cpp
+  - test/yukicoder/919.test.cpp
 documentation_of: library/util/Compress.cpp
 layout: document
 redirect_from:

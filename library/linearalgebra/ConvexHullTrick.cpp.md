@@ -133,7 +133,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/ConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2023-12-04 07:28:17+09:00'
+  timestamp: '2023-12-10 20:25:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2012.test.cpp
