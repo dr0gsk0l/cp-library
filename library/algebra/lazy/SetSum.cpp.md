@@ -37,23 +37,24 @@ data:
     \ constexpr void Rchop(O&x, const O&y){ if(!x)x=y; }\n  static constexpr void\
     \ Lchop(const O&x, O&y){ if(x)y=x; } \n  static constexpr O unit()noexcept{ return\
     \ nullopt; }\n  static constexpr bool commute=false;\n};\n#line 4 \"library/algebra/lazy/SetSum.cpp\"\
-    \ntemplate<typename X>\nstruct LazySetSum{\n  using MX=GroupCntSum<X>;\n  using\
-    \ MF=MonoidSet<X>;\n  using P=typename MX::value_type;\n  using F=typename MF::value_type;\n\
-    \  static constexpr P mapping(const F&f,const P&x){\n    if(f.has_value())return\
-    \ {f.value()*x.second,x.second};\n    return x;\n  }\n};\n"
+    \ntemplate <typename X> struct LazySetSum {\n    using MX = GroupCntSum<X>;\n\
+    \    using MF = MonoidSet<X>;\n    using P = typename MX::value_type;\n    using\
+    \ F = typename MF::value_type;\n    static constexpr P mapping(const F &f, const\
+    \ P &x) {\n        if (f.has_value())\n            return {f.value() * x.second,\
+    \ x.second};\n        return x;\n    }\n};\n"
   code: "#pragma once\n#include \"library/algebra/group/CntSum.cpp\"\n#include \"\
-    library/algebra/monoid/Set.cpp\"\ntemplate<typename X>\nstruct LazySetSum{\n \
-    \ using MX=GroupCntSum<X>;\n  using MF=MonoidSet<X>;\n  using P=typename MX::value_type;\n\
-    \  using F=typename MF::value_type;\n  static constexpr P mapping(const F&f,const\
-    \ P&x){\n    if(f.has_value())return {f.value()*x.second,x.second};\n    return\
-    \ x;\n  }\n};"
+    library/algebra/monoid/Set.cpp\"\ntemplate <typename X> struct LazySetSum {\n\
+    \    using MX = GroupCntSum<X>;\n    using MF = MonoidSet<X>;\n    using P = typename\
+    \ MX::value_type;\n    using F = typename MF::value_type;\n    static constexpr\
+    \ P mapping(const F &f, const P &x) {\n        if (f.has_value())\n          \
+    \  return {f.value() * x.second, x.second};\n        return x;\n    }\n};"
   dependsOn:
   - library/algebra/group/CntSum.cpp
   - library/algebra/monoid/Set.cpp
   isVerificationFile: false
   path: library/algebra/lazy/SetSum.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/DSL_2_I.test.cpp

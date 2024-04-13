@@ -6,12 +6,12 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
     title: test/library-checker/DataStructure/StaticRangeSum.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/CumulativeSum.cpp\"\ntemplate <typename\
@@ -31,8 +31,8 @@ data:
   isVerificationFile: false
   path: library/datastructure/CumulativeSum.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 18:08:10+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/StaticRangeSum.test.cpp

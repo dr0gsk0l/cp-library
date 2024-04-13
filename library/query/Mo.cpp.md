@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/query/Mo.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/Mo.cpp

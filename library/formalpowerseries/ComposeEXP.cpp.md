@@ -124,17 +124,18 @@ data:
     \ // exp(nx)\n    static FPS exp(const T n) {\n        if (n == 0)\n         \
     \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
-    \ REP_\n#line 3 \"library/formalpowerseries/RationalSum.cpp\"\ntemplate<typename\
-    \ FPS>\nclass RationalSum{\n  queue<pair<FPS,FPS>> que;\npublic:\n  void add(const\
-    \ FPS&f,const FPS&g){ que.emplace(f,g); }\n  FPS sum(){\n    if(!que.size())return\
-    \ FPS(0);\n    while(que.size()>1){\n      auto [a1,b1]=que.front();que.pop();\n\
-    \      auto [a2,b2]=que.front();que.pop();\n      que.emplace(a1*b2+a2*b1,b1*b2);\n\
-    \    }\n    auto [a,b]=que.front();que.pop();\n    return a/b;\n  }\n};\n#line\
-    \ 4 \"library/formalpowerseries/ComposeEXP.cpp\"\n// f(e^x)\ntemplate<typename\
-    \ FPS>\nvoid compose_exp(FPS&f){\n  f.shrink();\n  if(f.size()<=1)return;\n  RationalSum<FPS>\
-    \ RS;\n  for(int n=0;n<f.size();n++)\n    RS.add(FPS{f[n]},FPS{1,-n});\n  f=RS.sum();\n\
-    \  typename FPS::value_type fact=1;\n  for(int n=1;n<f.size();fact*=++n)\n   \
-    \ f[n]/=fact;\n}\n"
+    \ REP_\n#line 3 \"library/formalpowerseries/RationalSum.cpp\"\ntemplate <typename\
+    \ FPS> class RationalSum {\n    std::queue<pair<FPS, FPS>> que;\n\n  public:\n\
+    \    void add(const FPS &f, const FPS &g) { que.emplace(f, g); }\n    FPS sum()\
+    \ {\n        if (!que.size())\n            return FPS(0);\n        while (que.size()\
+    \ > 1) {\n            auto [a1, b1] = que.front();\n            que.pop();\n \
+    \           auto [a2, b2] = que.front();\n            que.pop();\n           \
+    \ que.emplace(a1 * b2 + a2 * b1, b1 * b2);\n        }\n        auto [a, b] = que.front();\n\
+    \        que.pop();\n        return a / b;\n    }\n};\n#line 4 \"library/formalpowerseries/ComposeEXP.cpp\"\
+    \n// f(e^x)\ntemplate<typename FPS>\nvoid compose_exp(FPS&f){\n  f.shrink();\n\
+    \  if(f.size()<=1)return;\n  RationalSum<FPS> RS;\n  for(int n=0;n<f.size();n++)\n\
+    \    RS.add(FPS{f[n]},FPS{1,-n});\n  f=RS.sum();\n  typename FPS::value_type fact=1;\n\
+    \  for(int n=1;n<f.size();fact*=++n)\n    f[n]/=fact;\n}\n"
   code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\n#include \"\
     library/formalpowerseries/RationalSum.cpp\"\n// f(e^x)\ntemplate<typename FPS>\n\
     void compose_exp(FPS&f){\n  f.shrink();\n  if(f.size()<=1)return;\n  RationalSum<FPS>\
@@ -147,7 +148,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/ComposeEXP.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/ComposeEXP.cpp

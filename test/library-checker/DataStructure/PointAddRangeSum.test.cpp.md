@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   - icon: ':x:'
@@ -34,11 +34,11 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     #include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
     \ \"library/segtree/SegmentTree.cpp\"\n\nusing ll = long long;\nusing G = GroupAdd<ll>;\n\
-    \nint main() {\n    int n, q;\n    cin >> n >> q;\n    std::vector<ll> v(n);\n\
-    \    for (int i = 0; i < n; i++)\n        cin >> v[i];\n    SegmentTree<G> seg(v);\n\
-    \    while (q--) {\n        int t, l, r;\n        cin >> t >> l >> r;\n      \
-    \  if (t)\n            std::cout << seg.prod(l, r) << \"\\n\";\n        else\n\
-    \            seg.multiply(l, r);\n    }\n}"
+    \nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<ll> v(n);\n\
+    \    for (int i = 0; i < n; i++)\n        std::cin >> v[i];\n    SegmentTree<G>\
+    \ seg(v);\n    while (q--) {\n        int t, l, r;\n        std::cin >> t >> l\
+    \ >> r;\n        if (t)\n            std::cout << seg.prod(l, r) << \"\\n\";\n\
+    \        else\n            seg.multiply(l, r);\n    }\n}"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/segtree/SegmentTree.cpp
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRangeSum.test.cpp

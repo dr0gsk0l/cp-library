@@ -11,7 +11,7 @@ data:
     - "https://atcoder.github.io/ac-library/production/document_ja/appendix.html\uFF09"
     - https://github.com/atcoder/ac-library)'s
     - https://murashun.jp/article/programming/regular-expression.html
-    - https://note.nkmk.me/python-raw-string-escape/
+    - https://note.nkmk.me/python-raw-std::string-escape/
     - https://note.nkmk.me/python-re-match-search-findall-etc/
     - https://qiita.com/kzkadc/items/e4fc7bc9c003de1eb6d0
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -33,16 +33,16 @@ data:
     \ \u306B\u4EE5\u4E0B\u306E\u6B63\u898F\u8868\u73FE\u3092\u4EE3\u5165\u3057\u3066\
     \u3044\u308B\n    # r'' \u306F raw \u6587\u5B57\u5217 \u30A8\u30B9\u30B1\u30FC\
     \u30D7\u30B7\u30FC\u30B1\u30F3\u30B9\u3092\u3057\u306A\u304F\u3066\u826F\u304F\
-    \u306A\u308B https://note.nkmk.me/python-raw-string-escape/\n    # acl \u3068\u81EA\
-    \u5206\u306E\u3092\u5206\u3051\u3066\u3044\u308B\u306E\u306F\u3001acl \u5185\u306E\
-    \ <algorithm> \u306A\u3069\u3092\u63A2\u3055\u306A\u3044\u3088\u3046\u306B\u3059\
-    \u308B\u305F\u3081\n    \n    \n    # \u6B63\u898F\u8868\u73FE\u306E\u89E3\u8AAC\
-    \ https://murashun.jp/article/programming/regular-expression.html\n    # \\s :\
-    \ \u30B9\u30DA\u30FC\u30B9\n    # [~] : ~ \u5185\u306E\u3044\u305A\u308C\u304B\
-    1\u6587\u5B57\n    # (~) : ~ \u3092\u4E00\u3064\u306E\u30B0\u30EB\u30FC\u30D7\u3068\
-    \u898B\u505A\u3059 \u3042\u307E\u308A\u6C17\u306B\u3057\u306A\u304F\u3066\u826F\
-    \u3044\n    # a-z, A-Z : \u5C0F\u6587\u5B57,\u5927\u6587\u5B57\u5168\u3066\n \
-    \   # * : \u76F4\u524D\u306E\u6587\u5B57 0 \u56DE\u4EE5\u4E0A \u6700\u9577\u4E00\
+    \u306A\u308B https://note.nkmk.me/python-raw-std::string-escape/\n    # acl \u3068\
+    \u81EA\u5206\u306E\u3092\u5206\u3051\u3066\u3044\u308B\u306E\u306F\u3001acl \u5185\
+    \u306E <algorithm> \u306A\u3069\u3092\u63A2\u3055\u306A\u3044\u3088\u3046\u306B\
+    \u3059\u308B\u305F\u3081\n    \n    \n    # \u6B63\u898F\u8868\u73FE\u306E\u89E3\
+    \u8AAC https://murashun.jp/article/programming/regular-expression.html\n    #\
+    \ \\s : \u30B9\u30DA\u30FC\u30B9\n    # [~] : ~ \u5185\u306E\u3044\u305A\u308C\
+    \u304B1\u6587\u5B57\n    # (~) : ~ \u3092\u4E00\u3064\u306E\u30B0\u30EB\u30FC\u30D7\
+    \u3068\u898B\u505A\u3059 \u3042\u307E\u308A\u6C17\u306B\u3057\u306A\u304F\u3066\
+    \u826F\u3044\n    # a-z, A-Z : \u5C0F\u6587\u5B57,\u5927\u6587\u5B57\u5168\u3066\
+    \n    # * : \u76F4\u524D\u306E\u6587\u5B57 0 \u56DE\u4EE5\u4E0A \u6700\u9577\u4E00\
     \u81F4\n    # | : OR \u524D\u5F8C\u306E\u3044\u305A\u308C\u304B\u3068\u30DE\u30C3\
     \u30C1 (|.cpp) \u306F (\u2205 OR .cpp)\n\n    # __init__ \u306F\u30B3\u30F3\u30B9\
     \u30C8\u30E9\u30AF\u30BF C++ \u3067\u8A00\u3048\u3070 Expander() \u3068\u540C\u3058\
@@ -139,7 +139,7 @@ data:
     \u306E\u30E9\u30A4\u30D6\u30E9\u30EA\u306E\u30D1\u30B9\u3092\u6307\u5B9A\u3057\
     \u305F\u3044\u6642\u306B\u4F7F\u3046\u3082\u306E\u3060\u3068\u601D\u3046\uFF08\
     https://atcoder.github.io/ac-library/production/document_ja/appendix.html\uFF09\
-    \n    if 'CPLUS_INCLUDE_PATH' in environ:\n        lib_paths.extend(map(Path,\
+    \n    if 'CPLUS_INCLUDE_PATH' in environ:\n        lib_paths.extend(std(Path,\
     \ filter(None, environ['CPLUS_INCLUDE_PATH'].split(pathsep))))\n    \n    # \u30AB\
     \u30EC\u30F3\u30C8\u30C7\u30A3\u30EC\u30AF\u30C8\u30EA\u3092 lib_paths \u306B\u8FFD\
     \u52A0\n    lib_paths.append(Path.cwd())\n    # Expander \u306E\u69CB\u7BC9\n\

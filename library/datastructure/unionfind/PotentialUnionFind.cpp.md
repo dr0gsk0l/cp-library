@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1420.test.cpp

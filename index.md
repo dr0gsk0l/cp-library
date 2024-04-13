@@ -8,7 +8,7 @@ data:
       title: library/algebra/Reverse.cpp
   - name: library/algebra/group
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
     - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     - icon: ':x:'
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/group/Concepts.cpp
       title: library/algebra/group/Concepts.cpp
     - icon: ':x:'
@@ -48,7 +48,7 @@ data:
       title: library/algebra/lazy/SetSum.cpp
   - name: library/algebra/monoid
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/monoid/Concepts.cpp
       title: library/algebra/monoid/Concepts.cpp
     - icon: ':x:'
@@ -116,13 +116,13 @@ data:
     - icon: ':warning:'
       path: library/datastructure/CumulativeMonoid.cpp
       title: library/datastructure/CumulativeMonoid.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/CumulativeSum.cpp
       title: library/datastructure/CumulativeSum.cpp
     - icon: ':x:'
       path: library/datastructure/Doubling.cpp
       title: library/datastructure/Doubling.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/FenwickTree.cpp
       title: library/datastructure/FenwickTree.cpp
     - icon: ':x:'
@@ -423,7 +423,7 @@ data:
     - icon: ':warning:'
       path: library/superstd/Map.cpp
       title: library/superstd/Map.cpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: library/superstd/Multiset.cpp
       title: library/superstd/Multiset.cpp
     - icon: ':x:'
@@ -564,7 +564,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/DSL_1_B.test.cpp
       title: test/AOJ/DSL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_2_B.test.cpp
       title: test/AOJ/DSL_2_B.test.cpp
     - icon: ':x:'
@@ -664,7 +664,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
       title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
       title: test/library-checker/DataStructure/StaticRangeSum.test.cpp
     - icon: ':x:'
@@ -689,7 +689,7 @@ data:
       title: test/library-checker/Graph/ShortestPath.test.cpp
   - name: test/library-checker/Math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Math/2Sat.test.cpp
       title: test/library-checker/Math/2Sat.test.cpp
   - name: test/library-checker/Matrix

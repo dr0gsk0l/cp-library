@@ -49,7 +49,7 @@ data:
     \ v);\n        add_arc(v, u);\n    }\n    void add_arc(const edge_type &e) { add_arc(e.from,\
     \ e.to); }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to); }\n\
     \n    void scan(int m, bool directed = false, int indexed = 1) {\n        edges.reserve(directed\
-    \ ? m : 2 * m);\n        while (m--) {\n            int u, v;\n            cin\
+    \ ? m : 2 * m);\n        while (m--) {\n            int u, v;\n            std::cin\
     \ >> u >> v;\n            u -= indexed;\n            v -= indexed;\n         \
     \   if (directed)\n                add_arc(u, v);\n            else\n        \
     \        add_edge(u, v);\n        }\n        build();\n    }\n\n    void build()\
@@ -64,34 +64,34 @@ data:
     \ << \" \";\n            cerr << \"\\n\";\n        }\n    }\n};\n#line 2 \"library/graph/shortest_path/BFS.cpp\"\
     \ntemplate <typename GRAPH>\npair<vector<int>, vector<int>> BFS(const GRAPH &g,\
     \ int s = 0) {\n    assert(g.is_prepared());\n    std::vector<int> d(g.n, -1),\
-    \ pre(g.n, -1);\n    queue<int> que;\n    d[s] = 0;\n    que.push(s);\n    while\
-    \ (que.size()) {\n        int v = que.front();\n        que.pop();\n        for\
-    \ (int to : g[v])\n            if (d[to] < 0) {\n                d[to] = d[v]\
-    \ + 1;\n                que.push(to);\n            }\n    }\n    return {d, pre};\n\
-    }\n#line 9 \"test/AOJ/ALDS1_11_C.test.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    Graph g(n);\n  \
-    \  REP (_, n) {\n        int u, k;\n        cin >> u >> k;\n        u--;\n   \
-    \     REP (_, k) {\n            int v;\n            cin >> v;\n            v--;\n\
-    \            g.add_arc(u, v);\n        }\n    }\n    g.build();\n    auto [d,\
-    \ pre] = BFS(g);\n    REP (i, n)\n        std::cout << i + 1 << \" \" << d[i]\
-    \ << \"\\n\";\n}\n"
+    \ pre(g.n, -1);\n    std::queue<int> que;\n    d[s] = 0;\n    que.push(s);\n \
+    \   while (que.size()) {\n        int v = que.front();\n        que.pop();\n \
+    \       for (int to : g[v])\n            if (d[to] < 0) {\n                d[to]\
+    \ = d[v] + 1;\n                que.push(to);\n            }\n    }\n    return\
+    \ {d, pre};\n}\n#line 9 \"test/AOJ/ALDS1_11_C.test.cpp\"\n\nint main() {\n   \
+    \ std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n    int n;\n\
+    \    std::cin >> n;\n    Graph g(n);\n    REP (_, n) {\n        int u, k;\n  \
+    \      std::cin >> u >> k;\n        u--;\n        REP (_, k) {\n            int\
+    \ v;\n            std::cin >> v;\n            v--;\n            g.add_arc(u, v);\n\
+    \        }\n    }\n    g.build();\n    auto [d, pre] = BFS(g);\n    REP (i, n)\n\
+    \        std::cout << i + 1 << \" \" << d[i] << \"\\n\";\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C\"\
     \n#include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\
     \n#include \"library/graph/Graph.cpp\"\n#include \"library/graph/shortest_path/BFS.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n;\n    cin >> n;\n    Graph g(n);\n    REP (_, n) {\n        int u,\
-    \ k;\n        cin >> u >> k;\n        u--;\n        REP (_, k) {\n           \
-    \ int v;\n            cin >> v;\n            v--;\n            g.add_arc(u, v);\n\
-    \        }\n    }\n    g.build();\n    auto [d, pre] = BFS(g);\n    REP (i, n)\n\
-    \        std::cout << i + 1 << \" \" << d[i] << \"\\n\";\n}\n"
+    \n    int n;\n    std::cin >> n;\n    Graph g(n);\n    REP (_, n) {\n        int\
+    \ u, k;\n        std::cin >> u >> k;\n        u--;\n        REP (_, k) {\n   \
+    \         int v;\n            std::cin >> v;\n            v--;\n            g.add_arc(u,\
+    \ v);\n        }\n    }\n    g.build();\n    auto [d, pre] = BFS(g);\n    REP\
+    \ (i, n)\n        std::cout << i + 1 << \" \" << d[i] << \"\\n\";\n}\n"
   dependsOn:
   - library/graph/Graph.cpp
   - library/graph/shortest_path/BFS.cpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_11_C.test.cpp

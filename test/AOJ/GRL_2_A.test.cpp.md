@@ -79,12 +79,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -93,15 +93,16 @@ data:
     \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
     \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 7 \"test/AOJ/GRL_2_A.test.cpp\"\
-    \n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    WeightedGraph<int> g(n,\
-    \ m, false, 0);\n    auto [sum, tree] = minimum_spanning_tree(g);\n    std::cout\
+    \n\nint main() {\n    int n, m;\n    std::cin >> n >> m;\n    WeightedGraph<int>\
+    \ g(n, m, false, 0);\n    auto [sum, tree] = minimum_spanning_tree(g);\n    std::cout\
     \ << sum << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/graph/MinimumSpanningTree.cpp\"\
     \n#include \"library/graph/WeightedGraph.cpp\"\n\nint main() {\n    int n, m;\n\
-    \    cin >> n >> m;\n    WeightedGraph<int> g(n, m, false, 0);\n    auto [sum,\
-    \ tree] = minimum_spanning_tree(g);\n    std::cout << sum << std::endl;\n}"
+    \    std::cin >> n >> m;\n    WeightedGraph<int> g(n, m, false, 0);\n    auto\
+    \ [sum, tree] = minimum_spanning_tree(g);\n    std::cout << sum << std::endl;\n\
+    }"
   dependsOn:
   - library/graph/MinimumSpanningTree.cpp
   - library/datastructure/unionfind/UnionFind.cpp
@@ -109,7 +110,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_2_A.test.cpp

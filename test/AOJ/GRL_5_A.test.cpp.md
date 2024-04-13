@@ -70,12 +70,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -89,10 +89,10 @@ data:
     \ = typename WeightedGraph<T>::OutgoingEdges;\n    using WeightedGraph<T>::n;\n\
     \    using WeightedGraph<T>::in_deg;\n\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
-    \ i = 1; i < n; i++) {\n            int p;\n            cin >> p;\n          \
-    \  T weight;\n            cin >> weight;\n            add_edge(p - indexed, i,\
-    \ weight);\n        }\n        build();\n    }\n    void scan(int indexed = 1)\
-    \ {\n        WeightedGraph<T>::scan(n - 1, false, indexed);\n        build();\n\
+    \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
+    \       T weight;\n            std::cin >> weight;\n            add_edge(p - indexed,\
+    \ i, weight);\n        }\n        build();\n    }\n    void scan(int indexed =\
+    \ 1) {\n        WeightedGraph<T>::scan(n - 1, false, indexed);\n        build();\n\
     \    }\n\n    edge_type &parent(int v) {\n        assert(~root and root != v);\n\
     \        return (*this)[v][0];\n    }\n    OutgoingEdges son(int v) {\n      \
     \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
@@ -105,22 +105,22 @@ data:
     \            WeightedGraph<T>::build();\n        if (~root) {\n            assert(r\
     \ == root);\n            return;\n        }\n        root = r;\n        depth\
     \ = vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n   \
-    \     dfs(root);\n        queue<int> que;\n        que.push(root);\n        while\
-    \ (que.size()) {\n            int p = que.front();\n            que.pop();\n \
-    \           BFS.push_back(p);\n            for (const auto &e : son(p))\n    \
-    \            que.push(e.to);\n        }\n    }\n};\n#line 7 \"test/AOJ/GRL_5_A.test.cpp\"\
+    \     dfs(root);\n        std::queue<int> que;\n        que.push(root);\n    \
+    \    while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
+    \            BFS.push_back(p);\n            for (const auto &e : son(p))\n   \
+    \             que.push(e.to);\n        }\n    }\n};\n#line 7 \"test/AOJ/GRL_5_A.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n;\n    cin >> n;\n    WeightedTree<int> t(n);\n    t.scan(0);\n\n \
-    \   ReRooting<WeightedTree<int>, int> RR(t);\n    auto score = [&](int now, auto\
-    \ &e) { return now + e.weight; };\n    auto merge = [&](int &now, int add) {\n\
-    \        if (now < add)\n            now = add;\n    };\n    auto ans = RR.build(score,\
+    \n    int n;\n    std::cin >> n;\n    WeightedTree<int> t(n);\n    t.scan(0);\n\
+    \n    ReRooting<WeightedTree<int>, int> RR(t);\n    auto score = [&](int now,\
+    \ auto &e) { return now + e.weight; };\n    auto merge = [&](int &now, int add)\
+    \ {\n        if (now < add)\n            now = add;\n    };\n    auto ans = RR.build(score,\
     \ merge, 0);\n\n    int fans = 0;\n    for (int p : ans)\n        fans = max(fans,\
     \ p);\n    std::cout << fans << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/tree/ReRooting.cpp\"\n#include\
     \ \"library/tree/WeightedTree.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    WeightedTree<int>\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    WeightedTree<int>\
     \ t(n);\n    t.scan(0);\n\n    ReRooting<WeightedTree<int>, int> RR(t);\n    auto\
     \ score = [&](int now, auto &e) { return now + e.weight; };\n    auto merge =\
     \ [&](int &now, int add) {\n        if (now < add)\n            now = add;\n \
@@ -134,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_A.test.cpp

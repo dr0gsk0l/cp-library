@@ -32,20 +32,20 @@ data:
     \ }\n  static constexpr void Rchop(O&x, const O&y){ if(!x)x=y; }\n  static constexpr\
     \ void Lchop(const O&x, O&y){ if(x)y=x; } \n  static constexpr O unit()noexcept{\
     \ return nullopt; }\n  static constexpr bool commute=false;\n};\n#line 4 \"library/algebra/lazy/SetMin.cpp\"\
-    \ntemplate<typename X>\nstruct LazySetMin{\n  using MX=MonoidMin<X>;\n  using\
-    \ MF=MonoidSet<X>;\n  using F=typename MF::value_type;\n  static constexpr X mapping(const\
-    \ F&f,const X&x){\n    return f.value_or(x);\n  }\n};\n"
+    \ntemplate <typename X> struct LazySetMin {\n    using MX = MonoidMin<X>;\n  \
+    \  using MF = MonoidSet<X>;\n    using F = typename MF::value_type;\n    static\
+    \ constexpr X mapping(const F &f, const X &x) { return f.value_or(x); }\n};\n"
   code: "#pragma once\n#include \"library/algebra/monoid/Min.cpp\"\n#include \"library/algebra/monoid/Set.cpp\"\
-    \ntemplate<typename X>\nstruct LazySetMin{\n  using MX=MonoidMin<X>;\n  using\
-    \ MF=MonoidSet<X>;\n  using F=typename MF::value_type;\n  static constexpr X mapping(const\
-    \ F&f,const X&x){\n    return f.value_or(x);\n  }\n};"
+    \ntemplate <typename X> struct LazySetMin {\n    using MX = MonoidMin<X>;\n  \
+    \  using MF = MonoidSet<X>;\n    using F = typename MF::value_type;\n    static\
+    \ constexpr X mapping(const F &f, const X &x) { return f.value_or(x); }\n};"
   dependsOn:
   - library/algebra/monoid/Min.cpp
   - library/algebra/monoid/Set.cpp
   isVerificationFile: false
   path: library/algebra/lazy/SetMin.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/DSL_2_D.test.cpp

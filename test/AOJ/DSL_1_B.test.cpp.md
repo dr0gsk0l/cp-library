@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':x:'
@@ -54,32 +54,32 @@ data:
     \    }\n\n    int size(const int x) {\n        assert(0 <= x and x < n);\n   \
     \     return sz[leader(x)];\n    }\n\n    int count() const { return num; }\n\
     };\n#line 7 \"test/AOJ/DSL_1_B.test.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    PotentialUnionFind<GroupAdd<int>>\
-    \ PUF(n);\n    while (q--) {\n        int t, x, y;\n        cin >> t >> x >> y;\n\
-    \        if (t) {\n            auto diff = PUF.diff(x, y);\n            if (diff)\n\
-    \                std::cout << diff.value() << \"\\n\";\n            else\n   \
-    \             std::cout << \"?\\n\";\n        } else {\n            int d;\n \
-    \           cin >> d;\n            assert(PUF.merge(x, y, d));\n        }\n  \
-    \  }\n}\n"
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    PotentialUnionFind<GroupAdd<int>>\
+    \ PUF(n);\n    while (q--) {\n        int t, x, y;\n        std::cin >> t >> x\
+    \ >> y;\n        if (t) {\n            auto diff = PUF.diff(x, y);\n         \
+    \   if (diff)\n                std::cout << diff.value() << \"\\n\";\n       \
+    \     else\n                std::cout << \"?\\n\";\n        } else {\n       \
+    \     int d;\n            std::cin >> d;\n            assert(PUF.merge(x, y, d));\n\
+    \        }\n    }\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
     \ \"library/datastructure/unionfind/PotentialUnionFind.cpp\"\n\nint main() {\n\
     \    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n    int\
-    \ n, q;\n    cin >> n >> q;\n    PotentialUnionFind<GroupAdd<int>> PUF(n);\n \
-    \   while (q--) {\n        int t, x, y;\n        cin >> t >> x >> y;\n       \
-    \ if (t) {\n            auto diff = PUF.diff(x, y);\n            if (diff)\n \
-    \               std::cout << diff.value() << \"\\n\";\n            else\n    \
-    \            std::cout << \"?\\n\";\n        } else {\n            int d;\n  \
-    \          cin >> d;\n            assert(PUF.merge(x, y, d));\n        }\n   \
-    \ }\n}"
+    \ n, q;\n    std::cin >> n >> q;\n    PotentialUnionFind<GroupAdd<int>> PUF(n);\n\
+    \    while (q--) {\n        int t, x, y;\n        std::cin >> t >> x >> y;\n \
+    \       if (t) {\n            auto diff = PUF.diff(x, y);\n            if (diff)\n\
+    \                std::cout << diff.value() << \"\\n\";\n            else\n   \
+    \             std::cout << \"?\\n\";\n        } else {\n            int d;\n \
+    \           std::cin >> d;\n            assert(PUF.merge(x, y, d));\n        }\n\
+    \    }\n}"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/datastructure/unionfind/PotentialUnionFind.cpp
   isVerificationFile: true
   path: test/AOJ/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_B.test.cpp

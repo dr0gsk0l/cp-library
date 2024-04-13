@@ -52,12 +52,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -78,27 +78,27 @@ data:
     \      is_same_v<TC, __int128> ? TC(1e30) : numeric_limits<TC>::max() / 2;\n \
     \   // numeric_limits<__int128 >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\
     \n    std::vector<pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\
-    \u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    priority_queue<pair<TC,\
-    \ int>, vector<pair<TC, int>>, greater<pair<TC, int>>>\n        que;\n    bool\
-    \ negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\u304B\n\n    template\
-    \ <typename T> bool chmin(T &a, const T &b) {\n        return (a > b and (a =\
-    \ b, true));\n    }\n    bool SP_update(int from, int edge_id) {\n        const\
-    \ auto &e = G[from][edge_id];\n        if ((e.weight).cap == 0)\n            return\
-    \ false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost() + potential[from]\
-    \ -\n                                  potential[e.to])) {\n            pre[e.to]\
-    \ = {from, edge_id};\n            return true;\n        }\n        return false;\n\
-    \    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\u3089\u6B8B\u4F59\u30B0\
-    \u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\u308Bi\u3078\u306E\u6700\
-    \u77ED\u8DEF\n                           // \u3068\u306A\u308B\u3088\u3046\u306B\
-    dist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(), INF);\n       \
-    \ dist[s] = 0;\n        que.emplace(0, s);\n        while (que.size()) {\n   \
-    \         const auto [now, v] = que.top();\n            que.pop();\n         \
-    \   if (dist[v] < now)\n                continue;\n            REP_(i, G[v].size())\n\
-    \            if (SP_update(v, i))\n                que.emplace(dist[G[v][i].to],\
+    \u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<pair<TC,\
+    \ int>, vector<pair<TC, int>>,\n                        greater<pair<TC, int>>>\n\
+    \        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\
+    \u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n        return\
+    \ (a > b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id)\
+    \ {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap ==\
+    \ 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost()\
+    \ + potential[from] -\n                                  potential[e.to])) {\n\
+    \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
+    \        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
+    \u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\
+    \u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n                           // \u3068\u306A\
+    \u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(),\
+    \ INF);\n        dist[s] = 0;\n        que.emplace(0, s);\n        while (que.size())\
+    \ {\n            const auto [now, v] = que.top();\n            que.pop();\n  \
+    \          if (dist[v] < now)\n                continue;\n            REP_(i,\
+    \ G[v].size())\n            if (SP_update(v, i))\n                que.emplace(dist[G[v][i].to],\
     \ G[v][i].to);\n        }\n    }\n\n    void DAG(int s) {\n        negative =\
     \ false;\n        fill(dist.begin(), dist.end(), INF);\n        dist[s] = 0;\n\
-    \        queue<int> que;\n        REP_(i, n) if (!in_deg[i]) que.push(i);\n  \
-    \      while (que.size()) {\n            int v = que.front();\n            que.pop();\n\
+    \        std::queue<int> que;\n        REP_(i, n) if (!in_deg[i]) que.push(i);\n\
+    \        while (que.size()) {\n            int v = que.front();\n            que.pop();\n\
     \            REP_(i, G[v].size()) {\n                SP_update(v, i);\n      \
     \          if (!--in_deg[G[v][i].to])\n                    que.push(G[v][i].to);\n\
     \            }\n        }\n    }\n\n  public:\n    NondecreasingMCF() {}\n   \
@@ -137,27 +137,27 @@ data:
     \      is_same_v<TC, __int128> ? TC(1e30) : numeric_limits<TC>::max() / 2;\n \
     \   // numeric_limits<__int128 >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\
     \n    std::vector<pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\
-    \u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    priority_queue<pair<TC,\
-    \ int>, vector<pair<TC, int>>, greater<pair<TC, int>>>\n        que;\n    bool\
-    \ negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\u304B\n\n    template\
-    \ <typename T> bool chmin(T &a, const T &b) {\n        return (a > b and (a =\
-    \ b, true));\n    }\n    bool SP_update(int from, int edge_id) {\n        const\
-    \ auto &e = G[from][edge_id];\n        if ((e.weight).cap == 0)\n            return\
-    \ false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost() + potential[from]\
-    \ -\n                                  potential[e.to])) {\n            pre[e.to]\
-    \ = {from, edge_id};\n            return true;\n        }\n        return false;\n\
-    \    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\u3089\u6B8B\u4F59\u30B0\
-    \u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\u308Bi\u3078\u306E\u6700\
-    \u77ED\u8DEF\n                           // \u3068\u306A\u308B\u3088\u3046\u306B\
-    dist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(), INF);\n       \
-    \ dist[s] = 0;\n        que.emplace(0, s);\n        while (que.size()) {\n   \
-    \         const auto [now, v] = que.top();\n            que.pop();\n         \
-    \   if (dist[v] < now)\n                continue;\n            REP_(i, G[v].size())\n\
-    \            if (SP_update(v, i))\n                que.emplace(dist[G[v][i].to],\
+    \u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<pair<TC,\
+    \ int>, vector<pair<TC, int>>,\n                        greater<pair<TC, int>>>\n\
+    \        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\
+    \u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n        return\
+    \ (a > b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id)\
+    \ {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap ==\
+    \ 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost()\
+    \ + potential[from] -\n                                  potential[e.to])) {\n\
+    \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
+    \        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
+    \u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\
+    \u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n                           // \u3068\u306A\
+    \u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(),\
+    \ INF);\n        dist[s] = 0;\n        que.emplace(0, s);\n        while (que.size())\
+    \ {\n            const auto [now, v] = que.top();\n            que.pop();\n  \
+    \          if (dist[v] < now)\n                continue;\n            REP_(i,\
+    \ G[v].size())\n            if (SP_update(v, i))\n                que.emplace(dist[G[v][i].to],\
     \ G[v][i].to);\n        }\n    }\n\n    void DAG(int s) {\n        negative =\
     \ false;\n        fill(dist.begin(), dist.end(), INF);\n        dist[s] = 0;\n\
-    \        queue<int> que;\n        REP_(i, n) if (!in_deg[i]) que.push(i);\n  \
-    \      while (que.size()) {\n            int v = que.front();\n            que.pop();\n\
+    \        std::queue<int> que;\n        REP_(i, n) if (!in_deg[i]) que.push(i);\n\
+    \        while (que.size()) {\n            int v = que.front();\n            que.pop();\n\
     \            REP_(i, G[v].size()) {\n                SP_update(v, i);\n      \
     \          if (!--in_deg[G[v][i].to])\n                    que.push(G[v][i].to);\n\
     \            }\n        }\n    }\n\n  public:\n    NondecreasingMCF() {}\n   \
@@ -184,7 +184,7 @@ data:
   isVerificationFile: false
   path: library/flow/NondecreasingMCF.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/3297.test.cpp

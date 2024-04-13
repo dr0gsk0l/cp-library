@@ -39,7 +39,7 @@ data:
     \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
-    \ > g.edges[b].weight;\n    };\n    using PQ = priority_queue<int, vector<int>,\
+    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
     \ decltype(compare)>;\n    std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});\n\
     \    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
@@ -74,7 +74,7 @@ data:
     \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
-    \ > g.edges[b].weight;\n    };\n    using PQ = priority_queue<int, vector<int>,\
+    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
     \ decltype(compare)>;\n    std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});\n\
     \    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
@@ -108,7 +108,7 @@ data:
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp

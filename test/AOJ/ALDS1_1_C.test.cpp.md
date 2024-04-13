@@ -55,22 +55,22 @@ data:
     \                n /= p;\n            }\n        }\n\n        if (n > 1)\n   \
     \         ret.emplace_back(n, 1);\n\n        return ret;\n    }\n};\n#line 6 \"\
     test/AOJ/ALDS1_1_C.test.cpp\"\nPrimeUtil<1000000> PU;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    int ans = 0;\n \
-    \   while (n--) {\n        int a;\n        cin >> a;\n        ans += PU.is_prime(a);\n\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    int ans = 0;\n\
+    \    while (n--) {\n        int a;\n        std::cin >> a;\n        ans += PU.is_prime(a);\n\
     \    }\n    std::cout << ans << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/util/PrimeUtil.cpp\"\nPrimeUtil<1000000>\
     \ PU;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n;\n    cin >> n;\n    int ans = 0;\n    while (n--) {\n        int\
-    \ a;\n        cin >> a;\n        ans += PU.is_prime(a);\n    }\n    std::cout\
-    \ << ans << std::endl;\n}"
+    \n    int n;\n    std::cin >> n;\n    int ans = 0;\n    while (n--) {\n      \
+    \  int a;\n        std::cin >> a;\n        ans += PU.is_prime(a);\n    }\n   \
+    \ std::cout << ans << std::endl;\n}"
   dependsOn:
   - library/util/PrimeUtil.cpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C.test.cpp

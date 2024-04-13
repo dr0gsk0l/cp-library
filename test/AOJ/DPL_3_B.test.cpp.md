@@ -55,12 +55,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -74,10 +74,10 @@ data:
     \ = typename WeightedGraph<T>::OutgoingEdges;\n    using WeightedGraph<T>::n;\n\
     \    using WeightedGraph<T>::in_deg;\n\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
-    \ i = 1; i < n; i++) {\n            int p;\n            cin >> p;\n          \
-    \  T weight;\n            cin >> weight;\n            add_edge(p - indexed, i,\
-    \ weight);\n        }\n        build();\n    }\n    void scan(int indexed = 1)\
-    \ {\n        WeightedGraph<T>::scan(n - 1, false, indexed);\n        build();\n\
+    \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
+    \       T weight;\n            std::cin >> weight;\n            add_edge(p - indexed,\
+    \ i, weight);\n        }\n        build();\n    }\n    void scan(int indexed =\
+    \ 1) {\n        WeightedGraph<T>::scan(n - 1, false, indexed);\n        build();\n\
     \    }\n\n    edge_type &parent(int v) {\n        assert(~root and root != v);\n\
     \        return (*this)[v][0];\n    }\n    OutgoingEdges son(int v) {\n      \
     \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
@@ -90,10 +90,10 @@ data:
     \            WeightedGraph<T>::build();\n        if (~root) {\n            assert(r\
     \ == root);\n            return;\n        }\n        root = r;\n        depth\
     \ = vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n   \
-    \     dfs(root);\n        queue<int> que;\n        que.push(root);\n        while\
-    \ (que.size()) {\n            int p = que.front();\n            que.pop();\n \
-    \           BFS.push_back(p);\n            for (const auto &e : son(p))\n    \
-    \            que.push(e.to);\n        }\n    }\n};\n#line 2 \"library/tree/CartesianTree.cpp\"\
+    \     dfs(root);\n        std::queue<int> que;\n        que.push(root);\n    \
+    \    while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
+    \            BFS.push_back(p);\n            for (const auto &e : son(p))\n   \
+    \             que.push(e.to);\n        }\n    }\n};\n#line 2 \"library/tree/CartesianTree.cpp\"\
     \n\n// \u6700\u5C0F\u5024\u3067\u5206\u5272 \u6839\u4ED8\u304D\u6728\u3092\u6E21\
     \u3059 \u6839\u304C\u6700\u5C0F\u5024\u306Eindex\n// \u7B49\u3057\u3044\u5024\u306B\
     \u95A2\u3057\u3066\u306F index \u306E\u5927\u5C0F\u3092\u6BD4\u8F03\u3059\u308B\
@@ -113,25 +113,25 @@ data:
     \                else\n                    t.add_edge(r, i, lr[i]);\n        }\n\
     \    }\n    t.build(root);\n    return t;\n}\n#line 6 \"test/AOJ/DPL_3_B.test.cpp\"\
     \n\nvoid chmax(int &a, int b) { a = max(a, b); }\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int h, w;\n    cin >> h >> w;\n\n    int ans\
-    \ = 0;\n    std::vector<int> v(w, 0);\n    while (h--) {\n        for (int &p\
-    \ : v) {\n            int a;\n            cin >> a;\n            if (a)\n    \
-    \            p = 0;\n            else\n                p++;\n        }\n     \
-    \   auto T = cartesian_tree(v);\n        chmax(ans, v[T.root] * w);\n        for\
-    \ (int i = 0; i < w; i++)\n            for (const auto &e : T.son(i)) {\n    \
-    \            const auto &[L, R] = e.weight;\n                chmax(ans, v[e.to]\
+    \    std::cin.tie(nullptr);\n\n    int h, w;\n    std::cin >> h >> w;\n\n    int\
+    \ ans = 0;\n    std::vector<int> v(w, 0);\n    while (h--) {\n        for (int\
+    \ &p : v) {\n            int a;\n            std::cin >> a;\n            if (a)\n\
+    \                p = 0;\n            else\n                p++;\n        }\n \
+    \       auto T = cartesian_tree(v);\n        chmax(ans, v[T.root] * w);\n    \
+    \    for (int i = 0; i < w; i++)\n            for (const auto &e : T.son(i)) {\n\
+    \                const auto &[L, R] = e.weight;\n                chmax(ans, v[e.to]\
     \ * (R - L));\n            }\n    }\n    std::cout << ans << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/tree/CartesianTree.cpp\"\n\n\
     void chmax(int &a, int b) { a = max(a, b); }\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int h, w;\n    cin >> h >> w;\n\n    int ans\
-    \ = 0;\n    std::vector<int> v(w, 0);\n    while (h--) {\n        for (int &p\
-    \ : v) {\n            int a;\n            cin >> a;\n            if (a)\n    \
-    \            p = 0;\n            else\n                p++;\n        }\n     \
-    \   auto T = cartesian_tree(v);\n        chmax(ans, v[T.root] * w);\n        for\
-    \ (int i = 0; i < w; i++)\n            for (const auto &e : T.son(i)) {\n    \
-    \            const auto &[L, R] = e.weight;\n                chmax(ans, v[e.to]\
+    \    std::cin.tie(nullptr);\n\n    int h, w;\n    std::cin >> h >> w;\n\n    int\
+    \ ans = 0;\n    std::vector<int> v(w, 0);\n    while (h--) {\n        for (int\
+    \ &p : v) {\n            int a;\n            std::cin >> a;\n            if (a)\n\
+    \                p = 0;\n            else\n                p++;\n        }\n \
+    \       auto T = cartesian_tree(v);\n        chmax(ans, v[T.root] * w);\n    \
+    \    for (int i = 0; i < w; i++)\n            for (const auto &e : T.son(i)) {\n\
+    \                const auto &[L, R] = e.weight;\n                chmax(ans, v[e.to]\
     \ * (R - L));\n            }\n    }\n    std::cout << ans << std::endl;\n}"
   dependsOn:
   - library/tree/CartesianTree.cpp
@@ -140,7 +140,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DPL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DPL_3_B.test.cpp

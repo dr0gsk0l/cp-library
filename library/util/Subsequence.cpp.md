@@ -12,30 +12,30 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Subsequence.cpp\"\ntemplate <typename T, typename\
-    \ U>\nT sparse_subsequence(const std::vector<U> &v) {\n    map<U, T> mp;\n   \
+    \ U>\nT sparse_subsequence(const std::vector<U> &v) {\n    std<U, T> mp;\n   \
     \ T res = 1;\n    for (const U &p : v) {\n        T tmp = res;\n        res =\
     \ res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n    return res;\n}\ntemplate\
     \ <typename T, int SIZE> T subsequence(const std::vector<int> &v) {\n    std::vector<T>\
     \ memo(SIZE, 0);\n    T res = 1;\n    for (int p : v) {\n        T tmp = res;\n\
     \        res = res * 2 - memo[p];\n        memo[p] = tmp;\n    }\n    return res;\n\
-    }\ntemplate <typename T> T subsequence_alphabet(const string &s) {\n    std::vector<int>\
+    }\ntemplate <typename T> T subsequence_alphabet(const std::string &s) {\n    std::vector<int>\
     \ v;\n    v.reserve(s.size());\n    for (char c : s)\n        v.push_back(c -\
     \ (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T, 26>(v);\n}\n"
   code: "template <typename T, typename U>\nT sparse_subsequence(const std::vector<U>\
-    \ &v) {\n    map<U, T> mp;\n    T res = 1;\n    for (const U &p : v) {\n     \
+    \ &v) {\n    std<U, T> mp;\n    T res = 1;\n    for (const U &p : v) {\n     \
     \   T tmp = res;\n        res = res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n\
     \    return res;\n}\ntemplate <typename T, int SIZE> T subsequence(const std::vector<int>\
     \ &v) {\n    std::vector<T> memo(SIZE, 0);\n    T res = 1;\n    for (int p : v)\
     \ {\n        T tmp = res;\n        res = res * 2 - memo[p];\n        memo[p] =\
     \ tmp;\n    }\n    return res;\n}\ntemplate <typename T> T subsequence_alphabet(const\
-    \ string &s) {\n    std::vector<int> v;\n    v.reserve(s.size());\n    for (char\
-    \ c : s)\n        v.push_back(c - (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T,\
+    \ std::string &s) {\n    std::vector<int> v;\n    v.reserve(s.size());\n    for\
+    \ (char c : s)\n        v.push_back(c - (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T,\
     \ 26>(v);\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/util/Subsequence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp

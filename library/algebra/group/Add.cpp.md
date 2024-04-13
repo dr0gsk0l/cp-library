@@ -8,7 +8,7 @@ data:
   - icon: ':x:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
   - icon: ':x:'
@@ -36,7 +36,7 @@ data:
   - icon: ':x:'
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_B.test.cpp
     title: test/AOJ/DSL_2_B.test.cpp
   - icon: ':x:'
@@ -83,7 +83,7 @@ data:
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/group/Add.cpp\"\ntemplate<typename X>\n\
@@ -111,8 +111,8 @@ data:
   - library/math/FactorialNumberSystem.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 18:08:10+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp

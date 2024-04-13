@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/CumulativeSum.cpp
     title: library/datastructure/CumulativeSum.cpp
   - icon: ':x:'
@@ -38,7 +38,7 @@ data:
     \ std::vector<T> &v) : A(v.size() + 1, 0) {\n        for (int i = 0; i < v.size();\
     \ i++)\n            A[i + 1] = A[i] + v[i];\n    }\n    void add(const T &a) {\
     \ A.push_back(A.back() + a); }\n    U sum(int l, int r) { return A[r] - A[l];\
-    \ }\n    U sum() { return A.back(); }\n};\n#line 2 \"library/datastructure/FullyIndexableDictionary.cpp\"\
+    \ }\n    U sum() { return A.back(); }\n};\n#line 4 \"library/datastructure/FullyIndexableDictionary.cpp\"\
     \nclass FullyIndexableDictionary {\n    int n,\n        block; // 64\u500B\u4E8B\
     \u306B\u533A\u5207\u3063\u305F\u30D6\u30ED\u30C3\u30AF\u306E\u500B\u6570\n   \
     \ std::vector<unsigned long long> bit;\n    std::vector<unsigned int> sum; //\
@@ -88,17 +88,17 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 4 \"library/datastructure/WaveletMatrix.cpp\"\
-    \n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename T, bool\
-    \ COMPRESS = true> class WaveletMatrix {\n  protected:\n    using U = conditional_t<COMPRESS,\
-    \ int, T>;\n    static_assert(is_integral_v<U>, \"Wavelet Matrix is only for integer\"\
-    );\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary> mat;\n  \
-    \  std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T> data;\n\
-    \n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS) {\n\
-    \            return C.geq(x);\n        } else {\n            return x;\n     \
-    \   }\n    }\n    constexpr T uncomp(const U &a) {\n        if constexpr (COMPRESS)\
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 4\
+    \ \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i =\
+    \ 0; i < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
+    \ {\n  protected:\n    using U = conditional_t<COMPRESS, int, T>;\n    static_assert(is_integral_v<U>,\
+    \ \"Wavelet Matrix is only for integer\");\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary>\
+    \ mat;\n    std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T>\
+    \ data;\n\n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS)\
+    \ {\n            return C.geq(x);\n        } else {\n            return x;\n \
+    \       }\n    }\n    constexpr T uncomp(const U &a) {\n        if constexpr (COMPRESS)\
     \ {\n            return C.r(a);\n        } else {\n            return a;\n   \
     \     }\n    }\n\n    // 0-indexed \u3067\u4E0B\u304B\u3089 i bit \u76EE\n   \
     \ inline bool low_bit(const U &a, int i) const { return (a >> i) & 1; }\n    //\
@@ -185,49 +185,57 @@ data:
     \ int, int>> kth_smallest_intervals(int l, int r,\n                          \
     \                                   int k) {\n        return kth_largest_intervals(l,\
     \ r, r - l - k - 1);\n    }\n};\n#undef REP_\n#line 2 \"library/r2/XY.cpp\"\n\
-    template<typename T>\nstruct XY{\n  T x,y;\n  XY()=default;\n  XY(T x,T y):x(x),y(y){}\n\
-    \  XY(const pair<T,T>&xy):x(xy.first),y(xy.second){}\n\n  XY operator+()const{\
-    \ return *this; }\n  XY operator-()const{ return XY(-x,-y); }\n\n  XY& operator++(){\
-    \ x++;y++;return *this; }\n  XY& operator--(){ x--;y--;return *this; }\n  XY&\
-    \ operator++(int){ XY a=*this; ++*this; return a; }\n  XY& operator--(int){ XY\
-    \ a=*this; --*this; return a; }\n\n  XY& operator+=(const XY& v){ x+=v.x; y+=v.y;\
-    \ return *this; }\n  XY& operator-=(const XY& v){ x-=v.x; y-=v.y; return *this;\
-    \ }\n  XY& operator*=(const T& a){ x*=a; y*=a; return *this; }\n  XY& operator/=(const\
-    \ T& a){ x/=a; y/=a; return *this; }\n\n  friend XY operator+(const XY& u,const\
-    \ XY& v){ return XY(u)+=v; }\n  friend XY operator-(const XY& u,const XY& v){\
-    \ return XY(u)-=v; }\n  friend XY operator*(const XY&u,const T& a){ return XY(u)*=a;\
-    \ }\n  friend XY operator*(const T& a,const XY&u){ return XY(u)*=a; }\n  friend\
-    \ XY operator/(const XY&u,const T& a){ return XY(u)/=a; }\n\n  bool operator<(const\
-    \ XY&v)const{ return x!=v.x ? x<v.x : y<v.y; }\n  bool operator>(const XY&v)const{\
-    \ return x!=v.x ? x>v.x : y>v.y; }\n  bool operator==(const XY&v)const{ return\
-    \ x==v.x and y==v.y; }\n  bool operator!=(const XY&v)const{ return !(*this==v);\
-    \ }\n\n  double arg()const{ return atan2(y,x); }\n\n  // [0,2pi) \u3067 \u03B8\
-    (u)<\u03B8(v) \u306E\u6642 true \n  // (0,0) \u306F 2pi \u306B\u76F8\u5F53\n \
-    \ //static bool angle_cmp(const XY&u,const XY&v){\n  //  using U=conditional_t<\
-    \ is_same_v<T,int>,long long,T>;\n  //  if(u==XY(0,0))return false;\n  //  if(v==XY(0,0))return\
-    \ true;\n  //  if(u.y==0){\n  //    if(u.x>0)return true;\n  //    if(v.y==0)return\
-    \ v.x<0;\n  //    return v.y<0;\n  //  }\n  //  if(u.y>0){\n  //    if(v.y==0)return\
-    \ v.x<0;\n  //    if(v.y<0)return true;\n  //    return U(v.x)*u.y <= U(u.x)*v.y;\n\
-    \  //  }\n  //  if(v.y>=0)return false;\n  //  return U(v.x)*u.y <= U(u.x)*v.y;\n\
-    \  //}\n\n  friend T dot(const XY&u,const XY& v){ return u.x*v.x + u.y*v.y; }\n\
-    \  T norm(){ return dot(*this,*this); }\n  T abs(){ return sqrt(norm()); }\n\n\
-    \  friend istream&operator>>(istream&is,XY&v){ is>>v.x>>v.y; return is; }\n  friend\
-    \ ostream&operator<<(ostream&os,const XY&v){ os<<v.x<<\" \"<<v.y; return os;}\n\
-    \n  static XY direction(const char&c){\n    if(c=='R')return {1,0};\n    if(c=='L')return\
-    \ {-1,0};\n    if(c=='U')return {0,-1};\n    if(c=='D')return {0,1};\n    return\
-    \ {0,0};\n  }\n};\n#line 4 \"library/r2/Projection.cpp\"\ntemplate <typename T>\
-    \ class Projection {\n    using r2 = XY<T>;\n    Compress<r2> C;\n\n  public:\n\
-    \    Projection(const std::vector<r2> &v) : C(v) {}\n    int size() { return C.size();\
-    \ }\n    int id(r2 xy) { return C[xy]; }\n    int id(int x, int y) { return C[r2(x,\
-    \ y)]; }\n    r2 r(int id) { return C.r(id); }\n    //[l,r) \u3092\u8FD4\u3059\
-    \n    pair<int, int> interval(const T &l, const T &r) {\n        if (C.max().x\
-    \ < l or r <= C.min().x)\n            return make_pair(0, 0);\n        T mn =\
-    \ numeric_limits<T>::min();\n        int L = C.geq(r2(l, mn));\n        int R\
-    \ = C.geq(r2(r, mn));\n        return make_pair(L, R);\n    }\n};\n#line 10 \"\
-    test/library-checker/DataStructure/RectangleSum_2.test.cpp\"\n\nusing ll = long\
-    \ long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    std::vector<r2>\
-    \ r2s(n);\n    std::vector<int> x(n), y(n), w(n);\n    REP (i, n) {\n        cin\
+    template <typename T> struct XY {\n    T x, y;\n    XY() = default;\n    XY(T\
+    \ x, T y) : x(x), y(y) {}\n    XY(const pair<T, T> &xy) : x(xy.first), y(xy.second)\
+    \ {}\n\n    XY operator+() const { return *this; }\n    XY operator-() const {\
+    \ return XY(-x, -y); }\n\n    XY &operator++() {\n        x++;\n        y++;\n\
+    \        return *this;\n    }\n    XY &operator--() {\n        x--;\n        y--;\n\
+    \        return *this;\n    }\n    XY &operator++(int) {\n        XY a = *this;\n\
+    \        ++*this;\n        return a;\n    }\n    XY &operator--(int) {\n     \
+    \   XY a = *this;\n        --*this;\n        return a;\n    }\n\n    XY &operator+=(const\
+    \ XY &v) {\n        x += v.x;\n        y += v.y;\n        return *this;\n    }\n\
+    \    XY &operator-=(const XY &v) {\n        x -= v.x;\n        y -= v.y;\n   \
+    \     return *this;\n    }\n    XY &operator*=(const T &a) {\n        x *= a;\n\
+    \        y *= a;\n        return *this;\n    }\n    XY &operator/=(const T &a)\
+    \ {\n        x /= a;\n        y /= a;\n        return *this;\n    }\n\n    friend\
+    \ XY operator+(const XY &u, const XY &v) { return XY(u) += v; }\n    friend XY\
+    \ operator-(const XY &u, const XY &v) { return XY(u) -= v; }\n    friend XY operator*(const\
+    \ XY &u, const T &a) { return XY(u) *= a; }\n    friend XY operator*(const T &a,\
+    \ const XY &u) { return XY(u) *= a; }\n    friend XY operator/(const XY &u, const\
+    \ T &a) { return XY(u) /= a; }\n\n    bool operator<(const XY &v) const { return\
+    \ x != v.x ? x < v.x : y < v.y; }\n    bool operator>(const XY &v) const { return\
+    \ x != v.x ? x > v.x : y > v.y; }\n    bool operator==(const XY &v) const { return\
+    \ x == v.x and y == v.y; }\n    bool operator!=(const XY &v) const { return !(*this\
+    \ == v); }\n\n    double arg() const { return atan2(y, x); }\n\n    // [0,2pi)\
+    \ \u3067 \u03B8(u)<\u03B8(v) \u306E\u6642 true\n    // (0,0) \u306F 2pi \u306B\
+    \u76F8\u5F53\n    // static bool angle_cmp(const XY&u,const XY&v){\n    //  using\
+    \ U=conditional_t< is_same_v<T,int>,long long,T>;\n    //  if(u==XY(0,0))return\
+    \ false;\n    //  if(v==XY(0,0))return true;\n    //  if(u.y==0){\n    //    if(u.x>0)return\
+    \ true;\n    //    if(v.y==0)return v.x<0;\n    //    return v.y<0;\n    //  }\n\
+    \    //  if(u.y>0){\n    //    if(v.y==0)return v.x<0;\n    //    if(v.y<0)return\
+    \ true;\n    //    return U(v.x)*u.y <= U(u.x)*v.y;\n    //  }\n    //  if(v.y>=0)return\
+    \ false;\n    //  return U(v.x)*u.y <= U(u.x)*v.y;\n    //}\n\n    friend T dot(const\
+    \ XY &u, const XY &v) { return u.x * v.x + u.y * v.y; }\n    T norm() { return\
+    \ dot(*this, *this); }\n    T abs() { return sqrt(norm()); }\n\n    friend std::istream\
+    \ &operator>>(std::istream &is, XY &v) {\n        is >> v.x >> v.y;\n        return\
+    \ is;\n    }\n    friend std::ostream &operator<<(std::ostream &os, const XY &v)\
+    \ {\n        os << v.x << \" \" << v.y;\n        return os;\n    }\n\n    static\
+    \ XY direction(const char &c) {\n        if (c == 'R')\n            return {1,\
+    \ 0};\n        if (c == 'L')\n            return {-1, 0};\n        if (c == 'U')\n\
+    \            return {0, -1};\n        if (c == 'D')\n            return {0, 1};\n\
+    \        return {0, 0};\n    }\n};\n#line 4 \"library/r2/Projection.cpp\"\ntemplate\
+    \ <typename T> class Projection {\n    using r2 = XY<T>;\n    Compress<r2> C;\n\
+    \n  public:\n    Projection(const std::vector<r2> &v) : C(v) {}\n    int size()\
+    \ { return C.size(); }\n    int id(r2 xy) { return C[xy]; }\n    int id(int x,\
+    \ int y) { return C[r2(x, y)]; }\n    r2 r(int id) { return C.r(id); }\n    //[l,r)\
+    \ \u3092\u8FD4\u3059\n    pair<int, int> interval(const T &l, const T &r) {\n\
+    \        if (C.max().x < l or r <= C.min().x)\n            return make_pair(0,\
+    \ 0);\n        T mn = numeric_limits<T>::min();\n        int L = C.geq(r2(l, mn));\n\
+    \        int R = C.geq(r2(r, mn));\n        return make_pair(L, R);\n    }\n};\n\
+    #line 10 \"test/library-checker/DataStructure/RectangleSum_2.test.cpp\"\n\nusing\
+    \ ll = long long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<r2>\
+    \ r2s(n);\n    std::vector<int> x(n), y(n), w(n);\n    REP (i, n) {\n        std::cin\
     \ >> x[i] >> y[i] >> w[i];\n        r2s[i] = r2(x[i], y[i]);\n    }\n\n    auto\
     \ P = Projection(r2s);\n    std::vector<int> Y(P.size(), 0);\n    REP (id, P.size())\n\
     \        Y[id] = P.r(id).y;\n    WaveletMatrix WM(Y);\n\n    int LOG = WM.height();\n\
@@ -235,8 +243,8 @@ data:
     \     int idx = P.id(x[i], y[i]);\n        auto idxs = WM.points(idx);\n     \
     \   REP (h, LOG)\n            W[h][idxs[h]] += w[i];\n    }\n    std::vector<CumulativeSum<ll>>\
     \ C(LOG);\n    REP (h, LOG)\n        C[h] = CumulativeSum<ll>(W[h]);\n\n    REP\
-    \ (j, q) {\n        int l, r, d, u;\n        cin >> l >> d >> r >> u;\n      \
-    \  auto [L, R] = P.interval(l, r);\n        ll res = 0;\n        auto intervals\
+    \ (j, q) {\n        int l, r, d, u;\n        std::cin >> l >> d >> r >> u;\n \
+    \       auto [L, R] = P.interval(l, r);\n        ll res = 0;\n        auto intervals\
     \ = WM.intervals(L, R, u);\n        for (const auto &[h, l, r] : intervals)\n\
     \            res += C[h].sum(l, r);\n        auto intervals2 = WM.intervals(L,\
     \ R, d);\n        for (const auto &[h, l, r] : intervals2)\n            res -=\
@@ -246,8 +254,8 @@ data:
     \ \"library/datastructure/CumulativeSum.cpp\"\n#include \"library/datastructure/WaveletMatrix.cpp\"\
     \n#include \"library/r2/Projection.cpp\"\n#include \"library/r2/XY.cpp\"\n\nusing\
     \ ll = long long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    std::vector<r2>\
-    \ r2s(n);\n    std::vector<int> x(n), y(n), w(n);\n    REP (i, n) {\n        cin\
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<r2>\
+    \ r2s(n);\n    std::vector<int> x(n), y(n), w(n);\n    REP (i, n) {\n        std::cin\
     \ >> x[i] >> y[i] >> w[i];\n        r2s[i] = r2(x[i], y[i]);\n    }\n\n    auto\
     \ P = Projection(r2s);\n    std::vector<int> Y(P.size(), 0);\n    REP (id, P.size())\n\
     \        Y[id] = P.r(id).y;\n    WaveletMatrix WM(Y);\n\n    int LOG = WM.height();\n\
@@ -255,8 +263,8 @@ data:
     \     int idx = P.id(x[i], y[i]);\n        auto idxs = WM.points(idx);\n     \
     \   REP (h, LOG)\n            W[h][idxs[h]] += w[i];\n    }\n    std::vector<CumulativeSum<ll>>\
     \ C(LOG);\n    REP (h, LOG)\n        C[h] = CumulativeSum<ll>(W[h]);\n\n    REP\
-    \ (j, q) {\n        int l, r, d, u;\n        cin >> l >> d >> r >> u;\n      \
-    \  auto [L, R] = P.interval(l, r);\n        ll res = 0;\n        auto intervals\
+    \ (j, q) {\n        int l, r, d, u;\n        std::cin >> l >> d >> r >> u;\n \
+    \       auto [L, R] = P.interval(l, r);\n        ll res = 0;\n        auto intervals\
     \ = WM.intervals(L, R, u);\n        for (const auto &[h, l, r] : intervals)\n\
     \            res += C[h].sum(l, r);\n        auto intervals2 = WM.intervals(L,\
     \ R, d);\n        for (const auto &[h, l, r] : intervals2)\n            res -=\
@@ -271,7 +279,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp

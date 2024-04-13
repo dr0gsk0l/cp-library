@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/static_range_frequency
   bundledCode: "#line 1 \"test/library-checker/DataStructure/StaticRangeFrequency.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\n\
-    #include <bits/stdc++.h>\n\n#line 2 \"library/datastructure/FullyIndexableDictionary.cpp\"\
+    #include <bits/stdc++.h>\n\n#line 4 \"library/datastructure/FullyIndexableDictionary.cpp\"\
     \nclass FullyIndexableDictionary {\n    int n,\n        block; // 64\u500B\u4E8B\
     \u306B\u533A\u5207\u3063\u305F\u30D6\u30ED\u30C3\u30AF\u306E\u500B\u6570\n   \
     \ std::vector<unsigned long long> bit;\n    std::vector<unsigned int> sum; //\
@@ -72,17 +72,17 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 4 \"library/datastructure/WaveletMatrix.cpp\"\
-    \n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename T, bool\
-    \ COMPRESS = true> class WaveletMatrix {\n  protected:\n    using U = conditional_t<COMPRESS,\
-    \ int, T>;\n    static_assert(is_integral_v<U>, \"Wavelet Matrix is only for integer\"\
-    );\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary> mat;\n  \
-    \  std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T> data;\n\
-    \n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS) {\n\
-    \            return C.geq(x);\n        } else {\n            return x;\n     \
-    \   }\n    }\n    constexpr T uncomp(const U &a) {\n        if constexpr (COMPRESS)\
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 4\
+    \ \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i =\
+    \ 0; i < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
+    \ {\n  protected:\n    using U = conditional_t<COMPRESS, int, T>;\n    static_assert(is_integral_v<U>,\
+    \ \"Wavelet Matrix is only for integer\");\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary>\
+    \ mat;\n    std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T>\
+    \ data;\n\n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS)\
+    \ {\n            return C.geq(x);\n        } else {\n            return x;\n \
+    \       }\n    }\n    constexpr T uncomp(const U &a) {\n        if constexpr (COMPRESS)\
     \ {\n            return C.r(a);\n        } else {\n            return a;\n   \
     \     }\n    }\n\n    // 0-indexed \u3067\u4E0B\u304B\u3089 i bit \u76EE\n   \
     \ inline bool low_bit(const U &a, int i) const { return (a >> i) & 1; }\n    //\
@@ -170,17 +170,17 @@ data:
     \                                   int k) {\n        return kth_largest_intervals(l,\
     \ r, r - l - k - 1);\n    }\n};\n#undef REP_\n#line 5 \"test/library-checker/DataStructure/StaticRangeFrequency.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n, q;\n    cin >> n >> q;\n    std::vector<int> v(n);\n    for (int\
-    \ i = 0; i < n; i++)\n        cin >> v[i];\n    WaveletMatrix WM(v);\n\n    while\
-    \ (q--) {\n        int l, r, x;\n        cin >> l >> r >> x;\n        std::cout\
-    \ << WM.rank(l, r, x) << \"\\n\";\n    }\n}\n"
+    \n    int n, q;\n    std::cin >> n >> q;\n    std::vector<int> v(n);\n    for\
+    \ (int i = 0; i < n; i++)\n        std::cin >> v[i];\n    WaveletMatrix WM(v);\n\
+    \n    while (q--) {\n        int l, r, x;\n        std::cin >> l >> r >> x;\n\
+    \        std::cout << WM.rank(l, r, x) << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/datastructure/WaveletMatrix.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n, q;\n    cin >> n >> q;\n    std::vector<int> v(n);\n    for (int\
-    \ i = 0; i < n; i++)\n        cin >> v[i];\n    WaveletMatrix WM(v);\n\n    while\
-    \ (q--) {\n        int l, r, x;\n        cin >> l >> r >> x;\n        std::cout\
-    \ << WM.rank(l, r, x) << \"\\n\";\n    }\n}"
+    \n    int n, q;\n    std::cin >> n >> q;\n    std::vector<int> v(n);\n    for\
+    \ (int i = 0; i < n; i++)\n        std::cin >> v[i];\n    WaveletMatrix WM(v);\n\
+    \n    while (q--) {\n        int l, r, x;\n        std::cin >> l >> r >> x;\n\
+    \        std::cout << WM.rank(l, r, x) << \"\\n\";\n    }\n}"
   dependsOn:
   - library/datastructure/WaveletMatrix.cpp
   - library/datastructure/FullyIndexableDictionary.cpp
@@ -188,7 +188,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp

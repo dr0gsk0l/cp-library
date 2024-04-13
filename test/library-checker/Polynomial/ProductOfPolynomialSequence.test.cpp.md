@@ -21,13 +21,13 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/product_of_polynomial_sequence\"\
     \n#include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\
     \n#include <atcoder/convolution>\n#include <atcoder/modint>\nusing namespace atcoder;\n\
-    using mint = modint998244353;\nostream &operator<<(ostream &os, mint a) {\n  \
-    \  os << a.val();\n    return os;\n}\nistream &operator>>(istream &is, mint &a)\
-    \ {\n    long long b;\n    is >> b;\n    a = b;\n    return is;\n}\n\n#line 2\
-    \ \"library/formalpowerseries/Base.cpp\"\n#define REP_(i, n) for (int i = 0; i\
-    \ < (n); i++)\ntemplate <typename T, int MX> struct FormalPowerSeries : vector<T>\
-    \ {\n    using FPS = FormalPowerSeries;\n    using std::vector<T>::resize;\n \
-    \   using std::vector<T>::size;\n    using std::vector<T>::at;\n    using std::vector<T>::assign;\n\
+    using mint = modint998244353;\nstd::ostream &operator<<(std::ostream &os, mint\
+    \ a) {\n    os << a.val();\n    return os;\n}\nstd::istream &operator>>(std::istream\
+    \ &is, mint &a) {\n    long long b;\n    is >> b;\n    a = b;\n    return is;\n\
+    }\n\n#line 2 \"library/formalpowerseries/Base.cpp\"\n#define REP_(i, n) for (int\
+    \ i = 0; i < (n); i++)\ntemplate <typename T, int MX> struct FormalPowerSeries\
+    \ : vector<T> {\n    using FPS = FormalPowerSeries;\n    using std::vector<T>::resize;\n\
+    \    using std::vector<T>::size;\n    using std::vector<T>::at;\n    using std::vector<T>::assign;\n\
     \    using std::vector<T>::vector;\n    using std::vector<T>::begin;\n    using\
     \ std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
     \    using value_type = T;\n\n    void strict(int n) {\n        if (size() > n)\n\
@@ -136,42 +136,46 @@ data:
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
     \ REP_\n#line 22 \"test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp\"\
     \nusing FPS = FormalPowerSeries<mint, 500001>;\n#line 3 \"library/formalpowerseries/Prod.cpp\"\
-    \ntemplate<typename FPS>\nclass FPSProd{\n  queue<FPS> que;\npublic:\n  void add(const\
-    \ FPS&f){ que.push(f); }\n  FPS prod(){\n    if(!que.size())return FPS::unit();\n\
-    \    while(que.size()>1){\n      FPS f=que.front();que.pop();\n      FPS g=que.front();que.pop();\n\
-    \      que.push(f*g);\n    }\n    FPS res=que.front();que.pop();\n    return res;\n\
-    \  }\n};\n\ntemplate<typename FPS>\nclass FPSProdDiversity{\n  static constexpr\
-    \ auto cmp=[](const FPS&f,const FPS&g){ return f.size()>g.size(); };\n  priority_queue<FPS,vector<FPS>,decltype(cmp)>\
-    \ que{cmp};\npublic:\n  void add(const FPS&f){ que.push(f); }\n  FPS prod(){\n\
-    \    if(!que.size())return FPS::unit();\n    while(que.size()>1){\n      FPS f=que.top();que.pop();\n\
-    \      FPS g=que.top();que.pop();\n      que.push(f*g);\n    }\n    FPS res=que.top();que.pop();\n\
-    \    return res;\n  }\n};\n#line 24 \"test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp\"\
+    \ntemplate <typename FPS> class FPSProd {\n    std::queue<FPS> que;\n\n  public:\n\
+    \    void add(const FPS &f) { que.push(f); }\n    FPS prod() {\n        if (!que.size())\n\
+    \            return FPS::unit();\n        while (que.size() > 1) {\n         \
+    \   FPS f = que.front();\n            que.pop();\n            FPS g = que.front();\n\
+    \            que.pop();\n            que.push(f * g);\n        }\n        FPS\
+    \ res = que.front();\n        que.pop();\n        return res;\n    }\n};\n\ntemplate\
+    \ <typename FPS> class FPSProdDiversity {\n    static constexpr auto cmp = [](const\
+    \ FPS &f, const FPS &g) {\n        return f.size() > g.size();\n    };\n    std::priority_queue<FPS,\
+    \ vector<FPS>, decltype(cmp)> que{cmp};\n\n  public:\n    void add(const FPS &f)\
+    \ { que.push(f); }\n    FPS prod() {\n        if (!que.size())\n            return\
+    \ FPS::unit();\n        while (que.size() > 1) {\n            FPS f = que.top();\n\
+    \            que.pop();\n            FPS g = que.top();\n            que.pop();\n\
+    \            que.push(f * g);\n        }\n        FPS res = que.top();\n     \
+    \   que.pop();\n        return res;\n    }\n};\n#line 24 \"test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    FPSProdDiversity<FPS> P;\n\n    int n;\n    cin >> n;\n    REP (_, n) {\n\
-    \        int d;\n        cin >> d;\n        FPS f(d + 1);\n        REP (i, d +\
-    \ 1)\n            cin >> f[i];\n        P.add(f);\n    }\n    FPS f = P.prod();\n\
-    \    REP (i, f.size())\n        std::cout << f[i] << \"\\n \"[i + 1 < f.size()];\n\
-    }\n"
+    \n    FPSProdDiversity<FPS> P;\n\n    int n;\n    std::cin >> n;\n    REP (_,\
+    \ n) {\n        int d;\n        std::cin >> d;\n        FPS f(d + 1);\n      \
+    \  REP (i, d + 1)\n            std::cin >> f[i];\n        P.add(f);\n    }\n \
+    \   FPS f = P.prod();\n    REP (i, f.size())\n        std::cout << f[i] << \"\\\
+    n \"[i + 1 < f.size()];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/product_of_polynomial_sequence\"\
     \n#include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\
     \n#include <atcoder/convolution>\n#include <atcoder/modint>\nusing namespace atcoder;\n\
-    using mint = modint998244353;\nostream &operator<<(ostream &os, mint a) {\n  \
-    \  os << a.val();\n    return os;\n}\nistream &operator>>(istream &is, mint &a)\
-    \ {\n    long long b;\n    is >> b;\n    a = b;\n    return is;\n}\n\n#include\
-    \ \"library/formalpowerseries/Base.cpp\"\nusing FPS = FormalPowerSeries<mint,\
+    using mint = modint998244353;\nstd::ostream &operator<<(std::ostream &os, mint\
+    \ a) {\n    os << a.val();\n    return os;\n}\nstd::istream &operator>>(std::istream\
+    \ &is, mint &a) {\n    long long b;\n    is >> b;\n    a = b;\n    return is;\n\
+    }\n\n#include \"library/formalpowerseries/Base.cpp\"\nusing FPS = FormalPowerSeries<mint,\
     \ 500001>;\n#include \"library/formalpowerseries/Prod.cpp\"\n\nint main() {\n\
     \    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n    FPSProdDiversity<FPS>\
-    \ P;\n\n    int n;\n    cin >> n;\n    REP (_, n) {\n        int d;\n        cin\
-    \ >> d;\n        FPS f(d + 1);\n        REP (i, d + 1)\n            cin >> f[i];\n\
-    \        P.add(f);\n    }\n    FPS f = P.prod();\n    REP (i, f.size())\n    \
-    \    std::cout << f[i] << \"\\n \"[i + 1 < f.size()];\n}"
+    \ P;\n\n    int n;\n    std::cin >> n;\n    REP (_, n) {\n        int d;\n   \
+    \     std::cin >> d;\n        FPS f(d + 1);\n        REP (i, d + 1)\n        \
+    \    std::cin >> f[i];\n        P.add(f);\n    }\n    FPS f = P.prod();\n    REP\
+    \ (i, f.size())\n        std::cout << f[i] << \"\\n \"[i + 1 < f.size()];\n}"
   dependsOn:
   - library/formalpowerseries/Base.cpp
   - library/formalpowerseries/Prod.cpp
   isVerificationFile: true
   path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp

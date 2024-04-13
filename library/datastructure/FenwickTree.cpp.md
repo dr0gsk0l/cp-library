@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Concepts.cpp
     title: library/algebra/group/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   _extendedRequiredBy:
@@ -18,7 +18,7 @@ data:
     path: library/math/FactorialNumberSystem.cpp
     title: library/math/FactorialNumberSystem.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_B.test.cpp
     title: test/AOJ/DSL_2_B.test.cpp
   - icon: ':x:'
@@ -32,7 +32,7 @@ data:
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -86,8 +86,8 @@ data:
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 18:08:10+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Concepts.cpp
     title: library/algebra/group/Concepts.cpp
   - icon: ':warning:'
@@ -11,7 +11,7 @@ data:
   - icon: ':warning:'
     path: library/datastructure/CumulativeMonoid.cpp
     title: library/datastructure/CumulativeMonoid.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
   - icon: ':x:'
@@ -30,7 +30,7 @@ data:
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_B.test.cpp
     title: test/AOJ/DSL_2_B.test.cpp
   - icon: ':x:'
@@ -68,7 +68,7 @@ data:
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/monoid/Concepts.cpp\"\n\ntemplate <class\
@@ -92,8 +92,8 @@ data:
   - library/datastructure/CumulativeGroup.cpp
   - library/tree/TreeMonoid.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 18:08:10+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp

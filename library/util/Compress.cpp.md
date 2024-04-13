@@ -78,9 +78,9 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n"
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n"
   code: "#pragma once\n#define ALL_(v) v.begin(), v.end()\ntemplate <typename T, bool\
     \ Sentinel = false> class Compress {\n    std::vector<T> v;\n    bool prepared;\n\
     \n  public:\n    Compress() : prepared(false) {\n        if constexpr (Sentinel)\
@@ -109,9 +109,9 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_"
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_"
   dependsOn: []
   isVerificationFile: false
   path: library/util/Compress.cpp
@@ -121,7 +121,7 @@ data:
   - library/util/InversionNumber.cpp
   - library/util/BubbleNumber.cpp
   - library/r2/Projection.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

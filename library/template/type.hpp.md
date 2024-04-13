@@ -31,11 +31,11 @@ data:
     \ TYPE1(T) template <class T>\n#define TYPE2(T, U) template <class T, class U>\n\
     #define TYPE3(T, U, V) template <class T, class U, class V>\n#define TYPE4(T,\
     \ U, V, W) template <class T, class U, class V, class W>\n#define TYPE5(T, U,\
-    \ V, W, X)                                                   \\\n  template <class\
-    \ T, class U, class V, class W, class X>\n#define TYPE(...)                  \
-    \                                            \\\n  overload5(__VA_ARGS__, TYPE5,\
-    \ TYPE4, TYPE3, TYPE2, TYPE1)(__VA_ARGS__)\n#define TYPES1(T) template <class...\
-    \ T>\n#define TYPES2(H, T) template <class H, class... T>\n#define TYPES(...)\
+    \ V, W, X)                                                   \\\n    template\
+    \ <class T, class U, class V, class W, class X>\n#define TYPE(...)           \
+    \                                                   \\\n    overload5(__VA_ARGS__,\
+    \ TYPE5, TYPE4, TYPE3, TYPE2, TYPE1)(__VA_ARGS__)\n#define TYPES1(T) template\
+    \ <class... T>\n#define TYPES2(H, T) template <class H, class... T>\n#define TYPES(...)\
     \ overload2(__VA_ARGS__, TYPES2, TYPES1)(__VA_ARGS__)\n\nTYPE(T)\nusing vec<T>\
     \ = std::vector<T>;\nTYPE(T)\nusing vvec<T> = vec<vec<T>>;\nTYPE(T)\nusing vvvec<T>\
     \ = vec<vvec<T>>;\nTYPE(T)\nusing vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T>\
@@ -49,11 +49,11 @@ data:
     \ T>\n#define TYPE2(T, U) template <class T, class U>\n#define TYPE3(T, U, V)\
     \ template <class T, class U, class V>\n#define TYPE4(T, U, V, W) template <class\
     \ T, class U, class V, class W>\n#define TYPE5(T, U, V, W, X)                \
-    \                                   \\\n  template <class T, class U, class V,\
-    \ class W, class X>\n#define TYPE(...)                                       \
-    \                       \\\n  overload5(__VA_ARGS__, TYPE5, TYPE4, TYPE3, TYPE2,\
-    \ TYPE1)(__VA_ARGS__)\n#define TYPES1(T) template <class... T>\n#define TYPES2(H,\
-    \ T) template <class H, class... T>\n#define TYPES(...) overload2(__VA_ARGS__,\
+    \                                   \\\n    template <class T, class U, class\
+    \ V, class W, class X>\n#define TYPE(...)                                    \
+    \                          \\\n    overload5(__VA_ARGS__, TYPE5, TYPE4, TYPE3,\
+    \ TYPE2, TYPE1)(__VA_ARGS__)\n#define TYPES1(T) template <class... T>\n#define\
+    \ TYPES2(H, T) template <class H, class... T>\n#define TYPES(...) overload2(__VA_ARGS__,\
     \ TYPES2, TYPES1)(__VA_ARGS__)\n\nTYPE(T)\nusing vec<T> = std::vector<T>;\nTYPE(T)\n\
     using vvec<T> = vec<vec<T>>;\nTYPE(T)\nusing vvvec<T> = vec<vvec<T>>;\nTYPE(T)\n\
     using vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T> = std::pair<T, T>;\nusing\
@@ -73,7 +73,7 @@ data:
   - library/template/util_func.hpp
   - library/template/original_istream.hpp
   - library/template/output.hpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/type.hpp

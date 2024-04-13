@@ -36,13 +36,13 @@ data:
     \      return u;\n            sz[pre[u]] += sz[u];\n        }\n        assert(false);\n\
     \        return -1;\n    };\n\n  public:\n    std::vector<int> order;\n    CentroidDecomposition(TREE\
     \ T) : T(T), sz(T.n), pre(T.n), timing(T.n, -1) {\n        order.reserve(T.n);\n\
-    \        queue<int> que;\n        que.push(0);\n        while (que.size()) {\n\
-    \            int c = find_centroid(que.front());\n            que.pop();\n   \
-    \         timing[c] = order.size();\n            order.push_back(c);\n       \
-    \     for (int to : T[c])\n                if (timing[to] < 0)\n             \
-    \       que.push(to);\n        }\n    }\n\n    template <typename X, typename\
+    \        std::queue<int> que;\n        que.push(0);\n        while (que.size())\
+    \ {\n            int c = find_centroid(que.front());\n            que.pop();\n\
+    \            timing[c] = order.size();\n            order.push_back(c);\n    \
+    \        for (int to : T[c])\n                if (timing[to] < 0)\n          \
+    \          que.push(to);\n        }\n    }\n\n    template <typename X, typename\
     \ F, typename G, typename H>\n    void calc(int root, X initial_val, const F &next_val,\
-    \ const G &action,\n              const H &finish) {\n        queue<tuple<int,\
+    \ const G &action,\n              const H &finish) {\n        std::queue<tuple<int,\
     \ int, X>> que;\n\n        auto f = [&](int v_, int pre_, X val_, bool is_all)\
     \ {\n            que.emplace(v_, pre_, val_);\n            while (que.size())\
     \ {\n                auto [v, pre, val] = que.front();\n                que.pop();\n\
@@ -86,10 +86,10 @@ data:
     \ edge_type &e) { add_arc(e.from, e.to); }\n    void add_edge(const edge_type\
     \ &e) { add_edge(e.from, e.to); }\n\n    void scan(int m, bool directed = false,\
     \ int indexed = 1) {\n        edges.reserve(directed ? m : 2 * m);\n        while\
-    \ (m--) {\n            int u, v;\n            cin >> u >> v;\n            u -=\
-    \ indexed;\n            v -= indexed;\n            if (directed)\n           \
-    \     add_arc(u, v);\n            else\n                add_edge(u, v);\n    \
-    \    }\n        build();\n    }\n\n    void build() {\n        assert(!prepared);\n\
+    \ (m--) {\n            int u, v;\n            std::cin >> u >> v;\n          \
+    \  u -= indexed;\n            v -= indexed;\n            if (directed)\n     \
+    \           add_arc(u, v);\n            else\n                add_edge(u, v);\n\
+    \        }\n        build();\n    }\n\n    void build() {\n        assert(!prepared);\n\
     \        prepared = true;\n        for (int v = 0; v < n; v++)\n            in_deg[v\
     \ + 1] += in_deg[v];\n        std::vector<edge_type> new_edges(in_deg.back());\n\
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
@@ -101,28 +101,28 @@ data:
     \    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph {\n    using\
     \ Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
-    \ i = 1; i < n; i++) {\n            int p;\n            cin >> p;\n          \
-    \  add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void scan(int\
-    \ indexed = 1) {\n        Graph::scan(n - 1, false, indexed);\n        build();\n\
-    \    }\n\n    edge_type &parent(int v) {\n        assert(~root and root != v);\n\
-    \        return (*this)[v][0];\n    }\n    OutgoingEdges son(int v) {\n      \
-    \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
-    \ in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v + 1]};\n    }\n\
-    \n  private:\n    void dfs(int v, int pre = -1) {\n        for (auto &e : (*this)[v])\
-    \ {\n            if (e.to == pre)\n                swap((*this)[v][0], e);\n \
-    \           else {\n                depth[e.to] = depth[v] + 1;\n            \
-    \    dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n    }\n\
-    \n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n      \
-    \      Graph::build();\n        if (~root) {\n            assert(r == root);\n\
+    \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
+    \       add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void\
+    \ scan(int indexed = 1) {\n        Graph::scan(n - 1, false, indexed);\n     \
+    \   build();\n    }\n\n    edge_type &parent(int v) {\n        assert(~root and\
+    \ root != v);\n        return (*this)[v][0];\n    }\n    OutgoingEdges son(int\
+    \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
+    \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
+    \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
+    \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
+    \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
+    \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
     \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
-    \        queue<int> que;\n        que.push(root);\n        while (que.size())\
+    \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
     \            for (const auto &e : son(p))\n                que.push(e.to);\n \
     \       }\n    }\n};\n#line 10 \"test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp\"\
     \n\nusing ll = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    Tree T(n);\n   \
-    \ T.scan(0);\n\n    CentroidDecomposition CD(T);\n\n    std::vector<ll> ans(n,\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    Tree T(n);\n\
+    \    T.scan(0);\n\n    CentroidDecomposition CD(T);\n\n    std::vector<ll> ans(n,\
     \ 0), D{0};\n\n    auto next_val = [&](int d, auto &e) { return d + 1; };\n  \
     \  auto action = [&](int d, bool add) {\n        if (D.size() <= d)\n        \
     \    D.push_back(0);\n        D[d]++;\n    };\n    auto finish = [&](bool add)\
@@ -136,8 +136,8 @@ data:
     \n#include <bits/stdc++.h>\n\n#include <atcoder/convolution>\nusing namespace\
     \ atcoder;\n\n#include \"library/tree/CentroidDecomposition.cpp\"\n#include \"\
     library/tree/Tree.cpp\"\n\nusing ll = long long;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    Tree T(n);\n   \
-    \ T.scan(0);\n\n    CentroidDecomposition CD(T);\n\n    std::vector<ll> ans(n,\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    Tree T(n);\n\
+    \    T.scan(0);\n\n    CentroidDecomposition CD(T);\n\n    std::vector<ll> ans(n,\
     \ 0), D{0};\n\n    auto next_val = [&](int d, auto &e) { return d + 1; };\n  \
     \  auto action = [&](int d, bool add) {\n        if (D.size() <= d)\n        \
     \    D.push_back(0);\n        D[d]++;\n    };\n    auto finish = [&](bool add)\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

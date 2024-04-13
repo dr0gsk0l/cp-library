@@ -52,12 +52,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -91,17 +91,17 @@ data:
     \ v < n; v++)\n        if (now_d[v] == d[v])\n            res[v] = d[v];\n   \
     \     else\n            res[v] = nullopt;\n    return {res, pre};\n}\n#line 7\
     \ \"test/AOJ/GRL_1_B.test.cpp\"\n\nusing ll = long long;\n\nint main() {\n   \
-    \ int n, m, s;\n    cin >> n >> m >> s;\n    WeightedGraph<ll> g(n, m, true, 0);\n\
-    \    auto [d, pre] = bellman_ford(g, s);\n    for (const auto &p : d)\n      \
-    \  if (!p) {\n            std::cout << \"NEGATIVE CYCLE\\n\";\n            return\
-    \ 0;\n        }\n    for (int i = 0; i < n; i++)\n        if (~pre[i] || i ==\
-    \ s)\n            std::cout << d[i].value() << \"\\n\";\n        else\n      \
-    \      std::cout << \"INF\\n\";\n}\n"
+    \ int n, m, s;\n    std::cin >> n >> m >> s;\n    WeightedGraph<ll> g(n, m, true,\
+    \ 0);\n    auto [d, pre] = bellman_ford(g, s);\n    for (const auto &p : d)\n\
+    \        if (!p) {\n            std::cout << \"NEGATIVE CYCLE\\n\";\n        \
+    \    return 0;\n        }\n    for (int i = 0; i < n; i++)\n        if (~pre[i]\
+    \ || i == s)\n            std::cout << d[i].value() << \"\\n\";\n        else\n\
+    \            std::cout << \"INF\\n\";\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/graph/WeightedGraph.cpp\"\n#include\
     \ \"library/graph/shortest_path/BellmanFord.cpp\"\n\nusing ll = long long;\n\n\
-    int main() {\n    int n, m, s;\n    cin >> n >> m >> s;\n    WeightedGraph<ll>\
+    int main() {\n    int n, m, s;\n    std::cin >> n >> m >> s;\n    WeightedGraph<ll>\
     \ g(n, m, true, 0);\n    auto [d, pre] = bellman_ford(g, s);\n    for (const auto\
     \ &p : d)\n        if (!p) {\n            std::cout << \"NEGATIVE CYCLE\\n\";\n\
     \            return 0;\n        }\n    for (int i = 0; i < n; i++)\n        if\
@@ -113,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_B.test.cpp

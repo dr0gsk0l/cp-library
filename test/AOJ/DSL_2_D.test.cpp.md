@@ -37,47 +37,48 @@ data:
     \ }\n  static constexpr void Rchop(O&x, const O&y){ if(!x)x=y; }\n  static constexpr\
     \ void Lchop(const O&x, O&y){ if(x)y=x; } \n  static constexpr O unit()noexcept{\
     \ return nullopt; }\n  static constexpr bool commute=false;\n};\n#line 4 \"library/algebra/lazy/SetMin.cpp\"\
-    \ntemplate<typename X>\nstruct LazySetMin{\n  using MX=MonoidMin<X>;\n  using\
-    \ MF=MonoidSet<X>;\n  using F=typename MF::value_type;\n  static constexpr X mapping(const\
-    \ F&f,const X&x){\n    return f.value_or(x);\n  }\n};\n#line 1 \"library/segtree/DualSegmentTree.cpp\"\
-    \ntemplate <typename Lazy> class DualSegmentTree {\n    using MX = typename Lazy::MX;\n\
-    \    using MF = typename Lazy::MF;\n    using X = typename MX::value_type;\n \
-    \   using F = typename MF::value_type;\n    int n, log, size;\n    std::vector<X>\
-    \ dat;\n    std::vector<F> laz;\n\n    void point_apply(int k, const F &f) {\n\
-    \        if (k < size)\n            MF::Lchop(f, laz[k]);\n        else\n    \
-    \        dat[k - size] = Lazy::mapping(f, dat[k - size]);\n    }\n    void push(int\
-    \ k) {\n        point_apply(2 * k, laz[k]);\n        point_apply(2 * k + 1, laz[k]);\n\
-    \        laz[k] = MF::unit();\n    }\n    void thrust(int k) {\n        for (int\
-    \ i = log; i; i--)\n            push(k >> i);\n    }\n\n  public:\n    DualSegmentTree()\
-    \ : DualSegmentTree(0) {}\n    DualSegmentTree(int n) : DualSegmentTree(vector<X>(n,\
-    \ MX::unit())) {}\n    DualSegmentTree(const std::vector<X> &v) : n(v.size()),\
-    \ dat(v) {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n      \
-    \  size = 1 << log;\n        laz.assign(size, MF::unit());\n    }\n\n    void\
-    \ set(int p, X x) {\n        assert(0 <= p and p < n);\n        thrust(p + size);\n\
-    \        dat[p] = x;\n    }\n\n    X operator[](int p) {\n        assert(0 <=\
-    \ p and p < n);\n        thrust(p + size);\n        return dat[p];\n    }\n\n\
-    \    void apply(int l, int r, F f) {\n        assert(0 <= l && l <= r && r <=\
-    \ n);\n        if (l == r)\n            return;\n        thrust(l += size);\n\
-    \        thrust(r += size - 1);\n        for (int L = l, R = r + 1; L < R; L >>=\
-    \ 1, R >>= 1) {\n            if (L & 1)\n                point_apply(L++, f);\n\
-    \            if (R & 1)\n                point_apply(--R, f);\n        }\n   \
-    \ }\n};\n#line 7 \"test/AOJ/DSL_2_D.test.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    DualSegmentTree<LazySetMin<int>>\
+    \ntemplate <typename X> struct LazySetMin {\n    using MX = MonoidMin<X>;\n  \
+    \  using MF = MonoidSet<X>;\n    using F = typename MF::value_type;\n    static\
+    \ constexpr X mapping(const F &f, const X &x) { return f.value_or(x); }\n};\n\
+    #line 1 \"library/segtree/DualSegmentTree.cpp\"\ntemplate <typename Lazy> class\
+    \ DualSegmentTree {\n    using MX = typename Lazy::MX;\n    using MF = typename\
+    \ Lazy::MF;\n    using X = typename MX::value_type;\n    using F = typename MF::value_type;\n\
+    \    int n, log, size;\n    std::vector<X> dat;\n    std::vector<F> laz;\n\n \
+    \   void point_apply(int k, const F &f) {\n        if (k < size)\n           \
+    \ MF::Lchop(f, laz[k]);\n        else\n            dat[k - size] = Lazy::mapping(f,\
+    \ dat[k - size]);\n    }\n    void push(int k) {\n        point_apply(2 * k, laz[k]);\n\
+    \        point_apply(2 * k + 1, laz[k]);\n        laz[k] = MF::unit();\n    }\n\
+    \    void thrust(int k) {\n        for (int i = log; i; i--)\n            push(k\
+    \ >> i);\n    }\n\n  public:\n    DualSegmentTree() : DualSegmentTree(0) {}\n\
+    \    DualSegmentTree(int n) : DualSegmentTree(vector<X>(n, MX::unit())) {}\n \
+    \   DualSegmentTree(const std::vector<X> &v) : n(v.size()), dat(v) {\n       \
+    \ for (log = 1; (1 << log) < n; log++) {\n        }\n        size = 1 << log;\n\
+    \        laz.assign(size, MF::unit());\n    }\n\n    void set(int p, X x) {\n\
+    \        assert(0 <= p and p < n);\n        thrust(p + size);\n        dat[p]\
+    \ = x;\n    }\n\n    X operator[](int p) {\n        assert(0 <= p and p < n);\n\
+    \        thrust(p + size);\n        return dat[p];\n    }\n\n    void apply(int\
+    \ l, int r, F f) {\n        assert(0 <= l && l <= r && r <= n);\n        if (l\
+    \ == r)\n            return;\n        thrust(l += size);\n        thrust(r +=\
+    \ size - 1);\n        for (int L = l, R = r + 1; L < R; L >>= 1, R >>= 1) {\n\
+    \            if (L & 1)\n                point_apply(L++, f);\n            if\
+    \ (R & 1)\n                point_apply(--R, f);\n        }\n    }\n};\n#line 7\
+    \ \"test/AOJ/DSL_2_D.test.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    DualSegmentTree<LazySetMin<int>>\
     \ seg(vector<int>(n, (1LL << 31) - 1));\n    while (q--) {\n        int t;\n \
-    \       cin >> t;\n        if (t) {\n            int i;\n            cin >> i;\n\
-    \            std::cout << seg[i] << \"\\n\";\n        } else {\n            int\
-    \ l, r, x;\n            cin >> l >> r >> x;\n            r++;\n            seg.apply(l,\
-    \ r, x);\n        }\n    }\n}\n"
+    \       std::cin >> t;\n        if (t) {\n            int i;\n            std::cin\
+    \ >> i;\n            std::cout << seg[i] << \"\\n\";\n        } else {\n     \
+    \       int l, r, x;\n            std::cin >> l >> r >> x;\n            r++;\n\
+    \            seg.apply(l, r, x);\n        }\n    }\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/lazy/SetMin.cpp\"\n#include\
     \ \"library/segtree/DualSegmentTree.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    DualSegmentTree<LazySetMin<int>>\
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    DualSegmentTree<LazySetMin<int>>\
     \ seg(vector<int>(n, (1LL << 31) - 1));\n    while (q--) {\n        int t;\n \
-    \       cin >> t;\n        if (t) {\n            int i;\n            cin >> i;\n\
-    \            std::cout << seg[i] << \"\\n\";\n        } else {\n            int\
-    \ l, r, x;\n            cin >> l >> r >> x;\n            r++;\n            seg.apply(l,\
-    \ r, x);\n        }\n    }\n}"
+    \       std::cin >> t;\n        if (t) {\n            int i;\n            std::cin\
+    \ >> i;\n            std::cout << seg[i] << \"\\n\";\n        } else {\n     \
+    \       int l, r, x;\n            std::cin >> l >> r >> x;\n            r++;\n\
+    \            seg.apply(l, r, x);\n        }\n    }\n}"
   dependsOn:
   - library/algebra/lazy/SetMin.cpp
   - library/algebra/monoid/Min.cpp
@@ -86,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_D.test.cpp

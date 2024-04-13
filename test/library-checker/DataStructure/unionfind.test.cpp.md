@@ -30,22 +30,22 @@ data:
     \        return true;\n    }\n\n    int size(const int x) {\n        assert(0\
     \ <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int count() const\
     \ { return num; }\n};\n#line 5 \"test/library-checker/DataStructure/unionfind.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    UnionFind uf(n);\n  \
-    \  while (q--) {\n        int t, u, v;\n        cin >> t >> u >> v;\n        if\
-    \ (t)\n            std::cout << uf.same(u, v) << \"\\n\";\n        else\n    \
-    \        uf.merge(u, v);\n    }\n}\n"
+    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    UnionFind uf(n);\n\
+    \    while (q--) {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n \
+    \       if (t)\n            std::cout << uf.same(u, v) << \"\\n\";\n        else\n\
+    \            uf.merge(u, v);\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include <bits/stdc++.h>\n\
     \n#include \"library/datastructure/unionfind/UnionFind.cpp\"\n\nint main() {\n\
-    \    int n, q;\n    cin >> n >> q;\n    UnionFind uf(n);\n    while (q--) {\n\
-    \        int t, u, v;\n        cin >> t >> u >> v;\n        if (t)\n         \
-    \   std::cout << uf.same(u, v) << \"\\n\";\n        else\n            uf.merge(u,\
-    \ v);\n    }\n}"
+    \    int n, q;\n    std::cin >> n >> q;\n    UnionFind uf(n);\n    while (q--)\
+    \ {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n        if (t)\n\
+    \            std::cout << uf.same(u, v) << \"\\n\";\n        else\n          \
+    \  uf.merge(u, v);\n    }\n}"
   dependsOn:
   - library/datastructure/unionfind/UnionFind.cpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/unionfind.test.cpp

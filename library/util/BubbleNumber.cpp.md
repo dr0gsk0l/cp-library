@@ -43,23 +43,23 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 5 \"library/util/InversionNumber.cpp\"\
-    \n\ntemplate <typename T> long long inversion_number(const std::vector<T> &v)\
-    \ {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n    long long\
-    \ res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n        int j\
-    \ = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n    }\n \
-    \   return res;\n}\n#line 3 \"library/util/BubbleNumber.cpp\"\ntemplate <typename\
-    \ T>\nlong long bubble_number(const std::vector<T> &v, const std::vector<T> &w)\
-    \ {\n    int n = v.size();\n    assert(w.size() == n);\n    map<T, queue<int>>\
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 5\
+    \ \"library/util/InversionNumber.cpp\"\n\ntemplate <typename T> long long inversion_number(const\
+    \ std::vector<T> &v) {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n\
+    \    long long res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n\
+    \        int j = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n\
+    \    }\n    return res;\n}\n#line 3 \"library/util/BubbleNumber.cpp\"\ntemplate\
+    \ <typename T>\nlong long bubble_number(const std::vector<T> &v, const std::vector<T>\
+    \ &w) {\n    int n = v.size();\n    assert(w.size() == n);\n    std<T, std::queue<int>>\
     \ mp;\n    for (int i = 0; i < n; i++)\n        mp[w[i]].push(i);\n    std::vector<int>\
     \ idx(n);\n    REP (i, n) {\n        if (!mp[v[i]].size())\n            return\
     \ -1;\n        idx[i] = mp[v[i]].front();\n        mp[v[i]].pop();\n    }\n  \
     \  return inversion_number(idx);\n}\n"
   code: "#pragma once\n#include \"library/util/InversionNumber.cpp\"\ntemplate <typename\
     \ T>\nlong long bubble_number(const std::vector<T> &v, const std::vector<T> &w)\
-    \ {\n    int n = v.size();\n    assert(w.size() == n);\n    map<T, queue<int>>\
+    \ {\n    int n = v.size();\n    assert(w.size() == n);\n    std<T, std::queue<int>>\
     \ mp;\n    for (int i = 0; i < n; i++)\n        mp[w[i]].push(i);\n    std::vector<int>\
     \ idx(n);\n    REP (i, n) {\n        if (!mp[v[i]].size())\n            return\
     \ -1;\n        idx[i] = mp[v[i]].front();\n        mp[v[i]].pop();\n    }\n  \
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/util/BubbleNumber.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/BubbleNumber.cpp

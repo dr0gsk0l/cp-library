@@ -29,13 +29,13 @@ data:
     \      return u;\n            sz[pre[u]] += sz[u];\n        }\n        assert(false);\n\
     \        return -1;\n    };\n\n  public:\n    std::vector<int> order;\n    CentroidDecomposition(TREE\
     \ T) : T(T), sz(T.n), pre(T.n), timing(T.n, -1) {\n        order.reserve(T.n);\n\
-    \        queue<int> que;\n        que.push(0);\n        while (que.size()) {\n\
-    \            int c = find_centroid(que.front());\n            que.pop();\n   \
-    \         timing[c] = order.size();\n            order.push_back(c);\n       \
-    \     for (int to : T[c])\n                if (timing[to] < 0)\n             \
-    \       que.push(to);\n        }\n    }\n\n    template <typename X, typename\
+    \        std::queue<int> que;\n        que.push(0);\n        while (que.size())\
+    \ {\n            int c = find_centroid(que.front());\n            que.pop();\n\
+    \            timing[c] = order.size();\n            order.push_back(c);\n    \
+    \        for (int to : T[c])\n                if (timing[to] < 0)\n          \
+    \          que.push(to);\n        }\n    }\n\n    template <typename X, typename\
     \ F, typename G, typename H>\n    void calc(int root, X initial_val, const F &next_val,\
-    \ const G &action,\n              const H &finish) {\n        queue<tuple<int,\
+    \ const G &action,\n              const H &finish) {\n        std::queue<tuple<int,\
     \ int, X>> que;\n\n        auto f = [&](int v_, int pre_, X val_, bool is_all)\
     \ {\n            que.emplace(v_, pre_, val_);\n            while (que.size())\
     \ {\n                auto [v, pre, val] = que.front();\n                que.pop();\n\
@@ -61,13 +61,13 @@ data:
     \                return u;\n            sz[pre[u]] += sz[u];\n        }\n    \
     \    assert(false);\n        return -1;\n    };\n\n  public:\n    std::vector<int>\
     \ order;\n    CentroidDecomposition(TREE T) : T(T), sz(T.n), pre(T.n), timing(T.n,\
-    \ -1) {\n        order.reserve(T.n);\n        queue<int> que;\n        que.push(0);\n\
+    \ -1) {\n        order.reserve(T.n);\n        std::queue<int> que;\n        que.push(0);\n\
     \        while (que.size()) {\n            int c = find_centroid(que.front());\n\
     \            que.pop();\n            timing[c] = order.size();\n            order.push_back(c);\n\
     \            for (int to : T[c])\n                if (timing[to] < 0)\n      \
     \              que.push(to);\n        }\n    }\n\n    template <typename X, typename\
     \ F, typename G, typename H>\n    void calc(int root, X initial_val, const F &next_val,\
-    \ const G &action,\n              const H &finish) {\n        queue<tuple<int,\
+    \ const G &action,\n              const H &finish) {\n        std::queue<tuple<int,\
     \ int, X>> que;\n\n        auto f = [&](int v_, int pre_, X val_, bool is_all)\
     \ {\n            que.emplace(v_, pre_, val_);\n            while (que.size())\
     \ {\n                auto [v, pre, val] = que.front();\n                que.pop();\n\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: false
   path: library/tree/CentroidDecomposition.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

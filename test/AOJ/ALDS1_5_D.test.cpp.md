@@ -49,16 +49,16 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 5 \"library/util/InversionNumber.cpp\"\
-    \n\ntemplate <typename T> long long inversion_number(const std::vector<T> &v)\
-    \ {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n    long long\
-    \ res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n        int j\
-    \ = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n    }\n \
-    \   return res;\n}\n#line 6 \"test/AOJ/ALDS1_5_D.test.cpp\"\n\nint main() {\n\
-    \    int n;\n    std::cin >> n;\n    std::vector<int> v(n);\n    for (int i =\
-    \ 0; i < n; i++)\n        std::cin >> v[i];\n    std::cout << inversion_number(v)\
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 5\
+    \ \"library/util/InversionNumber.cpp\"\n\ntemplate <typename T> long long inversion_number(const\
+    \ std::vector<T> &v) {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n\
+    \    long long res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n\
+    \        int j = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n\
+    \    }\n    return res;\n}\n#line 6 \"test/AOJ/ALDS1_5_D.test.cpp\"\n\nint main()\
+    \ {\n    int n;\n    std::cin >> n;\n    std::vector<int> v(n);\n    for (int\
+    \ i = 0; i < n; i++)\n        std::cin >> v[i];\n    std::cout << inversion_number(v)\
     \ << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp

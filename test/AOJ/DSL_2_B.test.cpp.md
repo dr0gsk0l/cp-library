@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Concepts.cpp
     title: library/algebra/group/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -41,11 +41,11 @@ data:
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
     \ \"library/datastructure/FenwickTree.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    FenwickTree<GroupAdd<int>>\
-    \ ft(n);\n    while (q--) {\n        int c, s, t;\n        cin >> c >> s >> t;\n\
-    \        s--;\n        if (c) {\n            assert(s <= t);\n            std::cout\
-    \ << ft.prod(s, t) << \"\\n\";\n        } else\n            ft.multiply(s, t);\n\
-    \    }\n}"
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    FenwickTree<GroupAdd<int>>\
+    \ ft(n);\n    while (q--) {\n        int c, s, t;\n        std::cin >> c >> s\
+    \ >> t;\n        s--;\n        if (c) {\n            assert(s <= t);\n       \
+    \     std::cout << ft.prod(s, t) << \"\\n\";\n        } else\n            ft.multiply(s,\
+    \ t);\n    }\n}"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/datastructure/FenwickTree.cpp
@@ -54,8 +54,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 18:08:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_B.test.cpp
 layout: document

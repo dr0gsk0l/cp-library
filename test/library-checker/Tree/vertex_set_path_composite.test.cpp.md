@@ -7,7 +7,7 @@ data:
   - icon: ':x:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   - icon: ':x:'
@@ -41,9 +41,9 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/vertex_set_path_composite
+    PROBLEM: https://judge.yosupo.jp/problem/vertex_std::set_path_composite
     links:
-    - https://judge.yosupo.jp/problem/vertex_set_path_composite
+    - https://judge.yosupo.jp/problem/vertex_std::set_path_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -57,20 +57,20 @@ data:
     , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/segtree/SegmentTree.cpp: line 3: #pragma once found in a non-first line\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_std::set_path_composite\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Affine.cpp\"\n\
     #include \"library/mod/Modint.cpp\"\n#include \"library/tree/Tree.cpp\"\n#include\
     \ \"library/tree/TreeMonoid.cpp\"\nusing mint = Mint<long long>;\n\nint main()\
     \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    using\
     \ G = AlgebraReverse<GroupAffine<mint>>;\n    using F = G::value_type;\n\n   \
-    \ int n, q;\n    cin >> n >> q;\n\n    std::vector<F> f(n);\n    for (int i =\
-    \ 0; i < n; i++)\n        cin >> f[i];\n\n    Tree t(n);\n    t.scan(0);\n\n \
-    \   TreeMonoid<Tree, G> TM(t, f);\n\n    while (q--) {\n        int c;\n     \
-    \   cin >> c;\n        if (c) {\n            int u, v, x;\n            cin >>\
-    \ u >> v >> x;\n            F g = TM.path_prod(u, v);\n            std::cout <<\
-    \ g(x) << std::endl;\n        } else {\n            int p;\n            cin >>\
-    \ p;\n            F f;\n            cin >> f;\n            TM.set(p, f);\n   \
-    \     }\n    }\n}"
+    \ int n, q;\n    std::cin >> n >> q;\n\n    std::vector<F> f(n);\n    for (int\
+    \ i = 0; i < n; i++)\n        std::cin >> f[i];\n\n    Tree t(n);\n    t.scan(0);\n\
+    \n    TreeMonoid<Tree, G> TM(t, f);\n\n    while (q--) {\n        int c;\n   \
+    \     std::cin >> c;\n        if (c) {\n            int u, v, x;\n           \
+    \ std::cin >> u >> v >> x;\n            F g = TM.path_prod(u, v);\n          \
+    \  std::cout << g(x) << std::endl;\n        } else {\n            int p;\n   \
+    \         std::cin >> p;\n            F f;\n            std::cin >> f;\n     \
+    \       TM.set(p, f);\n        }\n    }\n}"
   dependsOn:
   - library/algebra/group/Affine.cpp
   - library/linearalgebra/Linear.cpp
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_set_path_composite.test.cpp

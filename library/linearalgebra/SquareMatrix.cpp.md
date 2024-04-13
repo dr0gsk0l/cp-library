@@ -61,11 +61,11 @@ data:
     \    B[i][j] -= B[k][j] * x;\n                }\n            }\n            K\
     \ x = A[k][k];\n            REP_(j, N) {\n                A[k][j] /= x;\n    \
     \            B[k][j] /= x;\n            }\n        }\n        return B;\n    }\n\
-    \n    friend ostream &operator<<(ostream &os, const SquareMatrix &M) {\n     \
-    \   REP_(i, N) REP_(j, N) os << M.M[i][j] << \"\\n \"[j + 1 < N];\n        return\
-    \ os;\n    }\n    friend istream &operator>>(istream &is, SquareMatrix &M) {\n\
-    \        REP_(i, N) REP_(j, N) is >> M.M[i][j];\n        return is;\n    }\n};\n\
-    #undef REP_\n#undef REP2_\n"
+    \n    friend std::ostream &operator<<(std::ostream &os, const SquareMatrix &M)\
+    \ {\n        REP_(i, N) REP_(j, N) os << M.M[i][j] << \"\\n \"[j + 1 < N];\n \
+    \       return os;\n    }\n    friend std::istream &operator>>(std::istream &is,\
+    \ SquareMatrix &M) {\n        REP_(i, N) REP_(j, N) is >> M.M[i][j];\n       \
+    \ return is;\n    }\n};\n#undef REP_\n#undef REP2_\n"
   code: "#pragma once\n#define REP_(i, n) for (int i = 0; i < (n); i++)\n#define REP2_(i,\
     \ s, n) for (int i = (s); i < (n); i++)\ntemplate <typename K, size_t N> struct\
     \ SquareMatrix {\n    using value_type = K;\n    using vec = array<K, N>;\n  \
@@ -115,16 +115,16 @@ data:
     \ * x;\n                    B[i][j] -= B[k][j] * x;\n                }\n     \
     \       }\n            K x = A[k][k];\n            REP_(j, N) {\n            \
     \    A[k][j] /= x;\n                B[k][j] /= x;\n            }\n        }\n\
-    \        return B;\n    }\n\n    friend ostream &operator<<(ostream &os, const\
-    \ SquareMatrix &M) {\n        REP_(i, N) REP_(j, N) os << M.M[i][j] << \"\\n \"\
-    [j + 1 < N];\n        return os;\n    }\n    friend istream &operator>>(istream\
-    \ &is, SquareMatrix &M) {\n        REP_(i, N) REP_(j, N) is >> M.M[i][j];\n  \
-    \      return is;\n    }\n};\n#undef REP_\n#undef REP2_\n"
+    \        return B;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os, const SquareMatrix &M) {\n        REP_(i, N) REP_(j, N) os << M.M[i][j]\
+    \ << \"\\n \"[j + 1 < N];\n        return os;\n    }\n    friend std::istream\
+    \ &operator>>(std::istream &is, SquareMatrix &M) {\n        REP_(i, N) REP_(j,\
+    \ N) is >> M.M[i][j];\n        return is;\n    }\n};\n#undef REP_\n#undef REP2_\n"
   dependsOn: []
   isVerificationFile: false
   path: library/linearalgebra/SquareMatrix.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/650.test.cpp

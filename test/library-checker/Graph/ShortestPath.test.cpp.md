@@ -52,12 +52,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -68,26 +68,26 @@ data:
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 1 \"library/graph/shortest_path/Dijkstra.cpp\"\
     \ntemplate <typename WG, typename T = typename WG::weight_type>\npair<vector<T>,\
     \ vector<int>> dijkstra(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n\
-    \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    priority_queue<pair<T,\
-    \ int>, vector<pair<T, int>>, greater<pair<T, int>>>\n        que;\n    d[s] =\
-    \ 0;\n    que.emplace(0, s);\n    while (que.size()) {\n        auto [now, id]\
-    \ = que.top();\n        que.pop();\n        if (d[id] < now)\n            continue;\n\
-    \        for (const auto &e : g[id])\n            if (d[e.to] == -1 || d[e.to]\
-    \ > now + e.weight) {\n                d[e.to] = now + e.weight;\n           \
-    \     pre[e.to] = id;\n                que.emplace(d[e.to], e.to);\n         \
-    \   }\n    }\n    return {d, pre};\n}\n#line 6 \"test/library-checker/Graph/ShortestPath.test.cpp\"\
-    \n\nusing ll = long long;\n\nint main() {\n    int n, m, s, t;\n    cin >> n >>\
-    \ m >> s >> t;\n    WeightedGraph<ll> g(n, m, true, 0);\n    auto [d, pre] = dijkstra(g,\
-    \ s);\n\n    std::cout << d[t];\n    if (d[t] < 0) {\n        std::cout << \"\\\
-    n\";\n        return 0;\n    }\n\n    std::vector<pair<int, int>> ans;\n    while\
-    \ (t != s) {\n        ans.emplace_back(pre[t], t);\n        t = pre[t];\n    }\n\
-    \    reverse(ans.begin(), ans.end());\n    std::cout << \" \" << ans.size() <<\
-    \ \"\\n\";\n    for (const auto &[from, to] : ans)\n        std::cout << from\
+    \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<pair<T,\
+    \ int>, vector<pair<T, int>>,\n                        greater<pair<T, int>>>\n\
+    \        que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size()) {\n\
+    \        auto [now, id] = que.top();\n        que.pop();\n        if (d[id] <\
+    \ now)\n            continue;\n        for (const auto &e : g[id])\n         \
+    \   if (d[e.to] == -1 || d[e.to] > now + e.weight) {\n                d[e.to]\
+    \ = now + e.weight;\n                pre[e.to] = id;\n                que.emplace(d[e.to],\
+    \ e.to);\n            }\n    }\n    return {d, pre};\n}\n#line 6 \"test/library-checker/Graph/ShortestPath.test.cpp\"\
+    \n\nusing ll = long long;\n\nint main() {\n    int n, m, s, t;\n    std::cin >>\
+    \ n >> m >> s >> t;\n    WeightedGraph<ll> g(n, m, true, 0);\n    auto [d, pre]\
+    \ = dijkstra(g, s);\n\n    std::cout << d[t];\n    if (d[t] < 0) {\n        std::cout\
+    \ << \"\\n\";\n        return 0;\n    }\n\n    std::vector<pair<int, int>> ans;\n\
+    \    while (t != s) {\n        ans.emplace_back(pre[t], t);\n        t = pre[t];\n\
+    \    }\n    reverse(ans.begin(), ans.end());\n    std::cout << \" \" << ans.size()\
+    \ << \"\\n\";\n    for (const auto &[from, to] : ans)\n        std::cout << from\
     \ << \" \" << to << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
     \ <bits/stdc++.h>\n\n#include \"library/graph/WeightedGraph.cpp\"\n#include \"\
     library/graph/shortest_path/Dijkstra.cpp\"\n\nusing ll = long long;\n\nint main()\
-    \ {\n    int n, m, s, t;\n    cin >> n >> m >> s >> t;\n    WeightedGraph<ll>\
+    \ {\n    int n, m, s, t;\n    std::cin >> n >> m >> s >> t;\n    WeightedGraph<ll>\
     \ g(n, m, true, 0);\n    auto [d, pre] = dijkstra(g, s);\n\n    std::cout << d[t];\n\
     \    if (d[t] < 0) {\n        std::cout << \"\\n\";\n        return 0;\n    }\n\
     \n    std::vector<pair<int, int>> ans;\n    while (t != s) {\n        ans.emplace_back(pre[t],\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/ShortestPath.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/ShortestPath.test.cpp

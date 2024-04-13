@@ -45,10 +45,11 @@ data:
     \ constexpr void Rchop(O&x, const O&y){ if(!x)x=y; }\n  static constexpr void\
     \ Lchop(const O&x, O&y){ if(x)y=x; } \n  static constexpr O unit()noexcept{ return\
     \ nullopt; }\n  static constexpr bool commute=false;\n};\n#line 4 \"library/algebra/lazy/SetSum.cpp\"\
-    \ntemplate<typename X>\nstruct LazySetSum{\n  using MX=GroupCntSum<X>;\n  using\
-    \ MF=MonoidSet<X>;\n  using P=typename MX::value_type;\n  using F=typename MF::value_type;\n\
-    \  static constexpr P mapping(const F&f,const P&x){\n    if(f.has_value())return\
-    \ {f.value()*x.second,x.second};\n    return x;\n  }\n};\n#line 2 \"library/segtree/LazySegmentTree.cpp\"\
+    \ntemplate <typename X> struct LazySetSum {\n    using MX = GroupCntSum<X>;\n\
+    \    using MF = MonoidSet<X>;\n    using P = typename MX::value_type;\n    using\
+    \ F = typename MF::value_type;\n    static constexpr P mapping(const F &f, const\
+    \ P &x) {\n        if (f.has_value())\n            return {f.value() * x.second,\
+    \ x.second};\n        return x;\n    }\n};\n#line 2 \"library/segtree/LazySegmentTree.cpp\"\
     \n\ntemplate <typename Lazy> class LazySegmentTree {\n    using MX = typename\
     \ Lazy::MX;\n    using MF = typename Lazy::MF;\n    using X = typename MX::value_type;\n\
     \    using F = typename MF::value_type;\n    int n, log, size;\n    std::vector<X>\
@@ -85,20 +86,20 @@ data:
     \           if (R & 1)\n                point_apply(--R, f);\n        }\n    \
     \    recalc(l);\n        recalc(r);\n    }\n};\n#line 7 \"test/AOJ/DSL_2_I.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n, q;\n    cin >> n >> q;\n    LazySegmentTree<LazySetSum<int>> seg(cnt_init(n,\
-    \ 0));\n    while (q--) {\n        int t, l, r;\n        cin >> t >> l >> r;\n\
-    \        r++;\n        if (t)\n            std::cout << seg.prod(l, r).first <<\
-    \ \"\\n\";\n        else {\n            int x;\n            cin >> x;\n      \
-    \      seg.apply(l, r, x);\n        }\n    }\n}\n"
+    \n    int n, q;\n    std::cin >> n >> q;\n    LazySegmentTree<LazySetSum<int>>\
+    \ seg(cnt_init(n, 0));\n    while (q--) {\n        int t, l, r;\n        std::cin\
+    \ >> t >> l >> r;\n        r++;\n        if (t)\n            std::cout << seg.prod(l,\
+    \ r).first << \"\\n\";\n        else {\n            int x;\n            std::cin\
+    \ >> x;\n            seg.apply(l, r, x);\n        }\n    }\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/lazy/SetSum.cpp\"\n#include\
     \ \"library/segtree/LazySegmentTree.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    LazySegmentTree<LazySetSum<int>>\
-    \ seg(cnt_init(n, 0));\n    while (q--) {\n        int t, l, r;\n        cin >>\
-    \ t >> l >> r;\n        r++;\n        if (t)\n            std::cout << seg.prod(l,\
-    \ r).first << \"\\n\";\n        else {\n            int x;\n            cin >>\
-    \ x;\n            seg.apply(l, r, x);\n        }\n    }\n}"
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    LazySegmentTree<LazySetSum<int>>\
+    \ seg(cnt_init(n, 0));\n    while (q--) {\n        int t, l, r;\n        std::cin\
+    \ >> t >> l >> r;\n        r++;\n        if (t)\n            std::cout << seg.prod(l,\
+    \ r).first << \"\\n\";\n        else {\n            int x;\n            std::cin\
+    \ >> x;\n            seg.apply(l, r, x);\n        }\n    }\n}"
   dependsOn:
   - library/algebra/lazy/SetSum.cpp
   - library/algebra/group/CntSum.cpp
@@ -107,7 +108,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_I.test.cpp

@@ -85,10 +85,10 @@ data:
     \ edge_type &e) { add_arc(e.from, e.to); }\n    void add_edge(const edge_type\
     \ &e) { add_edge(e.from, e.to); }\n\n    void scan(int m, bool directed = false,\
     \ int indexed = 1) {\n        edges.reserve(directed ? m : 2 * m);\n        while\
-    \ (m--) {\n            int u, v;\n            cin >> u >> v;\n            u -=\
-    \ indexed;\n            v -= indexed;\n            if (directed)\n           \
-    \     add_arc(u, v);\n            else\n                add_edge(u, v);\n    \
-    \    }\n        build();\n    }\n\n    void build() {\n        assert(!prepared);\n\
+    \ (m--) {\n            int u, v;\n            std::cin >> u >> v;\n          \
+    \  u -= indexed;\n            v -= indexed;\n            if (directed)\n     \
+    \           add_arc(u, v);\n            else\n                add_edge(u, v);\n\
+    \        }\n        build();\n    }\n\n    void build() {\n        assert(!prepared);\n\
     \        prepared = true;\n        for (int v = 0; v < n; v++)\n            in_deg[v\
     \ + 1] += in_deg[v];\n        std::vector<edge_type> new_edges(in_deg.back());\n\
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
@@ -100,34 +100,35 @@ data:
     \    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph {\n    using\
     \ Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
-    \ i = 1; i < n; i++) {\n            int p;\n            cin >> p;\n          \
-    \  add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void scan(int\
-    \ indexed = 1) {\n        Graph::scan(n - 1, false, indexed);\n        build();\n\
-    \    }\n\n    edge_type &parent(int v) {\n        assert(~root and root != v);\n\
-    \        return (*this)[v][0];\n    }\n    OutgoingEdges son(int v) {\n      \
-    \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
-    \ in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v + 1]};\n    }\n\
-    \n  private:\n    void dfs(int v, int pre = -1) {\n        for (auto &e : (*this)[v])\
-    \ {\n            if (e.to == pre)\n                swap((*this)[v][0], e);\n \
-    \           else {\n                depth[e.to] = depth[v] + 1;\n            \
-    \    dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n    }\n\
-    \n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n      \
-    \      Graph::build();\n        if (~root) {\n            assert(r == root);\n\
+    \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
+    \       add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void\
+    \ scan(int indexed = 1) {\n        Graph::scan(n - 1, false, indexed);\n     \
+    \   build();\n    }\n\n    edge_type &parent(int v) {\n        assert(~root and\
+    \ root != v);\n        return (*this)[v][0];\n    }\n    OutgoingEdges son(int\
+    \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
+    \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
+    \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
+    \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
+    \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
+    \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
     \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
-    \        queue<int> que;\n        que.push(root);\n        while (que.size())\
+    \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
     \            for (const auto &e : son(p))\n                que.push(e.to);\n \
     \       }\n    }\n};\n#line 6 \"test/library-checker/Tree/LowestCommonAncestor.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n    Tree t(n);\n    t.scan_root(0);\n\
-    \    HLD hld(t);\n    hld.build();\n    while (q--) {\n        int u, v;\n   \
-    \     cin >> u >> v;\n        std::cout << hld.lca(u, v) << \"\\n\";\n    }\n\
-    }\n"
+    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    Tree t(n);\n   \
+    \ t.scan_root(0);\n    HLD hld(t);\n    hld.build();\n    while (q--) {\n    \
+    \    int u, v;\n        std::cin >> u >> v;\n        std::cout << hld.lca(u, v)\
+    \ << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include <bits/stdc++.h>\n\
     \n#include \"library/tree/HLD.cpp\"\n#include \"library/tree/Tree.cpp\"\n\nint\
-    \ main() {\n    int n, q;\n    cin >> n >> q;\n    Tree t(n);\n    t.scan_root(0);\n\
+    \ main() {\n    int n, q;\n    std::cin >> n >> q;\n    Tree t(n);\n    t.scan_root(0);\n\
     \    HLD hld(t);\n    hld.build();\n    while (q--) {\n        int u, v;\n   \
-    \     cin >> u >> v;\n        std::cout << hld.lca(u, v) << \"\\n\";\n    }\n}"
+    \     std::cin >> u >> v;\n        std::cout << hld.lca(u, v) << \"\\n\";\n  \
+    \  }\n}"
   dependsOn:
   - library/tree/HLD.cpp
   - library/tree/Tree.cpp
@@ -135,7 +136,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/LowestCommonAncestor.test.cpp

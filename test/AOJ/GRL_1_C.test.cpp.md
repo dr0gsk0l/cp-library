@@ -62,12 +62,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -86,20 +86,20 @@ data:
     \ j++)\n                    if (d[k][j] < INF)\n                        if (d[i][j]\
     \ > d[i][k] + d[k][j])\n                            d[i][j] = d[i][k] + d[k][j];\n\
     \    return d;\n}\n#line 8 \"test/AOJ/GRL_1_C.test.cpp\"\n\nusing ll = long long;\n\
-    \nint main() {\n    int n, m;\n    cin >> n >> m;\n    WeightedGraph<ll> g(n,\
-    \ m, true, 0);\n    if (negative_cycle_find(g))\n        std::cout << \"NEGATIVE\
-    \ CYCLE\\n\";\n    else {\n        auto d = warshall_floyd(g);\n        for (int\
-    \ i = 0; i < n; i++)\n            for (int j = 0; j < n; j++)\n              \
-    \  if (d[i][j] < 1e10)\n                    std::cout << d[i][j] << \"\\n \"[j\
-    \ + 1 < n];\n                else\n                    std::cout << \"INF\"\n\
-    \                              << \"\\n \"[j + 1 < n];\n    }\n}\n"
+    \nint main() {\n    int n, m;\n    std::cin >> n >> m;\n    WeightedGraph<ll>\
+    \ g(n, m, true, 0);\n    if (negative_cycle_find(g))\n        std::cout << \"\
+    NEGATIVE CYCLE\\n\";\n    else {\n        auto d = warshall_floyd(g);\n      \
+    \  for (int i = 0; i < n; i++)\n            for (int j = 0; j < n; j++)\n    \
+    \            if (d[i][j] < 1e10)\n                    std::cout << d[i][j] <<\
+    \ \"\\n \"[j + 1 < n];\n                else\n                    std::cout <<\
+    \ \"INF\"\n                              << \"\\n \"[j + 1 < n];\n    }\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/graph/NegativeCycleFind.cpp\"\
     \n#include \"library/graph/WeightedGraph.cpp\"\n#include \"library/graph/shortest_path/WarshallFloyd.cpp\"\
-    \n\nusing ll = long long;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\
-    \    WeightedGraph<ll> g(n, m, true, 0);\n    if (negative_cycle_find(g))\n  \
-    \      std::cout << \"NEGATIVE CYCLE\\n\";\n    else {\n        auto d = warshall_floyd(g);\n\
+    \n\nusing ll = long long;\n\nint main() {\n    int n, m;\n    std::cin >> n >>\
+    \ m;\n    WeightedGraph<ll> g(n, m, true, 0);\n    if (negative_cycle_find(g))\n\
+    \        std::cout << \"NEGATIVE CYCLE\\n\";\n    else {\n        auto d = warshall_floyd(g);\n\
     \        for (int i = 0; i < n; i++)\n            for (int j = 0; j < n; j++)\n\
     \                if (d[i][j] < 1e10)\n                    std::cout << d[i][j]\
     \ << \"\\n \"[j + 1 < n];\n                else\n                    std::cout\
@@ -111,7 +111,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_C.test.cpp

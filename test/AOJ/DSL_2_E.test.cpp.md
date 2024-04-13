@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':x:'
@@ -37,9 +37,9 @@ data:
     \ { return min(x,y); }\n  static constexpr void Rchop(X&x, const X&y){ if(x>y)x=y;\
     \ }\n  static constexpr void Lchop(const X&x, X&y){ if(y>x)y=x; }\n  static constexpr\
     \ X unit() { return numeric_limits<X>::max()/2; }\n  static constexpr bool commute\
-    \ = true;\n};\n#line 4 \"library/algebra/lazy/AddMin.cpp\"\ntemplate<typename\
-    \ X>\nstruct LazyAddMin{\n  using MX=MonoidMin<X>;\n  using MF=GroupAdd<X>;\n\
-    \  static constexpr X mapping(const X&f,const X&x){\n    return f+x;\n  }\n};\n\
+    \ = true;\n};\n#line 4 \"library/algebra/lazy/AddMin.cpp\"\ntemplate <typename\
+    \ X> struct LazyAddMin {\n    using MX = MonoidMin<X>;\n    using MF = GroupAdd<X>;\n\
+    \    static constexpr X mapping(const X &f, const X &x) { return f + x; }\n};\n\
     #line 1 \"library/segtree/DualSegmentTree.cpp\"\ntemplate <typename Lazy> class\
     \ DualSegmentTree {\n    using MX = typename Lazy::MX;\n    using MF = typename\
     \ Lazy::MF;\n    using X = typename MX::value_type;\n    using F = typename MF::value_type;\n\
@@ -63,22 +63,22 @@ data:
     \            if (L & 1)\n                point_apply(L++, f);\n            if\
     \ (R & 1)\n                point_apply(--R, f);\n        }\n    }\n};\n#line 7\
     \ \"test/AOJ/DSL_2_E.test.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    DualSegmentTree<LazyAddMin<int>>\
-    \ seg(vector<int>(n, 0));\n    while (q--) {\n        int t;\n        cin >> t;\n\
-    \        if (t) {\n            int x;\n            cin >> x;\n            x--;\n\
-    \            std::cout << seg[x] << \"\\n\";\n        } else {\n            int\
-    \ l, r, x;\n            cin >> l >> r >> x;\n            l--;\n            seg.apply(l,\
-    \ r, x);\n        }\n    }\n}\n"
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    DualSegmentTree<LazyAddMin<int>>\
+    \ seg(vector<int>(n, 0));\n    while (q--) {\n        int t;\n        std::cin\
+    \ >> t;\n        if (t) {\n            int x;\n            std::cin >> x;\n  \
+    \          x--;\n            std::cout << seg[x] << \"\\n\";\n        } else {\n\
+    \            int l, r, x;\n            std::cin >> l >> r >> x;\n            l--;\n\
+    \            seg.apply(l, r, x);\n        }\n    }\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/lazy/AddMin.cpp\"\n#include\
     \ \"library/segtree/DualSegmentTree.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    DualSegmentTree<LazyAddMin<int>>\
-    \ seg(vector<int>(n, 0));\n    while (q--) {\n        int t;\n        cin >> t;\n\
-    \        if (t) {\n            int x;\n            cin >> x;\n            x--;\n\
-    \            std::cout << seg[x] << \"\\n\";\n        } else {\n            int\
-    \ l, r, x;\n            cin >> l >> r >> x;\n            l--;\n            seg.apply(l,\
-    \ r, x);\n        }\n    }\n}\n"
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    DualSegmentTree<LazyAddMin<int>>\
+    \ seg(vector<int>(n, 0));\n    while (q--) {\n        int t;\n        std::cin\
+    \ >> t;\n        if (t) {\n            int x;\n            std::cin >> x;\n  \
+    \          x--;\n            std::cout << seg[x] << \"\\n\";\n        } else {\n\
+    \            int l, r, x;\n            std::cin >> l >> r >> x;\n            l--;\n\
+    \            seg.apply(l, r, x);\n        }\n    }\n}\n"
   dependsOn:
   - library/algebra/lazy/AddMin.cpp
   - library/algebra/group/Add.cpp
@@ -87,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_E.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_E.test.cpp

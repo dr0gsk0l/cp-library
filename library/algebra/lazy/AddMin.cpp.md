@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':x:'
@@ -35,20 +35,20 @@ data:
     \ { return min(x,y); }\n  static constexpr void Rchop(X&x, const X&y){ if(x>y)x=y;\
     \ }\n  static constexpr void Lchop(const X&x, X&y){ if(y>x)y=x; }\n  static constexpr\
     \ X unit() { return numeric_limits<X>::max()/2; }\n  static constexpr bool commute\
-    \ = true;\n};\n#line 4 \"library/algebra/lazy/AddMin.cpp\"\ntemplate<typename\
-    \ X>\nstruct LazyAddMin{\n  using MX=MonoidMin<X>;\n  using MF=GroupAdd<X>;\n\
-    \  static constexpr X mapping(const X&f,const X&x){\n    return f+x;\n  }\n};\n"
+    \ = true;\n};\n#line 4 \"library/algebra/lazy/AddMin.cpp\"\ntemplate <typename\
+    \ X> struct LazyAddMin {\n    using MX = MonoidMin<X>;\n    using MF = GroupAdd<X>;\n\
+    \    static constexpr X mapping(const X &f, const X &x) { return f + x; }\n};\n"
   code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/algebra/monoid/Min.cpp\"\
-    \ntemplate<typename X>\nstruct LazyAddMin{\n  using MX=MonoidMin<X>;\n  using\
-    \ MF=GroupAdd<X>;\n  static constexpr X mapping(const X&f,const X&x){\n    return\
-    \ f+x;\n  }\n};"
+    \ntemplate <typename X> struct LazyAddMin {\n    using MX = MonoidMin<X>;\n  \
+    \  using MF = GroupAdd<X>;\n    static constexpr X mapping(const X &f, const X\
+    \ &x) { return f + x; }\n};"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/algebra/monoid/Min.cpp
   isVerificationFile: false
   path: library/algebra/lazy/AddMin.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1038.test.cpp

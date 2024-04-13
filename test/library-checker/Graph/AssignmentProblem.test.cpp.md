@@ -56,12 +56,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -83,33 +83,34 @@ data:
     \            return false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost\
     \ + potential[from] -\n                                  potential[e.to])) {\n\
     \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
-    \        return false;\n    }\n\n    priority_queue<pair<TC, int>, vector<pair<TC,\
-    \ int>>, greater<pair<TC, int>>>\n        que;\n    void dijkstra() { // dist[i]:s\u304B\
-    \u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\
-    \u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n                      // \u3068\u306A\u308B\
-    \u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(),\
-    \ INF);\n        dist[s] = 0;\n        que.emplace(0, s);\n        while (que.size())\
-    \ {\n            const auto [now, v] = que.top();\n            que.pop();\n  \
-    \          if (dist[v] < now)\n                continue;\n            REP_(i,\
-    \ G[v].size())\n            if (SP_update(v, i))\n                que.emplace(dist[G[v][i].to],\
-    \ G[v][i].to);\n        }\n    }\n\n    void DAG() {\n        negative = false;\n\
-    \        fill(dist.begin(), dist.end(), INF);\n        dist[s] = 0;\n        queue<int>\
-    \ que;\n        REP_(i, n) if (!in_deg[i]) que.push(i);\n        while (que.size())\
-    \ {\n            int v = que.front();\n            que.pop();\n            REP_(i,\
-    \ G[v].size()) {\n                SP_update(v, i);\n                if (!--in_deg[G[v][i].to])\n\
-    \                    que.push(G[v][i].to);\n            }\n        }\n    }\n\n\
-    \    void BellmanFord() {\n        negative = false;\n        fill(dist.begin(),\
-    \ dist.end(), INF);\n        dist[s] = 0;\n        REP_(_, n) {\n            bool\
-    \ update = false;\n            REP_(v, n)\n            if (dist[v] < INF) REP_(i,\
-    \ G[v].size()) if (SP_update(v, i))\n                update = true;\n        \
-    \    if (!update)\n                return;\n        }\n        assert(false);\
-    \ // \u8CA0\u9589\u8DEF\n    }\n\n  public:\n    MCF() {}\n    MCF(int n_, int\
-    \ s_ = 0, int t_ = -1)\n        : n(n_), G(n_), potential(n_, 0), dist(n_), pre(n_),\
-    \ in_deg(n_, 0),\n          out_deg(n_, 0), negative(false), dag(true), s(s_),\
-    \ t(t_) {\n        if (t < 0)\n            t = n - 1;\n    }\n    void use_bellman_ford()\
-    \ { dag = false; }\n\n    TF operator[](const int edge_id) const {\n        assert(G.is_prepared());\n\
-    \        const auto &[from, id] = edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n\
-    \    }\n    std::vector<tuple<int, int, TF, TC>> all_edge() {\n        assert(G.is_prepared());\n\
+    \        return false;\n    }\n\n    std::priority_queue<pair<TC, int>, vector<pair<TC,\
+    \ int>>,\n                        greater<pair<TC, int>>>\n        que;\n    void\
+    \ dijkstra() { // dist[i]:s\u304B\u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\
+    \u306E\u91CD\u307F\u306B\u3088\u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n        \
+    \              // \u3068\u306A\u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n\
+    \        fill(dist.begin(), dist.end(), INF);\n        dist[s] = 0;\n        que.emplace(0,\
+    \ s);\n        while (que.size()) {\n            const auto [now, v] = que.top();\n\
+    \            que.pop();\n            if (dist[v] < now)\n                continue;\n\
+    \            REP_(i, G[v].size())\n            if (SP_update(v, i))\n        \
+    \        que.emplace(dist[G[v][i].to], G[v][i].to);\n        }\n    }\n\n    void\
+    \ DAG() {\n        negative = false;\n        fill(dist.begin(), dist.end(), INF);\n\
+    \        dist[s] = 0;\n        std::queue<int> que;\n        REP_(i, n) if (!in_deg[i])\
+    \ que.push(i);\n        while (que.size()) {\n            int v = que.front();\n\
+    \            que.pop();\n            REP_(i, G[v].size()) {\n                SP_update(v,\
+    \ i);\n                if (!--in_deg[G[v][i].to])\n                    que.push(G[v][i].to);\n\
+    \            }\n        }\n    }\n\n    void BellmanFord() {\n        negative\
+    \ = false;\n        fill(dist.begin(), dist.end(), INF);\n        dist[s] = 0;\n\
+    \        REP_(_, n) {\n            bool update = false;\n            REP_(v, n)\n\
+    \            if (dist[v] < INF)\n                REP_(i, G[v].size()) if (SP_update(v,\
+    \ i)) update = true;\n            if (!update)\n                return;\n    \
+    \    }\n        assert(false); // \u8CA0\u9589\u8DEF\n    }\n\n  public:\n   \
+    \ MCF() {}\n    MCF(int n_, int s_ = 0, int t_ = -1)\n        : n(n_), G(n_),\
+    \ potential(n_, 0), dist(n_), pre(n_), in_deg(n_, 0),\n          out_deg(n_, 0),\
+    \ negative(false), dag(true), s(s_), t(t_) {\n        if (t < 0)\n           \
+    \ t = n - 1;\n    }\n    void use_bellman_ford() { dag = false; }\n\n    TF operator[](const\
+    \ int edge_id) const {\n        assert(G.is_prepared());\n        const auto &[from,\
+    \ id] = edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n   \
+    \ }\n    std::vector<tuple<int, int, TF, TC>> all_edge() {\n        assert(G.is_prepared());\n\
     \        std::vector<tuple<int, int, TF, TC>> res;\n        res.reserve(edge_memo.size());\n\
     \        for (const auto &[v, id] : edge_memo) {\n            const auto &[to,\
     \ from, weight] = G[v][id];\n            res.emplace_back(from, to, weight.cap,\
@@ -154,10 +155,10 @@ data:
     \      if(flow)res.emplace_back(from,to-A,-cost);\n    }\n    return make_pair(-sum,res);\n\
     \  }\n};\n#line 7 \"test/library-checker/Graph/AssignmentProblem.test.cpp\"\n\
     using ll = long long;\nconstexpr ll INF = ll(1e9) + 1;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    WeightedBipartiteMatching<ll>\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    WeightedBipartiteMatching<ll>\
     \ B(n, n);\n    REP (i, n)\n        REP (j, n) {\n            int a;\n       \
-    \     cin >> a;\n            B.add_edge(i, j, INF - a);\n        }\n    auto [sum,\
-    \ vec] = B.solve();\n\n    sum -= n * INF;\n    sum = -sum;\n\n    std::vector<int>\
+    \     std::cin >> a;\n            B.add_edge(i, j, INF - a);\n        }\n    auto\
+    \ [sum, vec] = B.solve();\n\n    sum -= n * INF;\n    sum = -sum;\n\n    std::vector<int>\
     \ res(n);\n    for (const auto &[from, to, weight] : vec)\n        res[from] =\
     \ to;\n\n    std::cout << sum << \"\\n\";\n    REP (i, n)\n        std::cout <<\
     \ res[i] << \"\\n \"[i + 1 < n];\n}\n"
@@ -165,10 +166,10 @@ data:
     \ <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\n#include\
     \ \"library/graph/matching/WeightedBipartiteMatching.cpp\"\nusing ll = long long;\n\
     constexpr ll INF = ll(1e9) + 1;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    WeightedBipartiteMatching<ll>\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    WeightedBipartiteMatching<ll>\
     \ B(n, n);\n    REP (i, n)\n        REP (j, n) {\n            int a;\n       \
-    \     cin >> a;\n            B.add_edge(i, j, INF - a);\n        }\n    auto [sum,\
-    \ vec] = B.solve();\n\n    sum -= n * INF;\n    sum = -sum;\n\n    std::vector<int>\
+    \     std::cin >> a;\n            B.add_edge(i, j, INF - a);\n        }\n    auto\
+    \ [sum, vec] = B.solve();\n\n    sum -= n * INF;\n    sum = -sum;\n\n    std::vector<int>\
     \ res(n);\n    for (const auto &[from, to, weight] : vec)\n        res[from] =\
     \ to;\n\n    std::cout << sum << \"\\n\";\n    REP (i, n)\n        std::cout <<\
     \ res[i] << \"\\n \"[i + 1 < n];\n}\n"
@@ -179,7 +180,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/AssignmentProblem.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/AssignmentProblem.test.cpp

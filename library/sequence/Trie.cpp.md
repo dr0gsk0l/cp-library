@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':x:'
@@ -36,33 +36,34 @@ data:
     \ 2 \"library/sequence/ForString.cpp\"\ntemplate <char MARGIN> struct ForString\
     \ {\n    static constexpr char change(char c) { return c - MARGIN; }\n    static\
     \ constexpr char restore(char a) { return a + MARGIN; }\n\n    static std::vector<char>\
-    \ change(const string &s) {\n        std::vector<char> v(s.size());\n        for\
-    \ (int i = 0; i < s.size(); i++)\n            v[i] = change(s[i]);\n        return\
-    \ v;\n    }\n    static string restore(const std::vector<char> &v) {\n       \
-    \ string s(v.size(), '#');\n        for (int i = 0; i < v.size(); i++)\n     \
-    \       s[i] = restore(v[i]);\n        return s;\n    }\n};\nstruct FSAa {\n \
-    \   static constexpr char change(char c) {\n        return c <= 'Z' ? c - 'A'\
-    \ : 26 + c - 'a';\n    }\n    static constexpr char restore(char a) {\n      \
-    \  return a < 26 ? 'A' : a - 26 + 'a';\n    }\n    static std::vector<char> change(const\
-    \ string &s) {\n        std::vector<char> v(s.size());\n        for (int i = 0;\
-    \ i < s.size(); i++)\n            v[i] = change(s[i]);\n        return v;\n  \
-    \  }\n    static string restore(const std::vector<char> &v) {\n        string\
-    \ s(v.size(), '#');\n        for (int i = 0; i < v.size(); i++)\n            s[i]\
-    \ = restore(v[i]);\n        return s;\n    }\n};\nusing FSA = ForString<'A'>;\n\
-    using FSa = ForString<'a'>;\nusing FS0 = ForString<'0'>;\n\n#ifdef STR\n#define\
-    \ STRA(s)                                                                \\\n\
-    \    STR(s##tomato);                                                         \
-    \   \\\n    auto s = FSA::change(s##tomato);\n#define STRa(s)                \
-    \                                                \\\n    STR(s##tomato);     \
-    \                                                       \\\n    auto s = FSa::change(s##tomato);\n\
-    #define STR0(s)                                                              \
-    \  \\\n    STR(s##tomato);                                                   \
-    \         \\\n    auto s = FS0::change(s##tomato);\n#endif\n#line 4 \"library/sequence/Trie.cpp\"\
-    \ntemplate <typename CHAR, int SIGMA, typename AbelMonoid = GroupAdd<int>>\nclass\
-    \ Trie {\n  protected:\n    using X = typename AbelMonoid::value_type;\n    struct\
-    \ Node {\n        array<int, SIGMA> nxt;\n        int pre;\n        X val, suffix_val;\
-    \ // suffix_val \u306F\u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n        Node(int\
-    \ pre)\n            : pre(pre), val(AbelMonoid::unit()),\n              suffix_val(AbelMonoid::unit())\
+    \ change(const std::string &s) {\n        std::vector<char> v(s.size());\n   \
+    \     for (int i = 0; i < s.size(); i++)\n            v[i] = change(s[i]);\n \
+    \       return v;\n    }\n    static std::string restore(const std::vector<char>\
+    \ &v) {\n        std::string s(v.size(), '#');\n        for (int i = 0; i < v.size();\
+    \ i++)\n            s[i] = restore(v[i]);\n        return s;\n    }\n};\nstruct\
+    \ FSAa {\n    static constexpr char change(char c) {\n        return c <= 'Z'\
+    \ ? c - 'A' : 26 + c - 'a';\n    }\n    static constexpr char restore(char a)\
+    \ {\n        return a < 26 ? 'A' : a - 26 + 'a';\n    }\n    static std::vector<char>\
+    \ change(const std::string &s) {\n        std::vector<char> v(s.size());\n   \
+    \     for (int i = 0; i < s.size(); i++)\n            v[i] = change(s[i]);\n \
+    \       return v;\n    }\n    static std::string restore(const std::vector<char>\
+    \ &v) {\n        std::string s(v.size(), '#');\n        for (int i = 0; i < v.size();\
+    \ i++)\n            s[i] = restore(v[i]);\n        return s;\n    }\n};\nusing\
+    \ FSA = ForString<'A'>;\nusing FSa = ForString<'a'>;\nusing FS0 = ForString<'0'>;\n\
+    \n#ifdef STR\n#define STRA(s)                                                \
+    \                \\\n    STR(s##tomato);                                     \
+    \                       \\\n    auto s = FSA::change(s##tomato);\n#define STRa(s)\
+    \                                                                \\\n    STR(s##tomato);\
+    \                                                            \\\n    auto s =\
+    \ FSa::change(s##tomato);\n#define STR0(s)                                   \
+    \                             \\\n    STR(s##tomato);                        \
+    \                                    \\\n    auto s = FS0::change(s##tomato);\n\
+    #endif\n#line 4 \"library/sequence/Trie.cpp\"\ntemplate <typename CHAR, int SIGMA,\
+    \ typename AbelMonoid = GroupAdd<int>>\nclass Trie {\n  protected:\n    using\
+    \ X = typename AbelMonoid::value_type;\n    struct Node {\n        array<int,\
+    \ SIGMA> nxt;\n        int pre;\n        X val, suffix_val; // suffix_val \u306F\
+    \u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n        Node(int pre)\n          \
+    \  : pre(pre), val(AbelMonoid::unit()),\n              suffix_val(AbelMonoid::unit())\
     \ {\n            fill(nxt.begin(), nxt.end(), -1);\n        }\n    };\n    std::vector<Node>\
     \ nodes;\n\n  public:\n    Trie() : nodes(1, Node(-1)) {}\n\n    int &nxt(int\
     \ now, const CHAR &a) { return nodes[now].nxt[a]; }\n    const int &nxt(int now,\
@@ -150,7 +151,7 @@ data:
   path: library/sequence/Trie.cpp
   requiredBy:
   - library/sequence/AhoCorasick.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

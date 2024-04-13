@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Concepts.cpp
     title: library/algebra/group/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
   - icon: ':x:'
@@ -62,20 +62,20 @@ data:
     \n#include \"library/algebra/group/Add.cpp\"\n#include \"library/datastructure/GroupWaveletMatrix.cpp\"\
     \n#include \"library/r2/Projection.cpp\"\n#include \"library/r2/XY.cpp\"\n\nusing\
     \ ll = long long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n, q;\n    cin >> n >> q;\n    std::vector<r2>\
+    \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<r2>\
     \ r2s(n);\n    r2s.reserve(n + q);\n    std::vector<int> x(n), y(n), w(n), qt(q),\
-    \ l(q), d(q), r(q), u(q);\n    REP (i, n) {\n        cin >> x[i] >> y[i] >> w[i];\n\
-    \        r2s[i] = r2(x[i], y[i]);\n    }\n    REP (j, q) {\n        cin >> qt[j];\n\
-    \        if (qt[j])\n            cin >> l[j] >> d[j] >> r[j] >> u[j];\n      \
-    \  else {\n            cin >> l[j] >> d[j] >> r[j];\n            r2s.emplace_back(l[j],\
-    \ d[j]);\n        }\n    }\n\n    auto P = Projection(r2s);\n    std::vector<int>\
-    \ Y(P.size(), 0);\n    std::vector<ll> W(P.size(), 0);\n    REP (id, P.size())\n\
-    \        Y[id] = P.r(id).y;\n    REP (i, n) {\n        int id = P.id(x[i], y[i]);\n\
-    \        W[id] += w[i];\n    }\n\n    GroupWaveletMatrix<int, GroupAdd<ll>> WM(Y,\
-    \ W);\n\n    REP (j, q)\n        if (qt[j]) {\n            auto [L, R] = P.interval(l[j],\
-    \ r[j]);\n            std::cout << WM.sum(L, R, d[j], u[j]) << \"\\n\";\n    \
-    \    } else {\n            int id = P.id(l[j], d[j]);\n            WM.add(id,\
-    \ r[j]);\n        }\n}"
+    \ l(q), d(q), r(q), u(q);\n    REP (i, n) {\n        std::cin >> x[i] >> y[i]\
+    \ >> w[i];\n        r2s[i] = r2(x[i], y[i]);\n    }\n    REP (j, q) {\n      \
+    \  std::cin >> qt[j];\n        if (qt[j])\n            std::cin >> l[j] >> d[j]\
+    \ >> r[j] >> u[j];\n        else {\n            std::cin >> l[j] >> d[j] >> r[j];\n\
+    \            r2s.emplace_back(l[j], d[j]);\n        }\n    }\n\n    auto P = Projection(r2s);\n\
+    \    std::vector<int> Y(P.size(), 0);\n    std::vector<ll> W(P.size(), 0);\n \
+    \   REP (id, P.size())\n        Y[id] = P.r(id).y;\n    REP (i, n) {\n       \
+    \ int id = P.id(x[i], y[i]);\n        W[id] += w[i];\n    }\n\n    GroupWaveletMatrix<int,\
+    \ GroupAdd<ll>> WM(Y, W);\n\n    REP (j, q)\n        if (qt[j]) {\n          \
+    \  auto [L, R] = P.interval(l[j], r[j]);\n            std::cout << WM.sum(L, R,\
+    \ d[j], u[j]) << \"\\n\";\n        } else {\n            int id = P.id(l[j], d[j]);\n\
+    \            WM.add(id, r[j]);\n        }\n}"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
@@ -90,7 +90,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

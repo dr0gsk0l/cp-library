@@ -35,50 +35,66 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"library/linearalgebra/Linear.cpp\"\ntemplate<typename T>\n\
-    struct Line{\n  T a,b;\n  Line()=default;\n  Line(T a,T b):a(a),b(b){}\n  Line(pair<T,T>\
-    \ l):a(l.first),b(l.second){}\n  Line(T c):a(0),b(c){}\n\n  T operator()(const\
-    \ T x)const{ return a*x+b; }\n  Line operator()(const Line&l)const{ return Line(a*l.a,\
-    \ a*l.b+b); }\n\n  bool operator==(const Line&l)const{ return a==l.a and b==l.b;\
-    \ }\n  bool operator!=(const Line&l)const{ return !(*this == l); }\n  bool operator<(const\
-    \ Line&l)const{ return (a==l.a ? a<l.a : b<l.b); }\n\n  Line&operator+=(const\
-    \ Line&l){ a+=l.a; b+=l.b; return *this; }\n  Line operator+(const Line&l)const{return\
-    \ Line(*this) += l; }\n  Line&operator-=(const Line&l){ a-=l.a; b-=l.b; return\
-    \ *this; }\n  Line operator-(const Line&l)const{return Line(*this) -= l; }\n \
-    \ Line operator-()const{ return Line(-a,-b); }\n\n  Line&operator+=(const T&c){\
-    \ b+=c; return *this; }\n  Line operator+(const T&c)const{ return Line(*this)\
-    \ += c; }\n  Line&operator-=(const T&c){ b-=c; return *this; }\n  Line operator-(const\
-    \ T&c)const{ return Line(*this) -= c; }\n  Line&operator*=(const T&c){ a*=c; b*=c;\
-    \ return *this; }\n  Line operator*(const T&c)const{ return Line(*this) *= c;\
-    \ }\n  Line&operator/=(const T&c){ a/=c; b/=c; return *this; }\n  Line operator/(const\
-    \ T&c)const{ return Line(*this) /= c; }\n\n  Line inv()const{\n    assert(a!=0);\n\
-    \    return Line(T(1)/a, -b/a);\n  }\n\n  friend istream&operator>>(istream&is,Line&l){\n\
-    \    is>>l.a>>l.b;\n    return is;\n  }\n  friend ostream&operator<<(ostream&os,const\
-    \ Line&l){\n    if(l.a==0 and l.b==0)os<<0;\n    else if(l.a==0)os<<l.b;\n   \
-    \ else if(l.b==0)os<<l.a<<\"x\";\n    else if(l.b>0)os<<l.a<<\"x+\"<<l.b;\n  \
-    \  else os<<l.a<<\"x-\"<<-l.b;\n    return os;\n  }\n};\n"
-  code: "#pragma once\ntemplate<typename T>\nstruct Line{\n  T a,b;\n  Line()=default;\n\
-    \  Line(T a,T b):a(a),b(b){}\n  Line(pair<T,T> l):a(l.first),b(l.second){}\n \
-    \ Line(T c):a(0),b(c){}\n\n  T operator()(const T x)const{ return a*x+b; }\n \
-    \ Line operator()(const Line&l)const{ return Line(a*l.a, a*l.b+b); }\n\n  bool\
-    \ operator==(const Line&l)const{ return a==l.a and b==l.b; }\n  bool operator!=(const\
-    \ Line&l)const{ return !(*this == l); }\n  bool operator<(const Line&l)const{\
-    \ return (a==l.a ? a<l.a : b<l.b); }\n\n  Line&operator+=(const Line&l){ a+=l.a;\
-    \ b+=l.b; return *this; }\n  Line operator+(const Line&l)const{return Line(*this)\
-    \ += l; }\n  Line&operator-=(const Line&l){ a-=l.a; b-=l.b; return *this; }\n\
-    \  Line operator-(const Line&l)const{return Line(*this) -= l; }\n  Line operator-()const{\
-    \ return Line(-a,-b); }\n\n  Line&operator+=(const T&c){ b+=c; return *this; }\n\
-    \  Line operator+(const T&c)const{ return Line(*this) += c; }\n  Line&operator-=(const\
-    \ T&c){ b-=c; return *this; }\n  Line operator-(const T&c)const{ return Line(*this)\
-    \ -= c; }\n  Line&operator*=(const T&c){ a*=c; b*=c; return *this; }\n  Line operator*(const\
-    \ T&c)const{ return Line(*this) *= c; }\n  Line&operator/=(const T&c){ a/=c; b/=c;\
-    \ return *this; }\n  Line operator/(const T&c)const{ return Line(*this) /= c;\
-    \ }\n\n  Line inv()const{\n    assert(a!=0);\n    return Line(T(1)/a, -b/a);\n\
-    \  }\n\n  friend istream&operator>>(istream&is,Line&l){\n    is>>l.a>>l.b;\n \
-    \   return is;\n  }\n  friend ostream&operator<<(ostream&os,const Line&l){\n \
-    \   if(l.a==0 and l.b==0)os<<0;\n    else if(l.a==0)os<<l.b;\n    else if(l.b==0)os<<l.a<<\"\
-    x\";\n    else if(l.b>0)os<<l.a<<\"x+\"<<l.b;\n    else os<<l.a<<\"x-\"<<-l.b;\n\
-    \    return os;\n  }\n};"
+  bundledCode: "#line 2 \"library/linearalgebra/Linear.cpp\"\ntemplate <typename T>\
+    \ struct Line {\n    T a, b;\n    Line() = default;\n    Line(T a, T b) : a(a),\
+    \ b(b) {}\n    Line(pair<T, T> l) : a(l.first), b(l.second) {}\n    Line(T c)\
+    \ : a(0), b(c) {}\n\n    T operator()(const T x) const { return a * x + b; }\n\
+    \    Line operator()(const Line &l) const { return Line(a * l.a, a * l.b + b);\
+    \ }\n\n    bool operator==(const Line &l) const { return a == l.a and b == l.b;\
+    \ }\n    bool operator!=(const Line &l) const { return !(*this == l); }\n    bool\
+    \ operator<(const Line &l) const {\n        return (a == l.a ? a < l.a : b < l.b);\n\
+    \    }\n\n    Line &operator+=(const Line &l) {\n        a += l.a;\n        b\
+    \ += l.b;\n        return *this;\n    }\n    Line operator+(const Line &l) const\
+    \ { return Line(*this) += l; }\n    Line &operator-=(const Line &l) {\n      \
+    \  a -= l.a;\n        b -= l.b;\n        return *this;\n    }\n    Line operator-(const\
+    \ Line &l) const { return Line(*this) -= l; }\n    Line operator-() const { return\
+    \ Line(-a, -b); }\n\n    Line &operator+=(const T &c) {\n        b += c;\n   \
+    \     return *this;\n    }\n    Line operator+(const T &c) const { return Line(*this)\
+    \ += c; }\n    Line &operator-=(const T &c) {\n        b -= c;\n        return\
+    \ *this;\n    }\n    Line operator-(const T &c) const { return Line(*this) -=\
+    \ c; }\n    Line &operator*=(const T &c) {\n        a *= c;\n        b *= c;\n\
+    \        return *this;\n    }\n    Line operator*(const T &c) const { return Line(*this)\
+    \ *= c; }\n    Line &operator/=(const T &c) {\n        a /= c;\n        b /= c;\n\
+    \        return *this;\n    }\n    Line operator/(const T &c) const { return Line(*this)\
+    \ /= c; }\n\n    Line inv() const {\n        assert(a != 0);\n        return Line(T(1)\
+    \ / a, -b / a);\n    }\n\n    friend std::istream &operator>>(std::istream &is,\
+    \ Line &l) {\n        is >> l.a >> l.b;\n        return is;\n    }\n    friend\
+    \ std::ostream &operator<<(std::ostream &os, const Line &l) {\n        if (l.a\
+    \ == 0 and l.b == 0)\n            os << 0;\n        else if (l.a == 0)\n     \
+    \       os << l.b;\n        else if (l.b == 0)\n            os << l.a << \"x\"\
+    ;\n        else if (l.b > 0)\n            os << l.a << \"x+\" << l.b;\n      \
+    \  else\n            os << l.a << \"x-\" << -l.b;\n        return os;\n    }\n\
+    };\n"
+  code: "#pragma once\ntemplate <typename T> struct Line {\n    T a, b;\n    Line()\
+    \ = default;\n    Line(T a, T b) : a(a), b(b) {}\n    Line(pair<T, T> l) : a(l.first),\
+    \ b(l.second) {}\n    Line(T c) : a(0), b(c) {}\n\n    T operator()(const T x)\
+    \ const { return a * x + b; }\n    Line operator()(const Line &l) const { return\
+    \ Line(a * l.a, a * l.b + b); }\n\n    bool operator==(const Line &l) const {\
+    \ return a == l.a and b == l.b; }\n    bool operator!=(const Line &l) const {\
+    \ return !(*this == l); }\n    bool operator<(const Line &l) const {\n       \
+    \ return (a == l.a ? a < l.a : b < l.b);\n    }\n\n    Line &operator+=(const\
+    \ Line &l) {\n        a += l.a;\n        b += l.b;\n        return *this;\n  \
+    \  }\n    Line operator+(const Line &l) const { return Line(*this) += l; }\n \
+    \   Line &operator-=(const Line &l) {\n        a -= l.a;\n        b -= l.b;\n\
+    \        return *this;\n    }\n    Line operator-(const Line &l) const { return\
+    \ Line(*this) -= l; }\n    Line operator-() const { return Line(-a, -b); }\n\n\
+    \    Line &operator+=(const T &c) {\n        b += c;\n        return *this;\n\
+    \    }\n    Line operator+(const T &c) const { return Line(*this) += c; }\n  \
+    \  Line &operator-=(const T &c) {\n        b -= c;\n        return *this;\n  \
+    \  }\n    Line operator-(const T &c) const { return Line(*this) -= c; }\n    Line\
+    \ &operator*=(const T &c) {\n        a *= c;\n        b *= c;\n        return\
+    \ *this;\n    }\n    Line operator*(const T &c) const { return Line(*this) *=\
+    \ c; }\n    Line &operator/=(const T &c) {\n        a /= c;\n        b /= c;\n\
+    \        return *this;\n    }\n    Line operator/(const T &c) const { return Line(*this)\
+    \ /= c; }\n\n    Line inv() const {\n        assert(a != 0);\n        return Line(T(1)\
+    \ / a, -b / a);\n    }\n\n    friend std::istream &operator>>(std::istream &is,\
+    \ Line &l) {\n        is >> l.a >> l.b;\n        return is;\n    }\n    friend\
+    \ std::ostream &operator<<(std::ostream &os, const Line &l) {\n        if (l.a\
+    \ == 0 and l.b == 0)\n            os << 0;\n        else if (l.a == 0)\n     \
+    \       os << l.b;\n        else if (l.b == 0)\n            os << l.a << \"x\"\
+    ;\n        else if (l.b > 0)\n            os << l.a << \"x+\" << l.b;\n      \
+    \  else\n            os << l.a << \"x-\" << -l.b;\n        return os;\n    }\n\
+    };"
   dependsOn: []
   isVerificationFile: false
   path: library/linearalgebra/Linear.cpp
@@ -87,7 +103,7 @@ data:
   - library/algebra/group/Affine.cpp
   - library/linearalgebra/InsertConvexHullTrick.cpp
   - library/linearalgebra/ConvexHullTrick.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

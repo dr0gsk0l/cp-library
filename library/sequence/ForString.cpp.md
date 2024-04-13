@@ -32,53 +32,54 @@ data:
   bundledCode: "#line 2 \"library/sequence/ForString.cpp\"\ntemplate <char MARGIN>\
     \ struct ForString {\n    static constexpr char change(char c) { return c - MARGIN;\
     \ }\n    static constexpr char restore(char a) { return a + MARGIN; }\n\n    static\
-    \ std::vector<char> change(const string &s) {\n        std::vector<char> v(s.size());\n\
-    \        for (int i = 0; i < s.size(); i++)\n            v[i] = change(s[i]);\n\
-    \        return v;\n    }\n    static string restore(const std::vector<char> &v)\
-    \ {\n        string s(v.size(), '#');\n        for (int i = 0; i < v.size(); i++)\n\
-    \            s[i] = restore(v[i]);\n        return s;\n    }\n};\nstruct FSAa\
-    \ {\n    static constexpr char change(char c) {\n        return c <= 'Z' ? c -\
-    \ 'A' : 26 + c - 'a';\n    }\n    static constexpr char restore(char a) {\n  \
-    \      return a < 26 ? 'A' : a - 26 + 'a';\n    }\n    static std::vector<char>\
-    \ change(const string &s) {\n        std::vector<char> v(s.size());\n        for\
-    \ (int i = 0; i < s.size(); i++)\n            v[i] = change(s[i]);\n        return\
-    \ v;\n    }\n    static string restore(const std::vector<char> &v) {\n       \
-    \ string s(v.size(), '#');\n        for (int i = 0; i < v.size(); i++)\n     \
-    \       s[i] = restore(v[i]);\n        return s;\n    }\n};\nusing FSA = ForString<'A'>;\n\
-    using FSa = ForString<'a'>;\nusing FS0 = ForString<'0'>;\n\n#ifdef STR\n#define\
-    \ STRA(s)                                                                \\\n\
-    \    STR(s##tomato);                                                         \
-    \   \\\n    auto s = FSA::change(s##tomato);\n#define STRa(s)                \
-    \                                                \\\n    STR(s##tomato);     \
-    \                                                       \\\n    auto s = FSa::change(s##tomato);\n\
-    #define STR0(s)                                                              \
+    \ std::vector<char> change(const std::string &s) {\n        std::vector<char>\
+    \ v(s.size());\n        for (int i = 0; i < s.size(); i++)\n            v[i] =\
+    \ change(s[i]);\n        return v;\n    }\n    static std::string restore(const\
+    \ std::vector<char> &v) {\n        std::string s(v.size(), '#');\n        for\
+    \ (int i = 0; i < v.size(); i++)\n            s[i] = restore(v[i]);\n        return\
+    \ s;\n    }\n};\nstruct FSAa {\n    static constexpr char change(char c) {\n \
+    \       return c <= 'Z' ? c - 'A' : 26 + c - 'a';\n    }\n    static constexpr\
+    \ char restore(char a) {\n        return a < 26 ? 'A' : a - 26 + 'a';\n    }\n\
+    \    static std::vector<char> change(const std::string &s) {\n        std::vector<char>\
+    \ v(s.size());\n        for (int i = 0; i < s.size(); i++)\n            v[i] =\
+    \ change(s[i]);\n        return v;\n    }\n    static std::string restore(const\
+    \ std::vector<char> &v) {\n        std::string s(v.size(), '#');\n        for\
+    \ (int i = 0; i < v.size(); i++)\n            s[i] = restore(v[i]);\n        return\
+    \ s;\n    }\n};\nusing FSA = ForString<'A'>;\nusing FSa = ForString<'a'>;\nusing\
+    \ FS0 = ForString<'0'>;\n\n#ifdef STR\n#define STRA(s)                       \
+    \                                         \\\n    STR(s##tomato);            \
+    \                                                \\\n    auto s = FSA::change(s##tomato);\n\
+    #define STRa(s)                                                              \
     \  \\\n    STR(s##tomato);                                                   \
-    \         \\\n    auto s = FS0::change(s##tomato);\n#endif\n"
+    \         \\\n    auto s = FSa::change(s##tomato);\n#define STR0(s)          \
+    \                                                      \\\n    STR(s##tomato);\
+    \                                                            \\\n    auto s =\
+    \ FS0::change(s##tomato);\n#endif\n"
   code: "#pragma once\ntemplate <char MARGIN> struct ForString {\n    static constexpr\
     \ char change(char c) { return c - MARGIN; }\n    static constexpr char restore(char\
-    \ a) { return a + MARGIN; }\n\n    static std::vector<char> change(const string\
+    \ a) { return a + MARGIN; }\n\n    static std::vector<char> change(const std::string\
     \ &s) {\n        std::vector<char> v(s.size());\n        for (int i = 0; i < s.size();\
     \ i++)\n            v[i] = change(s[i]);\n        return v;\n    }\n    static\
-    \ string restore(const std::vector<char> &v) {\n        string s(v.size(), '#');\n\
-    \        for (int i = 0; i < v.size(); i++)\n            s[i] = restore(v[i]);\n\
+    \ std::string restore(const std::vector<char> &v) {\n        std::string s(v.size(),\
+    \ '#');\n        for (int i = 0; i < v.size(); i++)\n            s[i] = restore(v[i]);\n\
     \        return s;\n    }\n};\nstruct FSAa {\n    static constexpr char change(char\
     \ c) {\n        return c <= 'Z' ? c - 'A' : 26 + c - 'a';\n    }\n    static constexpr\
     \ char restore(char a) {\n        return a < 26 ? 'A' : a - 26 + 'a';\n    }\n\
-    \    static std::vector<char> change(const string &s) {\n        std::vector<char>\
+    \    static std::vector<char> change(const std::string &s) {\n        std::vector<char>\
     \ v(s.size());\n        for (int i = 0; i < s.size(); i++)\n            v[i] =\
-    \ change(s[i]);\n        return v;\n    }\n    static string restore(const std::vector<char>\
-    \ &v) {\n        string s(v.size(), '#');\n        for (int i = 0; i < v.size();\
-    \ i++)\n            s[i] = restore(v[i]);\n        return s;\n    }\n};\nusing\
-    \ FSA = ForString<'A'>;\nusing FSa = ForString<'a'>;\nusing FS0 = ForString<'0'>;\n\
-    \n#ifdef STR\n#define STRA(s)                                                \
-    \                \\\n    STR(s##tomato);                                     \
-    \                       \\\n    auto s = FSA::change(s##tomato);\n#define STRa(s)\
-    \                                                                \\\n    STR(s##tomato);\
+    \ change(s[i]);\n        return v;\n    }\n    static std::string restore(const\
+    \ std::vector<char> &v) {\n        std::string s(v.size(), '#');\n        for\
+    \ (int i = 0; i < v.size(); i++)\n            s[i] = restore(v[i]);\n        return\
+    \ s;\n    }\n};\nusing FSA = ForString<'A'>;\nusing FSa = ForString<'a'>;\nusing\
+    \ FS0 = ForString<'0'>;\n\n#ifdef STR\n#define STRA(s)                       \
+    \                                         \\\n    STR(s##tomato);            \
+    \                                                \\\n    auto s = FSA::change(s##tomato);\n\
+    #define STRa(s)                                                              \
+    \  \\\n    STR(s##tomato);                                                   \
+    \         \\\n    auto s = FSa::change(s##tomato);\n#define STR0(s)          \
+    \                                                      \\\n    STR(s##tomato);\
     \                                                            \\\n    auto s =\
-    \ FSa::change(s##tomato);\n#define STR0(s)                                   \
-    \                             \\\n    STR(s##tomato);                        \
-    \                                    \\\n    auto s = FS0::change(s##tomato);\n\
-    #endif"
+    \ FS0::change(s##tomato);\n#endif"
   dependsOn: []
   isVerificationFile: false
   path: library/sequence/ForString.cpp
@@ -86,7 +87,7 @@ data:
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
   - library/sequence/RollingHash.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

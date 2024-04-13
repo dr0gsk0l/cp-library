@@ -53,12 +53,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -70,7 +70,7 @@ data:
     \ntemplate <typename T> class Dinic {\n    struct EdgeInfo {\n        T cap;\n\
     \        int rev;\n    };\n    WeightedGraph<EdgeInfo> G;\n    std::vector<int>\
     \ level, current_edge, out_deg;\n    int s, t;\n    std::vector<pair<int, int>>\
-    \ edge_memo;\n\n    queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
+    \ edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
     \uFF08\u5BB9\u91CF\u6B63\u306E\u8FBA\u306B\u3088\u308B\uFF09s\u304B\u3089\u306E\
     \u6700\u77ED\u8DDD\u96E2\u306B\u3059\u308B\n        // \u5230\u9054\u51FA\u6765\
     \u306A\u3051\u308C\u3070-1\n        fill(level.begin(), level.end(), -1);\n  \
@@ -117,23 +117,24 @@ data:
     \          }\n        }\n        return fl;\n    }\n\n    T st_flow(int s_, int\
     \ t_, T lim = numeric_limits<T>::max() / 2) {\n        s = s_;\n        t = t_;\n\
     \        return flow(lim);\n    }\n};\n#line 6 \"test/AOJ/GRL_6_A.test.cpp\"\n\
-    \nint main() {\n    int n, m;\n    cin >> n >> m;\n    Dinic<int> fl(n, 0, n -\
-    \ 1);\n    while (m--) {\n        int u, v, c;\n        cin >> u >> v >> c;\n\
-    \        fl.add_arc(u, v, c);\n    }\n    std::cout << fl.flow() << std::endl;\n\
+    \nint main() {\n    int n, m;\n    std::cin >> n >> m;\n    Dinic<int> fl(n, 0,\
+    \ n - 1);\n    while (m--) {\n        int u, v, c;\n        std::cin >> u >> v\
+    \ >> c;\n        fl.add_arc(u, v, c);\n    }\n    std::cout << fl.flow() << std::endl;\n\
     }\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/flow/Dinic.cpp\"\n\nint main()\
-    \ {\n    int n, m;\n    cin >> n >> m;\n    Dinic<int> fl(n, 0, n - 1);\n    while\
-    \ (m--) {\n        int u, v, c;\n        cin >> u >> v >> c;\n        fl.add_arc(u,\
-    \ v, c);\n    }\n    std::cout << fl.flow() << std::endl;\n}"
+    \ {\n    int n, m;\n    std::cin >> n >> m;\n    Dinic<int> fl(n, 0, n - 1);\n\
+    \    while (m--) {\n        int u, v, c;\n        std::cin >> u >> v >> c;\n \
+    \       fl.add_arc(u, v, c);\n    }\n    std::cout << fl.flow() << std::endl;\n\
+    }"
   dependsOn:
   - library/flow/Dinic.cpp
   - library/graph/WeightedGraph.cpp
   isVerificationFile: true
   path: test/AOJ/GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_6_A.test.cpp

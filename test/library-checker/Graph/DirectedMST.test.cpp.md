@@ -42,7 +42,7 @@ data:
     \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
-    \ > g.edges[b].weight;\n    };\n    using PQ = priority_queue<int, vector<int>,\
+    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
     \ decltype(compare)>;\n    std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});\n\
     \    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
@@ -104,12 +104,12 @@ data:
     \ }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to, e.weight);\
     \ }\n\n    void scan(int m, bool directed = false, int indexed = 1) {\n      \
     \  edges.reserve(directed ? m : 2 * m);\n        while (m--) {\n            int\
-    \ u, v;\n            cin >> u >> v;\n            u -= indexed;\n            v\
-    \ -= indexed;\n            T weight;\n            cin >> weight;\n           \
-    \ if (directed)\n                add_arc(u, v, weight);\n            else\n  \
-    \              add_edge(u, v, weight);\n        }\n        build();\n    }\n\n\
-    \    void build() {\n        assert(!prepared);\n        prepared = true;\n  \
-    \      for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
+    \ u, v;\n            std::cin >> u >> v;\n            u -= indexed;\n        \
+    \    v -= indexed;\n            T weight;\n            std::cin >> weight;\n \
+    \           if (directed)\n                add_arc(u, v, weight);\n          \
+    \  else\n                add_edge(u, v, weight);\n        }\n        build();\n\
+    \    }\n\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
+    \        for (int v = 0; v < n; v++)\n            in_deg[v + 1] += in_deg[v];\n\
     \        std::vector<edge_type> new_edges(in_deg.back());\n        auto counter\
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
@@ -118,8 +118,8 @@ data:
     \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
     \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 7 \"test/library-checker/Graph/DirectedMST.test.cpp\"\
-    \nusing ll = long long;\n\nint main() {\n    int n, m, s;\n    cin >> n >> m >>\
-    \ s;\n    WeightedGraph<ll> g(n, m, true, 0);\n    auto ans = minimum_spanning_arborescence(g,\
+    \nusing ll = long long;\n\nint main() {\n    int n, m, s;\n    std::cin >> n >>\
+    \ m >> s;\n    WeightedGraph<ll> g(n, m, true, 0);\n    auto ans = minimum_spanning_arborescence(g,\
     \ s);\n    assert(ans.has_value());\n    auto [val, tree] = ans.value();\n   \
     \ std::vector<int> p(n);\n    p[s] = s;\n    ll sum = 0;\n    for (int id : tree)\
     \ {\n        const auto &e = g.edges[id];\n        sum += e.weight;\n        p[e.to]\
@@ -129,8 +129,8 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/directedmst\"\n#define\
     \ IGNORE\n#include <bits/stdc++.h>\n\n#include \"library/graph/MinimumSpanningArborescence.cpp\"\
     \n#include \"library/graph/WeightedGraph.cpp\"\nusing ll = long long;\n\nint main()\
-    \ {\n    int n, m, s;\n    cin >> n >> m >> s;\n    WeightedGraph<ll> g(n, m,\
-    \ true, 0);\n    auto ans = minimum_spanning_arborescence(g, s);\n    assert(ans.has_value());\n\
+    \ {\n    int n, m, s;\n    std::cin >> n >> m >> s;\n    WeightedGraph<ll> g(n,\
+    \ m, true, 0);\n    auto ans = minimum_spanning_arborescence(g, s);\n    assert(ans.has_value());\n\
     \    auto [val, tree] = ans.value();\n    std::vector<int> p(n);\n    p[s] = s;\n\
     \    ll sum = 0;\n    for (int id : tree) {\n        const auto &e = g.edges[id];\n\
     \        sum += e.weight;\n        p[e.to] = e.from;\n    }\n    val = sum; //\
@@ -143,7 +143,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/DirectedMST.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/DirectedMST.test.cpp

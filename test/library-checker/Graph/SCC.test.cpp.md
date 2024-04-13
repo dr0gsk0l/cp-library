@@ -51,7 +51,7 @@ data:
     \ v);\n        add_arc(v, u);\n    }\n    void add_arc(const edge_type &e) { add_arc(e.from,\
     \ e.to); }\n    void add_edge(const edge_type &e) { add_edge(e.from, e.to); }\n\
     \n    void scan(int m, bool directed = false, int indexed = 1) {\n        edges.reserve(directed\
-    \ ? m : 2 * m);\n        while (m--) {\n            int u, v;\n            cin\
+    \ ? m : 2 * m);\n        while (m--) {\n            int u, v;\n            std::cin\
     \ >> u >> v;\n            u -= indexed;\n            v -= indexed;\n         \
     \   if (directed)\n                add_arc(u, v);\n            else\n        \
     \        add_edge(u, v);\n        }\n        build();\n    }\n\n    void build()\
@@ -89,18 +89,19 @@ data:
     \        }\n    }\n    int operator[](int k) { return belong[k]; }\n};\n#undef\
     \ ALL_\n#undef REP_\n#line 6 \"test/library-checker/Graph/SCC.test.cpp\"\n\nint\
     \ main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n, m;\n    cin >> n >> m;\n    Graph g(n, m, true, 0);\n    SCC scc(g);\n\
-    \    int k = scc.DAG.n;\n    std::cout << k << \"\\n\";\n    for (const auto &ve\
-    \ : scc.component) {\n        std::cout << ve.size();\n        for (int p : ve)\n\
-    \            std::cout << \" \" << p;\n        std::cout << \"\\n\";\n    }\n\
-    }\n"
+    \n    int n, m;\n    std::cin >> n >> m;\n    Graph g(n, m, true, 0);\n    SCC\
+    \ scc(g);\n    int k = scc.DAG.n;\n    std::cout << k << \"\\n\";\n    for (const\
+    \ auto &ve : scc.component) {\n        std::cout << ve.size();\n        for (int\
+    \ p : ve)\n            std::cout << \" \" << p;\n        std::cout << \"\\n\"\
+    ;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n#include <bits/stdc++.h>\n\
     \n#include \"library/graph/Graph.cpp\"\n#include \"library/graph/SCC.cpp\"\n\n\
     int main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n, m;\n    cin >> n >> m;\n    Graph g(n, m, true, 0);\n    SCC scc(g);\n\
-    \    int k = scc.DAG.n;\n    std::cout << k << \"\\n\";\n    for (const auto &ve\
-    \ : scc.component) {\n        std::cout << ve.size();\n        for (int p : ve)\n\
-    \            std::cout << \" \" << p;\n        std::cout << \"\\n\";\n    }\n}"
+    \n    int n, m;\n    std::cin >> n >> m;\n    Graph g(n, m, true, 0);\n    SCC\
+    \ scc(g);\n    int k = scc.DAG.n;\n    std::cout << k << \"\\n\";\n    for (const\
+    \ auto &ve : scc.component) {\n        std::cout << ve.size();\n        for (int\
+    \ p : ve)\n            std::cout << \" \" << p;\n        std::cout << \"\\n\"\
+    ;\n    }\n}"
   dependsOn:
   - library/graph/Graph.cpp
   - library/graph/SCC.cpp
@@ -108,7 +109,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/SCC.test.cpp

@@ -4,10 +4,10 @@ data:
   - icon: ':x:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   - icon: ':x:'
@@ -52,13 +52,13 @@ data:
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
     \ \"library/tree/Tree.cpp\"\n#include \"library/tree/TreeMonoid.cpp\"\n\nint main()\
     \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    using\
-    \ G = GroupAdd<long long>;\n\n    int n, q;\n    cin >> n >> q;\n    std::vector<long\
-    \ long> a(n);\n    for (int i = 0; i < n; i++)\n        cin >> a[i];\n\n    Tree\
-    \ t(n);\n    t.scan_root(0);\n\n    TreeMonoid<Tree, G> TM(t, a);\n\n    while\
-    \ (q--) {\n        int c;\n        cin >> c;\n        if (c) {\n            int\
-    \ u;\n            cin >> u;\n            std::cout << TM.subtree_prod(u) << \"\
-    \\n\";\n        } else {\n            int u, x;\n            cin >> u >> x;\n\
-    \            TM.multiply(u, x);\n        }\n    }\n}"
+    \ G = GroupAdd<long long>;\n\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<long\
+    \ long> a(n);\n    for (int i = 0; i < n; i++)\n        std::cin >> a[i];\n\n\
+    \    Tree t(n);\n    t.scan_root(0);\n\n    TreeMonoid<Tree, G> TM(t, a);\n\n\
+    \    while (q--) {\n        int c;\n        std::cin >> c;\n        if (c) {\n\
+    \            int u;\n            std::cin >> u;\n            std::cout << TM.subtree_prod(u)\
+    \ << \"\\n\";\n        } else {\n            int u, x;\n            std::cin >>\
+    \ u >> x;\n            TM.multiply(u, x);\n        }\n    }\n}"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/tree/Tree.cpp
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

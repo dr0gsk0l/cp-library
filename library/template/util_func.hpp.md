@@ -47,11 +47,11 @@ data:
     \ TYPE1(T) template <class T>\n#define TYPE2(T, U) template <class T, class U>\n\
     #define TYPE3(T, U, V) template <class T, class U, class V>\n#define TYPE4(T,\
     \ U, V, W) template <class T, class U, class V, class W>\n#define TYPE5(T, U,\
-    \ V, W, X)                                                   \\\n  template <class\
-    \ T, class U, class V, class W, class X>\n#define TYPE(...)                  \
-    \                                            \\\n  overload5(__VA_ARGS__, TYPE5,\
-    \ TYPE4, TYPE3, TYPE2, TYPE1)(__VA_ARGS__)\n#define TYPES1(T) template <class...\
-    \ T>\n#define TYPES2(H, T) template <class H, class... T>\n#define TYPES(...)\
+    \ V, W, X)                                                   \\\n    template\
+    \ <class T, class U, class V, class W, class X>\n#define TYPE(...)           \
+    \                                                   \\\n    overload5(__VA_ARGS__,\
+    \ TYPE5, TYPE4, TYPE3, TYPE2, TYPE1)(__VA_ARGS__)\n#define TYPES1(T) template\
+    \ <class... T>\n#define TYPES2(H, T) template <class H, class... T>\n#define TYPES(...)\
     \ overload2(__VA_ARGS__, TYPES2, TYPES1)(__VA_ARGS__)\n\nTYPE(T)\nusing vec<T>\
     \ = std::vector<T>;\nTYPE(T)\nusing vvec<T> = vec<vec<T>>;\nTYPE(T)\nusing vvvec<T>\
     \ = vec<vvec<T>>;\nTYPE(T)\nusing vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T>\
@@ -61,7 +61,7 @@ data:
     using vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing pi = ptt<int>;\n\
     using pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\n\
     using pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n#line 3 \"library/template/util_func.hpp\"\
-    \n#pragma region queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
+    \n#pragma region std::queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
     \    T a = que.front();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pq<T>\
     \ &que) {\n    assert(que.size());\n    T a = que.top();\n    que.pop();\n   \
     \ return a;\n}\nTYPE(T)\nT pick(pqg<T> &que) {\n    assert(que.size());\n    T\
@@ -77,7 +77,7 @@ data:
     \ std::vector<T>(n, x);\n    else\n        return std::vector(n, make_vector<T>(x,\
     \ ns...));\n}\n#pragma endregion\n"
   code: "#include \"library/template/macro.hpp\"\n#include \"library/template/type.hpp\"\
-    \n#pragma region queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
+    \n#pragma region std::queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
     \    T a = que.front();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pq<T>\
     \ &que) {\n    assert(que.size());\n    T a = que.top();\n    que.pop();\n   \
     \ return a;\n}\nTYPE(T)\nT pick(pqg<T> &que) {\n    assert(que.size());\n    T\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: false
   path: library/template/util_func.hpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/util_func.hpp

@@ -46,14 +46,14 @@ data:
     \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
     \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
     \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend ostream &operator<<(ostream &os, const Compress &C) {\n\
-    \        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i] << \"\
-    :\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 5 \"library/util/InversionNumber.cpp\"\
-    \n\ntemplate <typename T> long long inversion_number(const std::vector<T> &v)\
-    \ {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n    long long\
-    \ res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n        int j\
-    \ = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n    }\n \
-    \   return res;\n}\n"
+    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
+    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
+    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 5\
+    \ \"library/util/InversionNumber.cpp\"\n\ntemplate <typename T> long long inversion_number(const\
+    \ std::vector<T> &v) {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n\
+    \    long long res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n\
+    \        int j = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n\
+    \    }\n    return res;\n}\n"
   code: "#include <atcoder/fenwicktree>\nusing namespace atcoder;\n\n#include \"library/util/Compress.cpp\"\
     \n\ntemplate <typename T> long long inversion_number(const std::vector<T> &v)\
     \ {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n    long long\
@@ -66,7 +66,7 @@ data:
   path: library/util/InversionNumber.cpp
   requiredBy:
   - library/util/BubbleNumber.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

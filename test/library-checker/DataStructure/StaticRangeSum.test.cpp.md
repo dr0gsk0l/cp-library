@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/CumulativeSum.cpp
     title: library/datastructure/CumulativeSum.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -24,23 +24,23 @@ data:
     \    void add(const T &a) { A.push_back(A.back() + a); }\n    U sum(int l, int\
     \ r) { return A[r] - A[l]; }\n    U sum() { return A.back(); }\n};\n#line 5 \"\
     test/library-checker/DataStructure/StaticRangeSum.test.cpp\"\n\nint main() {\n\
-    \    int n, q;\n    cin >> n >> q;\n    std::vector<int> v(n);\n    for (int i\
-    \ = 0; i < n; i++)\n        cin >> v[i];\n    auto wa = CumulativeSum(v);\n  \
-    \  while (q--) {\n        int l, r;\n        cin >> l >> r;\n        std::cout\
+    \    int n, q;\n    std::cin >> n >> q;\n    std::vector<int> v(n);\n    for (int\
+    \ i = 0; i < n; i++)\n        std::cin >> v[i];\n    auto wa = CumulativeSum(v);\n\
+    \    while (q--) {\n        int l, r;\n        std::cin >> l >> r;\n        std::cout\
     \ << wa.sum(l, r) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
     \ <bits/stdc++.h>\n\n#include \"library/datastructure/CumulativeSum.cpp\"\n\n\
-    int main() {\n    int n, q;\n    cin >> n >> q;\n    std::vector<int> v(n);\n\
-    \    for (int i = 0; i < n; i++)\n        cin >> v[i];\n    auto wa = CumulativeSum(v);\n\
-    \    while (q--) {\n        int l, r;\n        cin >> l >> r;\n        std::cout\
+    int main() {\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<int> v(n);\n\
+    \    for (int i = 0; i < n; i++)\n        std::cin >> v[i];\n    auto wa = CumulativeSum(v);\n\
+    \    while (q--) {\n        int l, r;\n        std::cin >> l >> r;\n        std::cout\
     \ << wa.sum(l, r) << '\\n';\n    }\n}"
   dependsOn:
   - library/datastructure/CumulativeSum.cpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 18:08:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/StaticRangeSum.test.cpp
 layout: document

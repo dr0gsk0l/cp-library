@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   _extendedRequiredBy:
@@ -85,20 +85,20 @@ data:
     \        M::Rchop(x, dat[(size >> k) + ((l++) ^ xor_val)]);\n            }\n \
     \           if (r & 1) {\n                M::Rchop(x, dat[(size >> k) + ((--r)\
     \ ^ xor_val)]);\n            }\n            l /= 2, r /= 2, xor_val /= 2;\n  \
-    \      }\n        return x;\n    }\n\n    friend ostream &operator<<(ostream &os,\
-    \ const SegmentTree &seg) {\n        os << \"(\";\n        for (int L = 1; L <=\
-    \ seg.size; L <<= 1) {\n            os << \"[\";\n            for (int j = L;\
-    \ j < (L << 1); j++) {\n                os << seg.dat[j];\n                if\
-    \ (j + 1 < (L << 1))\n                    os << \",\";\n            }\n      \
-    \      os << \"]\";\n        }\n        os << \")\";\n        return os;\n   \
-    \ }\n};"
+    \      }\n        return x;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os, const SegmentTree &seg) {\n        os << \"(\";\n        for (int L = 1;\
+    \ L <= seg.size; L <<= 1) {\n            os << \"[\";\n            for (int j\
+    \ = L; j < (L << 1); j++) {\n                os << seg.dat[j];\n             \
+    \   if (j + 1 < (L << 1))\n                    os << \",\";\n            }\n \
+    \           os << \"]\";\n        }\n        os << \")\";\n        return os;\n\
+    \    }\n};"
   dependsOn:
   - library/algebra/monoid/Concepts.cpp
   isVerificationFile: false
   path: library/segtree/SegmentTree.cpp
   requiredBy:
   - library/tree/TreeMonoid.cpp
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp

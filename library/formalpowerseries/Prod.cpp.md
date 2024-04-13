@@ -124,34 +124,42 @@ data:
     \ // exp(nx)\n    static FPS exp(const T n) {\n        if (n == 0)\n         \
     \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
-    \ REP_\n#line 3 \"library/formalpowerseries/Prod.cpp\"\ntemplate<typename FPS>\n\
-    class FPSProd{\n  queue<FPS> que;\npublic:\n  void add(const FPS&f){ que.push(f);\
-    \ }\n  FPS prod(){\n    if(!que.size())return FPS::unit();\n    while(que.size()>1){\n\
-    \      FPS f=que.front();que.pop();\n      FPS g=que.front();que.pop();\n    \
-    \  que.push(f*g);\n    }\n    FPS res=que.front();que.pop();\n    return res;\n\
-    \  }\n};\n\ntemplate<typename FPS>\nclass FPSProdDiversity{\n  static constexpr\
-    \ auto cmp=[](const FPS&f,const FPS&g){ return f.size()>g.size(); };\n  priority_queue<FPS,vector<FPS>,decltype(cmp)>\
-    \ que{cmp};\npublic:\n  void add(const FPS&f){ que.push(f); }\n  FPS prod(){\n\
-    \    if(!que.size())return FPS::unit();\n    while(que.size()>1){\n      FPS f=que.top();que.pop();\n\
-    \      FPS g=que.top();que.pop();\n      que.push(f*g);\n    }\n    FPS res=que.top();que.pop();\n\
-    \    return res;\n  }\n};\n"
-  code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\ntemplate<typename\
-    \ FPS>\nclass FPSProd{\n  queue<FPS> que;\npublic:\n  void add(const FPS&f){ que.push(f);\
-    \ }\n  FPS prod(){\n    if(!que.size())return FPS::unit();\n    while(que.size()>1){\n\
-    \      FPS f=que.front();que.pop();\n      FPS g=que.front();que.pop();\n    \
-    \  que.push(f*g);\n    }\n    FPS res=que.front();que.pop();\n    return res;\n\
-    \  }\n};\n\ntemplate<typename FPS>\nclass FPSProdDiversity{\n  static constexpr\
-    \ auto cmp=[](const FPS&f,const FPS&g){ return f.size()>g.size(); };\n  priority_queue<FPS,vector<FPS>,decltype(cmp)>\
-    \ que{cmp};\npublic:\n  void add(const FPS&f){ que.push(f); }\n  FPS prod(){\n\
-    \    if(!que.size())return FPS::unit();\n    while(que.size()>1){\n      FPS f=que.top();que.pop();\n\
-    \      FPS g=que.top();que.pop();\n      que.push(f*g);\n    }\n    FPS res=que.top();que.pop();\n\
-    \    return res;\n  }\n};"
+    \ REP_\n#line 3 \"library/formalpowerseries/Prod.cpp\"\ntemplate <typename FPS>\
+    \ class FPSProd {\n    std::queue<FPS> que;\n\n  public:\n    void add(const FPS\
+    \ &f) { que.push(f); }\n    FPS prod() {\n        if (!que.size())\n         \
+    \   return FPS::unit();\n        while (que.size() > 1) {\n            FPS f =\
+    \ que.front();\n            que.pop();\n            FPS g = que.front();\n   \
+    \         que.pop();\n            que.push(f * g);\n        }\n        FPS res\
+    \ = que.front();\n        que.pop();\n        return res;\n    }\n};\n\ntemplate\
+    \ <typename FPS> class FPSProdDiversity {\n    static constexpr auto cmp = [](const\
+    \ FPS &f, const FPS &g) {\n        return f.size() > g.size();\n    };\n    std::priority_queue<FPS,\
+    \ vector<FPS>, decltype(cmp)> que{cmp};\n\n  public:\n    void add(const FPS &f)\
+    \ { que.push(f); }\n    FPS prod() {\n        if (!que.size())\n            return\
+    \ FPS::unit();\n        while (que.size() > 1) {\n            FPS f = que.top();\n\
+    \            que.pop();\n            FPS g = que.top();\n            que.pop();\n\
+    \            que.push(f * g);\n        }\n        FPS res = que.top();\n     \
+    \   que.pop();\n        return res;\n    }\n};\n"
+  code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\ntemplate <typename\
+    \ FPS> class FPSProd {\n    std::queue<FPS> que;\n\n  public:\n    void add(const\
+    \ FPS &f) { que.push(f); }\n    FPS prod() {\n        if (!que.size())\n     \
+    \       return FPS::unit();\n        while (que.size() > 1) {\n            FPS\
+    \ f = que.front();\n            que.pop();\n            FPS g = que.front();\n\
+    \            que.pop();\n            que.push(f * g);\n        }\n        FPS\
+    \ res = que.front();\n        que.pop();\n        return res;\n    }\n};\n\ntemplate\
+    \ <typename FPS> class FPSProdDiversity {\n    static constexpr auto cmp = [](const\
+    \ FPS &f, const FPS &g) {\n        return f.size() > g.size();\n    };\n    std::priority_queue<FPS,\
+    \ vector<FPS>, decltype(cmp)> que{cmp};\n\n  public:\n    void add(const FPS &f)\
+    \ { que.push(f); }\n    FPS prod() {\n        if (!que.size())\n            return\
+    \ FPS::unit();\n        while (que.size() > 1) {\n            FPS f = que.top();\n\
+    \            que.pop();\n            FPS g = que.top();\n            que.pop();\n\
+    \            que.push(f * g);\n        }\n        FPS res = que.top();\n     \
+    \   que.pop();\n        return res;\n    }\n};"
   dependsOn:
   - library/formalpowerseries/Base.cpp
   isVerificationFile: false
   path: library/formalpowerseries/Prod.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp

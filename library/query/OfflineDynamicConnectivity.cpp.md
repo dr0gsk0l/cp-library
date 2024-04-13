@@ -32,7 +32,7 @@ data:
     \ { return num; }\n};\n#line 2 \"library/query/OfflineDynamicConnectivity.cpp\"\
     \n\nclass OfflineDynamicConnectivity {\n    using edge = std::pair<int, int>;\n\
     \n    UnionFindUndo uf;\n    int V, Q, segsz;\n    std::vector<vector<edge>> seg;\n\
-    \    int comp;\n\n    std::vector<pair<pair<int, int>, edge>> pend;\n    map<edge,\
+    \    int comp;\n\n    std::vector<pair<pair<int, int>, edge>> pend;\n    std<edge,\
     \ int> cnt, appear;\n\n    OfflineDynamicConnectivity(int V, int Q) : uf(V), V(V),\
     \ Q(Q), comp(V) {\n        segsz = 1;\n        while (segsz < Q)\n           \
     \ segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n    }\n\n    void insert(int\
@@ -59,7 +59,7 @@ data:
   code: "#include \"library/datastructure/unionfind/UndoUnionFind.cpp\"\n\nclass OfflineDynamicConnectivity\
     \ {\n    using edge = std::pair<int, int>;\n\n    UnionFindUndo uf;\n    int V,\
     \ Q, segsz;\n    std::vector<vector<edge>> seg;\n    int comp;\n\n    std::vector<pair<pair<int,\
-    \ int>, edge>> pend;\n    map<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
+    \ int>, edge>> pend;\n    std<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
     \ V, int Q) : uf(V), V(V), Q(Q), comp(V) {\n        segsz = 1;\n        while\
     \ (segsz < Q)\n            segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n\
     \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: library/query/OfflineDynamicConnectivity.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/OfflineDynamicConnectivity.cpp

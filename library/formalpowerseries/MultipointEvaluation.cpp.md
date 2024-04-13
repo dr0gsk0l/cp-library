@@ -158,7 +158,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/MultipointEvaluation.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp

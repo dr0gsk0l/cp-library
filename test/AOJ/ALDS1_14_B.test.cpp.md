@@ -36,8 +36,8 @@ data:
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/sequence/RollingHash.cpp\"\n\n\
     int main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    string t;\n    cin >> t;\n    RollingHash RH(FSa::change(t));\n\n    string\
-    \ p;\n    cin >> p;\n    auto h = RollingHash<char>::full_hash(FSa::change(p));\n\
+    \n    std::string t;\n    std::cin >> t;\n    RollingHash RH(FSa::change(t));\n\
+    \n    std::string p;\n    std::cin >> p;\n    auto h = RollingHash<char>::full_hash(FSa::change(p));\n\
     \n    for (int i = 0; i + p.size() <= t.size(); i++)\n        if (RH.get_hash(i,\
     \ i + p.size()) == h)\n            std::cout << i << \"\\n\";\n}"
   dependsOn:
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_14_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_14_B.test.cpp

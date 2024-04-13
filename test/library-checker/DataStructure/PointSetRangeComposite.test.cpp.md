@@ -7,7 +7,7 @@ data:
   - icon: ':x:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   - icon: ':x:'
@@ -29,9 +29,9 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
+    PROBLEM: https://judge.yosupo.jp/problem/point_std::set_range_composite
     links:
-    - https://judge.yosupo.jp/problem/point_set_range_composite
+    - https://judge.yosupo.jp/problem/point_std::set_range_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -43,17 +43,17 @@ data:
     , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/segtree/SegmentTree.cpp: line 3: #pragma once found in a non-first line\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_std::set_range_composite\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/Reverse.cpp\"\n#include\
     \ \"library/algebra/group/Affine.cpp\"\n#include \"library/mod/Modint.cpp\"\n\
     #include \"library/segtree/SegmentTree.cpp\"\n\nusing ll = long long;\nusing mint\
     \ = Mint<ll>;\nusing G_ = GroupAffine<mint>;\nusing G = AlgebraReverse<G_>;\n\
-    using F = G::value_type;\n\nint main() {\n    int n, q;\n    cin >> n >> q;\n\
-    \    std::vector<F> v(n);\n    for (int i = 0; i < n; i++)\n        cin >> v[i];\n\
-    \    SegmentTree<G> seg(v);\n    while (q--) {\n        int t, l, r, x;\n    \
-    \    cin >> t >> l >> r >> x;\n        if (t) {\n            F f = seg.prod(l,\
-    \ r);\n            std::cout << f(x) << \"\\n\";\n        } else\n           \
-    \ seg.set(l, F(r, x));\n    }\n}"
+    using F = G::value_type;\n\nint main() {\n    int n, q;\n    std::cin >> n >>\
+    \ q;\n    std::vector<F> v(n);\n    for (int i = 0; i < n; i++)\n        std::cin\
+    \ >> v[i];\n    SegmentTree<G> seg(v);\n    while (q--) {\n        int t, l, r,\
+    \ x;\n        std::cin >> t >> l >> r >> x;\n        if (t) {\n            F f\
+    \ = seg.prod(l, r);\n            std::cout << f(x) << \"\\n\";\n        } else\n\
+    \            seg.set(l, F(r, x));\n    }\n}"
   dependsOn:
   - library/algebra/Reverse.cpp
   - library/algebra/group/Affine.cpp
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp

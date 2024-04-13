@@ -21,20 +21,20 @@ data:
     \  // bX + (a%b)Y = gcd(a,b)\n  // a%b = a - b(a/b)\n  // \u2234 aY + b(X-(a/b)Y)\
     \ = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n}\n#line 6 \"test/AOJ/NTL_1_E.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int a, b;\n    cin >> a >> b;\n    auto [x, y] = ext_gcd(a, b);\n    std::cout\
-    \ << x << \" \" << y << std::endl;\n}\n"
+    \n    int a, b;\n    std::cin >> a >> b;\n    auto [x, y] = ext_gcd(a, b);\n \
+    \   std::cout << x << \" \" << y << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/math/ExtraGCD.cpp\"\n\nint main()\
     \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n   \
-    \ int a, b;\n    cin >> a >> b;\n    auto [x, y] = ext_gcd(a, b);\n    std::cout\
+    \ int a, b;\n    std::cin >> a >> b;\n    auto [x, y] = ext_gcd(a, b);\n    std::cout\
     \ << x << \" \" << y << std::endl;\n}"
   dependsOn:
   - library/math/ExtraGCD.cpp
   isVerificationFile: true
   path: test/AOJ/NTL_1_E.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/NTL_1_E.test.cpp

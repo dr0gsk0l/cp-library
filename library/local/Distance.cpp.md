@@ -9,10 +9,10 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/local/Distance.cpp\"\ntemplate <typename T> class\
-    \ Distance {\n    map<T, int> d;\n    queue<T> que;\n\n  public:\n    // s \u304B\
-    \u3089\u7D42\u7AEF\u306B\u305F\u3069\u308A\u7740\u304F\u307E\u3067\u306E\u8DDD\
-    \u96E2\n    template <typename F> int shortest_path(const F &f, const T &s) {\n\
-    \        if (d.count(s))\n            return d[s];\n        if (!f(s).size())\n\
+    \ Distance {\n    std<T, int> d;\n    std::queue<T> que;\n\n  public:\n    //\
+    \ s \u304B\u3089\u7D42\u7AEF\u306B\u305F\u3069\u308A\u7740\u304F\u307E\u3067\u306E\
+    \u8DDD\u96E2\n    template <typename F> int shortest_path(const F &f, const T\
+    \ &s) {\n        if (d.count(s))\n            return d[s];\n        if (!f(s).size())\n\
     \            return d[s] = 0;\n        int res = 1e9;\n        for (const T &to\
     \ : f(s))\n            res = min(res, shortest_path(f, to) + 1);\n        return\
     \ d[s] = res;\n    }\n\n    // s \u304B\u3089\u306E\u6700\u77ED\u8DDD\u96E2\u304C\
@@ -35,7 +35,7 @@ data:
     \ = D + 1;\n                if (D + 1 < MAX)\n                    que.push(to);\n\
     \            }\n        }\n        for (const auto &[key, val] : d)\n        \
     \    level[val].push_back(key);\n        return level;\n    }\n};\n"
-  code: "template <typename T> class Distance {\n    map<T, int> d;\n    queue<T>\
+  code: "template <typename T> class Distance {\n    std<T, int> d;\n    std::queue<T>\
     \ que;\n\n  public:\n    // s \u304B\u3089\u7D42\u7AEF\u306B\u305F\u3069\u308A\
     \u7740\u304F\u307E\u3067\u306E\u8DDD\u96E2\n    template <typename F> int shortest_path(const\
     \ F &f, const T &s) {\n        if (d.count(s))\n            return d[s];\n   \
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: library/local/Distance.cpp
   requiredBy: []
-  timestamp: '2024-04-13 17:39:36+09:00'
+  timestamp: '2024-04-13 18:08:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/local/Distance.cpp
