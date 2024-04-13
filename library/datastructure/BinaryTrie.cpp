@@ -2,7 +2,7 @@ template <int LOG, typename COUNT> class BinaryTrie {
     static_assert(LOG <= 64, "Binary Trie overflow");
     using T = conditional_t<LOG <= 32, unsigned int, unsigned long long>;
     struct Node {
-        array<int, 2> nxt_node;
+        std::array<int, 2> nxt_node;
         COUNT count; //
         Node() : count(0) { fill(nxt_node.begin(), nxt_node.end(), -1); }
     };

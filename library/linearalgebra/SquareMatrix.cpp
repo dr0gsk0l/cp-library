@@ -3,8 +3,8 @@
 #define REP2_(i, s, n) for (int i = (s); i < (n); i++)
 template <typename K, size_t N> struct SquareMatrix {
     using value_type = K;
-    using vec = array<K, N>;
-    using mat = array<vec, N>;
+    using vec = std::array<K, N>;
+    using mat = std::array<vec, N>;
     mat M;
 
     SquareMatrix(K a = 0) {

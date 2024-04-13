@@ -6,7 +6,7 @@ class Trie {
   protected:
     using X = typename AbelMonoid::value_type;
     struct Node {
-        array<int, SIGMA> nxt;
+        std::array<int, SIGMA> nxt;
         int pre;
         X val, suffix_val; // suffix_val は自身を含まない
         Node(int pre)
