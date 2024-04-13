@@ -1,6 +1,6 @@
 #pragma once
 template <typename X> struct MonoidMaxIndex {
-    using P = pair<X, int>;
+    using P = std::pair<X, int>;
     using value_type = P;
     static constexpr P op(const P &x, const P &y) noexcept { return max(x, y); }
     static constexpr void Rchop(P &x, const P &y) {

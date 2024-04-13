@@ -1,6 +1,6 @@
 #pragma once
 template <typename GRAPH>
-pair<vector<int>, vector<int>> BFS(const GRAPH &g, int s = 0) {
+std::pair<vector<int>, vector<int>> BFS(const GRAPH &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<int> d(g.n, -1), pre(g.n, -1);
     std::queue<int> que;

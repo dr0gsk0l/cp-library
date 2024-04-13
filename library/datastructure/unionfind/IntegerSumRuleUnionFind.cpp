@@ -2,8 +2,8 @@ class IntegerSumRuleUnionFind {
     using ll = long long;
     int n, num;
     std::vector<int> sz, parent;
-    std::vector<pair<int, ll>> potential;
-    std::vector<optional<ll>> value;
+    std::vector<std::pair<int, ll>> potential;
+    std::vector<std::optional<ll>> value;
 
   public:
     IntegerSumRuleUnionFind() = default;
@@ -68,7 +68,7 @@ class IntegerSumRuleUnionFind {
         return true;
     }
 
-    optional<ll> val(int x) {
+    std::optional<ll> val(int x) {
         auto [r, a, b] = from_root(x);
         if (value[r])
             return value[r].value() * a + b;
@@ -77,7 +77,7 @@ class IntegerSumRuleUnionFind {
 
     // x と y が隣接してないなら nullopt
     // x と y が隣接しているが、sum が一意でない場合も nullopt
-    optional<ll> sum(int x, int y) {
+    std::optional<ll> sum(int x, int y) {
         auto [rx, a, b] = from_root(x);
         auto [ry, c, d] = from_root(y);
         if (rx != ry)

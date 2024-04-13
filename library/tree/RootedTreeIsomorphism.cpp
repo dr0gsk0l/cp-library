@@ -1,5 +1,5 @@
 template <typename TREE>
-pair<int, vector<int>> rooted_tree_isomorphism(TREE &t) {
+std::pair<int, vector<int>> rooted_tree_isomorphism(TREE &t) {
     assert(~t.root);
     std::vector<int> res(t.n);
     std<vector<int>, int> mp;

@@ -16,7 +16,7 @@ std::ostream &operator<<(std::ostream &os, vec<T> &v) {
 }
 
 TYPE(T, S)
-std::ostream &operator<<(std::ostream &os, std::pair<T, S> &p) {
+std::ostream &operator<<(std::ostream &os, std::std::pair<T, S> &p) {
     if (&os == &std::cerr)
         return os << "(" << p.first << "," << p.second << ")";
     return os << p.first << " " << p.second;

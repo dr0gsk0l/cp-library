@@ -3,7 +3,7 @@
 class PartialPersistentUnionFind {
     int now; // 現在時刻
     std::vector<int> par, rank, time;
-    std::vector<vector<pair<int, int>>> sz;
+    std::vector<vector<std::pair<int, int>>> sz;
     static constexpr int NOW = numeric_limits<int>::max();
 
   public:

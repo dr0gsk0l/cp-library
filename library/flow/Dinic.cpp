@@ -10,7 +10,7 @@ template <typename T> class Dinic {
     WeightedGraph<EdgeInfo> G;
     std::vector<int> level, current_edge, out_deg;
     int s, t;
-    std::vector<pair<int, int>> edge_memo;
+    std::vector<std::pair<int, int>> edge_memo;
 
     std::queue<int> que;
     void bfs() {

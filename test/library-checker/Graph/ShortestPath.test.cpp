@@ -18,7 +18,7 @@ int main() {
         return 0;
     }
 
-    std::vector<pair<int, int>> ans;
+    std::vector<std::pair<int, int>> ans;
     while (t != s) {
         ans.emplace_back(pre[t], t);
         t = pre[t];

@@ -3,7 +3,7 @@ template <typename AbelGroup> class UnionFind {
     int n, num;
     std::vector<int> sz, parent;
     std::vector<T> value;
-    std::stack<std::pair<int, int>> sta;
+    std::stack<std::std::pair<int, int>> sta;
 
   public:
     UnionFind() = default;

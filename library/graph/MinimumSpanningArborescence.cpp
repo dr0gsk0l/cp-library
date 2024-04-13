@@ -1,7 +1,8 @@
 #pragma once
 #include "library/datastructure/unionfind/UnionFind.cpp"
 template <typename WG, typename W = typename WG::weight_type>
-optional<pair<W, vector<int>>> minimum_spanning_arborescence(WG g, int r = 0) {
+std::optional<std::pair<W, vector<int>>>
+minimum_spanning_arborescence(WG g, int r = 0) {
     int n = g.n;
     W res = 0;
     std::vector<W> new_add(n, 0);
@@ -13,7 +14,7 @@ optional<pair<W, vector<int>>> minimum_spanning_arborescence(WG g, int r = 0) {
         return g.edges[a].weight > g.edges[b].weight;
     };
     using PQ = std::priority_queue<int, vector<int>, decltype(compare)>;
-    std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});
+    std::vector<std::pair<PQ, W>> pq_add(n, {PQ{compare}, 0});
     for (int i = 0; i < g.edges.size(); i++)
         pq_add[g.edges[i].to].first.push(i);
     std::vector<int> pq_id(n);
@@ -79,5 +80,5 @@ optional<pair<W, vector<int>>> minimum_spanning_arborescence(WG g, int r = 0) {
             state[v] = 2;
     }
     tree.erase(tree.begin() + r);
-    return make_pair(res, tree);
+    return make_std::pair(res, tree);
 }

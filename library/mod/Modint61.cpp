@@ -16,7 +16,7 @@ struct Modint61 {
     }
 
   private:
-    template <int d> static constexpr pair<ll, ll> divide(const ll &a) {
+    template <int d> static constexpr std::pair<ll, ll> divide(const ll &a) {
         return {a >> d, a & ((1LL << d) - 1)};
     }
 

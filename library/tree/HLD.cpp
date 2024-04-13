@@ -58,8 +58,8 @@ template <typename TREE> struct HLD {
     }
 
     // l=lca(u,v) とした時、[u,l] パスと [v,l] パス を閉区間の組みで返す
-    using path_t = vector<pair<int, int>>;
-    pair<path_t, path_t> path(int u, int v) {
+    using path_t = vector<std::pair<int, int>>;
+    std::pair<path_t, path_t> path(int u, int v) {
         assert(prepared);
         path_t path_u, path_v;
         while (u != v) {
@@ -84,7 +84,7 @@ template <typename TREE> struct HLD {
     }
 
     // [l,r) が v の部分木
-    pair<int, int> subtree(int v) {
+    std::pair<int, int> subtree(int v) {
         assert(prepared);
         return {id[v], id2[v]};
     }

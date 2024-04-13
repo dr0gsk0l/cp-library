@@ -20,9 +20,9 @@ class BipartiteMatching {
         assert(0 <= v and v < B);
         fl.add_arc(u, A + v, 1);
     }
-    std::vector<pair<int, int>> solve() {
+    std::vector<std::pair<int, int>> solve() {
         int K = fl.flow(min(A, B));
-        std::vector<pair<int, int>> res;
+        std::vector<std::pair<int, int>> res;
         res.reserve(K);
         auto all_edge = fl.all_edge();
         for (int i = A + B; i < all_edge.size(); i++) {

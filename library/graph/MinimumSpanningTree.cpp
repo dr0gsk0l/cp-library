@@ -1,6 +1,6 @@
 #include "library/datastructure/unionfind/UnionFind.cpp"
 template <typename WG, typename W = typename WG::weight_type>
-pair<W, vector<int>> minimum_spanning_tree(const WG &g) {
+std::pair<W, vector<int>> minimum_spanning_tree(const WG &g) {
     assert(g.is_prepared());
     int n = g.n, m = g.edges.size();
     UnionFind uf(n);

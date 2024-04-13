@@ -32,7 +32,7 @@ std::ostream &operator<<(std::ostream &os, const unordered_std<T, U> &mp) {
 }
 
 template <typename T, typename U>
-std::ostream &operator<<(std::ostream &os, const pair<T, U> &P) {
+std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &P) {
     os << "[" << P.first << "," << P.second << "]";
     return os;
 }

@@ -9,6 +9,6 @@ std::istream &operator>>(std::istream &is, vec<T> &v) {
 }
 
 TYPE(T, S)
-std::istream &operator>>(std::istream &is, std::pair<T, S> &p) {
+std::istream &operator>>(std::istream &is, std::std::pair<T, S> &p) {
     return is >> p.first >> p.second;
 }

@@ -68,7 +68,7 @@ template <typename T, int LOG> class F2 {
         return a;
     }
 
-    optional<vector<T>> make(T a) {
+    std::optional<vector<T>> make(T a) {
         std::vector<T> v;
         for (T e : B)
             if (xor_chmin(a, e))

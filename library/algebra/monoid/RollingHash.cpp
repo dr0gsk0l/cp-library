@@ -1,7 +1,7 @@
 template <typename CHAR = char> struct MonoidRollingHash {
     using u64 = std::uint64_t;
     using u128 = unsigned __int128;
-    using value_type = std::pair<u64, u64>;
+    using value_type = std::std::pair<u64, u64>;
     using X = value_type;
     static constexpr u64 mod = (1ULL << 61) - 1, base = 20120620;
     static constexpr u64 mul(u64 a, u64 b) {

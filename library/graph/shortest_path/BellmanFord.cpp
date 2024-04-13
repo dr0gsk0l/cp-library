@@ -1,7 +1,8 @@
 // s からの最短距離が定まるなら最短距離, 無限に小さく出来るなら nullopt
 // そもそも到達出来ない場合は pre が -1 になっている
 template <typename WG, typename T = typename WG::weight_type>
-pair<vector<optional<T>>, vector<int>> bellman_ford(const WG &g, int s = 0) {
+std::pair<vector<std::optional<T>>, vector<int>> bellman_ford(const WG &g,
+                                                              int s = 0) {
     assert(g.is_prepared());
     int n = g.n;
     static constexpr T INF = numeric_limits<T>::max() / 2;
@@ -19,7 +20,7 @@ pair<vector<optional<T>>, vector<int>> bellman_ford(const WG &g, int s = 0) {
                         update = true;
                     }
         if (!update) {
-            std::vector<optional<T>> d_(n);
+            std::vector<std::optional<T>> d_(n);
             for (int i = 0; i < n; i++)
                 d_[i] = d[i];
             return {d_, pre};
@@ -37,7 +38,7 @@ pair<vector<optional<T>>, vector<int>> bellman_ford(const WG &g, int s = 0) {
                 for (const auto &e : g[v])
                     if (d[e.to] > d[v] + e.weight)
                         d[e.to] = d[v] + e.weight;
-    std::vector<optional<T>> res(n);
+    std::vector<std::optional<T>> res(n);
     for (int v = 0; v < n; v++)
         if (now_d[v] == d[v])
             res[v] = d[v];

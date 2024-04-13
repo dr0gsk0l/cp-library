@@ -30,7 +30,7 @@ int solve(int h, int w) {
     AC.build();
 
     std::vector dp(h * w, std::vector<int>(AC.size(), -1));
-    std::queue<pair<int, int>> que;
+    std::queue<std::pair<int, int>> que;
     que.emplace(S, 0);
     dp[S][0] = 0;
     while (que.size()) {

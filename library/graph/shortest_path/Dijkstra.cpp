@@ -1,10 +1,10 @@
 template <typename WG, typename T = typename WG::weight_type>
-pair<vector<T>, vector<int>> dijkstra(const WG &g, int s = 0) {
+std::pair<vector<T>, vector<int>> dijkstra(const WG &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);
-    std::priority_queue<pair<T, int>, vector<pair<T, int>>,
-                        greater<pair<T, int>>>
+    std::priority_queue<std::pair<T, int>, vector<std::pair<T, int>>,
+                        greater<std::pair<T, int>>>
         que;
     d[s] = 0;
     que.emplace(0, s);

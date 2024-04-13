@@ -1,10 +1,10 @@
 class Mo {
     int n;
-    std::vector<pair<int, int>> lr;
+    std::vector<std::pair<int, int>> lr;
 
   public:
     Mo() = default;
-    Mo(const std::vector<pair<int, int>> &lr) : lr(lr) {
+    Mo(const std::vector<std::pair<int, int>> &lr) : lr(lr) {
         for (const auto &[l, r] : lr) {
             assert(0 <= l and l <= r);
             n = max(n, r);

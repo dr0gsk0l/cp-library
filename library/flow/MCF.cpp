@@ -11,7 +11,7 @@ template <typename TF, typename TC> class MCF {
     WeightedGraph<EdgeInfo> G;
     std::vector<TC> potential, dist;
     static constexpr TC INF = numeric_limits<TC>::max() / 2;
-    std::vector<pair<int, int>> pre,
+    std::vector<std::pair<int, int>> pre,
         edge_memo; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;
 
@@ -34,8 +34,8 @@ template <typename TF, typename TC> class MCF {
         return false;
     }
 
-    std::priority_queue<pair<TC, int>, vector<pair<TC, int>>,
-                        greater<pair<TC, int>>>
+    std::priority_queue<std::pair<TC, int>, vector<std::pair<TC, int>>,
+                        greater<std::pair<TC, int>>>
         que;
     void dijkstra() { // dist[i]:sから残余グラフで辺の重みによるiへの最短路
                       // となるようにdistを作る
@@ -121,7 +121,7 @@ template <typename TF, typename TC> class MCF {
         }
     }
 
-    pair<TC, bool>
+    std::pair<TC, bool>
     flow(TF f = numeric_limits<
              TF>::max()) { // second が 0
                            // で返ってきた場合はそもそも最大流がfに達しない
@@ -139,7 +139,7 @@ template <typename TF, typename TC> class MCF {
             else
                 dijkstra();
             if (dist[t] == INF)
-                return make_pair(res, false);
+                return make_std::pair(res, false);
             REP_(v, n) if (dist[v] < INF) potential[v] += dist[v];
             TF d = f; // d:今回流す量
             for (int v = t; v != s; v = pre[v].first)
@@ -152,11 +152,11 @@ template <typename TF, typename TC> class MCF {
                 (G[v][rev].weight).cap += d;
             }
         } // このループを抜けてるならf流れてる
-        return make_pair(res, true);
+        return make_std::pair(res, true);
     }
 
-    pair<TC, bool> st_flow(int s_, int t_,
-                           TF lim = numeric_limits<TF>::max() / 2) {
+    std::pair<TC, bool> st_flow(int s_, int t_,
+                                TF lim = numeric_limits<TF>::max() / 2) {
         s = s_;
         t = t_;
         return flow(lim);

@@ -18,28 +18,28 @@ int main() {
     ll ans = 0;
 
     CentroidDecomposition CD(T);
-    std<pair<int, int>, int> m2; // m2[c1,c2]:c1,c2 組の数
-    std<int, int> m1,            // m1[c]:c 単色の数
-        m2_sum;                  // m2_sum[c]:c を含む二色の数
-    int m1_sum = 0;              // 単色の合計
+    std<std::pair<int, int>, int> m2; // m2[c1,c2]:c1,c2 組の数
+    std<int, int> m1,                 // m1[c]:c 単色の数
+        m2_sum;                       // m2_sum[c]:c を含む二色の数
+    int m1_sum = 0;                   // 単色の合計
     bool empty = false;
 
     // k+1 : 色が三色以上
     // -1 : 色が未定
     // 色は後ろから埋まる 両方埋まった場合は minmax
 
-    auto F = [&](const pair<int, int> &cc, const auto &e) {
+    auto F = [&](const std::pair<int, int> &cc, const auto &e) {
         auto [c1, c2] = cc;
         int c = e.weight;
         if (c1 > k || c1 == c || c2 == c)
             return cc;
         if (~c1)
-            return make_pair(k + 1, k + 1);
+            return make_std::pair(k + 1, k + 1);
         if (c > c2)
             swap(c, c2);
-        return make_pair(c, c2);
+        return make_std::pair(c, c2);
     };
-    auto G = [&](pair<int, int> cc, bool add) {
+    auto G = [&](std::pair<int, int> cc, bool add) {
         auto [c1, c2] = cc;
         if (c1 > k)
             return;
@@ -79,7 +79,7 @@ int main() {
         m1_sum = empty = 0;
     };
 
-    CD.all_calc(make_pair(-1, -1), F, G, H);
+    CD.all_calc(make_std::pair(-1, -1), F, G, H);
 
     std::cout << ans << std::endl;
 }

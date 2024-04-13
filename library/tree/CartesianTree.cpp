@@ -4,9 +4,9 @@
 // 等しい値に関しては index の大小を比較する
 // 辺の重みは子の部分木が担当する半開区間
 template <typename T>
-WeightedTree<pair<int, int>> cartesian_tree(const std::vector<T> &v) {
+WeightedTree<std::pair<int, int>> cartesian_tree(const std::vector<T> &v) {
     int n = v.size();
-    std::vector<pair<int, int>> lr(n, {0, n});
+    std::vector<std::pair<int, int>> lr(n, {0, n});
     stack<int> sta;
     for (int i = 0; i < n; i++) {
         while (sta.size() and v[i] < v[sta.top()]) {
@@ -17,7 +17,7 @@ WeightedTree<pair<int, int>> cartesian_tree(const std::vector<T> &v) {
             lr[i].first = sta.top() + 1;
         sta.push(i);
     }
-    WeightedTree<pair<int, int>> t(n);
+    WeightedTree<std::pair<int, int>> t(n);
     int root;
     for (int i = 0; i < n; i++) {
         const auto &[l, r] = lr[i];

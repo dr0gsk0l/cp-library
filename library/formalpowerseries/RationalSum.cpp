@@ -1,7 +1,7 @@
 #pragma once
 #include "library/formalpowerseries/Base.cpp"
 template <typename FPS> class RationalSum {
-    std::queue<pair<FPS, FPS>> que;
+    std::queue<std::pair<FPS, FPS>> que;
 
   public:
     void add(const FPS &f, const FPS &g) { que.emplace(f, g); }

@@ -3,7 +3,7 @@ template <typename Monoid, int LOG> class Doubling {
     int n;
     bool is_prepared;
 
-    using P = pair<int, X>;
+    using P = std::pair<int, X>;
     static constexpr P unit = {-1, Monoid::unit()};
     std::vector<vector<P>> DP;
 

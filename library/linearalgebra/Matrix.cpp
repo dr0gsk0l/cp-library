@@ -64,7 +64,7 @@ template <typename K> struct Matrix {
         return res;
     }
 
-    pair<int, int> GaussJordan() {
+    std::pair<int, int> GaussJordan() {
         int rnk = 0, cnt = 0;
         REP_(k, c) {
             if (M[rnk][k] == 0)
@@ -97,7 +97,7 @@ template <typename K> struct Matrix {
         return (cnt ? -res : res);
     }
 
-    optional<Matrix> inv() const {
+    std::optional<Matrix> inv() const {
         assert(r == c);
         Matrix A(r, c + c);
         REP_(i, r) REP_(j, c) A[i][j] = M[i][j];

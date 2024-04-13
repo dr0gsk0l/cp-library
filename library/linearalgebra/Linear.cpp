@@ -3,7 +3,7 @@ template <typename T> struct Line {
     T a, b;
     Line() = default;
     Line(T a, T b) : a(a), b(b) {}
-    Line(pair<T, T> l) : a(l.first), b(l.second) {}
+    Line(std::pair<T, T> l) : a(l.first), b(l.second) {}
     Line(T c) : a(0), b(c) {}
 
     T operator()(const T x) const { return a * x + b; }

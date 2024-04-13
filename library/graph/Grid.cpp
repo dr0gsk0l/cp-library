@@ -3,9 +3,10 @@
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename T> class Grid {
     const int h, w;
-    optional<T> ban;
+    std::optional<T> ban;
     // D,R,U,L
-    static constexpr pair<int, int> d4[4] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+    static constexpr std::pair<int, int> d4[4] = {
+        {1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     template <typename vecvecT> void build(const vecvecT &grid) {
         REP_(y, h) REP_(x, w) {
             int p = id(y, x);
@@ -31,16 +32,18 @@ template <typename T> class Grid {
         assert(in(y, x));
         return y * w + x;
     }
-    pair<int, int> r2(int a) const {
+    std::pair<int, int> r2(int a) const {
         assert(0 <= a and a < h * w);
         return {a / w, a % w};
     }
 
-    Grid(const std::vector<vector<T>> &grid, const optional<T> &ban = nullopt)
+    Grid(const std::vector<vector<T>> &grid,
+         const std::optional<T> &ban = nullopt)
         : h(grid.size()), w(grid[0].size()), ban(ban), v(h * w), G(h * w) {
         build(grid);
     }
-    Grid(const std::vector<std::string> &s, const optional<T> &ban = nullopt)
+    Grid(const std::vector<std::string> &s,
+         const std::optional<T> &ban = nullopt)
         : h(s.size()), w(s[0].size()), ban(ban), v(h * w), G(h * w) {
         static_assert(is_same<T, char>::value, "value_type==char");
         build(s);

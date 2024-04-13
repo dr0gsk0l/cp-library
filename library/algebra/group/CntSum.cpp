@@ -1,5 +1,5 @@
 template <typename X> struct GroupCntSum {
-    using P = pair<X, X>;
+    using P = std::pair<X, X>;
     using value_type = P;
     static constexpr P op(const P &x, const P &y) {
         return {x.first + y.first, x.second + y.second};
@@ -16,12 +16,13 @@ template <typename X> struct GroupCntSum {
     static constexpr P unit() { return {0, 0}; }
     static constexpr bool commute = true;
 };
-template <typename X> vector<pair<X, X>> cnt_init(int n, const X &x) {
-    return std::vector<pair<X, X>>(n, {x, 1});
+template <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x) {
+    return std::vector<std::pair<X, X>>(n, {x, 1});
 }
-template <typename X> vector<pair<X, X>> cnt_init(const std::vector<X> &v) {
+template <typename X>
+vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {
     int n = v.size();
-    std::vector<pair<X, X>> res(n);
+    std::vector<std::pair<X, X>> res(n);
     for (int i = 0; i < n; i++)
         res[i] = {v[i], 1};
     return res;

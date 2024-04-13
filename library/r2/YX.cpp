@@ -3,7 +3,7 @@ template <typename T> struct YX {
     T y, x;
     YX() = default;
     YX(T y, T x) : y(y), x(x) {}
-    YX(const pair<T, T> &yx) : y(yx.first), x(yx.second) {}
+    YX(const std::pair<T, T> &yx) : y(yx.first), x(yx.second) {}
 
     YX operator+() const { return *this; }
     YX operator-() const { return YX(-y, -x); }

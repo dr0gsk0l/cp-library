@@ -27,10 +27,10 @@ template <typename TC> class NondecreasingMCF {
     static constexpr TC INF =
         is_same_v<TC, __int128> ? TC(1e30) : numeric_limits<TC>::max() / 2;
     // numeric_limits<__int128 >::max() は AOJ でバグった
-    std::vector<pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] で v に来た
+    std::vector<std::pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;
-    std::priority_queue<pair<TC, int>, vector<pair<TC, int>>,
-                        greater<pair<TC, int>>>
+    std::priority_queue<std::pair<TC, int>, vector<std::pair<TC, int>>,
+                        greater<std::pair<TC, int>>>
         que;
     bool negative = false; // 負辺存在するか
 
@@ -99,7 +99,7 @@ template <typename TC> class NondecreasingMCF {
         }
     }
 
-    pair<TC, bool> flow(int s, int t, int f) {
+    std::pair<TC, bool> flow(int s, int t, int f) {
         if (!G.is_prepared())
             G.build();
         TC res = 0;
@@ -110,7 +110,7 @@ template <typename TC> class NondecreasingMCF {
             else
                 dijkstra(s);
             if (dist[t] == INF)
-                return make_pair(res, false);
+                return make_std::pair(res, false);
             REP_(v, n) if (dist[v] != INF) potential[v] += dist[v];
             res += potential[t];
             for (int v = t; v != s; v = pre[v].first) {
@@ -122,7 +122,7 @@ template <typename TC> class NondecreasingMCF {
                 r.flow--;
             }
         }
-        return make_pair(res, true);
+        return make_std::pair(res, true);
     }
 };
 #undef REP_

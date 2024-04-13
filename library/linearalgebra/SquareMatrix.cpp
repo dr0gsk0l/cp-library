@@ -75,7 +75,7 @@ template <typename K, size_t N> struct SquareMatrix {
         return res;
     }
 
-    pair<int, int> GaussJordan() {
+    std::pair<int, int> GaussJordan() {
         int rnk = 0, cnt = 0;
         REP_(k, N) {
             if (M[rnk][k] == 0)

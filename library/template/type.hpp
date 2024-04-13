@@ -21,7 +21,7 @@ using vvvec<T> = vec<vvec<T>>;
 TYPE(T)
 using vvvvec<T> = vec<vvvec<T>>;
 TYPE(T)
-using ptt<T> = std::pair<T, T>;
+using ptt<T> = std::std::pair<T, T>;
 using ll = long long;
 using ld = long double;
 using vi = vec<int>;

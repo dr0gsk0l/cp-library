@@ -154,24 +154,24 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         return range_freq(l, r, upper) - range_freq(l, r, lower);
     }
 
-    optional<T> lt(int l, int r, const T &x) {
+    std::optional<T> lt(int l, int r, const T &x) {
         int cnt = range_freq(l, r, x);
         if (cnt)
             return kth_smallest(l, r, cnt - 1);
         return nullopt;
     }
-    optional<T> leq(int l, int r, const T &x) {
+    std::optional<T> leq(int l, int r, const T &x) {
         if (rank(l, r, x))
             return x;
         return lt(l, r, x);
     }
-    optional<T> geq(int l, int r, const T &x) {
+    std::optional<T> geq(int l, int r, const T &x) {
         int cnt = r - l - range_freq(l, r, x);
         if (cnt)
             return kth_largest(l, r, cnt - 1);
         return nullopt;
     }
-    optional<T> gt(int l, int r, const T &x) {
+    std::optional<T> gt(int l, int r, const T &x) {
         T y;
         if constexpr (COMPRESS) {
             y = C.r(C.gt(x));

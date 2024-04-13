@@ -13,7 +13,7 @@ template <typename AbelGroup> class PotentialUnionFind {
         iota(parent.begin(), parent.end(), 0);
     }
 
-    pair<int, T> from_root(int x) {
+    std::pair<int, T> from_root(int x) {
         if (x == parent[x])
             return {x, AbelGroup::unit()};
         auto [r, add] = from_root(parent[x]);
@@ -50,7 +50,7 @@ template <typename AbelGroup> class PotentialUnionFind {
         return true;
     }
 
-    optional<T> diff(int x, int y) {
+    std::optional<T> diff(int x, int y) {
         // x を基準とする
         auto [rx, dx] = from_root(x);
         auto [ry, dy] = from_root(y);

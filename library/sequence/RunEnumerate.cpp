@@ -15,7 +15,7 @@ struct RunEnumerate {
     };
     std::vector<Run> ans;
 
-    std::queue<pair<int, int>> que;
+    std::queue<std::pair<int, int>> que;
     std::string REV(std::string s) {
         reverse(s.begin(), s.end());
         return s;
@@ -75,7 +75,7 @@ struct RunEnumerate {
                 return a.l < b.l;
             return a.r > b.r;
         });
-        std::set<pair<int, int>> already;
+        std::set<std::pair<int, int>> already;
         int pret = -1, mx;
         for (const auto &[t, l, r] : ans) {
             if (pret != t)

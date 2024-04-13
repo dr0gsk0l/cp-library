@@ -11,7 +11,7 @@ int main() {
     std::cin >> n >> m >> q;
     PartialPersistentUnionFind uf(n);
 
-    std::set<pair<int, int>> edge;
+    std::set<std::pair<int, int>> edge;
     while (m--) {
         int a, b;
         std::cin >> a >> b;
@@ -20,7 +20,7 @@ int main() {
         edge.insert(minmax(a, b));
     }
 
-    std::vector<pair<int, int>> query(q);
+    std::vector<std::pair<int, int>> query(q);
     for (int i = 0; i < q; i++) {
         int a, b;
         std::cin >> a >> b;
