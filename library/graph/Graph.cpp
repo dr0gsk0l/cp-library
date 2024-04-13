@@ -104,10 +104,10 @@ struct Graph {
 #endif
         assert(prepared);
         for (int from = 0; from < n; from++) {
-            cerr << from << ";";
+            std::cerr << from << ";";
             for (int i = in_deg[from]; i < in_deg[from + 1]; i++)
-                cerr << edges[i].to << " ";
-            cerr << "\n";
+                std::cerr << edges[i].to << " ";
+            std::cerr << "\n";
         }
     }
 };
