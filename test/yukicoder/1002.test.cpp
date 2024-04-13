@@ -18,10 +18,10 @@ int main() {
     ll ans = 0;
 
     CentroidDecomposition CD(T);
-    std<std::pair<int, int>, int> m2; // m2[c1,c2]:c1,c2 組の数
-    std<int, int> m1,                 // m1[c]:c 単色の数
-        m2_sum;                       // m2_sum[c]:c を含む二色の数
-    int m1_sum = 0;                   // 単色の合計
+    std::map<std::pair<int, int>, int> m2; // m2[c1,c2]:c1,c2 組の数
+    std::map<int, int> m1,                 // m1[c]:c 単色の数
+        m2_sum;                            // m2_sum[c]:c を含む二色の数
+    int m1_sum = 0;                        // 単色の合計
     bool empty = false;
 
     // k+1 : 色が三色以上

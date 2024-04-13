@@ -11,7 +11,7 @@ int main() {
     int n;
     while (std::cin >> n, n) {
         PotentialUnionFind<GroupAdd<int>> uf(2 * n);
-        std<std::string, int> id;
+        std::map<std::string, int> id;
         std::string ans = "Yes\n";
         while (n--) {
             int x;

@@ -19,13 +19,13 @@ std::ostream &operator<<(std::ostream &os, const unordered_std::set<T> &se) {
 }
 
 template <typename T, typename U>
-std::ostream &operator<<(std::ostream &os, const std<T, U> &mp) {
+std::ostream &operator<<(std::ostream &os, const std::map<T, U> &mp) {
     for (const auto &[key, val] : mp)
         os << "[" << key << ":" << val << "]";
     return os;
 }
 template <typename T, typename U>
-std::ostream &operator<<(std::ostream &os, const unordered_std<T, U> &mp) {
+std::ostream &operator<<(std::ostream &os, const unordered_std::map<T, U> &mp) {
     for (const auto &[key, val] : mp)
         os << "[" << key << ":" << val << "]";
     return os;

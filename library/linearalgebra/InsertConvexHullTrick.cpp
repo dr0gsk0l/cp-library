@@ -12,7 +12,7 @@ enum Objective {
 template <typename T, Objective OBJ> class InsertConvexHullTrick {
     using L = Line<T>;
 
-    std<T, T> mp1, mp2; // 傾き → 切片, 区間の右端 → 傾き
+    std::map<T, T> mp1, mp2; // 傾き → 切片, 区間の右端 → 傾き
     // f(x)=ax+b に対し r = max_x { f(x) = min_g g(x)} として
     // mp1[a]=b, mp2[r]=a が入っている
     // r = \inf の時は mp2 には入れない

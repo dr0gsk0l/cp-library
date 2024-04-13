@@ -1,5 +1,5 @@
 template <typename T> class Distance {
-    std<T, int> d;
+    std::map<T, int> d;
     std::queue<T> que;
 
   public:

@@ -4,7 +4,7 @@ template <typename T>
 long long bubble_number(const std::vector<T> &v, const std::vector<T> &w) {
     int n = v.size();
     assert(w.size() == n);
-    std<T, std::queue<int>> mp;
+    std::map<T, std::queue<int>> mp;
     for (int i = 0; i < n; i++)
         mp[w[i]].push(i);
     std::vector<int> idx(n);

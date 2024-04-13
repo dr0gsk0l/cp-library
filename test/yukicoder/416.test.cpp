@@ -33,7 +33,7 @@ int main() {
     for (const auto &[a, b] : edge)
         uf.merge(a, b);
 
-    std<int, int> time;
+    std::map<int, int> time;
     while (q--) {
         auto [a, b] = query[q];
         int now = uf.merge(a, b);
