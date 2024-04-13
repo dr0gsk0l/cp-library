@@ -9,15 +9,16 @@ enum Objective {
 // 最大化の場合は反転して、内部では最小化問題のみを扱う
 // 傾きが狭義単調減少になるように保存
 
-template <typename T, Objective OBJ> class ConvexHullTrick : deque<Line<T>> {
+template <typename T, Objective OBJ>
+class ConvexHullTrick : std::deque<Line<T>> {
     using L = Line<T>;
-    using deque<L>::back;
-    using deque<L>::front;
-    using deque<L>::push_back;
-    using deque<L>::push_front;
-    using deque<L>::pop_back;
-    using deque<L>::pop_front;
-    using deque<L>::at;
+    using std::deque<L>::back;
+    using std::deque<L>::front;
+    using std::deque<L>::push_back;
+    using std::deque<L>::push_front;
+    using std::deque<L>::pop_back;
+    using std::deque<L>::pop_front;
+    using std::deque<L>::at;
 
     static bool check(const L &l1, const L &l2, const L &l3) {
         // l2 が要らないなら true を返す
@@ -67,7 +68,7 @@ template <typename T, Objective OBJ> class ConvexHullTrick : deque<Line<T>> {
 
   public:
     using value_type = L;
-    using deque<L>::size;
+    using std::deque<L>::size;
 
     ConvexHullTrick() = default;
     ConvexHullTrick(std::vector<L> lines) {

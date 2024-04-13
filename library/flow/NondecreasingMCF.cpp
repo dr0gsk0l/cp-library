@@ -24,8 +24,9 @@ template <typename TC> class NondecreasingMCF {
     int n;
     WeightedGraph<EdgeInfo> G;
     std::vector<TC> potential, dist;
-    static constexpr TC INF =
-        is_same_v<TC, __int128> ? TC(1e30) : std::numeric_limits<TC>::max() / 2;
+    static constexpr TC INF = std::is_same_v<TC, __int128>
+                                  ? TC(1e30)
+                                  : std::numeric_limits<TC>::max() / 2;
     //  std::numeric_limits<__int128 >::max() は AOJ でバグった
     std::vector<std::pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;

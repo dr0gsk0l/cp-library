@@ -1,5 +1,5 @@
 template <typename T> class CumulativeSum2D {
-    using U = conditional_t<is_same_v<T, int>, long long, T>;
+    using U = std::conditional_t<std::is_same_v<T, int>, long long, T>;
     int h, w;
     std::vector<std::vector<U>> A;
     bool prepared;
