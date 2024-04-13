@@ -2,7 +2,7 @@
 title: AhoCorasick
 documentation_of: library///sequence/AhoCorasick.cpp
 ---
-* ```add(const vector<CHAR>&v,int num=1)```  
+* ```add(const std::vector<CHAR>&v,int num=1)```  
 数列 $v$ を $num$ 個追加
 $O(|v|)$
 

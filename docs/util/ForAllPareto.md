@@ -13,7 +13,7 @@ vector<int> base={2,3,1};
 auto f=[&](vector<int>a){
   int x=1;
   for(int i=0;i<3;i++)while(a[i]--)x*=base[i];
-  cout<<x<<endl;
+  std::cout<<x<<endl;
 };
 for_all_pareto({2,3,5},f);
 ```

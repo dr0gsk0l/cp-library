@@ -16,8 +16,8 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"test/library-checker/DataStructure/unionfind.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 1 \"datastructure/dsu.cpp\"\nstruct dsu{\n  int\
-    \ n,num;\n  vector<int> sz,parent;\n  dsu()=default;\n  dsu(int n):n(n),num(n),sz(n,1),parent(n,0){iota(parent.begin(),parent.end(),0);}\n\
+    \n\n#line 1 \"datastructure/dsu.cpp\"\nstruct dsu{\n  int\
+    \ n,num;\n  std::vector<int> sz,parent;\n  dsu()=default;\n  dsu(int n):n(n),num(n),sz(n,1),parent(n,0){iota(parent.begin(),parent.end(),0);}\n\
     \  \n  int leader(int x){ \n    assert(0<=x and x<n);\n    return (x==parent[x]?\
     \ x : parent[x]=leader(parent[x])); \n  }\n  \n  bool same(int x,int y){\n   \
     \ assert(0<=x and x<n and 0<=y and y<n);\n    return leader(x)==leader(y); \n\
@@ -29,7 +29,7 @@ data:
     \n\nint main() {\n  int n,q;cin>>n>>q;\n  dsu uf(n);\n  while(q--){\n    int t,u,v;cin>>t>>u>>v;\n\
     \    if(t)cout<<uf.same(u,v)<<\"\\n\";\n    else uf.merge(u,v);\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#include \"datastructure/dsu.cpp\"\n\nint main() {\n \
+    \n\n#include \"datastructure/dsu.cpp\"\n\nint main() {\n \
     \ int n,q;cin>>n>>q;\n  dsu uf(n);\n  while(q--){\n    int t,u,v;cin>>t>>u>>v;\n\
     \    if(t)cout<<uf.same(u,v)<<\"\\n\";\n    else uf.merge(u,v);\n  }\n}"
   dependsOn:

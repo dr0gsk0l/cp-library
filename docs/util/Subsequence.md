@@ -4,7 +4,7 @@ documentation_of: library///util/Subsequence.cpp
 ---
 
 配列の（非連続を許す）部分列の種類数を求める
-* ```<T,SIZE> T subsequence(const vector<int>&v)```  
+* ```<T,SIZE> T subsequence(const std::vector<int>&v)```  
 要素が $[0,SIZE)$ であるような配列 $v$ に対して求める  
 時間 $O(|v|)$  
 空間 $O(SIZE)$
@@ -14,7 +14,7 @@ documentation_of: library///util/Subsequence.cpp
 時間 $O(|s|)$  
 空間 $O(1)$
 
-* ```<T,U> T sparse_subsequence(const vector<U>&v)```  
+* ```<T,U> T sparse_subsequence(const std::vector<U>&v)```  
 一般の配列 $v$ に対して求める  
 時間 $O(|v|\log|v|)$  
 空間 $O(|v|)$  

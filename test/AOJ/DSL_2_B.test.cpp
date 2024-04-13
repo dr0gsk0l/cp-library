@@ -1,22 +1,25 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
+#define PROBLEM                                                                \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 #include <bits/stdc++.h>
-using namespace std;
 
 #include "library/algebra/group/Add.cpp"
 #include "library/datastructure/FenwickTree.cpp"
 
-int main(){
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n,q;cin>>n>>q;
-  FenwickTree<GroupAdd<int>> ft(n);
-  while(q--){
-    int c,s,t;cin>>c>>s>>t;s--;
-    if(c){
-      assert(s<=t);
-      cout<<ft.prod(s,t)<<"\n";
+    int n, q;
+    cin >> n >> q;
+    FenwickTree<GroupAdd<int>> ft(n);
+    while (q--) {
+        int c, s, t;
+        cin >> c >> s >> t;
+        s--;
+        if (c) {
+            assert(s <= t);
+            std::cout << ft.prod(s, t) << "\n";
+        } else
+            ft.multiply(s, t);
     }
-    else ft.multiply(s,t);
-  }
 }

@@ -5,15 +5,15 @@
 template <group G = GroupAdd<long long>> class FenwickTree {
     using T = typename G::value_type;
     int n;
-    vector<T> dat, raw;
+    std::vector<T> dat, raw;
 
   public:
     FenwickTree() { assert(G::commute); }
     FenwickTree(int n) : n(n) {
         assert(G::commute);
-        dat = raw = vector<T>(n, G::unit());
+        dat = raw = std::vector<T>(n, G::unit());
     }
-    FenwickTree(const vector<T> &v) : n(v.size()), raw(v), dat(v) {
+    FenwickTree(const std::vector<T> &v) : n(v.size()), raw(v), dat(v) {
         assert(G::commute);
         for (int i = 1; i <= n; i++) {
             int j = i + (i & -i);

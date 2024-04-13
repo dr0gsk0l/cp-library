@@ -1,17 +1,18 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/number_of_subsequences"
 #include <bits/stdc++.h>
-using namespace std;
 
 #include "library/mod/Modint.cpp"
 #include "library/util/Subsequence.cpp"
-using mint=Mint<long long>;
+using mint = Mint<long long>;
 
-int main(){
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n;cin>>n;
-  vector<int> v(n);
-  for(int i=0;i<n;i++)cin>>v[i];
-  cout<< sparse_subsequence<mint,int>(v)-1 <<endl;
+    int n;
+    cin >> n;
+    std::vector<int> v(n);
+    for (int i = 0; i < n; i++)
+        cin >> v[i];
+    std::cout << sparse_subsequence<mint, int>(v) - 1 << std::endl;
 }

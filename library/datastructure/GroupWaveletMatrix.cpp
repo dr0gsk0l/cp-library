@@ -10,7 +10,7 @@ class GroupWaveletMatrix : WaveletMatrix<T, true> {
     using U = typename super::U;
     using FT = FenwickTree<G>;
     using S = typename G::value_type;
-    vector<FT> ft;
+    std::vector<FT> ft;
 
   public:
     using super::rank, super::select, super::kth_largest, super::kth_smallest,
@@ -20,7 +20,7 @@ class GroupWaveletMatrix : WaveletMatrix<T, true> {
         for (auto &p : ft)
             p = FT(n);
     }
-    GroupWaveletMatrix(vector<T> v, const vector<S> &w)
+    GroupWaveletMatrix(vector<T> v, const std::vector<S> &w)
         : GroupWaveletMatrix(v) {
         for (int i = 0; i < n; i++)
             add(i, w[i]);

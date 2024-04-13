@@ -3,7 +3,7 @@
 #pragma once
 template <monoid M> class SegmentTree {
     using X = typename M::value_type;
-    vector<X> dat;
+    std::vector<X> dat;
     int n, log, size;
 
     void update(int i) { dat[i] = M::op(dat[2 * i], dat[2 * i + 1]); }

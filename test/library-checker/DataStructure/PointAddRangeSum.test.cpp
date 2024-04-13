@@ -1,21 +1,25 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 #include <bits/stdc++.h>
-using namespace std;
 
-#include "library/segtree/SegmentTree.cpp"
 #include "library/algebra/group/Add.cpp"
+#include "library/segtree/SegmentTree.cpp"
 
-using ll=long long;
-using G=GroupAdd<ll>;
+using ll = long long;
+using G = GroupAdd<ll>;
 
-int main(){
-  int n,q;cin>>n>>q;
-  vector<ll> v(n);
-  for(int i=0;i<n;i++)cin>>v[i];
-  SegmentTree<G> seg(v);
-  while(q--){
-    int t,l,r;cin>>t>>l>>r;
-    if(t)cout<<seg.prod(l,r)<<"\n";
-    else seg.multiply(l,r);
-  }
+int main() {
+    int n, q;
+    cin >> n >> q;
+    std::vector<ll> v(n);
+    for (int i = 0; i < n; i++)
+        cin >> v[i];
+    SegmentTree<G> seg(v);
+    while (q--) {
+        int t, l, r;
+        cin >> t >> l >> r;
+        if (t)
+            std::cout << seg.prod(l, r) << "\n";
+        else
+            seg.multiply(l, r);
+    }
 }

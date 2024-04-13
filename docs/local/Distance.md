@@ -13,12 +13,12 @@ $s$ からの距離が $MAX$ 以下の点を BFS で求める
 ```result[d]``` には $s$ から距離 $d$ の頂点が辞書順に入ってる  
 この関数を呼ぶ場合、（```from_root``` も含めて）他に関数は呼ばない
 
-* ```vector<vector<T>> from_root(const F&f,const vector<T>&s,int MAX=10)```  
+* ```vector<vector<T>> from_root(const F&f,const std::vector<T>&s,int MAX=10)```  
 ```from_root``` の多始点版
 
 ## 概要
 最短手数を求める実験用ライブラリ  
-有向辺　$f:T\rightarrow vector<T>$ を渡す  
+有向辺　$f:T\rightarrow std::vector<T>$ を渡す  
 
 ## 例
 [AGC059A](https://atcoder.jp/contests/agc059/tasks/agc059_a) の実験コード  
@@ -30,7 +30,7 @@ using vi=vector<int>;
 vi iota(int n){ vi v(n);iota(ALL(v),0);return v; }
 
 auto f=[](vi v){
-  vector<vi> nxt;
+  std::vector<vi> nxt;
   auto p=iota(3);
   do{
     REP(l,v.size()){
@@ -51,7 +51,7 @@ auto level=D.from_root(f,{vi(7,0),vi(7,1),vi(7,2)},5);
 ```cpp
 set<vi> used;
 REP(d,level.size()){
-  cout<<d<<":\n";
+  std::cout<<d<<":\n";
   auto p=iota(3);
   for(vi v:level[d]){
     v.erase(unique(ALL(v)),v.end());
@@ -63,7 +63,7 @@ REP(d,level.size()){
       if(used.count(w))ok=false;
     }while(next_permutation(ALL(p)));
     if(ok){
-      cout<<v<<endl;
+      std::cout<<v<<endl;
       used.insert(v);
     }
   }

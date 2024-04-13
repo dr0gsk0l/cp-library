@@ -1,26 +1,30 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
+#define PROBLEM                                                                \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
 #include <bits/stdc++.h>
-using namespace std;
 
-#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
 #include "library/algebra/group/Add.cpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
 
-int main(){
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n,q;cin>>n>>q;
-  PotentialUnionFind<GroupAdd<int>> PUF(n);
-  while(q--){
-    int t,x,y;cin>>t>>x>>y;
-    if(t){
-      auto diff=PUF.diff(x,y);
-      if(diff)cout<<diff.value()<<"\n";
-      else cout<<"?\n";
+    int n, q;
+    cin >> n >> q;
+    PotentialUnionFind<GroupAdd<int>> PUF(n);
+    while (q--) {
+        int t, x, y;
+        cin >> t >> x >> y;
+        if (t) {
+            auto diff = PUF.diff(x, y);
+            if (diff)
+                std::cout << diff.value() << "\n";
+            else
+                std::cout << "?\n";
+        } else {
+            int d;
+            cin >> d;
+            assert(PUF.merge(x, y, d));
+        }
     }
-    else{
-      int d;cin>>d;
-      assert(PUF.merge(x,y,d));
-    }
-  }
 }

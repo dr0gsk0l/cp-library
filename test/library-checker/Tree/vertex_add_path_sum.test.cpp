@@ -1,34 +1,37 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_path_sum"
 #include <bits/stdc++.h>
-using namespace std;
 
 #include "library/algebra/group/Add.cpp"
 #include "library/tree/Tree.cpp"
 #include "library/tree/TreeMonoid.cpp"
 
-int main(){
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
-  using G=GroupAdd<long long>;
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    using G = GroupAdd<long long>;
 
-  int n,q;cin>>n>>q; 
-  vector<long long> a(n);
-  for(int i=0;i<n;i++)cin>>a[i];
+    int n, q;
+    cin >> n >> q;
+    std::vector<long long> a(n);
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
 
-  Tree t(n);
-  t.scan(0);
+    Tree t(n);
+    t.scan(0);
 
-  TreeMonoid<Tree,G> TM(t,a);
+    TreeMonoid<Tree, G> TM(t, a);
 
-  while(q--){
-    int c;cin>>c;
-    if(c){
-      int u,v;cin>>u>>v;
-      cout<< TM.path_prod(u,v) <<"\n";
+    while (q--) {
+        int c;
+        cin >> c;
+        if (c) {
+            int u, v;
+            cin >> u >> v;
+            std::cout << TM.path_prod(u, v) << "\n";
+        } else {
+            int p, x;
+            cin >> p >> x;
+            TM.multiply(p, x);
+        }
     }
-    else{
-      int p,x;cin>>p>>x;
-      TM.multiply(p,x);
-    }
-  }
 }

@@ -1,36 +1,37 @@
 #pragma once
 #include "library/graph/Graph.cpp"
-class EdgeVertex{
-  int n,N;
-  vector<tuple<int,int,int>> edges;
-  vector<tuple<int,int,int>> arcs;
-public:
-  EdgeVertex(int n):n(n),N(n){}
+class EdgeVertex {
+    int n, N;
+    std::vector<tuple<int, int, int>> edges;
+    std::vector<tuple<int, int, int>> arcs;
 
-  int add_edge(int u,int v){
-    assert(0<=u and u<n);
-    assert(0<=v and v<n);
-    edges.emplace_back(u,v,N);
-    return N++;
-  }
-  int add_arc(int u,int v){
-    assert(0<=u and u<n);
-    assert(0<=v and v<n);
-    arcs.emplace_back(u,v,N);
-    return N++;
-  }
+  public:
+    EdgeVertex(int n) : n(n), N(n) {}
 
-  Graph build(){
-    Graph G(N);
-    for(const auto&[u,v,e]:edges){
-      G.add_edge(u,e);
-      G.add_edge(e,v);
+    int add_edge(int u, int v) {
+        assert(0 <= u and u < n);
+        assert(0 <= v and v < n);
+        edges.emplace_back(u, v, N);
+        return N++;
     }
-    for(const auto&[u,v,e]:arcs){
-      G.add_arc(u,e);
-      G.add_arc(e,v);
+    int add_arc(int u, int v) {
+        assert(0 <= u and u < n);
+        assert(0 <= v and v < n);
+        arcs.emplace_back(u, v, N);
+        return N++;
     }
-    G.build();
-    return G;
-  }
+
+    Graph build() {
+        Graph G(N);
+        for (const auto &[u, v, e] : edges) {
+            G.add_edge(u, e);
+            G.add_edge(e, v);
+        }
+        for (const auto &[u, v, e] : arcs) {
+            G.add_arc(u, e);
+            G.add_arc(e, v);
+        }
+        G.build();
+        return G;
+    }
 };

@@ -21,7 +21,7 @@ template <typename CHAR = char, typename MINT = Modint61> class RollingHash {
     static std::vector<MINT> power(1, 1);
 
     RollingHash() = default;
-    RollingHash(const vector<CHAR> &v) : n(v.size()), hash(n + 1, 0) {
+    RollingHash(const std::vector<CHAR> &v) : n(v.size()), hash(n + 1, 0) {
         for (int i = 0; i < n; i++)
             hash[i + 1] = nxt_hash(hash[i], v[i]);
 
@@ -41,7 +41,7 @@ template <typename CHAR = char, typename MINT = Modint61> class RollingHash {
         return (hash[r] - hash[l] * power[r - l]).v;
     }
 
-    static T full_hash(const vector<CHAR> &v) {
+    static T full_hash(const std::vector<CHAR> &v) {
         MINT res = 0;
         for (const char &c : v)
             res = nxt_hash(res, c);

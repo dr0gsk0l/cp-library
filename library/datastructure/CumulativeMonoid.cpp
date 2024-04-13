@@ -6,7 +6,7 @@ template <monoid M> class CumulativeMonoid {
 
   public:
     CumulativeMonoid() : pre(1, M::unit()), suf(pre) {}
-    CumulativeMonoid(const vector<T> &v)
+    CumulativeMonoid(const std::vector<T> &v)
         : pre(v.size() + 1, M::unit()), suf(pre) {
         for (int i = 0; i < v.size(); i++)
             pre[i + 1] = M::op(pre[i], v[i]);

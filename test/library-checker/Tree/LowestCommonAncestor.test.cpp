@@ -1,18 +1,19 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 #include <bits/stdc++.h>
-using namespace std;
 
-#include "library/tree/Tree.cpp"
 #include "library/tree/HLD.cpp"
+#include "library/tree/Tree.cpp"
 
-int main(){
-  int n,q;cin>>n>>q;
-  Tree t(n);
-  t.scan_root(0);
-  HLD hld(t);
-  hld.build();
-  while(q--){
-    int u,v;cin>>u>>v;
-    cout<<hld.lca(u,v)<<"\n";
-  }
+int main() {
+    int n, q;
+    cin >> n >> q;
+    Tree t(n);
+    t.scan_root(0);
+    HLD hld(t);
+    hld.build();
+    while (q--) {
+        int u, v;
+        cin >> u >> v;
+        std::cout << hld.lca(u, v) << "\n";
+    }
 }

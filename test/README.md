@@ -16,11 +16,11 @@ LC の分け方に従って Polynomial や Matrix などのディレクトリを
 ```cpp
 #define PROBLEM ""
 #include <bits/stdc++.h>
-using namespace std;
+
 
 int main(){
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+ std::ios::sync_with_stdio(false);
+ std::cin.tie(nullptr);
   
 }
 ```

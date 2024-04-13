@@ -143,7 +143,7 @@ if __name__ == "__main__":
     parser.add_argument('--lib', nargs='*', help='Path to Library')
     parser.add_argument('--pbcopy', '-cp', action='store_true', help='output to pbcopy')
     parser.add_argument('--acl', action='store_true', help='expand acl')
-    parser.add_argument('--endl', action='store_false', help='not replace endl')
+    parser.add_argument('--endl', action='store_false', help='not replace std::endl')
     opts = parser.parse_args()
 
     print("[INFO] " + GREEN + "expand library" + END)

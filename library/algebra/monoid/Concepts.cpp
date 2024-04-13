@@ -7,5 +7,3 @@ concept monoid = requires(typename M::value_type x) {
     { M::Rchop(x, x) };
     { M::unit() } -> std::same_as<typename M::value_type>;
 };
-
-// todo : able_monoid

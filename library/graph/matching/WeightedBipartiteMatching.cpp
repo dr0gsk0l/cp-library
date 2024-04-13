@@ -21,7 +21,7 @@ public:
   // second はマッチした各 [u,v,weight]
   pair<TC,vector<tuple<int,int,TC>>> solve(){
     auto [sum,ok]=fl.flow(min(A,B));
-    vector<tuple<int,int,TC>> res;
+    std::vector<tuple<int,int,TC>> res;
     auto all_edge=fl.all_edge();
     for(int i=A+B;i<all_edge.size();i++){
       const auto&[from,to,flow,cost]=all_edge[i];

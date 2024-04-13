@@ -1,51 +1,61 @@
-#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E"
+#define PROBLEM                                                                \
+    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E"
 #include <bits/stdc++.h>
-using namespace std;
-#define REP(i,n) for(int i=0;i<(n);i++)
+
+#define REP(i, n) for (int i = 0; i < (n); i++)
 
 #include "library/algebra/lazy/AddSum.cpp"
 #include "library/tree/Tree.cpp"
 #include "library/tree/TreeLazy.cpp"
-using ll=long long;
+using ll = long long;
 
-int main(){
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
-  
-  int n;cin>>n;
+int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  Tree t(n);
-  REP(i,n){
-    int k;cin>>k;
-    REP(_,k){
-      int c;cin>>c;
-      t.add_edge(i,c);
+    int n;
+    cin >> n;
+
+    Tree t(n);
+    REP (i, n) {
+        int k;
+        cin >> k;
+        REP (_, k) {
+            int c;
+            cin >> c;
+            t.add_edge(i, c);
+        }
     }
-  }
-  t.build(0);
+    t.build(0);
 
-  TreeLazy<Tree,LazyAddSum<ll>> TL(t,cnt_init(n,0LL));
-  // 辺の情報は子に持たせる
-  // 各頂点 v について、根から 1 移動した点が必要
-  // Tree に jump を実装してないので無理くり求める
-  vector<int> root2(n,-1);
-  for(int v:t.BFS){
-    if(v==0)continue;
-    int p=t.parent(v).to;
-    if(p==0)root2[v]=v;
-    else root2[v]=root2[p];
-  }
+    TreeLazy<Tree, LazyAddSum<ll>> TL(t, cnt_init(n, 0LL));
+    // 辺の情報は子に持たせる
+    // 各頂点 v について、根から 1 移動した点が必要
+    // Tree に jump を実装してないので無理くり求める
+    std::vector<int> root2(n, -1);
+    for (int v : t.BFS) {
+        if (v == 0)
+            continue;
+        int p = t.parent(v).to;
+        if (p == 0)
+            root2[v] = v;
+        else
+            root2[v] = root2[p];
+    }
 
-  int q;cin>>q;
-  REP(_,q){
-    int c;cin>>c;
-    if(c){
-      int u;cin>>u;
-      cout<<TL.path_prod(u,root2[u]).first<<"\n";
+    int q;
+    cin >> q;
+    REP (_, q) {
+        int c;
+        cin >> c;
+        if (c) {
+            int u;
+            cin >> u;
+            std::cout << TL.path_prod(u, root2[u]).first << "\n";
+        } else {
+            int v, w;
+            cin >> v >> w;
+            TL.path_apply(v, root2[v], w);
+        }
     }
-    else{
-      int v,w;cin>>v>>w;
-      TL.path_apply(v,root2[v],w);
-    }
-  }
 }
