@@ -5,7 +5,7 @@ template <typename T> struct Fraction {
         assert(den != 0);
         if (den < 0)
             num = -num, den = -den;
-        T g = gcd(abs(num), abs(den));
+        T g = std::gcd(abs(num), abs(den));
         num /= g;
         den /= g;
     }
