@@ -110,7 +110,7 @@ template <typename TC> class NondecreasingMCF {
             else
                 dijkstra(s);
             if (dist[t] == INF)
-                return make_std::pair(res, false);
+                return std::make_pair(res, false);
             REP_(v, n) if (dist[v] != INF) potential[v] += dist[v];
             res += potential[t];
             for (int v = t; v != s; v = pre[v].first) {
@@ -122,7 +122,7 @@ template <typename TC> class NondecreasingMCF {
                 r.flow--;
             }
         }
-        return make_std::pair(res, true);
+        return std::make_pair(res, true);
     }
 };
 #undef REP_

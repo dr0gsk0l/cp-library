@@ -34,10 +34,10 @@ int main() {
         if (c1 > k || c1 == c || c2 == c)
             return cc;
         if (~c1)
-            return make_std::pair(k + 1, k + 1);
+            return std::make_pair(k + 1, k + 1);
         if (c > c2)
             std::swap(c, c2);
-        return make_std::pair(c, c2);
+        return std::make_pair(c, c2);
     };
     auto G = [&](std::pair<int, int> cc, bool add) {
         auto [c1, c2] = cc;
@@ -79,7 +79,7 @@ int main() {
         m1_sum = empty = 0;
     };
 
-    CD.all_calc(make_std::pair(-1, -1), F, G, H);
+    CD.all_calc(std::make_pair(-1, -1), F, G, H);
 
     std::cout << ans << std::endl;
 }

@@ -50,7 +50,7 @@ template <typename T, Objective OBJ> class InsertConvexHullTrick {
                 return;
             mp1.erase(l.a);
         }
-        auto [it, flag] = mp1.insert(make_std::pair(l.a, l.b));
+        auto [it, flag] = mp1.insert(std::make_pair(l.a, l.b));
         if (check(it)) {
             mp1.erase(it);
             return;

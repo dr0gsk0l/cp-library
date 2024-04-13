@@ -14,10 +14,10 @@ template <typename T> class Projection {
     //[l,r) を返す
     std::pair<int, int> interval(const T &l, const T &r) {
         if (C.max().x < l or r <= C.min().x)
-            return make_std::pair(0, 0);
+            return std::make_pair(0, 0);
         T mn = std::numeric_limits<T>::min();
         int L = C.geq(r2(l, mn));
         int R = C.geq(r2(r, mn));
-        return make_std::pair(L, R);
+        return std::make_pair(L, R);
     }
 };

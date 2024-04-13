@@ -27,7 +27,7 @@ class OfflineDynamicConnectivity {
     void erase(int idx, int s, int t) {
         auto e = minmax(s, t);
         if (--cnt[e] == 0)
-            pend.emplace_back(make_std::pair(appear[e], idx), e);
+            pend.emplace_back(std::make_pair(appear[e], idx), e);
     }
 
     void add(int a, int b, const edge &e, int k, int l, int r) {
@@ -46,7 +46,7 @@ class OfflineDynamicConnectivity {
     void build() {
         for (auto &p : cnt) {
             if (p.second > 0)
-                pend.emplace_back(make_std::pair(appear[p.first], Q), p.first);
+                pend.emplace_back(std::make_pair(appear[p.first], Q), p.first);
         }
         for (auto &s : pend) {
             add(s.first.first, s.first.second, s.second);

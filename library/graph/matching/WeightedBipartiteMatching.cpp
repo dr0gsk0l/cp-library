@@ -31,6 +31,6 @@ template <typename TC> class WeightedBipartiteMatching {
             if (flow)
                 res.emplace_back(from, to - A, -cost);
         }
-        return make_std::pair(-sum, res);
+        return std::make_pair(-sum, res);
     }
 };

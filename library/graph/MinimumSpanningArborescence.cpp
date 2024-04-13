@@ -80,5 +80,5 @@ minimum_spanning_arborescence(WG g, int r = 0) {
             state[v] = 2;
     }
     tree.erase(tree.begin() + r);
-    return make_std::pair(res, tree);
+    return std::make_pair(res, tree);
 }
