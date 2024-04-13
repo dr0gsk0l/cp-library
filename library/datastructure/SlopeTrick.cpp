@@ -20,7 +20,7 @@ template <typename T> class SlopeTrick {
 
     int size() const { return L.size() + R.size(); }
 
-    tuple<T, T, T> get_min_range() const { return {L0(), R0(), min_f}; }
+    std::tuple<T, T, T> get_min_range() const { return {L0(), R0(), min_f}; }
 
     void operator+=(const T &a) { min_f += a; }
 

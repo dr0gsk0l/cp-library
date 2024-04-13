@@ -46,7 +46,7 @@ template <typename TREE> class CentroidDecomposition {
     template <typename X, typename F, typename G, typename H>
     void calc(int root, X initial_val, const F &next_val, const G &action,
               const H &finish) {
-        std::queue<tuple<int, int, X>> que;
+        std::queue<std::tuple<int, int, X>> que;
 
         auto f = [&](int v_, int pre_, X val_, bool is_all) {
             que.emplace(v_, pre_, val_);

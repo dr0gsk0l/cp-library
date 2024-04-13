@@ -5,7 +5,7 @@ documentation_of: library/datastructure/SlopeTrick.cpp
 
 基本的な用語などは reference と同じ  
 
-* ```tuple<T,T,T> get_min_range()```  
+* ```std::tuple<T,T,T> get_min_range()```  
 最小値とそれを取る閉区間が返る  
 最小値だけ取得したい時は ```min_f``` を直接参照する  
 

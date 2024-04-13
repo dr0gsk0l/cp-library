@@ -100,9 +100,9 @@ template <typename TF, typename TC> class MCF {
         const auto &[from, id] = edge_memo[edge_id];
         return G.edge[from][id].weight.cap;
     }
-    std::vector<tuple<int, int, TF, TC>> all_edge() {
+    std::vector<std::tuple<int, int, TF, TC>> all_edge() {
         assert(G.is_prepared());
-        std::vector<tuple<int, int, TF, TC>> res;
+        std::vector<std::tuple<int, int, TF, TC>> res;
         res.reserve(edge_memo.size());
         for (const auto &[v, id] : edge_memo) {
             const auto &[to, from, weight] = G[v][id];

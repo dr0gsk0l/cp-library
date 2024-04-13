@@ -13,7 +13,7 @@ class IntegerSumRuleUnionFind {
         iota(parent.begin(), parent.end(), 0);
     }
 
-    tuple<int, int, ll> from_root(int x) {
+    std::tuple<int, int, ll> from_root(int x) {
         if (x == parent[x])
             return {x, 1, 0LL};
         auto [r, a, b] = from_root(parent[x]);

@@ -69,9 +69,9 @@ template <typename T> class Dinic {
         return G.edge[from][id].weight.cap;
     }
     // 辺を追加した順番に [from,to,流量]
-    std::vector<tuple<int, int, T>> all_edge() {
+    std::vector<std::tuple<int, int, T>> all_edge() {
         assert(G.is_prepared());
-        std::vector<tuple<int, int, T>> res;
+        std::vector<std::tuple<int, int, T>> res;
         res.reserve(edge_memo.size());
         for (const auto &[v, id] : edge_memo) {
             const auto &[to, from, weight] = G[v][id];

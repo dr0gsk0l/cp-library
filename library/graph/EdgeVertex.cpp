@@ -2,8 +2,8 @@
 #include "library/graph/Graph.cpp"
 class EdgeVertex {
     int n, N;
-    std::vector<tuple<int, int, int>> edges;
-    std::vector<tuple<int, int, int>> arcs;
+    std::vector<std::tuple<int, int, int>> edges;
+    std::vector<std::tuple<int, int, int>> arcs;
 
   public:
     EdgeVertex(int n) : n(n), N(n) {}

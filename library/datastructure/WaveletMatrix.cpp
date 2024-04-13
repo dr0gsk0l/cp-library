@@ -195,8 +195,9 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         }
         return res;
     }
-    std::vector<tuple<int, int, int>> intervals(int l, int r, const T &upper) {
-        std::vector<tuple<int, int, int>> res;
+    std::vector<std::tuple<int, int, int>> intervals(int l, int r,
+                                                     const T &upper) {
+        std::vector<std::tuple<int, int, int>> res;
         U a = comp(upper);
         REP_(h, log) {
             if (high_bit(a, h)) {
@@ -208,10 +209,10 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         }
         return res;
     }
-    std::vector<tuple<int, int, int>> kth_largest_intervals(int l, int r,
-                                                            int k) {
+    std::vector<std::tuple<int, int, int>> kth_largest_intervals(int l, int r,
+                                                                 int k) {
         assert(0 <= k and k < r - l);
-        std::vector<tuple<int, int, int>> res;
+        std::vector<std::tuple<int, int, int>> res;
         REP_(h, log) {
             int L = mat[h].rank(l);
             int R = mat[h].rank(r);
@@ -227,8 +228,8 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         }
         return res;
     }
-    std::vector<tuple<int, int, int>> kth_smallest_intervals(int l, int r,
-                                                             int k) {
+    std::vector<std::tuple<int, int, int>> kth_smallest_intervals(int l, int r,
+                                                                  int k) {
         return kth_largest_intervals(l, r, r - l - k - 1);
     }
 };

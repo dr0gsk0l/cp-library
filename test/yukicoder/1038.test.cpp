@@ -19,7 +19,7 @@ int main() {
     Tree T(n);
     T.scan(1);
 
-    std::vector<tuple<int, int, int>> query(q);
+    std::vector<std::tuple<int, int, int>> query(q);
     std::vector<std::vector<int>> query_at(n);
     REP (i, q) {
         auto &[x, y, z] = query[i];
