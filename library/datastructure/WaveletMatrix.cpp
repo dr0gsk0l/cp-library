@@ -75,7 +75,7 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
                 lv[l++] = cv[i];
             zero_cnt[h] = l;
             mat[h].build();
-            swap(lv, cv);
+            std::swap(lv, cv);
             REP_(i, r) cv[l + i] = rv[i];
         }
     }

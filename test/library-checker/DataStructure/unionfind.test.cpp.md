@@ -22,7 +22,7 @@ data:
     \ x : parent[x]=leader(parent[x])); \n  }\n  \n  bool same(int x,int y){\n   \
     \ assert(0<=x and x<n and 0<=y and y<n);\n    return leader(x)==leader(y); \n\
     \  }\n  \n  bool merge(int x,int y){\n    assert(0<=x and x<n and 0<=y and y<n);\n\
-    \    x=leader(x);y=leader(y);\n    if(x==y)return false;\n    if(sz[x]<sz[y])swap(x,y);\n\
+    \    x=leader(x);y=leader(y);\n    if(x==y)return false;\n    if(sz[x]<sz[y])std::swap(x,y);\n\
     \    sz[x]+=sz[y];\n    parent[y]=x;\n    num--;\n    return true;\n  }\n  \n\
     \  int size(const int x){\n    assert(0<=x and x<n);\n    return sz[leader(x)];\n\
     \  }\n  \n  int count()const{\n    return num;\n  }\n};\n#line 6 \"test/library-checker/DataStructure/unionfind.test.cpp\"\

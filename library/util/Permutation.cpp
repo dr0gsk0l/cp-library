@@ -65,7 +65,7 @@ struct Perm {
         assert(p.size() == v.size());
         auto w = v;
         REP_(i, p.size()) w[i] = v[p[i]];
-        swap(v, w);
+        std::swap(v, w);
     }
 
   public:

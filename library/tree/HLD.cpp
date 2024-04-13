@@ -15,7 +15,7 @@ template <typename TREE> struct HLD {
             dfs_sz(e.to);
             sz[v] += sz[e.to];
             if (sz[e.to] > sz[T.son(v)[0].to])
-                swap(e, T.son(v)[0]);
+                std::swap(e, T.son(v)[0]);
         }
     }
     void dfs_hld(int v, int &k) {

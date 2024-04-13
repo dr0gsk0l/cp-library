@@ -70,7 +70,7 @@ template <typename K> struct Matrix {
             if (M[rnk][k] == 0)
                 REP2_(i, rnk + 1, r)
             if (M[i][k] != 0) {
-                swap(M[i], M[rnk]);
+                std::swap(M[i], M[rnk]);
                 cnt ^= 1;
                 break;
             }

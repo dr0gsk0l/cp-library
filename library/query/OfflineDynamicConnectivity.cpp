@@ -1,7 +1,7 @@
 #include "library/datastructure/unionfind/UndoUnionFind.cpp"
 
 class OfflineDynamicConnectivity {
-    using edge = std::std::pair<int, int>;
+    using edge = std::pair<int, int>;
 
     UnionFindUndo uf;
     int V, Q, segsz;

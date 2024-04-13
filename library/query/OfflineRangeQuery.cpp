@@ -16,8 +16,7 @@ class OfflineRangeQuery {
     }
 
   public:
-    std::vector<std::std::pair<std::vector<size_t>, std::vector<size_t>>>
-        querys;
+    std::vector<std::pair<std::vector<size_t>, std::vector<size_t>>> querys;
 
     OfflineRangeQuery(size_t n_) : n(1), cnt(0), querys(n + 1) {
         while (n < n_)

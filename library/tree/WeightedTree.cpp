@@ -40,7 +40,7 @@ template <typename T> struct WeightedTree : WeightedGraph<T> {
     void dfs(int v, int pre = -1) {
         for (auto &e : (*this)[v]) {
             if (e.to == pre)
-                swap((*this)[v][0], e);
+                std::swap((*this)[v][0], e);
             else {
                 depth[e.to] = depth[v] + 1;
                 dfs(e.to, v);

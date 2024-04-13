@@ -48,9 +48,9 @@ class IntegerSumRuleUnionFind {
             return true;
         }
         if (sz[rx] < sz[ry]) {
-            swap(rx, ry);
-            swap(a, c);
-            swap(b, d);
+            std::swap(rx, ry);
+            std::swap(a, c);
+            std::swap(b, d);
         }
         // a * rx + b + c * ry + d == sum
         // rx = -c/a ry + (sum-b-d)/a

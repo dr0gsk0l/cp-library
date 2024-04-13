@@ -25,7 +25,7 @@ class UnionFind {
         if (x == y)
             return false;
         if (sz[x] < sz[y])
-            swap(x, y);
+            std::swap(x, y);
         sz[x] += sz[y];
         parent[y] = x;
         num--;

@@ -36,7 +36,7 @@ int main() {
         if (~c1)
             return make_std::pair(k + 1, k + 1);
         if (c > c2)
-            swap(c, c2);
+            std::swap(c, c2);
         return make_std::pair(c, c2);
     };
     auto G = [&](std::pair<int, int> cc, bool add) {

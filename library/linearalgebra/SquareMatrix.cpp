@@ -81,7 +81,7 @@ template <typename K, size_t N> struct SquareMatrix {
             if (M[rnk][k] == 0)
                 REP2_(i, rnk + 1, N)
             if (M[i][k] != 0) {
-                swap(M[i], M[rnk]);
+                std::swap(M[i], M[rnk]);
                 cnt ^= 1;
                 break;
             }
@@ -113,8 +113,8 @@ template <typename K, size_t N> struct SquareMatrix {
             if (A[k][k] == 0)
                 REP2_(i, k + 1, N)
             if (A[i][k] != 0) {
-                swap(A[i], A[k]);
-                swap(B[i], B[k]);
+                std::swap(A[i], A[k]);
+                std::swap(B[i], B[k]);
             }
             assert(A[k][k] != 0);
             REP_(i, N) if (i != k) {

@@ -61,7 +61,7 @@ class PartialPersistentUnionFind {
             return -1;
         }
         if (rank[x] < rank[y])
-            swap(x, y);
+            std::swap(x, y);
         sz[x].emplace_back(now, size(x) + size(y));
         if (rank[x] == rank[y])
             rank[x]++;

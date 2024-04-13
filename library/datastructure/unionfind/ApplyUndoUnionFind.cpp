@@ -4,7 +4,7 @@ template <typename AbelGroup> class UndoUnionFind {
     using T = typename AbelGroup::value_type;
     size_t n, num;
     std::vector<size_t> sz, parent;
-    std::stack<std::std::pair<size_t, size_t>> sta;
+    std::stack<std::pair<size_t, size_t>> sta;
     std::vector<T> value;
 
   public:
@@ -43,7 +43,7 @@ template <typename AbelGroup> class UndoUnionFind {
         if (x == y)
             return false;
         if (sz[x] < sz[y])
-            swap(x, y);
+            std::swap(x, y);
         sz[x] += sz[y];
         parent[y] = x;
         AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));

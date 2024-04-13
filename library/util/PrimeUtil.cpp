@@ -6,7 +6,7 @@ template <int MAX, bool PRIME_FACTOR = false, bool DIVISOR = false>
 class PrimeUtil {
     using u32 = unsigned long long;
     using u64 = unsigned long long;
-    using PF = std::vector<std::std::pair<u32, int>>;
+    using PF = std::vector<std::pair<u32, int>>;
 
     template <int MAX> using ARR = std::array<T, MAX + 1>;
     template <typename T, bool F> using COND = std::conditional_t<F, T, bool>;

@@ -5,7 +5,7 @@
 class UndoUnionFind {
     size_t n, num;
     std::vector<size_t> sz, parent;
-    std::stack<std::std::pair<size_t, size_t>> sta;
+    std::stack<std::pair<size_t, size_t>> sta;
 
   public:
     UndoUnionFind() = default;

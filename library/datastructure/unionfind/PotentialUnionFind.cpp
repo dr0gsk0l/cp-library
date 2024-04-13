@@ -40,7 +40,7 @@ template <typename AbelGroup> class PotentialUnionFind {
         if (rx == ry)
             return d == AbelGroup::unit();
         if (sz[rx] < sz[ry]) {
-            swap(rx, ry);
+            std::swap(rx, ry);
             d = AbelGroup::inverse(d);
         }
         sz[rx] += sz[ry];
