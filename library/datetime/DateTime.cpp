@@ -104,13 +104,13 @@ class DateTime {
         return y + sep + m + sep + d;
     }
 
-    std::tuple<int, int, int> to_std::tuple() const {
+    std::tuple<int, int, int> std::to_tuple() const {
         return {year, month, day};
     }
 
 #define define_cmp(op)                                                         \
     bool operator op(const DateTime &a) const {                                \
-        return to_std::tuple() op a.to_std::tuple();                           \
+        return std::to_tuple() op a.std::to_tuple();                           \
     }
     define_cmp(==) define_cmp(!=) define_cmp(<) define_cmp(>) define_cmp(<=)
         define_cmp(>=)
