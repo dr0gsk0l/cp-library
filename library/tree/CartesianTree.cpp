@@ -1,3 +1,7 @@
+#include <stack>
+#include <utility>
+#include <vector>
+
 #include "library/tree/WeightedTree.cpp"
 
 // 最小値で分割 根付き木を渡す 根が最小値のindex
@@ -7,7 +11,7 @@ template <typename T>
 WeightedTree<std::pair<int, int>> cartesian_tree(const std::vector<T> &v) {
     int n = v.size();
     std::vector<std::pair<int, int>> lr(n, {0, n});
-    stack<int> sta;
+    std::stack<int> sta;
     for (int i = 0; i < n; i++) {
         while (sta.size() and v[i] < v[sta.top()]) {
             lr[sta.top()].second = i;
