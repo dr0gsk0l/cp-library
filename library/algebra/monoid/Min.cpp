@@ -1,7 +1,7 @@
 template <typename X> struct MonoidMin {
     using value_type = X;
     static constexpr X op(const X &x, const X &y) noexcept {
-        returnstd::min(x, y);
+        return std::min(x, y);
     }
     static constexpr void Rchop(X &x, const X &y) {
         if (x > y)
