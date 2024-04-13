@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/And.cpp
     title: library/bitwise/And.cpp
   - icon: ':warning:'
@@ -11,14 +11,14 @@ data:
   - icon: ':x:'
     path: library/bitwise/Ranked.cpp
     title: library/bitwise/Ranked.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Xor.cpp
     title: library/bitwise/Xor.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: test/library-checker/Convolution/SubsetConvolution.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/bitwise/Util.cpp\"\nnamespace bitwise{\n  static\
@@ -43,8 +43,8 @@ data:
   - library/bitwise/Or.cpp
   - library/bitwise/And.cpp
   - library/bitwise/Ranked.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp

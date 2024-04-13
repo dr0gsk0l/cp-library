@@ -5,7 +5,7 @@ data:
   - icon: ':x:'
     path: library/algebra/lazy/SetMin.cpp
     title: library/algebra/lazy/SetMin.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetSum.cpp
     title: library/algebra/lazy/SetSum.cpp
   _extendedVerifiedWith:
@@ -15,12 +15,12 @@ data:
   - icon: ':x:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_I.test.cpp
     title: test/AOJ/DSL_2_I.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/monoid/Set.cpp\"\n// \u5408\u6210\u306E\u9806\
@@ -30,15 +30,15 @@ data:
     \ (x.has_value() ? x : y);\n    }\n    static constexpr void Rchop(O &x, const\
     \ O &y) {\n        if (!x)\n            x = y;\n    }\n    static constexpr void\
     \ Lchop(const O &x, O &y) {\n        if (x)\n            y = x;\n    }\n    static\
-    \ constexpr O unit() noexcept { return nullopt; }\n    static constexpr bool commute\
-    \ = false;\n};\n"
+    \ constexpr O unit() noexcept { return std::nullopt; }\n    static constexpr bool\
+    \ commute = false;\n};\n"
   code: "#pragma once\n// \u5408\u6210\u306E\u9806\u756A\u306F\u95A2\u6570\u3068\u4E00\
     \u7DD2\u3060\u3088\ntemplate <typename X> struct MonoidSet {\n    using O = std::optional<X>;\n\
     \    using value_type = O;\n    static constexpr O op(const O &x, const O &y)\
     \ noexcept {\n        return (x.has_value() ? x : y);\n    }\n    static constexpr\
     \ void Rchop(O &x, const O &y) {\n        if (!x)\n            x = y;\n    }\n\
     \    static constexpr void Lchop(const O &x, O &y) {\n        if (x)\n       \
-    \     y = x;\n    }\n    static constexpr O unit() noexcept { return nullopt;\
+    \     y = x;\n    }\n    static constexpr O unit() noexcept { return std::nullopt;\
     \ }\n    static constexpr bool commute = false;\n};"
   dependsOn: []
   isVerificationFile: false
@@ -46,8 +46,8 @@ data:
   requiredBy:
   - library/algebra/lazy/SetMin.cpp
   - library/algebra/lazy/SetSum.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/DSL_2_D.test.cpp
   - test/AOJ/DSL_2_I.test.cpp

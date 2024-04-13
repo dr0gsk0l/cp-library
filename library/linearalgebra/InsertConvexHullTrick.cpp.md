@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []
@@ -47,16 +47,16 @@ data:
     \u306E\u307F\u3092\u6271\u3046\n// \u50BE\u304D\u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\
     \u5C11\u306B\u306A\u308B\u3088\u3046\u306B\u4FDD\u5B58\n\ntemplate <typename T,\
     \ Objective OBJ> class InsertConvexHullTrick {\n    using L = Line<T>;\n\n   \
-    \ std<T, T> mp1, mp2; // \u50BE\u304D \u2192 \u5207\u7247, \u533A\u9593\u306E\u53F3\
-    \u7AEF \u2192 \u50BE\u304D\n    // f(x)=ax+b \u306B\u5BFE\u3057 r = max_x { f(x)\
-    \ = min_g g(x)} \u3068\u3057\u3066\n    // mp1[a]=b, mp2[r]=a \u304C\u5165\u3063\
-    \u3066\u3044\u308B\n    // r = \\inf \u306E\u6642\u306F mp2 \u306B\u306F\u5165\
-    \u308C\u306A\u3044\n\n    template <typename IT> bool check(const IT it) {\n \
-    \       // mp1 \u306E it \u304C\u8981\u3089\u306A\u3044\u306A\u3089 true \u3092\
-    \u8FD4\u3059\n        if (it == mp1.begin() or it == mp1.rbegin().base())\n  \
-    \          return false;\n        const auto &[a1, b1] = *prev(it);\n        const\
-    \ auto &[a2, b2] = *it;\n        const auto &[a3, b3] = *nxt(it);\n        //\
-    \ \u4EA4\u70B9\u306E x \u5EA7\u6A19\u306F\u305D\u308C\u305E\u308C (b2-b1)/(a1-a2),\
+    \ std::map<T, T> mp1, mp2; // \u50BE\u304D \u2192 \u5207\u7247, \u533A\u9593\u306E\
+    \u53F3\u7AEF \u2192 \u50BE\u304D\n    // f(x)=ax+b \u306B\u5BFE\u3057 r = max_x\
+    \ { f(x) = min_g g(x)} \u3068\u3057\u3066\n    // mp1[a]=b, mp2[r]=a \u304C\u5165\
+    \u3063\u3066\u3044\u308B\n    // r = \\inf \u306E\u6642\u306F mp2 \u306B\u306F\
+    \u5165\u308C\u306A\u3044\n\n    template <typename IT> bool check(const IT it)\
+    \ {\n        // mp1 \u306E it \u304C\u8981\u3089\u306A\u3044\u306A\u3089 true\
+    \ \u3092\u8FD4\u3059\n        if (it == mp1.begin() or it == mp1.rbegin().base())\n\
+    \            return false;\n        const auto &[a1, b1] = *prev(it);\n      \
+    \  const auto &[a2, b2] = *it;\n        const auto &[a3, b3] = *nxt(it);\n   \
+    \     // \u4EA4\u70B9\u306E x \u5EA7\u6A19\u306F\u305D\u308C\u305E\u308C (b2-b1)/(a1-a2),\
     \ (b3-b2)/(a2-a3)\n        // \u3053\u308C\u304C <= \u306A\u3089\u8981\u3089\u306A\
     \u3044\n        return (b2 - b1) * (a2 - a3) <= (b3 - b2) * (a1 - a2);\n    }\n\
     \n    template <typename IT> T r(const IT it) {\n        // it \u304C\u6700\u5C0F\
@@ -84,7 +84,7 @@ data:
     \u3067\u306F\u6700\u5C0F\u5316\u554F\u984C\u306E\u307F\u3092\u6271\u3046\n// \u50BE\
     \u304D\u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\u5C11\u306B\u306A\u308B\u3088\u3046\
     \u306B\u4FDD\u5B58\n\ntemplate <typename T, Objective OBJ> class InsertConvexHullTrick\
-    \ {\n    using L = Line<T>;\n\n    std<T, T> mp1, mp2; // \u50BE\u304D \u2192\
+    \ {\n    using L = Line<T>;\n\n    std::map<T, T> mp1, mp2; // \u50BE\u304D \u2192\
     \ \u5207\u7247, \u533A\u9593\u306E\u53F3\u7AEF \u2192 \u50BE\u304D\n    // f(x)=ax+b\
     \ \u306B\u5BFE\u3057 r = max_x { f(x) = min_g g(x)} \u3068\u3057\u3066\n    //\
     \ mp1[a]=b, mp2[r]=a \u304C\u5165\u3063\u3066\u3044\u308B\n    // r = \\inf \u306E\
@@ -120,7 +120,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/InsertConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/linearalgebra/InsertConvexHullTrick.cpp

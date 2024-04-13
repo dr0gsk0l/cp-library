@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/RootedTreeIsomorphism.cpp
     title: library/tree/RootedTreeIsomorphism.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification
@@ -24,8 +24,8 @@ data:
     \n#define PROBLEM                                                            \
     \    \\\n    \"https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification\"\
     \n#include <bits/stdc++.h>\n\n#line 1 \"library/tree/RootedTreeIsomorphism.cpp\"\
-    \ntemplate <typename TREE>\nstd::pair<int, vector<int>> rooted_tree_isomorphism(TREE\
-    \ &t) {\n    assert(~t.root);\n    std::vector<int> res(t.n);\n    std<vector<int>,\
+    \ntemplate <typename TREE>\nstd::pair<int, std::vector<int>> rooted_tree_isomorphism(TREE\
+    \ &t) {\n    assert(~t.root);\n    std::vector<int> res(t.n);\n    std::map<std::vector<int>,\
     \ int> mp;\n    for (const int v : t.DFS) {\n        std::vector<int> h;\n   \
     \     for (int to : t.son(v))\n            h.push_back(res[to]);\n        sort(h.begin(),\
     \ h.end());\n        if (!mp.count(h))\n            mp[h] = mp.size();\n     \
@@ -68,11 +68,11 @@ data:
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __LOCAL\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << edges[i].to << \" \";\n            cerr << \"\\n\";\n        }\n\
-    \    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph {\n    using\
-    \ Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
+    \        }\n    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph\
+    \ {\n    using Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
     \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
     \       add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void\
@@ -82,12 +82,12 @@ data:
     \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
     \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
     \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
-    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                std::swap((*this)[v][0],\
     \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
     \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
     \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
     \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
-    \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
+    \            return;\n        }\n        root = r;\n        depth = std::vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
     \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
@@ -113,8 +113,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
 layout: document

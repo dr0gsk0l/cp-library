@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UndoUnionFind.cpp\"\n#include\
     \ <cassert>\n#include <stack>\n#include <vector>\n\nclass UndoUnionFind {\n  \
-    \  size_t n, num;\n    std::vector<size_t> sz, parent;\n    std::stack<std::std::pair<size_t,\
+    \  size_t n, num;\n    std::vector<size_t> sz, parent;\n    std::stack<std::pair<size_t,\
     \ size_t>> sta;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n) : n(n), num(n), sz(n, 1), parent(n) {\n        std::ranges::iota(parent,\
     \ 0);\n    }\n\n    size_t leader(size_t x) const {\n        assert(0 <= x and\
@@ -30,23 +30,23 @@ data:
     \ num++;\n    }\n\n    size_t size(const size_t x) const {\n        assert(0 <=\
     \ x and x < n);\n        return sz[leader(x)];\n    }\n\n    size_t count() const\
     \ { return num; }\n};\n#line 2 \"library/query/OfflineDynamicConnectivity.cpp\"\
-    \n\nclass OfflineDynamicConnectivity {\n    using edge = std::std::pair<int, int>;\n\
-    \n    UnionFindUndo uf;\n    int V, Q, segsz;\n    std::vector<vector<edge>> seg;\n\
-    \    int comp;\n\n    std::vector<std::pair<std::pair<int, int>, edge>> pend;\n\
-    \    std<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int V, int\
-    \ Q) : uf(V), V(V), Q(Q), comp(V) {\n        segsz = 1;\n        while (segsz\
-    \ < Q)\n            segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n    }\n\n\
-    \    void insert(int idx, int s, int t) {\n        auto e = minmax(s, t);\n  \
-    \      if (cnt[e]++ == 0)\n            appear[e] = idx;\n    }\n\n    void erase(int\
-    \ idx, int s, int t) {\n        auto e = minmax(s, t);\n        if (--cnt[e] ==\
-    \ 0)\n            pend.emplace_back(make_std::pair(appear[e], idx), e);\n    }\n\
-    \n    void add(int a, int b, const edge &e, int k, int l, int r) {\n        if\
-    \ (r <= a || b <= l)\n            return;\n        if (a <= l && r <= b) {\n \
-    \           seg[k].emplace_back(e);\n            return;\n        }\n        add(a,\
-    \ b, e, 2 * k + 1, l, (l + r) >> 1);\n        add(a, b, e, 2 * k + 2, (l + r)\
-    \ >> 1, r);\n    }\n\n    void add(int a, int b, const edge &e) { add(a, b, e,\
-    \ 0, 0, segsz); }\n\n    void build() {\n        for (auto &p : cnt) {\n     \
-    \       if (p.second > 0)\n                pend.emplace_back(make_std::pair(appear[p.first],\
+    \n\nclass OfflineDynamicConnectivity {\n    using edge = std::pair<int, int>;\n\
+    \n    UnionFindUndo uf;\n    int V, Q, segsz;\n    std::vector<std::vector<edge>>\
+    \ seg;\n    int comp;\n\n    std::vector<std::pair<std::pair<int, int>, edge>>\
+    \ pend;\n    std::map<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
+    \ V, int Q) : uf(V), V(V), Q(Q), comp(V) {\n        segsz = 1;\n        while\
+    \ (segsz < Q)\n            segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n\
+    \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
+    \ t);\n        if (cnt[e]++ == 0)\n            appear[e] = idx;\n    }\n\n   \
+    \ void erase(int idx, int s, int t) {\n        auto e = minmax(s, t);\n      \
+    \  if (--cnt[e] == 0)\n            pend.emplace_back(make_std::pair(appear[e],\
+    \ idx), e);\n    }\n\n    void add(int a, int b, const edge &e, int k, int l,\
+    \ int r) {\n        if (r <= a || b <= l)\n            return;\n        if (a\
+    \ <= l && r <= b) {\n            seg[k].emplace_back(e);\n            return;\n\
+    \        }\n        add(a, b, e, 2 * k + 1, l, (l + r) >> 1);\n        add(a,\
+    \ b, e, 2 * k + 2, (l + r) >> 1, r);\n    }\n\n    void add(int a, int b, const\
+    \ edge &e) { add(a, b, e, 0, 0, segsz); }\n\n    void build() {\n        for (auto\
+    \ &p : cnt) {\n            if (p.second > 0)\n                pend.emplace_back(make_std::pair(appear[p.first],\
     \ Q), p.first);\n        }\n        for (auto &s : pend) {\n            add(s.first.first,\
     \ s.first.second, s.second);\n        }\n    }\n\n    int run(const function<void(int)>\
     \ &f, int k = 0) {\n        int add = 0;\n        for (auto &e : seg[k]) {\n \
@@ -57,9 +57,9 @@ data:
     \ &e : seg[k]) {\n            uf.undo();\n        }\n        comp += add;\n  \
     \  }\n};\n"
   code: "#include \"library/datastructure/unionfind/UndoUnionFind.cpp\"\n\nclass OfflineDynamicConnectivity\
-    \ {\n    using edge = std::std::pair<int, int>;\n\n    UnionFindUndo uf;\n   \
-    \ int V, Q, segsz;\n    std::vector<vector<edge>> seg;\n    int comp;\n\n    std::vector<std::pair<std::pair<int,\
-    \ int>, edge>> pend;\n    std<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
+    \ {\n    using edge = std::pair<int, int>;\n\n    UnionFindUndo uf;\n    int V,\
+    \ Q, segsz;\n    std::vector<std::vector<edge>> seg;\n    int comp;\n\n    std::vector<std::pair<std::pair<int,\
+    \ int>, edge>> pend;\n    std::map<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
     \ V, int Q) : uf(V), V(V), Q(Q), comp(V) {\n        segsz = 1;\n        while\
     \ (segsz < Q)\n            segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n\
     \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: library/query/OfflineDynamicConnectivity.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/OfflineDynamicConnectivity.cpp

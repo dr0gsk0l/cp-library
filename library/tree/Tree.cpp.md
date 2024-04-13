@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   _extendedRequiredBy:
@@ -9,22 +9,22 @@ data:
     path: library/tree/EdgeVertex.cpp
     title: library/tree/EdgeVertex.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
     title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
     title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
@@ -38,7 +38,7 @@ data:
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.cpp\"\nstruct Edge {\n    int from,\
@@ -80,11 +80,11 @@ data:
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __LOCAL\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << edges[i].to << \" \";\n            cerr << \"\\n\";\n        }\n\
-    \    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph {\n    using\
-    \ Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
+    \        }\n    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph\
+    \ {\n    using Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
     \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
     \       add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void\
@@ -94,12 +94,12 @@ data:
     \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
     \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
     \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
-    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                std::swap((*this)[v][0],\
     \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
     \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
     \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
     \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
-    \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
+    \            return;\n        }\n        root = r;\n        depth = std::vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
     \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
@@ -116,12 +116,12 @@ data:
     \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
     \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
     \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
-    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                std::swap((*this)[v][0],\
     \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
     \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
     \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
     \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
-    \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
+    \            return;\n        }\n        root = r;\n        depth = std::vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
     \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
@@ -133,8 +133,8 @@ data:
   path: library/tree/Tree.cpp
   requiredBy:
   - library/tree/EdgeVertex.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp

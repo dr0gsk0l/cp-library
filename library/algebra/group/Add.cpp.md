@@ -5,7 +5,7 @@ data:
   - icon: ':x:'
     path: library/algebra/lazy/AddMin.cpp
     title: library/algebra/lazy/AddMin.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
   - icon: ':question:'
@@ -24,16 +24,16 @@ data:
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/1330.test.cpp
     title: test/AOJ/1330.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2207.test.cpp
     title: test/AOJ/2207.test.cpp
   - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -42,16 +42,16 @@ data:
   - icon: ':x:'
     path: test/AOJ/DSL_2_E.test.cpp
     title: test/AOJ/DSL_2_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
   - icon: ':x:'
     path: test/AOJ/DSL_2_H.test.cpp
     title: test/AOJ/DSL_2_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - icon: ':x:'
@@ -60,16 +60,16 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1097.test.cpp
     title: test/yukicoder/1097.test.cpp
   - icon: ':x:'
@@ -111,7 +111,7 @@ data:
   - library/math/FactorialNumberSystem.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

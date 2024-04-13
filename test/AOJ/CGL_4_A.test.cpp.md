@@ -75,22 +75,24 @@ data:
     \ c;\n    double r;\n    Circle() {}\n    Circle(Point c, double r) : c(c), r(r)\
     \ {}\n    friend std::istream &operator>>(std::istream &is, Circle &c) {\n   \
     \     is >> c.c >> c.r;\n        return is;\n    }\n};\n} // namespace geometry\n\
-    #line 3 \"library/geometry/UtilFunction.cpp\"\nnamespace geometry{\n  double cross(Vector\
-    \ a,Vector b){\n    //cerr << a <<\" \"<<b<<\":\"<<a.x*b.y-a.y*b.x<<endl;\n  \
-    \  return a.x*b.y-a.y*b.x;\n  }\n\n  Point orth(Point p){return Point(-p.y,p.x);}\n\
-    \n  Point project(Segment s,Point p){\n    Vector base=s.p2-s.p1;\n    double\
-    \ r=dot(p-s.p1,base)/base.norm();\n    return s.p1+base*r;\n  }\n\n  Point reflect(Segment\
-    \ s,Point p){\n    return p+(project(s,p)-p)*2.0;\n  }\n\n  Polygon convex_hull(Polygon\
-    \ ps){\n    int n=ps.size();\n    sort(ps.begin(),ps.end(),cmp_y);\n    int k=0;\n\
-    \    Polygon qs(n*2);\n    for(int i=0;i<n;i++){\n      while(k>1 and cross(qs[k-1]-qs[k-2],ps[i]-qs[k-1])<0)\
-    \ k--;\n      qs[k++]=ps[i];\n    }\n    for(int i=n-2,t=k;i>=0;i--){\n      while(k>t\
-    \ and cross(qs[k-1]-qs[k-2],ps[i]-qs[k-1])<0) k--;\n      qs[k++]=ps[i];\n   \
-    \ }\n    qs.resize(k-1);\n    return qs;\n  }\n}\n#line 6 \"test/AOJ/CGL_4_A.test.cpp\"\
-    \nusing namespace geometry;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    Polygon P(n);\n\
-    \    std::cin >> P;\n\n    Polygon Q = convex_hull(P);\n    std::cout << Q.size()\
-    \ << \"\\n\";\n    for (const Point &p : Q)\n        std::cout << p << \"\\n\"\
-    ;\n}\n"
+    #line 3 \"library/geometry/UtilFunction.cpp\"\nnamespace geometry {\ndouble cross(Vector\
+    \ a, Vector b) {\n    // std::cerr << a <<\" \"<<b<<\":\"<<a.x*b.y-a.y*b.x<<endl;\n\
+    \    return a.x * b.y - a.y * b.x;\n}\n\nPoint orth(Point p) { return Point(-p.y,\
+    \ p.x); }\n\nPoint project(Segment s, Point p) {\n    Vector base = s.p2 - s.p1;\n\
+    \    double r = dot(p - s.p1, base) / base.norm();\n    return s.p1 + base * r;\n\
+    }\n\nPoint reflect(Segment s, Point p) { return p + (project(s, p) - p) * 2.0;\
+    \ }\n\nPolygon convex_hull(Polygon ps) {\n    int n = ps.size();\n    sort(ps.begin(),\
+    \ ps.end(), cmp_y);\n    int k = 0;\n    Polygon qs(n * 2);\n    for (int i =\
+    \ 0; i < n; i++) {\n        while (k > 1 and cross(qs[k - 1] - qs[k - 2], ps[i]\
+    \ - qs[k - 1]) < 0)\n            k--;\n        qs[k++] = ps[i];\n    }\n    for\
+    \ (int i = n - 2, t = k; i >= 0; i--) {\n        while (k > t and cross(qs[k -\
+    \ 1] - qs[k - 2], ps[i] - qs[k - 1]) < 0)\n            k--;\n        qs[k++] =\
+    \ ps[i];\n    }\n    qs.resize(k - 1);\n    return qs;\n}\n} // namespace geometry\n\
+    #line 6 \"test/AOJ/CGL_4_A.test.cpp\"\nusing namespace geometry;\n\nint main()\
+    \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n   \
+    \ int n;\n    std::cin >> n;\n    Polygon P(n);\n    std::cin >> P;\n\n    Polygon\
+    \ Q = convex_hull(P);\n    std::cout << Q.size() << \"\\n\";\n    for (const Point\
+    \ &p : Q)\n        std::cout << p << \"\\n\";\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/geometry/UtilFunction.cpp\"\n\
@@ -106,7 +108,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp

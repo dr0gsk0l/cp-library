@@ -27,7 +27,7 @@ data:
     \ k) {\n        point_apply(2 * k, laz[k]);\n        point_apply(2 * k + 1, laz[k]);\n\
     \        laz[k] = MF::unit();\n    }\n    void thrust(int k) {\n        for (int\
     \ i = log; i; i--)\n            push(k >> i);\n    }\n\n  public:\n    DualSegmentTree()\
-    \ : DualSegmentTree(0) {}\n    DualSegmentTree(int n) : DualSegmentTree(vector<X>(n,\
+    \ : DualSegmentTree(0) {}\n    DualSegmentTree(int n) : DualSegmentTree(std::vector<X>(n,\
     \ MX::unit())) {}\n    DualSegmentTree(const std::vector<X> &v) : n(v.size()),\
     \ dat(v) {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n      \
     \  size = 1 << log;\n        laz.assign(size, MF::unit());\n    }\n\n    void\
@@ -49,7 +49,7 @@ data:
     \ k) {\n        point_apply(2 * k, laz[k]);\n        point_apply(2 * k + 1, laz[k]);\n\
     \        laz[k] = MF::unit();\n    }\n    void thrust(int k) {\n        for (int\
     \ i = log; i; i--)\n            push(k >> i);\n    }\n\n  public:\n    DualSegmentTree()\
-    \ : DualSegmentTree(0) {}\n    DualSegmentTree(int n) : DualSegmentTree(vector<X>(n,\
+    \ : DualSegmentTree(0) {}\n    DualSegmentTree(int n) : DualSegmentTree(std::vector<X>(n,\
     \ MX::unit())) {}\n    DualSegmentTree(const std::vector<X> &v) : n(v.size()),\
     \ dat(v) {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n      \
     \  size = 1 << log;\n        laz.assign(size, MF::unit());\n    }\n\n    void\
@@ -66,7 +66,7 @@ data:
   isVerificationFile: false
   path: library/segtree/DualSegmentTree.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1038.test.cpp

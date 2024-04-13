@@ -1,41 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/Reverse.cpp
     title: library/algebra/lazy/Reverse.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeLazy.cpp
     title: library/tree/TreeLazy.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_E
@@ -59,11 +59,11 @@ data:
     \ P &y) {\n        y.first += x.first;\n        y.second += x.second;\n    }\n\
     \    static constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static\
     \ constexpr P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n\
-    };\ntemplate <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x)\
-    \ {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
-    \ X>\nvector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int n =\
-    \ v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0; i <\
-    \ n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AddSum.cpp\"\
+    };\ntemplate <typename X> std::vector<std::pair<X, X>> cnt_init(int n, const X\
+    \ &x) {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
+    \ X>\nstd::vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int\
+    \ n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0;\
+    \ i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AddSum.cpp\"\
     \ntemplate <typename X> struct LazyAddSum {\n    using MX = GroupCntSum<X>;\n\
     \    using MF = GroupAdd<X>;\n    using S = typename MX::value_type;\n    static\
     \ constexpr S mapping(const X &f, const S &x) {\n        return {x.first + f *\
@@ -106,11 +106,11 @@ data:
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __LOCAL\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << edges[i].to << \" \";\n            cerr << \"\\n\";\n        }\n\
-    \    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph {\n    using\
-    \ Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
+    \        }\n    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph\
+    \ {\n    using Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
     \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
     \       add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void\
@@ -120,12 +120,12 @@ data:
     \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
     \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
     \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
-    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                std::swap((*this)[v][0],\
     \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
     \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
     \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
     \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
-    \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
+    \            return;\n        }\n        root = r;\n        depth = std::vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
     \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
@@ -150,7 +150,7 @@ data:
     \ i = log; i; i--)\n            push(k >> i);\n    }\n    void update(int i) {\
     \ dat[i] = MX::op(reflect(2 * i), reflect(2 * i + 1)); }\n    void recalc(int\
     \ k) {\n        while (k >>= 1)\n            update(k);\n    }\n\n  public:\n\
-    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(vector<X>(n,\
+    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(std::vector<X>(n,\
     \ MX::unit())) {}\n    LazySegmentTree(const std::vector<X> &v) : n(v.size())\
     \ {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n        size =\
     \ 1 << log;\n        dat.assign(size << 1, MX::unit());\n        laz.assign(size,\
@@ -177,7 +177,7 @@ data:
     \ sz(n), head(n), id(n), id2(n), prepared(false) {}\n    HLD() = default;\n\n\
     \  private:\n    void dfs_sz(int v) {\n        sz[v] = 1;\n        for (auto &e\
     \ : T.son(v)) {\n            dfs_sz(e.to);\n            sz[v] += sz[e.to];\n \
-    \           if (sz[e.to] > sz[T.son(v)[0].to])\n                swap(e, T.son(v)[0]);\n\
+    \           if (sz[e.to] > sz[T.son(v)[0].to])\n                std::swap(e, T.son(v)[0]);\n\
     \        }\n    }\n    void dfs_hld(int v, int &k) {\n        id[v] = k++;\n \
     \       for (int i = 0; i < T.son(v).size(); i++) {\n            int to = T.son(v)[i];\n\
     \            head[to] = (i ? to : head[v]);\n            dfs_hld(to, k);\n   \
@@ -192,7 +192,7 @@ data:
     \    int distance(int u, int v) {\n        int w = lca(u, v);\n        return\
     \ T.depth[u] + T.depth[v] - T.depth[w] * 2;\n    }\n\n    // l=lca(u,v) \u3068\
     \u3057\u305F\u6642\u3001[u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\
-    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = vector<std::pair<int,\
+    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = std::vector<std::pair<int,\
     \ int>>;\n    std::pair<path_t, path_t> path(int u, int v) {\n        assert(prepared);\n\
     \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
     \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
@@ -212,10 +212,10 @@ data:
     \ hld;\n    std::vector<int> hld_id, euler_in, euler_out;\n    LazySegmentTree<Lazy>\
     \ seg;\n    LazySegmentTree<Lazy_r> seg_r;\n\n    TreeLazy(const TREE &T_, int\
     \ r = 0)\n        : T(T_), hld(T_), n(T_.n), seg(n), seg_r(n) {\n        T.build(r);\n\
-    \        hld_id = hld.build(r);\n    }\n    TreeLazy(const TREE &T_, vector<X>\
-    \ a, int r = 0) : T(T_), hld(T_), n(T_.n) {\n        T.build(r);\n        hld_id\
-    \ = hld.build(r);\n        std::vector<X> hld_a(n);\n        for (int v = 0; v\
-    \ < n; v++)\n            hld_a[hld_id[v]] = a[v];\n        seg = LazySegmentTree<Lazy>(hld_a);\n\
+    \        hld_id = hld.build(r);\n    }\n    TreeLazy(const TREE &T_, std::vector<X>\
+    \ a, int r = 0)\n        : T(T_), hld(T_), n(T_.n) {\n        T.build(r);\n  \
+    \      hld_id = hld.build(r);\n        std::vector<X> hld_a(n);\n        for (int\
+    \ v = 0; v < n; v++)\n            hld_a[hld_id[v]] = a[v];\n        seg = LazySegmentTree<Lazy>(hld_a);\n\
     \        if (!MX::commute)\n            seg_r = LazySegmentTree<Lazy_r>(hld_a);\n\
     \    }\n\n    void set(int v, X x) {\n        seg.set(hld_id[v], x);\n       \
     \ if (!MX::commute)\n            seg_r.set(hld_id[v], x);\n    }\n    void multiply(int\
@@ -294,8 +294,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_E.test.cpp
 layout: document

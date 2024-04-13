@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/And.cpp
     title: library/bitwise/And.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_and_convolution
@@ -30,14 +30,14 @@ data:
     \ N){\n    int n=__builtin_ffs(N)-1;\n    assert((1<<n)==N);\n    return n;\n\
     \  }\n  static bool in(int S,int a){ return (S>>a)&1; }\n}\n#line 3 \"library/bitwise/And.cpp\"\
     \n#define REP_(i, n) for (int i = 0; i < (n); i++)\nstruct BitwiseAnd {\n    template\
-    \ <typename T> static void zeta(vector<T> &A) {\n        int n = bitwise::log2(A.size());\n\
+    \ <typename T> static void zeta(std::vector<T> &A) {\n        int n = bitwise::log2(A.size());\n\
     \        REP_(k, n)\n        REP_(S, 1 << n) if (!bitwise::in(S, k)) A[S] += A[S\
-    \ ^ (1 << k)];\n    }\n    template <typename T> static void mobius(vector<T>\
+    \ ^ (1 << k)];\n    }\n    template <typename T> static void mobius(std::vector<T>\
     \ &A) {\n        int n = bitwise::log2(A.size());\n        REP_(k, n)\n      \
     \  REP_(S, 1 << n) if (!bitwise::in(S, k)) A[S] -= A[S ^ (1 << k)];\n    }\n \
-    \   template <typename T>\n    static std::vector<T> convolution(vector<T> A,\
-    \ vector<T> B) {\n        assert(A.size() == B.size());\n        zeta(A);\n  \
-    \      zeta(B);\n        REP_(i, A.size()) A[i] *= B[i];\n        mobius(A);\n\
+    \   template <typename T>\n    static std::vector<T> convolution(std::vector<T>\
+    \ A, std::vector<T> B) {\n        assert(A.size() == B.size());\n        zeta(A);\n\
+    \        zeta(B);\n        REP_(i, A.size()) A[i] *= B[i];\n        mobius(A);\n\
     \        return A;\n    }\n};\n#undef REP_\n#line 2 \"library/math/ExtraGCD.cpp\"\
     \nusing ll = long long;\nstd::pair<ll, ll> ext_gcd(ll a, ll b) {\n    if (b ==\
     \ 0)\n        return {1, 0};\n    auto [X, Y] = ext_gcd(b, a % b);\n    // bX\
@@ -96,8 +96,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
 layout: document

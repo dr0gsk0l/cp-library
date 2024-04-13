@@ -11,7 +11,7 @@ data:
   bundledCode: "#line 1 \"library/datastructure/unionfind/ApplyUndoUnionFind.cpp\"\
     \n#include <bits/stdc++.h>\n\ntemplate <typename AbelGroup> class UndoUnionFind\
     \ {\n    using T = typename AbelGroup::value_type;\n    size_t n, num;\n    std::vector<size_t>\
-    \ sz, parent;\n    std::stack<std::std::pair<size_t, size_t>> sta;\n    std::vector<T>\
+    \ sz, parent;\n    std::stack<std::pair<size_t, size_t>> sta;\n    std::vector<T>\
     \ value;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n)\n        : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit())\
     \ {\n        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    size_t\
@@ -25,8 +25,8 @@ data:
     \ == leader(y);\n    }\n\n    bool merge(size_t x, size_t y) {\n        assert(0\
     \ <= x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
     \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
-    \            swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n  \
-    \      AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));\n        num--;\n\
+    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
+    \        AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));\n        num--;\n\
     \        sta.emplace(x, y);\n        return true;\n    }\n\n    void undo() {\n\
     \        if (!sta.size())\n            return;\n        auto [x, y] = sta.top();\n\
     \        sta.pop();\n        sz[x] -= sz[y];\n        parent[y] = y;\n       \
@@ -35,7 +35,7 @@ data:
     \    }\n\n    size_t count() const { return num; }\n};\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <typename AbelGroup> class UndoUnionFind\
     \ {\n    using T = typename AbelGroup::value_type;\n    size_t n, num;\n    std::vector<size_t>\
-    \ sz, parent;\n    std::stack<std::std::pair<size_t, size_t>> sta;\n    std::vector<T>\
+    \ sz, parent;\n    std::stack<std::pair<size_t, size_t>> sta;\n    std::vector<T>\
     \ value;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n)\n        : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit())\
     \ {\n        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    size_t\
@@ -49,8 +49,8 @@ data:
     \ == leader(y);\n    }\n\n    bool merge(size_t x, size_t y) {\n        assert(0\
     \ <= x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
     \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
-    \            swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n  \
-    \      AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));\n        num--;\n\
+    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
+    \        AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));\n        num--;\n\
     \        sta.emplace(x, y);\n        return true;\n    }\n\n    void undo() {\n\
     \        if (!sta.size())\n            return;\n        auto [x, y] = sta.top();\n\
     \        sta.pop();\n        sz[x] -= sz[y];\n        parent[y] = y;\n       \
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/ApplyUndoUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/ApplyUndoUnionFind.cpp

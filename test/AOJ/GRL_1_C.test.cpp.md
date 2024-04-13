@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/NegativeCycleFind.cpp
     title: library/graph/NegativeCycleFind.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/shortest_path/WarshallFloyd.cpp
     title: library/graph/shortest_path/WarshallFloyd.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
@@ -72,15 +72,16 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 1 \"library/graph/shortest_path/WarshallFloyd.cpp\"\
-    \ntemplate <typename WG, typename T = typename WG::weight_type>\nvector<vector<T>>\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 1 \"library/graph/shortest_path/WarshallFloyd.cpp\"\ntemplate\
+    \ <typename WG, typename T = typename WG::weight_type>\nstd::vector<std::vector<T>>\
     \ warshall_floyd(const WG &g) {\n    int n = g.n;\n    static constexpr T INF\
-    \ = numeric_limits<T>::max() / 2;\n    std::vector d(n, vector<T>(n, INF));\n\
-    \    for (int i = 0; i < n; i++)\n        d[i][i] = 0;\n    for (const auto &e\
-    \ : g.edges)\n        if (d[e.from][e.to] > e.weight)\n            d[e.from][e.to]\
+    \ = std::numeric_limits<T>::max() / 2;\n    std::vector d(n, std::vector<T>(n,\
+    \ INF));\n    for (int i = 0; i < n; i++)\n        d[i][i] = 0;\n    for (const\
+    \ auto &e : g.edges)\n        if (d[e.from][e.to] > e.weight)\n            d[e.from][e.to]\
     \ = e.weight;\n    for (int k = 0; k < n; k++)\n        for (int i = 0; i < n;\
     \ i++)\n            if (d[i][k] < INF)\n                for (int j = 0; j < n;\
     \ j++)\n                    if (d[k][j] < INF)\n                        if (d[i][j]\
@@ -111,8 +112,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_C.test.cpp
 layout: document

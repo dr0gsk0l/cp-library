@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/BinaryTrie.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/SetXor-Min.test.cpp

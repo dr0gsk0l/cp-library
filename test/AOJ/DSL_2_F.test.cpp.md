@@ -7,10 +7,10 @@ data:
   - icon: ':x:'
     path: library/algebra/monoid/Min.cpp
     title: library/algebra/monoid/Min.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Set.cpp
     title: library/algebra/monoid/Set.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []
@@ -25,26 +25,28 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
   bundledCode: "#line 1 \"test/AOJ/DSL_2_F.test.cpp\"\n#define PROBLEM           \
     \                                                     \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
-    \n#include <bits/stdc++.h>\n\n#line 1 \"library/algebra/monoid/Min.cpp\"\ntemplate<typename\
-    \ X>\nstruct MonoidMin{\n  using value_type = X;\n  static constexpr X op(const\
-    \ X &x, const X &y) noexcept { return min(x,y); }\n  static constexpr void Rchop(X&x,\
-    \ const X&y){ if(x>y)x=y; }\n  static constexpr void Lchop(const X&x, X&y){ if(y>x)y=x;\
-    \ }\n  static constexpr X unit() { return numeric_limits<X>::max()/2; }\n  static\
-    \ constexpr bool commute = true;\n};\n#line 2 \"library/algebra/monoid/Set.cpp\"\
-    \n// \u5408\u6210\u306E\u9806\u756A\u306F\u95A2\u6570\u3068\u4E00\u7DD2\u3060\u3088\
-    \ntemplate <typename X> struct MonoidSet {\n    using O = std::optional<X>;\n\
-    \    using value_type = O;\n    static constexpr O op(const O &x, const O &y)\
-    \ noexcept {\n        return (x.has_value() ? x : y);\n    }\n    static constexpr\
-    \ void Rchop(O &x, const O &y) {\n        if (!x)\n            x = y;\n    }\n\
-    \    static constexpr void Lchop(const O &x, O &y) {\n        if (x)\n       \
-    \     y = x;\n    }\n    static constexpr O unit() noexcept { return nullopt;\
-    \ }\n    static constexpr bool commute = false;\n};\n#line 4 \"library/algebra/lazy/SetMin.cpp\"\
-    \ntemplate <typename X> struct LazySetMin {\n    using MX = MonoidMin<X>;\n  \
-    \  using MF = MonoidSet<X>;\n    using F = typename MF::value_type;\n    static\
-    \ constexpr X mapping(const F &f, const X &x) { return f.value_or(x); }\n};\n\
-    #line 2 \"library/segtree/LazySegmentTree.cpp\"\n\ntemplate <typename Lazy> class\
-    \ LazySegmentTree {\n    using MX = typename Lazy::MX;\n    using MF = typename\
-    \ Lazy::MF;\n    using X = typename MX::value_type;\n    using F = typename MF::value_type;\n\
+    \n#include <bits/stdc++.h>\n\n#line 1 \"library/algebra/monoid/Min.cpp\"\ntemplate\
+    \ <typename X> struct MonoidMin {\n    using value_type = X;\n    static constexpr\
+    \ X op(const X &x, const X &y) noexcept {\n        returnstd::min(x, y);\n   \
+    \ }\n    static constexpr void Rchop(X &x, const X &y) {\n        if (x > y)\n\
+    \            x = y;\n    }\n    static constexpr void Lchop(const X &x, X &y)\
+    \ {\n        if (y > x)\n            y = x;\n    }\n    static constexpr X unit()\
+    \ { return std::numeric_limits<X>::max() / 2; }\n    static constexpr bool commute\
+    \ = true;\n};\n#line 2 \"library/algebra/monoid/Set.cpp\"\n// \u5408\u6210\u306E\
+    \u9806\u756A\u306F\u95A2\u6570\u3068\u4E00\u7DD2\u3060\u3088\ntemplate <typename\
+    \ X> struct MonoidSet {\n    using O = std::optional<X>;\n    using value_type\
+    \ = O;\n    static constexpr O op(const O &x, const O &y) noexcept {\n       \
+    \ return (x.has_value() ? x : y);\n    }\n    static constexpr void Rchop(O &x,\
+    \ const O &y) {\n        if (!x)\n            x = y;\n    }\n    static constexpr\
+    \ void Lchop(const O &x, O &y) {\n        if (x)\n            y = x;\n    }\n\
+    \    static constexpr O unit() noexcept { return std::nullopt; }\n    static constexpr\
+    \ bool commute = false;\n};\n#line 4 \"library/algebra/lazy/SetMin.cpp\"\ntemplate\
+    \ <typename X> struct LazySetMin {\n    using MX = MonoidMin<X>;\n    using MF\
+    \ = MonoidSet<X>;\n    using F = typename MF::value_type;\n    static constexpr\
+    \ X mapping(const F &f, const X &x) { return f.value_or(x); }\n};\n#line 2 \"\
+    library/segtree/LazySegmentTree.cpp\"\n\ntemplate <typename Lazy> class LazySegmentTree\
+    \ {\n    using MX = typename Lazy::MX;\n    using MF = typename Lazy::MF;\n  \
+    \  using X = typename MX::value_type;\n    using F = typename MF::value_type;\n\
     \    int n, log, size;\n    std::vector<X> dat;\n    std::vector<F> laz;\n\n \
     \   X reflect(int k) {\n        if (k < size)\n            return Lazy::mapping(laz[k],\
     \ dat[k]);\n        return dat[k];\n    }\n    void point_apply(int k, const F\
@@ -56,7 +58,7 @@ data:
     \    void update(int i) { dat[i] = MX::op(reflect(2 * i), reflect(2 * i + 1));\
     \ }\n    void recalc(int k) {\n        while (k >>= 1)\n            update(k);\n\
     \    }\n\n  public:\n    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int\
-    \ n) : LazySegmentTree(vector<X>(n, MX::unit())) {}\n    LazySegmentTree(const\
+    \ n) : LazySegmentTree(std::vector<X>(n, MX::unit())) {}\n    LazySegmentTree(const\
     \ std::vector<X> &v) : n(v.size()) {\n        for (log = 1; (1 << log) < n; log++)\
     \ {\n        }\n        size = 1 << log;\n        dat.assign(size << 1, MX::unit());\n\
     \        laz.assign(size, MF::unit());\n        for (int i = 0; i < n; ++i)\n\
@@ -102,7 +104,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_F.test.cpp

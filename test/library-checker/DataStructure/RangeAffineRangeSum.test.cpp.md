@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AffineSum.cpp
     title: library/algebra/lazy/AffineSum.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   - icon: ':question:'
@@ -19,14 +19,14 @@ data:
   - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -81,11 +81,11 @@ data:
     \       y.first += x.first;\n        y.second += x.second;\n    }\n    static\
     \ constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static constexpr\
     \ P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n};\n\
-    template <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n\
-    \    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename X>\n\
-    vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int n = v.size();\n\
-    \    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0; i < n; i++)\n \
-    \       res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AffineSum.cpp\"\
+    template <typename X> std::vector<std::pair<X, X>> cnt_init(int n, const X &x)\
+    \ {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
+    \ X>\nstd::vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int\
+    \ n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0;\
+    \ i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AffineSum.cpp\"\
     \ntemplate <typename X> struct LazyAffineSum {\n    using MX = GroupCntSum<X>;\n\
     \    using MF = GroupAffine<X>;\n    using P = typename MX::value_type;\n    using\
     \ F = typename MF::value_type;\n    static constexpr P mapping(const F &f, const\
@@ -140,7 +140,7 @@ data:
     \ i = log; i; i--)\n            push(k >> i);\n    }\n    void update(int i) {\
     \ dat[i] = MX::op(reflect(2 * i), reflect(2 * i + 1)); }\n    void recalc(int\
     \ k) {\n        while (k >>= 1)\n            update(k);\n    }\n\n  public:\n\
-    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(vector<X>(n,\
+    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(std::vector<X>(n,\
     \ MX::unit())) {}\n    LazySegmentTree(const std::vector<X> &v) : n(v.size())\
     \ {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n        size =\
     \ 1 << log;\n        dat.assign(size << 1, MX::unit());\n        laz.assign(size,\
@@ -190,8 +190,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
 layout: document

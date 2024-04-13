@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
   _extendedRequiredBy: []
@@ -30,16 +30,16 @@ data:
     \    }\n\n    bool merge(int x, int y) {\n        assert(0 <= x and x < n and\
     \ 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n       \
     \ if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n       \
-    \     swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n        num--;\n\
-    \        return true;\n    }\n\n    int size(const int x) {\n        assert(0\
-    \ <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int count() const\
-    \ { return num; }\n};\n#line 3 \"library/graph/MinimumSpanningArborescence.cpp\"\
+    \     std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n    \
+    \    num--;\n        return true;\n    }\n\n    int size(const int x) {\n    \
+    \    assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
+    \ count() const { return num; }\n};\n#line 3 \"library/graph/MinimumSpanningArborescence.cpp\"\
     \ntemplate <typename WG, typename W = typename WG::weight_type>\nstd::optional<std::pair<W,\
-    \ vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int n =\
-    \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
+    \ std::vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int\
+    \ n = g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
-    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
+    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, std::vector<int>,\
     \ decltype(compare)>;\n    std::vector<std::pair<PQ, W>> pq_add(n, {PQ{compare},\
     \ 0});\n    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
@@ -58,9 +58,9 @@ data:
     \       std::vector<int> processing;\n        while (state[now] != 2) {\n    \
     \        processing.push_back(now);\n            state[now] = 1;\n           \
     \ auto &[pq, add] = pq_add[pq_id[now]];\n            if (!pq.size())\n       \
-    \         return nullopt;\n            int edge_id = pq.top();\n            pq.pop();\n\
-    \            auto &e = g.edges[edge_id];\n            res += e.weight - add;\n\
-    \            tree[e.to] = edge_id;\n            pre[now] = uf.leader(e.from);\n\
+    \         return std::nullopt;\n            int edge_id = pq.top();\n        \
+    \    pq.pop();\n            auto &e = g.edges[edge_id];\n            res += e.weight\
+    \ - add;\n            tree[e.to] = edge_id;\n            pre[now] = uf.leader(e.from);\n\
     \            new_add[now] = e.weight;\n            if (state[pre[now]] == 1) {\n\
     \                int v = now;\n                do {\n                    pq_add[pq_id[v]].second\
     \ = new_add[v];\n                    merge(v, now);\n                    v = uf.leader(pre[v]);\n\
@@ -70,11 +70,11 @@ data:
     \ + r);\n    return make_std::pair(res, tree);\n}\n"
   code: "#pragma once\n#include \"library/datastructure/unionfind/UnionFind.cpp\"\n\
     template <typename WG, typename W = typename WG::weight_type>\nstd::optional<std::pair<W,\
-    \ vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int n =\
-    \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
+    \ std::vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int\
+    \ n = g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
-    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
+    \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, std::vector<int>,\
     \ decltype(compare)>;\n    std::vector<std::pair<PQ, W>> pq_add(n, {PQ{compare},\
     \ 0});\n    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
@@ -93,9 +93,9 @@ data:
     \       std::vector<int> processing;\n        while (state[now] != 2) {\n    \
     \        processing.push_back(now);\n            state[now] = 1;\n           \
     \ auto &[pq, add] = pq_add[pq_id[now]];\n            if (!pq.size())\n       \
-    \         return nullopt;\n            int edge_id = pq.top();\n            pq.pop();\n\
-    \            auto &e = g.edges[edge_id];\n            res += e.weight - add;\n\
-    \            tree[e.to] = edge_id;\n            pre[now] = uf.leader(e.from);\n\
+    \         return std::nullopt;\n            int edge_id = pq.top();\n        \
+    \    pq.pop();\n            auto &e = g.edges[edge_id];\n            res += e.weight\
+    \ - add;\n            tree[e.to] = edge_id;\n            pre[now] = uf.leader(e.from);\n\
     \            new_add[now] = e.weight;\n            if (state[pre[now]] == 1) {\n\
     \                int v = now;\n                do {\n                    pq_add[pq_id[v]].second\
     \ = new_add[v];\n                    merge(v, now);\n                    v = uf.leader(pre[v]);\n\
@@ -108,7 +108,7 @@ data:
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp

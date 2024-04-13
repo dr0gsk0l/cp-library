@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   - icon: ':x:'
@@ -14,7 +14,7 @@ data:
     title: test/yukicoder/1038.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/tree/CentroidDecomposition.cpp\"\ntemplate <typename\
@@ -35,7 +35,7 @@ data:
     \        for (int to : T[c])\n                if (timing[to] < 0)\n          \
     \          que.push(to);\n        }\n    }\n\n    template <typename X, typename\
     \ F, typename G, typename H>\n    void calc(int root, X initial_val, const F &next_val,\
-    \ const G &action,\n              const H &finish) {\n        std::queue<tuple<int,\
+    \ const G &action,\n              const H &finish) {\n        std::queue<std::tuple<int,\
     \ int, X>> que;\n\n        auto f = [&](int v_, int pre_, X val_, bool is_all)\
     \ {\n            que.emplace(v_, pre_, val_);\n            while (que.size())\
     \ {\n                auto [v, pre, val] = que.front();\n                que.pop();\n\
@@ -67,7 +67,7 @@ data:
     \            for (int to : T[c])\n                if (timing[to] < 0)\n      \
     \              que.push(to);\n        }\n    }\n\n    template <typename X, typename\
     \ F, typename G, typename H>\n    void calc(int root, X initial_val, const F &next_val,\
-    \ const G &action,\n              const H &finish) {\n        std::queue<tuple<int,\
+    \ const G &action,\n              const H &finish) {\n        std::queue<std::tuple<int,\
     \ int, X>> que;\n\n        auto f = [&](int v_, int pre_, X val_, bool is_all)\
     \ {\n            que.emplace(v_, pre_, val_);\n            while (que.size())\
     \ {\n                auto [v, pre, val] = que.front();\n                que.pop();\n\
@@ -86,8 +86,8 @@ data:
   isVerificationFile: false
   path: library/tree/CentroidDecomposition.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   - test/yukicoder/1002.test.cpp

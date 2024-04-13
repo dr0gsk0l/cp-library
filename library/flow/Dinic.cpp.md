@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy:
@@ -9,7 +9,7 @@ data:
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
   - icon: ':x:'
@@ -20,7 +20,7 @@ data:
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://misawa.github.io/others/flow/dinic_time_complexity.html
@@ -68,13 +68,13 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 5 \"library/flow/Dinic.cpp\"\
-    \ntemplate <typename T> class Dinic {\n    struct EdgeInfo {\n        T cap;\n\
-    \        int rev;\n    };\n    WeightedGraph<EdgeInfo> G;\n    std::vector<int>\
-    \ level, current_edge, out_deg;\n    int s, t;\n    std::vector<std::pair<int,\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 5 \"library/flow/Dinic.cpp\"\ntemplate <typename T> class Dinic\
+    \ {\n    struct EdgeInfo {\n        T cap;\n        int rev;\n    };\n    WeightedGraph<EdgeInfo>\
+    \ G;\n    std::vector<int> level, current_edge, out_deg;\n    int s, t;\n    std::vector<std::pair<int,\
     \ int>> edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
     \uFF08\u5BB9\u91CF\u6B63\u306E\u8FBA\u306B\u3088\u308B\uFF09s\u304B\u3089\u306E\
     \u6700\u77ED\u8DDD\u96E2\u306B\u3059\u308B\n        // \u5230\u9054\u51FA\u6765\
@@ -94,7 +94,7 @@ data:
     \            auto &[cap, rev] = e.weight;\n            if (cap > 0 &&\n      \
     \          level[v] <\n                    level\n                        [e.to])\
     \ { // bfs\u3092\u3057\u3066\u3044\u308B\u306E\u3067level[v]<level[e.to]\u306A\
-    \u3089level[v]+1==level[e.to]\n                T d = dfs(e.to, min(f, cap));\n\
+    \u3089level[v]+1==level[e.to]\n                T d = dfs(e.to, std::min(f, cap));\n\
     \                if (d == 0)\n                    continue;\n                cap\
     \ -= d;\n                G[e.to][rev].weight.cap += d;\n                return\
     \ d; // \u4E00\u672C\u6D41\u305B\u305F\u3089return\n            }\n        }\n\
@@ -106,22 +106,22 @@ data:
     \ const {\n        assert(G.is_prepared());\n        const auto &[from, id] =\
     \ edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n    }\n  \
     \  // \u8FBA\u3092\u8FFD\u52A0\u3057\u305F\u9806\u756A\u306B [from,to,\u6D41\u91CF\
-    ]\n    std::vector<tuple<int, int, T>> all_edge() {\n        assert(G.is_prepared());\n\
-    \        std::vector<tuple<int, int, T>> res;\n        res.reserve(edge_memo.size());\n\
+    ]\n    std::vector<std::tuple<int, int, T>> all_edge() {\n        assert(G.is_prepared());\n\
+    \        std::vector<std::tuple<int, int, T>> res;\n        res.reserve(edge_memo.size());\n\
     \        for (const auto &[v, id] : edge_memo) {\n            const auto &[to,\
     \ from, weight] = G[v][id];\n            res.emplace_back(from, to, weight.cap);\n\
     \        }\n        return res;\n    }\n\n    void add_arc(int from, int to, T\
     \ cap) {\n        G.add_arc(from, to, {cap, out_deg[to]});\n        G.add_arc(to,\
     \ from, {0, out_deg[from]++});\n        edge_memo.emplace_back(to, out_deg[to]++);\n\
-    \    }\n    T flow(T lim = numeric_limits<T>::max() / 2) {\n        if (!G.is_prepared())\n\
+    \    }\n    T flow(T lim = std::numeric_limits<T>::max() / 2) {\n        if (!G.is_prepared())\n\
     \            G.build();\n        T fl = 0;\n        while (lim > 0) {\n      \
     \      bfs();\n            if (level[t] < 0)\n                break;\n       \
     \     fill(current_edge.begin(), current_edge.end(), 0);\n            while (true)\
     \ {\n                T f = dfs(s, lim);\n                if (f == 0)\n       \
     \             break;\n                fl += f;\n                lim -= f;\n  \
     \          }\n        }\n        return fl;\n    }\n\n    T st_flow(int s_, int\
-    \ t_, T lim = numeric_limits<T>::max() / 2) {\n        s = s_;\n        t = t_;\n\
-    \        return flow(lim);\n    }\n};\n"
+    \ t_, T lim = std::numeric_limits<T>::max() / 2) {\n        s = s_;\n        t\
+    \ = t_;\n        return flow(lim);\n    }\n};\n"
   code: "#pragma once\n\n// https://misawa.github.io/others/flow/dinic_time_complexity.html\n\
     #include \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T> class Dinic\
     \ {\n    struct EdgeInfo {\n        T cap;\n        int rev;\n    };\n    WeightedGraph<EdgeInfo>\
@@ -145,7 +145,7 @@ data:
     \            auto &[cap, rev] = e.weight;\n            if (cap > 0 &&\n      \
     \          level[v] <\n                    level\n                        [e.to])\
     \ { // bfs\u3092\u3057\u3066\u3044\u308B\u306E\u3067level[v]<level[e.to]\u306A\
-    \u3089level[v]+1==level[e.to]\n                T d = dfs(e.to, min(f, cap));\n\
+    \u3089level[v]+1==level[e.to]\n                T d = dfs(e.to, std::min(f, cap));\n\
     \                if (d == 0)\n                    continue;\n                cap\
     \ -= d;\n                G[e.to][rev].weight.cap += d;\n                return\
     \ d; // \u4E00\u672C\u6D41\u305B\u305F\u3089return\n            }\n        }\n\
@@ -157,30 +157,30 @@ data:
     \ const {\n        assert(G.is_prepared());\n        const auto &[from, id] =\
     \ edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n    }\n  \
     \  // \u8FBA\u3092\u8FFD\u52A0\u3057\u305F\u9806\u756A\u306B [from,to,\u6D41\u91CF\
-    ]\n    std::vector<tuple<int, int, T>> all_edge() {\n        assert(G.is_prepared());\n\
-    \        std::vector<tuple<int, int, T>> res;\n        res.reserve(edge_memo.size());\n\
+    ]\n    std::vector<std::tuple<int, int, T>> all_edge() {\n        assert(G.is_prepared());\n\
+    \        std::vector<std::tuple<int, int, T>> res;\n        res.reserve(edge_memo.size());\n\
     \        for (const auto &[v, id] : edge_memo) {\n            const auto &[to,\
     \ from, weight] = G[v][id];\n            res.emplace_back(from, to, weight.cap);\n\
     \        }\n        return res;\n    }\n\n    void add_arc(int from, int to, T\
     \ cap) {\n        G.add_arc(from, to, {cap, out_deg[to]});\n        G.add_arc(to,\
     \ from, {0, out_deg[from]++});\n        edge_memo.emplace_back(to, out_deg[to]++);\n\
-    \    }\n    T flow(T lim = numeric_limits<T>::max() / 2) {\n        if (!G.is_prepared())\n\
+    \    }\n    T flow(T lim = std::numeric_limits<T>::max() / 2) {\n        if (!G.is_prepared())\n\
     \            G.build();\n        T fl = 0;\n        while (lim > 0) {\n      \
     \      bfs();\n            if (level[t] < 0)\n                break;\n       \
     \     fill(current_edge.begin(), current_edge.end(), 0);\n            while (true)\
     \ {\n                T f = dfs(s, lim);\n                if (f == 0)\n       \
     \             break;\n                fl += f;\n                lim -= f;\n  \
     \          }\n        }\n        return fl;\n    }\n\n    T st_flow(int s_, int\
-    \ t_, T lim = numeric_limits<T>::max() / 2) {\n        s = s_;\n        t = t_;\n\
-    \        return flow(lim);\n    }\n};"
+    \ t_, T lim = std::numeric_limits<T>::max() / 2) {\n        s = s_;\n        t\
+    \ = t_;\n        return flow(lim);\n    }\n};"
   dependsOn:
   - library/graph/WeightedGraph.cpp
   isVerificationFile: false
   path: library/flow/Dinic.cpp
   requiredBy:
   - library/graph/matching/BipartiteMatching.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   - test/AOJ/GRL_7_A.test.cpp

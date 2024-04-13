@@ -5,20 +5,20 @@ data:
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - icon: ':x:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
@@ -29,7 +29,7 @@ data:
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - https://codeforces.com/contest/1401/problem/F
@@ -46,7 +46,7 @@ data:
     \ <monoid M> class SegmentTree {\n    using X = typename M::value_type;\n    std::vector<X>\
     \ dat;\n    int n, log, size;\n\n    void update(int i) { dat[i] = M::op(dat[2\
     \ * i], dat[2 * i + 1]); }\n\n  public:\n    SegmentTree() : SegmentTree(0) {}\n\
-    \    SegmentTree(int n) : SegmentTree(vector<X>(n, M::unit())) {}\n    SegmentTree(vector<X>\
+    \    SegmentTree(int n) : SegmentTree(std::vector<X>(n, M::unit())) {}\n    SegmentTree(std::vector<X>\
     \ v) : n(v.size()) {\n        for (log = 1; (1 << log) < n; log++) {\n       \
     \ }\n        size = 1 << log;\n        dat.assign(size << 1, M::unit());\n   \
     \     for (int i = 0; i < n; ++i)\n            dat[size + i] = v[i];\n       \
@@ -98,8 +98,8 @@ data:
   path: library/segtree/SegmentTree.cpp
   requiredBy:
   - library/tree/TreeMonoid.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/PointAddRangeSum.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Matrix.cpp
     title: library/linearalgebra/Matrix.cpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/inverse_matrix
@@ -25,18 +25,18 @@ data:
     \n#line 2 \"library/linearalgebra/Matrix.cpp\"\n#define REP_(i, n) for (int i\
     \ = 0; i < (n); i++)\n#define REP2_(i, s, n) for (int i = (s); i < (n); i++)\n\
     template <typename K> struct Matrix {\n    using value_type = K;\n    using vec\
-    \ = vector<K>;\n    using mat = vector<vec>;\n    size_t r, c;\n    mat M;\n\n\
-    \    Matrix(size_t r, size_t c) : r(r), c(c), M(r, vec(c, K())) {}\n    Matrix(mat\
-    \ A) : M(A), r(A.size()), c(A[0].size()) {}\n\n    vec &operator[](size_t k) {\
-    \ return M[k]; }\n    const vec &operator[](size_t k) const { return M[k]; }\n\
-    \n    Matrix &operator+=(const Matrix &A) {\n        assert(r == A.r && c == A.c);\n\
-    \        REP_(i, r) REP_(j, c) M[i][j] += A[i][j];\n        return *this;\n  \
-    \  }\n    Matrix &operator-=(const Matrix &A) {\n        assert(r == A.r && c\
-    \ == A.c);\n        REP_(i, r) REP_(j, c) M[i][j] -= A[i][j];\n        return\
-    \ *this;\n    }\n    Matrix operator+(const Matrix &A) { return Matrix(M) += A;\
-    \ }\n    Matrix operator-(const Matrix &A) { return Matrix(M) -= A; }\n\n    friend\
-    \ Matrix operator*(const Matrix &A, const Matrix &B) {\n        assert(A.c ==\
-    \ B.r);\n        Matrix res(A.r, B.c);\n        REP_(i, A.r) REP_(k, A.c) REP_(j,\
+    \ = std::vector<K>;\n    using mat = std::vector<vec>;\n    size_t r, c;\n   \
+    \ mat M;\n\n    Matrix(size_t r, size_t c) : r(r), c(c), M(r, vec(c, K())) {}\n\
+    \    Matrix(mat A) : M(A), r(A.size()), c(A[0].size()) {}\n\n    vec &operator[](size_t\
+    \ k) { return M[k]; }\n    const vec &operator[](size_t k) const { return M[k];\
+    \ }\n\n    Matrix &operator+=(const Matrix &A) {\n        assert(r == A.r && c\
+    \ == A.c);\n        REP_(i, r) REP_(j, c) M[i][j] += A[i][j];\n        return\
+    \ *this;\n    }\n    Matrix &operator-=(const Matrix &A) {\n        assert(r ==\
+    \ A.r && c == A.c);\n        REP_(i, r) REP_(j, c) M[i][j] -= A[i][j];\n     \
+    \   return *this;\n    }\n    Matrix operator+(const Matrix &A) { return Matrix(M)\
+    \ += A; }\n    Matrix operator-(const Matrix &A) { return Matrix(M) -= A; }\n\n\
+    \    friend Matrix operator*(const Matrix &A, const Matrix &B) {\n        assert(A.c\
+    \ == B.r);\n        Matrix res(A.r, B.c);\n        REP_(i, A.r) REP_(k, A.c) REP_(j,\
     \ B.c) res[i][j] += A[i][k] * B[k][j];\n        return res;\n    }\n    Matrix\
     \ &operator*=(const Matrix &A) {\n        M = ((*this) * A).M;\n        return\
     \ *this;\n    }\n\n    bool operator==(const Matrix &A) {\n        if (r != A.r\
@@ -50,38 +50,38 @@ data:
     \ 1;\n        }\n        return res;\n    }\n\n    std::pair<int, int> GaussJordan()\
     \ {\n        int rnk = 0, cnt = 0;\n        REP_(k, c) {\n            if (M[rnk][k]\
     \ == 0)\n                REP2_(i, rnk + 1, r)\n            if (M[i][k] != 0) {\n\
-    \                swap(M[i], M[rnk]);\n                cnt ^= 1;\n            \
-    \    break;\n            }\n            if (M[rnk][k] == 0)\n                continue;\n\
-    \            REP_(i, r) if (i != rnk) {\n                K x = M[i][k] / M[rnk][k];\n\
-    \                REP_(j, c) M[i][j] -= M[rnk][j] * x;\n            }\n       \
-    \     if (++rnk == r)\n                break;\n        }\n        return {rnk,\
-    \ cnt};\n    }\n\n    K det() const {\n        assert(r == c);\n        Matrix\
-    \ A(M);\n        const auto &[rnk, cnt] = A.GaussJordan();\n        if (rnk !=\
-    \ r)\n            return 0;\n        K res = 1;\n        REP_(i, r) res *= A[i][i];\n\
-    \        return (cnt ? -res : res);\n    }\n\n    std::optional<Matrix> inv()\
-    \ const {\n        assert(r == c);\n        Matrix A(r, c + c);\n        REP_(i,\
-    \ r) REP_(j, c) A[i][j] = M[i][j];\n        REP_(i, r) REP_(j, c) A[i][c + j]\
-    \ = K(i == j);\n        A.GaussJordan();\n        REP_(i, r) if (A[i][i] == 0)\
-    \ return nullopt;\n        Matrix res(r, c);\n        REP_(i, r) REP_(j, c) res[i][j]\
-    \ = A[i][c + j] / A[i][i];\n        return res;\n    }\n\n    friend std::ostream\
-    \ &operator<<(std::ostream &os, const Matrix &M) {\n        os << M.M;\n     \
-    \   return os;\n    }\n    friend std::istream &operator>>(std::istream &is, Matrix\
-    \ &M) {\n        REP_(i, M.r) REP_(j, M.c) is >> M.M[i][j];\n        return is;\n\
-    \    }\n};\n#undef REP_\n#undef REP2_\n#line 2 \"library/math/ExtraGCD.cpp\"\n\
-    using ll = long long;\nstd::pair<ll, ll> ext_gcd(ll a, ll b) {\n    if (b == 0)\n\
-    \        return {1, 0};\n    auto [X, Y] = ext_gcd(b, a % b);\n    // bX + (a%b)Y\
-    \ = gcd(a,b)\n    // a%b = a - b(a/b)\n    // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n\
-    \    ll x = Y, y = X - (a / b) * Y;\n    return {x, y};\n}\n#line 3 \"library/mod/Modint.cpp\"\
-    \ntemplate <typename T, T MOD = 998244353> struct Mint {\n    inline static constexpr\
-    \ T mod = MOD;\n    T v;\n    Mint() : v(0) {}\n    Mint(signed v) : v(v) {}\n\
-    \    Mint(long long t) {\n        v = t % MOD;\n        if (v < 0)\n         \
-    \   v += MOD;\n    }\n\n    static Mint raw(int v) {\n        Mint x;\n      \
-    \  x.v = v;\n        return x;\n    }\n\n    Mint pow(long long k) const {\n \
-    \       Mint res(1), tmp(v);\n        while (k) {\n            if (k & 1)\n  \
-    \              res *= tmp;\n            tmp *= tmp;\n            k >>= 1;\n  \
-    \      }\n        return res;\n    }\n\n    static Mint add_identity() { return\
-    \ Mint(0); }\n    static Mint mul_identity() { return Mint(1); }\n\n    // Mint\
-    \ inv()const{return pow(MOD-2);}\n    Mint inv() const { return Mint(ext_gcd(v,\
+    \                std::swap(M[i], M[rnk]);\n                cnt ^= 1;\n       \
+    \         break;\n            }\n            if (M[rnk][k] == 0)\n           \
+    \     continue;\n            REP_(i, r) if (i != rnk) {\n                K x =\
+    \ M[i][k] / M[rnk][k];\n                REP_(j, c) M[i][j] -= M[rnk][j] * x;\n\
+    \            }\n            if (++rnk == r)\n                break;\n        }\n\
+    \        return {rnk, cnt};\n    }\n\n    K det() const {\n        assert(r ==\
+    \ c);\n        Matrix A(M);\n        const auto &[rnk, cnt] = A.GaussJordan();\n\
+    \        if (rnk != r)\n            return 0;\n        K res = 1;\n        REP_(i,\
+    \ r) res *= A[i][i];\n        return (cnt ? -res : res);\n    }\n\n    std::optional<Matrix>\
+    \ inv() const {\n        assert(r == c);\n        Matrix A(r, c + c);\n      \
+    \  REP_(i, r) REP_(j, c) A[i][j] = M[i][j];\n        REP_(i, r) REP_(j, c) A[i][c\
+    \ + j] = K(i == j);\n        A.GaussJordan();\n        REP_(i, r) if (A[i][i]\
+    \ == 0) return std::nullopt;\n        Matrix res(r, c);\n        REP_(i, r) REP_(j,\
+    \ c) res[i][j] = A[i][c + j] / A[i][i];\n        return res;\n    }\n\n    friend\
+    \ std::ostream &operator<<(std::ostream &os, const Matrix &M) {\n        os <<\
+    \ M.M;\n        return os;\n    }\n    friend std::istream &operator>>(std::istream\
+    \ &is, Matrix &M) {\n        REP_(i, M.r) REP_(j, M.c) is >> M.M[i][j];\n    \
+    \    return is;\n    }\n};\n#undef REP_\n#undef REP2_\n#line 2 \"library/math/ExtraGCD.cpp\"\
+    \nusing ll = long long;\nstd::pair<ll, ll> ext_gcd(ll a, ll b) {\n    if (b ==\
+    \ 0)\n        return {1, 0};\n    auto [X, Y] = ext_gcd(b, a % b);\n    // bX\
+    \ + (a%b)Y = gcd(a,b)\n    // a%b = a - b(a/b)\n    // \u2234 aY + b(X-(a/b)Y)\
+    \ = gcd(a,b)\n    ll x = Y, y = X - (a / b) * Y;\n    return {x, y};\n}\n#line\
+    \ 3 \"library/mod/Modint.cpp\"\ntemplate <typename T, T MOD = 998244353> struct\
+    \ Mint {\n    inline static constexpr T mod = MOD;\n    T v;\n    Mint() : v(0)\
+    \ {}\n    Mint(signed v) : v(v) {}\n    Mint(long long t) {\n        v = t % MOD;\n\
+    \        if (v < 0)\n            v += MOD;\n    }\n\n    static Mint raw(int v)\
+    \ {\n        Mint x;\n        x.v = v;\n        return x;\n    }\n\n    Mint pow(long\
+    \ long k) const {\n        Mint res(1), tmp(v);\n        while (k) {\n       \
+    \     if (k & 1)\n                res *= tmp;\n            tmp *= tmp;\n     \
+    \       k >>= 1;\n        }\n        return res;\n    }\n\n    static Mint add_identity()\
+    \ { return Mint(0); }\n    static Mint mul_identity() { return Mint(1); }\n\n\
+    \    // Mint inv()const{return pow(MOD-2);}\n    Mint inv() const { return Mint(ext_gcd(v,\
     \ mod).first); }\n\n    Mint &operator+=(Mint a) {\n        v += a.v;\n      \
     \  if (v >= MOD)\n            v -= MOD;\n        return *this;\n    }\n    Mint\
     \ &operator-=(Mint a) {\n        v += MOD - a.v;\n        if (v >= MOD)\n    \
@@ -124,8 +124,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Matrix/Inverse.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Matrix/Inverse.test.cpp
 layout: document

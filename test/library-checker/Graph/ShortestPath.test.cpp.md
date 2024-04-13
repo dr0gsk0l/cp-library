@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   - icon: ':x:'
@@ -62,14 +62,15 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 1 \"library/graph/shortest_path/Dijkstra.cpp\"\
-    \ntemplate <typename WG, typename T = typename WG::weight_type>\nstd::pair<vector<T>,\
-    \ vector<int>> dijkstra(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n\
-    \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<std::pair<T,\
-    \ int>, vector<std::pair<T, int>>,\n                        greater<std::pair<T,\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 1 \"library/graph/shortest_path/Dijkstra.cpp\"\ntemplate <typename\
+    \ WG, typename T = typename WG::weight_type>\nstd::pair<std::vector<T>, std::vector<int>>\
+    \ dijkstra(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T>\
+    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<std::pair<T,\
+    \ int>, std::vector<std::pair<T, int>>,\n                        greater<std::pair<T,\
     \ int>>>\n        que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size())\
     \ {\n        auto [now, id] = que.top();\n        que.pop();\n        if (d[id]\
     \ < now)\n            continue;\n        for (const auto &e : g[id])\n       \
@@ -100,7 +101,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/ShortestPath.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/ShortestPath.test.cpp

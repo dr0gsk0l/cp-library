@@ -28,7 +28,7 @@ data:
   - icon: ':question:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum.test.cpp

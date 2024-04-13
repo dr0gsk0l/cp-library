@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/CentroidDecomposition.cpp
     title: library/tree/CentroidDecomposition.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -42,7 +42,7 @@ data:
     \        for (int to : T[c])\n                if (timing[to] < 0)\n          \
     \          que.push(to);\n        }\n    }\n\n    template <typename X, typename\
     \ F, typename G, typename H>\n    void calc(int root, X initial_val, const F &next_val,\
-    \ const G &action,\n              const H &finish) {\n        std::queue<tuple<int,\
+    \ const G &action,\n              const H &finish) {\n        std::queue<std::tuple<int,\
     \ int, X>> que;\n\n        auto f = [&](int v_, int pre_, X val_, bool is_all)\
     \ {\n            que.emplace(v_, pre_, val_);\n            while (que.size())\
     \ {\n                auto [v, pre, val] = que.front();\n                que.pop();\n\
@@ -95,11 +95,11 @@ data:
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __LOCAL\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << edges[i].to << \" \";\n            cerr << \"\\n\";\n        }\n\
-    \    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph {\n    using\
-    \ Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
+    \        }\n    }\n};\n#line 3 \"library/tree/Tree.cpp\"\nstruct Tree : Graph\
+    \ {\n    using Graph::Graph;\n    Tree() = default;\n    int root = -1;\n    std::vector<int>\
     \ DFS, BFS, depth;\n\n    void scan_root(int indexed = 1) {\n        for (int\
     \ i = 1; i < n; i++) {\n            int p;\n            std::cin >> p;\n     \
     \       add_edge(p - indexed, i);\n        }\n        build();\n    }\n    void\
@@ -109,12 +109,12 @@ data:
     \ v) {\n        assert(~root);\n        if (v == root)\n            return {this,\
     \ in_deg[v], in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v +\
     \ 1]};\n    }\n\n  private:\n    void dfs(int v, int pre = -1) {\n        for\
-    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                swap((*this)[v][0],\
+    \ (auto &e : (*this)[v]) {\n            if (e.to == pre)\n                std::swap((*this)[v][0],\
     \ e);\n            else {\n                depth[e.to] = depth[v] + 1;\n     \
     \           dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n\
     \    }\n\n  public:\n    void build(int r = 0) {\n        if (!is_prepared())\n\
     \            Graph::build();\n        if (~root) {\n            assert(r == root);\n\
-    \            return;\n        }\n        root = r;\n        depth = vector<int>(n,\
+    \            return;\n        }\n        root = r;\n        depth = std::vector<int>(n,\
     \ 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n        dfs(root);\n\
     \        std::queue<int> que;\n        que.push(root);\n        while (que.size())\
     \ {\n            int p = que.front();\n            que.pop();\n            BFS.push_back(p);\n\
@@ -153,8 +153,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
 layout: document

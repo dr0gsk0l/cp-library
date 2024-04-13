@@ -32,8 +32,8 @@ data:
     \ and 0 <= y and y < n);\n        return leader(x) == leader(y);\n    }\n\n  \
     \  bool merge(int x, int y) {\n        assert(0 <= x and x < n and 0 <= y and\
     \ y < n);\n        x = leader(x);\n        y = leader(y);\n        if (x == y)\n\
-    \            return false;\n        if (sz[x] < sz[y])\n            swap(x, y);\n\
-    \        sz[x] += sz[y];\n        parent[y] = x;\n        AbelGroup::Rchop(value[y],\
+    \            return false;\n        if (sz[x] < sz[y])\n            std::swap(x,\
+    \ y);\n        sz[x] += sz[y];\n        parent[y] = x;\n        AbelGroup::Rchop(value[y],\
     \ AbelGroup::inverse(value[x]));\n        num--;\n        return true;\n    }\n\
     \n    int size(const int x) {\n        assert(0 <= x and x < n);\n        return\
     \ sz[leader(x)];\n    }\n\n    int count() const { return num; }\n};\n"
@@ -61,8 +61,8 @@ data:
     \ and 0 <= y and y < n);\n        return leader(x) == leader(y);\n    }\n\n  \
     \  bool merge(int x, int y) {\n        assert(0 <= x and x < n and 0 <= y and\
     \ y < n);\n        x = leader(x);\n        y = leader(y);\n        if (x == y)\n\
-    \            return false;\n        if (sz[x] < sz[y])\n            swap(x, y);\n\
-    \        sz[x] += sz[y];\n        parent[y] = x;\n        AbelGroup::Rchop(value[y],\
+    \            return false;\n        if (sz[x] < sz[y])\n            std::swap(x,\
+    \ y);\n        sz[x] += sz[y];\n        parent[y] = x;\n        AbelGroup::Rchop(value[y],\
     \ AbelGroup::inverse(value[x]));\n        num--;\n        return true;\n    }\n\
     \n    int size(const int x) {\n        assert(0 <= x and x < n);\n        return\
     \ sz[leader(x)];\n    }\n\n    int count() const { return num; }\n};"
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/ApplyUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/ApplyUnionFind.cpp

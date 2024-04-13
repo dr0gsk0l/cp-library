@@ -7,14 +7,14 @@ data:
   - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/util/Subsequence.cpp
     title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/number_of_subsequences
@@ -59,7 +59,7 @@ data:
     \ std::istream &operator>>(std::istream &is, Mint &m) {\n        is >> m.v;\n\
     \        m.v %= MOD;\n        if (m.v < 0)\n            m.v += MOD;\n        return\
     \ is;\n    }\n};\n#line 1 \"library/util/Subsequence.cpp\"\ntemplate <typename\
-    \ T, typename U>\nT sparse_subsequence(const std::vector<U> &v) {\n    std<U,\
+    \ T, typename U>\nT sparse_subsequence(const std::vector<U> &v) {\n    std::map<U,\
     \ T> mp;\n    T res = 1;\n    for (const U &p : v) {\n        T tmp = res;\n \
     \       res = res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n    return res;\n\
     }\ntemplate <typename T, int SIZE> T subsequence(const std::vector<int> &v) {\n\
@@ -87,8 +87,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/New/NumberOfSubsequence.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/New/NumberOfSubsequence.test.cpp
 layout: document

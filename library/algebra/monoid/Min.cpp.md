@@ -29,24 +29,27 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/algebra/monoid/Min.cpp\"\ntemplate<typename X>\n\
-    struct MonoidMin{\n  using value_type = X;\n  static constexpr X op(const X &x,\
-    \ const X &y) noexcept { return min(x,y); }\n  static constexpr void Rchop(X&x,\
-    \ const X&y){ if(x>y)x=y; }\n  static constexpr void Lchop(const X&x, X&y){ if(y>x)y=x;\
-    \ }\n  static constexpr X unit() { return numeric_limits<X>::max()/2; }\n  static\
-    \ constexpr bool commute = true;\n};\n"
-  code: "template<typename X>\nstruct MonoidMin{\n  using value_type = X;\n  static\
-    \ constexpr X op(const X &x, const X &y) noexcept { return min(x,y); }\n  static\
-    \ constexpr void Rchop(X&x, const X&y){ if(x>y)x=y; }\n  static constexpr void\
-    \ Lchop(const X&x, X&y){ if(y>x)y=x; }\n  static constexpr X unit() { return numeric_limits<X>::max()/2;\
-    \ }\n  static constexpr bool commute = true;\n};"
+  bundledCode: "#line 1 \"library/algebra/monoid/Min.cpp\"\ntemplate <typename X>\
+    \ struct MonoidMin {\n    using value_type = X;\n    static constexpr X op(const\
+    \ X &x, const X &y) noexcept {\n        returnstd::min(x, y);\n    }\n    static\
+    \ constexpr void Rchop(X &x, const X &y) {\n        if (x > y)\n            x\
+    \ = y;\n    }\n    static constexpr void Lchop(const X &x, X &y) {\n        if\
+    \ (y > x)\n            y = x;\n    }\n    static constexpr X unit() { return std::numeric_limits<X>::max()\
+    \ / 2; }\n    static constexpr bool commute = true;\n};\n"
+  code: "template <typename X> struct MonoidMin {\n    using value_type = X;\n   \
+    \ static constexpr X op(const X &x, const X &y) noexcept {\n        returnstd::min(x,\
+    \ y);\n    }\n    static constexpr void Rchop(X &x, const X &y) {\n        if\
+    \ (x > y)\n            x = y;\n    }\n    static constexpr void Lchop(const X\
+    \ &x, X &y) {\n        if (y > x)\n            y = x;\n    }\n    static constexpr\
+    \ X unit() { return std::numeric_limits<X>::max() / 2; }\n    static constexpr\
+    \ bool commute = true;\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/algebra/monoid/Min.cpp
   requiredBy:
   - library/algebra/lazy/AddMin.cpp
   - library/algebra/lazy/SetMin.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1038.test.cpp

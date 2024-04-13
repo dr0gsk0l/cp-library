@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/superstd/Set.cpp
     title: library/superstd/Set.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/predecessor_problem
@@ -35,7 +35,7 @@ data:
     \ std::vector<T> &v) {\n        for (const auto &p : v)\n            insert(p);\n\
     \    }\n\n    void scan(int n) {\n        while (n--) {\n            T a;\n  \
     \          std::cin >> a;\n            insert(a);\n        }\n    }\n\n    void\
-    \ banpei() {\n        insert(numeric_limits<T>::max() / 2);\n        insert(numeric_limits<T>::min()\
+    \ banpei() {\n        insert(std::numeric_limits<T>::max() / 2);\n        insert(std::numeric_limits<T>::min()\
     \ / 2);\n    }\n};\n#line 5 \"test/library-checker/DataStructure/PredecessorProblem.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n, q;\n    std::cin >> n >> q;\n    Set<int> se;\n    se.banpei();\n\
@@ -64,8 +64,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PredecessorProblem.test.cpp
 layout: document

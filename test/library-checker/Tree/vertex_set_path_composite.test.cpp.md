@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
   - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   - icon: ':question:'
@@ -22,16 +22,16 @@ data:
   - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedRequiredBy: []
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_set_path_composite.test.cpp

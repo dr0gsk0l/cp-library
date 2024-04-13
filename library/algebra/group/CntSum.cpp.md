@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AffineSum.cpp
     title: library/algebra/lazy/AffineSum.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetSum.cpp
     title: library/algebra/lazy/SetSum.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_I.test.cpp
     title: test/AOJ/DSL_2_I.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/CntSum.cpp\"\ntemplate <typename X>\
@@ -38,8 +38,8 @@ data:
     \ x.first;\n        y.second += x.second;\n    }\n    static constexpr P inverse(const\
     \ P &x) { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0,\
     \ 0}; }\n    static constexpr bool commute = true;\n};\ntemplate <typename X>\
-    \ vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X,\
-    \ X>>(n, {x, 1});\n}\ntemplate <typename X>\nvector<std::pair<X, X>> cnt_init(const\
+    \ std::vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X,\
+    \ X>>(n, {x, 1});\n}\ntemplate <typename X>\nstd::vector<std::pair<X, X>> cnt_init(const\
     \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>>\
     \ res(n);\n    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return\
     \ res;\n}\n"
@@ -51,11 +51,11 @@ data:
     \ P &y) {\n        y.first += x.first;\n        y.second += x.second;\n    }\n\
     \    static constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static\
     \ constexpr P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n\
-    };\ntemplate <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x)\
-    \ {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
-    \ X>\nvector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int n =\
-    \ v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0; i <\
-    \ n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}"
+    };\ntemplate <typename X> std::vector<std::pair<X, X>> cnt_init(int n, const X\
+    \ &x) {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
+    \ X>\nstd::vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int\
+    \ n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0;\
+    \ i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/algebra/group/CntSum.cpp
@@ -63,8 +63,8 @@ data:
   - library/algebra/lazy/AddSum.cpp
   - library/algebra/lazy/SetSum.cpp
   - library/algebra/lazy/AffineSum.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - test/AOJ/GRL_5_E.test.cpp

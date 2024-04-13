@@ -4,20 +4,20 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/group/Add.cpp\"\ntemplate<typename X>\n\
@@ -35,15 +35,16 @@ data:
     \ constexpr void Lchop(const P &x, P &y) {\n        y.first += x.first;\n    \
     \    y.second += x.second;\n    }\n    static constexpr P inverse(const P &x)\
     \ { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0, 0}; }\n\
-    \    static constexpr bool commute = true;\n};\ntemplate <typename X> vector<std::pair<X,\
+    \    static constexpr bool commute = true;\n};\ntemplate <typename X> std::vector<std::pair<X,\
     \ X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X, X>>(n,\
-    \ {x, 1});\n}\ntemplate <typename X>\nvector<std::pair<X, X>> cnt_init(const std::vector<X>\
-    \ &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n   \
-    \ for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n\
-    }\n#line 4 \"library/algebra/lazy/AddSum.cpp\"\ntemplate <typename X> struct LazyAddSum\
-    \ {\n    using MX = GroupCntSum<X>;\n    using MF = GroupAdd<X>;\n    using S\
-    \ = typename MX::value_type;\n    static constexpr S mapping(const X &f, const\
-    \ S &x) {\n        return {x.first + f * x.second, x.second};\n    }\n};\n"
+    \ {x, 1});\n}\ntemplate <typename X>\nstd::vector<std::pair<X, X>> cnt_init(const\
+    \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>>\
+    \ res(n);\n    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return\
+    \ res;\n}\n#line 4 \"library/algebra/lazy/AddSum.cpp\"\ntemplate <typename X>\
+    \ struct LazyAddSum {\n    using MX = GroupCntSum<X>;\n    using MF = GroupAdd<X>;\n\
+    \    using S = typename MX::value_type;\n    static constexpr S mapping(const\
+    \ X &f, const S &x) {\n        return {x.first + f * x.second, x.second};\n  \
+    \  }\n};\n"
   code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/algebra/group/CntSum.cpp\"\
     \ntemplate <typename X> struct LazyAddSum {\n    using MX = GroupCntSum<X>;\n\
     \    using MF = GroupAdd<X>;\n    using S = typename MX::value_type;\n    static\
@@ -55,8 +56,8 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AddSum.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
   - test/AOJ/DSL_2_G.test.cpp

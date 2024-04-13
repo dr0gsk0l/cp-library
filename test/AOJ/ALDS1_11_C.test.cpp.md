@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/shortest_path/BFS.cpp
     title: library/graph/shortest_path/BFS.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C
@@ -59,22 +59,22 @@ data:
     \ &&e : edges)\n            new_edges[counter[e.from]++] = e;\n        edges =\
     \ new_edges;\n    }\n\n    void graph_debug() const {\n#ifndef __LOCAL\n     \
     \   return;\n#endif\n        assert(prepared);\n        for (int from = 0; from\
-    \ < n; from++) {\n            cerr << from << \";\";\n            for (int i =\
-    \ in_deg[from]; i < in_deg[from + 1]; i++)\n                cerr << edges[i].to\
-    \ << \" \";\n            cerr << \"\\n\";\n        }\n    }\n};\n#line 2 \"library/graph/shortest_path/BFS.cpp\"\
-    \ntemplate <typename GRAPH>\nstd::pair<vector<int>, vector<int>> BFS(const GRAPH\
-    \ &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<int> d(g.n,\
-    \ -1), pre(g.n, -1);\n    std::queue<int> que;\n    d[s] = 0;\n    que.push(s);\n\
-    \    while (que.size()) {\n        int v = que.front();\n        que.pop();\n\
-    \        for (int to : g[v])\n            if (d[to] < 0) {\n                d[to]\
-    \ = d[v] + 1;\n                que.push(to);\n            }\n    }\n    return\
-    \ {d, pre};\n}\n#line 9 \"test/AOJ/ALDS1_11_C.test.cpp\"\n\nint main() {\n   \
-    \ std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n    int n;\n\
-    \    std::cin >> n;\n    Graph g(n);\n    REP (_, n) {\n        int u, k;\n  \
-    \      std::cin >> u >> k;\n        u--;\n        REP (_, k) {\n            int\
-    \ v;\n            std::cin >> v;\n            v--;\n            g.add_arc(u, v);\n\
-    \        }\n    }\n    g.build();\n    auto [d, pre] = BFS(g);\n    REP (i, n)\n\
-    \        std::cout << i + 1 << \" \" << d[i] << \"\\n\";\n}\n"
+    \ < n; from++) {\n            std::cerr << from << \";\";\n            for (int\
+    \ i = in_deg[from]; i < in_deg[from + 1]; i++)\n                std::cerr << edges[i].to\
+    \ << \" \";\n            std::cerr << \"\\n\";\n        }\n    }\n};\n#line 2\
+    \ \"library/graph/shortest_path/BFS.cpp\"\ntemplate <typename GRAPH>\nstd::pair<std::vector<int>,\
+    \ std::vector<int>> BFS(const GRAPH &g, int s = 0) {\n    assert(g.is_prepared());\n\
+    \    std::vector<int> d(g.n, -1), pre(g.n, -1);\n    std::queue<int> que;\n  \
+    \  d[s] = 0;\n    que.push(s);\n    while (que.size()) {\n        int v = que.front();\n\
+    \        que.pop();\n        for (int to : g[v])\n            if (d[to] < 0) {\n\
+    \                d[to] = d[v] + 1;\n                que.push(to);\n          \
+    \  }\n    }\n    return {d, pre};\n}\n#line 9 \"test/AOJ/ALDS1_11_C.test.cpp\"\
+    \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
+    \n    int n;\n    std::cin >> n;\n    Graph g(n);\n    REP (_, n) {\n        int\
+    \ u, k;\n        std::cin >> u >> k;\n        u--;\n        REP (_, k) {\n   \
+    \         int v;\n            std::cin >> v;\n            v--;\n            g.add_arc(u,\
+    \ v);\n        }\n    }\n    g.build();\n    auto [d, pre] = BFS(g);\n    REP\
+    \ (i, n)\n        std::cout << i + 1 << \" \" << d[i] << \"\\n\";\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C\"\
     \n#include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\
@@ -91,8 +91,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_11_C.test.cpp
 layout: document

@@ -30,14 +30,16 @@ data:
     \ constexpr X inverse(const X &x) noexcept { return -x; }\n  static constexpr\
     \ X power(const X &x, long long n) noexcept { return X(n) * x; }\n  static constexpr\
     \ X unit() { return X(0); }\n  static constexpr bool commute = true;\n};\n#line\
-    \ 1 \"library/algebra/monoid/Min.cpp\"\ntemplate<typename X>\nstruct MonoidMin{\n\
-    \  using value_type = X;\n  static constexpr X op(const X &x, const X &y) noexcept\
-    \ { return min(x,y); }\n  static constexpr void Rchop(X&x, const X&y){ if(x>y)x=y;\
-    \ }\n  static constexpr void Lchop(const X&x, X&y){ if(y>x)y=x; }\n  static constexpr\
-    \ X unit() { return numeric_limits<X>::max()/2; }\n  static constexpr bool commute\
-    \ = true;\n};\n#line 4 \"library/algebra/lazy/AddMin.cpp\"\ntemplate <typename\
-    \ X> struct LazyAddMin {\n    using MX = MonoidMin<X>;\n    using MF = GroupAdd<X>;\n\
-    \    static constexpr X mapping(const X &f, const X &x) { return f + x; }\n};\n"
+    \ 1 \"library/algebra/monoid/Min.cpp\"\ntemplate <typename X> struct MonoidMin\
+    \ {\n    using value_type = X;\n    static constexpr X op(const X &x, const X\
+    \ &y) noexcept {\n        returnstd::min(x, y);\n    }\n    static constexpr void\
+    \ Rchop(X &x, const X &y) {\n        if (x > y)\n            x = y;\n    }\n \
+    \   static constexpr void Lchop(const X &x, X &y) {\n        if (y > x)\n    \
+    \        y = x;\n    }\n    static constexpr X unit() { return std::numeric_limits<X>::max()\
+    \ / 2; }\n    static constexpr bool commute = true;\n};\n#line 4 \"library/algebra/lazy/AddMin.cpp\"\
+    \ntemplate <typename X> struct LazyAddMin {\n    using MX = MonoidMin<X>;\n  \
+    \  using MF = GroupAdd<X>;\n    static constexpr X mapping(const X &f, const X\
+    \ &x) { return f + x; }\n};\n"
   code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/algebra/monoid/Min.cpp\"\
     \ntemplate <typename X> struct LazyAddMin {\n    using MX = MonoidMin<X>;\n  \
     \  using MF = GroupAdd<X>;\n    static constexpr X mapping(const X &f, const X\
@@ -48,7 +50,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AddMin.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1038.test.cpp

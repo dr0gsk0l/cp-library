@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/util/InversionNumber.cpp
     title: library/util/InversionNumber.cpp
   _extendedRequiredBy: []
@@ -19,12 +19,12 @@ data:
     \ v.begin(), v.end()\ntemplate <typename T, bool Sentinel = false> class Compress\
     \ {\n    std::vector<T> v;\n    bool prepared;\n\n  public:\n    Compress() :\
     \ prepared(false) {\n        if constexpr (Sentinel) {\n            static_assert(std::numeric_limits<T>::is_specialized,\n\
-    \                          \"cannot use Sentinel\");\n            v = {numeric_limits<T>::min(),\
-    \ numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
+    \                          \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
+    \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
     \   static_assert(std::numeric_limits<T>::is_specialized,\n                  \
-    \        \"cannot use Sentinel\");\n            v.push_back(numeric_limits<T>::min());\n\
-    \            v.push_back(numeric_limits<T>::max());\n        }\n        build();\n\
+    \        \"cannot use Sentinel\");\n            v.push_back(std::numeric_limits<T>::min());\n\
+    \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
     \        sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n    }\n\n\
@@ -52,14 +52,14 @@ data:
     \        int j = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n\
     \    }\n    return res;\n}\n#line 3 \"library/util/BubbleNumber.cpp\"\ntemplate\
     \ <typename T>\nlong long bubble_number(const std::vector<T> &v, const std::vector<T>\
-    \ &w) {\n    int n = v.size();\n    assert(w.size() == n);\n    std<T, std::queue<int>>\
+    \ &w) {\n    int n = v.size();\n    assert(w.size() == n);\n    std::map<T, std::queue<int>>\
     \ mp;\n    for (int i = 0; i < n; i++)\n        mp[w[i]].push(i);\n    std::vector<int>\
     \ idx(n);\n    REP (i, n) {\n        if (!mp[v[i]].size())\n            return\
     \ -1;\n        idx[i] = mp[v[i]].front();\n        mp[v[i]].pop();\n    }\n  \
     \  return inversion_number(idx);\n}\n"
   code: "#pragma once\n#include \"library/util/InversionNumber.cpp\"\ntemplate <typename\
     \ T>\nlong long bubble_number(const std::vector<T> &v, const std::vector<T> &w)\
-    \ {\n    int n = v.size();\n    assert(w.size() == n);\n    std<T, std::queue<int>>\
+    \ {\n    int n = v.size();\n    assert(w.size() == n);\n    std::map<T, std::queue<int>>\
     \ mp;\n    for (int i = 0; i < n; i++)\n        mp[w[i]].push(i);\n    std::vector<int>\
     \ idx(n);\n    REP (i, n) {\n        if (!mp[v[i]].size())\n            return\
     \ -1;\n        idx[i] = mp[v[i]].front();\n        mp[v[i]].pop();\n    }\n  \
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/util/BubbleNumber.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/BubbleNumber.cpp

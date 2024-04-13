@@ -13,7 +13,7 @@ data:
     std::string YES(bool f = true) { return (f ? \"YES\" : \"NO\"); }\nstd::string\
     \ Yes(bool f = true) { return (f ? \"Yes\" : \"No\"); }\nstd::string yes(bool\
     \ f = true) { return (f ? \"yes\" : \"no\"); }\n\nconstexpr int INF = 1e9 + 7;\n\
-    constexpr ll LINF = ll(1e18) + 7;\nconstexpr ld EPS = 1e-10;\n\nTYPE(T)\nvector<std::pair<T,\
+    constexpr ll LINF = ll(1e18) + 7;\nconstexpr ld EPS = 1e-10;\n\nTYPE(T)\nstd::vector<std::pair<T,\
     \ int>> query_sort(const std::vector<T> &v) {\n    std::vector<std::pair<T, int>>\
     \ res(v.size());\n    REP (i, v.size())\n        res[i] = {v[i], i};\n    SORT(res);\n\
     \    return res;\n}\n\nTYPE(T)\nbool chmax(T &a, T b) { return (a < b && (a =\
@@ -29,7 +29,7 @@ data:
     YES\" : \"NO\"); }\nstd::string Yes(bool f = true) { return (f ? \"Yes\" : \"\
     No\"); }\nstd::string yes(bool f = true) { return (f ? \"yes\" : \"no\"); }\n\n\
     constexpr int INF = 1e9 + 7;\nconstexpr ll LINF = ll(1e18) + 7;\nconstexpr ld\
-    \ EPS = 1e-10;\n\nTYPE(T)\nvector<std::pair<T, int>> query_sort(const std::vector<T>\
+    \ EPS = 1e-10;\n\nTYPE(T)\nstd::vector<std::pair<T, int>> query_sort(const std::vector<T>\
     \ &v) {\n    std::vector<std::pair<T, int>> res(v.size());\n    REP (i, v.size())\n\
     \        res[i] = {v[i], i};\n    SORT(res);\n    return res;\n}\n\nTYPE(T)\n\
     bool chmax(T &a, T b) { return (a < b && (a = b, true)); }\nTYPE(T)\nbool chmin(T\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: false
   path: library/util/template.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/template.cpp

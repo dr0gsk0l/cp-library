@@ -14,11 +14,11 @@ data:
   - icon: ':warning:'
     path: library/util/BubbleNumber.cpp
     title: library/util/BubbleNumber.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/util/InversionNumber.cpp
     title: library/util/InversionNumber.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_5_D.test.cpp
     title: test/AOJ/ALDS1_5_D.test.cpp
   - icon: ':x:'
@@ -47,19 +47,19 @@ data:
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/util/Compress.cpp\"\n#define ALL_(v) v.begin(),\
     \ v.end()\ntemplate <typename T, bool Sentinel = false> class Compress {\n   \
     \ std::vector<T> v;\n    bool prepared;\n\n  public:\n    Compress() : prepared(false)\
     \ {\n        if constexpr (Sentinel) {\n            static_assert(std::numeric_limits<T>::is_specialized,\n\
-    \                          \"cannot use Sentinel\");\n            v = {numeric_limits<T>::min(),\
-    \ numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
+    \                          \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
+    \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
     \   static_assert(std::numeric_limits<T>::is_specialized,\n                  \
-    \        \"cannot use Sentinel\");\n            v.push_back(numeric_limits<T>::min());\n\
-    \            v.push_back(numeric_limits<T>::max());\n        }\n        build();\n\
+    \        \"cannot use Sentinel\");\n            v.push_back(std::numeric_limits<T>::min());\n\
+    \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
     \        sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n    }\n\n\
@@ -85,12 +85,12 @@ data:
     \ Sentinel = false> class Compress {\n    std::vector<T> v;\n    bool prepared;\n\
     \n  public:\n    Compress() : prepared(false) {\n        if constexpr (Sentinel)\
     \ {\n            static_assert(std::numeric_limits<T>::is_specialized,\n     \
-    \                     \"cannot use Sentinel\");\n            v = {numeric_limits<T>::min(),\
-    \ numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
+    \                     \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
+    \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
     \   static_assert(std::numeric_limits<T>::is_specialized,\n                  \
-    \        \"cannot use Sentinel\");\n            v.push_back(numeric_limits<T>::min());\n\
-    \            v.push_back(numeric_limits<T>::max());\n        }\n        build();\n\
+    \        \"cannot use Sentinel\");\n            v.push_back(std::numeric_limits<T>::min());\n\
+    \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
     \        sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n    }\n\n\
@@ -121,8 +121,8 @@ data:
   - library/util/InversionNumber.cpp
   - library/util/BubbleNumber.cpp
   - library/r2/Projection.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

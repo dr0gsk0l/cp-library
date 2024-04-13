@@ -9,17 +9,17 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/superstd/Map.cpp\"\ntemplate <typename Key, typename\
-    \ Val> struct Map : std<Key, Val> {\n    using std<Key, Val>::erase;\n\n    void\
-    \ operator()(Key key, Val val) {\n        if (!((*this)[key] += val))\n      \
-    \      erase(key);\n    }\n};\n"
-  code: "template <typename Key, typename Val> struct Map : std<Key, Val> {\n    using\
-    \ std<Key, Val>::erase;\n\n    void operator()(Key key, Val val) {\n        if\
-    \ (!((*this)[key] += val))\n            erase(key);\n    }\n};"
+    \ Val> struct Map : std::map<Key, Val> {\n    using std::map<Key, Val>::erase;\n\
+    \n    void operator()(Key key, Val val) {\n        if (!((*this)[key] += val))\n\
+    \            erase(key);\n    }\n};\n"
+  code: "template <typename Key, typename Val> struct Map : std::map<Key, Val> {\n\
+    \    using std::map<Key, Val>::erase;\n\n    void operator()(Key key, Val val)\
+    \ {\n        if (!((*this)[key] += val))\n            erase(key);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/superstd/Map.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/superstd/Map.cpp

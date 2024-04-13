@@ -6,16 +6,16 @@ data:
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2971.test.cpp
     title: test/AOJ/2971.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_E.test.cpp
     title: test/AOJ/NTL_1_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - icon: ':x:'
@@ -27,22 +27,22 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Det.test.cpp
     title: test/library-checker/Matrix/Det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Inverse.test.cpp
     title: test/library-checker/Matrix/Inverse.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Matrix/Product.test.cpp
     title: test/library-checker/Matrix/Product.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/New/NumberOfSubsequence.test.cpp
     title: test/library-checker/New/NumberOfSubsequence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Convolution.test.cpp
     title: test/library-checker/Polynomial/Convolution.test.cpp
   - icon: ':x:'
@@ -51,7 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/117.test.cpp
     title: test/yukicoder/117.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1502.test.cpp
     title: test/yukicoder/1502.test.cpp
   - icon: ':x:'
@@ -77,7 +77,7 @@ data:
   path: library/math/ExtraGCD.cpp
   requiredBy:
   - library/mod/Modint.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp

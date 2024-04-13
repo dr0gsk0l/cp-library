@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeLazy.cpp
     title: library/tree/TreeLazy.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/DSL_2_F.test.cpp
     title: test/AOJ/DSL_2_F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
   - icon: ':x:'
     path: test/AOJ/DSL_2_H.test.cpp
     title: test/AOJ/DSL_2_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_I.test.cpp
     title: test/AOJ/DSL_2_I.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/segtree/LazySegmentTree.cpp\"\n\ntemplate <typename\
@@ -43,7 +43,7 @@ data:
     \ i = log; i; i--)\n            push(k >> i);\n    }\n    void update(int i) {\
     \ dat[i] = MX::op(reflect(2 * i), reflect(2 * i + 1)); }\n    void recalc(int\
     \ k) {\n        while (k >>= 1)\n            update(k);\n    }\n\n  public:\n\
-    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(vector<X>(n,\
+    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(std::vector<X>(n,\
     \ MX::unit())) {}\n    LazySegmentTree(const std::vector<X> &v) : n(v.size())\
     \ {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n        size =\
     \ 1 << log;\n        dat.assign(size << 1, MX::unit());\n        laz.assign(size,\
@@ -79,7 +79,7 @@ data:
     \    void update(int i) { dat[i] = MX::op(reflect(2 * i), reflect(2 * i + 1));\
     \ }\n    void recalc(int k) {\n        while (k >>= 1)\n            update(k);\n\
     \    }\n\n  public:\n    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int\
-    \ n) : LazySegmentTree(vector<X>(n, MX::unit())) {}\n    LazySegmentTree(const\
+    \ n) : LazySegmentTree(std::vector<X>(n, MX::unit())) {}\n    LazySegmentTree(const\
     \ std::vector<X> &v) : n(v.size()) {\n        for (log = 1; (1 << log) < n; log++)\
     \ {\n        }\n        size = 1 << log;\n        dat.assign(size << 1, MX::unit());\n\
     \        laz.assign(size, MF::unit());\n        for (int i = 0; i < n; ++i)\n\
@@ -105,8 +105,8 @@ data:
   path: library/segtree/LazySegmentTree.cpp
   requiredBy:
   - library/tree/TreeLazy.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   - test/AOJ/GRL_5_E.test.cpp

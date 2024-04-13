@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []
@@ -73,13 +73,13 @@ data:
     \                   pop_front();\n                else\n                    break;\n\
     \            }\n        }\n        push_front(l);\n    }\n\n  public:\n    using\
     \ value_type = L;\n    using deque<L>::size;\n\n    ConvexHullTrick() = default;\n\
-    \    ConvexHullTrick(vector<L> lines) {\n        if (OBJ == -1)\n            for\
-    \ (auto &l : lines)\n                l = -l;\n        sort(lines.begin(), lines.end());\n\
-    \        for (const auto &l : lines)\n            internal_push_back(l);\n   \
-    \ }\n\n    void add(L l) {\n        if (OBJ == -1)\n            l = -l;\n    \
-    \    if (!size() or back().a >= l.a)\n            internal_push_back(l);\n   \
-    \     else if (l.a >= front().a)\n            internal_push_front(l);\n      \
-    \  else\n            assert(false);\n    }\n\n    void add(T a, T b) { add(L(a,\
+    \    ConvexHullTrick(std::vector<L> lines) {\n        if (OBJ == -1)\n       \
+    \     for (auto &l : lines)\n                l = -l;\n        sort(lines.begin(),\
+    \ lines.end());\n        for (const auto &l : lines)\n            internal_push_back(l);\n\
+    \    }\n\n    void add(L l) {\n        if (OBJ == -1)\n            l = -l;\n \
+    \       if (!size() or back().a >= l.a)\n            internal_push_back(l);\n\
+    \        else if (l.a >= front().a)\n            internal_push_front(l);\n   \
+    \     else\n            assert(false);\n    }\n\n    void add(T a, T b) { add(L(a,\
     \ b)); }\n\n    T query(T x) const {\n        assert(size());\n        int l =\
     \ -1, r = size() - 1;\n        while (r - l > 1) {\n            int m = (l + r)\
     \ >> 1;\n            (at(m)(x) >= at(m + 1)(x) ? l : r) = m;\n        }\n    \
@@ -132,7 +132,7 @@ data:
     \ l3 = at(1);\n                if (check(l, l2, l3))\n                    pop_front();\n\
     \                else\n                    break;\n            }\n        }\n\
     \        push_front(l);\n    }\n\n  public:\n    using value_type = L;\n    using\
-    \ deque<L>::size;\n\n    ConvexHullTrick() = default;\n    ConvexHullTrick(vector<L>\
+    \ deque<L>::size;\n\n    ConvexHullTrick() = default;\n    ConvexHullTrick(std::vector<L>\
     \ lines) {\n        if (OBJ == -1)\n            for (auto &l : lines)\n      \
     \          l = -l;\n        sort(lines.begin(), lines.end());\n        for (const\
     \ auto &l : lines)\n            internal_push_back(l);\n    }\n\n    void add(L\
@@ -167,7 +167,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/ConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2012.test.cpp

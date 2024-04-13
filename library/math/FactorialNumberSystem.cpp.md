@@ -41,24 +41,25 @@ data:
     \u6570 K \u306B\u5BFE\u3057\u3066\u3001N \u306E\u9806\u5217\u3067 0-indexed K\
     \ \u756A\u76EE\u3092\u8FD4\u3059\nstatic std::vector<int> to_permutation(const\
     \ std::vector<int> &v) {\n    int N = v.size();\n    std::vector<int> p(N);\n\
-    \    FenwickTree<GroupAdd<int>> ft(vector<int>(N, 1));\n    for (int i = 0; i\
-    \ < N; i++) {\n        p[i] = ft.kth(v[N - 1 - i]);\n        ft.add(p[i], -1);\n\
-    \    }\n    return p;\n}\n\n// N \u306E\u9806\u5217\u304C 0-indexed K \u756A\u76EE\
-    \u3067\u3042\u308B\u3068\u304D\u3001N \u6841\u306E\u968E\u4E57\u9032\u6570 K \u3092\
-    \u8FD4\u3059\nstatic std::vector<int> to_factorial(const std::vector<int> &p)\
-    \ {\n    int N = p.size();\n    std::vector<int> v(N);\n    FenwickTree<GroupAdd<int>>\
-    \ ft(vector<int>(N, 1));\n    for (int i = 0; i < N; i++) {\n        int k = ft.sum(p[i]);\n\
-    \        v[N - 1 - i] = k;\n        ft.add(p[i], -1);\n    }\n    return v;\n\
-    }\n\n// N \u6841\u306E\u968E\u4E57\u9032\u6570\u306E\u548C mod N!\nstd::vector<int>\
-    \ sum(vector<int> p, const std::vector<int> &q) {\n    int N = p.size();\n   \
-    \ assert(q.size() == N);\n    for (int i = 0; i < N; i++) {\n        p[i] += q[i];\n\
-    \        if (p[i] > i) {\n            p[i] -= i + 1;\n            if (i + 1 <\
-    \ N)\n                p[i + 1]++;\n        }\n    }\n    return p;\n}\n\n// sum(p,q)=0\
-    \ \u3068\u306A\u308B q \u3092\u8FD4\u3059\nstd::vector<int> inv(vector<int> p)\
-    \ {\n    int N = p.size();\n    std::vector<int> q(N);\n    for (int i = 0; i\
-    \ < N; i++) {\n        if (p[i]) {\n            q[i] = i + 1 - p[i];\n       \
-    \     if (i + 1 < N)\n                p[i + 1]++;\n        } else\n          \
-    \  q[i] = 0;\n    }\n    return q;\n}\n} // namespace factorial_number_system\n"
+    \    FenwickTree<GroupAdd<int>> ft(std::vector<int>(N, 1));\n    for (int i =\
+    \ 0; i < N; i++) {\n        p[i] = ft.kth(v[N - 1 - i]);\n        ft.add(p[i],\
+    \ -1);\n    }\n    return p;\n}\n\n// N \u306E\u9806\u5217\u304C 0-indexed K \u756A\
+    \u76EE\u3067\u3042\u308B\u3068\u304D\u3001N \u6841\u306E\u968E\u4E57\u9032\u6570\
+    \ K \u3092\u8FD4\u3059\nstatic std::vector<int> to_factorial(const std::vector<int>\
+    \ &p) {\n    int N = p.size();\n    std::vector<int> v(N);\n    FenwickTree<GroupAdd<int>>\
+    \ ft(std::vector<int>(N, 1));\n    for (int i = 0; i < N; i++) {\n        int\
+    \ k = ft.sum(p[i]);\n        v[N - 1 - i] = k;\n        ft.add(p[i], -1);\n  \
+    \  }\n    return v;\n}\n\n// N \u6841\u306E\u968E\u4E57\u9032\u6570\u306E\u548C\
+    \ mod N!\nstd::vector<int> sum(std::vector<int> p, const std::vector<int> &q)\
+    \ {\n    int N = p.size();\n    assert(q.size() == N);\n    for (int i = 0; i\
+    \ < N; i++) {\n        p[i] += q[i];\n        if (p[i] > i) {\n            p[i]\
+    \ -= i + 1;\n            if (i + 1 < N)\n                p[i + 1]++;\n       \
+    \ }\n    }\n    return p;\n}\n\n// sum(p,q)=0 \u3068\u306A\u308B q \u3092\u8FD4\
+    \u3059\nstd::vector<int> inv(std::vector<int> p) {\n    int N = p.size();\n  \
+    \  std::vector<int> q(N);\n    for (int i = 0; i < N; i++) {\n        if (p[i])\
+    \ {\n            q[i] = i + 1 - p[i];\n            if (i + 1 < N)\n          \
+    \      p[i + 1]++;\n        } else\n            q[i] = 0;\n    }\n    return q;\n\
+    }\n} // namespace factorial_number_system\n"
   dependsOn:
   - library/datastructure/FenwickTree.cpp
   - library/algebra/group/Add.cpp
@@ -67,7 +68,7 @@ data:
   isVerificationFile: false
   path: library/math/FactorialNumberSystem.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/FactorialNumberSystem.cpp

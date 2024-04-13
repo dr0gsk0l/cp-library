@@ -33,8 +33,8 @@ data:
     \n\nstd::random_device rollonghash_rnd;\nstd::mt19937 rollonghash_mt(rollonghash_rnd());\n\
     \ntemplate <typename CHAR = char, typename MINT = Modint61> class RollingHash\
     \ {\n    using ll = long long;\n    static constexpr ll mod = (1LL << 61) - 1;\n\
-    \    // using T = conditional_t< less<ll>(mod,ll(numeric_limits<int>::max())),\n\
-    \    // int, ll>;\n    using T = ll;\n    inline static const MINT base = MINT::raw(rollonghash_mt()\
+    \    // using T = conditional_t< less<ll>(mod,ll(\n    // std::numeric_limits<int>::max())),\
+    \ int, ll>;\n    using T = ll;\n    inline static const MINT base = MINT::raw(rollonghash_mt()\
     \ % (mod - 2) + 2);\n\n    int n;\n    std::vector<MINT> hash;\n\n  public:\n\
     \    static std::vector<MINT> power(1, 1);\n\n    RollingHash() = default;\n \
     \   RollingHash(const std::vector<CHAR> &v) : n(v.size()), hash(n + 1, 0) {\n\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/sequence/RollingHash.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

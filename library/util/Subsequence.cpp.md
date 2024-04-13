@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/New/NumberOfSubsequence.test.cpp
     title: test/library-checker/New/NumberOfSubsequence.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Subsequence.cpp\"\ntemplate <typename T, typename\
-    \ U>\nT sparse_subsequence(const std::vector<U> &v) {\n    std<U, T> mp;\n   \
-    \ T res = 1;\n    for (const U &p : v) {\n        T tmp = res;\n        res =\
-    \ res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n    return res;\n}\ntemplate\
+    \ U>\nT sparse_subsequence(const std::vector<U> &v) {\n    std::map<U, T> mp;\n\
+    \    T res = 1;\n    for (const U &p : v) {\n        T tmp = res;\n        res\
+    \ = res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n    return res;\n}\ntemplate\
     \ <typename T, int SIZE> T subsequence(const std::vector<int> &v) {\n    std::vector<T>\
     \ memo(SIZE, 0);\n    T res = 1;\n    for (int p : v) {\n        T tmp = res;\n\
     \        res = res * 2 - memo[p];\n        memo[p] = tmp;\n    }\n    return res;\n\
@@ -22,12 +22,12 @@ data:
     \ v;\n    v.reserve(s.size());\n    for (char c : s)\n        v.push_back(c -\
     \ (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T, 26>(v);\n}\n"
   code: "template <typename T, typename U>\nT sparse_subsequence(const std::vector<U>\
-    \ &v) {\n    std<U, T> mp;\n    T res = 1;\n    for (const U &p : v) {\n     \
-    \   T tmp = res;\n        res = res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n\
-    \    return res;\n}\ntemplate <typename T, int SIZE> T subsequence(const std::vector<int>\
-    \ &v) {\n    std::vector<T> memo(SIZE, 0);\n    T res = 1;\n    for (int p : v)\
-    \ {\n        T tmp = res;\n        res = res * 2 - memo[p];\n        memo[p] =\
-    \ tmp;\n    }\n    return res;\n}\ntemplate <typename T> T subsequence_alphabet(const\
+    \ &v) {\n    std::map<U, T> mp;\n    T res = 1;\n    for (const U &p : v) {\n\
+    \        T tmp = res;\n        res = res * 2 - mp[p];\n        mp[p] = tmp;\n\
+    \    }\n    return res;\n}\ntemplate <typename T, int SIZE> T subsequence(const\
+    \ std::vector<int> &v) {\n    std::vector<T> memo(SIZE, 0);\n    T res = 1;\n\
+    \    for (int p : v) {\n        T tmp = res;\n        res = res * 2 - memo[p];\n\
+    \        memo[p] = tmp;\n    }\n    return res;\n}\ntemplate <typename T> T subsequence_alphabet(const\
     \ std::string &s) {\n    std::vector<int> v;\n    v.reserve(s.size());\n    for\
     \ (char c : s)\n        v.push_back(c - (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T,\
     \ 26>(v);\n}"
@@ -35,8 +35,8 @@ data:
   isVerificationFile: false
   path: library/util/Subsequence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp
 documentation_of: library/util/Subsequence.cpp

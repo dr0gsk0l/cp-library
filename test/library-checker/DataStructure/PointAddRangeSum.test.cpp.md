@@ -7,14 +7,14 @@ data:
   - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
@@ -46,8 +46,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
 layout: document

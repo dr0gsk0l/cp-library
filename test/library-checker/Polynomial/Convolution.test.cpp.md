@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/convolution/NTT.cpp
     title: library/convolution/NTT.cpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -24,13 +24,13 @@ data:
     #define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n#include\
     \ <bits/stdc++.h>\n\n#line 2 \"library/convolution/NTT.cpp\"\n#define REP_(i,\
     \ n) for (int i = 0; i < (n); i++)\n#define RREP_(i, n) for (int i = (n)-1; i\
-    \ >= 0; i--)\n\ntemplate <typename MINT>\nvector<MINT> convolution(vector<MINT>\
-    \ f, vector<MINT> g) {\n    int nf = f.size(), ng = g.size();\n    if (!nf or\
-    \ !ng)\n        return std::vector<MINT>{};\n    int M = nf + ng - 1;\n\n    if\
-    \ (nf <= 60 or ng <= 60) {\n        std::vector<MINT> res(M, 0);\n        REP_(i,\
-    \ nf) REP_(j, ng) res[i + j] += f[i] * g[j];\n        return res;\n    }\n\n \
-    \   int lg;\n    for (lg = 0; (1 << lg) < M; lg++) {\n    }\n    const int N =\
-    \ 1 << lg;\n    f.resize(N, 0);\n    g.resize(N, 0);\n\n    static_assert(MINT::mod\
+    \ >= 0; i--)\n\ntemplate <typename MINT>\nstd::vector<MINT> convolution(std::vector<MINT>\
+    \ f, std::vector<MINT> g) {\n    int nf = f.size(), ng = g.size();\n    if (!nf\
+    \ or !ng)\n        return std::vector<MINT>{};\n    int M = nf + ng - 1;\n\n \
+    \   if (nf <= 60 or ng <= 60) {\n        std::vector<MINT> res(M, 0);\n      \
+    \  REP_(i, nf) REP_(j, ng) res[i + j] += f[i] * g[j];\n        return res;\n \
+    \   }\n\n    int lg;\n    for (lg = 0; (1 << lg) < M; lg++) {\n    }\n    const\
+    \ int N = 1 << lg;\n    f.resize(N, 0);\n    g.resize(N, 0);\n\n    static_assert(MINT::mod\
     \ == 998244353);\n    MINT c = MINT(3).pow((MINT::mod - 1) >> lg);\n    std::vector<MINT>\
     \ cs(N);\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c : 1);\n\n    std::vector<int>\
     \ x(N, 0);\n    REP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1))\
@@ -101,8 +101,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Convolution.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Convolution.test.cpp
 layout: document

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
@@ -54,33 +54,33 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 3 \"library/graph/Grid8.cpp\"\
-    \n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename T> class\
-    \ Grid8 {\n    const int h, w;\n    std::optional<T> ban;\n    // D,DR,R,RU,U,UL,L,LD\n\
-    \    static constexpr std::pair<int, int> d8[8] = {\n        {1, 0}, {1, 1}, {0,\
-    \ 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}};\n    template <typename vecvecT>\
-    \ void build(const vecvecT &grid) {\n        REP_(y, h) REP_(x, w) {\n       \
-    \     int p = id(y, x);\n            v[p] = grid[y][x];\n            if (ban and\
-    \ v[p] == ban.value())\n                continue;\n            REP_(d, 8) {\n\
-    \                int y2 = y + d8[d].first, x2 = x + d8[d].second;\n          \
-    \      if (in(y2, x2) and (!ban or ban.value() != grid[y2][x2]))\n           \
-    \         G.add_arc(p, id(y2, x2), d);\n            }\n        }\n        G.build();\n\
-    \    }\n\n  public:\n    std::vector<T> v;\n    WeightedGraph<int> G;\n    bool\
-    \ in(int y, int x) const {\n        return 0 <= y and y < h and 0 <= x and x <\
-    \ w;\n    }\n    int id(int y, int x) const {\n        assert(in(y, x));\n   \
-    \     return y * w + x;\n    }\n    std::pair<int, int> r2(int a) const {\n  \
-    \      assert(0 <= a and a < h * w);\n        return {a / w, a % w};\n    }\n\n\
-    \    Grid8(const std::vector<vector<T>> &grid,\n          const std::optional<T>\
-    \ &ban = nullopt)\n        : h(grid.size()), w(grid[0].size()), ban(ban), v(h\
-    \ * w), G(h * w) {\n        build(grid);\n    }\n    Grid8(const std::vector<std::string>\
-    \ &s,\n          const std::optional<T> &ban = nullopt)\n        : h(s.size()),\
-    \ w(s[0].size()), ban(ban), v(h * w), G(h * w) {\n        static_assert(is_same<T,\
-    \ char>::value, \"value_type==char\");\n        build(s);\n    }\n\n    int find(const\
-    \ T &c) const {\n        REP_(i, h * w) if (v[i] == c) return i;\n        return\
-    \ -1;\n    }\n};\n#undef REP_\n"
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 3 \"library/graph/Grid8.cpp\"\n#define REP_(i, n) for (int i\
+    \ = 0; i < (n); i++)\ntemplate <typename T> class Grid8 {\n    const int h, w;\n\
+    \    std::optional<T> ban;\n    // D,DR,R,RU,U,UL,L,LD\n    static constexpr std::pair<int,\
+    \ int> d8[8] = {\n        {1, 0}, {1, 1}, {0, 1}, {-1, 1}, {-1, 0}, {-1, -1},\
+    \ {0, -1}, {1, -1}};\n    template <typename vecvecT> void build(const vecvecT\
+    \ &grid) {\n        REP_(y, h) REP_(x, w) {\n            int p = id(y, x);\n \
+    \           v[p] = grid[y][x];\n            if (ban and v[p] == ban.value())\n\
+    \                continue;\n            REP_(d, 8) {\n                int y2 =\
+    \ y + d8[d].first, x2 = x + d8[d].second;\n                if (in(y2, x2) and\
+    \ (!ban or ban.value() != grid[y2][x2]))\n                    G.add_arc(p, id(y2,\
+    \ x2), d);\n            }\n        }\n        G.build();\n    }\n\n  public:\n\
+    \    std::vector<T> v;\n    WeightedGraph<int> G;\n    bool in(int y, int x) const\
+    \ {\n        return 0 <= y and y < h and 0 <= x and x < w;\n    }\n    int id(int\
+    \ y, int x) const {\n        assert(in(y, x));\n        return y * w + x;\n  \
+    \  }\n    std::pair<int, int> r2(int a) const {\n        assert(0 <= a and a <\
+    \ h * w);\n        return {a / w, a % w};\n    }\n\n    Grid8(const std::vector<std::vector<T>>\
+    \ &grid,\n          const std::optional<T> &ban = std::nullopt)\n        : h(grid.size()),\
+    \ w(grid[0].size()), ban(ban), v(h * w), G(h * w) {\n        build(grid);\n  \
+    \  }\n    Grid8(const std::vector<std::string> &s,\n          const std::optional<T>\
+    \ &ban = std::nullopt)\n        : h(s.size()), w(s[0].size()), ban(ban), v(h *\
+    \ w), G(h * w) {\n        static_assert(is_same<T, char>::value, \"value_type==char\"\
+    );\n        build(s);\n    }\n\n    int find(const T &c) const {\n        REP_(i,\
+    \ h * w) if (v[i] == c) return i;\n        return -1;\n    }\n};\n#undef REP_\n"
   code: "#pragma once\n#include \"library/graph/WeightedGraph.cpp\"\n#define REP_(i,\
     \ n) for (int i = 0; i < (n); i++)\ntemplate <typename T> class Grid8 {\n    const\
     \ int h, w;\n    std::optional<T> ban;\n    // D,DR,R,RU,U,UL,L,LD\n    static\
@@ -97,10 +97,10 @@ data:
     \ w;\n    }\n    int id(int y, int x) const {\n        assert(in(y, x));\n   \
     \     return y * w + x;\n    }\n    std::pair<int, int> r2(int a) const {\n  \
     \      assert(0 <= a and a < h * w);\n        return {a / w, a % w};\n    }\n\n\
-    \    Grid8(const std::vector<vector<T>> &grid,\n          const std::optional<T>\
-    \ &ban = nullopt)\n        : h(grid.size()), w(grid[0].size()), ban(ban), v(h\
-    \ * w), G(h * w) {\n        build(grid);\n    }\n    Grid8(const std::vector<std::string>\
-    \ &s,\n          const std::optional<T> &ban = nullopt)\n        : h(s.size()),\
+    \    Grid8(const std::vector<std::vector<T>> &grid,\n          const std::optional<T>\
+    \ &ban = std::nullopt)\n        : h(grid.size()), w(grid[0].size()), ban(ban),\
+    \ v(h * w), G(h * w) {\n        build(grid);\n    }\n    Grid8(const std::vector<std::string>\
+    \ &s,\n          const std::optional<T> &ban = std::nullopt)\n        : h(s.size()),\
     \ w(s[0].size()), ban(ban), v(h * w), G(h * w) {\n        static_assert(is_same<T,\
     \ char>::value, \"value_type==char\");\n        build(s);\n    }\n\n    int find(const\
     \ T &c) const {\n        REP_(i, h * w) if (v[i] == c) return i;\n        return\
@@ -110,7 +110,7 @@ data:
   isVerificationFile: false
   path: library/graph/Grid8.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/Grid8.cpp

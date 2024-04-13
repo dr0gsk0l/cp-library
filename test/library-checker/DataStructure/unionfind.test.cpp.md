@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
@@ -26,10 +26,10 @@ data:
     \    }\n\n    bool merge(int x, int y) {\n        assert(0 <= x and x < n and\
     \ 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n       \
     \ if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n       \
-    \     swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n        num--;\n\
-    \        return true;\n    }\n\n    int size(const int x) {\n        assert(0\
-    \ <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int count() const\
-    \ { return num; }\n};\n#line 5 \"test/library-checker/DataStructure/unionfind.test.cpp\"\
+    \     std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n    \
+    \    num--;\n        return true;\n    }\n\n    int size(const int x) {\n    \
+    \    assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
+    \ count() const { return num; }\n};\n#line 5 \"test/library-checker/DataStructure/unionfind.test.cpp\"\
     \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    UnionFind uf(n);\n\
     \    while (q--) {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n \
     \       if (t)\n            std::cout << uf.same(u, v) << \"\\n\";\n        else\n\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/unionfind.test.cpp
 layout: document

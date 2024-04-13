@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
     title: test/library-checker/DataStructure/PredecessorProblem.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/superstd/Set.cpp\"\ntemplate <typename T> struct\
@@ -30,7 +30,7 @@ data:
     \ std::vector<T> &v) {\n        for (const auto &p : v)\n            insert(p);\n\
     \    }\n\n    void scan(int n) {\n        while (n--) {\n            T a;\n  \
     \          std::cin >> a;\n            insert(a);\n        }\n    }\n\n    void\
-    \ banpei() {\n        insert(numeric_limits<T>::max() / 2);\n        insert(numeric_limits<T>::min()\
+    \ banpei() {\n        insert(std::numeric_limits<T>::max() / 2);\n        insert(std::numeric_limits<T>::min()\
     \ / 2);\n    }\n};\n"
   code: "template <typename T> struct Set : std::set<T> {\n    using std::set<T>::size;\n\
     \    using std::set<T>::begin;\n    using std::set<T>::rbegin;\n    using std::set<T>::insert;\n\
@@ -50,14 +50,14 @@ data:
     \n    Set() = default;\n    Set(const std::vector<T> &v) {\n        for (const\
     \ auto &p : v)\n            insert(p);\n    }\n\n    void scan(int n) {\n    \
     \    while (n--) {\n            T a;\n            std::cin >> a;\n           \
-    \ insert(a);\n        }\n    }\n\n    void banpei() {\n        insert(numeric_limits<T>::max()\
-    \ / 2);\n        insert(numeric_limits<T>::min() / 2);\n    }\n};"
+    \ insert(a);\n        }\n    }\n\n    void banpei() {\n        insert(std::numeric_limits<T>::max()\
+    \ / 2);\n        insert(std::numeric_limits<T>::min() / 2);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/superstd/Set.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PredecessorProblem.test.cpp
 documentation_of: library/superstd/Set.cpp

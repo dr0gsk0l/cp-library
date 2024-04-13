@@ -14,10 +14,14 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
     \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
     \ File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/std::setpowerseries/Compose.cpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: bitwise/Ranked.cpp:\
     \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_std::set_power_series\"\
     \n#include <bits/stdc++.h>\n\n#include <atcoder/convolution>\n#include <atcoder/modint>\n\
@@ -25,7 +29,7 @@ data:
     std::ostream &operator<<(std::ostream &os, mint a) {\n    os << a.val();\n   \
     \ return os;\n}\nstd::istream &operator>>(std::istream &is, mint &a) {\n    long\
     \ long b;\n    is >> b;\n    a = b;\n    return is;\n}\n} // namespace atcoder\n\
-    \n#include \"library/std::setpowerseries/Compose.cpp\"\nusing SPS = SetPowerSeries<mint>;\n\
+    \n#include \"library/setpowerseries/Compose.cpp\"\nusing SPS = SetPowerSeries<mint>;\n\
     \nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n;\n    std::cin >> n;\n\n    SPS b(1 << n);\n    for (auto &x : b)\n\
     \        std::cin >> x;\n\n    SPS c = exp(b);\n    for (auto &x : c)\n      \

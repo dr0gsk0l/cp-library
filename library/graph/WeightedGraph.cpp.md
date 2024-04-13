@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
   - icon: ':x:'
@@ -26,13 +26,13 @@ data:
   - icon: ':warning:'
     path: library/graph/shortest_path/01BFS.cpp
     title: library/graph/shortest_path/01BFS.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/shortest_path/Dial.cpp
     title: library/graph/shortest_path/Dial.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedVerifiedWith:
@@ -45,31 +45,31 @@ data:
   - icon: ':x:'
     path: test/AOJ/3297.test.cpp
     title: test/AOJ/3297.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_12_B.test.cpp
     title: test/AOJ/ALDS1_12_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DPL_3_B.test.cpp
     title: test/AOJ/DPL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DPL_3_C.test.cpp
     title: test/AOJ/DPL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_1_B.test.cpp
     title: test/AOJ/GRL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_1_C.test.cpp
     title: test/AOJ/GRL_1_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
   - icon: ':x:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_A.test.cpp
     title: test/AOJ/GRL_6_A.test.cpp
   - icon: ':x:'
@@ -90,7 +90,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/Graph/ShortestPath.test.cpp
     title: test/library-checker/Graph/ShortestPath.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
   - icon: ':x:'
@@ -98,7 +98,7 @@ data:
     title: test/yukicoder/1002.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T>\
@@ -144,10 +144,11 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n"
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n"
   code: "#pragma once\ntemplate <typename T> struct WeightedEdge {\n    WeightedEdge()\
     \ = default;\n    WeightedEdge(int from, int to, T weight)\n        : from(from),\
     \ to(to), weight(weight) {}\n    int from, to;\n    T weight;\n    operator int()\
@@ -191,10 +192,11 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n"
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/graph/WeightedGraph.cpp
@@ -210,8 +212,8 @@ data:
   - library/flow/MCF.cpp
   - library/flow/NondecreasingMCF.cpp
   - library/flow/Dinic.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/ShortestPath.test.cpp
   - test/library-checker/Graph/AssignmentProblem.test.cpp

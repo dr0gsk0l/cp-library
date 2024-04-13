@@ -1,19 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/RunEnumerate.cpp
     title: library/sequence/RunEnumerate.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/runenumerate
+    links:
+    - https://judge.yosupo.jp/problem/runenumerate
   bundledCode: "#line 1 \"test/library-checker/String/RunEnumerate.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/runenumerate\"\n#include <bits/stdc++.h>\n\
-    \n#line 2 \"library/sequence/RunEnumerate.cpp\"\n#include <atcoder/std::string>\n\
-    using namespace atcoder;\n\n#define SIZE_(s) int(s.size())\n\nstruct RunEnumerate\
+    \n#line 2 \"library/sequence/RunEnumerate.cpp\"\n#include <atcoder/string>\nusing\
+    \ namespace atcoder;\n\n#define SIZE_(s) int(s.size())\n\nstruct RunEnumerate\
     \ {\n    std::string s;\n    RunEnumerate(const std::string &s) : s(s) { build();\
     \ }\n\n    struct Run {\n        int t, l, r;\n        Run() = default;\n    \
     \    Run(int t, int l, int r) : t(t), l(l), r(r) {}\n    };\n    std::vector<Run>\
@@ -71,8 +75,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/String/RunEnumerate.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/String/RunEnumerate.test.cpp
 layout: document

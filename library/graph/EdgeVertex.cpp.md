@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   _extendedRequiredBy: []
@@ -50,11 +50,11 @@ data:
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __LOCAL\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << edges[i].to << \" \";\n            cerr << \"\\n\";\n        }\n\
-    \    }\n};\n#line 3 \"library/graph/EdgeVertex.cpp\"\nclass EdgeVertex {\n   \
-    \ int n, N;\n    std::vector<tuple<int, int, int>> edges;\n    std::vector<tuple<int,\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
+    \        }\n    }\n};\n#line 3 \"library/graph/EdgeVertex.cpp\"\nclass EdgeVertex\
+    \ {\n    int n, N;\n    std::vector<std::tuple<int, int, int>> edges;\n    std::vector<std::tuple<int,\
     \ int, int>> arcs;\n\n  public:\n    EdgeVertex(int n) : n(n), N(n) {}\n\n   \
     \ int add_edge(int u, int v) {\n        assert(0 <= u and u < n);\n        assert(0\
     \ <= v and v < n);\n        edges.emplace_back(u, v, N);\n        return N++;\n\
@@ -66,7 +66,7 @@ data:
     \            G.add_arc(u, e);\n            G.add_arc(e, v);\n        }\n     \
     \   G.build();\n        return G;\n    }\n};\n"
   code: "#pragma once\n#include \"library/graph/Graph.cpp\"\nclass EdgeVertex {\n\
-    \    int n, N;\n    std::vector<tuple<int, int, int>> edges;\n    std::vector<tuple<int,\
+    \    int n, N;\n    std::vector<std::tuple<int, int, int>> edges;\n    std::vector<std::tuple<int,\
     \ int, int>> arcs;\n\n  public:\n    EdgeVertex(int n) : n(n), N(n) {}\n\n   \
     \ int add_edge(int u, int v) {\n        assert(0 <= u and u < n);\n        assert(0\
     \ <= v and v < n);\n        edges.emplace_back(u, v, N);\n        return N++;\n\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: library/graph/EdgeVertex.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/EdgeVertex.cpp

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/monoid/Set.cpp
     title: library/algebra/monoid/Set.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_I.test.cpp
     title: test/AOJ/DSL_2_I.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/CntSum.cpp\"\ntemplate <typename X>\
@@ -26,8 +26,8 @@ data:
     \ x.first;\n        y.second += x.second;\n    }\n    static constexpr P inverse(const\
     \ P &x) { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0,\
     \ 0}; }\n    static constexpr bool commute = true;\n};\ntemplate <typename X>\
-    \ vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X,\
-    \ X>>(n, {x, 1});\n}\ntemplate <typename X>\nvector<std::pair<X, X>> cnt_init(const\
+    \ std::vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X,\
+    \ X>>(n, {x, 1});\n}\ntemplate <typename X>\nstd::vector<std::pair<X, X>> cnt_init(const\
     \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>>\
     \ res(n);\n    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return\
     \ res;\n}\n#line 2 \"library/algebra/monoid/Set.cpp\"\n// \u5408\u6210\u306E\u9806\
@@ -37,13 +37,13 @@ data:
     \ (x.has_value() ? x : y);\n    }\n    static constexpr void Rchop(O &x, const\
     \ O &y) {\n        if (!x)\n            x = y;\n    }\n    static constexpr void\
     \ Lchop(const O &x, O &y) {\n        if (x)\n            y = x;\n    }\n    static\
-    \ constexpr O unit() noexcept { return nullopt; }\n    static constexpr bool commute\
-    \ = false;\n};\n#line 4 \"library/algebra/lazy/SetSum.cpp\"\ntemplate <typename\
-    \ X> struct LazySetSum {\n    using MX = GroupCntSum<X>;\n    using MF = MonoidSet<X>;\n\
-    \    using P = typename MX::value_type;\n    using F = typename MF::value_type;\n\
-    \    static constexpr P mapping(const F &f, const P &x) {\n        if (f.has_value())\n\
-    \            return {f.value() * x.second, x.second};\n        return x;\n   \
-    \ }\n};\n"
+    \ constexpr O unit() noexcept { return std::nullopt; }\n    static constexpr bool\
+    \ commute = false;\n};\n#line 4 \"library/algebra/lazy/SetSum.cpp\"\ntemplate\
+    \ <typename X> struct LazySetSum {\n    using MX = GroupCntSum<X>;\n    using\
+    \ MF = MonoidSet<X>;\n    using P = typename MX::value_type;\n    using F = typename\
+    \ MF::value_type;\n    static constexpr P mapping(const F &f, const P &x) {\n\
+    \        if (f.has_value())\n            return {f.value() * x.second, x.second};\n\
+    \        return x;\n    }\n};\n"
   code: "#pragma once\n#include \"library/algebra/group/CntSum.cpp\"\n#include \"\
     library/algebra/monoid/Set.cpp\"\ntemplate <typename X> struct LazySetSum {\n\
     \    using MX = GroupCntSum<X>;\n    using MF = MonoidSet<X>;\n    using P = typename\
@@ -56,8 +56,8 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/SetSum.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_I.test.cpp
 documentation_of: library/algebra/lazy/SetSum.cpp

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/ReRooting.cpp
     title: ReRooting
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
@@ -80,11 +80,12 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 3 \"library/tree/WeightedTree.cpp\"\
-    \ntemplate <typename T> struct WeightedTree : WeightedGraph<T> {\n    using WeightedGraph<T>::WeightedGraph;\n\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 3 \"library/tree/WeightedTree.cpp\"\ntemplate <typename T> struct\
+    \ WeightedTree : WeightedGraph<T> {\n    using WeightedGraph<T>::WeightedGraph;\n\
     \    using edge_type = typename WeightedGraph<T>::edge_type;\n    using OutgoingEdges\
     \ = typename WeightedGraph<T>::OutgoingEdges;\n    using WeightedGraph<T>::n;\n\
     \    using WeightedGraph<T>::in_deg;\n\n    int root = -1;\n    std::vector<int>\
@@ -98,15 +99,15 @@ data:
     \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
     \ in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v + 1]};\n    }\n\
     \n  private:\n    void dfs(int v, int pre = -1) {\n        for (auto &e : (*this)[v])\
-    \ {\n            if (e.to == pre)\n                swap((*this)[v][0], e);\n \
-    \           else {\n                depth[e.to] = depth[v] + 1;\n            \
-    \    dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n    }\n\
-    \n  public:\n    void build(int r = 0) {\n        if (!WeightedGraph<T>::is_prepared())\n\
+    \ {\n            if (e.to == pre)\n                std::swap((*this)[v][0], e);\n\
+    \            else {\n                depth[e.to] = depth[v] + 1;\n           \
+    \     dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n   \
+    \ }\n\n  public:\n    void build(int r = 0) {\n        if (!WeightedGraph<T>::is_prepared())\n\
     \            WeightedGraph<T>::build();\n        if (~root) {\n            assert(r\
     \ == root);\n            return;\n        }\n        root = r;\n        depth\
-    \ = vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n   \
-    \     dfs(root);\n        std::queue<int> que;\n        que.push(root);\n    \
-    \    while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
+    \ = std::vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n\
+    \        dfs(root);\n        std::queue<int> que;\n        que.push(root);\n \
+    \       while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
     \            BFS.push_back(p);\n            for (const auto &e : son(p))\n   \
     \             que.push(e.to);\n        }\n    }\n};\n#line 7 \"test/AOJ/GRL_5_A.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
@@ -114,7 +115,7 @@ data:
     \n    ReRooting<WeightedTree<int>, int> RR(t);\n    auto score = [&](int now,\
     \ auto &e) { return now + e.weight; };\n    auto merge = [&](int &now, int add)\
     \ {\n        if (now < add)\n            now = add;\n    };\n    auto ans = RR.build(score,\
-    \ merge, 0);\n\n    int fans = 0;\n    for (int p : ans)\n        fans = max(fans,\
+    \ merge, 0);\n\n    int fans = 0;\n    for (int p : ans)\n        fans = std::max(fans,\
     \ p);\n    std::cout << fans << std::endl;\n}\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
@@ -125,7 +126,7 @@ data:
     \ score = [&](int now, auto &e) { return now + e.weight; };\n    auto merge =\
     \ [&](int &now, int add) {\n        if (now < add)\n            now = add;\n \
     \   };\n    auto ans = RR.build(score, merge, 0);\n\n    int fans = 0;\n    for\
-    \ (int p : ans)\n        fans = max(fans, p);\n    std::cout << fans << std::endl;\n\
+    \ (int p : ans)\n        fans = std::max(fans, p);\n    std::cout << fans << std::endl;\n\
     }"
   dependsOn:
   - library/tree/ReRooting.cpp
@@ -134,8 +135,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_A.test.cpp
 layout: document

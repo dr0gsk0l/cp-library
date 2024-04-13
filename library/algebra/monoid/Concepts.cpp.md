@@ -23,17 +23,17 @@ data:
   - icon: ':warning:'
     path: library/math/FactorialNumberSystem.cpp
     title: library/math/FactorialNumberSystem.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_2_B.test.cpp
     title: test/AOJ/DSL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - icon: ':x:'
@@ -48,10 +48,10 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
@@ -92,7 +92,7 @@ data:
   - library/datastructure/CumulativeGroup.cpp
   - library/tree/TreeMonoid.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

@@ -5,38 +5,38 @@ data:
   - icon: ':warning:'
     path: library/graph/EdgeVertex.cpp
     title: library/graph/EdgeVertex.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
   - icon: ':x:'
     path: library/tree/EdgeVertex.cpp
     title: library/tree/EdgeVertex.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/ALDS1_11_C.test.cpp
     title: test/AOJ/ALDS1_11_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/SCC.test.cpp
     title: test/library-checker/Graph/SCC.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
     title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
     title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
@@ -50,7 +50,7 @@ data:
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.cpp\"\nstruct Edge {\n    int from,\
@@ -92,10 +92,10 @@ data:
     \        auto counter = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __LOCAL\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << edges[i].to << \" \";\n            cerr << \"\\n\";\n        }\n\
-    \    }\n};\n"
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
+    \        }\n    }\n};\n"
   code: "#pragma once\nstruct Edge {\n    int from, to;\n    Edge() = default;\n \
     \   Edge(int from, int to) : from(from), to(to) {}\n    operator int() const {\
     \ return to; }\n};\n\nstruct Graph {\n    int n;\n    using edge_type = Edge;\n\
@@ -135,9 +135,9 @@ data:
     \ &&e : edges)\n            new_edges[counter[e.from]++] = e;\n        edges =\
     \ new_edges;\n    }\n\n    void graph_debug() const {\n#ifndef __LOCAL\n     \
     \   return;\n#endif\n        assert(prepared);\n        for (int from = 0; from\
-    \ < n; from++) {\n            cerr << from << \";\";\n            for (int i =\
-    \ in_deg[from]; i < in_deg[from + 1]; i++)\n                cerr << edges[i].to\
-    \ << \" \";\n            cerr << \"\\n\";\n        }\n    }\n};"
+    \ < n; from++) {\n            std::cerr << from << \";\";\n            for (int\
+    \ i = in_deg[from]; i < in_deg[from + 1]; i++)\n                std::cerr << edges[i].to\
+    \ << \" \";\n            std::cerr << \"\\n\";\n        }\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/graph/Graph.cpp
@@ -146,8 +146,8 @@ data:
   - library/tree/EdgeVertex.cpp
   - library/graph/EdgeVertex.cpp
   - library/graph/SCC.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

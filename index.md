@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: library/algebra
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/Reverse.cpp
       title: library/algebra/Reverse.cpp
   - name: library/algebra/group
@@ -11,19 +11,19 @@ data:
     - icon: ':question:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/group/Affine.cpp
       title: library/algebra/group/Affine.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
     - icon: ':question:'
       path: library/algebra/group/Concepts.cpp
       title: library/algebra/group/Concepts.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/group/Multiply.cpp
       title: library/algebra/group/Multiply.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Xor.cpp
       title: library/algebra/group/Xor.cpp
   - name: library/algebra/lazy
@@ -31,19 +31,19 @@ data:
     - icon: ':x:'
       path: library/algebra/lazy/AddMin.cpp
       title: library/algebra/lazy/AddMin.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AddSum.cpp
       title: library/algebra/lazy/AddSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/AffineSum.cpp
       title: library/algebra/lazy/AffineSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/Reverse.cpp
       title: library/algebra/lazy/Reverse.cpp
     - icon: ':x:'
       path: library/algebra/lazy/SetMin.cpp
       title: library/algebra/lazy/SetMin.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/lazy/SetSum.cpp
       title: library/algebra/lazy/SetSum.cpp
   - name: library/algebra/monoid
@@ -72,12 +72,12 @@ data:
     - icon: ':warning:'
       path: library/algebra/monoid/RollingHash.cpp
       title: library/algebra/monoid/RollingHash.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/algebra/monoid/Set.cpp
       title: library/algebra/monoid/Set.cpp
   - name: library/bitwise
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/bitwise/And.cpp
       title: library/bitwise/And.cpp
     - icon: ':warning:'
@@ -86,15 +86,15 @@ data:
     - icon: ':x:'
       path: library/bitwise/Ranked.cpp
       title: library/bitwise/Ranked.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/bitwise/Util.cpp
       title: library/bitwise/Util.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/bitwise/Xor.cpp
       title: library/bitwise/Xor.cpp
   - name: library/convolution
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/convolution/NTT.cpp
       title: library/convolution/NTT.cpp
     - icon: ':warning:'
@@ -119,7 +119,7 @@ data:
     - icon: ':question:'
       path: library/datastructure/CumulativeSum.cpp
       title: library/datastructure/CumulativeSum.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/Doubling.cpp
       title: library/datastructure/Doubling.cpp
     - icon: ':question:'
@@ -159,7 +159,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/unionfind/ApplyUnionFind.cpp
       title: library/datastructure/unionfind/ApplyUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
       title: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
     - icon: ':warning:'
@@ -168,7 +168,7 @@ data:
     - icon: ':x:'
       path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
       title: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/PotentialUnionFind.cpp
       title: library/datastructure/unionfind/PotentialUnionFind.cpp
     - icon: ':warning:'
@@ -177,7 +177,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/unionfind/UndoUnionFind.cpp
       title: library/datastructure/unionfind/UndoUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/unionfind/UnionFind.cpp
       title: library/datastructure/unionfind/UnionFind.cpp
   - name: library/datetime
@@ -187,7 +187,7 @@ data:
       title: library/datetime/DateTime.cpp
   - name: library/flow
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/flow/Dinic.cpp
       title: library/flow/Dinic.cpp
     - icon: ':x:'
@@ -235,7 +235,7 @@ data:
     - icon: ':warning:'
       path: library/graph/EdgeVertex.cpp
       title: library/graph/EdgeVertex.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/graph/Graph.cpp
       title: library/graph/Graph.cpp
     - icon: ':x:'
@@ -247,19 +247,19 @@ data:
     - icon: ':x:'
       path: library/graph/MinimumSpanningArborescence.cpp
       title: library/graph/MinimumSpanningArborescence.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/MinimumSpanningTree.cpp
       title: library/graph/MinimumSpanningTree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/NegativeCycleFind.cpp
       title: library/graph/NegativeCycleFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/ReverseGraph.cpp
       title: library/graph/ReverseGraph.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/SCC.cpp
       title: library/graph/SCC.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/graph/WeightedGraph.cpp
       title: library/graph/WeightedGraph.cpp
   - name: library/graph/matching
@@ -275,19 +275,19 @@ data:
     - icon: ':warning:'
       path: library/graph/shortest_path/01BFS.cpp
       title: library/graph/shortest_path/01BFS.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/BFS.cpp
       title: library/graph/shortest_path/BFS.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/BellmanFord.cpp
       title: library/graph/shortest_path/BellmanFord.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/Dial.cpp
       title: library/graph/shortest_path/Dial.cpp
     - icon: ':x:'
       path: library/graph/shortest_path/Dijkstra.cpp
       title: library/graph/shortest_path/Dijkstra.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/WarshallFloyd.cpp
       title: library/graph/shortest_path/WarshallFloyd.cpp
   - name: library/linearalgebra
@@ -298,10 +298,10 @@ data:
     - icon: ':warning:'
       path: library/linearalgebra/InsertConvexHullTrick.cpp
       title: library/linearalgebra/InsertConvexHullTrick.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/linearalgebra/Linear.cpp
       title: library/linearalgebra/Linear.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/linearalgebra/Matrix.cpp
       title: library/linearalgebra/Matrix.cpp
     - icon: ':x:'
@@ -387,10 +387,10 @@ data:
     - icon: ':x:'
       path: library/segtree/DualSegmentTree.cpp
       title: library/segtree/DualSegmentTree.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/segtree/LazySegmentTree.cpp
       title: library/segtree/LazySegmentTree.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/segtree/SegmentTree.cpp
       title: library/segtree/SegmentTree.cpp
   - name: library/sequence
@@ -404,7 +404,7 @@ data:
     - icon: ':x:'
       path: library/sequence/RollingHash.cpp
       title: library/sequence/RollingHash.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/RunEnumerate.cpp
       title: library/sequence/RunEnumerate.cpp
     - icon: ':x:'
@@ -423,10 +423,10 @@ data:
     - icon: ':warning:'
       path: library/superstd/Map.cpp
       title: library/superstd/Map.cpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/superstd/Multiset.cpp
       title: library/superstd/Multiset.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/superstd/Set.cpp
       title: library/superstd/Set.cpp
     - icon: ':warning:'
@@ -460,34 +460,34 @@ data:
       title: library/template/util_func.hpp
   - name: library/tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/CartesianTree.cpp
       title: library/tree/CartesianTree.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/CentroidDecomposition.cpp
       title: library/tree/CentroidDecomposition.cpp
     - icon: ':x:'
       path: library/tree/EdgeVertex.cpp
       title: library/tree/EdgeVertex.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/HLD.cpp
       title: library/tree/HLD.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/ReRooting.cpp
       title: ReRooting
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/RootedTreeIsomorphism.cpp
       title: library/tree/RootedTreeIsomorphism.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/Tree.cpp
       title: library/tree/Tree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/TreeLazy.cpp
       title: library/tree/TreeLazy.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/TreeMonoid.cpp
       title: library/tree/TreeMonoid.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/tree/WeightedTree.cpp
       title: library/tree/WeightedTree.cpp
   - name: library/util
@@ -495,13 +495,13 @@ data:
     - icon: ':warning:'
       path: library/util/BubbleNumber.cpp
       title: library/util/BubbleNumber.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/util/Compress.cpp
       title: library/util/Compress.cpp
     - icon: ':warning:'
       path: library/util/ForAllPareto.cpp
       title: for_all_pareto
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/util/InversionNumber.cpp
       title: library/util/InversionNumber.cpp
     - icon: ':warning:'
@@ -510,7 +510,7 @@ data:
     - icon: ':x:'
       path: library/util/PrimeUtil.cpp
       title: library/util/PrimeUtil.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/util/Subsequence.cpp
       title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
     - icon: ':warning:'
@@ -519,10 +519,10 @@ data:
   verificationCategories:
   - name: test/AOJ
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/1330.test.cpp
       title: test/AOJ/1330.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2207.test.cpp
       title: test/AOJ/2207.test.cpp
     - icon: ':x:'
@@ -531,16 +531,16 @@ data:
     - icon: ':x:'
       path: test/AOJ/2647.test.cpp
       title: test/AOJ/2647.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2971.test.cpp
       title: test/AOJ/2971.test.cpp
     - icon: ':x:'
       path: test/AOJ/3297.test.cpp
       title: test/AOJ/3297.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_11_C.test.cpp
       title: test/AOJ/ALDS1_11_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_12_B.test.cpp
       title: test/AOJ/ALDS1_12_B.test.cpp
     - icon: ':x:'
@@ -549,19 +549,19 @@ data:
     - icon: ':x:'
       path: test/AOJ/ALDS1_1_C.test.cpp
       title: test/AOJ/ALDS1_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_4_A.test.cpp
       title: test/AOJ/CGL_4_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DPL_3_B.test.cpp
       title: test/AOJ/DPL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DPL_3_C.test.cpp
       title: test/AOJ/DPL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_B.test.cpp
       title: test/AOJ/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -576,34 +576,34 @@ data:
     - icon: ':x:'
       path: test/AOJ/DSL_2_F.test.cpp
       title: test/AOJ/DSL_2_F.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_2_G.test.cpp
       title: test/AOJ/DSL_2_G.test.cpp
     - icon: ':x:'
       path: test/AOJ/DSL_2_H.test.cpp
       title: test/AOJ/DSL_2_H.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_2_I.test.cpp
       title: test/AOJ/DSL_2_I.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_B.test.cpp
       title: test/AOJ/GRL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_C.test.cpp
       title: test/AOJ/GRL_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_A.test.cpp
       title: test/AOJ/GRL_2_A.test.cpp
     - icon: ':x:'
       path: test/AOJ/GRL_2_B.test.cpp
       title: test/AOJ/GRL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_A.test.cpp
       title: test/AOJ/GRL_5_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_5_E.test.cpp
       title: test/AOJ/GRL_5_E.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_6_A.test.cpp
       title: test/AOJ/GRL_6_A.test.cpp
     - icon: ':x:'
@@ -617,10 +617,10 @@ data:
       title: test/AOJ/NTL_1_E.test.cpp
   - name: test/library-checker/Convolution
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
       title: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
       title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
     - icon: ':x:'
@@ -631,7 +631,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
       title: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
       title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
     - icon: ':x:'
@@ -640,13 +640,13 @@ data:
     - icon: ':x:'
       path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
       title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
       title: test/library-checker/DataStructure/PredecessorProblem.test.cpp
     - icon: ':x:'
       path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
       title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
       title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     - icon: ':x:'
@@ -667,7 +667,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
       title: test/library-checker/DataStructure/StaticRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/unionfind.test.cpp
       title: test/library-checker/DataStructure/unionfind.test.cpp
   - name: test/library-checker/Graph
@@ -681,7 +681,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
       title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/SCC.test.cpp
       title: test/library-checker/Graph/SCC.test.cpp
     - icon: ':x:'
@@ -694,18 +694,18 @@ data:
       title: test/library-checker/Math/2Sat.test.cpp
   - name: test/library-checker/Matrix
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Matrix/Det.test.cpp
       title: test/library-checker/Matrix/Det.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Matrix/Inverse.test.cpp
       title: test/library-checker/Matrix/Inverse.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Matrix/Product.test.cpp
       title: test/library-checker/Matrix/Product.test.cpp
   - name: test/library-checker/New
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/New/NumberOfSubsequence.test.cpp
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
@@ -713,7 +713,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
     - icon: ':x:'
@@ -747,27 +747,27 @@ data:
       title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - name: test/library-checker/String
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/String/RunEnumerate.test.cpp
       title: test/library-checker/String/RunEnumerate.test.cpp
   - name: test/library-checker/Tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/CartesianTree.test.cpp
       title: test/library-checker/Tree/CartesianTree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
       title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
       title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
       title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
       title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
       title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     - icon: ':x:'
@@ -787,7 +787,7 @@ data:
     - icon: ':x:'
       path: test/yukicoder/1077.test.cpp
       title: test/yukicoder/1077.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1097.test.cpp
       title: test/yukicoder/1097.test.cpp
     - icon: ':heavy_check_mark:'
@@ -796,10 +796,10 @@ data:
     - icon: ':x:'
       path: test/yukicoder/1332.test.cpp
       title: test/yukicoder/1332.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1420.test.cpp
       title: test/yukicoder/1420.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1502.test.cpp
       title: test/yukicoder/1502.test.cpp
     - icon: ':x:'

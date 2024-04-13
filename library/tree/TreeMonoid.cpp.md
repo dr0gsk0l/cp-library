@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
   - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - icon: ':x:'
@@ -29,7 +29,7 @@ data:
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -50,7 +50,7 @@ data:
     \ std::vector<int> hld_id, euler_in, euler_out;\n    SegmentTree<Monoid> seg;\n\
     \    SegmentTree<Monoid_r> seg_r;\n\n    TreeMonoid(TREE T, int r = 0) : T(T),\
     \ hld(T), n(T.n), seg(n), seg_r(n) {\n        T.build(r);\n        hld_id = hld.build(r);\n\
-    \    }\n    TreeMonoid(TREE T, vector<X> a, int r = 0) : T(T), hld(T), n(T.n)\
+    \    }\n    TreeMonoid(TREE T, std::vector<X> a, int r = 0) : T(T), hld(T), n(T.n)\
     \ {\n        T.build(r);\n        hld_id = hld.build(r);\n        std::vector<X>\
     \ hld_a(n);\n        for (int v = 0; v < n; v++)\n            hld_a[hld_id[v]]\
     \ = a[v];\n        seg = SegmentTree<Monoid>(hld_a);\n        if (!Monoid::commute)\n\
@@ -77,8 +77,8 @@ data:
   isVerificationFile: false
   path: library/tree/TreeMonoid.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp

@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/Reverse.cpp
     title: library/algebra/lazy/Reverse.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/Reverse.cpp\"\ntemplate<typename Algebra>\n\
@@ -43,7 +43,7 @@ data:
     \ i = log; i; i--)\n            push(k >> i);\n    }\n    void update(int i) {\
     \ dat[i] = MX::op(reflect(2 * i), reflect(2 * i + 1)); }\n    void recalc(int\
     \ k) {\n        while (k >>= 1)\n            update(k);\n    }\n\n  public:\n\
-    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(vector<X>(n,\
+    \    LazySegmentTree() : LazySegmentTree(0) {}\n    LazySegmentTree(int n) : LazySegmentTree(std::vector<X>(n,\
     \ MX::unit())) {}\n    LazySegmentTree(const std::vector<X> &v) : n(v.size())\
     \ {\n        for (log = 1; (1 << log) < n; log++) {\n        }\n        size =\
     \ 1 << log;\n        dat.assign(size << 1, MX::unit());\n        laz.assign(size,\
@@ -70,7 +70,7 @@ data:
     \ sz(n), head(n), id(n), id2(n), prepared(false) {}\n    HLD() = default;\n\n\
     \  private:\n    void dfs_sz(int v) {\n        sz[v] = 1;\n        for (auto &e\
     \ : T.son(v)) {\n            dfs_sz(e.to);\n            sz[v] += sz[e.to];\n \
-    \           if (sz[e.to] > sz[T.son(v)[0].to])\n                swap(e, T.son(v)[0]);\n\
+    \           if (sz[e.to] > sz[T.son(v)[0].to])\n                std::swap(e, T.son(v)[0]);\n\
     \        }\n    }\n    void dfs_hld(int v, int &k) {\n        id[v] = k++;\n \
     \       for (int i = 0; i < T.son(v).size(); i++) {\n            int to = T.son(v)[i];\n\
     \            head[to] = (i ? to : head[v]);\n            dfs_hld(to, k);\n   \
@@ -85,7 +85,7 @@ data:
     \    int distance(int u, int v) {\n        int w = lca(u, v);\n        return\
     \ T.depth[u] + T.depth[v] - T.depth[w] * 2;\n    }\n\n    // l=lca(u,v) \u3068\
     \u3057\u305F\u6642\u3001[u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\
-    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = vector<std::pair<int,\
+    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = std::vector<std::pair<int,\
     \ int>>;\n    std::pair<path_t, path_t> path(int u, int v) {\n        assert(prepared);\n\
     \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
     \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
@@ -105,10 +105,10 @@ data:
     \ hld;\n    std::vector<int> hld_id, euler_in, euler_out;\n    LazySegmentTree<Lazy>\
     \ seg;\n    LazySegmentTree<Lazy_r> seg_r;\n\n    TreeLazy(const TREE &T_, int\
     \ r = 0)\n        : T(T_), hld(T_), n(T_.n), seg(n), seg_r(n) {\n        T.build(r);\n\
-    \        hld_id = hld.build(r);\n    }\n    TreeLazy(const TREE &T_, vector<X>\
-    \ a, int r = 0) : T(T_), hld(T_), n(T_.n) {\n        T.build(r);\n        hld_id\
-    \ = hld.build(r);\n        std::vector<X> hld_a(n);\n        for (int v = 0; v\
-    \ < n; v++)\n            hld_a[hld_id[v]] = a[v];\n        seg = LazySegmentTree<Lazy>(hld_a);\n\
+    \        hld_id = hld.build(r);\n    }\n    TreeLazy(const TREE &T_, std::vector<X>\
+    \ a, int r = 0)\n        : T(T_), hld(T_), n(T_.n) {\n        T.build(r);\n  \
+    \      hld_id = hld.build(r);\n        std::vector<X> hld_a(n);\n        for (int\
+    \ v = 0; v < n; v++)\n            hld_a[hld_id[v]] = a[v];\n        seg = LazySegmentTree<Lazy>(hld_a);\n\
     \        if (!MX::commute)\n            seg_r = LazySegmentTree<Lazy_r>(hld_a);\n\
     \    }\n\n    void set(int v, X x) {\n        seg.set(hld_id[v], x);\n       \
     \ if (!MX::commute)\n            seg_r.set(hld_id[v], x);\n    }\n    void multiply(int\
@@ -142,34 +142,34 @@ data:
     \ euler_out;\n    LazySegmentTree<Lazy> seg;\n    LazySegmentTree<Lazy_r> seg_r;\n\
     \n    TreeLazy(const TREE &T_, int r = 0)\n        : T(T_), hld(T_), n(T_.n),\
     \ seg(n), seg_r(n) {\n        T.build(r);\n        hld_id = hld.build(r);\n  \
-    \  }\n    TreeLazy(const TREE &T_, vector<X> a, int r = 0) : T(T_), hld(T_), n(T_.n)\
-    \ {\n        T.build(r);\n        hld_id = hld.build(r);\n        std::vector<X>\
-    \ hld_a(n);\n        for (int v = 0; v < n; v++)\n            hld_a[hld_id[v]]\
-    \ = a[v];\n        seg = LazySegmentTree<Lazy>(hld_a);\n        if (!MX::commute)\n\
-    \            seg_r = LazySegmentTree<Lazy_r>(hld_a);\n    }\n\n    void set(int\
-    \ v, X x) {\n        seg.set(hld_id[v], x);\n        if (!MX::commute)\n     \
-    \       seg_r.set(hld_id[v], x);\n    }\n    void multiply(int v, X x) {\n   \
-    \     seg.multiply(hld_id[v], x);\n        if (!MX::commute)\n            seg_r.multiply(hld_id[v],\
-    \ x);\n    }\n    X get(int v) { return seg.get(hld_id[v]); }\n\n    // [u,v]\u30D1\
-    \u30B9\u306E monoid \u7A4D\n    X path_prod(int u, int v) {\n        auto [path_u,\
-    \ path_v] = hld.path(u, v);\n        X prod_u = MX::unit(), prod_v = MX::unit();\n\
-    \        for (const auto &[l, r] : path_u) {\n            X val = (MX::commute\
-    \ ? seg.prod(r, l + 1) : seg_r.prod(r, l + 1));\n            MX::Rchop(prod_u,\
-    \ val);\n        }\n        for (const auto &[l, r] : path_v) {\n            X\
-    \ val = seg.prod(r, l + 1);\n            MX::Lchop(val, prod_v);\n        }\n\
-    \        return MX::op(prod_u, prod_v);\n    }\n    // root -> path\n    X path_root_prod(int\
-    \ v) { return path_prod(T.root, v); }\n\n    void path_apply(int u, int v, const\
-    \ F &f) {\n        auto [path_u, path_v] = hld.path(u, v);\n        for (const\
-    \ auto &[l, r] : path_u) {\n            seg.apply(r, l + 1, f);\n            if\
-    \ (!MX::commute)\n                seg_r.apply(r, l + 1, f);\n        }\n     \
-    \   for (const auto &[l, r] : path_v) {\n            seg.apply(r, l + 1, f);\n\
-    \            if (!MX::commute)\n                seg_r.apply(r, l + 1, f);\n  \
-    \      }\n    }\n    void path_root_apply(int v, const F &f) { path_apply(T.root,\
-    \ v, f); }\n\n    X subtree_prod(int v) {\n        assert(MX::commute);\n    \
-    \    auto [l, r] = hld.subtree(v);\n        return seg.prod(l, r);\n    }\n  \
-    \  void subtree_apply(int v, const F &f) {\n        auto [l, r] = hld.subtree(v);\n\
-    \        seg.apply(l, r, f);\n        if (!MX::commute)\n            seg_r.apply(l,\
-    \ r, f);\n    }\n};"
+    \  }\n    TreeLazy(const TREE &T_, std::vector<X> a, int r = 0)\n        : T(T_),\
+    \ hld(T_), n(T_.n) {\n        T.build(r);\n        hld_id = hld.build(r);\n  \
+    \      std::vector<X> hld_a(n);\n        for (int v = 0; v < n; v++)\n       \
+    \     hld_a[hld_id[v]] = a[v];\n        seg = LazySegmentTree<Lazy>(hld_a);\n\
+    \        if (!MX::commute)\n            seg_r = LazySegmentTree<Lazy_r>(hld_a);\n\
+    \    }\n\n    void set(int v, X x) {\n        seg.set(hld_id[v], x);\n       \
+    \ if (!MX::commute)\n            seg_r.set(hld_id[v], x);\n    }\n    void multiply(int\
+    \ v, X x) {\n        seg.multiply(hld_id[v], x);\n        if (!MX::commute)\n\
+    \            seg_r.multiply(hld_id[v], x);\n    }\n    X get(int v) { return seg.get(hld_id[v]);\
+    \ }\n\n    // [u,v]\u30D1\u30B9\u306E monoid \u7A4D\n    X path_prod(int u, int\
+    \ v) {\n        auto [path_u, path_v] = hld.path(u, v);\n        X prod_u = MX::unit(),\
+    \ prod_v = MX::unit();\n        for (const auto &[l, r] : path_u) {\n        \
+    \    X val = (MX::commute ? seg.prod(r, l + 1) : seg_r.prod(r, l + 1));\n    \
+    \        MX::Rchop(prod_u, val);\n        }\n        for (const auto &[l, r] :\
+    \ path_v) {\n            X val = seg.prod(r, l + 1);\n            MX::Lchop(val,\
+    \ prod_v);\n        }\n        return MX::op(prod_u, prod_v);\n    }\n    // root\
+    \ -> path\n    X path_root_prod(int v) { return path_prod(T.root, v); }\n\n  \
+    \  void path_apply(int u, int v, const F &f) {\n        auto [path_u, path_v]\
+    \ = hld.path(u, v);\n        for (const auto &[l, r] : path_u) {\n           \
+    \ seg.apply(r, l + 1, f);\n            if (!MX::commute)\n                seg_r.apply(r,\
+    \ l + 1, f);\n        }\n        for (const auto &[l, r] : path_v) {\n       \
+    \     seg.apply(r, l + 1, f);\n            if (!MX::commute)\n               \
+    \ seg_r.apply(r, l + 1, f);\n        }\n    }\n    void path_root_apply(int v,\
+    \ const F &f) { path_apply(T.root, v, f); }\n\n    X subtree_prod(int v) {\n \
+    \       assert(MX::commute);\n        auto [l, r] = hld.subtree(v);\n        return\
+    \ seg.prod(l, r);\n    }\n    void subtree_apply(int v, const F &f) {\n      \
+    \  auto [l, r] = hld.subtree(v);\n        seg.apply(l, r, f);\n        if (!MX::commute)\n\
+    \            seg_r.apply(l, r, f);\n    }\n};"
   dependsOn:
   - library/algebra/lazy/Reverse.cpp
   - library/algebra/Reverse.cpp
@@ -178,8 +178,8 @@ data:
   isVerificationFile: false
   path: library/tree/TreeLazy.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/tree/TreeLazy.cpp

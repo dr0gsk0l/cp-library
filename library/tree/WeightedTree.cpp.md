@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DPL_3_B.test.cpp
     title: test/AOJ/DPL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DPL_3_C.test.cpp
     title: test/AOJ/DPL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_A.test.cpp
     title: test/AOJ/GRL_5_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: test/yukicoder/1002.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T>\
@@ -72,11 +72,12 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 3 \"library/tree/WeightedTree.cpp\"\
-    \ntemplate <typename T> struct WeightedTree : WeightedGraph<T> {\n    using WeightedGraph<T>::WeightedGraph;\n\
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 3 \"library/tree/WeightedTree.cpp\"\ntemplate <typename T> struct\
+    \ WeightedTree : WeightedGraph<T> {\n    using WeightedGraph<T>::WeightedGraph;\n\
     \    using edge_type = typename WeightedGraph<T>::edge_type;\n    using OutgoingEdges\
     \ = typename WeightedGraph<T>::OutgoingEdges;\n    using WeightedGraph<T>::n;\n\
     \    using WeightedGraph<T>::in_deg;\n\n    int root = -1;\n    std::vector<int>\
@@ -90,15 +91,15 @@ data:
     \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
     \ in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v + 1]};\n    }\n\
     \n  private:\n    void dfs(int v, int pre = -1) {\n        for (auto &e : (*this)[v])\
-    \ {\n            if (e.to == pre)\n                swap((*this)[v][0], e);\n \
-    \           else {\n                depth[e.to] = depth[v] + 1;\n            \
-    \    dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n    }\n\
-    \n  public:\n    void build(int r = 0) {\n        if (!WeightedGraph<T>::is_prepared())\n\
+    \ {\n            if (e.to == pre)\n                std::swap((*this)[v][0], e);\n\
+    \            else {\n                depth[e.to] = depth[v] + 1;\n           \
+    \     dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n   \
+    \ }\n\n  public:\n    void build(int r = 0) {\n        if (!WeightedGraph<T>::is_prepared())\n\
     \            WeightedGraph<T>::build();\n        if (~root) {\n            assert(r\
     \ == root);\n            return;\n        }\n        root = r;\n        depth\
-    \ = vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n   \
-    \     dfs(root);\n        std::queue<int> que;\n        que.push(root);\n    \
-    \    while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
+    \ = std::vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n\
+    \        dfs(root);\n        std::queue<int> que;\n        que.push(root);\n \
+    \       while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
     \            BFS.push_back(p);\n            for (const auto &e : son(p))\n   \
     \             que.push(e.to);\n        }\n    }\n};\n"
   code: "#pragma once\n#include \"library/graph/WeightedGraph.cpp\"\ntemplate <typename\
@@ -116,15 +117,15 @@ data:
     \  assert(~root);\n        if (v == root)\n            return {this, in_deg[v],\
     \ in_deg[v + 1]};\n        return {this, in_deg[v] + 1, in_deg[v + 1]};\n    }\n\
     \n  private:\n    void dfs(int v, int pre = -1) {\n        for (auto &e : (*this)[v])\
-    \ {\n            if (e.to == pre)\n                swap((*this)[v][0], e);\n \
-    \           else {\n                depth[e.to] = depth[v] + 1;\n            \
-    \    dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n    }\n\
-    \n  public:\n    void build(int r = 0) {\n        if (!WeightedGraph<T>::is_prepared())\n\
+    \ {\n            if (e.to == pre)\n                std::swap((*this)[v][0], e);\n\
+    \            else {\n                depth[e.to] = depth[v] + 1;\n           \
+    \     dfs(e.to, v);\n            }\n        }\n        DFS.push_back(v);\n   \
+    \ }\n\n  public:\n    void build(int r = 0) {\n        if (!WeightedGraph<T>::is_prepared())\n\
     \            WeightedGraph<T>::build();\n        if (~root) {\n            assert(r\
     \ == root);\n            return;\n        }\n        root = r;\n        depth\
-    \ = vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n   \
-    \     dfs(root);\n        std::queue<int> que;\n        que.push(root);\n    \
-    \    while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
+    \ = std::vector<int>(n, 0);\n        DFS.reserve(n);\n        BFS.reserve(n);\n\
+    \        dfs(root);\n        std::queue<int> que;\n        que.push(root);\n \
+    \       while (que.size()) {\n            int p = que.front();\n            que.pop();\n\
     \            BFS.push_back(p);\n            for (const auto &e : son(p))\n   \
     \             que.push(e.to);\n        }\n    }\n};"
   dependsOn:
@@ -133,8 +134,8 @@ data:
   path: library/tree/WeightedTree.cpp
   requiredBy:
   - library/tree/CartesianTree.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp
   - test/yukicoder/1002.test.cpp

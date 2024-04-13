@@ -19,7 +19,7 @@ data:
   - icon: ':x:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
@@ -61,27 +61,27 @@ data:
     \ = FenwickTree<G>;\n    using S = typename G::value_type;\n    std::vector<FT>\
     \ ft;\n\n  public:\n    using super::rank, super::select, super::kth_largest,\
     \ super::kth_smallest,\n        super::range_freq, super::lt, super::leq, super::gt,\
-    \ super::geq;\n    GroupWaveletMatrix(vector<T> v) : super::WaveletMatrix(v) {\n\
-    \        ft.resize(log);\n        for (auto &p : ft)\n            p = FT(n);\n\
-    \    }\n    GroupWaveletMatrix(vector<T> v, const std::vector<S> &w)\n       \
-    \ : GroupWaveletMatrix(v) {\n        for (int i = 0; i < n; i++)\n           \
-    \ add(i, w[i]);\n    }\n    void add(int idx, const S &val) {\n        U a = comp(data[idx]);\n\
-    \        REP_(h, log) {\n            idx = nxt(idx, h, a);\n            ft[h].add(idx,\
-    \ val);\n        }\n    }\n    S sum(int l, int r, const T &upper) {\n       \
-    \ U a = comp(upper);\n        S res = G::unit();\n        REP_(h, log) {\n   \
-    \         if (high_bit(a, h)) {\n                int L = mat[h].rank(l, 0), R\
-    \ = mat[h].rank(r, 0);\n                G::Rchop(res, ft[h].sum(L, R));\n    \
-    \        }\n            l = nxt(l, h, a);\n            r = nxt(r, h, a);\n   \
-    \     }\n        return res;\n    }\n    S sum(int l, int r, const T &lower, const\
-    \ T &upper) {\n        return G::op(sum(l, r, upper), G::inverse(sum(l, r, lower)));\n\
-    \    }\n    S kth_largest_sum(int l, int r, int k) {\n        assert(0 <= k and\
-    \ k < r - l);\n        S res = G::unit();\n        REP_(h, log) {\n          \
-    \  int L = mat[h].rank(l);\n            int R = mat[h].rank(r);\n            if\
-    \ (R - L > k) {\n                l = L + zero_cnt[h];\n                r = R +\
-    \ zero_cnt[h];\n            } else {\n                G::Rchop(res, ft[h].sum(L\
-    \ + zero_cnt[h], R + zero_cnt[h]));\n                k -= R - L;\n           \
-    \     l -= L;\n                r -= R;\n            }\n        }\n        return\
-    \ res;\n    }\n};\n#undef REP_\n"
+    \ super::geq;\n    GroupWaveletMatrix(std::vector<T> v) : super::WaveletMatrix(v)\
+    \ {\n        ft.resize(log);\n        for (auto &p : ft)\n            p = FT(n);\n\
+    \    }\n    GroupWaveletMatrix(std::vector<T> v, const std::vector<S> &w)\n  \
+    \      : GroupWaveletMatrix(v) {\n        for (int i = 0; i < n; i++)\n      \
+    \      add(i, w[i]);\n    }\n    void add(int idx, const S &val) {\n        U\
+    \ a = comp(data[idx]);\n        REP_(h, log) {\n            idx = nxt(idx, h,\
+    \ a);\n            ft[h].add(idx, val);\n        }\n    }\n    S sum(int l, int\
+    \ r, const T &upper) {\n        U a = comp(upper);\n        S res = G::unit();\n\
+    \        REP_(h, log) {\n            if (high_bit(a, h)) {\n                int\
+    \ L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);\n                G::Rchop(res,\
+    \ ft[h].sum(L, R));\n            }\n            l = nxt(l, h, a);\n          \
+    \  r = nxt(r, h, a);\n        }\n        return res;\n    }\n    S sum(int l,\
+    \ int r, const T &lower, const T &upper) {\n        return G::op(sum(l, r, upper),\
+    \ G::inverse(sum(l, r, lower)));\n    }\n    S kth_largest_sum(int l, int r, int\
+    \ k) {\n        assert(0 <= k and k < r - l);\n        S res = G::unit();\n  \
+    \      REP_(h, log) {\n            int L = mat[h].rank(l);\n            int R\
+    \ = mat[h].rank(r);\n            if (R - L > k) {\n                l = L + zero_cnt[h];\n\
+    \                r = R + zero_cnt[h];\n            } else {\n                G::Rchop(res,\
+    \ ft[h].sum(L + zero_cnt[h], R + zero_cnt[h]));\n                k -= R - L;\n\
+    \                l -= L;\n                r -= R;\n            }\n        }\n\
+    \        return res;\n    }\n};\n#undef REP_\n"
   dependsOn:
   - library/datastructure/FenwickTree.cpp
   - library/algebra/group/Add.cpp
@@ -93,7 +93,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/GroupWaveletMatrix.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

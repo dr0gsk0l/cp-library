@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/MinimumSpanningTree.cpp
     title: library/graph/MinimumSpanningTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -32,12 +32,12 @@ data:
     \ == leader(y);\n    }\n\n    bool merge(int x, int y) {\n        assert(0 <=\
     \ x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
     \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
-    \            swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n  \
-    \      num--;\n        return true;\n    }\n\n    int size(const int x) {\n  \
-    \      assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n   \
-    \ int count() const { return num; }\n};\n#line 2 \"library/graph/MinimumSpanningTree.cpp\"\
+    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
+    \        num--;\n        return true;\n    }\n\n    int size(const int x) {\n\
+    \        assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n \
+    \   int count() const { return num; }\n};\n#line 2 \"library/graph/MinimumSpanningTree.cpp\"\
     \ntemplate <typename WG, typename W = typename WG::weight_type>\nstd::pair<W,\
-    \ vector<int>> minimum_spanning_tree(const WG &g) {\n    assert(g.is_prepared());\n\
+    \ std::vector<int>> minimum_spanning_tree(const WG &g) {\n    assert(g.is_prepared());\n\
     \    int n = g.n, m = g.edges.size();\n    UnionFind uf(n);\n    std::vector<int>\
     \ id(m);\n    iota(id.begin(), id.end(), 0);\n    sort(id.begin(), id.end(), [&](const\
     \ int i, const int j) {\n        return g.edges[i].weight < g.edges[j].weight;\n\
@@ -89,13 +89,14 @@ data:
     \ = in_deg;\n        for (auto &&e : edges)\n            new_edges[counter[e.from]++]\
     \ = e;\n        edges = new_edges;\n    }\n\n    void graph_debug() const {\n\
     #ifndef __DEBUG\n        return;\n#endif\n        assert(prepared);\n        for\
-    \ (int from = 0; from < n; from++) {\n            cerr << from << \";\";\n   \
-    \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
-    \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
-    \        cerr << \"\\n\";\n        }\n    }\n};\n#line 7 \"test/AOJ/GRL_2_A.test.cpp\"\
-    \n\nint main() {\n    int n, m;\n    std::cin >> n >> m;\n    WeightedGraph<int>\
-    \ g(n, m, false, 0);\n    auto [sum, tree] = minimum_spanning_tree(g);\n    std::cout\
-    \ << sum << std::endl;\n}\n"
+    \ (int from = 0; from < n; from++) {\n            std::cerr << from << \";\";\n\
+    \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
+    \       std::cerr << \"(\" << edges[i].to << \",\" << edges[i].weight\n      \
+    \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
+    \    }\n};\n#line 7 \"test/AOJ/GRL_2_A.test.cpp\"\n\nint main() {\n    int n,\
+    \ m;\n    std::cin >> n >> m;\n    WeightedGraph<int> g(n, m, false, 0);\n   \
+    \ auto [sum, tree] = minimum_spanning_tree(g);\n    std::cout << sum << std::endl;\n\
+    }\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/graph/MinimumSpanningTree.cpp\"\
@@ -110,8 +111,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_2_A.test.cpp
 layout: document

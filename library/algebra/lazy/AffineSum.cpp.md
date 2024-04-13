@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
     title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/Linear.cpp\"\ntemplate <typename T>\
@@ -67,11 +67,11 @@ data:
     \       y.first += x.first;\n        y.second += x.second;\n    }\n    static\
     \ constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static constexpr\
     \ P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n};\n\
-    template <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n\
-    \    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename X>\n\
-    vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int n = v.size();\n\
-    \    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0; i < n; i++)\n \
-    \       res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AffineSum.cpp\"\
+    template <typename X> std::vector<std::pair<X, X>> cnt_init(int n, const X &x)\
+    \ {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
+    \ X>\nstd::vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int\
+    \ n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0;\
+    \ i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AffineSum.cpp\"\
     \ntemplate <typename X> struct LazyAffineSum {\n    using MX = GroupCntSum<X>;\n\
     \    using MF = GroupAffine<X>;\n    using P = typename MX::value_type;\n    using\
     \ F = typename MF::value_type;\n    static constexpr P mapping(const F &f, const\
@@ -90,8 +90,8 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AffineSum.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
 documentation_of: library/algebra/lazy/AffineSum.cpp

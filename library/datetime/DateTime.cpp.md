@@ -50,13 +50,13 @@ data:
     \ m = std::to_string(month);\n        std::string d = std::to_string(day);\n \
     \       while (y.size() < 4)\n            y = \"0\" + y;\n        while (m.size()\
     \ < 2)\n            m = \"0\" + m;\n        while (d.size() < 2)\n           \
-    \ d = \"0\" + d;\n        return y + sep + m + sep + d;\n    }\n\n    tuple<int,\
-    \ int, int> to_tuple() const { return {year, month, day}; }\n\n#define define_cmp(op)\
-    \                                                         \\\n    bool operator\
-    \ op(const DateTime &a) const {                                \\\n        return\
-    \ to_tuple() op a.to_tuple();                                     \\\n    }\n\
-    \    define_cmp(==) define_cmp(!=) define_cmp(<) define_cmp(>) define_cmp(<=)\n\
-    \        define_cmp(>=)\n#undef define_cmp\n};\n"
+    \ d = \"0\" + d;\n        return y + sep + m + sep + d;\n    }\n\n    std::tuple<int,\
+    \ int, int> to_std::tuple() const {\n        return {year, month, day};\n    }\n\
+    \n#define define_cmp(op)                                                     \
+    \    \\\n    bool operator op(const DateTime &a) const {                     \
+    \           \\\n        return to_std::tuple() op a.to_std::tuple();         \
+    \                  \\\n    }\n    define_cmp(==) define_cmp(!=) define_cmp(<)\
+    \ define_cmp(>) define_cmp(<=)\n        define_cmp(>=)\n#undef define_cmp\n};\n"
   code: "class DateTime {\n    static int day_of_week; // 1\u5E741\u67081\u65E5\u306E\
     \u66DC\u65E5\n  public:\n    int year, month, day;\n    DateTime(int y, int m,\
     \ int d) : year(y), month(m), day(d) {}\n\n    static bool is_leap_year(int y)\
@@ -96,18 +96,18 @@ data:
     \    std::string d = std::to_string(day);\n        while (y.size() < 4)\n    \
     \        y = \"0\" + y;\n        while (m.size() < 2)\n            m = \"0\" +\
     \ m;\n        while (d.size() < 2)\n            d = \"0\" + d;\n        return\
-    \ y + sep + m + sep + d;\n    }\n\n    tuple<int, int, int> to_tuple() const {\
-    \ return {year, month, day}; }\n\n#define define_cmp(op)                     \
-    \                                    \\\n    bool operator op(const DateTime &a)\
-    \ const {                                \\\n        return to_tuple() op a.to_tuple();\
-    \                                     \\\n    }\n    define_cmp(==) define_cmp(!=)\
-    \ define_cmp(<) define_cmp(>) define_cmp(<=)\n        define_cmp(>=)\n#undef define_cmp\n\
-    };"
+    \ y + sep + m + sep + d;\n    }\n\n    std::tuple<int, int, int> to_std::tuple()\
+    \ const {\n        return {year, month, day};\n    }\n\n#define define_cmp(op)\
+    \                                                         \\\n    bool operator\
+    \ op(const DateTime &a) const {                                \\\n        return\
+    \ to_std::tuple() op a.to_std::tuple();                           \\\n    }\n\
+    \    define_cmp(==) define_cmp(!=) define_cmp(<) define_cmp(>) define_cmp(<=)\n\
+    \        define_cmp(>=)\n#undef define_cmp\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/datetime/DateTime.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2109.test.cpp

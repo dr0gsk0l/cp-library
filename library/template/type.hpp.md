@@ -39,12 +39,12 @@ data:
     \ overload2(__VA_ARGS__, TYPES2, TYPES1)(__VA_ARGS__)\n\nTYPE(T)\nusing vec<T>\
     \ = std::vector<T>;\nTYPE(T)\nusing vvec<T> = vec<vec<T>>;\nTYPE(T)\nusing vvvec<T>\
     \ = vec<vvec<T>>;\nTYPE(T)\nusing vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T>\
-    \ = std::std::pair<T, T>;\nusing ll = long long;\nusing ld = long double;\nusing\
-    \ vi = vec<int>;\nusing vvi = vvec<int>;\nusing vvvi = vvvec<int>;\nusing vvvvi\
-    \ = vvvvec<int>;\nusing vll = vec<ll>;\nusing vvll = vvec<ll>;\nusing vvvll =\
-    \ vvvec<ll>;\nusing vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing\
-    \ pi = ptt<int>;\nusing pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\n\
-    TYPE(T)\nusing pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n"
+    \ = std::pair<T, T>;\nusing ll = long long;\nusing ld = long double;\nusing vi\
+    \ = vec<int>;\nusing vvi = vvec<int>;\nusing vvvi = vvvec<int>;\nusing vvvvi =\
+    \ vvvvec<int>;\nusing vll = vec<ll>;\nusing vvll = vvec<ll>;\nusing vvvll = vvvec<ll>;\n\
+    using vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing pi = ptt<int>;\n\
+    using pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\n\
+    using pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n"
   code: "#include \"library/template/base.hpp\"\n\n#define TYPE1(T) template <class\
     \ T>\n#define TYPE2(T, U) template <class T, class U>\n#define TYPE3(T, U, V)\
     \ template <class T, class U, class V>\n#define TYPE4(T, U, V, W) template <class\
@@ -56,9 +56,9 @@ data:
     \ TYPES2(H, T) template <class H, class... T>\n#define TYPES(...) overload2(__VA_ARGS__,\
     \ TYPES2, TYPES1)(__VA_ARGS__)\n\nTYPE(T)\nusing vec<T> = std::vector<T>;\nTYPE(T)\n\
     using vvec<T> = vec<vec<T>>;\nTYPE(T)\nusing vvvec<T> = vec<vvec<T>>;\nTYPE(T)\n\
-    using vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T> = std::std::pair<T, T>;\n\
-    using ll = long long;\nusing ld = long double;\nusing vi = vec<int>;\nusing vvi\
-    \ = vvec<int>;\nusing vvvi = vvvec<int>;\nusing vvvvi = vvvvec<int>;\nusing vll\
+    using vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T> = std::pair<T, T>;\nusing\
+    \ ll = long long;\nusing ld = long double;\nusing vi = vec<int>;\nusing vvi =\
+    \ vvec<int>;\nusing vvvi = vvvec<int>;\nusing vvvvi = vvvvec<int>;\nusing vll\
     \ = vec<ll>;\nusing vvll = vvec<ll>;\nusing vvvll = vvvec<ll>;\nusing vvvvll =\
     \ vvvvec<ll>;\nusing vs = vec<std::string>;\nusing pi = ptt<int>;\nusing pll =\
     \ ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\nusing pqg\
@@ -73,7 +73,7 @@ data:
   - library/template/util_func.hpp
   - library/template/original_istream.hpp
   - library/template/output.hpp
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/type.hpp

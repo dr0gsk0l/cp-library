@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/ReverseGraph.cpp
     title: library/graph/ReverseGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
@@ -61,26 +61,27 @@ data:
     \ &&e : edges)\n            new_edges[counter[e.from]++] = e;\n        edges =\
     \ new_edges;\n    }\n\n    void graph_debug() const {\n#ifndef __LOCAL\n     \
     \   return;\n#endif\n        assert(prepared);\n        for (int from = 0; from\
-    \ < n; from++) {\n            cerr << from << \";\";\n            for (int i =\
-    \ in_deg[from]; i < in_deg[from + 1]; i++)\n                cerr << edges[i].to\
-    \ << \" \";\n            cerr << \"\\n\";\n        }\n    }\n};\n#line 2 \"library/graph/ReverseGraph.cpp\"\
-    \ntemplate<typename GRAPH>\nGRAPH reverse_graph(const GRAPH&g){\n  GRAPH r(g.n);\n\
-    \  for(auto e:g.edges){\n    swap(e.from,e.to);\n    r.add_arc(e);\n  }\n  r.build();\n\
-    \  return r;\n}\n#line 4 \"library/graph/SCC.cpp\"\n#define ALL_(v) v.begin(),\
-    \ v.end()\n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename\
-    \ DirectedGraph> class SCC {\n    int n;\n    DirectedGraph G, R;\n    std::vector<int>\
-    \ visit, belong;\n    std::vector<bool> used;\n    void dfs(int v) {\n       \
-    \ used[v] = true;\n        for (int to : G[v])\n            if (!used[to])\n \
-    \               dfs(to);\n        visit.push_back(v);\n    }\n    void rdfs(int\
-    \ v, int k) {\n        used[v] = true;\n        belong[v] = k;\n        for (int\
-    \ to : R[v])\n            if (!used[to])\n                rdfs(to, k);\n    }\n\
-    \n  public:\n    Graph DAG;\n    std::vector<vector<int>> component;\n    SCC(const\
-    \ DirectedGraph &G) : n(G.n), G(G), belong(n), used(n, false) {\n        assert(G.is_prepared());\n\
+    \ < n; from++) {\n            std::cerr << from << \";\";\n            for (int\
+    \ i = in_deg[from]; i < in_deg[from + 1]; i++)\n                std::cerr << edges[i].to\
+    \ << \" \";\n            std::cerr << \"\\n\";\n        }\n    }\n};\n#line 2\
+    \ \"library/graph/ReverseGraph.cpp\"\ntemplate <typename GRAPH> GRAPH reverse_graph(const\
+    \ GRAPH &g) {\n    GRAPH r(g.n);\n    for (auto e : g.edges) {\n        std::swap(e.from,\
+    \ e.to);\n        r.add_arc(e);\n    }\n    r.build();\n    return r;\n}\n#line\
+    \ 4 \"library/graph/SCC.cpp\"\n#define ALL_(v) v.begin(), v.end()\n#define REP_(i,\
+    \ n) for (int i = 0; i < (n); i++)\ntemplate <typename DirectedGraph> class SCC\
+    \ {\n    int n;\n    DirectedGraph G, R;\n    std::vector<int> visit, belong;\n\
+    \    std::vector<bool> used;\n    void dfs(int v) {\n        used[v] = true;\n\
+    \        for (int to : G[v])\n            if (!used[to])\n                dfs(to);\n\
+    \        visit.push_back(v);\n    }\n    void rdfs(int v, int k) {\n        used[v]\
+    \ = true;\n        belong[v] = k;\n        for (int to : R[v])\n            if\
+    \ (!used[to])\n                rdfs(to, k);\n    }\n\n  public:\n    Graph DAG;\n\
+    \    std::vector<std::vector<int>> component;\n    SCC(const DirectedGraph &G)\
+    \ : n(G.n), G(G), belong(n), used(n, false) {\n        assert(G.is_prepared());\n\
     \        visit.reserve(n);\n        R = reverse_graph(G);\n        REP_(v, n)\
     \ if (!used[v]) dfs(v);\n        fill(ALL_(used), false);\n        reverse(ALL_(visit));\n\
     \        int k = 0;\n        for (const int &v : visit)\n            if (!used[v])\n\
-    \                rdfs(v, k++);\n        std::vector<vector<int>> edges(k);\n \
-    \       component.resize(k);\n        REP_(v, n) {\n            component[belong[v]].push_back(v);\n\
+    \                rdfs(v, k++);\n        std::vector<std::vector<int>> edges(k);\n\
+    \        component.resize(k);\n        REP_(v, n) {\n            component[belong[v]].push_back(v);\n\
     \            for (int to : G[v])\n                if (belong[v] != belong[to])\n\
     \                    edges[belong[v]].push_back(belong[to]);\n        }\n    \
     \    DAG = Graph(k);\n        REP_(from, k) {\n            sort(ALL_(edges[from]));\n\
@@ -109,8 +110,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/SCC.test.cpp
 layout: document

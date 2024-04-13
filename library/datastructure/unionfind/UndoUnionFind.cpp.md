@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UndoUnionFind.cpp\"\n#include\
     \ <cassert>\n#include <stack>\n#include <vector>\n\nclass UndoUnionFind {\n  \
-    \  size_t n, num;\n    std::vector<size_t> sz, parent;\n    std::stack<std::std::pair<size_t,\
+    \  size_t n, num;\n    std::vector<size_t> sz, parent;\n    std::stack<std::pair<size_t,\
     \ size_t>> sta;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n) : n(n), num(n), sz(n, 1), parent(n) {\n        std::ranges::iota(parent,\
     \ 0);\n    }\n\n    size_t leader(size_t x) const {\n        assert(0 <= x and\
@@ -31,7 +31,7 @@ data:
     \ x and x < n);\n        return sz[leader(x)];\n    }\n\n    size_t count() const\
     \ { return num; }\n};\n"
   code: "#include <cassert>\n#include <stack>\n#include <vector>\n\nclass UndoUnionFind\
-    \ {\n    size_t n, num;\n    std::vector<size_t> sz, parent;\n    std::stack<std::std::pair<size_t,\
+    \ {\n    size_t n, num;\n    std::vector<size_t> sz, parent;\n    std::stack<std::pair<size_t,\
     \ size_t>> sta;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n) : n(n), num(n), sz(n, 1), parent(n) {\n        std::ranges::iota(parent,\
     \ 0);\n    }\n\n    size_t leader(size_t x) const {\n        assert(0 <= x and\
@@ -53,7 +53,7 @@ data:
   path: library/datastructure/unionfind/UndoUnionFind.cpp
   requiredBy:
   - library/query/OfflineDynamicConnectivity.cpp
-  timestamp: '2024-04-13 18:46:02+09:00'
+  timestamp: '2024-04-13 19:11:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/UndoUnionFind.cpp

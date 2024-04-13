@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/util/InversionNumber.cpp
     title: library/util/InversionNumber.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
@@ -25,12 +25,12 @@ data:
     \ class Compress {\n    std::vector<T> v;\n    bool prepared;\n\n  public:\n \
     \   Compress() : prepared(false) {\n        if constexpr (Sentinel) {\n      \
     \      static_assert(std::numeric_limits<T>::is_specialized,\n               \
-    \           \"cannot use Sentinel\");\n            v = {numeric_limits<T>::min(),\
-    \ numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
+    \           \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
+    \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
     \   static_assert(std::numeric_limits<T>::is_specialized,\n                  \
-    \        \"cannot use Sentinel\");\n            v.push_back(numeric_limits<T>::min());\n\
-    \            v.push_back(numeric_limits<T>::max());\n        }\n        build();\n\
+    \        \"cannot use Sentinel\");\n            v.push_back(std::numeric_limits<T>::min());\n\
+    \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
     \        sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n    }\n\n\
@@ -72,8 +72,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:46:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 19:11:30+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp
 layout: document
