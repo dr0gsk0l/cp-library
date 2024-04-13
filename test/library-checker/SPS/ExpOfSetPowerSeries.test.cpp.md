@@ -23,7 +23,7 @@ data:
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
     )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: bitwise/Ranked.cpp:\
     \ line -1: no such header\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_std::set_power_series\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_set_power_series\"\
     \n#include <bits/stdc++.h>\n\n#include <atcoder/convolution>\n#include <atcoder/modint>\n\
     using namespace atcoder;\nusing mint = modint998244353;\nnamespace atcoder {\n\
     std::ostream &operator<<(std::ostream &os, mint a) {\n    os << a.val();\n   \

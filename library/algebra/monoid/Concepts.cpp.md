@@ -17,16 +17,16 @@ data:
   - icon: ':x:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/SWAG.cpp
     title: library/datastructure/SWAG.cpp
   - icon: ':warning:'
     path: library/math/FactorialNumberSystem.cpp
     title: library/math/FactorialNumberSystem.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
@@ -39,7 +39,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - icon: ':x:'
@@ -54,13 +54,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1036.test.cpp
     title: test/yukicoder/1036.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
   - icon: ':x:'
@@ -92,7 +92,7 @@ data:
   - library/datastructure/CumulativeGroup.cpp
   - library/tree/TreeMonoid.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

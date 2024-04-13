@@ -78,7 +78,7 @@ data:
     \ w(grid[0].size()), ban(ban), v(h * w), G(h * w) {\n        build(grid);\n  \
     \  }\n    Grid8(const std::vector<std::string> &s,\n          const std::optional<T>\
     \ &ban = std::nullopt)\n        : h(s.size()), w(s[0].size()), ban(ban), v(h *\
-    \ w), G(h * w) {\n        static_assert(is_same<T, char>::value, \"value_type==char\"\
+    \ w), G(h * w) {\n        static_assert(std::is_same<T, char>::value, \"value_type==char\"\
     );\n        build(s);\n    }\n\n    int find(const T &c) const {\n        REP_(i,\
     \ h * w) if (v[i] == c) return i;\n        return -1;\n    }\n};\n#undef REP_\n"
   code: "#pragma once\n#include \"library/graph/WeightedGraph.cpp\"\n#define REP_(i,\
@@ -101,7 +101,7 @@ data:
     \ &ban = std::nullopt)\n        : h(grid.size()), w(grid[0].size()), ban(ban),\
     \ v(h * w), G(h * w) {\n        build(grid);\n    }\n    Grid8(const std::vector<std::string>\
     \ &s,\n          const std::optional<T> &ban = std::nullopt)\n        : h(s.size()),\
-    \ w(s[0].size()), ban(ban), v(h * w), G(h * w) {\n        static_assert(is_same<T,\
+    \ w(s[0].size()), ban(ban), v(h * w), G(h * w) {\n        static_assert(std::is_same<T,\
     \ char>::value, \"value_type==char\");\n        build(s);\n    }\n\n    int find(const\
     \ T &c) const {\n        REP_(i, h * w) if (v[i] == c) return i;\n        return\
     \ -1;\n    }\n};\n#undef REP_"
@@ -110,7 +110,7 @@ data:
   isVerificationFile: false
   path: library/graph/Grid8.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/Grid8.cpp

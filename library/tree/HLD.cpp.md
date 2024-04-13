@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/TreeLazy.cpp
     title: library/tree/TreeLazy.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedVerifiedWith:
@@ -21,15 +21,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/tree/HLD.cpp\"\ntemplate <typename TREE> struct\
@@ -108,8 +108,8 @@ data:
   requiredBy:
   - library/tree/TreeMonoid.cpp
   - library/tree/TreeLazy.cpp
-  timestamp: '2024-04-13 19:59:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-04-13 20:35:54+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/LowestCommonAncestor.test.cpp

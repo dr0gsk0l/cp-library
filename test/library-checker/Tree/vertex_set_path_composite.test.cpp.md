@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':question:'
@@ -22,28 +22,28 @@ data:
   - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/vertex_std::set_path_composite
+    PROBLEM: https://judge.yosupo.jp/problem/vertex_set_path_composite
     links:
-    - https://judge.yosupo.jp/problem/vertex_std::set_path_composite
+    - https://judge.yosupo.jp/problem/vertex_set_path_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -57,7 +57,7 @@ data:
     , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/segtree/SegmentTree.cpp: line 3: #pragma once found in a non-first line\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_std::set_path_composite\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Affine.cpp\"\n\
     #include \"library/mod/Modint.cpp\"\n#include \"library/tree/Tree.cpp\"\n#include\
     \ \"library/tree/TreeMonoid.cpp\"\nusing mint = Mint<long long>;\n\nint main()\
@@ -86,8 +86,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 20:35:54+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_set_path_composite.test.cpp
 layout: document

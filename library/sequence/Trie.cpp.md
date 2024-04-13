@@ -60,7 +60,7 @@ data:
     \                                    \\\n    auto s = FS0::change(s##tomato);\n\
     #endif\n#line 4 \"library/sequence/Trie.cpp\"\ntemplate <typename CHAR, int SIGMA,\
     \ typename AbelMonoid = GroupAdd<int>>\nclass Trie {\n  protected:\n    using\
-    \ X = typename AbelMonoid::value_type;\n    struct Node {\n        array<int,\
+    \ X = typename AbelMonoid::value_type;\n    struct Node {\n        std::array<int,\
     \ SIGMA> nxt;\n        int pre;\n        X val, suffix_val; // suffix_val \u306F\
     \u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n        Node(int pre)\n          \
     \  : pre(pre), val(AbelMonoid::unit()),\n              suffix_val(AbelMonoid::unit())\
@@ -104,18 +104,18 @@ data:
   code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/sequence/ForString.cpp\"\
     \ntemplate <typename CHAR, int SIGMA, typename AbelMonoid = GroupAdd<int>>\nclass\
     \ Trie {\n  protected:\n    using X = typename AbelMonoid::value_type;\n    struct\
-    \ Node {\n        array<int, SIGMA> nxt;\n        int pre;\n        X val, suffix_val;\
-    \ // suffix_val \u306F\u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n        Node(int\
-    \ pre)\n            : pre(pre), val(AbelMonoid::unit()),\n              suffix_val(AbelMonoid::unit())\
-    \ {\n            fill(nxt.begin(), nxt.end(), -1);\n        }\n    };\n    std::vector<Node>\
-    \ nodes;\n\n  public:\n    Trie() : nodes(1, Node(-1)) {}\n\n    int &nxt(int\
-    \ now, const CHAR &a) { return nodes[now].nxt[a]; }\n    const int &nxt(int now,\
-    \ const CHAR &a) const { return nodes[now].nxt[a]; }\n\n    int add(const std::vector<CHAR>\
-    \ &v, X x = 1) {\n        int now = 0;\n        for (const CHAR &a : v) {\n  \
-    \          assert(0 <= a and a < SIGMA);\n            if (!~nxt(now, a)) {\n \
-    \               nxt(now, a) = nodes.size();\n                nodes.emplace_back(now);\n\
-    \            }\n            AbelMonoid::Rchop(nodes[now].suffix_val, x);\n   \
-    \         now = nxt(now, a);\n        }\n        AbelMonoid::Rchop(nodes[now].val,\
+    \ Node {\n        std::array<int, SIGMA> nxt;\n        int pre;\n        X val,\
+    \ suffix_val; // suffix_val \u306F\u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n\
+    \        Node(int pre)\n            : pre(pre), val(AbelMonoid::unit()),\n   \
+    \           suffix_val(AbelMonoid::unit()) {\n            fill(nxt.begin(), nxt.end(),\
+    \ -1);\n        }\n    };\n    std::vector<Node> nodes;\n\n  public:\n    Trie()\
+    \ : nodes(1, Node(-1)) {}\n\n    int &nxt(int now, const CHAR &a) { return nodes[now].nxt[a];\
+    \ }\n    const int &nxt(int now, const CHAR &a) const { return nodes[now].nxt[a];\
+    \ }\n\n    int add(const std::vector<CHAR> &v, X x = 1) {\n        int now = 0;\n\
+    \        for (const CHAR &a : v) {\n            assert(0 <= a and a < SIGMA);\n\
+    \            if (!~nxt(now, a)) {\n                nxt(now, a) = nodes.size();\n\
+    \                nodes.emplace_back(now);\n            }\n            AbelMonoid::Rchop(nodes[now].suffix_val,\
+    \ x);\n            now = nxt(now, a);\n        }\n        AbelMonoid::Rchop(nodes[now].val,\
     \ x);\n        return now;\n    }\n    int node_idx(const std::vector<CHAR> &v)\
     \ const {\n        // s \u306E Node \u3092\u8FD4\u3059\u3000\u8FFD\u52A0\u3055\
     \u308C\u3066\u7121\u3051\u308C\u3070 -1\n        int now = 0;\n        for (const\
@@ -151,7 +151,7 @@ data:
   path: library/sequence/Trie.cpp
   requiredBy:
   - library/sequence/AhoCorasick.cpp
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

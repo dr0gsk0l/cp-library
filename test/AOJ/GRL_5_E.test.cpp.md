@@ -16,16 +16,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/Reverse.cpp
     title: library/algebra/lazy/Reverse.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
   - icon: ':heavy_check_mark:'
@@ -294,7 +294,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_E.test.cpp

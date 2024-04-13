@@ -94,7 +94,7 @@ data:
   requiredBy:
   - library/geometry/Judge.cpp
   - library/geometry/UtilFunction.cpp
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':heavy_check_mark:'
@@ -114,7 +114,7 @@ data:
   isVerificationFile: false
   path: library/graph/SCC.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp

@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/tree/CentroidDecomposition.cpp\"\ntemplate <typename\
@@ -86,8 +86,8 @@ data:
   isVerificationFile: false
   path: library/tree/CentroidDecomposition.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-04-13 20:35:54+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   - test/yukicoder/1002.test.cpp

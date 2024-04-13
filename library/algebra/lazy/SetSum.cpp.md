@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.cpp
     title: library/algebra/group/CntSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Set.cpp
     title: library/algebra/monoid/Set.cpp
   _extendedRequiredBy: []
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/SetSum.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_I.test.cpp

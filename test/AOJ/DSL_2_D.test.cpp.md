@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetMin.cpp
     title: library/algebra/lazy/SetMin.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Min.cpp
     title: library/algebra/monoid/Min.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Set.cpp
     title: library/algebra/monoid/Set.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/DualSegmentTree.cpp
     title: library/segtree/DualSegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D
@@ -27,8 +27,8 @@ data:
     \                                                     \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
     \n#include <bits/stdc++.h>\n\n#line 1 \"library/algebra/monoid/Min.cpp\"\ntemplate\
     \ <typename X> struct MonoidMin {\n    using value_type = X;\n    static constexpr\
-    \ X op(const X &x, const X &y) noexcept {\n        returnstd::min(x, y);\n   \
-    \ }\n    static constexpr void Rchop(X &x, const X &y) {\n        if (x > y)\n\
+    \ X op(const X &x, const X &y) noexcept {\n        return std::min(x, y);\n  \
+    \  }\n    static constexpr void Rchop(X &x, const X &y) {\n        if (x > y)\n\
     \            x = y;\n    }\n    static constexpr void Lchop(const X &x, X &y)\
     \ {\n        if (y > x)\n            y = x;\n    }\n    static constexpr X unit()\
     \ { return std::numeric_limits<X>::max() / 2; }\n    static constexpr bool commute\
@@ -91,8 +91,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_D.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 20:35:54+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_D.test.cpp
 layout: document

@@ -99,7 +99,7 @@ data:
   isVerificationFile: false
   path: library/template/util_func.hpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/util_func.hpp

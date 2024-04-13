@@ -285,7 +285,7 @@ data:
   - library/formalpowerseries/Sqrt.cpp
   - library/formalpowerseries/MultipointEvaluation.cpp
   - library/formalpowerseries/ComposeEXP.cpp
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/Log.test.cpp

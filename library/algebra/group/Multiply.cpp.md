@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2971.test.cpp
     title: test/AOJ/2971.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/Multiply.cpp\"\ntemplate<typename\
@@ -35,8 +35,8 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Multiply.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-04-13 20:35:54+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp
   - test/AOJ/2971.test.cpp

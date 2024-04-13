@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/SWAG.cpp
     title: library/datastructure/SWAG.cpp
   - icon: ':question:'
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

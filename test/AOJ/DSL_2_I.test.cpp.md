@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetSum.cpp
     title: library/algebra/lazy/SetSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Set.cpp
     title: library/algebra/monoid/Set.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.cpp
     title: library/segtree/LazySegmentTree.cpp
   _extendedRequiredBy: []
@@ -110,7 +110,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_I.test.cpp

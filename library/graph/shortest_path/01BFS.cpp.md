@@ -61,12 +61,12 @@ data:
     \    }\n};\n#line 3 \"library/graph/shortest_path/01BFS.cpp\"\ntemplate <typename\
     \ WG, typename T = typename WG::weight_type>\nstd::pair<std::vector<T>, std::vector<int>>\
     \ bfs01(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T>\
-    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    deque<std::pair<T, int>>\
-    \ deq;\n    d[s] = 0;\n    deq.emplace_back(0, s);\n    while (deq.size()) {\n\
-    \        auto [now, id] = deq.front();\n        deq.pop_front();\n        if (d[id]\
-    \ < now)\n            continue;\n        for (const auto &e : g[id]) {\n     \
-    \       assert(e.weight == 0 || e.weight == 1);\n            if (d[e.to] == -1\
-    \ || d[e.to] > now + e.weight) {\n                d[e.to] = now + e.weight;\n\
+    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::deque<std::pair<T,\
+    \ int>> deq;\n    d[s] = 0;\n    deq.emplace_back(0, s);\n    while (deq.size())\
+    \ {\n        auto [now, id] = deq.front();\n        deq.pop_front();\n       \
+    \ if (d[id] < now)\n            continue;\n        for (const auto &e : g[id])\
+    \ {\n            assert(e.weight == 0 || e.weight == 1);\n            if (d[e.to]\
+    \ == -1 || d[e.to] > now + e.weight) {\n                d[e.to] = now + e.weight;\n\
     \                pre[e.to] = id;\n                if (e.weight == 0)\n       \
     \             deq.emplace_front(d[e.to], e.to);\n                else\n      \
     \              deq.emplace_back(d[e.to], e.to);\n            }\n        }\n  \
@@ -74,12 +74,12 @@ data:
   code: "#pragma once\n#include \"library/graph/WeightedGraph.cpp\"\ntemplate <typename\
     \ WG, typename T = typename WG::weight_type>\nstd::pair<std::vector<T>, std::vector<int>>\
     \ bfs01(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T>\
-    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    deque<std::pair<T, int>>\
-    \ deq;\n    d[s] = 0;\n    deq.emplace_back(0, s);\n    while (deq.size()) {\n\
-    \        auto [now, id] = deq.front();\n        deq.pop_front();\n        if (d[id]\
-    \ < now)\n            continue;\n        for (const auto &e : g[id]) {\n     \
-    \       assert(e.weight == 0 || e.weight == 1);\n            if (d[e.to] == -1\
-    \ || d[e.to] > now + e.weight) {\n                d[e.to] = now + e.weight;\n\
+    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::deque<std::pair<T,\
+    \ int>> deq;\n    d[s] = 0;\n    deq.emplace_back(0, s);\n    while (deq.size())\
+    \ {\n        auto [now, id] = deq.front();\n        deq.pop_front();\n       \
+    \ if (d[id] < now)\n            continue;\n        for (const auto &e : g[id])\
+    \ {\n            assert(e.weight == 0 || e.weight == 1);\n            if (d[e.to]\
+    \ == -1 || d[e.to] > now + e.weight) {\n                d[e.to] = now + e.weight;\n\
     \                pre[e.to] = id;\n                if (e.weight == 0)\n       \
     \             deq.emplace_front(d[e.to], e.to);\n                else\n      \
     \              deq.emplace_back(d[e.to], e.to);\n            }\n        }\n  \
@@ -89,7 +89,7 @@ data:
   isVerificationFile: false
   path: library/graph/shortest_path/01BFS.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/shortest_path/01BFS.cpp

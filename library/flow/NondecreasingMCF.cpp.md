@@ -75,8 +75,9 @@ data:
     \ flow(0) {}\n\n        TC cost() const {\n            if (!reverse_edge)\n  \
     \              return cost_func(flow);\n            return -cost_func(cap - 1);\n\
     \        }\n    };\n    int n;\n    WeightedGraph<EdgeInfo> G;\n    std::vector<TC>\
-    \ potential, dist;\n    static constexpr TC INF =\n        is_same_v<TC, __int128>\
-    \ ? TC(1e30) : std::numeric_limits<TC>::max() / 2;\n    //  std::numeric_limits<__int128\
+    \ potential, dist;\n    static constexpr TC INF = std::is_same_v<TC, __int128>\n\
+    \                                  ? TC(1e30)\n                              \
+    \    : std::numeric_limits<TC>::max() / 2;\n    //  std::numeric_limits<__int128\
     \ >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\n    std::vector<std::pair<int,\
     \ int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\u6765\u305F\n    std::vector<int>\
     \ in_deg, out_deg;\n    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC,\
@@ -134,20 +135,21 @@ data:
     \              reverse_edge(reverse_edge), flow(0) {}\n\n        TC cost() const\
     \ {\n            if (!reverse_edge)\n                return cost_func(flow);\n\
     \            return -cost_func(cap - 1);\n        }\n    };\n    int n;\n    WeightedGraph<EdgeInfo>\
-    \ G;\n    std::vector<TC> potential, dist;\n    static constexpr TC INF =\n  \
-    \      is_same_v<TC, __int128> ? TC(1e30) : std::numeric_limits<TC>::max() / 2;\n\
-    \    //  std::numeric_limits<__int128 >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\
-    \u305F\n    std::vector<std::pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067\
-    \ v \u306B\u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<std::pair<TC,\
-    \ int>, std::vector<std::pair<TC, int>>,\n                        greater<std::pair<TC,\
-    \ int>>>\n        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\
-    \u3059\u308B\u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n\
-    \        return (a > b and (a = b, true));\n    }\n    bool SP_update(int from,\
-    \ int edge_id) {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap\
-    \ == 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] +\
-    \ (e.weight).cost() + potential[from] -\n                                  potential[e.to]))\
-    \ {\n            pre[e.to] = {from, edge_id};\n            return true;\n    \
-    \    }\n        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
+    \ G;\n    std::vector<TC> potential, dist;\n    static constexpr TC INF = std::is_same_v<TC,\
+    \ __int128>\n                                  ? TC(1e30)\n                  \
+    \                : std::numeric_limits<TC>::max() / 2;\n    //  std::numeric_limits<__int128\
+    \ >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\n    std::vector<std::pair<int,\
+    \ int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\u6765\u305F\n    std::vector<int>\
+    \ in_deg, out_deg;\n    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC,\
+    \ int>>,\n                        greater<std::pair<TC, int>>>\n        que;\n\
+    \    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\u304B\n\n\
+    \    template <typename T> bool chmin(T &a, const T &b) {\n        return (a >\
+    \ b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id) {\n\
+    \        const auto &e = G[from][edge_id];\n        if ((e.weight).cap == 0)\n\
+    \            return false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost()\
+    \ + potential[from] -\n                                  potential[e.to])) {\n\
+    \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
+    \        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
     \u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\
     \u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n                           // \u3068\u306A\
     \u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(),\
@@ -185,7 +187,7 @@ data:
   isVerificationFile: false
   path: library/flow/NondecreasingMCF.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/3297.test.cpp

@@ -11,22 +11,22 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/std::set_xor_min
+    PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
     links:
-    - https://judge.yosupo.jp/problem/std::set_xor_min
+    - https://judge.yosupo.jp/problem/set_xor_min
   bundledCode: "#line 1 \"test/library-checker/DataStructure/SetXor-Min.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/std::set_xor_min\"\n#include\
-    \ <bits/stdc++.h>\n\n#line 1 \"library/datastructure/BinaryTrie.cpp\"\ntemplate\
-    \ <int LOG, typename COUNT> class BinaryTrie {\n    static_assert(LOG <= 64, \"\
-    Binary Trie overflow\");\n    using T = conditional_t<LOG <= 32, unsigned int,\
-    \ unsigned long long>;\n    struct Node {\n        array<int, 2> nxt_node;\n \
-    \       COUNT count; //\n        Node() : count(0) { fill(nxt_node.begin(), nxt_node.end(),\
-    \ -1); }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f)\
-    \ { return nodes[now].nxt_node[f]; }\n    bool bit(const T &a, int i) const {\
-    \ return (a >> i) & 1; }\n\n  public:\n    BinaryTrie() : nodes(1, Node()) {}\n\
-    \n    int add(const T &a, COUNT num = 1) {\n        int now = 0;\n        for\
-    \ (int i = LOG - 1; i >= 0; i--) {\n            if (!~nxt(now, bit(a, i))) {\n\
-    \                nxt(now, bit(a, i)) = nodes.size();\n                nodes.emplace_back();\n\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n#include <bits/stdc++.h>\n\
+    \n#line 1 \"library/datastructure/BinaryTrie.cpp\"\ntemplate <int LOG, typename\
+    \ COUNT> class BinaryTrie {\n    static_assert(LOG <= 64, \"Binary Trie overflow\"\
+    );\n    using T = conditional_t<LOG <= 32, unsigned int, unsigned long long>;\n\
+    \    struct Node {\n        std::array<int, 2> nxt_node;\n        COUNT count;\
+    \ //\n        Node() : count(0) { fill(nxt_node.begin(), nxt_node.end(), -1);\
+    \ }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f) { return\
+    \ nodes[now].nxt_node[f]; }\n    bool bit(const T &a, int i) const { return (a\
+    \ >> i) & 1; }\n\n  public:\n    BinaryTrie() : nodes(1, Node()) {}\n\n    int\
+    \ add(const T &a, COUNT num = 1) {\n        int now = 0;\n        for (int i =\
+    \ LOG - 1; i >= 0; i--) {\n            if (!~nxt(now, bit(a, i))) {\n        \
+    \        nxt(now, bit(a, i)) = nodes.size();\n                nodes.emplace_back();\n\
     \            }\n            nodes[now].count += num;\n            now = nxt(now,\
     \ bit(a, i));\n        }\n        nodes[now].count += num;\n        return now;\n\
     \    }\n\n    int node_idx(const T &a) {\n        int now = 0;\n        for (int\
@@ -53,7 +53,7 @@ data:
     \ BT.count(x);\n            if (t == 0 and c == 0)\n                BT.add(x,\
     \ +1);\n            if (t == 1 and c == 1)\n                BT.add(x, -1);\n \
     \       } else\n            std::cout << BT.min(x) << \"\\n\";\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/std::set_xor_min\"\n#include\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n#include\
     \ <bits/stdc++.h>\n\n#include \"library/datastructure/BinaryTrie.cpp\"\n\nint\
     \ main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    BinaryTrie<30, int> BT;\n    int q;\n    std::cin >> q;\n    while (q--)\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/SetXor-Min.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/SetXor-Min.test.cpp

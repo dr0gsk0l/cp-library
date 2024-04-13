@@ -121,7 +121,7 @@ data:
   - library/util/InversionNumber.cpp
   - library/util/BubbleNumber.cpp
   - library/r2/Projection.cpp
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

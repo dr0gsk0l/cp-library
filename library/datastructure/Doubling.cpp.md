@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/Doubling.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1097.test.cpp

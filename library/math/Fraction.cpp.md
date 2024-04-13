@@ -11,8 +11,8 @@ data:
   bundledCode: "#line 2 \"library/math/Fraction.cpp\"\ntemplate <typename T> struct\
     \ Fraction {\n    T num, den;\n    Fraction(T n = 0, T d = 1) : num(n), den(d)\
     \ {\n        assert(den != 0);\n        if (den < 0)\n            num = -num,\
-    \ den = -den;\n        T g = gcd(abs(num), abs(den));\n        num /= g;\n   \
-    \     den /= g;\n    }\n\n    Fraction operator+(const Fraction &b) const {\n\
+    \ den = -den;\n        T g = std::gcd(abs(num), abs(den));\n        num /= g;\n\
+    \        den /= g;\n    }\n\n    Fraction operator+(const Fraction &b) const {\n\
     \        return Fraction(num * b.den + den * b.num, den * b.den);\n    }\n   \
     \ Fraction operator-(const Fraction &b) const {\n        return Fraction(num *\
     \ b.den - den * b.num, den * b.den);\n    }\n    Fraction operator*(const Fraction\
@@ -54,7 +54,7 @@ data:
     \ define_cmp(<=)\n        define_cmp(>=)\n#undef define_cmp\n};\n"
   code: "#pragma once\ntemplate <typename T> struct Fraction {\n    T num, den;\n\
     \    Fraction(T n = 0, T d = 1) : num(n), den(d) {\n        assert(den != 0);\n\
-    \        if (den < 0)\n            num = -num, den = -den;\n        T g = gcd(abs(num),\
+    \        if (den < 0)\n            num = -num, den = -den;\n        T g = std::gcd(abs(num),\
     \ abs(den));\n        num /= g;\n        den /= g;\n    }\n\n    Fraction operator+(const\
     \ Fraction &b) const {\n        return Fraction(num * b.den + den * b.num, den\
     \ * b.den);\n    }\n    Fraction operator-(const Fraction &b) const {\n      \
@@ -100,7 +100,7 @@ data:
   isVerificationFile: false
   path: library/math/Fraction.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:59:47+09:00'
+  timestamp: '2024-04-13 20:35:54+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/Fraction.cpp
