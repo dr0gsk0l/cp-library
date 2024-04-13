@@ -93,8 +93,8 @@ data:
     \       int pre = nodes[node_id].pre;\n            for (int j = 0; j < SIGMA;\
     \ j++)\n                if (nxt(pre, j) == node_id) {\n                    res.push_back(j);\n\
     \                    break;\n                }\n            node_id = pre;\n \
-    \       }\n        reverse(res.begin(), res.end());\n        return res;\n   \
-    \ }\n    X prod() const { return nodes[0].suffix_val; }\n    int size() const\
+    \       }\n        std::reverse(res.begin(), res.end());\n        return res;\n\
+    \    }\n    X prod() const { return nodes[0].suffix_val; }\n    int size() const\
     \ { return nodes.size(); }\n\n    template <typename F>\n    void query(const\
     \ std::vector<CHAR> &v, const F &f, int l = 0, int r = -1) {\n        if (r <\
     \ 0)\n            r = v.size();\n        int now = 0;\n        for (int i = l;\
@@ -136,8 +136,8 @@ data:
     \       int pre = nodes[node_id].pre;\n            for (int j = 0; j < SIGMA;\
     \ j++)\n                if (nxt(pre, j) == node_id) {\n                    res.push_back(j);\n\
     \                    break;\n                }\n            node_id = pre;\n \
-    \       }\n        reverse(res.begin(), res.end());\n        return res;\n   \
-    \ }\n    X prod() const { return nodes[0].suffix_val; }\n    int size() const\
+    \       }\n        std::reverse(res.begin(), res.end());\n        return res;\n\
+    \    }\n    X prod() const { return nodes[0].suffix_val; }\n    int size() const\
     \ { return nodes.size(); }\n\n    template <typename F>\n    void query(const\
     \ std::vector<CHAR> &v, const F &f, int l = 0, int r = -1) {\n        if (r <\
     \ 0)\n            r = v.size();\n        int now = 0;\n        for (int i = l;\
@@ -151,7 +151,7 @@ data:
   path: library/sequence/Trie.cpp
   requiredBy:
   - library/sequence/AhoCorasick.cpp
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

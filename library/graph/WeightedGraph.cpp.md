@@ -32,14 +32,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
   - icon: ':x:'
@@ -63,7 +63,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -93,7 +93,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
   _isVerificationFailed: true
@@ -212,7 +212,7 @@ data:
   - library/flow/MCF.cpp
   - library/flow/NondecreasingMCF.cpp
   - library/flow/Dinic.cpp
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/ShortestPath.test.cpp

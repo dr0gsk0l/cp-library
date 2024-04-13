@@ -74,8 +74,8 @@ data:
     \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
-    \        sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n    }\n\n\
-    \    bool is_prepared() const { return prepared; }\n\n    int operator[](const\
+    \        std::sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n   \
+    \ }\n\n    bool is_prepared() const { return prepared; }\n\n    int operator[](const\
     \ T &a) const {\n        assert(prepared);\n        auto it = lower_bound(ALL_(v),\
     \ a);\n        assert(*it == a);\n        return distance(v.begin(), it);\n  \
     \  }\n    int geq(const T &a) const {\n        assert(prepared);\n        auto\
@@ -99,18 +99,18 @@ data:
     \ C[xy]; }\n    int id(int x, int y) { return C[r2(x, y)]; }\n    r2 r(int id)\
     \ { return C.r(id); }\n    //[l,r) \u3092\u8FD4\u3059\n    std::pair<int, int>\
     \ interval(const T &l, const T &r) {\n        if (C.max().x < l or r <= C.min().x)\n\
-    \            return make_std::pair(0, 0);\n        T mn = std::numeric_limits<T>::min();\n\
+    \            return std::make_pair(0, 0);\n        T mn = std::numeric_limits<T>::min();\n\
     \        int L = C.geq(r2(l, mn));\n        int R = C.geq(r2(r, mn));\n      \
-    \  return make_std::pair(L, R);\n    }\n};\n"
+    \  return std::make_pair(L, R);\n    }\n};\n"
   code: "#pragma once\n#include \"library/r2/XY.cpp\"\n#include \"library/util/Compress.cpp\"\
     \ntemplate <typename T> class Projection {\n    using r2 = XY<T>;\n    Compress<r2>\
     \ C;\n\n  public:\n    Projection(const std::vector<r2> &v) : C(v) {}\n    int\
     \ size() { return C.size(); }\n    int id(r2 xy) { return C[xy]; }\n    int id(int\
     \ x, int y) { return C[r2(x, y)]; }\n    r2 r(int id) { return C.r(id); }\n  \
     \  //[l,r) \u3092\u8FD4\u3059\n    std::pair<int, int> interval(const T &l, const\
-    \ T &r) {\n        if (C.max().x < l or r <= C.min().x)\n            return make_std::pair(0,\
+    \ T &r) {\n        if (C.max().x < l or r <= C.min().x)\n            return std::make_pair(0,\
     \ 0);\n        T mn = std::numeric_limits<T>::min();\n        int L = C.geq(r2(l,\
-    \ mn));\n        int R = C.geq(r2(r, mn));\n        return make_std::pair(L, R);\n\
+    \ mn));\n        int R = C.geq(r2(r, mn));\n        return std::make_pair(L, R);\n\
     \    }\n};\n"
   dependsOn:
   - library/r2/XY.cpp
@@ -118,7 +118,7 @@ data:
   isVerificationFile: false
   path: library/r2/Projection.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

@@ -39,14 +39,14 @@ data:
     \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
     \ t);\n        if (cnt[e]++ == 0)\n            appear[e] = idx;\n    }\n\n   \
     \ void erase(int idx, int s, int t) {\n        auto e = minmax(s, t);\n      \
-    \  if (--cnt[e] == 0)\n            pend.emplace_back(make_std::pair(appear[e],\
+    \  if (--cnt[e] == 0)\n            pend.emplace_back(std::make_pair(appear[e],\
     \ idx), e);\n    }\n\n    void add(int a, int b, const edge &e, int k, int l,\
     \ int r) {\n        if (r <= a || b <= l)\n            return;\n        if (a\
     \ <= l && r <= b) {\n            seg[k].emplace_back(e);\n            return;\n\
     \        }\n        add(a, b, e, 2 * k + 1, l, (l + r) >> 1);\n        add(a,\
     \ b, e, 2 * k + 2, (l + r) >> 1, r);\n    }\n\n    void add(int a, int b, const\
     \ edge &e) { add(a, b, e, 0, 0, segsz); }\n\n    void build() {\n        for (auto\
-    \ &p : cnt) {\n            if (p.second > 0)\n                pend.emplace_back(make_std::pair(appear[p.first],\
+    \ &p : cnt) {\n            if (p.second > 0)\n                pend.emplace_back(std::make_pair(appear[p.first],\
     \ Q), p.first);\n        }\n        for (auto &s : pend) {\n            add(s.first.first,\
     \ s.first.second, s.second);\n        }\n    }\n\n    int run(const function<void(int)>\
     \ &f, int k = 0) {\n        int add = 0;\n        for (auto &e : seg[k]) {\n \
@@ -65,14 +65,14 @@ data:
     \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
     \ t);\n        if (cnt[e]++ == 0)\n            appear[e] = idx;\n    }\n\n   \
     \ void erase(int idx, int s, int t) {\n        auto e = minmax(s, t);\n      \
-    \  if (--cnt[e] == 0)\n            pend.emplace_back(make_std::pair(appear[e],\
+    \  if (--cnt[e] == 0)\n            pend.emplace_back(std::make_pair(appear[e],\
     \ idx), e);\n    }\n\n    void add(int a, int b, const edge &e, int k, int l,\
     \ int r) {\n        if (r <= a || b <= l)\n            return;\n        if (a\
     \ <= l && r <= b) {\n            seg[k].emplace_back(e);\n            return;\n\
     \        }\n        add(a, b, e, 2 * k + 1, l, (l + r) >> 1);\n        add(a,\
     \ b, e, 2 * k + 2, (l + r) >> 1, r);\n    }\n\n    void add(int a, int b, const\
     \ edge &e) { add(a, b, e, 0, 0, segsz); }\n\n    void build() {\n        for (auto\
-    \ &p : cnt) {\n            if (p.second > 0)\n                pend.emplace_back(make_std::pair(appear[p.first],\
+    \ &p : cnt) {\n            if (p.second > 0)\n                pend.emplace_back(std::make_pair(appear[p.first],\
     \ Q), p.first);\n        }\n        for (auto &s : pend) {\n            add(s.first.first,\
     \ s.first.second, s.second);\n        }\n    }\n\n    int run(const function<void(int)>\
     \ &f, int k = 0) {\n        int add = 0;\n        for (auto &e : seg[k]) {\n \
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: library/query/OfflineDynamicConnectivity.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/OfflineDynamicConnectivity.cpp

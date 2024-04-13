@@ -130,7 +130,7 @@ data:
     \u3066\u3044\u3044\n        while (f > 0) {\n            if (negative)\n     \
     \           if (dag)\n                    DAG();\n                else\n     \
     \               BellmanFord();\n            else\n                dijkstra();\n\
-    \            if (dist[t] == INF)\n                return make_std::pair(res, false);\n\
+    \            if (dist[t] == INF)\n                return std::make_pair(res, false);\n\
     \            REP_(v, n) if (dist[v] < INF) potential[v] += dist[v];\n        \
     \    TF d = f; // d:\u4ECA\u56DE\u6D41\u3059\u91CF\n            for (int v = t;\
     \ v != s; v = pre[v].first)\n                chmin(d, (G[pre[v].first][pre[v].second].weight).cap);\n\
@@ -139,7 +139,7 @@ data:
     \ G[pre[v].first][pre[v].second].weight;\n                cap -= d;\n        \
     \        (G[v][rev].weight).cap += d;\n            }\n        } // \u3053\u306E\
     \u30EB\u30FC\u30D7\u3092\u629C\u3051\u3066\u308B\u306A\u3089f\u6D41\u308C\u3066\
-    \u308B\n        return make_std::pair(res, true);\n    }\n\n    std::pair<TC,\
+    \u308B\n        return std::make_pair(res, true);\n    }\n\n    std::pair<TC,\
     \ bool> st_flow(int s_, int t_,\n                                TF lim = std::numeric_limits<TF>::max()\
     \ / 2) {\n        s = s_;\n        t = t_;\n        return flow(lim);\n    }\n\
     };\n#undef REP_\n#line 3 \"library/graph/matching/WeightedBipartiteMatching.cpp\"\
@@ -157,7 +157,7 @@ data:
     \ std::vector<std::tuple<int, int, TC>> res;\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow, cost] = all_edge[i];\n            if (flow)\n            \
-    \    res.emplace_back(from, to - A, -cost);\n        }\n        return make_std::pair(-sum,\
+    \    res.emplace_back(from, to - A, -cost);\n        }\n        return std::make_pair(-sum,\
     \ res);\n    }\n};\n#line 7 \"test/library-checker/Graph/AssignmentProblem.test.cpp\"\
     \nusing ll = long long;\nconstexpr ll INF = ll(1e9) + 1;\n\nint main() {\n   \
     \ std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n    int n;\n\
@@ -186,7 +186,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/AssignmentProblem.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/AssignmentProblem.test.cpp

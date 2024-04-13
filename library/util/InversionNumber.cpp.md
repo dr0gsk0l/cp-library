@@ -30,8 +30,8 @@ data:
     \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
-    \        sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n    }\n\n\
-    \    bool is_prepared() const { return prepared; }\n\n    int operator[](const\
+    \        std::sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n   \
+    \ }\n\n    bool is_prepared() const { return prepared; }\n\n    int operator[](const\
     \ T &a) const {\n        assert(prepared);\n        auto it = lower_bound(ALL_(v),\
     \ a);\n        assert(*it == a);\n        return distance(v.begin(), it);\n  \
     \  }\n    int geq(const T &a) const {\n        assert(prepared);\n        auto\
@@ -66,7 +66,7 @@ data:
   path: library/util/InversionNumber.cpp
   requiredBy:
   - library/util/BubbleNumber.cpp
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

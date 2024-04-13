@@ -22,8 +22,8 @@ data:
     \ }\n\n    struct Run {\n        int t, l, r;\n        Run() = default;\n    \
     \    Run(int t, int l, int r) : t(t), l(l), r(r) {}\n    };\n    std::vector<Run>\
     \ ans;\n\n    std::queue<std::pair<int, int>> que;\n    std::string REV(std::string\
-    \ s) {\n        reverse(s.begin(), s.end());\n        return s;\n    }\n    void\
-    \ solve(int l, int r) {\n        int m = (l + r) >> 1;\n        que.emplace(l,\
+    \ s) {\n        std::reverse(s.begin(), s.end());\n        return s;\n    }\n\
+    \    void solve(int l, int r) {\n        int m = (l + r) >> 1;\n        que.emplace(l,\
     \ m);\n        que.emplace(m, r);\n        std::string left_s = s.substr(l, m\
     \ - l), right_s = s.substr(m, r - m),\n                    all_s = s.substr(l,\
     \ r - l);\n        {\n            // \u5404 k \u306B\u5BFE\u3057\u3001left_s \u306E\
@@ -47,24 +47,24 @@ data:
     \ m; t++) {\n                int L = Left(t), R = Right(t);\n                if\
     \ (R - L >= 2 * t)\n                    ans.emplace_back(t, L, R);\n         \
     \   }\n        }\n    }\n\n    void arrangement() {\n        std::vector<Run>\
-    \ fans;\n        sort(ans.begin(), ans.end(), [](Run a, Run b) {\n           \
-    \ if (a.t != b.t)\n                return a.t < b.t;\n            if (a.l != b.l)\n\
-    \                return a.l < b.l;\n            return a.r > b.r;\n        });\n\
-    \        std::set<std::pair<int, int>> already;\n        int pret = -1, mx;\n\
-    \        for (const auto &[t, l, r] : ans) {\n            if (pret != t)\n   \
-    \             pret = t, mx = -1;\n            if (already.count({l, r}) || mx\
-    \ >= r)\n                continue;\n            if ((r < SIZE_(s) and s[r] ==\
-    \ s[r - t]) or\n                (l - 1 >= 0 and s[l - 1] == s[l - 1 + t]))\n \
-    \               continue;\n            fans.emplace_back(t, l, r);\n         \
-    \   already.emplace(l, r);\n            mx = r;\n        }\n        ans = fans;\n\
-    \    }\n\n    void build() {\n        que.emplace(0, int(s.size()));\n       \
-    \ while (que.size()) {\n            auto [l, r] = que.front();\n            que.pop();\n\
-    \            if (l + 1 == r)\n                continue;\n            solve(l,\
-    \ r);\n        }\n        arrangement();\n    }\n};\n#undef SIZE_\n#line 5 \"\
-    test/library-checker/String/RunEnumerate.test.cpp\"\n\nint main() {\n    std::string\
-    \ s;\n    std::cin >> s;\n    RunEnumerate RE(s);\n    std::cout << RE.ans.size()\
-    \ << \"\\n\";\n    for (const auto &[t, l, r] : RE.ans)\n        std::cout <<\
-    \ t << \" \" << l << \" \" << r << \"\\n\";\n}\n"
+    \ fans;\n        std::sort(ans.begin(), ans.end(), [](Run a, Run b) {\n      \
+    \      if (a.t != b.t)\n                return a.t < b.t;\n            if (a.l\
+    \ != b.l)\n                return a.l < b.l;\n            return a.r > b.r;\n\
+    \        });\n        std::set<std::pair<int, int>> already;\n        int pret\
+    \ = -1, mx;\n        for (const auto &[t, l, r] : ans) {\n            if (pret\
+    \ != t)\n                pret = t, mx = -1;\n            if (already.count({l,\
+    \ r}) || mx >= r)\n                continue;\n            if ((r < SIZE_(s) and\
+    \ s[r] == s[r - t]) or\n                (l - 1 >= 0 and s[l - 1] == s[l - 1 +\
+    \ t]))\n                continue;\n            fans.emplace_back(t, l, r);\n \
+    \           already.emplace(l, r);\n            mx = r;\n        }\n        ans\
+    \ = fans;\n    }\n\n    void build() {\n        que.emplace(0, int(s.size()));\n\
+    \        while (que.size()) {\n            auto [l, r] = que.front();\n      \
+    \      que.pop();\n            if (l + 1 == r)\n                continue;\n  \
+    \          solve(l, r);\n        }\n        arrangement();\n    }\n};\n#undef\
+    \ SIZE_\n#line 5 \"test/library-checker/String/RunEnumerate.test.cpp\"\n\nint\
+    \ main() {\n    std::string s;\n    std::cin >> s;\n    RunEnumerate RE(s);\n\
+    \    std::cout << RE.ans.size() << \"\\n\";\n    for (const auto &[t, l, r] :\
+    \ RE.ans)\n        std::cout << t << \" \" << l << \" \" << r << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/runenumerate\"\n#include\
     \ <bits/stdc++.h>\n\n#include \"library/sequence/RunEnumerate.cpp\"\n\nint main()\
     \ {\n    std::string s;\n    std::cin >> s;\n    RunEnumerate RE(s);\n    std::cout\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/String/RunEnumerate.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/String/RunEnumerate.test.cpp

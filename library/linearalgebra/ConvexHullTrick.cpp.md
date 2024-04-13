@@ -74,7 +74,7 @@ data:
     \            }\n        }\n        push_front(l);\n    }\n\n  public:\n    using\
     \ value_type = L;\n    using deque<L>::size;\n\n    ConvexHullTrick() = default;\n\
     \    ConvexHullTrick(std::vector<L> lines) {\n        if (OBJ == -1)\n       \
-    \     for (auto &l : lines)\n                l = -l;\n        sort(lines.begin(),\
+    \     for (auto &l : lines)\n                l = -l;\n        std::sort(lines.begin(),\
     \ lines.end());\n        for (const auto &l : lines)\n            internal_push_back(l);\n\
     \    }\n\n    void add(L l) {\n        if (OBJ == -1)\n            l = -l;\n \
     \       if (!size() or back().a >= l.a)\n            internal_push_back(l);\n\
@@ -90,13 +90,13 @@ data:
     \ <= back()(x))\n            pop_back();\n        return back()(x) * OBJ;\n  \
     \  }\n\n    std::vector<T> query(const std::vector<T> &xs) {\n        int n =\
     \ xs.size();\n        std::vector<int> idx(n);\n        iota(idx.begin(), idx.end(),\
-    \ 0);\n        sort(idx.begin(), idx.end(),\n             [&](int i, int j) {\
-    \ return xs[i] < xs[j]; });\n        std::vector<T> ans(n);\n        for (int\
-    \ id : idx)\n            ans[id] = query_monotone_inc(xs[id]);\n        return\
-    \ ans;\n    }\n\n    friend std::ostream &operator<<(std::ostream &os,\n     \
-    \                               const ConvexHullTrick &cht) {\n        os << \"\
-    [\";\n        for (int i = 0; i < cht.size(); i++)\n            os << (OBJ ==\
-    \ -1 ? -cht.at(i) : cht.at(i))\n               << \"],\"[i + 1 < cht.size()];\n\
+    \ 0);\n        std::sort(idx.begin(), idx.end(),\n                  [&](int i,\
+    \ int j) { return xs[i] < xs[j]; });\n        std::vector<T> ans(n);\n       \
+    \ for (int id : idx)\n            ans[id] = query_monotone_inc(xs[id]);\n    \
+    \    return ans;\n    }\n\n    friend std::ostream &operator<<(std::ostream &os,\n\
+    \                                    const ConvexHullTrick &cht) {\n        os\
+    \ << \"[\";\n        for (int i = 0; i < cht.size(); i++)\n            os << (OBJ\
+    \ == -1 ? -cht.at(i) : cht.at(i))\n               << \"],\"[i + 1 < cht.size()];\n\
     \        if (!cht.size())\n            os << \"]\";\n        return os;\n    }\n\
     };\n} // namespace convex_hull_trick\ntemplate <typename T>\nusing MinConvexHullTrick\
     \ =\n    convex_hull_trick::ConvexHullTrick<T,\n                             \
@@ -134,30 +134,30 @@ data:
     \        push_front(l);\n    }\n\n  public:\n    using value_type = L;\n    using\
     \ deque<L>::size;\n\n    ConvexHullTrick() = default;\n    ConvexHullTrick(std::vector<L>\
     \ lines) {\n        if (OBJ == -1)\n            for (auto &l : lines)\n      \
-    \          l = -l;\n        sort(lines.begin(), lines.end());\n        for (const\
-    \ auto &l : lines)\n            internal_push_back(l);\n    }\n\n    void add(L\
-    \ l) {\n        if (OBJ == -1)\n            l = -l;\n        if (!size() or back().a\
-    \ >= l.a)\n            internal_push_back(l);\n        else if (l.a >= front().a)\n\
-    \            internal_push_front(l);\n        else\n            assert(false);\n\
-    \    }\n\n    void add(T a, T b) { add(L(a, b)); }\n\n    T query(T x) const {\n\
-    \        assert(size());\n        int l = -1, r = size() - 1;\n        while (r\
-    \ - l > 1) {\n            int m = (l + r) >> 1;\n            (at(m)(x) >= at(m\
-    \ + 1)(x) ? l : r) = m;\n        }\n        return at(r)(x) * OBJ;\n    }\n\n\
-    \    T query_monotone_inc(T x) {\n        assert(size());\n        while (size()\
-    \ >= 2 and at(0)(x) >= at(1)(x))\n            pop_front();\n        return at(0)(x)\
-    \ * OBJ;\n    }\n\n    T query_monotone_dec(T x) {\n        assert(size());\n\
-    \        while (size() >= 2 and at(size() - 2)(x) <= back()(x))\n            pop_back();\n\
-    \        return back()(x) * OBJ;\n    }\n\n    std::vector<T> query(const std::vector<T>\
-    \ &xs) {\n        int n = xs.size();\n        std::vector<int> idx(n);\n     \
-    \   iota(idx.begin(), idx.end(), 0);\n        sort(idx.begin(), idx.end(),\n \
-    \            [&](int i, int j) { return xs[i] < xs[j]; });\n        std::vector<T>\
-    \ ans(n);\n        for (int id : idx)\n            ans[id] = query_monotone_inc(xs[id]);\n\
-    \        return ans;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
-    \ &os,\n                                    const ConvexHullTrick &cht) {\n  \
-    \      os << \"[\";\n        for (int i = 0; i < cht.size(); i++)\n          \
-    \  os << (OBJ == -1 ? -cht.at(i) : cht.at(i))\n               << \"],\"[i + 1\
-    \ < cht.size()];\n        if (!cht.size())\n            os << \"]\";\n       \
-    \ return os;\n    }\n};\n} // namespace convex_hull_trick\ntemplate <typename\
+    \          l = -l;\n        std::sort(lines.begin(), lines.end());\n        for\
+    \ (const auto &l : lines)\n            internal_push_back(l);\n    }\n\n    void\
+    \ add(L l) {\n        if (OBJ == -1)\n            l = -l;\n        if (!size()\
+    \ or back().a >= l.a)\n            internal_push_back(l);\n        else if (l.a\
+    \ >= front().a)\n            internal_push_front(l);\n        else\n         \
+    \   assert(false);\n    }\n\n    void add(T a, T b) { add(L(a, b)); }\n\n    T\
+    \ query(T x) const {\n        assert(size());\n        int l = -1, r = size()\
+    \ - 1;\n        while (r - l > 1) {\n            int m = (l + r) >> 1;\n     \
+    \       (at(m)(x) >= at(m + 1)(x) ? l : r) = m;\n        }\n        return at(r)(x)\
+    \ * OBJ;\n    }\n\n    T query_monotone_inc(T x) {\n        assert(size());\n\
+    \        while (size() >= 2 and at(0)(x) >= at(1)(x))\n            pop_front();\n\
+    \        return at(0)(x) * OBJ;\n    }\n\n    T query_monotone_dec(T x) {\n  \
+    \      assert(size());\n        while (size() >= 2 and at(size() - 2)(x) <= back()(x))\n\
+    \            pop_back();\n        return back()(x) * OBJ;\n    }\n\n    std::vector<T>\
+    \ query(const std::vector<T> &xs) {\n        int n = xs.size();\n        std::vector<int>\
+    \ idx(n);\n        iota(idx.begin(), idx.end(), 0);\n        std::sort(idx.begin(),\
+    \ idx.end(),\n                  [&](int i, int j) { return xs[i] < xs[j]; });\n\
+    \        std::vector<T> ans(n);\n        for (int id : idx)\n            ans[id]\
+    \ = query_monotone_inc(xs[id]);\n        return ans;\n    }\n\n    friend std::ostream\
+    \ &operator<<(std::ostream &os,\n                                    const ConvexHullTrick\
+    \ &cht) {\n        os << \"[\";\n        for (int i = 0; i < cht.size(); i++)\n\
+    \            os << (OBJ == -1 ? -cht.at(i) : cht.at(i))\n               << \"\
+    ],\"[i + 1 < cht.size()];\n        if (!cht.size())\n            os << \"]\";\n\
+    \        return os;\n    }\n};\n} // namespace convex_hull_trick\ntemplate <typename\
     \ T>\nusing MinConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
     \                                       convex_hull_trick::Objective::MINIMIZE>;\n\
     template <typename T>\nusing MaxConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
@@ -167,7 +167,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/ConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2012.test.cpp

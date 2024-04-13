@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/StaticRangeSum.test.cpp

@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/SetMin.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/DSL_2_D.test.cpp

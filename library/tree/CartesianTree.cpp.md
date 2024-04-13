@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedRequiredBy: []
@@ -141,7 +141,7 @@ data:
   isVerificationFile: false
   path: library/tree/CartesianTree.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp

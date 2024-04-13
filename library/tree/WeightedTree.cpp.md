@@ -21,12 +21,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/CartesianTree.test.cpp
     title: test/library-checker/Tree/CartesianTree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T>\
@@ -134,8 +134,8 @@ data:
   path: library/tree/WeightedTree.cpp
   requiredBy:
   - library/tree/CartesianTree.cpp
-  timestamp: '2024-04-13 19:11:30+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-04-13 19:59:47+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp
   - test/yukicoder/1002.test.cpp

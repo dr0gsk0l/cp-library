@@ -31,8 +31,8 @@ data:
     \ntemplate <typename WG, typename W = typename WG::weight_type>\nstd::pair<W,\
     \ std::vector<int>> minimum_spanning_tree(const WG &g) {\n    assert(g.is_prepared());\n\
     \    int n = g.n, m = g.edges.size();\n    UnionFind uf(n);\n    std::vector<int>\
-    \ id(m);\n    iota(id.begin(), id.end(), 0);\n    sort(id.begin(), id.end(), [&](const\
-    \ int i, const int j) {\n        return g.edges[i].weight < g.edges[j].weight;\n\
+    \ id(m);\n    iota(id.begin(), id.end(), 0);\n    std::sort(id.begin(), id.end(),\
+    \ [&](const int i, const int j) {\n        return g.edges[i].weight < g.edges[j].weight;\n\
     \    });\n    W res = 0;\n    std::vector<int> tree;\n    tree.reserve(n - 1);\n\
     \    for (int i : id) {\n        const auto &[from, to, weight] = g.edges[i];\n\
     \        if (uf.same(from, to))\n            continue;\n        tree.push_back(i);\n\
@@ -42,9 +42,9 @@ data:
     \ WG, typename W = typename WG::weight_type>\nstd::pair<W, std::vector<int>> minimum_spanning_tree(const\
     \ WG &g) {\n    assert(g.is_prepared());\n    int n = g.n, m = g.edges.size();\n\
     \    UnionFind uf(n);\n    std::vector<int> id(m);\n    iota(id.begin(), id.end(),\
-    \ 0);\n    sort(id.begin(), id.end(), [&](const int i, const int j) {\n      \
-    \  return g.edges[i].weight < g.edges[j].weight;\n    });\n    W res = 0;\n  \
-    \  std::vector<int> tree;\n    tree.reserve(n - 1);\n    for (int i : id) {\n\
+    \ 0);\n    std::sort(id.begin(), id.end(), [&](const int i, const int j) {\n \
+    \       return g.edges[i].weight < g.edges[j].weight;\n    });\n    W res = 0;\n\
+    \    std::vector<int> tree;\n    tree.reserve(n - 1);\n    for (int i : id) {\n\
     \        const auto &[from, to, weight] = g.edges[i];\n        if (uf.same(from,\
     \ to))\n            continue;\n        tree.push_back(i);\n        uf.merge(from,\
     \ to);\n        res += weight;\n    }\n    assert(uf.count() == 1);\n    return\
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/graph/MinimumSpanningTree.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_2_A.test.cpp

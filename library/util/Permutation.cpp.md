@@ -11,7 +11,7 @@ data:
   bundledCode: "#line 2 \"library/util/Permutation.cpp\"\n#define REP_(i, n) for (int\
     \ i = 0; i < (n); i++)\nstruct Perm {\n    using vi = std::vector<int>;\n    //\
     \ (v[i],i) \u3067\u5EA7\u5727\n    template <typename T> static vi make_perm(const\
-    \ std::vector<T> &v) {\n        vi w = v;\n        sort(w.begin(), w.end());\n\
+    \ std::vector<T> &v) {\n        vi w = v;\n        std::sort(w.begin(), w.end());\n\
     \        std::map<T, int> mp;\n        REP_(i, v.size()) if (!i or w[i - 1] !=\
     \ w[i]) mp[w[i]] = i;\n        REP_(i, v.size()) w[i] = mp[v[i]]++;\n        return\
     \ w;\n    }\n    // r[p[i]]=i;\n    static vi rev(const vi &p) {\n        assert(is_permutation(p));\n\
@@ -41,13 +41,13 @@ data:
   code: "#pragma once\n#define REP_(i, n) for (int i = 0; i < (n); i++)\nstruct Perm\
     \ {\n    using vi = std::vector<int>;\n    // (v[i],i) \u3067\u5EA7\u5727\n  \
     \  template <typename T> static vi make_perm(const std::vector<T> &v) {\n    \
-    \    vi w = v;\n        sort(w.begin(), w.end());\n        std::map<T, int> mp;\n\
-    \        REP_(i, v.size()) if (!i or w[i - 1] != w[i]) mp[w[i]] = i;\n       \
-    \ REP_(i, v.size()) w[i] = mp[v[i]]++;\n        return w;\n    }\n    // r[p[i]]=i;\n\
-    \    static vi rev(const vi &p) {\n        assert(is_permutation(p));\n      \
-    \  auto res = p;\n        REP_(i, p.size()) res[p[i]] = i;\n        return res;\n\
-    \    }\n    // r[i] = p[q[i]]\n    static vi composite(const vi &p, const vi &q)\
-    \ {\n        assert(p.size() == q.size());\n        assert(is_permutation(p));\n\
+    \    vi w = v;\n        std::sort(w.begin(), w.end());\n        std::map<T, int>\
+    \ mp;\n        REP_(i, v.size()) if (!i or w[i - 1] != w[i]) mp[w[i]] = i;\n \
+    \       REP_(i, v.size()) w[i] = mp[v[i]]++;\n        return w;\n    }\n    //\
+    \ r[p[i]]=i;\n    static vi rev(const vi &p) {\n        assert(is_permutation(p));\n\
+    \        auto res = p;\n        REP_(i, p.size()) res[p[i]] = i;\n        return\
+    \ res;\n    }\n    // r[i] = p[q[i]]\n    static vi composite(const vi &p, const\
+    \ vi &q) {\n        assert(p.size() == q.size());\n        assert(is_permutation(p));\n\
     \        assert(is_permutation(q));\n        auto res = p;\n        REP_(i, p.size())\
     \ res[i] = p[q[i]];\n        return res;\n    }\n    static std::vector<vi> divide_cycle(const\
     \ vi &p) {\n        assert(is_permutation(p));\n        int n = p.size();\n  \
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: library/util/Permutation.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/Permutation.cpp

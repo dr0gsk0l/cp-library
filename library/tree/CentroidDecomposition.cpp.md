@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1002.test.cpp
     title: test/yukicoder/1002.test.cpp
   - icon: ':x:'
@@ -24,7 +24,7 @@ data:
     \    const int u = S[i];\n            sz[u] = 1;\n            for (int to : T[u])\
     \ {\n                if (to == pre[u] || ~timing[to])\n                    continue;\n\
     \                pre[to] = u;\n                S.push_back(to);\n            }\n\
-    \        }\n        int SZ = S.size();\n        reverse(S.begin(), S.end());\n\
+    \        }\n        int SZ = S.size();\n        std::reverse(S.begin(), S.end());\n\
     \        for (int u : S) {\n            if (SZ - sz[u] <= SZ / 2)\n          \
     \      return u;\n            sz[pre[u]] += sz[u];\n        }\n        assert(false);\n\
     \        return -1;\n    };\n\n  public:\n    std::vector<int> order;\n    CentroidDecomposition(TREE\
@@ -56,7 +56,7 @@ data:
     \ i++) {\n            const int u = S[i];\n            sz[u] = 1;\n          \
     \  for (int to : T[u]) {\n                if (to == pre[u] || ~timing[to])\n \
     \                   continue;\n                pre[to] = u;\n                S.push_back(to);\n\
-    \            }\n        }\n        int SZ = S.size();\n        reverse(S.begin(),\
+    \            }\n        }\n        int SZ = S.size();\n        std::reverse(S.begin(),\
     \ S.end());\n        for (int u : S) {\n            if (SZ - sz[u] <= SZ / 2)\n\
     \                return u;\n            sz[pre[u]] += sz[u];\n        }\n    \
     \    assert(false);\n        return -1;\n    };\n\n  public:\n    std::vector<int>\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: false
   path: library/tree/CentroidDecomposition.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

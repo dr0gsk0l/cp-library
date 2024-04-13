@@ -114,12 +114,12 @@ data:
     \        fill(potential.begin(), potential.end(), 0);\n        for (int i = 0;\
     \ i < f; i++) {\n            if (negative)\n                DAG(s);\n        \
     \    else\n                dijkstra(s);\n            if (dist[t] == INF)\n   \
-    \             return make_std::pair(res, false);\n            REP_(v, n) if (dist[v]\
+    \             return std::make_pair(res, false);\n            REP_(v, n) if (dist[v]\
     \ != INF) potential[v] += dist[v];\n            res += potential[t];\n       \
     \     for (int v = t; v != s; v = pre[v].first) {\n                auto &w = G[pre[v].first][pre[v].second].weight;\n\
     \                w.cap--;\n                w.flow++;\n                auto &r\
     \ = G[v][w.rev].weight;\n                r.cap++;\n                r.flow--;\n\
-    \            }\n        }\n        return make_std::pair(res, true);\n    }\n\
+    \            }\n        }\n        return std::make_pair(res, true);\n    }\n\
     };\n#undef REP_\n"
   code: "#pragma once\n// \u8FBA\u306E\u91CD\u307F\u304C\u6D41\u91CF\u306B\u5BFE\u3057\
     \u3066\u5358\u8ABF\u5897\u52A0\u306A\u95A2\u6570\n// \u73FE\u5728\u306E\u6D41\u91CF\
@@ -173,19 +173,19 @@ data:
     \        fill(potential.begin(), potential.end(), 0);\n        for (int i = 0;\
     \ i < f; i++) {\n            if (negative)\n                DAG(s);\n        \
     \    else\n                dijkstra(s);\n            if (dist[t] == INF)\n   \
-    \             return make_std::pair(res, false);\n            REP_(v, n) if (dist[v]\
+    \             return std::make_pair(res, false);\n            REP_(v, n) if (dist[v]\
     \ != INF) potential[v] += dist[v];\n            res += potential[t];\n       \
     \     for (int v = t; v != s; v = pre[v].first) {\n                auto &w = G[pre[v].first][pre[v].second].weight;\n\
     \                w.cap--;\n                w.flow++;\n                auto &r\
     \ = G[v][w.rev].weight;\n                r.cap++;\n                r.flow--;\n\
-    \            }\n        }\n        return make_std::pair(res, true);\n    }\n\
+    \            }\n        }\n        return std::make_pair(res, true);\n    }\n\
     };\n#undef REP_"
   dependsOn:
   - library/graph/WeightedGraph.cpp
   isVerificationFile: false
   path: library/flow/NondecreasingMCF.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/3297.test.cpp

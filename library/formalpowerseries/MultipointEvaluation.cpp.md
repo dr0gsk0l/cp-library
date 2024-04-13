@@ -53,12 +53,12 @@ data:
     \ FPS &g) { return (*this) = (*this) / g; }\n\n    FPS &operator/=(const T &a)\
     \ { return *this *= a.inv(); }\n    FPS operator/(const T &a) { return FPS(*this)\
     \ /= a; }\n\n    FPS &operator<<=(const int d) {\n        if (d >= MX)\n     \
-    \       return *this = FPS(0);\n        resize(min(MX, int(size()) + d));\n  \
-    \      for (int i = int(size()) - 1 - d; i >= 0; i--)\n            at(i + d) =\
-    \ at(i);\n        for (int i = d - 1; i >= 0; i--)\n            at(i) = 0;\n \
-    \       return *this;\n    }\n    FPS operator<<(const int d) const { return FPS(*this)\
-    \ <<= d; }\n    FPS &operator>>=(const int d) {\n        if (d >= size())\n  \
-    \          return *this = FPS(0);\n        for (int i = d; i < size(); i++)\n\
+    \       return *this = FPS(0);\n        resize(std::min(MX, int(size()) + d));\n\
+    \        for (int i = int(size()) - 1 - d; i >= 0; i--)\n            at(i + d)\
+    \ = at(i);\n        for (int i = d - 1; i >= 0; i--)\n            at(i) = 0;\n\
+    \        return *this;\n    }\n    FPS operator<<(const int d) const { return\
+    \ FPS(*this) <<= d; }\n    FPS &operator>>=(const int d) {\n        if (d >= size())\n\
+    \            return *this = FPS(0);\n        for (int i = d; i < size(); i++)\n\
     \            at(i - d) = at(i);\n        strict(int(size()) - d);\n        return\
     \ *this;\n    }\n    FPS operator>>(const int d) const { return FPS(*this) >>=\
     \ d; }\n#pragma endregion operator\n\n    FPS pre(int n) const {\n        if (size()\
@@ -108,41 +108,41 @@ data:
     \    void taylor_shift(T c) {\n        shrink();\n        if (size() <= 1 or c\
     \ == 0)\n            return;\n        int n = size();\n        T fact = 1;\n \
     \       REP_(i, n) {\n            if (i)\n                fact *= i;\n       \
-    \     at(i) *= fact;\n        }\n        reverse(begin(), end());\n        *this\
-    \ *= exp(c).pre(n);\n        strict(n);\n        reverse(begin(), end());\n  \
-    \      T finv = fact.inv();\n        for (int i = n - 1; i >= 0; i--) {\n    \
-    \        at(i) *= finv;\n            finv *= i;\n        }\n    }\n\n    static\
-    \ FPS differential(FPS f) {\n        if (f.size() <= 1)\n            return FPS(0);\n\
-    \        REP_(i, f.size() - 1) f[i] = (i + 1) * f[i + 1];\n        f.resize(f.size()\
-    \ - 1);\n        return f;\n    }\n    static FPS integral(FPS f) {\n        if\
-    \ (f.size() < MX)\n            f.resize(f.size() + 1);\n        for (int i = f.size()\
-    \ - 1; i > 0; i--)\n            f[i] = f[i - 1] / i;\n        f[0] = 0;\n    \
-    \    return f;\n    }\n\n    static FPS log(const FPS &f) {\n        assert(f.size()\
-    \ and f[0] == 1);\n        return integral(differential(f) / f);\n    }\n    static\
-    \ FPS exp(const FPS f) {\n        if (!f.size())\n            return unit();\n\
-    \        assert(f[0] == 0);\n        FPS res = unit();\n        for (int n = 0;\
-    \ (1 << n) < MX; n++) {\n            // mod[1<<n] \u2192 mod[1<<(n+1)]\n     \
-    \       res *= (f.pre(1 << (n + 1)) + 1 - log(res).pre(1 << (n + 1)));\n     \
-    \       res.strict(1 << (n + 1));\n        }\n        return res;\n    }\n   \
-    \ // exp(nx)\n    static FPS exp(const T n) {\n        if (n == 0)\n         \
-    \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
-    \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
-    \ REP_\n#line 3 \"library/formalpowerseries/DivMod.cpp\"\n#define REVERSE_(f)\
-    \ reverse(f.begin(), f.end());\ntemplate <typename FPS> std::pair<FPS, FPS> div_mod(FPS\
-    \ f, FPS g) {\n    f.shrink();\n    g.shrink();\n    assert(g.size());\n    if\
-    \ (f.size() < g.size())\n        return {FPS(0), f};\n    REVERSE_(f);\n    REVERSE_(g);\n\
-    \    int d = f.size() - g.size() + 1;\n    FPS q = (f.pre(d) * g.inv(d)).pre(d);\n\
-    \    if (q.size() < d)\n        q.resize(d, 0);\n    REVERSE_(q);\n    REVERSE_(f);\n\
-    \    REVERSE_(g);\n    return {q, f - q * g};\n}\n#undef REVERSE_\n#line 4 \"\
-    library/formalpowerseries/MultipointEvaluation.cpp\"\ntemplate <typename FPS,\
-    \ typename T = typename FPS::value_type>\nstd::vector<T> multipoint_evaluation(const\
-    \ FPS &f, std::vector<T> v) {\n    int m = v.size();\n    int sz;\n    for (sz\
-    \ = 1; sz < m; sz *= 2) {\n    }\n    std::vector<FPS> t(sz * 2);\n    for (int\
-    \ i = 0; i < sz; i++)\n        t[sz + i] = {(i < m ? -v[i] : 0), 1};\n    for\
-    \ (int i = sz - 1; i > 0; i--)\n        t[i] = t[2 * i] * t[2 * i + 1];\n\n  \
-    \  t[0] = f;\n    for (int i = 1; i < sz + m; i++)\n        t[i] = div_mod(t[i\
-    \ >> 1], t[i]).second;\n\n    for (int i = 0; i < m; i++)\n        v[i] = t[sz\
-    \ + i][0];\n    return v;\n}\n"
+    \     at(i) *= fact;\n        }\n        std::reverse(begin(), end());\n     \
+    \   *this *= exp(c).pre(n);\n        strict(n);\n        std::reverse(begin(),\
+    \ end());\n        T finv = fact.inv();\n        for (int i = n - 1; i >= 0; i--)\
+    \ {\n            at(i) *= finv;\n            finv *= i;\n        }\n    }\n\n\
+    \    static FPS differential(FPS f) {\n        if (f.size() <= 1)\n          \
+    \  return FPS(0);\n        REP_(i, f.size() - 1) f[i] = (i + 1) * f[i + 1];\n\
+    \        f.resize(f.size() - 1);\n        return f;\n    }\n    static FPS integral(FPS\
+    \ f) {\n        if (f.size() < MX)\n            f.resize(f.size() + 1);\n    \
+    \    for (int i = f.size() - 1; i > 0; i--)\n            f[i] = f[i - 1] / i;\n\
+    \        f[0] = 0;\n        return f;\n    }\n\n    static FPS log(const FPS &f)\
+    \ {\n        assert(f.size() and f[0] == 1);\n        return integral(differential(f)\
+    \ / f);\n    }\n    static FPS exp(const FPS f) {\n        if (!f.size())\n  \
+    \          return unit();\n        assert(f[0] == 0);\n        FPS res = unit();\n\
+    \        for (int n = 0; (1 << n) < MX; n++) {\n            // mod[1<<n] \u2192\
+    \ mod[1<<(n+1)]\n            res *= (f.pre(1 << (n + 1)) + 1 - log(res).pre(1\
+    \ << (n + 1)));\n            res.strict(1 << (n + 1));\n        }\n        return\
+    \ res;\n    }\n    // exp(nx)\n    static FPS exp(const T n) {\n        if (n\
+    \ == 0)\n            return unit();\n        FPS res(MX, 1);\n        for (int\
+    \ i = 1; i < MX; i++)\n            res[i] = res[i - 1] * n / i;\n        return\
+    \ res;\n    }\n};\n#undef REP_\n#line 3 \"library/formalpowerseries/DivMod.cpp\"\
+    \n#define REVERSE_(f) std::reverse(f.begin(), f.end());\ntemplate <typename FPS>\
+    \ std::pair<FPS, FPS> div_mod(FPS f, FPS g) {\n    f.shrink();\n    g.shrink();\n\
+    \    assert(g.size());\n    if (f.size() < g.size())\n        return {FPS(0),\
+    \ f};\n    REVERSE_(f);\n    REVERSE_(g);\n    int d = f.size() - g.size() + 1;\n\
+    \    FPS q = (f.pre(d) * g.inv(d)).pre(d);\n    if (q.size() < d)\n        q.resize(d,\
+    \ 0);\n    REVERSE_(q);\n    REVERSE_(f);\n    REVERSE_(g);\n    return {q, f\
+    \ - q * g};\n}\n#undef REVERSE_\n#line 4 \"library/formalpowerseries/MultipointEvaluation.cpp\"\
+    \ntemplate <typename FPS, typename T = typename FPS::value_type>\nstd::vector<T>\
+    \ multipoint_evaluation(const FPS &f, std::vector<T> v) {\n    int m = v.size();\n\
+    \    int sz;\n    for (sz = 1; sz < m; sz *= 2) {\n    }\n    std::vector<FPS>\
+    \ t(sz * 2);\n    for (int i = 0; i < sz; i++)\n        t[sz + i] = {(i < m ?\
+    \ -v[i] : 0), 1};\n    for (int i = sz - 1; i > 0; i--)\n        t[i] = t[2 *\
+    \ i] * t[2 * i + 1];\n\n    t[0] = f;\n    for (int i = 1; i < sz + m; i++)\n\
+    \        t[i] = div_mod(t[i >> 1], t[i]).second;\n\n    for (int i = 0; i < m;\
+    \ i++)\n        v[i] = t[sz + i][0];\n    return v;\n}\n"
   code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\n#include \"\
     library/formalpowerseries/DivMod.cpp\"\ntemplate <typename FPS, typename T = typename\
     \ FPS::value_type>\nstd::vector<T> multipoint_evaluation(const FPS &f, std::vector<T>\
@@ -159,7 +159,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/MultipointEvaluation.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp

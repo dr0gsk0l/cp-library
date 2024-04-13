@@ -78,13 +78,13 @@ data:
     \    std::vector<std::vector<int>> component;\n    SCC(const DirectedGraph &G)\
     \ : n(G.n), G(G), belong(n), used(n, false) {\n        assert(G.is_prepared());\n\
     \        visit.reserve(n);\n        R = reverse_graph(G);\n        REP_(v, n)\
-    \ if (!used[v]) dfs(v);\n        fill(ALL_(used), false);\n        reverse(ALL_(visit));\n\
+    \ if (!used[v]) dfs(v);\n        fill(ALL_(used), false);\n        std::reverse(ALL_(visit));\n\
     \        int k = 0;\n        for (const int &v : visit)\n            if (!used[v])\n\
     \                rdfs(v, k++);\n        std::vector<std::vector<int>> edges(k);\n\
     \        component.resize(k);\n        REP_(v, n) {\n            component[belong[v]].push_back(v);\n\
     \            for (int to : G[v])\n                if (belong[v] != belong[to])\n\
     \                    edges[belong[v]].push_back(belong[to]);\n        }\n    \
-    \    DAG = Graph(k);\n        REP_(from, k) {\n            sort(ALL_(edges[from]));\n\
+    \    DAG = Graph(k);\n        REP_(from, k) {\n            std::sort(ALL_(edges[from]));\n\
     \            REP_(i, edges[from].size())\n            if (!i || edges[from][i]\
     \ != edges[from][i - 1])\n                DAG.add_arc(from, edges[from][i]);\n\
     \        }\n    }\n    int operator[](int k) { return belong[k]; }\n};\n#undef\
@@ -110,7 +110,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/SCC.test.cpp

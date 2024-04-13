@@ -81,7 +81,7 @@ data:
     \ p.x); }\n\nPoint project(Segment s, Point p) {\n    Vector base = s.p2 - s.p1;\n\
     \    double r = dot(p - s.p1, base) / base.norm();\n    return s.p1 + base * r;\n\
     }\n\nPoint reflect(Segment s, Point p) { return p + (project(s, p) - p) * 2.0;\
-    \ }\n\nPolygon convex_hull(Polygon ps) {\n    int n = ps.size();\n    sort(ps.begin(),\
+    \ }\n\nPolygon convex_hull(Polygon ps) {\n    int n = ps.size();\n    std::sort(ps.begin(),\
     \ ps.end(), cmp_y);\n    int k = 0;\n    Polygon qs(n * 2);\n    for (int i =\
     \ 0; i < n; i++) {\n        while (k > 1 and cross(qs[k - 1] - qs[k - 2], ps[i]\
     \ - qs[k - 1]) < 0)\n            k--;\n        qs[k++] = ps[i];\n    }\n    for\
@@ -108,7 +108,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp

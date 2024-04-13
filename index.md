@@ -244,7 +244,7 @@ data:
     - icon: ':warning:'
       path: library/graph/Grid8.cpp
       title: library/graph/Grid8.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/graph/MinimumSpanningArborescence.cpp
       title: library/graph/MinimumSpanningArborescence.cpp
     - icon: ':heavy_check_mark:'
@@ -487,7 +487,7 @@ data:
     - icon: ':question:'
       path: library/tree/TreeMonoid.cpp
       title: library/tree/TreeMonoid.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/tree/WeightedTree.cpp
       title: library/tree/WeightedTree.cpp
   - name: library/util
@@ -528,7 +528,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/2212.test.cpp
       title: test/AOJ/2212.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2647.test.cpp
       title: test/AOJ/2647.test.cpp
     - icon: ':heavy_check_mark:'
@@ -594,7 +594,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_A.test.cpp
       title: test/AOJ/GRL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_B.test.cpp
       title: test/AOJ/GRL_2_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -775,7 +775,7 @@ data:
       title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1002.test.cpp
       title: test/yukicoder/1002.test.cpp
     - icon: ':x:'

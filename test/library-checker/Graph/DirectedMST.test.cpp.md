@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/graph/MinimumSpanningArborescence.cpp
     title: library/graph/MinimumSpanningArborescence.cpp
   - icon: ':question:'
@@ -70,7 +70,7 @@ data:
     \                } while (!uf.same(v, now));\n                now = uf.leader(now);\n\
     \            } else\n                now = uf.leader(pre[now]);\n        }\n \
     \       for (int v : processing)\n            state[v] = 2;\n    }\n    tree.erase(tree.begin()\
-    \ + r);\n    return make_std::pair(res, tree);\n}\n#line 2 \"library/graph/WeightedGraph.cpp\"\
+    \ + r);\n    return std::make_pair(res, tree);\n}\n#line 2 \"library/graph/WeightedGraph.cpp\"\
     \ntemplate <typename T> struct WeightedEdge {\n    WeightedEdge() = default;\n\
     \    WeightedEdge(int from, int to, T weight)\n        : from(from), to(to), weight(weight)\
     \ {}\n    int from, to;\n    T weight;\n    operator int() const { return to;\
@@ -144,7 +144,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/DirectedMST.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/DirectedMST.test.cpp

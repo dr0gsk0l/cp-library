@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/CartesianTree.cpp
     title: library/tree/CartesianTree.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/WeightedTree.cpp
     title: library/tree/WeightedTree.cpp
   _extendedRequiredBy: []
@@ -133,7 +133,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/CartesianTree.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/CartesianTree.test.cpp

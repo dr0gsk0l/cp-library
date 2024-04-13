@@ -6,10 +6,10 @@ data:
     title: library/datastructure/unionfind/UnionFind.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: test/library-checker/Graph/DirectedMST.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UnionFind.cpp\"\nclass UnionFind\
@@ -67,7 +67,7 @@ data:
     \                } while (!uf.same(v, now));\n                now = uf.leader(now);\n\
     \            } else\n                now = uf.leader(pre[now]);\n        }\n \
     \       for (int v : processing)\n            state[v] = 2;\n    }\n    tree.erase(tree.begin()\
-    \ + r);\n    return make_std::pair(res, tree);\n}\n"
+    \ + r);\n    return std::make_pair(res, tree);\n}\n"
   code: "#pragma once\n#include \"library/datastructure/unionfind/UnionFind.cpp\"\n\
     template <typename WG, typename W = typename WG::weight_type>\nstd::optional<std::pair<W,\
     \ std::vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int\
@@ -102,14 +102,14 @@ data:
     \                } while (!uf.same(v, now));\n                now = uf.leader(now);\n\
     \            } else\n                now = uf.leader(pre[now]);\n        }\n \
     \       for (int v : processing)\n            state[v] = 2;\n    }\n    tree.erase(tree.begin()\
-    \ + r);\n    return make_std::pair(res, tree);\n}\n"
+    \ + r);\n    return std::make_pair(res, tree);\n}\n"
   dependsOn:
   - library/datastructure/unionfind/UnionFind.cpp
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 19:59:47+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp
   - test/AOJ/GRL_2_B.test.cpp

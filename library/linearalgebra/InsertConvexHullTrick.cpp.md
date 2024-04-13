@@ -66,7 +66,7 @@ data:
     \ auto &l : lines)\n            add(l);\n    }\n\n    void add(L l) {\n      \
     \  if (OBJ == -1)\n            l = -l;\n        if (mp1.count(l.a)) {\n      \
     \      if (mp1[l.a] <= l.b)\n                return;\n            mp1.erase(l.a);\n\
-    \        }\n        auto [it, flag] = mp1.insert(make_std::pair(l.a, l.b));\n\
+    \        }\n        auto [it, flag] = mp1.insert(std::make_pair(l.a, l.b));\n\
     \        if (check(it)) {\n            mp1.erase(it);\n            return;\n \
     \       }\n        if (it != mp1.begin())\n            for (auto l = pre(it);\
     \ check(l); l = --mp1.erase(l)) {\n            }\n        if (nxt(it) != mp1.end())\n\
@@ -103,7 +103,7 @@ data:
     \ &lines) {\n        for (const auto &l : lines)\n            add(l);\n    }\n\
     \n    void add(L l) {\n        if (OBJ == -1)\n            l = -l;\n        if\
     \ (mp1.count(l.a)) {\n            if (mp1[l.a] <= l.b)\n                return;\n\
-    \            mp1.erase(l.a);\n        }\n        auto [it, flag] = mp1.insert(make_std::pair(l.a,\
+    \            mp1.erase(l.a);\n        }\n        auto [it, flag] = mp1.insert(std::make_pair(l.a,\
     \ l.b));\n        if (check(it)) {\n            mp1.erase(it);\n            return;\n\
     \        }\n        if (it != mp1.begin())\n            for (auto l = pre(it);\
     \ check(l); l = --mp1.erase(l)) {\n            }\n        if (nxt(it) != mp1.end())\n\
@@ -120,7 +120,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/InsertConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/linearalgebra/InsertConvexHullTrick.cpp

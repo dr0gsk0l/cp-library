@@ -50,12 +50,12 @@ data:
     \ FPS &g) { return (*this) = (*this) / g; }\n\n    FPS &operator/=(const T &a)\
     \ { return *this *= a.inv(); }\n    FPS operator/(const T &a) { return FPS(*this)\
     \ /= a; }\n\n    FPS &operator<<=(const int d) {\n        if (d >= MX)\n     \
-    \       return *this = FPS(0);\n        resize(min(MX, int(size()) + d));\n  \
-    \      for (int i = int(size()) - 1 - d; i >= 0; i--)\n            at(i + d) =\
-    \ at(i);\n        for (int i = d - 1; i >= 0; i--)\n            at(i) = 0;\n \
-    \       return *this;\n    }\n    FPS operator<<(const int d) const { return FPS(*this)\
-    \ <<= d; }\n    FPS &operator>>=(const int d) {\n        if (d >= size())\n  \
-    \          return *this = FPS(0);\n        for (int i = d; i < size(); i++)\n\
+    \       return *this = FPS(0);\n        resize(std::min(MX, int(size()) + d));\n\
+    \        for (int i = int(size()) - 1 - d; i >= 0; i--)\n            at(i + d)\
+    \ = at(i);\n        for (int i = d - 1; i >= 0; i--)\n            at(i) = 0;\n\
+    \        return *this;\n    }\n    FPS operator<<(const int d) const { return\
+    \ FPS(*this) <<= d; }\n    FPS &operator>>=(const int d) {\n        if (d >= size())\n\
+    \            return *this = FPS(0);\n        for (int i = d; i < size(); i++)\n\
     \            at(i - d) = at(i);\n        strict(int(size()) - d);\n        return\
     \ *this;\n    }\n    FPS operator>>(const int d) const { return FPS(*this) >>=\
     \ d; }\n#pragma endregion operator\n\n    FPS pre(int n) const {\n        if (size()\
@@ -105,33 +105,34 @@ data:
     \    void taylor_shift(T c) {\n        shrink();\n        if (size() <= 1 or c\
     \ == 0)\n            return;\n        int n = size();\n        T fact = 1;\n \
     \       REP_(i, n) {\n            if (i)\n                fact *= i;\n       \
-    \     at(i) *= fact;\n        }\n        reverse(begin(), end());\n        *this\
-    \ *= exp(c).pre(n);\n        strict(n);\n        reverse(begin(), end());\n  \
-    \      T finv = fact.inv();\n        for (int i = n - 1; i >= 0; i--) {\n    \
-    \        at(i) *= finv;\n            finv *= i;\n        }\n    }\n\n    static\
-    \ FPS differential(FPS f) {\n        if (f.size() <= 1)\n            return FPS(0);\n\
-    \        REP_(i, f.size() - 1) f[i] = (i + 1) * f[i + 1];\n        f.resize(f.size()\
-    \ - 1);\n        return f;\n    }\n    static FPS integral(FPS f) {\n        if\
-    \ (f.size() < MX)\n            f.resize(f.size() + 1);\n        for (int i = f.size()\
-    \ - 1; i > 0; i--)\n            f[i] = f[i - 1] / i;\n        f[0] = 0;\n    \
-    \    return f;\n    }\n\n    static FPS log(const FPS &f) {\n        assert(f.size()\
-    \ and f[0] == 1);\n        return integral(differential(f) / f);\n    }\n    static\
-    \ FPS exp(const FPS f) {\n        if (!f.size())\n            return unit();\n\
-    \        assert(f[0] == 0);\n        FPS res = unit();\n        for (int n = 0;\
-    \ (1 << n) < MX; n++) {\n            // mod[1<<n] \u2192 mod[1<<(n+1)]\n     \
-    \       res *= (f.pre(1 << (n + 1)) + 1 - log(res).pre(1 << (n + 1)));\n     \
-    \       res.strict(1 << (n + 1));\n        }\n        return res;\n    }\n   \
-    \ // exp(nx)\n    static FPS exp(const T n) {\n        if (n == 0)\n         \
-    \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
-    \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
-    \ REP_\n#line 3 \"library/formalpowerseries/RationalSum.cpp\"\ntemplate <typename\
-    \ FPS> class RationalSum {\n    std::queue<std::pair<FPS, FPS>> que;\n\n  public:\n\
-    \    void add(const FPS &f, const FPS &g) { que.emplace(f, g); }\n    FPS sum()\
-    \ {\n        if (!que.size())\n            return FPS(0);\n        while (que.size()\
-    \ > 1) {\n            auto [a1, b1] = que.front();\n            que.pop();\n \
-    \           auto [a2, b2] = que.front();\n            que.pop();\n           \
-    \ que.emplace(a1 * b2 + a2 * b1, b1 * b2);\n        }\n        auto [a, b] = que.front();\n\
-    \        que.pop();\n        return a / b;\n    }\n};\n"
+    \     at(i) *= fact;\n        }\n        std::reverse(begin(), end());\n     \
+    \   *this *= exp(c).pre(n);\n        strict(n);\n        std::reverse(begin(),\
+    \ end());\n        T finv = fact.inv();\n        for (int i = n - 1; i >= 0; i--)\
+    \ {\n            at(i) *= finv;\n            finv *= i;\n        }\n    }\n\n\
+    \    static FPS differential(FPS f) {\n        if (f.size() <= 1)\n          \
+    \  return FPS(0);\n        REP_(i, f.size() - 1) f[i] = (i + 1) * f[i + 1];\n\
+    \        f.resize(f.size() - 1);\n        return f;\n    }\n    static FPS integral(FPS\
+    \ f) {\n        if (f.size() < MX)\n            f.resize(f.size() + 1);\n    \
+    \    for (int i = f.size() - 1; i > 0; i--)\n            f[i] = f[i - 1] / i;\n\
+    \        f[0] = 0;\n        return f;\n    }\n\n    static FPS log(const FPS &f)\
+    \ {\n        assert(f.size() and f[0] == 1);\n        return integral(differential(f)\
+    \ / f);\n    }\n    static FPS exp(const FPS f) {\n        if (!f.size())\n  \
+    \          return unit();\n        assert(f[0] == 0);\n        FPS res = unit();\n\
+    \        for (int n = 0; (1 << n) < MX; n++) {\n            // mod[1<<n] \u2192\
+    \ mod[1<<(n+1)]\n            res *= (f.pre(1 << (n + 1)) + 1 - log(res).pre(1\
+    \ << (n + 1)));\n            res.strict(1 << (n + 1));\n        }\n        return\
+    \ res;\n    }\n    // exp(nx)\n    static FPS exp(const T n) {\n        if (n\
+    \ == 0)\n            return unit();\n        FPS res(MX, 1);\n        for (int\
+    \ i = 1; i < MX; i++)\n            res[i] = res[i - 1] * n / i;\n        return\
+    \ res;\n    }\n};\n#undef REP_\n#line 3 \"library/formalpowerseries/RationalSum.cpp\"\
+    \ntemplate <typename FPS> class RationalSum {\n    std::queue<std::pair<FPS, FPS>>\
+    \ que;\n\n  public:\n    void add(const FPS &f, const FPS &g) { que.emplace(f,\
+    \ g); }\n    FPS sum() {\n        if (!que.size())\n            return FPS(0);\n\
+    \        while (que.size() > 1) {\n            auto [a1, b1] = que.front();\n\
+    \            que.pop();\n            auto [a2, b2] = que.front();\n          \
+    \  que.pop();\n            que.emplace(a1 * b2 + a2 * b1, b1 * b2);\n        }\n\
+    \        auto [a, b] = que.front();\n        que.pop();\n        return a / b;\n\
+    \    }\n};\n"
   code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\ntemplate <typename\
     \ FPS> class RationalSum {\n    std::queue<std::pair<FPS, FPS>> que;\n\n  public:\n\
     \    void add(const FPS &f, const FPS &g) { que.emplace(f, g); }\n    FPS sum()\
@@ -146,7 +147,7 @@ data:
   path: library/formalpowerseries/RationalSum.cpp
   requiredBy:
   - library/formalpowerseries/ComposeEXP.cpp
-  timestamp: '2024-04-13 19:11:30+09:00'
+  timestamp: '2024-04-13 19:59:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/RationalSum.cpp
