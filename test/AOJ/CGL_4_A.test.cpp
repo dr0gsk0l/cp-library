@@ -10,9 +10,9 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     Polygon P(n);
-    cin >> P;
+    std::cin >> P;
 
     Polygon Q = convex_hull(P);
     std::cout << Q.size() << "\n";

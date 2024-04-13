@@ -3,14 +3,14 @@ template <char MARGIN> struct ForString {
     static constexpr char change(char c) { return c - MARGIN; }
     static constexpr char restore(char a) { return a + MARGIN; }
 
-    static std::vector<char> change(const string &s) {
+    static std::vector<char> change(const std::string &s) {
         std::vector<char> v(s.size());
         for (int i = 0; i < s.size(); i++)
             v[i] = change(s[i]);
         return v;
     }
-    static string restore(const std::vector<char> &v) {
-        string s(v.size(), '#');
+    static std::string restore(const std::vector<char> &v) {
+        std::string s(v.size(), '#');
         for (int i = 0; i < v.size(); i++)
             s[i] = restore(v[i]);
         return s;
@@ -23,14 +23,14 @@ struct FSAa {
     static constexpr char restore(char a) {
         return a < 26 ? 'A' : a - 26 + 'a';
     }
-    static std::vector<char> change(const string &s) {
+    static std::vector<char> change(const std::string &s) {
         std::vector<char> v(s.size());
         for (int i = 0; i < s.size(); i++)
             v[i] = change(s[i]);
         return v;
     }
-    static string restore(const std::vector<char> &v) {
-        string s(v.size(), '#');
+    static std::string restore(const std::vector<char> &v) {
+        std::string s(v.size(), '#');
         for (int i = 0; i < v.size(); i++)
             s[i] = restore(v[i]);
         return s;

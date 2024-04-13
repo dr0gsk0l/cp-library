@@ -1,6 +1,6 @@
 template <typename T> class Distance {
-    map<T, int> d;
-    queue<T> que;
+    std<T, int> d;
+    std::queue<T> que;
 
   public:
     // s から終端にたどり着くまでの距離

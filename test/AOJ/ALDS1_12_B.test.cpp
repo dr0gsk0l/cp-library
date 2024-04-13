@@ -12,14 +12,14 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     WeightedGraph<int> G(n);
     REP (_, n) {
         int u, k;
-        cin >> u >> k;
+        std::cin >> u >> k;
         REP (_, k) {
             int v, c;
-            cin >> v >> c;
+            std::cin >> v >> c;
             G.add_arc(u, v, c);
         }
     }

@@ -1,20 +1,20 @@
-template <typename T> struct Multiset : map<T, int> {
-    using map<T, int>::at;
-    using map<T, int>::size;
-    using map<T, int>::begin;
-    using map<T, int>::rbegin;
-    using map<T, int>::erase;
-    using map<T, int>::lower_bound;
-    using map<T, int>::upper_bound;
+template <typename T> struct Multistd::set : std<T, int> {
+    using std<T, int>::at;
+    using std<T, int>::size;
+    using std<T, int>::begin;
+    using std<T, int>::rbegin;
+    using std<T, int>::erase;
+    using std<T, int>::lower_bound;
+    using std<T, int>::upper_bound;
 
-    int count(const T &a) const { return (map<T, int>::count(a) ? at(a) : 0); }
+    int count(const T &a) const { return (std<T, int>::count(a) ? at(a) : 0); }
     void insert(const T &a) { (*this)[a]++; }
     void erase1(const T &a) {
-        if (map<T, int>::count(a) and !--at(a))
+        if (std<T, int>::count(a) and !--at(a))
             erase(a);
     }
     void erase_k(const T &a, int k) {
-        if (map<T, int>::count(a))
+        if (std<T, int>::count(a))
             return;
         at(a) -= k;
         if (at(a) <= 0)
@@ -70,7 +70,7 @@ template <typename T> struct Multiset : map<T, int> {
     void scan(int n) {
         while (n--) {
             T a;
-            cin >> a;
+            std::cin >> a;
             insert(a);
         }
     }

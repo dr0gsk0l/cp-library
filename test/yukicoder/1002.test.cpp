@@ -11,15 +11,15 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, k;
-    cin >> n >> k;
+    std::cin >> n >> k;
     WeightedTree<int> T(n);
     T.scan(1);
 
     ll ans = 0;
 
     CentroidDecomposition CD(T);
-    map<pair<int, int>, int> m2; // m2[c1,c2]:c1,c2 組の数
-    map<int, int> m1,            // m1[c]:c 単色の数
+    std<pair<int, int>, int> m2; // m2[c1,c2]:c1,c2 組の数
+    std<int, int> m1,            // m1[c]:c 単色の数
         m2_sum;                  // m2_sum[c]:c を含む二色の数
     int m1_sum = 0;              // 単色の合計
     bool empty = false;

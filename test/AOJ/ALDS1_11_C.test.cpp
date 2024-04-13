@@ -12,15 +12,15 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     Graph g(n);
     REP (_, n) {
         int u, k;
-        cin >> u >> k;
+        std::cin >> u >> k;
         u--;
         REP (_, k) {
             int v;
-            cin >> v;
+            std::cin >> v;
             v--;
             g.add_arc(u, v);
         }

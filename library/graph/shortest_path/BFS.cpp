@@ -3,7 +3,7 @@ template <typename GRAPH>
 pair<vector<int>, vector<int>> BFS(const GRAPH &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<int> d(g.n, -1), pre(g.n, -1);
-    queue<int> que;
+    std::queue<int> que;
     d[s] = 0;
     que.push(s);
     while (que.size()) {

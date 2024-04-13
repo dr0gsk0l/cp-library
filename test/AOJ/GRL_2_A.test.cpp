@@ -7,7 +7,7 @@
 
 int main() {
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     WeightedGraph<int> g(n, m, false, 0);
     auto [sum, tree] = minimum_spanning_tree(g);
     std::cout << sum << std::endl;

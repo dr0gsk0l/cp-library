@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/vertex_set_path_composite"
+#define PROBLEM "https://judge.yosupo.jp/problem/vertex_std::set_path_composite"
 #include <bits/stdc++.h>
 
 #include "library/algebra/group/Affine.cpp"
@@ -14,11 +14,11 @@ int main() {
     using F = G::value_type;
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
 
     std::vector<F> f(n);
     for (int i = 0; i < n; i++)
-        cin >> f[i];
+        std::cin >> f[i];
 
     Tree t(n);
     t.scan(0);
@@ -27,17 +27,17 @@ int main() {
 
     while (q--) {
         int c;
-        cin >> c;
+        std::cin >> c;
         if (c) {
             int u, v, x;
-            cin >> u >> v >> x;
+            std::cin >> u >> v >> x;
             F g = TM.path_prod(u, v);
             std::cout << g(x) << std::endl;
         } else {
             int p;
-            cin >> p;
+            std::cin >> p;
             F f;
-            cin >> f;
+            std::cin >> f;
             TM.set(p, f);
         }
     }

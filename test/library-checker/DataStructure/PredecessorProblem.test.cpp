@@ -8,20 +8,20 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     Set<int> se;
     se.banpei();
 
     for (int i = 0; i < n; i++) {
         char c;
-        cin >> c;
+        std::cin >> c;
         if (c == '1')
             se.insert(i);
     }
 
     while (q--) {
         int c, k;
-        cin >> c >> k;
+        std::cin >> c >> k;
         if (c == 0)
             se.insert(k);
         if (c == 1)

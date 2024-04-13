@@ -1,4 +1,6 @@
 #pragma once
+#include <cassert>
+#include <vector>
 class FullyIndexableDictionary {
     int n,
         block; // 64個事に区切ったブロックの個数

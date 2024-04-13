@@ -11,12 +11,12 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     std::vector<mint> f(n), g(m);
     for (mint &p : f)
-        cin >> p;
+        std::cin >> p;
     for (mint &p : g)
-        cin >> p;
+        std::cin >> p;
     auto h = convolution(f, g);
     for (mint &p : h)
         std::cout << p << " ";

@@ -7,7 +7,7 @@
 
 int main() {
     int n, m, r;
-    cin >> n >> m >> r;
+    std::cin >> n >> m >> r;
     WeightedGraph<int> g(n, m, true, 0);
     auto ans = minimum_spanning_arborescence(g, r);
     assert(ans.has_value());

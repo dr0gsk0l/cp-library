@@ -7,11 +7,11 @@
 #include <atcoder/modint>
 using namespace atcoder;
 using mint = modint998244353;
-ostream &operator<<(ostream &os, mint a) {
+std::ostream &operator<<(std::ostream &os, mint a) {
     os << a.val();
     return os;
 }
-istream &operator>>(istream &is, mint &a) {
+std::istream &operator>>(std::istream &is, mint &a) {
     long long b;
     is >> b;
     a = b;
@@ -27,12 +27,12 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     FPS f(n), g(m);
     REP (i, n)
-        cin >> f[i];
+        std::cin >> f[i];
     REP (j, m)
-        cin >> g[j];
+        std::cin >> g[j];
     auto [q, r] = div_mod(f, g);
     q.shrink();
     r.shrink();

@@ -12,12 +12,12 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     WeightedBipartiteMatching<ll> B(n, n);
     REP (i, n)
         REP (j, n) {
             int a;
-            cin >> a;
+            std::cin >> a;
             B.add_edge(i, j, INF - a);
         }
     auto [sum, vec] = B.solve();

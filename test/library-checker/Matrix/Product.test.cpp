@@ -11,9 +11,9 @@ using M = Matrix<mint>;
 
 int main() {
     int n, m, k;
-    cin >> n >> m >> k;
+    std::cin >> n >> m >> k;
     M A(n, m), B(m, k);
-    cin >> A >> B;
+    std::cin >> A >> B;
     M C = A * B;
     REP (i, n)
         REP (j, k)

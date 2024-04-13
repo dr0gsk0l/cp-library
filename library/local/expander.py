@@ -23,7 +23,7 @@ END = '\033[0m'
 class Expander:
     # re は正規表現を使うためのツール https://note.nkmk.me/python-re-match-search-findall-etc/
     # library_include に以下の正規表現を代入している
-    # r'' は raw 文字列 エスケープシーケンスをしなくて良くなる https://note.nkmk.me/python-raw-string-escape/
+    # r'' は raw 文字列 エスケープシーケンスをしなくて良くなる https://note.nkmk.me/python-raw-std::string-escape/
     # acl と自分のを分けているのは、acl 内の <algorithm> などを探さないようにするため
     
     
@@ -155,7 +155,7 @@ if __name__ == "__main__":
 
     # 環境変数（environ）の 'CPLUS_INCLUDE_PATH' で自分のライブラリのパスを指定したい時に使うものだと思う（https://atcoder.github.io/ac-library/production/document_ja/appendix.html）
     if 'CPLUS_INCLUDE_PATH' in environ:
-        lib_paths.extend(map(Path, filter(None, environ['CPLUS_INCLUDE_PATH'].split(pathsep))))
+        lib_paths.extend(std(Path, filter(None, environ['CPLUS_INCLUDE_PATH'].split(pathsep))))
     
     # カレントディレクトリを lib_paths に追加
     lib_paths.append(Path.cwd())

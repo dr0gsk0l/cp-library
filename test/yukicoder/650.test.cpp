@@ -18,11 +18,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     EdgeVertex EV(n);
     REP (_, n - 1) {
         int u, v;
-        cin >> u >> v;
+        std::cin >> u >> v;
         EV.add_edge(u, v);
     }
     Tree T = EV.build();
@@ -30,21 +30,21 @@ int main() {
     TreeMonoid<Tree, GroupMultiply<MAT, false>> TM(T);
 
     int q;
-    cin >> q;
+    std::cin >> q;
     REP (_, q) {
         char c;
-        cin >> c;
+        std::cin >> c;
         if (c == 'x') {
             int idx;
-            cin >> idx;
+            std::cin >> idx;
             MAT M;
             REP (i, 2)
                 REP (j, 2)
-                    cin >> M[i][j];
+                    std::cin >> M[i][j];
             TM.set(n + idx, M);
         } else {
             int l, r;
-            cin >> l >> r;
+            std::cin >> l >> r;
             MAT M = TM.path_prod(l, r);
             REP (i, 2)
                 REP (j, 2)

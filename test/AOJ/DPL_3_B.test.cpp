@@ -11,14 +11,14 @@ int main() {
     std::cin.tie(nullptr);
 
     int h, w;
-    cin >> h >> w;
+    std::cin >> h >> w;
 
     int ans = 0;
     std::vector<int> v(w, 0);
     while (h--) {
         for (int &p : v) {
             int a;
-            cin >> a;
+            std::cin >> a;
             if (a)
                 p = 0;
             else

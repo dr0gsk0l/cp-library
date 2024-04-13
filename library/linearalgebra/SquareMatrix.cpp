@@ -133,11 +133,11 @@ template <typename K, size_t N> struct SquareMatrix {
         return B;
     }
 
-    friend ostream &operator<<(ostream &os, const SquareMatrix &M) {
+    friend std::ostream &operator<<(std::ostream &os, const SquareMatrix &M) {
         REP_(i, N) REP_(j, N) os << M.M[i][j] << "\n "[j + 1 < N];
         return os;
     }
-    friend istream &operator>>(istream &is, SquareMatrix &M) {
+    friend std::istream &operator>>(std::istream &is, SquareMatrix &M) {
         REP_(i, N) REP_(j, N) is >> M.M[i][j];
         return is;
     }

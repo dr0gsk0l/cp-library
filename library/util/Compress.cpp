@@ -73,7 +73,7 @@ template <typename T, bool Sentinel = false> class Compress {
     T max() const { return v.back(); }
     T min() const { return v[0]; }
 
-    friend ostream &operator<<(ostream &os, const Compress &C) {
+    friend std::ostream &operator<<(std::ostream &os, const Compress &C) {
         for (int i = 0; i < C.v.size(); i++)
             os << C.v[i] << ":" << i << " ";
         return os;

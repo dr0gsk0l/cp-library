@@ -10,11 +10,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     FenwickTree<GroupAdd<int>> ft(n);
     while (q--) {
         int c, s, t;
-        cin >> c >> s >> t;
+        std::cin >> c >> s >> t;
         s--;
         if (c) {
             assert(s <= t);

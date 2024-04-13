@@ -7,17 +7,17 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    string s;
-    cin >> s;
+    std::string s;
+    std::cin >> s;
     auto ss = FSA::change(s);
 
     Trie<char, 26> T;
 
     int m;
-    cin >> m;
+    std::cin >> m;
     while (m--) {
-        string c;
-        cin >> c;
+        std::string c;
+        std::cin >> c;
         auto cc = FSA::change(c);
         T.add(cc);
     }

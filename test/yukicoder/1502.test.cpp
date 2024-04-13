@@ -15,12 +15,12 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m, k;
-    cin >> n >> m >> k;
+    std::cin >> n >> m >> k;
 
     IntegerSumRuleUnionFind UF(n);
     REP (_, m) {
         int x, y, z;
-        cin >> x >> y >> z;
+        std::cin >> x >> y >> z;
         x--;
         y--;
         if (!UF.merge(x, y, z)) {

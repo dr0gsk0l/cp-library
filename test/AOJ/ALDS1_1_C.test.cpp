@@ -10,11 +10,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     int ans = 0;
     while (n--) {
         int a;
-        cin >> a;
+        std::cin >> a;
         ans += PU.is_prime(a);
     }
     std::cout << ans << std::endl;

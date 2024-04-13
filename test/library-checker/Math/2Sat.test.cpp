@@ -5,14 +5,14 @@
 using namespace atcoder;
 
 int main() {
-    string hoge;
-    cin >> hoge >> hoge;
+    std::string hoge;
+    std::cin >> hoge >> hoge;
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     two_sat ts(n);
     while (m--) {
         int a, b, c;
-        cin >> a >> b >> c;
+        std::cin >> a >> b >> c;
         bool f_a = a > 0, f_b = b > 0;
         ts.add_clause(abs(a) - 1, f_a, abs(b) - 1, f_b);
     }

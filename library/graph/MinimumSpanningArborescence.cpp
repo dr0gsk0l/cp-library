@@ -12,7 +12,7 @@ optional<pair<W, vector<int>>> minimum_spanning_arborescence(WG g, int r = 0) {
     auto compare = [&](const int &a, const int &b) {
         return g.edges[a].weight > g.edges[b].weight;
     };
-    using PQ = priority_queue<int, vector<int>, decltype(compare)>;
+    using PQ = std::priority_queue<int, vector<int>, decltype(compare)>;
     std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});
     for (int i = 0; i < g.edges.size(); i++)
         pq_add[g.edges[i].to].first.push(i);

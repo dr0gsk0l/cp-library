@@ -9,7 +9,7 @@ using ll = long long;
 
 int main() {
     int n, m, s;
-    cin >> n >> m >> s;
+    std::cin >> n >> m >> s;
     WeightedGraph<ll> g(n, m, true, 0);
     auto [d, pre] = bellman_ford(g, s);
     for (const auto &p : d)

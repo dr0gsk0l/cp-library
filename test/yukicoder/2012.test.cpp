@@ -15,10 +15,10 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     std::vector<XY<ld>> xy(n);
     for (int i = 0; i < n; i++)
-        cin >> xy[i];
+        std::cin >> xy[i];
     sort(xy.begin(), xy.end());
 
     MinConvexHullTrick<ld> CHT1;

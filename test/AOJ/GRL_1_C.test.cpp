@@ -10,7 +10,7 @@ using ll = long long;
 
 int main() {
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     WeightedGraph<ll> g(n, m, true, 0);
     if (negative_cycle_find(g))
         std::cout << "NEGATIVE CYCLE\n";

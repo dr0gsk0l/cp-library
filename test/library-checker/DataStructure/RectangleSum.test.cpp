@@ -16,11 +16,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<r2> r2s(n);
     std::vector<int> x(n), y(n), w(n);
     REP (i, n) {
-        cin >> x[i] >> y[i] >> w[i];
+        std::cin >> x[i] >> y[i] >> w[i];
         r2s[i] = r2(x[i], y[i]);
     }
 
@@ -38,7 +38,7 @@ int main() {
 
     REP (j, q) {
         int l, r, d, u;
-        cin >> l >> d >> r >> u;
+        std::cin >> l >> d >> r >> u;
         auto [L, R] = P.interval(l, r);
         std::cout << WM.sum(L, R, d, u) << "\n";
     }

@@ -14,15 +14,15 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
 
     Tree t(n);
     REP (i, n) {
         int k;
-        cin >> k;
+        std::cin >> k;
         REP (_, k) {
             int c;
-            cin >> c;
+            std::cin >> c;
             t.add_edge(i, c);
         }
     }
@@ -44,17 +44,17 @@ int main() {
     }
 
     int q;
-    cin >> q;
+    std::cin >> q;
     REP (_, q) {
         int c;
-        cin >> c;
+        std::cin >> c;
         if (c) {
             int u;
-            cin >> u;
+            std::cin >> u;
             std::cout << TL.path_prod(u, root2[u]).first << "\n";
         } else {
             int v, w;
-            cin >> v >> w;
+            std::cin >> v >> w;
             TL.path_apply(v, root2[v], w);
         }
     }

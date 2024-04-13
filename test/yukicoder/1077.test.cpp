@@ -8,11 +8,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     SlopeTrick<int> ST;
     while (n--) {
         int v;
-        cin >> v;
+        std::cin >> v;
         ST.clear_inc();
         ST.add_abs(v);
     }

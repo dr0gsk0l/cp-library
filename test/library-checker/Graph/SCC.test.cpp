@@ -9,7 +9,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     Graph g(n, m, true, 0);
     SCC scc(g);
     int k = scc.DAG.n;

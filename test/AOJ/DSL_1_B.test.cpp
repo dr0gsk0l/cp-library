@@ -10,11 +10,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     PotentialUnionFind<GroupAdd<int>> PUF(n);
     while (q--) {
         int t, x, y;
-        cin >> t >> x >> y;
+        std::cin >> t >> x >> y;
         if (t) {
             auto diff = PUF.diff(x, y);
             if (diff)
@@ -23,7 +23,7 @@ int main() {
                 std::cout << "?\n";
         } else {
             int d;
-            cin >> d;
+            std::cin >> d;
             assert(PUF.merge(x, y, d));
         }
     }

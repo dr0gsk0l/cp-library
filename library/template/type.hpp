@@ -5,9 +5,9 @@
 #define TYPE3(T, U, V) template <class T, class U, class V>
 #define TYPE4(T, U, V, W) template <class T, class U, class V, class W>
 #define TYPE5(T, U, V, W, X)                                                   \
-  template <class T, class U, class V, class W, class X>
+    template <class T, class U, class V, class W, class X>
 #define TYPE(...)                                                              \
-  overload5(__VA_ARGS__, TYPE5, TYPE4, TYPE3, TYPE2, TYPE1)(__VA_ARGS__)
+    overload5(__VA_ARGS__, TYPE5, TYPE4, TYPE3, TYPE2, TYPE1)(__VA_ARGS__)
 #define TYPES1(T) template <class... T>
 #define TYPES2(H, T) template <class H, class... T>
 #define TYPES(...) overload2(__VA_ARGS__, TYPES2, TYPES1)(__VA_ARGS__)

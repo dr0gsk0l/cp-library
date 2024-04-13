@@ -10,9 +10,9 @@
 #define debug(...) void(0)
 #endif
 
-string YES(bool f = true) { return (f ? "YES" : "NO"); }
-string Yes(bool f = true) { return (f ? "Yes" : "No"); }
-string yes(bool f = true) { return (f ? "yes" : "no"); }
+std::string YES(bool f = true) { return (f ? "YES" : "NO"); }
+std::string Yes(bool f = true) { return (f ? "Yes" : "No"); }
+std::string yes(bool f = true) { return (f ? "yes" : "no"); }
 
 constexpr int INF = 1e9 + 7;
 constexpr ll LINF = ll(1e18) + 7;

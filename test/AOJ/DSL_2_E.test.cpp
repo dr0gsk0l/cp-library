@@ -10,19 +10,19 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     DualSegmentTree<LazyAddMin<int>> seg(vector<int>(n, 0));
     while (q--) {
         int t;
-        cin >> t;
+        std::cin >> t;
         if (t) {
             int x;
-            cin >> x;
+            std::cin >> x;
             x--;
             std::cout << seg[x] << "\n";
         } else {
             int l, r, x;
-            cin >> l >> r >> x;
+            std::cin >> l >> r >> x;
             l--;
             seg.apply(l, r, x);
         }

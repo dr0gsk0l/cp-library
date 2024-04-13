@@ -30,7 +30,7 @@ template <typename TREE> class CentroidDecomposition {
     std::vector<int> order;
     CentroidDecomposition(TREE T) : T(T), sz(T.n), pre(T.n), timing(T.n, -1) {
         order.reserve(T.n);
-        queue<int> que;
+        std::queue<int> que;
         que.push(0);
         while (que.size()) {
             int c = find_centroid(que.front());
@@ -46,7 +46,7 @@ template <typename TREE> class CentroidDecomposition {
     template <typename X, typename F, typename G, typename H>
     void calc(int root, X initial_val, const F &next_val, const G &action,
               const H &finish) {
-        queue<tuple<int, int, X>> que;
+        std::queue<tuple<int, int, X>> que;
 
         auto f = [&](int v_, int pre_, X val_, bool is_all) {
             que.emplace(v_, pre_, val_);

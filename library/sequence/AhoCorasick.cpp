@@ -21,7 +21,7 @@ class AhoCorasick : Trie<CHAR, SIGMA, AbelMonoid> {
         assert(!prepared);
         prepared = true;
         suffix.resize(nodes.size());
-        queue<int> que;
+        std::queue<int> que;
         que.push(0);
         while (que.size()) {
             int now = que.front();

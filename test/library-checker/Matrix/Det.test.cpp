@@ -9,8 +9,8 @@ using M = Matrix<mint>;
 
 int main() {
     int n;
-    cin >> n;
+    std::cin >> n;
     M A(n, n);
-    cin >> A;
+    std::cin >> A;
     std::cout << A.det() << std::endl;
 }

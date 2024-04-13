@@ -15,7 +15,7 @@ int main() {
         NondecreasingMCF<__int128> fl(n);
         for (int i = 0; i < m; i++) {
             ll s, t, c, d;
-            cin >> s >> t >> c >> d;
+            std::cin >> s >> t >> c >> d;
             s--;
             t--;
             fl.add_arc(s, t, k,

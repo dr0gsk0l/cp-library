@@ -29,7 +29,8 @@ template <typename TC> class NondecreasingMCF {
     // numeric_limits<__int128 >::max() は AOJ でバグった
     std::vector<pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;
-    priority_queue<pair<TC, int>, vector<pair<TC, int>>, greater<pair<TC, int>>>
+    std::priority_queue<pair<TC, int>, vector<pair<TC, int>>,
+                        greater<pair<TC, int>>>
         que;
     bool negative = false; // 負辺存在するか
 
@@ -68,7 +69,7 @@ template <typename TC> class NondecreasingMCF {
         negative = false;
         fill(dist.begin(), dist.end(), INF);
         dist[s] = 0;
-        queue<int> que;
+        std::queue<int> que;
         REP_(i, n) if (!in_deg[i]) que.push(i);
         while (que.size()) {
             int v = que.front();

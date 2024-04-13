@@ -34,7 +34,8 @@ template <typename TF, typename TC> class MCF {
         return false;
     }
 
-    priority_queue<pair<TC, int>, vector<pair<TC, int>>, greater<pair<TC, int>>>
+    std::priority_queue<pair<TC, int>, vector<pair<TC, int>>,
+                        greater<pair<TC, int>>>
         que;
     void dijkstra() { // dist[i]:sから残余グラフで辺の重みによるiへの最短路
                       // となるようにdistを作る
@@ -56,7 +57,7 @@ template <typename TF, typename TC> class MCF {
         negative = false;
         fill(dist.begin(), dist.end(), INF);
         dist[s] = 0;
-        queue<int> que;
+        std::queue<int> que;
         REP_(i, n) if (!in_deg[i]) que.push(i);
         while (que.size()) {
             int v = que.front();
@@ -76,8 +77,8 @@ template <typename TF, typename TC> class MCF {
         REP_(_, n) {
             bool update = false;
             REP_(v, n)
-            if (dist[v] < INF) REP_(i, G[v].size()) if (SP_update(v, i))
-                update = true;
+            if (dist[v] < INF)
+                REP_(i, G[v].size()) if (SP_update(v, i)) update = true;
             if (!update)
                 return;
         }

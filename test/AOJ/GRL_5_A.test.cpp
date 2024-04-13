@@ -10,7 +10,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     WeightedTree<int> t(n);
     t.scan(0);
 

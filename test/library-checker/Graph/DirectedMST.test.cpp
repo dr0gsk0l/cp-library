@@ -8,7 +8,7 @@ using ll = long long;
 
 int main() {
     int n, m, s;
-    cin >> n >> m >> s;
+    std::cin >> n >> m >> s;
     WeightedGraph<ll> g(n, m, true, 0);
     auto ans = minimum_spanning_arborescence(g, s);
     assert(ans.has_value());

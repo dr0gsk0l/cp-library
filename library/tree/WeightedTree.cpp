@@ -13,9 +13,9 @@ template <typename T> struct WeightedTree : WeightedGraph<T> {
     void scan_root(int indexed = 1) {
         for (int i = 1; i < n; i++) {
             int p;
-            cin >> p;
+            std::cin >> p;
             T weight;
-            cin >> weight;
+            std::cin >> weight;
             add_edge(p - indexed, i, weight);
         }
         build();
@@ -62,7 +62,7 @@ template <typename T> struct WeightedTree : WeightedGraph<T> {
         DFS.reserve(n);
         BFS.reserve(n);
         dfs(root);
-        queue<int> que;
+        std::queue<int> que;
         que.push(root);
         while (que.size()) {
             int p = que.front();

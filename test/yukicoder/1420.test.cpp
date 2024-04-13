@@ -10,11 +10,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     PotentialUnionFind<GroupXor<int>> UF(n);
     while (m--) {
         int a, b, y;
-        cin >> a >> b >> y;
+        std::cin >> a >> b >> y;
         a--;
         b--;
         if (!UF.merge(a, b, y)) {

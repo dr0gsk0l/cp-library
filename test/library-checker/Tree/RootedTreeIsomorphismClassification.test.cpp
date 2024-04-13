@@ -10,7 +10,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     Tree t(n);
     t.scan_root(0);
 

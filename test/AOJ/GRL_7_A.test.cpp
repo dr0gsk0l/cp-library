@@ -9,12 +9,12 @@ int main() {
     std::cin.tie(nullptr);
 
     int x, y, m;
-    cin >> x >> y >> m;
+    std::cin >> x >> y >> m;
 
     BipartiteMatching BM(x, y);
     while (m--) {
         int u, v;
-        cin >> u >> v;
+        std::cin >> u >> v;
         BM.add_edge(u, v);
     }
     std::cout << BM.solve().size() << std::endl;

@@ -1,11 +1,11 @@
-template <typename T> struct Set : set<T> {
-    using set<T>::size;
-    using set<T>::begin;
-    using set<T>::rbegin;
-    using set<T>::insert;
-    using set<T>::erase;
-    using set<T>::lower_bound;
-    using set<T>::upper_bound;
+template <typename T> struct Set : std::set<T> {
+    using std::set<T>::size;
+    using std::set<T>::begin;
+    using std::set<T>::rbegin;
+    using std::set<T>::insert;
+    using std::set<T>::erase;
+    using std::set<T>::lower_bound;
+    using std::set<T>::upper_bound;
 
     T mn() const {
         assert(size());
@@ -59,7 +59,7 @@ template <typename T> struct Set : set<T> {
     void scan(int n) {
         while (n--) {
             T a;
-            cin >> a;
+            std::cin >> a;
             insert(a);
         }
     }

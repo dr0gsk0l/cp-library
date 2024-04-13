@@ -13,7 +13,7 @@ bool cmp_y(const Point &p1, const Point &p2) {
 using Vector = Point;
 using Polygon = std::vector<Point>;
 
-istream &operator>>(istream &is, Polygon &p) {
+std::istream &operator>>(std::istream &is, Polygon &p) {
     for (Point &c : p)
         is >> c;
     return is;
@@ -23,7 +23,7 @@ struct Segment {
     Point p1, p2;
     Segment() {}
     Segment(Point p1, Point p2) : p1(p1), p2(p2) {}
-    friend istream &operator>>(istream &is, Segment &s) {
+    friend std::istream &operator>>(std::istream &is, Segment &s) {
         is >> s.p1 >> s.p2;
         return is;
     }
@@ -36,7 +36,7 @@ struct Circle {
     double r;
     Circle() {}
     Circle(Point c, double r) : c(c), r(r) {}
-    friend istream &operator>>(istream &is, Circle &c) {
+    friend std::istream &operator>>(std::istream &is, Circle &c) {
         is >> c.c >> c.r;
         return is;
     }

@@ -8,14 +8,14 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<int> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     WaveletMatrix<int> WM(v);
     while (q--) {
         int l, r, k;
-        cin >> l >> r >> k;
+        std::cin >> l >> r >> k;
         std::cout << WM.kth_smallest(l, r, k) << "\n";
     }
 }

@@ -12,7 +12,7 @@ template <typename T> class Dinic {
     int s, t;
     std::vector<pair<int, int>> edge_memo;
 
-    queue<int> que;
+    std::queue<int> que;
     void bfs() {
         // level[v]を（容量正の辺による）sからの最短距離にする
         // 到達出来なければ-1

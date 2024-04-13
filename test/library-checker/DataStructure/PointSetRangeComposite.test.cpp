@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+#define PROBLEM "https://judge.yosupo.jp/problem/point_std::set_range_composite"
 #include <bits/stdc++.h>
 
 #include "library/algebra/Reverse.cpp"
@@ -14,14 +14,14 @@ using F = G::value_type;
 
 int main() {
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<F> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     SegmentTree<G> seg(v);
     while (q--) {
         int t, l, r, x;
-        cin >> t >> l >> r >> x;
+        std::cin >> t >> l >> r >> x;
         if (t) {
             F f = seg.prod(l, r);
             std::cout << f(x) << "\n";

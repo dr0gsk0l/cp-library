@@ -8,12 +8,12 @@
 
 int main() {
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     std::vector<bool> koho(n, true);
     WeightedGraph<int> G(n);
     REP (_, m) {
         int a, b;
-        cin >> a >> b;
+        std::cin >> a >> b;
         koho[b] = false;
         G.add_arc(a, b, 0);
         G.add_arc(b, a, 1);

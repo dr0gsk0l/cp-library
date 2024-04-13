@@ -1,6 +1,6 @@
 template <typename T, typename U>
 T sparse_subsequence(const std::vector<U> &v) {
-    map<U, T> mp;
+    std<U, T> mp;
     T res = 1;
     for (const U &p : v) {
         T tmp = res;
@@ -19,7 +19,7 @@ template <typename T, int SIZE> T subsequence(const std::vector<int> &v) {
     }
     return res;
 }
-template <typename T> T subsequence_alphabet(const string &s) {
+template <typename T> T subsequence_alphabet(const std::string &s) {
     std::vector<int> v;
     v.reserve(s.size());
     for (char c : s)

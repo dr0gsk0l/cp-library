@@ -1,6 +1,6 @@
 #include "library/template/macro.hpp"
 #include "library/template/type.hpp"
-#pragma region queue
+#pragma region std::queue
 TYPE(T)
 T pick(std::queue<T> &que) {
     assert(que.size());

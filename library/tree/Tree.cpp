@@ -9,7 +9,7 @@ struct Tree : Graph {
     void scan_root(int indexed = 1) {
         for (int i = 1; i < n; i++) {
             int p;
-            cin >> p;
+            std::cin >> p;
             add_edge(p - indexed, i);
         }
         build();
@@ -56,7 +56,7 @@ struct Tree : Graph {
         DFS.reserve(n);
         BFS.reserve(n);
         dfs(root);
-        queue<int> que;
+        std::queue<int> que;
         que.push(root);
         while (que.size()) {
             int p = que.front();

@@ -79,11 +79,11 @@ template <typename T> struct WeightedGraph {
         edges.reserve(directed ? m : 2 * m);
         while (m--) {
             int u, v;
-            cin >> u >> v;
+            std::cin >> u >> v;
             u -= indexed;
             v -= indexed;
             T weight;
-            cin >> weight;
+            std::cin >> weight;
             if (directed)
                 add_arc(u, v, weight);
             else

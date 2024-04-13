@@ -11,16 +11,16 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     std::vector v(m, std::vector<int>(m));
     REP (i, m)
         REP (j, m)
-            cin >> v[i][j];
+            std::cin >> v[i][j];
     CumulativeSum2D C(v);
 
     REP (_, n) {
         int y, x;
-        cin >> y >> x;
+        std::cin >> y >> x;
         y--;
         x--;
         int ans = 0;

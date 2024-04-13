@@ -111,7 +111,7 @@ template <monoid M> class SegmentTree {
         return x;
     }
 
-    friend ostream &operator<<(ostream &os, const SegmentTree &seg) {
+    friend std::ostream &operator<<(std::ostream &os, const SegmentTree &seg) {
         os << "(";
         for (int L = 1; L <= seg.size; L <<= 1) {
             os << "[";

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/exp_of_set_power_series"
+#define PROBLEM "https://judge.yosupo.jp/problem/exp_of_std::set_power_series"
 #include <bits/stdc++.h>
 
 #include <atcoder/convolution>
@@ -6,11 +6,11 @@
 using namespace atcoder;
 using mint = modint998244353;
 namespace atcoder {
-ostream &operator<<(ostream &os, mint a) {
+std::ostream &operator<<(std::ostream &os, mint a) {
     os << a.val();
     return os;
 }
-istream &operator>>(istream &is, mint &a) {
+std::istream &operator>>(std::istream &is, mint &a) {
     long long b;
     is >> b;
     a = b;
@@ -18,7 +18,7 @@ istream &operator>>(istream &is, mint &a) {
 }
 } // namespace atcoder
 
-#include "library/setpowerseries/Compose.cpp"
+#include "library/std::setpowerseries/Compose.cpp"
 using SPS = SetPowerSeries<mint>;
 
 int main() {

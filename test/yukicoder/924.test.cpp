@@ -14,15 +14,15 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<ll> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     GroupWaveletMatrix<ll, GroupAdd<ll>> WM(v, v);
 
     while (q--) {
         int l, r;
-        cin >> l >> r;
+        std::cin >> l >> r;
         l--;
         int k = (r - l) / 2; // 0-indexed 小さい方から k 番目の値を x にする
         ll x = WM.kth_smallest(l, r, k);

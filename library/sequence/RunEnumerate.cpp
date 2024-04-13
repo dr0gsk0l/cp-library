@@ -1,12 +1,12 @@
 #pragma once
-#include <atcoder/string>
+#include <atcoder/std::string>
 using namespace atcoder;
 
 #define SIZE_(s) int(s.size())
 
 struct RunEnumerate {
-    string s;
-    RunEnumerate(const string &s) : s(s) { build(); }
+    std::string s;
+    RunEnumerate(const std::string &s) : s(s) { build(); }
 
     struct Run {
         int t, l, r;
@@ -15,8 +15,8 @@ struct RunEnumerate {
     };
     std::vector<Run> ans;
 
-    queue<pair<int, int>> que;
-    string REV(string s) {
+    std::queue<pair<int, int>> que;
+    std::string REV(std::string s) {
         reverse(s.begin(), s.end());
         return s;
     }
@@ -24,8 +24,8 @@ struct RunEnumerate {
         int m = (l + r) >> 1;
         que.emplace(l, m);
         que.emplace(m, r);
-        string left_s = s.substr(l, m - l), right_s = s.substr(m, r - m),
-               all_s = s.substr(l, r - l);
+        std::string left_s = s.substr(l, m - l), right_s = s.substr(m, r - m),
+                    all_s = s.substr(l, r - l);
         {
             // 各 k に対し、left_s の suffix t 文字を周期とする run を探す
             auto Z_left_rev = z_algorithm(REV(left_s));
@@ -75,7 +75,7 @@ struct RunEnumerate {
                 return a.l < b.l;
             return a.r > b.r;
         });
-        set<pair<int, int>> already;
+        std::set<pair<int, int>> already;
         int pret = -1, mx;
         for (const auto &[t, l, r] : ans) {
             if (pret != t)

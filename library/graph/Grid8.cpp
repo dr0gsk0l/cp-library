@@ -41,7 +41,7 @@ template <typename T> class Grid8 {
         : h(grid.size()), w(grid[0].size()), ban(ban), v(h * w), G(h * w) {
         build(grid);
     }
-    Grid8(const std::vector<string> &s, const optional<T> &ban = nullopt)
+    Grid8(const std::vector<std::string> &s, const optional<T> &ban = nullopt)
         : h(s.size()), w(s[0].size()), ban(ban), v(h * w), G(h * w) {
         static_assert(is_same<T, char>::value, "value_type==char");
         build(s);

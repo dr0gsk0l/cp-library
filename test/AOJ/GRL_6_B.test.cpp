@@ -9,11 +9,11 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m, f;
-    cin >> n >> m >> f;
+    std::cin >> n >> m >> f;
     MCF<int, int> fl(n);
     while (m--) {
         int u, v, c, d;
-        cin >> u >> v >> c >> d;
+        std::cin >> u >> v >> c >> d;
         fl.add_arc(u, v, c, d);
     }
     auto [ans, ok] = fl.flow(f);

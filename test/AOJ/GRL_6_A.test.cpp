@@ -6,11 +6,11 @@
 
 int main() {
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     Dinic<int> fl(n, 0, n - 1);
     while (m--) {
         int u, v, c;
-        cin >> u >> v >> c;
+        std::cin >> u >> v >> c;
         fl.add_arc(u, v, c);
     }
     std::cout << fl.flow() << std::endl;

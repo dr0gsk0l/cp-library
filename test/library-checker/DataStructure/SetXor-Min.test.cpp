@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/set_xor_min"
+#define PROBLEM "https://judge.yosupo.jp/problem/std::set_xor_min"
 #include <bits/stdc++.h>
 
 #include "library/datastructure/BinaryTrie.cpp"
@@ -9,10 +9,10 @@ int main() {
 
     BinaryTrie<30, int> BT;
     int q;
-    cin >> q;
+    std::cin >> q;
     while (q--) {
         int t, x;
-        cin >> t >> x;
+        std::cin >> t >> x;
         if (t <= 1) {
             int c = BT.count(x);
             if (t == 0 and c == 0)

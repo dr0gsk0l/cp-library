@@ -128,7 +128,8 @@ template <typename T, Objective OBJ> class ConvexHullTrick : deque<Line<T>> {
         return ans;
     }
 
-    friend ostream &operator<<(ostream &os, const ConvexHullTrick &cht) {
+    friend std::ostream &operator<<(std::ostream &os,
+                                    const ConvexHullTrick &cht) {
         os << "[";
         for (int i = 0; i < cht.size(); i++)
             os << (OBJ == -1 ? -cht.at(i) : cht.at(i))

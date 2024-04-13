@@ -9,17 +9,17 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     std::vector<int> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     WaveletMatrix WM(v);
 
     int q;
-    cin >> q;
+    std::cin >> q;
     while (q--) {
         int l, r, x;
-        cin >> l >> r >> x;
+        std::cin >> l >> r >> x;
         l--;
         std::cout << min(x - (WM.leq(l, r, x)).value_or(-INF),
                          (WM.geq(l, r, x)).value_or(2 * INF) - x)

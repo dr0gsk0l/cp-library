@@ -12,21 +12,21 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
 
     std::vector<mint> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     LazySegmentTree<LazyAffineSum<mint>> seg(cnt_init(v));
 
     while (q--) {
         int t, l, r;
-        cin >> t >> l >> r;
+        std::cin >> t >> l >> r;
         if (t)
             std::cout << seg.prod(l, r).first << '\n';
         else {
             Line<mint> f;
-            cin >> f;
+            std::cin >> f;
             seg.apply(l, r, f);
         }
     }

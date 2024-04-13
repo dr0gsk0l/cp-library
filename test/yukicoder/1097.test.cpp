@@ -11,20 +11,20 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     Doubling<GroupAdd<ll>, 40> db(n);
 
     for (int i = 0; i < n; i++) {
         int a;
-        cin >> a;
+        std::cin >> a;
         db.add_arc(i, (i + a) % n, a);
     }
 
     int q;
-    cin >> q;
+    std::cin >> q;
     while (q--) {
         ll k;
-        cin >> k;
+        std::cin >> k;
         std::cout << db.calc(0, k).second << "\n";
     }
 }

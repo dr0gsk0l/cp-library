@@ -7,11 +7,11 @@
 #include <atcoder/modint>
 using namespace atcoder;
 using mint = modint998244353;
-ostream &operator<<(ostream &os, mint a) {
+std::ostream &operator<<(std::ostream &os, mint a) {
     os << a.val();
     return os;
 }
-istream &operator>>(istream &is, mint &a) {
+std::istream &operator>>(std::istream &is, mint &a) {
     long long b;
     is >> b;
     a = b;
@@ -29,13 +29,13 @@ int main() {
     FPSProdDiversity<FPS> P;
 
     int n;
-    cin >> n;
+    std::cin >> n;
     REP (_, n) {
         int d;
-        cin >> d;
+        std::cin >> d;
         FPS f(d + 1);
         REP (i, d + 1)
-            cin >> f[i];
+            std::cin >> f[i];
         P.add(f);
     }
     FPS f = P.prod();

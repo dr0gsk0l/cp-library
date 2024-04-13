@@ -8,13 +8,13 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m, q;
-    cin >> n >> m >> q;
+    std::cin >> n >> m >> q;
     PartialPersistentUnionFind uf(n);
 
-    set<pair<int, int>> edge;
+    std::set<pair<int, int>> edge;
     while (m--) {
         int a, b;
-        cin >> a >> b;
+        std::cin >> a >> b;
         a--;
         b--;
         edge.insert(minmax(a, b));
@@ -23,7 +23,7 @@ int main() {
     std::vector<pair<int, int>> query(q);
     for (int i = 0; i < q; i++) {
         int a, b;
-        cin >> a >> b;
+        std::cin >> a >> b;
         a--;
         b--;
         edge.erase(minmax(a, b));
@@ -33,7 +33,7 @@ int main() {
     for (const auto &[a, b] : edge)
         uf.merge(a, b);
 
-    map<int, int> time;
+    std<int, int> time;
     while (q--) {
         auto [a, b] = query[q];
         int now = uf.merge(a, b);

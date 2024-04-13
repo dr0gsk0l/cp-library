@@ -10,17 +10,17 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     LazySegmentTree<LazySetSum<int>> seg(cnt_init(n, 0));
     while (q--) {
         int t, l, r;
-        cin >> t >> l >> r;
+        std::cin >> t >> l >> r;
         r++;
         if (t)
             std::cout << seg.prod(l, r).first << "\n";
         else {
             int x;
-            cin >> x;
+            std::cin >> x;
             seg.apply(l, r, x);
         }
     }

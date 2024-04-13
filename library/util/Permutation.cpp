@@ -6,7 +6,7 @@ struct Perm {
     template <typename T> static vi make_perm(const std::vector<T> &v) {
         vi w = v;
         sort(w.begin(), w.end());
-        map<T, int> mp;
+        std<T, int> mp;
         REP_(i, v.size()) if (!i or w[i - 1] != w[i]) mp[w[i]] = i;
         REP_(i, v.size()) w[i] = mp[v[i]]++;
         return w;

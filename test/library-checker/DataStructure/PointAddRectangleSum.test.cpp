@@ -16,20 +16,20 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<r2> r2s(n);
     r2s.reserve(n + q);
     std::vector<int> x(n), y(n), w(n), qt(q), l(q), d(q), r(q), u(q);
     REP (i, n) {
-        cin >> x[i] >> y[i] >> w[i];
+        std::cin >> x[i] >> y[i] >> w[i];
         r2s[i] = r2(x[i], y[i]);
     }
     REP (j, q) {
-        cin >> qt[j];
+        std::cin >> qt[j];
         if (qt[j])
-            cin >> l[j] >> d[j] >> r[j] >> u[j];
+            std::cin >> l[j] >> d[j] >> r[j] >> u[j];
         else {
-            cin >> l[j] >> d[j] >> r[j];
+            std::cin >> l[j] >> d[j] >> r[j];
             r2s.emplace_back(l[j], d[j]);
         }
     }

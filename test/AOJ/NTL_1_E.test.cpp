@@ -9,7 +9,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int a, b;
-    cin >> a >> b;
+    std::cin >> a >> b;
     auto [x, y] = ext_gcd(a, b);
     std::cout << x << " " << y << std::endl;
 }

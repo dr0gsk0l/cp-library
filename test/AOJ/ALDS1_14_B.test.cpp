@@ -8,12 +8,12 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    string t;
-    cin >> t;
+    std::string t;
+    std::cin >> t;
     RollingHash RH(FSa::change(t));
 
-    string p;
-    cin >> p;
+    std::string p;
+    std::cin >> p;
     auto h = RollingHash<char>::full_hash(FSa::change(p));
 
     for (int i = 0; i + p.size() <= t.size(); i++)

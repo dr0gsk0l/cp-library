@@ -11,14 +11,14 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
 
     SWAG<MonoidGcd<ll>> S;
 
     ll ans = ll(n) * ll(n + 1) / 2;
     while (n--) {
         ll a;
-        cin >> a;
+        std::cin >> a;
         S.push_back(a);
         while (S.prod() == 1)
             S.pop_front();

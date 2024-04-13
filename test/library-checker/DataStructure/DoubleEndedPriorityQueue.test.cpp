@@ -1,22 +1,23 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/double_ended_priority_queue"
+#define PROBLEM                                                                \
+    "https://judge.yosupo.jp/problem/double_ended_std::priority_queue"
 #include <bits/stdc++.h>
 
-#include "library/superstd/Multiset.cpp"
+#include "library/superstd/Multistd::set.cpp"
 
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
-    Multiset<int> s;
+    std::cin >> n >> q;
+    Multistd::set<int> s;
     s.scan(n);
     while (q--) {
         int t;
-        cin >> t;
+        std::cin >> t;
         if (t == 0) {
             int x;
-            cin >> x;
+            std::cin >> x;
             s.insert(x);
         }
         if (t == 1) {

@@ -8,15 +8,15 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<int> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     WaveletMatrix WM(v);
 
     while (q--) {
         int l, r, x;
-        cin >> l >> r >> x;
+        std::cin >> l >> r >> x;
         std::cout << WM.rank(l, r, x) << "\n";
     }
 }

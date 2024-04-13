@@ -1,4 +1,5 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/queue_operate_all_composite"
+#define PROBLEM                                                                \
+    "https://judge.yosupo.jp/problem/std::queue_operate_all_composite"
 #include <bits/stdc++.h>
 
 #include "library/algebra/Reverse.cpp"
@@ -17,20 +18,20 @@ int main() {
     SWAG<G> S;
 
     int q;
-    cin >> q;
+    std::cin >> q;
     while (q--) {
         int t;
-        cin >> t;
+        std::cin >> t;
         if (t == 0) {
             F f;
-            cin >> f;
+            std::cin >> f;
             S.push_back(f);
         }
         if (t == 1)
             S.pop_front();
         if (t == 2) {
             int x;
-            cin >> x;
+            std::cin >> x;
             F f = S.prod();
             std::cout << f(x) << "\n";
         }

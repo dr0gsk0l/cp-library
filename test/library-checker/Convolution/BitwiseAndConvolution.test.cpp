@@ -13,13 +13,13 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     int N = 1 << n;
     std::vector<mint> a(N), b(N);
     REP (i, N)
-        cin >> a[i];
+        std::cin >> a[i];
     REP (i, N)
-        cin >> b[i];
+        std::cin >> b[i];
     auto c = BitwiseAnd::convolution(a, b);
     REP (i, N)
         std::cout << c[i] << "\n "[i + 1 < N];

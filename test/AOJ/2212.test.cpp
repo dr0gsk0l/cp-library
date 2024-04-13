@@ -8,7 +8,7 @@
 const std::map<char, int> mp{{'D', 0}, {'R', 1}, {'U', 2}, {'L', 3}};
 
 int solve(int h, int w) {
-    std::vector<string> s(h);
+    std::vector<std::string> s(h);
     REP (i, h)
         std::cin >> s[i];
 
@@ -18,10 +18,10 @@ int solve(int h, int w) {
 
     AhoCorasick<char, 4> AC;
     int m;
-    cin >> m;
+    std::cin >> m;
     REP (_, m) {
-        string t;
-        cin >> t;
+        std::string t;
+        std::cin >> t;
         std::vector<char> tt(t.size());
         REP (i, t.size())
             tt[i] = mp.at(t[i]);
@@ -30,7 +30,7 @@ int solve(int h, int w) {
     AC.build();
 
     std::vector dp(h * w, std::vector<int>(AC.size(), -1));
-    queue<pair<int, int>> que;
+    std::queue<pair<int, int>> que;
     que.emplace(S, 0);
     dp[S][0] = 0;
     while (que.size()) {

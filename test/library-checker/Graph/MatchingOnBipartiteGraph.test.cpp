@@ -8,12 +8,12 @@ int main() {
     std::cin.tie(nullptr);
 
     int l, r, m;
-    cin >> l >> r >> m;
+    std::cin >> l >> r >> m;
 
     BipartiteMatching BM(l, r);
     while (m--) {
         int a, b;
-        cin >> a >> b;
+        std::cin >> a >> b;
         BM.add_edge(a, b);
     }
     auto ans = BM.solve();

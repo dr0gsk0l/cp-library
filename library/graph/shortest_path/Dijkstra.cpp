@@ -3,7 +3,8 @@ pair<vector<T>, vector<int>> dijkstra(const WG &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);
-    priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>>
+    std::priority_queue<pair<T, int>, vector<pair<T, int>>,
+                        greater<pair<T, int>>>
         que;
     d[s] = 0;
     que.emplace(0, s);

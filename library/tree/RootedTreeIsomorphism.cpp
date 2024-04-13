@@ -2,7 +2,7 @@ template <typename TREE>
 pair<int, vector<int>> rooted_tree_isomorphism(TREE &t) {
     assert(~t.root);
     std::vector<int> res(t.n);
-    map<vector<int>, int> mp;
+    std<vector<int>, int> mp;
     for (const int v : t.DFS) {
         std::vector<int> h;
         for (int to : t.son(v))

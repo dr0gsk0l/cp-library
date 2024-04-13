@@ -2,8 +2,8 @@
 template <typename T> class SlopeTrick {
     static constexpr T MIN = numeric_limits<T>::lowest() / 2;
     static constexpr T MAX = numeric_limits<T>::max() / 2;
-    priority_queue<T> L;
-    priority_queue<T, vector<T>, greater<T>> R;
+    std::priority_queue<T> L;
+    std::priority_queue<T, std::vector<T>, std::greater<T>> R;
     T add_l, add_r;
 
     T L0() const { return L.size() ? L.top() + add_l : MIN; }

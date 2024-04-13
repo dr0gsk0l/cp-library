@@ -9,7 +9,7 @@ class OfflineDynamicConnectivity {
     int comp;
 
     std::vector<pair<pair<int, int>, edge>> pend;
-    map<edge, int> cnt, appear;
+    std<edge, int> cnt, appear;
 
     OfflineDynamicConnectivity(int V, int Q) : uf(V), V(V), Q(Q), comp(V) {
         segsz = 1;

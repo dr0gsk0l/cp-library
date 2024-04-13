@@ -1,4 +1,5 @@
-template <typename T> ostream &operator<<(ostream &os, const set<T> &se) {
+template <typename T>
+std::ostream &operator<<(std::ostream &os, const std::set<T> &se) {
     if (se.size) {
         os << "{";
         for (const auto &p : se)
@@ -9,7 +10,7 @@ template <typename T> ostream &operator<<(ostream &os, const set<T> &se) {
 }
 
 template <typename T>
-ostream &operator<<(ostream &os, const unordered_set<T> &se) {
+std::ostream &operator<<(std::ostream &os, const unordered_std::set<T> &se) {
     os << "{";
     for (const auto &p : se)
         os << p << ",";
@@ -18,20 +19,20 @@ ostream &operator<<(ostream &os, const unordered_set<T> &se) {
 }
 
 template <typename T, typename U>
-ostream &operator<<(ostream &os, const map<T, U> &mp) {
+std::ostream &operator<<(std::ostream &os, const std<T, U> &mp) {
     for (const auto &[key, val] : mp)
         os << "[" << key << ":" << val << "]";
     return os;
 }
 template <typename T, typename U>
-ostream &operator<<(ostream &os, const unordered_map<T, U> &mp) {
+std::ostream &operator<<(std::ostream &os, const unordered_std<T, U> &mp) {
     for (const auto &[key, val] : mp)
         os << "[" << key << ":" << val << "]";
     return os;
 }
 
 template <typename T, typename U>
-ostream &operator<<(ostream &os, const pair<T, U> &P) {
+std::ostream &operator<<(std::ostream &os, const pair<T, U> &P) {
     os << "[" << P.first << "," << P.second << "]";
     return os;
 }

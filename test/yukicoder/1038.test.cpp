@@ -15,7 +15,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     Tree T(n);
     T.scan(1);
 
@@ -23,7 +23,7 @@ int main() {
     std::vector<vector<int>> query_at(n);
     REP (i, q) {
         auto &[x, y, z] = query[i];
-        cin >> x >> y >> z;
+        std::cin >> x >> y >> z;
         x--;
         query_at[x].push_back(i);
     }

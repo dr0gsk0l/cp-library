@@ -13,13 +13,13 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     PotentialUnionFind<GroupMultiply<mint1>> uf1(n);
     PotentialUnionFind<GroupMultiply<mint2>> uf2(n);
 
     while (m--) {
         int a, b, c;
-        cin >> a >> b >> c;
+        std::cin >> a >> b >> c;
         a--;
         b--;
         if (!uf1.merge(a, b, c) || !uf2.merge(a, b, c)) {

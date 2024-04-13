@@ -10,7 +10,7 @@ pair<vector<T>, vector<int>> dial(const WG &g, int s = 0) {
     T K = 0, rem = 0;
     for (const auto &e : g.edges)
         K = max(K, e.weight);
-    std::vector<queue<int>> que(K + 1);
+    std::vector<std::queue<int>> que(K + 1);
     auto cmp = [&](T a, T b) {
         if (a == rem || b == rem)
             return b == rem;
@@ -18,7 +18,7 @@ pair<vector<T>, vector<int>> dial(const WG &g, int s = 0) {
             return a < rem;
         return a > b;
     };
-    priority_queue<T, vector<T>, decltype(cmp)> nxt{cmp};
+    std::priority_queue<T, vector<T>, decltype(cmp)> nxt{cmp};
 
     d[s] = 0;
     que[0].push(0);

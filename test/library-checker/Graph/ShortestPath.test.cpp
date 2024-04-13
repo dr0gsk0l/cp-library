@@ -8,7 +8,7 @@ using ll = long long;
 
 int main() {
     int n, m, s, t;
-    cin >> n >> m >> s >> t;
+    std::cin >> n >> m >> s >> t;
     WeightedGraph<ll> g(n, m, true, 0);
     auto [d, pre] = dijkstra(g, s);
 

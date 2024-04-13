@@ -8,10 +8,10 @@ int main() {
     std::cin.tie(nullptr);
 
     int n;
-    cin >> n;
+    std::cin >> n;
     std::vector<int> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
 
     auto T = cartesian_tree(v);
     for (int i = 0; i < n; i++)

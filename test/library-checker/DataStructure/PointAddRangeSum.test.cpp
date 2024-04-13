@@ -9,14 +9,14 @@ using G = GroupAdd<ll>;
 
 int main() {
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<ll> v(n);
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        std::cin >> v[i];
     SegmentTree<G> seg(v);
     while (q--) {
         int t, l, r;
-        cin >> t >> l >> r;
+        std::cin >> t >> l >> r;
         if (t)
             std::cout << seg.prod(l, r) << "\n";
         else

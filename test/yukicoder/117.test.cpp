@@ -8,8 +8,8 @@ using mint = Mint<long long, 1000'000'007>;
 MintUtility<mint> M;
 
 mint solve() {
-    string s;
-    cin >> s;
+    std::string s;
+    std::cin >> s;
     int comma = 0;
     while (s[comma] != ',')
         comma++;
@@ -27,7 +27,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int testsize;
-    cin >> testsize;
+    std::cin >> testsize;
     while (testsize--)
         std::cout << solve() << '\n';
 }

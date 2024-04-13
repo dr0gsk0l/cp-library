@@ -4,8 +4,8 @@
 #include "library/sequence/RunEnumerate.cpp"
 
 int main() {
-    string s;
-    cin >> s;
+    std::string s;
+    std::cin >> s;
     RunEnumerate RE(s);
     std::cout << RE.ans.size() << "\n";
     for (const auto &[t, l, r] : RE.ans)

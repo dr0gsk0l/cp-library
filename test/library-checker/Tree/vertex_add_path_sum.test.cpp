@@ -11,10 +11,10 @@ int main() {
     using G = GroupAdd<long long>;
 
     int n, q;
-    cin >> n >> q;
+    std::cin >> n >> q;
     std::vector<long long> a(n);
     for (int i = 0; i < n; i++)
-        cin >> a[i];
+        std::cin >> a[i];
 
     Tree t(n);
     t.scan(0);
@@ -23,14 +23,14 @@ int main() {
 
     while (q--) {
         int c;
-        cin >> c;
+        std::cin >> c;
         if (c) {
             int u, v;
-            cin >> u >> v;
+            std::cin >> u >> v;
             std::cout << TM.path_prod(u, v) << "\n";
         } else {
             int p, x;
-            cin >> p >> x;
+            std::cin >> p >> x;
             TM.multiply(p, x);
         }
     }
