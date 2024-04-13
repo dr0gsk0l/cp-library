@@ -8,8 +8,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/query/Mo.cpp\"\nclass Mo {\n    int n;\n    std::vector<pair<int,\
-    \ int>> lr;\n\n  public:\n    Mo() = default;\n    Mo(const std::vector<pair<int,\
+  bundledCode: "#line 1 \"library/query/Mo.cpp\"\nclass Mo {\n    int n;\n    std::vector<std::pair<int,\
+    \ int>> lr;\n\n  public:\n    Mo() = default;\n    Mo(const std::vector<std::pair<int,\
     \ int>> &lr) : lr(lr) {\n        for (const auto &[l, r] : lr) {\n           \
     \ assert(0 <= l and l <= r);\n            n = max(n, r);\n        }\n    }\n \
     \   void add(int l, int r) {\n        assert(0 <= l and l <= r);\n        lr.emplace_back(l,\
@@ -29,13 +29,13 @@ data:
     \     f(idx);\n        }\n    }\n\n    template <typename A, typename E, typename\
     \ F>\n    void calc(const A &add, const E &erase, const F &f) {\n        calc(add,\
     \ add, erase, erase, f);\n    }\n};\n"
-  code: "class Mo {\n    int n;\n    std::vector<pair<int, int>> lr;\n\n  public:\n\
-    \    Mo() = default;\n    Mo(const std::vector<pair<int, int>> &lr) : lr(lr) {\n\
-    \        for (const auto &[l, r] : lr) {\n            assert(0 <= l and l <= r);\n\
-    \            n = max(n, r);\n        }\n    }\n    void add(int l, int r) {\n\
-    \        assert(0 <= l and l <= r);\n        lr.emplace_back(l, r);\n        n\
-    \ = max(n, r);\n    }\n\n    template <typename AL, typename AR, typename EL,\
-    \ typename ER, typename F>\n    void calc(const AL &add_left, const AR &add_right,\
+  code: "class Mo {\n    int n;\n    std::vector<std::pair<int, int>> lr;\n\n  public:\n\
+    \    Mo() = default;\n    Mo(const std::vector<std::pair<int, int>> &lr) : lr(lr)\
+    \ {\n        for (const auto &[l, r] : lr) {\n            assert(0 <= l and l\
+    \ <= r);\n            n = max(n, r);\n        }\n    }\n    void add(int l, int\
+    \ r) {\n        assert(0 <= l and l <= r);\n        lr.emplace_back(l, r);\n \
+    \       n = max(n, r);\n    }\n\n    template <typename AL, typename AR, typename\
+    \ EL, typename ER, typename F>\n    void calc(const AL &add_left, const AR &add_right,\
     \ const EL &erase_left,\n              const ER &erase_right, const F &f) {\n\
     \        int q = lr.size();\n        int B = max(1, n / int(sqrt(q)));\n     \
     \   std::vector<int> ord(q);\n        iota(ord.begin(), ord.end(), 0);\n     \
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/query/Mo.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/Mo.cpp

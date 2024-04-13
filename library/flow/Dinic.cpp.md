@@ -74,8 +74,8 @@ data:
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 5 \"library/flow/Dinic.cpp\"\
     \ntemplate <typename T> class Dinic {\n    struct EdgeInfo {\n        T cap;\n\
     \        int rev;\n    };\n    WeightedGraph<EdgeInfo> G;\n    std::vector<int>\
-    \ level, current_edge, out_deg;\n    int s, t;\n    std::vector<pair<int, int>>\
-    \ edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
+    \ level, current_edge, out_deg;\n    int s, t;\n    std::vector<std::pair<int,\
+    \ int>> edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
     \uFF08\u5BB9\u91CF\u6B63\u306E\u8FBA\u306B\u3088\u308B\uFF09s\u304B\u3089\u306E\
     \u6700\u77ED\u8DDD\u96E2\u306B\u3059\u308B\n        // \u5230\u9054\u51FA\u6765\
     \u306A\u3051\u308C\u3070-1\n        fill(level.begin(), level.end(), -1);\n  \
@@ -125,7 +125,7 @@ data:
   code: "#pragma once\n\n// https://misawa.github.io/others/flow/dinic_time_complexity.html\n\
     #include \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T> class Dinic\
     \ {\n    struct EdgeInfo {\n        T cap;\n        int rev;\n    };\n    WeightedGraph<EdgeInfo>\
-    \ G;\n    std::vector<int> level, current_edge, out_deg;\n    int s, t;\n    std::vector<pair<int,\
+    \ G;\n    std::vector<int> level, current_edge, out_deg;\n    int s, t;\n    std::vector<std::pair<int,\
     \ int>> edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
     \uFF08\u5BB9\u91CF\u6B63\u306E\u8FBA\u306B\u3088\u308B\uFF09s\u304B\u3089\u306E\
     \u6700\u77ED\u8DDD\u96E2\u306B\u3059\u308B\n        // \u5230\u9054\u51FA\u6765\
@@ -179,7 +179,7 @@ data:
   path: library/flow/Dinic.cpp
   requiredBy:
   - library/graph/matching/BipartiteMatching.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

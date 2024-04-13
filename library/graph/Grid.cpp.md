@@ -62,54 +62,56 @@ data:
     \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 3 \"library/graph/Grid.cpp\"\
     \n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename T> class\
-    \ Grid {\n    const int h, w;\n    optional<T> ban;\n    // D,R,U,L\n    static\
-    \ constexpr pair<int, int> d4[4] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};\n    template\
-    \ <typename vecvecT> void build(const vecvecT &grid) {\n        REP_(y, h) REP_(x,\
-    \ w) {\n            int p = id(y, x);\n            v[p] = grid[y][x];\n      \
-    \      if (ban and v[p] == ban.value())\n                continue;\n         \
-    \   REP_(d, 4) {\n                int y2 = y + d4[d].first, x2 = x + d4[d].second;\n\
-    \                if (in(y2, x2) and (!ban or ban.value() != grid[y2][x2]))\n \
-    \                   G.add_arc(p, id(y2, x2), d);\n            }\n        }\n \
-    \       G.build();\n    }\n\n  public:\n    std::vector<T> v;\n    WeightedGraph<int>\
-    \ G;\n    bool in(int y, int x) const {\n        return 0 <= y and y < h and 0\
-    \ <= x and x < w;\n    }\n    int id(int y, int x) const {\n        assert(in(y,\
-    \ x));\n        return y * w + x;\n    }\n    pair<int, int> r2(int a) const {\n\
-    \        assert(0 <= a and a < h * w);\n        return {a / w, a % w};\n    }\n\
-    \n    Grid(const std::vector<vector<T>> &grid, const optional<T> &ban = nullopt)\n\
-    \        : h(grid.size()), w(grid[0].size()), ban(ban), v(h * w), G(h * w) {\n\
-    \        build(grid);\n    }\n    Grid(const std::vector<std::string> &s, const\
-    \ optional<T> &ban = nullopt)\n        : h(s.size()), w(s[0].size()), ban(ban),\
-    \ v(h * w), G(h * w) {\n        static_assert(is_same<T, char>::value, \"value_type==char\"\
-    );\n        build(s);\n    }\n\n    int find(const T &c) const {\n        REP_(i,\
-    \ h * w) if (v[i] == c) return i;\n        return -1;\n    }\n};\n#undef REP_\n"
+    \ Grid {\n    const int h, w;\n    std::optional<T> ban;\n    // D,R,U,L\n   \
+    \ static constexpr std::pair<int, int> d4[4] = {\n        {1, 0}, {0, 1}, {-1,\
+    \ 0}, {0, -1}};\n    template <typename vecvecT> void build(const vecvecT &grid)\
+    \ {\n        REP_(y, h) REP_(x, w) {\n            int p = id(y, x);\n        \
+    \    v[p] = grid[y][x];\n            if (ban and v[p] == ban.value())\n      \
+    \          continue;\n            REP_(d, 4) {\n                int y2 = y + d4[d].first,\
+    \ x2 = x + d4[d].second;\n                if (in(y2, x2) and (!ban or ban.value()\
+    \ != grid[y2][x2]))\n                    G.add_arc(p, id(y2, x2), d);\n      \
+    \      }\n        }\n        G.build();\n    }\n\n  public:\n    std::vector<T>\
+    \ v;\n    WeightedGraph<int> G;\n    bool in(int y, int x) const {\n        return\
+    \ 0 <= y and y < h and 0 <= x and x < w;\n    }\n    int id(int y, int x) const\
+    \ {\n        assert(in(y, x));\n        return y * w + x;\n    }\n    std::pair<int,\
+    \ int> r2(int a) const {\n        assert(0 <= a and a < h * w);\n        return\
+    \ {a / w, a % w};\n    }\n\n    Grid(const std::vector<vector<T>> &grid,\n   \
+    \      const std::optional<T> &ban = nullopt)\n        : h(grid.size()), w(grid[0].size()),\
+    \ ban(ban), v(h * w), G(h * w) {\n        build(grid);\n    }\n    Grid(const\
+    \ std::vector<std::string> &s,\n         const std::optional<T> &ban = nullopt)\n\
+    \        : h(s.size()), w(s[0].size()), ban(ban), v(h * w), G(h * w) {\n     \
+    \   static_assert(is_same<T, char>::value, \"value_type==char\");\n        build(s);\n\
+    \    }\n\n    int find(const T &c) const {\n        REP_(i, h * w) if (v[i] ==\
+    \ c) return i;\n        return -1;\n    }\n};\n#undef REP_\n"
   code: "#pragma once\n#include \"library/graph/WeightedGraph.cpp\"\n#define REP_(i,\
     \ n) for (int i = 0; i < (n); i++)\ntemplate <typename T> class Grid {\n    const\
-    \ int h, w;\n    optional<T> ban;\n    // D,R,U,L\n    static constexpr pair<int,\
-    \ int> d4[4] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};\n    template <typename vecvecT>\
-    \ void build(const vecvecT &grid) {\n        REP_(y, h) REP_(x, w) {\n       \
-    \     int p = id(y, x);\n            v[p] = grid[y][x];\n            if (ban and\
-    \ v[p] == ban.value())\n                continue;\n            REP_(d, 4) {\n\
-    \                int y2 = y + d4[d].first, x2 = x + d4[d].second;\n          \
-    \      if (in(y2, x2) and (!ban or ban.value() != grid[y2][x2]))\n           \
-    \         G.add_arc(p, id(y2, x2), d);\n            }\n        }\n        G.build();\n\
-    \    }\n\n  public:\n    std::vector<T> v;\n    WeightedGraph<int> G;\n    bool\
-    \ in(int y, int x) const {\n        return 0 <= y and y < h and 0 <= x and x <\
-    \ w;\n    }\n    int id(int y, int x) const {\n        assert(in(y, x));\n   \
-    \     return y * w + x;\n    }\n    pair<int, int> r2(int a) const {\n       \
-    \ assert(0 <= a and a < h * w);\n        return {a / w, a % w};\n    }\n\n   \
-    \ Grid(const std::vector<vector<T>> &grid, const optional<T> &ban = nullopt)\n\
-    \        : h(grid.size()), w(grid[0].size()), ban(ban), v(h * w), G(h * w) {\n\
-    \        build(grid);\n    }\n    Grid(const std::vector<std::string> &s, const\
-    \ optional<T> &ban = nullopt)\n        : h(s.size()), w(s[0].size()), ban(ban),\
-    \ v(h * w), G(h * w) {\n        static_assert(is_same<T, char>::value, \"value_type==char\"\
-    );\n        build(s);\n    }\n\n    int find(const T &c) const {\n        REP_(i,\
-    \ h * w) if (v[i] == c) return i;\n        return -1;\n    }\n};\n#undef REP_"
+    \ int h, w;\n    std::optional<T> ban;\n    // D,R,U,L\n    static constexpr std::pair<int,\
+    \ int> d4[4] = {\n        {1, 0}, {0, 1}, {-1, 0}, {0, -1}};\n    template <typename\
+    \ vecvecT> void build(const vecvecT &grid) {\n        REP_(y, h) REP_(x, w) {\n\
+    \            int p = id(y, x);\n            v[p] = grid[y][x];\n            if\
+    \ (ban and v[p] == ban.value())\n                continue;\n            REP_(d,\
+    \ 4) {\n                int y2 = y + d4[d].first, x2 = x + d4[d].second;\n   \
+    \             if (in(y2, x2) and (!ban or ban.value() != grid[y2][x2]))\n    \
+    \                G.add_arc(p, id(y2, x2), d);\n            }\n        }\n    \
+    \    G.build();\n    }\n\n  public:\n    std::vector<T> v;\n    WeightedGraph<int>\
+    \ G;\n    bool in(int y, int x) const {\n        return 0 <= y and y < h and 0\
+    \ <= x and x < w;\n    }\n    int id(int y, int x) const {\n        assert(in(y,\
+    \ x));\n        return y * w + x;\n    }\n    std::pair<int, int> r2(int a) const\
+    \ {\n        assert(0 <= a and a < h * w);\n        return {a / w, a % w};\n \
+    \   }\n\n    Grid(const std::vector<vector<T>> &grid,\n         const std::optional<T>\
+    \ &ban = nullopt)\n        : h(grid.size()), w(grid[0].size()), ban(ban), v(h\
+    \ * w), G(h * w) {\n        build(grid);\n    }\n    Grid(const std::vector<std::string>\
+    \ &s,\n         const std::optional<T> &ban = nullopt)\n        : h(s.size()),\
+    \ w(s[0].size()), ban(ban), v(h * w), G(h * w) {\n        static_assert(is_same<T,\
+    \ char>::value, \"value_type==char\");\n        build(s);\n    }\n\n    int find(const\
+    \ T &c) const {\n        REP_(i, h * w) if (v[i] == c) return i;\n        return\
+    \ -1;\n    }\n};\n#undef REP_"
   dependsOn:
   - library/graph/WeightedGraph.cpp
   isVerificationFile: false
   path: library/graph/Grid.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/2212.test.cpp

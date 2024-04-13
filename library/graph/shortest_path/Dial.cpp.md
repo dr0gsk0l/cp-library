@@ -61,7 +61,7 @@ data:
     \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
     \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 3 \"library/graph/shortest_path/Dial.cpp\"\
-    \ntemplate <typename WG, typename T = typename WG::weight_type>\npair<vector<T>,\
+    \ntemplate <typename WG, typename T = typename WG::weight_type>\nstd::pair<vector<T>,\
     \ vector<int>> dial(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n\
     \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::vector<bool>\
     \ used(g.n, false);\n\n    T K = 0, rem = 0;\n    for (const auto &e : g.edges)\n\
@@ -81,31 +81,31 @@ data:
     \                       nxt.push(x);\n                    que[x].push(e.to);\n\
     \                }\n            }\n        }\n    }\n    return {d, pre};\n}\n"
   code: "#pragma once\n#include \"library/graph/WeightedGraph.cpp\"\ntemplate <typename\
-    \ WG, typename T = typename WG::weight_type>\npair<vector<T>, vector<int>> dial(const\
-    \ WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T> d(g.n,\
-    \ -1);\n    std::vector<int> pre(g.n, -1);\n    std::vector<bool> used(g.n, false);\n\
-    \n    T K = 0, rem = 0;\n    for (const auto &e : g.edges)\n        K = max(K,\
-    \ e.weight);\n    std::vector<std::queue<int>> que(K + 1);\n    auto cmp = [&](T\
-    \ a, T b) {\n        if (a == rem || b == rem)\n            return b == rem;\n\
-    \        if ((a < rem) ^ (b < rem))\n            return a < rem;\n        return\
-    \ a > b;\n    };\n    std::priority_queue<T, vector<T>, decltype(cmp)> nxt{cmp};\n\
-    \n    d[s] = 0;\n    que[0].push(0);\n    nxt.push(0);\n\n    while (nxt.size())\
-    \ {\n        rem = nxt.top();\n        nxt.pop();\n        auto &Q = que[rem];\n\
-    \        while (Q.size()) {\n            int v = Q.front();\n            Q.pop();\n\
-    \            if (used[v])\n                continue;\n            used[v] = true;\n\
-    \            for (const auto &e : g[v]) {\n                if (d[e.to] == -1 ||\
-    \ d[e.to] > d[v] + e.weight) {\n                    d[e.to] = d[v] + e.weight;\n\
-    \                    pre[e.to] = v;\n                    T x = rem + e.weight;\n\
-    \                    if (x >= K + 1)\n                        x -= K + 1;\n  \
-    \                  if (!que[x].size())\n                        nxt.push(x);\n\
-    \                    que[x].push(e.to);\n                }\n            }\n  \
-    \      }\n    }\n    return {d, pre};\n}"
+    \ WG, typename T = typename WG::weight_type>\nstd::pair<vector<T>, vector<int>>\
+    \ dial(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T>\
+    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::vector<bool> used(g.n,\
+    \ false);\n\n    T K = 0, rem = 0;\n    for (const auto &e : g.edges)\n      \
+    \  K = max(K, e.weight);\n    std::vector<std::queue<int>> que(K + 1);\n    auto\
+    \ cmp = [&](T a, T b) {\n        if (a == rem || b == rem)\n            return\
+    \ b == rem;\n        if ((a < rem) ^ (b < rem))\n            return a < rem;\n\
+    \        return a > b;\n    };\n    std::priority_queue<T, vector<T>, decltype(cmp)>\
+    \ nxt{cmp};\n\n    d[s] = 0;\n    que[0].push(0);\n    nxt.push(0);\n\n    while\
+    \ (nxt.size()) {\n        rem = nxt.top();\n        nxt.pop();\n        auto &Q\
+    \ = que[rem];\n        while (Q.size()) {\n            int v = Q.front();\n  \
+    \          Q.pop();\n            if (used[v])\n                continue;\n   \
+    \         used[v] = true;\n            for (const auto &e : g[v]) {\n        \
+    \        if (d[e.to] == -1 || d[e.to] > d[v] + e.weight) {\n                 \
+    \   d[e.to] = d[v] + e.weight;\n                    pre[e.to] = v;\n         \
+    \           T x = rem + e.weight;\n                    if (x >= K + 1)\n     \
+    \                   x -= K + 1;\n                    if (!que[x].size())\n   \
+    \                     nxt.push(x);\n                    que[x].push(e.to);\n \
+    \               }\n            }\n        }\n    }\n    return {d, pre};\n}"
   dependsOn:
   - library/graph/WeightedGraph.cpp
   isVerificationFile: false
   path: library/graph/shortest_path/Dial.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_12_B.test.cpp

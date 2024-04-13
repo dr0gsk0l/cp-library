@@ -77,17 +77,17 @@ data:
     \ G;\n    std::vector<TC> potential, dist;\n    static constexpr TC INF =\n  \
     \      is_same_v<TC, __int128> ? TC(1e30) : numeric_limits<TC>::max() / 2;\n \
     \   // numeric_limits<__int128 >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\
-    \n    std::vector<pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\
-    \u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<pair<TC,\
-    \ int>, vector<pair<TC, int>>,\n                        greater<pair<TC, int>>>\n\
-    \        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\
-    \u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n        return\
-    \ (a > b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id)\
-    \ {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap ==\
-    \ 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost()\
-    \ + potential[from] -\n                                  potential[e.to])) {\n\
-    \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
-    \        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
+    \n    std::vector<std::pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v\
+    \ \u306B\u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<std::pair<TC,\
+    \ int>, vector<std::pair<TC, int>>,\n                        greater<std::pair<TC,\
+    \ int>>>\n        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\
+    \u3059\u308B\u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n\
+    \        return (a > b and (a = b, true));\n    }\n    bool SP_update(int from,\
+    \ int edge_id) {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap\
+    \ == 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] +\
+    \ (e.weight).cost() + potential[from] -\n                                  potential[e.to]))\
+    \ {\n            pre[e.to] = {from, edge_id};\n            return true;\n    \
+    \    }\n        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
     \u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\
     \u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n                           // \u3068\u306A\
     \u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(),\
@@ -108,18 +108,18 @@ data:
     \ {cap, cost_func, out_deg[v], false});\n        G.add_arc(v, u, {0, cost_func,\
     \ out_deg[u], true});\n        out_deg[v]++;\n        out_deg[u]++;\n        if\
     \ (cap > 0) {\n            in_deg[v]++;\n            negative |= cost_func(0)\
-    \ < 0;\n        }\n    }\n\n    pair<TC, bool> flow(int s, int t, int f) {\n \
-    \       if (!G.is_prepared())\n            G.build();\n        TC res = 0;\n \
-    \       fill(potential.begin(), potential.end(), 0);\n        for (int i = 0;\
+    \ < 0;\n        }\n    }\n\n    std::pair<TC, bool> flow(int s, int t, int f)\
+    \ {\n        if (!G.is_prepared())\n            G.build();\n        TC res = 0;\n\
+    \        fill(potential.begin(), potential.end(), 0);\n        for (int i = 0;\
     \ i < f; i++) {\n            if (negative)\n                DAG(s);\n        \
     \    else\n                dijkstra(s);\n            if (dist[t] == INF)\n   \
-    \             return make_pair(res, false);\n            REP_(v, n) if (dist[v]\
+    \             return make_std::pair(res, false);\n            REP_(v, n) if (dist[v]\
     \ != INF) potential[v] += dist[v];\n            res += potential[t];\n       \
     \     for (int v = t; v != s; v = pre[v].first) {\n                auto &w = G[pre[v].first][pre[v].second].weight;\n\
     \                w.cap--;\n                w.flow++;\n                auto &r\
     \ = G[v][w.rev].weight;\n                r.cap++;\n                r.flow--;\n\
-    \            }\n        }\n        return make_pair(res, true);\n    }\n};\n#undef\
-    \ REP_\n"
+    \            }\n        }\n        return make_std::pair(res, true);\n    }\n\
+    };\n#undef REP_\n"
   code: "#pragma once\n// \u8FBA\u306E\u91CD\u307F\u304C\u6D41\u91CF\u306B\u5BFE\u3057\
     \u3066\u5358\u8ABF\u5897\u52A0\u306A\u95A2\u6570\n// \u73FE\u5728\u306E\u6D41\u91CF\
     \u3092\u5F15\u6570\u3068\u3057\u3066\u3001\u305D\u3053\u306B\u65B0\u305F\u306B\
@@ -136,17 +136,17 @@ data:
     \ G;\n    std::vector<TC> potential, dist;\n    static constexpr TC INF =\n  \
     \      is_same_v<TC, __int128> ? TC(1e30) : numeric_limits<TC>::max() / 2;\n \
     \   // numeric_limits<__int128 >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\
-    \n    std::vector<pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\
-    \u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<pair<TC,\
-    \ int>, vector<pair<TC, int>>,\n                        greater<pair<TC, int>>>\n\
-    \        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\
-    \u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n        return\
-    \ (a > b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id)\
-    \ {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap ==\
-    \ 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] + (e.weight).cost()\
-    \ + potential[from] -\n                                  potential[e.to])) {\n\
-    \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
-    \        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
+    \n    std::vector<std::pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v\
+    \ \u306B\u6765\u305F\n    std::vector<int> in_deg, out_deg;\n    std::priority_queue<std::pair<TC,\
+    \ int>, vector<std::pair<TC, int>>,\n                        greater<std::pair<TC,\
+    \ int>>>\n        que;\n    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\
+    \u3059\u308B\u304B\n\n    template <typename T> bool chmin(T &a, const T &b) {\n\
+    \        return (a > b and (a = b, true));\n    }\n    bool SP_update(int from,\
+    \ int edge_id) {\n        const auto &e = G[from][edge_id];\n        if ((e.weight).cap\
+    \ == 0)\n            return false;\n        if (chmin(dist[e.to], dist[from] +\
+    \ (e.weight).cost() + potential[from] -\n                                  potential[e.to]))\
+    \ {\n            pre[e.to] = {from, edge_id};\n            return true;\n    \
+    \    }\n        return false;\n    }\n\n    void dijkstra(int s) { // dist[i]:s\u304B\
     \u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\u8FBA\u306E\u91CD\u307F\u306B\u3088\
     \u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n                           // \u3068\u306A\
     \u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\n        fill(dist.begin(), dist.end(),\
@@ -167,24 +167,24 @@ data:
     \ {cap, cost_func, out_deg[v], false});\n        G.add_arc(v, u, {0, cost_func,\
     \ out_deg[u], true});\n        out_deg[v]++;\n        out_deg[u]++;\n        if\
     \ (cap > 0) {\n            in_deg[v]++;\n            negative |= cost_func(0)\
-    \ < 0;\n        }\n    }\n\n    pair<TC, bool> flow(int s, int t, int f) {\n \
-    \       if (!G.is_prepared())\n            G.build();\n        TC res = 0;\n \
-    \       fill(potential.begin(), potential.end(), 0);\n        for (int i = 0;\
+    \ < 0;\n        }\n    }\n\n    std::pair<TC, bool> flow(int s, int t, int f)\
+    \ {\n        if (!G.is_prepared())\n            G.build();\n        TC res = 0;\n\
+    \        fill(potential.begin(), potential.end(), 0);\n        for (int i = 0;\
     \ i < f; i++) {\n            if (negative)\n                DAG(s);\n        \
     \    else\n                dijkstra(s);\n            if (dist[t] == INF)\n   \
-    \             return make_pair(res, false);\n            REP_(v, n) if (dist[v]\
+    \             return make_std::pair(res, false);\n            REP_(v, n) if (dist[v]\
     \ != INF) potential[v] += dist[v];\n            res += potential[t];\n       \
     \     for (int v = t; v != s; v = pre[v].first) {\n                auto &w = G[pre[v].first][pre[v].second].weight;\n\
     \                w.cap--;\n                w.flow++;\n                auto &r\
     \ = G[v][w.rev].weight;\n                r.cap++;\n                r.flow--;\n\
-    \            }\n        }\n        return make_pair(res, true);\n    }\n};\n#undef\
-    \ REP_"
+    \            }\n        }\n        return make_std::pair(res, true);\n    }\n\
+    };\n#undef REP_"
   dependsOn:
   - library/graph/WeightedGraph.cpp
   isVerificationFile: false
   path: library/flow/NondecreasingMCF.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/3297.test.cpp

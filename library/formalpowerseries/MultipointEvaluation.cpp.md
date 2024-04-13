@@ -128,13 +128,14 @@ data:
     \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
     \ REP_\n#line 3 \"library/formalpowerseries/DivMod.cpp\"\n#define REVERSE_(f)\
-    \ reverse(f.begin(),f.end());\ntemplate<typename FPS>\npair<FPS,FPS> div_mod(FPS\
-    \ f,FPS g){\n  f.shrink();\n  g.shrink();\n  assert(g.size());\n  if(f.size()<g.size())return\
-    \ {FPS(0),f};\n  REVERSE_(f);\n  REVERSE_(g);\n  int d=f.size()-g.size()+1;\n\
-    \  FPS q = (f.pre(d) * g.inv(d)).pre(d);\n  if(q.size()<d)q.resize(d,0);\n  REVERSE_(q);\n\
-    \  REVERSE_(f);\n  REVERSE_(g);\n  return {q,f-q*g};\n}\n#undef REVERSE_\n#line\
-    \ 4 \"library/formalpowerseries/MultipointEvaluation.cpp\"\ntemplate <typename\
-    \ FPS, typename T = typename FPS::value_type>\nvector<T> multipoint_evaluation(const\
+    \ reverse(f.begin(), f.end());\ntemplate <typename FPS> std::pair<FPS, FPS> div_mod(FPS\
+    \ f, FPS g) {\n    f.shrink();\n    g.shrink();\n    assert(g.size());\n    if\
+    \ (f.size() < g.size())\n        return {FPS(0), f};\n    REVERSE_(f);\n    REVERSE_(g);\n\
+    \    int d = f.size() - g.size() + 1;\n    FPS q = (f.pre(d) * g.inv(d)).pre(d);\n\
+    \    if (q.size() < d)\n        q.resize(d, 0);\n    REVERSE_(q);\n    REVERSE_(f);\n\
+    \    REVERSE_(g);\n    return {q, f - q * g};\n}\n#undef REVERSE_\n#line 4 \"\
+    library/formalpowerseries/MultipointEvaluation.cpp\"\ntemplate <typename FPS,\
+    \ typename T = typename FPS::value_type>\nvector<T> multipoint_evaluation(const\
     \ FPS &f, vector<T> v) {\n    int m = v.size();\n    int sz;\n    for (sz = 1;\
     \ sz < m; sz *= 2) {\n    }\n    std::vector<FPS> t(sz * 2);\n    for (int i =\
     \ 0; i < sz; i++)\n        t[sz + i] = {(i < m ? -v[i] : 0), 1};\n    for (int\
@@ -158,7 +159,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/MultipointEvaluation.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp

@@ -24,7 +24,7 @@ data:
     \n#define PROBLEM                                                            \
     \    \\\n    \"https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification\"\
     \n#include <bits/stdc++.h>\n\n#line 1 \"library/tree/RootedTreeIsomorphism.cpp\"\
-    \ntemplate <typename TREE>\npair<int, vector<int>> rooted_tree_isomorphism(TREE\
+    \ntemplate <typename TREE>\nstd::pair<int, vector<int>> rooted_tree_isomorphism(TREE\
     \ &t) {\n    assert(~t.root);\n    std::vector<int> res(t.n);\n    std<vector<int>,\
     \ int> mp;\n    for (const int v : t.DFS) {\n        std::vector<int> h;\n   \
     \     for (int to : t.son(v))\n            h.push_back(res[to]);\n        sort(h.begin(),\
@@ -113,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp

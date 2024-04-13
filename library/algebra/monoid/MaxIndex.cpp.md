@@ -9,7 +9,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/monoid/MaxIndex.cpp\"\ntemplate <typename\
-    \ X> struct MonoidMaxIndex {\n    using P = pair<X, int>;\n    using value_type\
+    \ X> struct MonoidMaxIndex {\n    using P = std::pair<X, int>;\n    using value_type\
     \ = P;\n    static constexpr P op(const P &x, const P &y) noexcept { return max(x,\
     \ y); }\n    static constexpr void Rchop(P &x, const P &y) {\n        if (x <\
     \ y)\n            x = y;\n    }\n    static constexpr void Lchop(const P &x, P\
@@ -19,7 +19,7 @@ data:
     \ &v) {\n        std::vector<P> w(v.size());\n        for (int i = 0; i < v.size();\
     \ i++)\n            w[i] = P(v[i], i);\n        return w;\n    }\n};\n"
   code: "#pragma once\ntemplate <typename X> struct MonoidMaxIndex {\n    using P\
-    \ = pair<X, int>;\n    using value_type = P;\n    static constexpr P op(const\
+    \ = std::pair<X, int>;\n    using value_type = P;\n    static constexpr P op(const\
     \ P &x, const P &y) noexcept { return max(x, y); }\n    static constexpr void\
     \ Rchop(P &x, const P &y) {\n        if (x < y)\n            x = y;\n    }\n \
     \   static constexpr void Lchop(const P &x, P &y) {\n        if (y < x)\n    \
@@ -32,7 +32,7 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/MaxIndex.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/algebra/monoid/MaxIndex.cpp

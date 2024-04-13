@@ -136,13 +136,14 @@ data:
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
     \ REP_\n#line 22 \"test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp\"\
     \nusing FPS = FormalPowerSeries<mint, 500000>;\n#line 3 \"library/formalpowerseries/DivMod.cpp\"\
-    \n#define REVERSE_(f) reverse(f.begin(),f.end());\ntemplate<typename FPS>\npair<FPS,FPS>\
-    \ div_mod(FPS f,FPS g){\n  f.shrink();\n  g.shrink();\n  assert(g.size());\n \
-    \ if(f.size()<g.size())return {FPS(0),f};\n  REVERSE_(f);\n  REVERSE_(g);\n  int\
-    \ d=f.size()-g.size()+1;\n  FPS q = (f.pre(d) * g.inv(d)).pre(d);\n  if(q.size()<d)q.resize(d,0);\n\
-    \  REVERSE_(q);\n  REVERSE_(f);\n  REVERSE_(g);\n  return {q,f-q*g};\n}\n#undef\
-    \ REVERSE_\n#line 24 \"test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp\"\
-    \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
+    \n#define REVERSE_(f) reverse(f.begin(), f.end());\ntemplate <typename FPS> std::pair<FPS,\
+    \ FPS> div_mod(FPS f, FPS g) {\n    f.shrink();\n    g.shrink();\n    assert(g.size());\n\
+    \    if (f.size() < g.size())\n        return {FPS(0), f};\n    REVERSE_(f);\n\
+    \    REVERSE_(g);\n    int d = f.size() - g.size() + 1;\n    FPS q = (f.pre(d)\
+    \ * g.inv(d)).pre(d);\n    if (q.size() < d)\n        q.resize(d, 0);\n    REVERSE_(q);\n\
+    \    REVERSE_(f);\n    REVERSE_(g);\n    return {q, f - q * g};\n}\n#undef REVERSE_\n\
+    #line 24 \"test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp\"\n\n\
+    int main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n, m;\n    std::cin >> n >> m;\n    FPS f(n), g(m);\n    REP (i, n)\n\
     \        std::cin >> f[i];\n    REP (j, m)\n        std::cin >> g[j];\n    auto\
     \ [q, r] = div_mod(f, g);\n    q.shrink();\n    r.shrink();\n    std::cout <<\
@@ -170,7 +171,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp

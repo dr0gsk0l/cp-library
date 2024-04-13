@@ -13,10 +13,10 @@ data:
   - icon: ':x:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   - icon: ':x:'
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp

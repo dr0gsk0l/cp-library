@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   - icon: ':x:'
@@ -22,11 +22,12 @@ data:
     - https://judge.yosupo.jp/problem/number_of_subsequences
   bundledCode: "#line 1 \"test/library-checker/New/NumberOfSubsequence.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/number_of_subsequences\"\n#include\
-    \ <bits/stdc++.h>\n\n#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll=long long;\n\
-    pair<ll,ll> ext_gcd(ll a,ll b){\n  if(b==0)return {1,0};\n  auto [X,Y]=ext_gcd(b,a%b);\n\
-    \  // bX + (a%b)Y = gcd(a,b)\n  // a%b = a - b(a/b)\n  // \u2234 aY + b(X-(a/b)Y)\
-    \ = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n}\n#line 3 \"library/mod/Modint.cpp\"\
-    \ntemplate <typename T, T MOD = 998244353> struct Mint {\n    inline static constexpr\
+    \ <bits/stdc++.h>\n\n#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll = long long;\n\
+    std::pair<ll, ll> ext_gcd(ll a, ll b) {\n    if (b == 0)\n        return {1, 0};\n\
+    \    auto [X, Y] = ext_gcd(b, a % b);\n    // bX + (a%b)Y = gcd(a,b)\n    // a%b\
+    \ = a - b(a/b)\n    // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n    ll x = Y, y = X\
+    \ - (a / b) * Y;\n    return {x, y};\n}\n#line 3 \"library/mod/Modint.cpp\"\n\
+    template <typename T, T MOD = 998244353> struct Mint {\n    inline static constexpr\
     \ T mod = MOD;\n    T v;\n    Mint() : v(0) {}\n    Mint(signed v) : v(v) {}\n\
     \    Mint(long long t) {\n        v = t % MOD;\n        if (v < 0)\n         \
     \   v += MOD;\n    }\n\n    static Mint raw(int v) {\n        Mint x;\n      \
@@ -86,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/New/NumberOfSubsequence.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/New/NumberOfSubsequence.test.cpp

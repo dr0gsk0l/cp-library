@@ -35,7 +35,7 @@ data:
   isVerificationFile: false
   path: library/util/Subsequence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp

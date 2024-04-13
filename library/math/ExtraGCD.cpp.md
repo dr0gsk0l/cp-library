@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/2971.test.cpp
     title: test/AOJ/2971.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/NTL_1_E.test.cpp
     title: test/AOJ/NTL_1_E.test.cpp
   - icon: ':x:'
@@ -48,7 +48,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/117.test.cpp
     title: test/yukicoder/117.test.cpp
   - icon: ':x:'
@@ -59,24 +59,26 @@ data:
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll=long long;\npair<ll,ll>\
-    \ ext_gcd(ll a,ll b){\n  if(b==0)return {1,0};\n  auto [X,Y]=ext_gcd(b,a%b);\n\
-    \  // bX + (a%b)Y = gcd(a,b)\n  // a%b = a - b(a/b)\n  // \u2234 aY + b(X-(a/b)Y)\
-    \ = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n}\n"
-  code: "#pragma once\nusing ll=long long;\npair<ll,ll> ext_gcd(ll a,ll b){\n  if(b==0)return\
-    \ {1,0};\n  auto [X,Y]=ext_gcd(b,a%b);\n  // bX + (a%b)Y = gcd(a,b)\n  // a%b\
-    \ = a - b(a/b)\n  // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n\
-    \  return {x,y};\n}\n"
+  bundledCode: "#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll = long long;\nstd::pair<ll,\
+    \ ll> ext_gcd(ll a, ll b) {\n    if (b == 0)\n        return {1, 0};\n    auto\
+    \ [X, Y] = ext_gcd(b, a % b);\n    // bX + (a%b)Y = gcd(a,b)\n    // a%b = a -\
+    \ b(a/b)\n    // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n    ll x = Y, y = X - (a\
+    \ / b) * Y;\n    return {x, y};\n}\n"
+  code: "#pragma once\nusing ll = long long;\nstd::pair<ll, ll> ext_gcd(ll a, ll b)\
+    \ {\n    if (b == 0)\n        return {1, 0};\n    auto [X, Y] = ext_gcd(b, a %\
+    \ b);\n    // bX + (a%b)Y = gcd(a,b)\n    // a%b = a - b(a/b)\n    // \u2234 aY\
+    \ + b(X-(a/b)Y) = gcd(a,b)\n    ll x = Y, y = X - (a / b) * Y;\n    return {x,\
+    \ y};\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: library/math/ExtraGCD.cpp
   requiredBy:
   - library/mod/Modint.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 18:46:02+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp
   - test/library-checker/Matrix/Inverse.test.cpp

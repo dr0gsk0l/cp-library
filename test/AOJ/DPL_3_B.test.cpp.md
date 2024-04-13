@@ -98,15 +98,15 @@ data:
     \u3059 \u6839\u304C\u6700\u5C0F\u5024\u306Eindex\n// \u7B49\u3057\u3044\u5024\u306B\
     \u95A2\u3057\u3066\u306F index \u306E\u5927\u5C0F\u3092\u6BD4\u8F03\u3059\u308B\
     \n// \u8FBA\u306E\u91CD\u307F\u306F\u5B50\u306E\u90E8\u5206\u6728\u304C\u62C5\u5F53\
-    \u3059\u308B\u534A\u958B\u533A\u9593\ntemplate <typename T>\nWeightedTree<pair<int,\
+    \u3059\u308B\u534A\u958B\u533A\u9593\ntemplate <typename T>\nWeightedTree<std::pair<int,\
     \ int>> cartesian_tree(const std::vector<T> &v) {\n    int n = v.size();\n   \
-    \ std::vector<pair<int, int>> lr(n, {0, n});\n    stack<int> sta;\n    for (int\
-    \ i = 0; i < n; i++) {\n        while (sta.size() and v[i] < v[sta.top()]) {\n\
-    \            lr[sta.top()].second = i;\n            sta.pop();\n        }\n  \
-    \      if (sta.size())\n            lr[i].first = sta.top() + 1;\n        sta.push(i);\n\
-    \    }\n    WeightedTree<pair<int, int>> t(n);\n    int root;\n    for (int i\
-    \ = 0; i < n; i++) {\n        const auto &[l, r] = lr[i];\n        if (l == 0\
-    \ and r == n)\n            root = i;\n        else {\n            if (l == 0)\n\
+    \ std::vector<std::pair<int, int>> lr(n, {0, n});\n    stack<int> sta;\n    for\
+    \ (int i = 0; i < n; i++) {\n        while (sta.size() and v[i] < v[sta.top()])\
+    \ {\n            lr[sta.top()].second = i;\n            sta.pop();\n        }\n\
+    \        if (sta.size())\n            lr[i].first = sta.top() + 1;\n        sta.push(i);\n\
+    \    }\n    WeightedTree<std::pair<int, int>> t(n);\n    int root;\n    for (int\
+    \ i = 0; i < n; i++) {\n        const auto &[l, r] = lr[i];\n        if (l ==\
+    \ 0 and r == n)\n            root = i;\n        else {\n            if (l == 0)\n\
     \                t.add_edge(r, i, lr[i]);\n            if (r == n)\n         \
     \       t.add_edge(l - 1, i, lr[i]);\n            if (l != 0 and r != n)\n   \
     \             if (v[l - 1] > v[r])\n                    t.add_edge(l - 1, i, lr[i]);\n\
@@ -140,7 +140,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DPL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DPL_3_B.test.cpp

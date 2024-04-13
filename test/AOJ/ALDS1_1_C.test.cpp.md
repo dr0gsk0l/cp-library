@@ -20,9 +20,9 @@ data:
     \u8A00\u306F\u30B0\u30ED\u30FC\u30D0\u30EB\u3067\u3059\u308B\n// https://twitter.com/climpet/status/1598974781138694144\n\
     \ntemplate <int MAX, bool PRIME_FACTOR = false, bool DIVISOR = false>\nclass PrimeUtil\
     \ {\n    using u32 = unsigned long long;\n    using u64 = unsigned long long;\n\
-    \    using PF = std::vector<std::pair<u32, int>>;\n\n    template <int MAX> using\
-    \ ARR = std::array<T, MAX + 1>;\n    template <typename T, bool F> using COND\
-    \ = std::conditional_t<F, T, bool>;\n\n    ARR<bool> isP;\n    std::vector<u32>\
+    \    using PF = std::vector<std::std::pair<u32, int>>;\n\n    template <int MAX>\
+    \ using ARR = std::array<T, MAX + 1>;\n    template <typename T, bool F> using\
+    \ COND = std::conditional_t<F, T, bool>;\n\n    ARR<bool> isP;\n    std::vector<u32>\
     \ primes;\n    COND<ARR<PF>, PRIME_FACTOR> prime_factors;\n    COND<ARR<std::vector<u32>>>\
     \ divisors; // \u81EA\u660E\u306A\u7D04\u6570\u306F\u5165\u3089\u306A\u3044\n\n\
     \    static ll pow2(ll a) { return a * a; }\n\n  public:\n    PrimeUtil() {\n\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C.test.cpp

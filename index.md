@@ -221,13 +221,13 @@ data:
       title: library/formalpowerseries/Sqrt.cpp
   - name: library/geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/Base.cpp
       title: library/geometry/Base.cpp
     - icon: ':warning:'
       path: library/geometry/Judge.cpp
       title: library/geometry/Judge.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/geometry/UtilFunction.cpp
       title: library/geometry/UtilFunction.cpp
   - name: library/graph
@@ -323,7 +323,7 @@ data:
       title: library/local/hack.py
   - name: library/math
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/math/ExtraGCD.cpp
       title: library/math/ExtraGCD.cpp
     - icon: ':warning:'
@@ -346,10 +346,10 @@ data:
     - icon: ':warning:'
       path: library/mod/CompositeMintUtility.cpp
       title: library/mod/CompositeMintUtility.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/mod/MintUtility.cpp
       title: library/mod/MintUtility.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/mod/Modint.cpp
       title: library/mod/Modint.cpp
     - icon: ':x:'
@@ -376,7 +376,7 @@ data:
     - icon: ':x:'
       path: library/r2/Projection.cpp
       title: library/r2/Projection.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/r2/XY.cpp
       title: library/r2/XY.cpp
     - icon: ':warning:'
@@ -552,7 +552,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/ALDS1_5_D.test.cpp
       title: test/AOJ/ALDS1_5_D.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/CGL_4_A.test.cpp
       title: test/AOJ/CGL_4_A.test.cpp
     - icon: ':x:'
@@ -612,7 +612,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/GRL_7_A.test.cpp
       title: test/AOJ/GRL_7_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/NTL_1_E.test.cpp
       title: test/AOJ/NTL_1_E.test.cpp
   - name: test/library-checker/Convolution
@@ -790,7 +790,7 @@ data:
     - icon: ':x:'
       path: test/yukicoder/1097.test.cpp
       title: test/yukicoder/1097.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/117.test.cpp
       title: test/yukicoder/117.test.cpp
     - icon: ':x:'

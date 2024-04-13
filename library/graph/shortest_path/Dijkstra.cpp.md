@@ -12,31 +12,31 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graph/shortest_path/Dijkstra.cpp\"\ntemplate <typename\
-    \ WG, typename T = typename WG::weight_type>\npair<vector<T>, vector<int>> dijkstra(const\
-    \ WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T> d(g.n,\
-    \ -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<pair<T, int>,\
-    \ vector<pair<T, int>>,\n                        greater<pair<T, int>>>\n    \
-    \    que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size()) {\n \
-    \       auto [now, id] = que.top();\n        que.pop();\n        if (d[id] < now)\n\
-    \            continue;\n        for (const auto &e : g[id])\n            if (d[e.to]\
-    \ == -1 || d[e.to] > now + e.weight) {\n                d[e.to] = now + e.weight;\n\
-    \                pre[e.to] = id;\n                que.emplace(d[e.to], e.to);\n\
-    \            }\n    }\n    return {d, pre};\n}\n"
-  code: "template <typename WG, typename T = typename WG::weight_type>\npair<vector<T>,\
+    \ WG, typename T = typename WG::weight_type>\nstd::pair<vector<T>, vector<int>>\
+    \ dijkstra(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T>\
+    \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<std::pair<T,\
+    \ int>, vector<std::pair<T, int>>,\n                        greater<std::pair<T,\
+    \ int>>>\n        que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size())\
+    \ {\n        auto [now, id] = que.top();\n        que.pop();\n        if (d[id]\
+    \ < now)\n            continue;\n        for (const auto &e : g[id])\n       \
+    \     if (d[e.to] == -1 || d[e.to] > now + e.weight) {\n                d[e.to]\
+    \ = now + e.weight;\n                pre[e.to] = id;\n                que.emplace(d[e.to],\
+    \ e.to);\n            }\n    }\n    return {d, pre};\n}\n"
+  code: "template <typename WG, typename T = typename WG::weight_type>\nstd::pair<vector<T>,\
     \ vector<int>> dijkstra(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n\
-    \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<pair<T,\
-    \ int>, vector<pair<T, int>>,\n                        greater<pair<T, int>>>\n\
-    \        que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size()) {\n\
-    \        auto [now, id] = que.top();\n        que.pop();\n        if (d[id] <\
-    \ now)\n            continue;\n        for (const auto &e : g[id])\n         \
-    \   if (d[e.to] == -1 || d[e.to] > now + e.weight) {\n                d[e.to]\
+    \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<std::pair<T,\
+    \ int>, vector<std::pair<T, int>>,\n                        greater<std::pair<T,\
+    \ int>>>\n        que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size())\
+    \ {\n        auto [now, id] = que.top();\n        que.pop();\n        if (d[id]\
+    \ < now)\n            continue;\n        for (const auto &e : g[id])\n       \
+    \     if (d[e.to] == -1 || d[e.to] > now + e.weight) {\n                d[e.to]\
     \ = now + e.weight;\n                pre[e.to] = id;\n                que.emplace(d[e.to],\
     \ e.to);\n            }\n    }\n    return {d, pre};\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graph/shortest_path/Dijkstra.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/ShortestPath.test.cpp

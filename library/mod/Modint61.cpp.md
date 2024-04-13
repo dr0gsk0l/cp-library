@@ -20,8 +20,8 @@ data:
     \         v %= MOD;\n            if (v < 0)\n                v += MOD;\n     \
     \   }\n    }\n    static Modint61 raw(ll v) {\n        Modint61 x;\n        x.v\
     \ = v;\n        return x;\n    }\n\n  private:\n    template <int d> static constexpr\
-    \ pair<ll, ll> divide(const ll &a) {\n        return {a >> d, a & ((1LL << d)\
-    \ - 1)};\n    }\n\n  public:\n    Modint61 pow(long long k) {\n        Modint61\
+    \ std::pair<ll, ll> divide(const ll &a) {\n        return {a >> d, a & ((1LL <<\
+    \ d) - 1)};\n    }\n\n  public:\n    Modint61 pow(long long k) {\n        Modint61\
     \ res(1), tmp(v);\n        while (k) {\n            if (k & 1)\n             \
     \   res *= tmp;\n            tmp *= tmp;\n            k >>= 1;\n        }\n  \
     \      return res;\n    }\n\n    Modint61 inv() { return pow(MOD - 2); }\n\n \
@@ -48,8 +48,8 @@ data:
     \   if (v < 0 || v >= MOD) {\n            v %= MOD;\n            if (v < 0)\n\
     \                v += MOD;\n        }\n    }\n    static Modint61 raw(ll v) {\n\
     \        Modint61 x;\n        x.v = v;\n        return x;\n    }\n\n  private:\n\
-    \    template <int d> static constexpr pair<ll, ll> divide(const ll &a) {\n  \
-    \      return {a >> d, a & ((1LL << d) - 1)};\n    }\n\n  public:\n    Modint61\
+    \    template <int d> static constexpr std::pair<ll, ll> divide(const ll &a) {\n\
+    \        return {a >> d, a & ((1LL << d) - 1)};\n    }\n\n  public:\n    Modint61\
     \ pow(long long k) {\n        Modint61 res(1), tmp(v);\n        while (k) {\n\
     \            if (k & 1)\n                res *= tmp;\n            tmp *= tmp;\n\
     \            k >>= 1;\n        }\n        return res;\n    }\n\n    Modint61 inv()\
@@ -77,7 +77,7 @@ data:
   path: library/mod/Modint61.cpp
   requiredBy:
   - library/sequence/RollingHash.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

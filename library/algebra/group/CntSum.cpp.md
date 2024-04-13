@@ -30,32 +30,32 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/CntSum.cpp\"\ntemplate <typename X>\
-    \ struct GroupCntSum {\n    using P = pair<X, X>;\n    using value_type = P;\n\
-    \    static constexpr P op(const P &x, const P &y) {\n        return {x.first\
+    \ struct GroupCntSum {\n    using P = std::pair<X, X>;\n    using value_type =\
+    \ P;\n    static constexpr P op(const P &x, const P &y) {\n        return {x.first\
     \ + y.first, x.second + y.second};\n    }\n    static constexpr void Rchop(P &x,\
     \ const P &y) {\n        x.first += y.first;\n        x.second += y.second;\n\
     \    }\n    static constexpr void Lchop(const P &x, P &y) {\n        y.first +=\
     \ x.first;\n        y.second += x.second;\n    }\n    static constexpr P inverse(const\
     \ P &x) { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0,\
     \ 0}; }\n    static constexpr bool commute = true;\n};\ntemplate <typename X>\
-    \ vector<pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<pair<X,\
-    \ X>>(n, {x, 1});\n}\ntemplate <typename X> vector<pair<X, X>> cnt_init(const\
-    \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<pair<X, X>> res(n);\n\
-    \    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n\
-    }\n"
-  code: "template <typename X> struct GroupCntSum {\n    using P = pair<X, X>;\n \
-    \   using value_type = P;\n    static constexpr P op(const P &x, const P &y) {\n\
-    \        return {x.first + y.first, x.second + y.second};\n    }\n    static constexpr\
-    \ void Rchop(P &x, const P &y) {\n        x.first += y.first;\n        x.second\
-    \ += y.second;\n    }\n    static constexpr void Lchop(const P &x, P &y) {\n \
-    \       y.first += x.first;\n        y.second += x.second;\n    }\n    static\
-    \ constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static constexpr\
-    \ P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n};\n\
-    template <typename X> vector<pair<X, X>> cnt_init(int n, const X &x) {\n    return\
-    \ std::vector<pair<X, X>>(n, {x, 1});\n}\ntemplate <typename X> vector<pair<X,\
-    \ X>> cnt_init(const std::vector<X> &v) {\n    int n = v.size();\n    std::vector<pair<X,\
-    \ X>> res(n);\n    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n\
-    \    return res;\n}"
+    \ vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X,\
+    \ X>>(n, {x, 1});\n}\ntemplate <typename X>\nvector<std::pair<X, X>> cnt_init(const\
+    \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>>\
+    \ res(n);\n    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return\
+    \ res;\n}\n"
+  code: "template <typename X> struct GroupCntSum {\n    using P = std::pair<X, X>;\n\
+    \    using value_type = P;\n    static constexpr P op(const P &x, const P &y)\
+    \ {\n        return {x.first + y.first, x.second + y.second};\n    }\n    static\
+    \ constexpr void Rchop(P &x, const P &y) {\n        x.first += y.first;\n    \
+    \    x.second += y.second;\n    }\n    static constexpr void Lchop(const P &x,\
+    \ P &y) {\n        y.first += x.first;\n        y.second += x.second;\n    }\n\
+    \    static constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static\
+    \ constexpr P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n\
+    };\ntemplate <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x)\
+    \ {\n    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename\
+    \ X>\nvector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int n =\
+    \ v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0; i <\
+    \ n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/algebra/group/CntSum.cpp
@@ -63,7 +63,7 @@ data:
   - library/algebra/lazy/AddSum.cpp
   - library/algebra/lazy/SetSum.cpp
   - library/algebra/lazy/AffineSum.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

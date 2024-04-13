@@ -125,7 +125,7 @@ data:
     \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
     \ REP_\n#line 3 \"library/formalpowerseries/RationalSum.cpp\"\ntemplate <typename\
-    \ FPS> class RationalSum {\n    std::queue<pair<FPS, FPS>> que;\n\n  public:\n\
+    \ FPS> class RationalSum {\n    std::queue<std::pair<FPS, FPS>> que;\n\n  public:\n\
     \    void add(const FPS &f, const FPS &g) { que.emplace(f, g); }\n    FPS sum()\
     \ {\n        if (!que.size())\n            return FPS(0);\n        while (que.size()\
     \ > 1) {\n            auto [a1, b1] = que.front();\n            que.pop();\n \
@@ -148,7 +148,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/ComposeEXP.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/ComposeEXP.cpp

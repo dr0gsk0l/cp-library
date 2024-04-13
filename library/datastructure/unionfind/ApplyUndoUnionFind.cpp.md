@@ -11,7 +11,7 @@ data:
   bundledCode: "#line 1 \"library/datastructure/unionfind/ApplyUndoUnionFind.cpp\"\
     \n#include <bits/stdc++.h>\n\ntemplate <typename AbelGroup> class UndoUnionFind\
     \ {\n    using T = typename AbelGroup::value_type;\n    size_t n, num;\n    std::vector<size_t>\
-    \ sz, parent;\n    std::stack<std::pair<size_t, size_t>> sta;\n    std::vector<T>\
+    \ sz, parent;\n    std::stack<std::std::pair<size_t, size_t>> sta;\n    std::vector<T>\
     \ value;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n)\n        : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit())\
     \ {\n        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    size_t\
@@ -35,7 +35,7 @@ data:
     \    }\n\n    size_t count() const { return num; }\n};\n"
   code: "#include <bits/stdc++.h>\n\ntemplate <typename AbelGroup> class UndoUnionFind\
     \ {\n    using T = typename AbelGroup::value_type;\n    size_t n, num;\n    std::vector<size_t>\
-    \ sz, parent;\n    std::stack<std::pair<size_t, size_t>> sta;\n    std::vector<T>\
+    \ sz, parent;\n    std::stack<std::std::pair<size_t, size_t>> sta;\n    std::vector<T>\
     \ value;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n)\n        : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit())\
     \ {\n        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    size_t\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/ApplyUndoUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/ApplyUndoUnionFind.cpp

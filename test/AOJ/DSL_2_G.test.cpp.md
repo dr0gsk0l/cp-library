@@ -33,19 +33,19 @@ data:
     \ X power(const X &x, long long n) noexcept { return X(n) * x; }\n  static constexpr\
     \ X unit() { return X(0); }\n  static constexpr bool commute = true;\n};\n#line\
     \ 1 \"library/algebra/group/CntSum.cpp\"\ntemplate <typename X> struct GroupCntSum\
-    \ {\n    using P = pair<X, X>;\n    using value_type = P;\n    static constexpr\
+    \ {\n    using P = std::pair<X, X>;\n    using value_type = P;\n    static constexpr\
     \ P op(const P &x, const P &y) {\n        return {x.first + y.first, x.second\
     \ + y.second};\n    }\n    static constexpr void Rchop(P &x, const P &y) {\n \
     \       x.first += y.first;\n        x.second += y.second;\n    }\n    static\
     \ constexpr void Lchop(const P &x, P &y) {\n        y.first += x.first;\n    \
     \    y.second += x.second;\n    }\n    static constexpr P inverse(const P &x)\
     \ { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0, 0}; }\n\
-    \    static constexpr bool commute = true;\n};\ntemplate <typename X> vector<pair<X,\
-    \ X>> cnt_init(int n, const X &x) {\n    return std::vector<pair<X, X>>(n, {x,\
-    \ 1});\n}\ntemplate <typename X> vector<pair<X, X>> cnt_init(const std::vector<X>\
-    \ &v) {\n    int n = v.size();\n    std::vector<pair<X, X>> res(n);\n    for (int\
-    \ i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}\n#line 4\
-    \ \"library/algebra/lazy/AddSum.cpp\"\ntemplate <typename X> struct LazyAddSum\
+    \    static constexpr bool commute = true;\n};\ntemplate <typename X> vector<std::pair<X,\
+    \ X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X, X>>(n,\
+    \ {x, 1});\n}\ntemplate <typename X>\nvector<std::pair<X, X>> cnt_init(const std::vector<X>\
+    \ &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n   \
+    \ for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n\
+    }\n#line 4 \"library/algebra/lazy/AddSum.cpp\"\ntemplate <typename X> struct LazyAddSum\
     \ {\n    using MX = GroupCntSum<X>;\n    using MF = GroupAdd<X>;\n    using S\
     \ = typename MX::value_type;\n    static constexpr S mapping(const X &f, const\
     \ S &x) {\n        return {x.first + f * x.second, x.second};\n    }\n};\n#line\
@@ -108,7 +108,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_G.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_G.test.cpp

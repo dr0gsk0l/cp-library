@@ -34,14 +34,14 @@ data:
     \        return true;\n    }\n\n    int size(const int x) {\n        assert(0\
     \ <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int count() const\
     \ { return num; }\n};\n#line 3 \"library/graph/MinimumSpanningArborescence.cpp\"\
-    \ntemplate <typename WG, typename W = typename WG::weight_type>\noptional<pair<W,\
-    \ vector<int>>> minimum_spanning_arborescence(WG g, int r = 0) {\n    int n =\
+    \ntemplate <typename WG, typename W = typename WG::weight_type>\nstd::optional<std::pair<W,\
+    \ vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int n =\
     \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
     \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
-    \ decltype(compare)>;\n    std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});\n\
-    \    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
+    \ decltype(compare)>;\n    std::vector<std::pair<PQ, W>> pq_add(n, {PQ{compare},\
+    \ 0});\n    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
     \    auto merge = [&](int u, int v) {\n        u = uf.leader(u);\n        v =\
     \ uf.leader(v);\n        if (u == v)\n            return;\n        uf.merge(u,\
@@ -67,16 +67,16 @@ data:
     \                } while (!uf.same(v, now));\n                now = uf.leader(now);\n\
     \            } else\n                now = uf.leader(pre[now]);\n        }\n \
     \       for (int v : processing)\n            state[v] = 2;\n    }\n    tree.erase(tree.begin()\
-    \ + r);\n    return make_pair(res, tree);\n}\n"
+    \ + r);\n    return make_std::pair(res, tree);\n}\n"
   code: "#pragma once\n#include \"library/datastructure/unionfind/UnionFind.cpp\"\n\
-    template <typename WG, typename W = typename WG::weight_type>\noptional<pair<W,\
-    \ vector<int>>> minimum_spanning_arborescence(WG g, int r = 0) {\n    int n =\
+    template <typename WG, typename W = typename WG::weight_type>\nstd::optional<std::pair<W,\
+    \ vector<int>>>\nminimum_spanning_arborescence(WG g, int r = 0) {\n    int n =\
     \ g.n;\n    W res = 0;\n    std::vector<W> new_add(n, 0);\n    std::vector<int>\
     \ tree(n), pre(n), state(n, 0);\n    UnionFind uf(n);\n    state[r] = 2;\n\n \
     \   auto compare = [&](const int &a, const int &b) {\n        return g.edges[a].weight\
     \ > g.edges[b].weight;\n    };\n    using PQ = std::priority_queue<int, vector<int>,\
-    \ decltype(compare)>;\n    std::vector<pair<PQ, W>> pq_add(n, {PQ{compare}, 0});\n\
-    \    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
+    \ decltype(compare)>;\n    std::vector<std::pair<PQ, W>> pq_add(n, {PQ{compare},\
+    \ 0});\n    for (int i = 0; i < g.edges.size(); i++)\n        pq_add[g.edges[i].to].first.push(i);\n\
     \    std::vector<int> pq_id(n);\n    iota(pq_id.begin(), pq_id.end(), 0);\n\n\
     \    auto merge = [&](int u, int v) {\n        u = uf.leader(u);\n        v =\
     \ uf.leader(v);\n        if (u == v)\n            return;\n        uf.merge(u,\
@@ -102,13 +102,13 @@ data:
     \                } while (!uf.same(v, now));\n                now = uf.leader(now);\n\
     \            } else\n                now = uf.leader(pre[now]);\n        }\n \
     \       for (int v : processing)\n            state[v] = 2;\n    }\n    tree.erase(tree.begin()\
-    \ + r);\n    return make_pair(res, tree);\n}\n"
+    \ + r);\n    return make_std::pair(res, tree);\n}\n"
   dependsOn:
   - library/datastructure/unionfind/UnionFind.cpp
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp

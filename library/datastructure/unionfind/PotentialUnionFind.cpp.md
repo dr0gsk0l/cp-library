@@ -30,8 +30,8 @@ data:
     \u6642\u306E x \u306E\u5024\n  public:\n    PotentialUnionFind() = default;\n\
     \    PotentialUnionFind(int n)\n        : n(n), num(n), sz(n, 1), parent(n, 0),\n\
     \          potential(n, AbelGroup::unit()) {\n        assert(AbelGroup::commute);\n\
-    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    pair<int, T> from_root(int\
-    \ x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
+    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    std::pair<int, T>\
+    \ from_root(int x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
     \        auto [r, add] = from_root(parent[x]);\n        parent[x] = r;\n     \
     \   AbelGroup::Rchop(potential[x], add);\n        return {r, potential[x]};\n\
     \    }\n\n    int leader(int x) { return from_root(x).first; }\n\n    bool same(int\
@@ -45,7 +45,7 @@ data:
     \        if (rx == ry)\n            return d == AbelGroup::unit();\n        if\
     \ (sz[rx] < sz[ry]) {\n            swap(rx, ry);\n            d = AbelGroup::inverse(d);\n\
     \        }\n        sz[rx] += sz[ry];\n        parent[ry] = rx;\n        potential[ry]\
-    \ = d;\n        num--;\n        return true;\n    }\n\n    optional<T> diff(int\
+    \ = d;\n        num--;\n        return true;\n    }\n\n    std::optional<T> diff(int\
     \ x, int y) {\n        // x \u3092\u57FA\u6E96\u3068\u3059\u308B\n        auto\
     \ [rx, dx] = from_root(x);\n        auto [ry, dy] = from_root(y);\n        if\
     \ (rx != ry)\n            return nullopt;\n        return AbelGroup::op(dy, AbelGroup::inverse(dx));\n\
@@ -58,8 +58,8 @@ data:
     \u3057\u305F\u6642\u306E x \u306E\u5024\n  public:\n    PotentialUnionFind() =\
     \ default;\n    PotentialUnionFind(int n)\n        : n(n), num(n), sz(n, 1), parent(n,\
     \ 0),\n          potential(n, AbelGroup::unit()) {\n        assert(AbelGroup::commute);\n\
-    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    pair<int, T> from_root(int\
-    \ x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
+    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    std::pair<int, T>\
+    \ from_root(int x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
     \        auto [r, add] = from_root(parent[x]);\n        parent[x] = r;\n     \
     \   AbelGroup::Rchop(potential[x], add);\n        return {r, potential[x]};\n\
     \    }\n\n    int leader(int x) { return from_root(x).first; }\n\n    bool same(int\
@@ -73,7 +73,7 @@ data:
     \        if (rx == ry)\n            return d == AbelGroup::unit();\n        if\
     \ (sz[rx] < sz[ry]) {\n            swap(rx, ry);\n            d = AbelGroup::inverse(d);\n\
     \        }\n        sz[rx] += sz[ry];\n        parent[ry] = rx;\n        potential[ry]\
-    \ = d;\n        num--;\n        return true;\n    }\n\n    optional<T> diff(int\
+    \ = d;\n        num--;\n        return true;\n    }\n\n    std::optional<T> diff(int\
     \ x, int y) {\n        // x \u3092\u57FA\u6E96\u3068\u3059\u308B\n        auto\
     \ [rx, dx] = from_root(x);\n        auto [ry, dy] = from_root(y);\n        if\
     \ (rx != ry)\n            return nullopt;\n        return AbelGroup::op(dy, AbelGroup::inverse(dx));\n\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1420.test.cpp

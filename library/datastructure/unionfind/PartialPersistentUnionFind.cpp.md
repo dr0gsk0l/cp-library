@@ -15,8 +15,8 @@ data:
   bundledCode: "#line 2 \"library/datastructure/unionfind/PartialPersistentUnionFind.cpp\"\
     \n// https://tiramister.net/blog/posts/persistent-unionfind/\nclass PartialPersistentUnionFind\
     \ {\n    int now; // \u73FE\u5728\u6642\u523B\n    std::vector<int> par, rank,\
-    \ time;\n    std::vector<vector<pair<int, int>>> sz;\n    static constexpr int\
-    \ NOW = numeric_limits<int>::max();\n\n  public:\n    PartialPersistentUnionFind(int\
+    \ time;\n    std::vector<vector<std::pair<int, int>>> sz;\n    static constexpr\
+    \ int NOW = numeric_limits<int>::max();\n\n  public:\n    PartialPersistentUnionFind(int\
     \ n)\n        : now(0), par(n), rank(n, 0), time(n, 0), sz(n) {\n        iota(par.begin(),\
     \ par.end(), 0);\n    }\n\n    // \u6642\u523B t \u306E leader\n    int find(int\
     \ x, int t = NOW) {\n        while (x != par[x] and time[x] < t)\n           \
@@ -51,12 +51,12 @@ data:
     \ ? sz[x][ok].second : 1);\n    }\n};\n"
   code: "#pragma once\n// https://tiramister.net/blog/posts/persistent-unionfind/\n\
     class PartialPersistentUnionFind {\n    int now; // \u73FE\u5728\u6642\u523B\n\
-    \    std::vector<int> par, rank, time;\n    std::vector<vector<pair<int, int>>>\
-    \ sz;\n    static constexpr int NOW = numeric_limits<int>::max();\n\n  public:\n\
-    \    PartialPersistentUnionFind(int n)\n        : now(0), par(n), rank(n, 0),\
-    \ time(n, 0), sz(n) {\n        iota(par.begin(), par.end(), 0);\n    }\n\n   \
-    \ // \u6642\u523B t \u306E leader\n    int find(int x, int t = NOW) {\n      \
-    \  while (x != par[x] and time[x] < t)\n            x = par[x];\n        return\
+    \    std::vector<int> par, rank, time;\n    std::vector<vector<std::pair<int,\
+    \ int>>> sz;\n    static constexpr int NOW = numeric_limits<int>::max();\n\n \
+    \ public:\n    PartialPersistentUnionFind(int n)\n        : now(0), par(n), rank(n,\
+    \ 0), time(n, 0), sz(n) {\n        iota(par.begin(), par.end(), 0);\n    }\n\n\
+    \    // \u6642\u523B t \u306E leader\n    int find(int x, int t = NOW) {\n   \
+    \     while (x != par[x] and time[x] < t)\n            x = par[x];\n        return\
     \ x;\n    }\n    // \u6642\u523B t \u3067 x,y \u304C\u9023\u7D50\u304B\n    bool\
     \ same(int x, int y, int t = NOW) { return find(x, t) == find(y, t); }\n    //\
     \ x \u3068 y \u304C\u3044\u3064\u9023\u7D50\u306B\u306A\u3063\u305F\u304B\uFF08\
@@ -90,7 +90,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/416.test.cpp

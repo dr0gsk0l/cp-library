@@ -43,29 +43,30 @@ data:
     \ u, int v) {\n        int w = lca(u, v);\n        return T.depth[u] + T.depth[v]\
     \ - T.depth[w] * 2;\n    }\n\n    // l=lca(u,v) \u3068\u3057\u305F\u6642\u3001\
     [u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\u533A\u9593\u306E\u7D44\
-    \u307F\u3067\u8FD4\u3059\n    using path_t = vector<pair<int, int>>;\n    pair<path_t,\
-    \ path_t> path(int u, int v) {\n        assert(prepared);\n        path_t path_u,\
-    \ path_v;\n        while (u != v) {\n            if (head[u] == head[v]) {\n \
-    \               if (T.depth[u] < T.depth[v])\n                    path_v.emplace_back(id[v],\
-    \ id[u]);\n                else\n                    path_u.emplace_back(id[u],\
-    \ id[v]);\n                break;\n            }\n            if (T.depth[head[u]]\
-    \ < T.depth[head[v]]) {\n                path_v.emplace_back(id[v], id[head[v]]);\n\
-    \                v = T.parent(head[v]);\n            } else {\n              \
-    \  path_u.emplace_back(id[u], id[head[u]]);\n                u = T.parent(head[u]);\n\
-    \            }\n        }\n        if (u == v)\n            path_u.emplace_back(id[u],\
-    \ id[u]);\n        return {path_u, path_v};\n    }\n\n    // [l,r) \u304C v \u306E\
-    \u90E8\u5206\u6728\n    pair<int, int> subtree(int v) {\n        assert(prepared);\n\
-    \        return {id[v], id2[v]};\n    }\n};\n#line 2 \"library/graph/Graph.cpp\"\
-    \nstruct Edge {\n    int from, to;\n    Edge() = default;\n    Edge(int from,\
-    \ int to) : from(from), to(to) {}\n    operator int() const { return to; }\n};\n\
-    \nstruct Graph {\n    int n;\n    using edge_type = Edge;\n    std::vector<edge_type>\
-    \ edges;\n\n  protected:\n    std::vector<int> in_deg;\n    bool prepared;\n \
-    \   class OutgoingEdges {\n        Graph *g;\n        int l, r;\n\n      public:\n\
-    \        OutgoingEdges(Graph *g, int l, int r) : g(g), l(l), r(r) {}\n       \
-    \ edge_type *begin() { return &(g->edges[l]); }\n        edge_type *end() { return\
-    \ &(g->edges[r]); }\n        edge_type &operator[](int i) { return g->edges[l\
-    \ + i]; }\n        int size() const { return r - l; }\n    };\n    class ConstOutgoingEdges\
-    \ {\n        const Graph *g;\n        int l, r;\n\n      public:\n        ConstOutgoingEdges(const\
+    \u307F\u3067\u8FD4\u3059\n    using path_t = vector<std::pair<int, int>>;\n  \
+    \  std::pair<path_t, path_t> path(int u, int v) {\n        assert(prepared);\n\
+    \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
+    \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
+    \      path_v.emplace_back(id[v], id[u]);\n                else\n            \
+    \        path_u.emplace_back(id[u], id[v]);\n                break;\n        \
+    \    }\n            if (T.depth[head[u]] < T.depth[head[v]]) {\n             \
+    \   path_v.emplace_back(id[v], id[head[v]]);\n                v = T.parent(head[v]);\n\
+    \            } else {\n                path_u.emplace_back(id[u], id[head[u]]);\n\
+    \                u = T.parent(head[u]);\n            }\n        }\n        if\
+    \ (u == v)\n            path_u.emplace_back(id[u], id[u]);\n        return {path_u,\
+    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
+    \ int> subtree(int v) {\n        assert(prepared);\n        return {id[v], id2[v]};\n\
+    \    }\n};\n#line 2 \"library/graph/Graph.cpp\"\nstruct Edge {\n    int from,\
+    \ to;\n    Edge() = default;\n    Edge(int from, int to) : from(from), to(to)\
+    \ {}\n    operator int() const { return to; }\n};\n\nstruct Graph {\n    int n;\n\
+    \    using edge_type = Edge;\n    std::vector<edge_type> edges;\n\n  protected:\n\
+    \    std::vector<int> in_deg;\n    bool prepared;\n    class OutgoingEdges {\n\
+    \        Graph *g;\n        int l, r;\n\n      public:\n        OutgoingEdges(Graph\
+    \ *g, int l, int r) : g(g), l(l), r(r) {}\n        edge_type *begin() { return\
+    \ &(g->edges[l]); }\n        edge_type *end() { return &(g->edges[r]); }\n   \
+    \     edge_type &operator[](int i) { return g->edges[l + i]; }\n        int size()\
+    \ const { return r - l; }\n    };\n    class ConstOutgoingEdges {\n        const\
+    \ Graph *g;\n        int l, r;\n\n      public:\n        ConstOutgoingEdges(const\
     \ Graph *g, int l, int r) : g(g), l(l), r(r) {}\n        const edge_type *begin()\
     \ const { return &(g->edges[l]); }\n        const edge_type *end() const { return\
     \ &(g->edges[r]); }\n        const edge_type &operator[](int i) const { return\
@@ -136,7 +137,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/LowestCommonAncestor.test.cpp

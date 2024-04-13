@@ -13,7 +13,7 @@ data:
   - icon: ':x:'
     path: library/r2/Projection.cpp
     title: library/r2/Projection.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   - icon: ':x:'
@@ -150,27 +150,27 @@ data:
     \        }\n        return res;\n    }\n    // [l,r) \u3067 [lower,upper) \u306E\
     \u500B\u6570\n    int range_freq(int l, int r, const T &lower, const T &upper)\
     \ {\n        return range_freq(l, r, upper) - range_freq(l, r, lower);\n    }\n\
-    \n    optional<T> lt(int l, int r, const T &x) {\n        int cnt = range_freq(l,\
+    \n    std::optional<T> lt(int l, int r, const T &x) {\n        int cnt = range_freq(l,\
     \ r, x);\n        if (cnt)\n            return kth_smallest(l, r, cnt - 1);\n\
-    \        return nullopt;\n    }\n    optional<T> leq(int l, int r, const T &x)\
-    \ {\n        if (rank(l, r, x))\n            return x;\n        return lt(l, r,\
-    \ x);\n    }\n    optional<T> geq(int l, int r, const T &x) {\n        int cnt\
-    \ = r - l - range_freq(l, r, x);\n        if (cnt)\n            return kth_largest(l,\
-    \ r, cnt - 1);\n        return nullopt;\n    }\n    optional<T> gt(int l, int\
-    \ r, const T &x) {\n        T y;\n        if constexpr (COMPRESS) {\n        \
-    \    y = C.r(C.gt(x));\n        } else {\n            y = x + 1;\n        }\n\
-    \        return geq(l, r, y);\n    }\n\n    // \u30BB\u30B0\u6728\u306A\u3069\u3092\
-    \u8F09\u305B\u308B\u6642\u7528\n    // BIT \u306F\u5C02\u7528\u306E\u30E9\u30A4\
-    \u30D6\u30E9\u30EA\u3092\u4F5C\u3063\u3066\u3042\u308B\u304C\u3001\u4E00\u5FDC\
-    \u62BD\u8C61\u5316\u3082\u6301\u3063\u3066\u304A\u304F\n    // \u69CB\u7BC9\u3057\
-    \u305F\u3082\u306E\u3092\u8FD4\u3057\u3066\u308B\u306E\u3067\u9045\u305D\u3046\
-    \n    int height() const { return log; }\n    std::vector<int> points(int idx)\
-    \ {\n        std::vector<int> res(log);\n        U a = comp(data[idx]);\n    \
-    \    REP_(h, log) {\n            idx = nxt(idx, h, a);\n            res[h] = idx;\n\
-    \        }\n        return res;\n    }\n    std::vector<tuple<int, int, int>>\
-    \ intervals(int l, int r, const T &upper) {\n        std::vector<tuple<int, int,\
-    \ int>> res;\n        U a = comp(upper);\n        REP_(h, log) {\n           \
-    \ if (high_bit(a, h)) {\n                int L = mat[h].rank(l, 0), R = mat[h].rank(r,\
+    \        return nullopt;\n    }\n    std::optional<T> leq(int l, int r, const\
+    \ T &x) {\n        if (rank(l, r, x))\n            return x;\n        return lt(l,\
+    \ r, x);\n    }\n    std::optional<T> geq(int l, int r, const T &x) {\n      \
+    \  int cnt = r - l - range_freq(l, r, x);\n        if (cnt)\n            return\
+    \ kth_largest(l, r, cnt - 1);\n        return nullopt;\n    }\n    std::optional<T>\
+    \ gt(int l, int r, const T &x) {\n        T y;\n        if constexpr (COMPRESS)\
+    \ {\n            y = C.r(C.gt(x));\n        } else {\n            y = x + 1;\n\
+    \        }\n        return geq(l, r, y);\n    }\n\n    // \u30BB\u30B0\u6728\u306A\
+    \u3069\u3092\u8F09\u305B\u308B\u6642\u7528\n    // BIT \u306F\u5C02\u7528\u306E\
+    \u30E9\u30A4\u30D6\u30E9\u30EA\u3092\u4F5C\u3063\u3066\u3042\u308B\u304C\u3001\
+    \u4E00\u5FDC\u62BD\u8C61\u5316\u3082\u6301\u3063\u3066\u304A\u304F\n    // \u69CB\
+    \u7BC9\u3057\u305F\u3082\u306E\u3092\u8FD4\u3057\u3066\u308B\u306E\u3067\u9045\
+    \u305D\u3046\n    int height() const { return log; }\n    std::vector<int> points(int\
+    \ idx) {\n        std::vector<int> res(log);\n        U a = comp(data[idx]);\n\
+    \        REP_(h, log) {\n            idx = nxt(idx, h, a);\n            res[h]\
+    \ = idx;\n        }\n        return res;\n    }\n    std::vector<tuple<int, int,\
+    \ int>> intervals(int l, int r, const T &upper) {\n        std::vector<tuple<int,\
+    \ int, int>> res;\n        U a = comp(upper);\n        REP_(h, log) {\n      \
+    \      if (high_bit(a, h)) {\n                int L = mat[h].rank(l, 0), R = mat[h].rank(r,\
     \ 0);\n                res.emplace_back(h, L, R);\n            }\n           \
     \ l = nxt(l, h, a);\n            r = nxt(r, h, a);\n        }\n        return\
     \ res;\n    }\n    std::vector<tuple<int, int, int>> kth_largest_intervals(int\
@@ -186,7 +186,7 @@ data:
     \                                   int k) {\n        return kth_largest_intervals(l,\
     \ r, r - l - k - 1);\n    }\n};\n#undef REP_\n#line 2 \"library/r2/XY.cpp\"\n\
     template <typename T> struct XY {\n    T x, y;\n    XY() = default;\n    XY(T\
-    \ x, T y) : x(x), y(y) {}\n    XY(const pair<T, T> &xy) : x(xy.first), y(xy.second)\
+    \ x, T y) : x(x), y(y) {}\n    XY(const std::pair<T, T> &xy) : x(xy.first), y(xy.second)\
     \ {}\n\n    XY operator+() const { return *this; }\n    XY operator-() const {\
     \ return XY(-x, -y); }\n\n    XY &operator++() {\n        x++;\n        y++;\n\
     \        return *this;\n    }\n    XY &operator--() {\n        x--;\n        y--;\n\
@@ -228,12 +228,12 @@ data:
     \n  public:\n    Projection(const std::vector<r2> &v) : C(v) {}\n    int size()\
     \ { return C.size(); }\n    int id(r2 xy) { return C[xy]; }\n    int id(int x,\
     \ int y) { return C[r2(x, y)]; }\n    r2 r(int id) { return C.r(id); }\n    //[l,r)\
-    \ \u3092\u8FD4\u3059\n    pair<int, int> interval(const T &l, const T &r) {\n\
-    \        if (C.max().x < l or r <= C.min().x)\n            return make_pair(0,\
+    \ \u3092\u8FD4\u3059\n    std::pair<int, int> interval(const T &l, const T &r)\
+    \ {\n        if (C.max().x < l or r <= C.min().x)\n            return make_std::pair(0,\
     \ 0);\n        T mn = numeric_limits<T>::min();\n        int L = C.geq(r2(l, mn));\n\
-    \        int R = C.geq(r2(r, mn));\n        return make_pair(L, R);\n    }\n};\n\
-    #line 10 \"test/library-checker/DataStructure/RectangleSum_2.test.cpp\"\n\nusing\
-    \ ll = long long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \        int R = C.geq(r2(r, mn));\n        return make_std::pair(L, R);\n   \
+    \ }\n};\n#line 10 \"test/library-checker/DataStructure/RectangleSum_2.test.cpp\"\
+    \n\nusing ll = long long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<r2>\
     \ r2s(n);\n    std::vector<int> x(n), y(n), w(n);\n    REP (i, n) {\n        std::cin\
     \ >> x[i] >> y[i] >> w[i];\n        r2s[i] = r2(x[i], y[i]);\n    }\n\n    auto\
@@ -279,7 +279,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp

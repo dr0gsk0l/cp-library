@@ -13,7 +13,7 @@ data:
     links: []
   bundledCode: "#line 1 \"library/datastructure/Doubling.cpp\"\ntemplate <typename\
     \ Monoid, int LOG> class Doubling {\n    using X = typename Monoid::value_type;\n\
-    \    int n;\n    bool is_prepared;\n\n    using P = pair<int, X>;\n    static\
+    \    int n;\n    bool is_prepared;\n\n    using P = std::pair<int, X>;\n    static\
     \ constexpr P unit = {-1, Monoid::unit()};\n    std::vector<vector<P>> DP;\n\n\
     \    // a \u304B\u3089 2^k \u52D5\u304F\n    P k_move(const P &a, int k) {\n \
     \       if (a.first == -1)\n            return a;\n        const auto [now, val]\
@@ -31,7 +31,7 @@ data:
     \        for (int k = 0; step; k++, step >>= 1)\n            if (step & 1)\n \
     \               res = k_move(res, k);\n        return res;\n    }\n};\n"
   code: "template <typename Monoid, int LOG> class Doubling {\n    using X = typename\
-    \ Monoid::value_type;\n    int n;\n    bool is_prepared;\n\n    using P = pair<int,\
+    \ Monoid::value_type;\n    int n;\n    bool is_prepared;\n\n    using P = std::pair<int,\
     \ X>;\n    static constexpr P unit = {-1, Monoid::unit()};\n    std::vector<vector<P>>\
     \ DP;\n\n    // a \u304B\u3089 2^k \u52D5\u304F\n    P k_move(const P &a, int\
     \ k) {\n        if (a.first == -1)\n            return a;\n        const auto\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/Doubling.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1097.test.cpp

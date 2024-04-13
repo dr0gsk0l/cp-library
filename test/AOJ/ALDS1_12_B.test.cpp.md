@@ -67,7 +67,7 @@ data:
     \         for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n            \
     \    cerr << \"(\" << edges[i].to << \",\" << edges[i].weight << \")\";\n    \
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 3 \"library/graph/shortest_path/Dial.cpp\"\
-    \ntemplate <typename WG, typename T = typename WG::weight_type>\npair<vector<T>,\
+    \ntemplate <typename WG, typename T = typename WG::weight_type>\nstd::pair<vector<T>,\
     \ vector<int>> dial(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n\
     \    std::vector<T> d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::vector<bool>\
     \ used(g.n, false);\n\n    T K = 0, rem = 0;\n    for (const auto &e : g.edges)\n\
@@ -109,7 +109,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_12_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_12_B.test.cpp

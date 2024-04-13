@@ -58,7 +58,7 @@ data:
   - library/datastructure/FenwickTree.cpp
   - library/datastructure/CumulativeGroup.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

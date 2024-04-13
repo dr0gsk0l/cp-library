@@ -70,31 +70,32 @@ data:
     \u3089\u6700\u77ED\u8DDD\u96E2, \u7121\u9650\u306B\u5C0F\u3055\u304F\u51FA\u6765\
     \u308B\u306A\u3089 nullopt\n// \u305D\u3082\u305D\u3082\u5230\u9054\u51FA\u6765\
     \u306A\u3044\u5834\u5408\u306F pre \u304C -1 \u306B\u306A\u3063\u3066\u3044\u308B\
-    \ntemplate <typename WG, typename T = typename WG::weight_type>\npair<vector<optional<T>>,\
-    \ vector<int>> bellman_ford(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n\
-    \    int n = g.n;\n    static constexpr T INF = numeric_limits<T>::max() / 2;\n\
-    \    std::vector<T> d(n, INF);\n    std::vector<int> pre(n, -1);\n    d[s] = 0;\n\
-    \    for (int _ = 0; _ < n; _++) {\n        bool update = false;\n        for\
-    \ (int v = 0; v < n; v++)\n            if (d[v] < INF)\n                for (const\
-    \ auto &e : g[v])\n                    if (d[e.to] > d[v] + e.weight) {\n    \
-    \                    d[e.to] = d[v] + e.weight;\n                        pre[e.to]\
-    \ = v;\n                        update = true;\n                    }\n      \
-    \  if (!update) {\n            std::vector<optional<T>> d_(n);\n            for\
-    \ (int i = 0; i < n; i++)\n                d_[i] = d[i];\n            return {d_,\
-    \ pre};\n        }\n    }\n    auto now_d = d;\n    for (int v = 0; v < n; v++)\n\
-    \        if (d[v] < INF)\n            for (const auto &e : g[v])\n           \
-    \     if (d[e.to] > d[v] + e.weight)\n                    d[e.to] = d[v] + e.weight;\n\
+    \ntemplate <typename WG, typename T = typename WG::weight_type>\nstd::pair<vector<std::optional<T>>,\
+    \ vector<int>> bellman_ford(const WG &g,\n                                   \
+    \                           int s = 0) {\n    assert(g.is_prepared());\n    int\
+    \ n = g.n;\n    static constexpr T INF = numeric_limits<T>::max() / 2;\n    std::vector<T>\
+    \ d(n, INF);\n    std::vector<int> pre(n, -1);\n    d[s] = 0;\n    for (int _\
+    \ = 0; _ < n; _++) {\n        bool update = false;\n        for (int v = 0; v\
+    \ < n; v++)\n            if (d[v] < INF)\n                for (const auto &e :\
+    \ g[v])\n                    if (d[e.to] > d[v] + e.weight) {\n              \
+    \          d[e.to] = d[v] + e.weight;\n                        pre[e.to] = v;\n\
+    \                        update = true;\n                    }\n        if (!update)\
+    \ {\n            std::vector<std::optional<T>> d_(n);\n            for (int i\
+    \ = 0; i < n; i++)\n                d_[i] = d[i];\n            return {d_, pre};\n\
+    \        }\n    }\n    auto now_d = d;\n    for (int v = 0; v < n; v++)\n    \
+    \    if (d[v] < INF)\n            for (const auto &e : g[v])\n               \
+    \ if (d[e.to] > d[v] + e.weight)\n                    d[e.to] = d[v] + e.weight;\n\
     \    for (int _ = 1; _ < n; _++)\n        for (int v = 0; v < n; v++)\n      \
     \      if (d[v] < now_d[v])\n                for (const auto &e : g[v])\n    \
     \                if (d[e.to] > d[v] + e.weight)\n                        d[e.to]\
-    \ = d[v] + e.weight;\n    std::vector<optional<T>> res(n);\n    for (int v = 0;\
-    \ v < n; v++)\n        if (now_d[v] == d[v])\n            res[v] = d[v];\n   \
-    \     else\n            res[v] = nullopt;\n    return {res, pre};\n}\n#line 7\
-    \ \"test/AOJ/GRL_1_B.test.cpp\"\n\nusing ll = long long;\n\nint main() {\n   \
-    \ int n, m, s;\n    std::cin >> n >> m >> s;\n    WeightedGraph<ll> g(n, m, true,\
-    \ 0);\n    auto [d, pre] = bellman_ford(g, s);\n    for (const auto &p : d)\n\
-    \        if (!p) {\n            std::cout << \"NEGATIVE CYCLE\\n\";\n        \
-    \    return 0;\n        }\n    for (int i = 0; i < n; i++)\n        if (~pre[i]\
+    \ = d[v] + e.weight;\n    std::vector<std::optional<T>> res(n);\n    for (int\
+    \ v = 0; v < n; v++)\n        if (now_d[v] == d[v])\n            res[v] = d[v];\n\
+    \        else\n            res[v] = nullopt;\n    return {res, pre};\n}\n#line\
+    \ 7 \"test/AOJ/GRL_1_B.test.cpp\"\n\nusing ll = long long;\n\nint main() {\n \
+    \   int n, m, s;\n    std::cin >> n >> m >> s;\n    WeightedGraph<ll> g(n, m,\
+    \ true, 0);\n    auto [d, pre] = bellman_ford(g, s);\n    for (const auto &p :\
+    \ d)\n        if (!p) {\n            std::cout << \"NEGATIVE CYCLE\\n\";\n   \
+    \         return 0;\n        }\n    for (int i = 0; i < n; i++)\n        if (~pre[i]\
     \ || i == s)\n            std::cout << d[i].value() << \"\\n\";\n        else\n\
     \            std::cout << \"INF\\n\";\n}\n"
   code: "#define PROBLEM                                                         \
@@ -113,7 +114,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_B.test.cpp

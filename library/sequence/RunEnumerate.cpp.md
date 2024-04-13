@@ -16,7 +16,7 @@ data:
     \ {\n    std::string s;\n    RunEnumerate(const std::string &s) : s(s) { build();\
     \ }\n\n    struct Run {\n        int t, l, r;\n        Run() = default;\n    \
     \    Run(int t, int l, int r) : t(t), l(l), r(r) {}\n    };\n    std::vector<Run>\
-    \ ans;\n\n    std::queue<pair<int, int>> que;\n    std::string REV(std::string\
+    \ ans;\n\n    std::queue<std::pair<int, int>> que;\n    std::string REV(std::string\
     \ s) {\n        reverse(s.begin(), s.end());\n        return s;\n    }\n    void\
     \ solve(int l, int r) {\n        int m = (l + r) >> 1;\n        que.emplace(l,\
     \ m);\n        que.emplace(m, r);\n        std::string left_s = s.substr(l, m\
@@ -45,22 +45,22 @@ data:
     \ fans;\n        sort(ans.begin(), ans.end(), [](Run a, Run b) {\n           \
     \ if (a.t != b.t)\n                return a.t < b.t;\n            if (a.l != b.l)\n\
     \                return a.l < b.l;\n            return a.r > b.r;\n        });\n\
-    \        std::set<pair<int, int>> already;\n        int pret = -1, mx;\n     \
-    \   for (const auto &[t, l, r] : ans) {\n            if (pret != t)\n        \
-    \        pret = t, mx = -1;\n            if (already.count({l, r}) || mx >= r)\n\
-    \                continue;\n            if ((r < SIZE_(s) and s[r] == s[r - t])\
-    \ or\n                (l - 1 >= 0 and s[l - 1] == s[l - 1 + t]))\n           \
-    \     continue;\n            fans.emplace_back(t, l, r);\n            already.emplace(l,\
-    \ r);\n            mx = r;\n        }\n        ans = fans;\n    }\n\n    void\
-    \ build() {\n        que.emplace(0, int(s.size()));\n        while (que.size())\
-    \ {\n            auto [l, r] = que.front();\n            que.pop();\n        \
-    \    if (l + 1 == r)\n                continue;\n            solve(l, r);\n  \
-    \      }\n        arrangement();\n    }\n};\n#undef SIZE_\n"
+    \        std::set<std::pair<int, int>> already;\n        int pret = -1, mx;\n\
+    \        for (const auto &[t, l, r] : ans) {\n            if (pret != t)\n   \
+    \             pret = t, mx = -1;\n            if (already.count({l, r}) || mx\
+    \ >= r)\n                continue;\n            if ((r < SIZE_(s) and s[r] ==\
+    \ s[r - t]) or\n                (l - 1 >= 0 and s[l - 1] == s[l - 1 + t]))\n \
+    \               continue;\n            fans.emplace_back(t, l, r);\n         \
+    \   already.emplace(l, r);\n            mx = r;\n        }\n        ans = fans;\n\
+    \    }\n\n    void build() {\n        que.emplace(0, int(s.size()));\n       \
+    \ while (que.size()) {\n            auto [l, r] = que.front();\n            que.pop();\n\
+    \            if (l + 1 == r)\n                continue;\n            solve(l,\
+    \ r);\n        }\n        arrangement();\n    }\n};\n#undef SIZE_\n"
   code: "#pragma once\n#include <atcoder/std::string>\nusing namespace atcoder;\n\n\
     #define SIZE_(s) int(s.size())\n\nstruct RunEnumerate {\n    std::string s;\n\
     \    RunEnumerate(const std::string &s) : s(s) { build(); }\n\n    struct Run\
     \ {\n        int t, l, r;\n        Run() = default;\n        Run(int t, int l,\
-    \ int r) : t(t), l(l), r(r) {}\n    };\n    std::vector<Run> ans;\n\n    std::queue<pair<int,\
+    \ int r) : t(t), l(l), r(r) {}\n    };\n    std::vector<Run> ans;\n\n    std::queue<std::pair<int,\
     \ int>> que;\n    std::string REV(std::string s) {\n        reverse(s.begin(),\
     \ s.end());\n        return s;\n    }\n    void solve(int l, int r) {\n      \
     \  int m = (l + r) >> 1;\n        que.emplace(l, m);\n        que.emplace(m, r);\n\
@@ -89,22 +89,22 @@ data:
     \ fans;\n        sort(ans.begin(), ans.end(), [](Run a, Run b) {\n           \
     \ if (a.t != b.t)\n                return a.t < b.t;\n            if (a.l != b.l)\n\
     \                return a.l < b.l;\n            return a.r > b.r;\n        });\n\
-    \        std::set<pair<int, int>> already;\n        int pret = -1, mx;\n     \
-    \   for (const auto &[t, l, r] : ans) {\n            if (pret != t)\n        \
-    \        pret = t, mx = -1;\n            if (already.count({l, r}) || mx >= r)\n\
-    \                continue;\n            if ((r < SIZE_(s) and s[r] == s[r - t])\
-    \ or\n                (l - 1 >= 0 and s[l - 1] == s[l - 1 + t]))\n           \
-    \     continue;\n            fans.emplace_back(t, l, r);\n            already.emplace(l,\
-    \ r);\n            mx = r;\n        }\n        ans = fans;\n    }\n\n    void\
-    \ build() {\n        que.emplace(0, int(s.size()));\n        while (que.size())\
-    \ {\n            auto [l, r] = que.front();\n            que.pop();\n        \
-    \    if (l + 1 == r)\n                continue;\n            solve(l, r);\n  \
-    \      }\n        arrangement();\n    }\n};\n#undef SIZE_"
+    \        std::set<std::pair<int, int>> already;\n        int pret = -1, mx;\n\
+    \        for (const auto &[t, l, r] : ans) {\n            if (pret != t)\n   \
+    \             pret = t, mx = -1;\n            if (already.count({l, r}) || mx\
+    \ >= r)\n                continue;\n            if ((r < SIZE_(s) and s[r] ==\
+    \ s[r - t]) or\n                (l - 1 >= 0 and s[l - 1] == s[l - 1 + t]))\n \
+    \               continue;\n            fans.emplace_back(t, l, r);\n         \
+    \   already.emplace(l, r);\n            mx = r;\n        }\n        ans = fans;\n\
+    \    }\n\n    void build() {\n        que.emplace(0, int(s.size()));\n       \
+    \ while (que.size()) {\n            auto [l, r] = que.front();\n            que.pop();\n\
+    \            if (l + 1 == r)\n                continue;\n            solve(l,\
+    \ r);\n        }\n        arrangement();\n    }\n};\n#undef SIZE_"
   dependsOn: []
   isVerificationFile: false
   path: library/sequence/RunEnumerate.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/String/RunEnumerate.test.cpp

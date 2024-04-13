@@ -13,10 +13,10 @@ data:
   - icon: ':x:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   - icon: ':x:'
@@ -36,9 +36,9 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\
     #include <bits/stdc++.h>\n\n#line 2 \"library/linearalgebra/Linear.cpp\"\ntemplate\
     \ <typename T> struct Line {\n    T a, b;\n    Line() = default;\n    Line(T a,\
-    \ T b) : a(a), b(b) {}\n    Line(pair<T, T> l) : a(l.first), b(l.second) {}\n\
-    \    Line(T c) : a(0), b(c) {}\n\n    T operator()(const T x) const { return a\
-    \ * x + b; }\n    Line operator()(const Line &l) const { return Line(a * l.a,\
+    \ T b) : a(a), b(b) {}\n    Line(std::pair<T, T> l) : a(l.first), b(l.second)\
+    \ {}\n    Line(T c) : a(0), b(c) {}\n\n    T operator()(const T x) const { return\
+    \ a * x + b; }\n    Line operator()(const Line &l) const { return Line(a * l.a,\
     \ a * l.b + b); }\n\n    bool operator==(const Line &l) const { return a == l.a\
     \ and b == l.b; }\n    bool operator!=(const Line &l) const { return !(*this ==\
     \ l); }\n    bool operator<(const Line &l) const {\n        return (a == l.a ?\
@@ -73,61 +73,63 @@ data:
     \ {\n    if(a==1)return {1,n*b};\n    K an=power(a,n);\n    return {an,b*((1-an)/(1-a))};\n\
     \  }\n  */\n  static constexpr L unit(){ return L(1,0); }\n  static constexpr\
     \ bool commute = false;\n};\n#line 1 \"library/algebra/group/CntSum.cpp\"\ntemplate\
-    \ <typename X> struct GroupCntSum {\n    using P = pair<X, X>;\n    using value_type\
-    \ = P;\n    static constexpr P op(const P &x, const P &y) {\n        return {x.first\
-    \ + y.first, x.second + y.second};\n    }\n    static constexpr void Rchop(P &x,\
-    \ const P &y) {\n        x.first += y.first;\n        x.second += y.second;\n\
-    \    }\n    static constexpr void Lchop(const P &x, P &y) {\n        y.first +=\
-    \ x.first;\n        y.second += x.second;\n    }\n    static constexpr P inverse(const\
-    \ P &x) { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0,\
-    \ 0}; }\n    static constexpr bool commute = true;\n};\ntemplate <typename X>\
-    \ vector<pair<X, X>> cnt_init(int n, const X &x) {\n    return std::vector<pair<X,\
-    \ X>>(n, {x, 1});\n}\ntemplate <typename X> vector<pair<X, X>> cnt_init(const\
-    \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<pair<X, X>> res(n);\n\
-    \    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n\
-    }\n#line 4 \"library/algebra/lazy/AffineSum.cpp\"\ntemplate <typename X> struct\
-    \ LazyAffineSum {\n    using MX = GroupCntSum<X>;\n    using MF = GroupAffine<X>;\n\
-    \    using P = typename MX::value_type;\n    using F = typename MF::value_type;\n\
-    \    static constexpr P mapping(const F &f, const P &x) {\n        return {f.a\
-    \ * x.first + f.b * x.second, x.second};\n    }\n};\n#line 2 \"library/math/ExtraGCD.cpp\"\
-    \nusing ll=long long;\npair<ll,ll> ext_gcd(ll a,ll b){\n  if(b==0)return {1,0};\n\
-    \  auto [X,Y]=ext_gcd(b,a%b);\n  // bX + (a%b)Y = gcd(a,b)\n  // a%b = a - b(a/b)\n\
-    \  // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n\
-    }\n#line 3 \"library/mod/Modint.cpp\"\ntemplate <typename T, T MOD = 998244353>\
-    \ struct Mint {\n    inline static constexpr T mod = MOD;\n    T v;\n    Mint()\
-    \ : v(0) {}\n    Mint(signed v) : v(v) {}\n    Mint(long long t) {\n        v\
-    \ = t % MOD;\n        if (v < 0)\n            v += MOD;\n    }\n\n    static Mint\
-    \ raw(int v) {\n        Mint x;\n        x.v = v;\n        return x;\n    }\n\n\
-    \    Mint pow(long long k) const {\n        Mint res(1), tmp(v);\n        while\
-    \ (k) {\n            if (k & 1)\n                res *= tmp;\n            tmp\
-    \ *= tmp;\n            k >>= 1;\n        }\n        return res;\n    }\n\n   \
-    \ static Mint add_identity() { return Mint(0); }\n    static Mint mul_identity()\
-    \ { return Mint(1); }\n\n    // Mint inv()const{return pow(MOD-2);}\n    Mint\
-    \ inv() const { return Mint(ext_gcd(v, mod).first); }\n\n    Mint &operator+=(Mint\
-    \ a) {\n        v += a.v;\n        if (v >= MOD)\n            v -= MOD;\n    \
-    \    return *this;\n    }\n    Mint &operator-=(Mint a) {\n        v += MOD -\
-    \ a.v;\n        if (v >= MOD)\n            v -= MOD;\n        return *this;\n\
-    \    }\n    Mint &operator*=(Mint a) {\n        v = 1LL * v * a.v % MOD;\n   \
-    \     return *this;\n    }\n    Mint &operator/=(Mint a) { return (*this) *= a.inv();\
-    \ }\n\n    Mint operator+(Mint a) const { return Mint(v) += a; }\n    Mint operator-(Mint\
-    \ a) const { return Mint(v) -= a; }\n    Mint operator*(Mint a) const { return\
-    \ Mint(v) *= a; }\n    Mint operator/(Mint a) const { return Mint(v) /= a; }\n\
-    #define FRIEND(op)                                                           \
-    \  \\\n    friend Mint operator op(int a, Mint b) { return Mint(a) op b; }\n \
-    \   FRIEND(+);\n    FRIEND(-);\n    FRIEND(*);\n    FRIEND(/);\n#undef FRIEND\n\
-    \    Mint operator+() const { return *this; }\n    Mint operator-() const { return\
-    \ v ? Mint(MOD - v) : Mint(v); }\n\n    bool operator==(const Mint a) const {\
-    \ return v == a.v; }\n    bool operator!=(const Mint a) const { return v != a.v;\
-    \ }\n\n    static Mint comb(long long n, int k) {\n        Mint num(1), dom(1);\n\
-    \        for (int i = 0; i < k; i++) {\n            num *= Mint(n - i);\n    \
-    \        dom *= Mint(i + 1);\n        }\n        return num / dom;\n    }\n\n\
-    \    friend std::ostream &operator<<(std::ostream &os, const Mint &m) {\n    \
-    \    os << m.v;\n        return os;\n    }\n    friend std::istream &operator>>(std::istream\
-    \ &is, Mint &m) {\n        is >> m.v;\n        m.v %= MOD;\n        if (m.v <\
-    \ 0)\n            m.v += MOD;\n        return is;\n    }\n};\n#line 2 \"library/segtree/LazySegmentTree.cpp\"\
-    \n\ntemplate <typename Lazy> class LazySegmentTree {\n    using MX = typename\
-    \ Lazy::MX;\n    using MF = typename Lazy::MF;\n    using X = typename MX::value_type;\n\
-    \    using F = typename MF::value_type;\n    int n, log, size;\n    std::vector<X>\
+    \ <typename X> struct GroupCntSum {\n    using P = std::pair<X, X>;\n    using\
+    \ value_type = P;\n    static constexpr P op(const P &x, const P &y) {\n     \
+    \   return {x.first + y.first, x.second + y.second};\n    }\n    static constexpr\
+    \ void Rchop(P &x, const P &y) {\n        x.first += y.first;\n        x.second\
+    \ += y.second;\n    }\n    static constexpr void Lchop(const P &x, P &y) {\n \
+    \       y.first += x.first;\n        y.second += x.second;\n    }\n    static\
+    \ constexpr P inverse(const P &x) { return {-x.fi, -x.se}; }\n    static constexpr\
+    \ P unit() { return {0, 0}; }\n    static constexpr bool commute = true;\n};\n\
+    template <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x) {\n\
+    \    return std::vector<std::pair<X, X>>(n, {x, 1});\n}\ntemplate <typename X>\n\
+    vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int n = v.size();\n\
+    \    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0; i < n; i++)\n \
+    \       res[i] = {v[i], 1};\n    return res;\n}\n#line 4 \"library/algebra/lazy/AffineSum.cpp\"\
+    \ntemplate <typename X> struct LazyAffineSum {\n    using MX = GroupCntSum<X>;\n\
+    \    using MF = GroupAffine<X>;\n    using P = typename MX::value_type;\n    using\
+    \ F = typename MF::value_type;\n    static constexpr P mapping(const F &f, const\
+    \ P &x) {\n        return {f.a * x.first + f.b * x.second, x.second};\n    }\n\
+    };\n#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll = long long;\nstd::pair<ll,\
+    \ ll> ext_gcd(ll a, ll b) {\n    if (b == 0)\n        return {1, 0};\n    auto\
+    \ [X, Y] = ext_gcd(b, a % b);\n    // bX + (a%b)Y = gcd(a,b)\n    // a%b = a -\
+    \ b(a/b)\n    // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n    ll x = Y, y = X - (a\
+    \ / b) * Y;\n    return {x, y};\n}\n#line 3 \"library/mod/Modint.cpp\"\ntemplate\
+    \ <typename T, T MOD = 998244353> struct Mint {\n    inline static constexpr T\
+    \ mod = MOD;\n    T v;\n    Mint() : v(0) {}\n    Mint(signed v) : v(v) {}\n \
+    \   Mint(long long t) {\n        v = t % MOD;\n        if (v < 0)\n          \
+    \  v += MOD;\n    }\n\n    static Mint raw(int v) {\n        Mint x;\n       \
+    \ x.v = v;\n        return x;\n    }\n\n    Mint pow(long long k) const {\n  \
+    \      Mint res(1), tmp(v);\n        while (k) {\n            if (k & 1)\n   \
+    \             res *= tmp;\n            tmp *= tmp;\n            k >>= 1;\n   \
+    \     }\n        return res;\n    }\n\n    static Mint add_identity() { return\
+    \ Mint(0); }\n    static Mint mul_identity() { return Mint(1); }\n\n    // Mint\
+    \ inv()const{return pow(MOD-2);}\n    Mint inv() const { return Mint(ext_gcd(v,\
+    \ mod).first); }\n\n    Mint &operator+=(Mint a) {\n        v += a.v;\n      \
+    \  if (v >= MOD)\n            v -= MOD;\n        return *this;\n    }\n    Mint\
+    \ &operator-=(Mint a) {\n        v += MOD - a.v;\n        if (v >= MOD)\n    \
+    \        v -= MOD;\n        return *this;\n    }\n    Mint &operator*=(Mint a)\
+    \ {\n        v = 1LL * v * a.v % MOD;\n        return *this;\n    }\n    Mint\
+    \ &operator/=(Mint a) { return (*this) *= a.inv(); }\n\n    Mint operator+(Mint\
+    \ a) const { return Mint(v) += a; }\n    Mint operator-(Mint a) const { return\
+    \ Mint(v) -= a; }\n    Mint operator*(Mint a) const { return Mint(v) *= a; }\n\
+    \    Mint operator/(Mint a) const { return Mint(v) /= a; }\n#define FRIEND(op)\
+    \                                                             \\\n    friend Mint\
+    \ operator op(int a, Mint b) { return Mint(a) op b; }\n    FRIEND(+);\n    FRIEND(-);\n\
+    \    FRIEND(*);\n    FRIEND(/);\n#undef FRIEND\n    Mint operator+() const { return\
+    \ *this; }\n    Mint operator-() const { return v ? Mint(MOD - v) : Mint(v); }\n\
+    \n    bool operator==(const Mint a) const { return v == a.v; }\n    bool operator!=(const\
+    \ Mint a) const { return v != a.v; }\n\n    static Mint comb(long long n, int\
+    \ k) {\n        Mint num(1), dom(1);\n        for (int i = 0; i < k; i++) {\n\
+    \            num *= Mint(n - i);\n            dom *= Mint(i + 1);\n        }\n\
+    \        return num / dom;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os, const Mint &m) {\n        os << m.v;\n        return os;\n    }\n    friend\
+    \ std::istream &operator>>(std::istream &is, Mint &m) {\n        is >> m.v;\n\
+    \        m.v %= MOD;\n        if (m.v < 0)\n            m.v += MOD;\n        return\
+    \ is;\n    }\n};\n#line 2 \"library/segtree/LazySegmentTree.cpp\"\n\ntemplate\
+    \ <typename Lazy> class LazySegmentTree {\n    using MX = typename Lazy::MX;\n\
+    \    using MF = typename Lazy::MF;\n    using X = typename MX::value_type;\n \
+    \   using F = typename MF::value_type;\n    int n, log, size;\n    std::vector<X>\
     \ dat;\n    std::vector<F> laz;\n\n    X reflect(int k) {\n        if (k < size)\n\
     \            return Lazy::mapping(laz[k], dat[k]);\n        return dat[k];\n \
     \   }\n    void point_apply(int k, const F &f) {\n        if (k < size)\n    \
@@ -188,7 +190,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

@@ -89,7 +89,7 @@ data:
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
   - library/datastructure/WaveletMatrix.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

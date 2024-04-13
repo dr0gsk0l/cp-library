@@ -42,7 +42,7 @@ data:
     \ res;\n    }\n\n    Matrix pow(long long n) const {\n        assert(n >= 0 &&\
     \ r == c);\n        Matrix A(M), res = I(r);\n        while (n) {\n          \
     \  if (n & 1)\n                res *= A;\n            A *= A;\n            n >>=\
-    \ 1;\n        }\n        return res;\n    }\n\n    pair<int, int> GaussJordan()\
+    \ 1;\n        }\n        return res;\n    }\n\n    std::pair<int, int> GaussJordan()\
     \ {\n        int rnk = 0, cnt = 0;\n        REP_(k, c) {\n            if (M[rnk][k]\
     \ == 0)\n                REP2_(i, rnk + 1, r)\n            if (M[i][k] != 0) {\n\
     \                swap(M[i], M[rnk]);\n                cnt ^= 1;\n            \
@@ -53,11 +53,11 @@ data:
     \ cnt};\n    }\n\n    K det() const {\n        assert(r == c);\n        Matrix\
     \ A(M);\n        const auto &[rnk, cnt] = A.GaussJordan();\n        if (rnk !=\
     \ r)\n            return 0;\n        K res = 1;\n        REP_(i, r) res *= A[i][i];\n\
-    \        return (cnt ? -res : res);\n    }\n\n    optional<Matrix> inv() const\
-    \ {\n        assert(r == c);\n        Matrix A(r, c + c);\n        REP_(i, r)\
-    \ REP_(j, c) A[i][j] = M[i][j];\n        REP_(i, r) REP_(j, c) A[i][c + j] = K(i\
-    \ == j);\n        A.GaussJordan();\n        REP_(i, r) if (A[i][i] == 0) return\
-    \ nullopt;\n        Matrix res(r, c);\n        REP_(i, r) REP_(j, c) res[i][j]\
+    \        return (cnt ? -res : res);\n    }\n\n    std::optional<Matrix> inv()\
+    \ const {\n        assert(r == c);\n        Matrix A(r, c + c);\n        REP_(i,\
+    \ r) REP_(j, c) A[i][j] = M[i][j];\n        REP_(i, r) REP_(j, c) A[i][c + j]\
+    \ = K(i == j);\n        A.GaussJordan();\n        REP_(i, r) if (A[i][i] == 0)\
+    \ return nullopt;\n        Matrix res(r, c);\n        REP_(i, r) REP_(j, c) res[i][j]\
     \ = A[i][c + j] / A[i][i];\n        return res;\n    }\n\n    friend std::ostream\
     \ &operator<<(std::ostream &os, const Matrix &M) {\n        os << M.M;\n     \
     \   return os;\n    }\n    friend std::istream &operator>>(std::istream &is, Matrix\
@@ -88,8 +88,8 @@ data:
     \ long n) const {\n        assert(n >= 0 && r == c);\n        Matrix A(M), res\
     \ = I(r);\n        while (n) {\n            if (n & 1)\n                res *=\
     \ A;\n            A *= A;\n            n >>= 1;\n        }\n        return res;\n\
-    \    }\n\n    pair<int, int> GaussJordan() {\n        int rnk = 0, cnt = 0;\n\
-    \        REP_(k, c) {\n            if (M[rnk][k] == 0)\n                REP2_(i,\
+    \    }\n\n    std::pair<int, int> GaussJordan() {\n        int rnk = 0, cnt =\
+    \ 0;\n        REP_(k, c) {\n            if (M[rnk][k] == 0)\n                REP2_(i,\
     \ rnk + 1, r)\n            if (M[i][k] != 0) {\n                swap(M[i], M[rnk]);\n\
     \                cnt ^= 1;\n                break;\n            }\n          \
     \  if (M[rnk][k] == 0)\n                continue;\n            REP_(i, r) if (i\
@@ -99,7 +99,7 @@ data:
     \ det() const {\n        assert(r == c);\n        Matrix A(M);\n        const\
     \ auto &[rnk, cnt] = A.GaussJordan();\n        if (rnk != r)\n            return\
     \ 0;\n        K res = 1;\n        REP_(i, r) res *= A[i][i];\n        return (cnt\
-    \ ? -res : res);\n    }\n\n    optional<Matrix> inv() const {\n        assert(r\
+    \ ? -res : res);\n    }\n\n    std::optional<Matrix> inv() const {\n        assert(r\
     \ == c);\n        Matrix A(r, c + c);\n        REP_(i, r) REP_(j, c) A[i][j] =\
     \ M[i][j];\n        REP_(i, r) REP_(j, c) A[i][c + j] = K(i == j);\n        A.GaussJordan();\n\
     \        REP_(i, r) if (A[i][i] == 0) return nullopt;\n        Matrix res(r, c);\n\
@@ -112,7 +112,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/Matrix.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Matrix/Inverse.test.cpp

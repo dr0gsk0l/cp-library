@@ -55,27 +55,27 @@ data:
     \ overload2(__VA_ARGS__, TYPES2, TYPES1)(__VA_ARGS__)\n\nTYPE(T)\nusing vec<T>\
     \ = std::vector<T>;\nTYPE(T)\nusing vvec<T> = vec<vec<T>>;\nTYPE(T)\nusing vvvec<T>\
     \ = vec<vvec<T>>;\nTYPE(T)\nusing vvvvec<T> = vec<vvvec<T>>;\nTYPE(T)\nusing ptt<T>\
-    \ = std::pair<T, T>;\nusing ll = long long;\nusing ld = long double;\nusing vi\
-    \ = vec<int>;\nusing vvi = vvec<int>;\nusing vvvi = vvvec<int>;\nusing vvvvi =\
-    \ vvvvec<int>;\nusing vll = vec<ll>;\nusing vvll = vvec<ll>;\nusing vvvll = vvvec<ll>;\n\
-    using vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing pi = ptt<int>;\n\
-    using pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\n\
-    using pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n#line 3 \"library/template/util_func.hpp\"\
-    \n#pragma region std::queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
-    \    T a = que.front();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pq<T>\
-    \ &que) {\n    assert(que.size());\n    T a = que.top();\n    que.pop();\n   \
-    \ return a;\n}\nTYPE(T)\nT pick(pqg<T> &que) {\n    assert(que.size());\n    T\
-    \ a = que.top();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(std::stack<T>\
-    \ &sta) {\n    assert(sta.size());\n    T a = sta.top();\n    sta.pop();\n   \
-    \ return a;\n}\nTYPE(T)\nvoid clear(T &v) { v = decltype(v)(); }\n#pragma endregion\n\
-    #pragma region vec\nvi iota(int n) {\n    vi a(n);\n    std::iota(ALL(a), 0);\n\
-    \    return a;\n}\nTYPE(T)\nvoid add(vec<T> &v, const T &a = 1) {\n    AFOR (p,\
-    \ v)\n        p += a;\n}\nTYPE(T)\nT rev(T a) {\n    REVERSE(a);\n    return a;\n\
-    }\n\nll sum(const vi &v) { return std::accumulate(ALL(v), 0LL); }\nTYPE(T) T sum(const\
-    \ vec<T> &v) { return std::accumulate(ALL(v), T(0)); }\n\nTYPE(T, Ns)\nauto make_vector(T\
-    \ x, int n, Ns... ns) {\n    if constexpr (sizeof...(ns) == 0)\n        return\
-    \ std::vector<T>(n, x);\n    else\n        return std::vector(n, make_vector<T>(x,\
-    \ ns...));\n}\n#pragma endregion\n"
+    \ = std::std::pair<T, T>;\nusing ll = long long;\nusing ld = long double;\nusing\
+    \ vi = vec<int>;\nusing vvi = vvec<int>;\nusing vvvi = vvvec<int>;\nusing vvvvi\
+    \ = vvvvec<int>;\nusing vll = vec<ll>;\nusing vvll = vvec<ll>;\nusing vvvll =\
+    \ vvvec<ll>;\nusing vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing\
+    \ pi = ptt<int>;\nusing pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\n\
+    TYPE(T)\nusing pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n#line 3\
+    \ \"library/template/util_func.hpp\"\n#pragma region std::queue\nTYPE(T)\nT pick(std::queue<T>\
+    \ &que) {\n    assert(que.size());\n    T a = que.front();\n    que.pop();\n \
+    \   return a;\n}\nTYPE(T)\nT pick(pq<T> &que) {\n    assert(que.size());\n   \
+    \ T a = que.top();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pqg<T> &que)\
+    \ {\n    assert(que.size());\n    T a = que.top();\n    que.pop();\n    return\
+    \ a;\n}\nTYPE(T)\nT pick(std::stack<T> &sta) {\n    assert(sta.size());\n    T\
+    \ a = sta.top();\n    sta.pop();\n    return a;\n}\nTYPE(T)\nvoid clear(T &v)\
+    \ { v = decltype(v)(); }\n#pragma endregion\n#pragma region vec\nvi iota(int n)\
+    \ {\n    vi a(n);\n    std::iota(ALL(a), 0);\n    return a;\n}\nTYPE(T)\nvoid\
+    \ add(vec<T> &v, const T &a = 1) {\n    AFOR (p, v)\n        p += a;\n}\nTYPE(T)\n\
+    T rev(T a) {\n    REVERSE(a);\n    return a;\n}\n\nll sum(const vi &v) { return\
+    \ std::accumulate(ALL(v), 0LL); }\nTYPE(T) T sum(const vec<T> &v) { return std::accumulate(ALL(v),\
+    \ T(0)); }\n\nTYPE(T, Ns)\nauto make_vector(T x, int n, Ns... ns) {\n    if constexpr\
+    \ (sizeof...(ns) == 0)\n        return std::vector<T>(n, x);\n    else\n     \
+    \   return std::vector(n, make_vector<T>(x, ns...));\n}\n#pragma endregion\n"
   code: "#include \"library/template/macro.hpp\"\n#include \"library/template/type.hpp\"\
     \n#pragma region std::queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
     \    T a = que.front();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pq<T>\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: false
   path: library/template/util_func.hpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/util_func.hpp

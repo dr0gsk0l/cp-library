@@ -53,8 +53,8 @@ data:
     \    int distance(int u, int v) {\n        int w = lca(u, v);\n        return\
     \ T.depth[u] + T.depth[v] - T.depth[w] * 2;\n    }\n\n    // l=lca(u,v) \u3068\
     \u3057\u305F\u6642\u3001[u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\
-    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = vector<pair<int,\
-    \ int>>;\n    pair<path_t, path_t> path(int u, int v) {\n        assert(prepared);\n\
+    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = vector<std::pair<int,\
+    \ int>>;\n    std::pair<path_t, path_t> path(int u, int v) {\n        assert(prepared);\n\
     \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
     \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
     \      path_v.emplace_back(id[v], id[u]);\n                else\n            \
@@ -64,7 +64,7 @@ data:
     \            } else {\n                path_u.emplace_back(id[u], id[head[u]]);\n\
     \                u = T.parent(head[u]);\n            }\n        }\n        if\
     \ (u == v)\n            path_u.emplace_back(id[u], id[u]);\n        return {path_u,\
-    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    pair<int,\
+    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
     \ int> subtree(int v) {\n        assert(prepared);\n        return {id[v], id2[v]};\n\
     \    }\n};\n"
   code: "#pragma once\ntemplate <typename TREE> struct HLD {\n    int n;\n    TREE\
@@ -88,26 +88,27 @@ data:
     \ u, int v) {\n        int w = lca(u, v);\n        return T.depth[u] + T.depth[v]\
     \ - T.depth[w] * 2;\n    }\n\n    // l=lca(u,v) \u3068\u3057\u305F\u6642\u3001\
     [u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\u533A\u9593\u306E\u7D44\
-    \u307F\u3067\u8FD4\u3059\n    using path_t = vector<pair<int, int>>;\n    pair<path_t,\
-    \ path_t> path(int u, int v) {\n        assert(prepared);\n        path_t path_u,\
-    \ path_v;\n        while (u != v) {\n            if (head[u] == head[v]) {\n \
-    \               if (T.depth[u] < T.depth[v])\n                    path_v.emplace_back(id[v],\
-    \ id[u]);\n                else\n                    path_u.emplace_back(id[u],\
-    \ id[v]);\n                break;\n            }\n            if (T.depth[head[u]]\
-    \ < T.depth[head[v]]) {\n                path_v.emplace_back(id[v], id[head[v]]);\n\
-    \                v = T.parent(head[v]);\n            } else {\n              \
-    \  path_u.emplace_back(id[u], id[head[u]]);\n                u = T.parent(head[u]);\n\
-    \            }\n        }\n        if (u == v)\n            path_u.emplace_back(id[u],\
-    \ id[u]);\n        return {path_u, path_v};\n    }\n\n    // [l,r) \u304C v \u306E\
-    \u90E8\u5206\u6728\n    pair<int, int> subtree(int v) {\n        assert(prepared);\n\
-    \        return {id[v], id2[v]};\n    }\n};"
+    \u307F\u3067\u8FD4\u3059\n    using path_t = vector<std::pair<int, int>>;\n  \
+    \  std::pair<path_t, path_t> path(int u, int v) {\n        assert(prepared);\n\
+    \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
+    \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
+    \      path_v.emplace_back(id[v], id[u]);\n                else\n            \
+    \        path_u.emplace_back(id[u], id[v]);\n                break;\n        \
+    \    }\n            if (T.depth[head[u]] < T.depth[head[v]]) {\n             \
+    \   path_v.emplace_back(id[v], id[head[v]]);\n                v = T.parent(head[v]);\n\
+    \            } else {\n                path_u.emplace_back(id[u], id[head[u]]);\n\
+    \                u = T.parent(head[u]);\n            }\n        }\n        if\
+    \ (u == v)\n            path_u.emplace_back(id[u], id[u]);\n        return {path_u,\
+    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
+    \ int> subtree(int v) {\n        assert(prepared);\n        return {id[v], id2[v]};\n\
+    \    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/tree/HLD.cpp
   requiredBy:
   - library/tree/TreeMonoid.cpp
   - library/tree/TreeLazy.cpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

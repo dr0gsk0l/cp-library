@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
   _extendedRequiredBy: []
@@ -45,7 +45,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
     title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/117.test.cpp
     title: test/yukicoder/117.test.cpp
   - icon: ':x:'
@@ -56,21 +56,22 @@ data:
     title: test/yukicoder/650.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll=long long;\npair<ll,ll>\
-    \ ext_gcd(ll a,ll b){\n  if(b==0)return {1,0};\n  auto [X,Y]=ext_gcd(b,a%b);\n\
-    \  // bX + (a%b)Y = gcd(a,b)\n  // a%b = a - b(a/b)\n  // \u2234 aY + b(X-(a/b)Y)\
-    \ = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n}\n#line 3 \"library/mod/Modint.cpp\"\
-    \ntemplate <typename T, T MOD = 998244353> struct Mint {\n    inline static constexpr\
-    \ T mod = MOD;\n    T v;\n    Mint() : v(0) {}\n    Mint(signed v) : v(v) {}\n\
-    \    Mint(long long t) {\n        v = t % MOD;\n        if (v < 0)\n         \
-    \   v += MOD;\n    }\n\n    static Mint raw(int v) {\n        Mint x;\n      \
-    \  x.v = v;\n        return x;\n    }\n\n    Mint pow(long long k) const {\n \
-    \       Mint res(1), tmp(v);\n        while (k) {\n            if (k & 1)\n  \
-    \              res *= tmp;\n            tmp *= tmp;\n            k >>= 1;\n  \
-    \      }\n        return res;\n    }\n\n    static Mint add_identity() { return\
+  bundledCode: "#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll = long long;\nstd::pair<ll,\
+    \ ll> ext_gcd(ll a, ll b) {\n    if (b == 0)\n        return {1, 0};\n    auto\
+    \ [X, Y] = ext_gcd(b, a % b);\n    // bX + (a%b)Y = gcd(a,b)\n    // a%b = a -\
+    \ b(a/b)\n    // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n    ll x = Y, y = X - (a\
+    \ / b) * Y;\n    return {x, y};\n}\n#line 3 \"library/mod/Modint.cpp\"\ntemplate\
+    \ <typename T, T MOD = 998244353> struct Mint {\n    inline static constexpr T\
+    \ mod = MOD;\n    T v;\n    Mint() : v(0) {}\n    Mint(signed v) : v(v) {}\n \
+    \   Mint(long long t) {\n        v = t % MOD;\n        if (v < 0)\n          \
+    \  v += MOD;\n    }\n\n    static Mint raw(int v) {\n        Mint x;\n       \
+    \ x.v = v;\n        return x;\n    }\n\n    Mint pow(long long k) const {\n  \
+    \      Mint res(1), tmp(v);\n        while (k) {\n            if (k & 1)\n   \
+    \             res *= tmp;\n            tmp *= tmp;\n            k >>= 1;\n   \
+    \     }\n        return res;\n    }\n\n    static Mint add_identity() { return\
     \ Mint(0); }\n    static Mint mul_identity() { return Mint(1); }\n\n    // Mint\
     \ inv()const{return pow(MOD-2);}\n    Mint inv() const { return Mint(ext_gcd(v,\
     \ mod).first); }\n\n    Mint &operator+=(Mint a) {\n        v += a.v;\n      \
@@ -132,8 +133,8 @@ data:
   isVerificationFile: false
   path: library/mod/Modint.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-13 18:46:02+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp
   - test/library-checker/Matrix/Inverse.test.cpp

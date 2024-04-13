@@ -32,11 +32,13 @@ data:
     \ }\n  static constexpr X unit() { return numeric_limits<X>::max()/2; }\n  static\
     \ constexpr bool commute = true;\n};\n#line 2 \"library/algebra/monoid/Set.cpp\"\
     \n// \u5408\u6210\u306E\u9806\u756A\u306F\u95A2\u6570\u3068\u4E00\u7DD2\u3060\u3088\
-    \ntemplate<typename X>\nstruct MonoidSet{\n  using O=optional<X>;\n  using value_type=O;\n\
-    \  static constexpr O op(const O &x,const O &y)noexcept{ return (x.has_value()?x:y);\
-    \ }\n  static constexpr void Rchop(O&x, const O&y){ if(!x)x=y; }\n  static constexpr\
-    \ void Lchop(const O&x, O&y){ if(x)y=x; } \n  static constexpr O unit()noexcept{\
-    \ return nullopt; }\n  static constexpr bool commute=false;\n};\n#line 4 \"library/algebra/lazy/SetMin.cpp\"\
+    \ntemplate <typename X> struct MonoidSet {\n    using O = std::optional<X>;\n\
+    \    using value_type = O;\n    static constexpr O op(const O &x, const O &y)\
+    \ noexcept {\n        return (x.has_value() ? x : y);\n    }\n    static constexpr\
+    \ void Rchop(O &x, const O &y) {\n        if (!x)\n            x = y;\n    }\n\
+    \    static constexpr void Lchop(const O &x, O &y) {\n        if (x)\n       \
+    \     y = x;\n    }\n    static constexpr O unit() noexcept { return nullopt;\
+    \ }\n    static constexpr bool commute = false;\n};\n#line 4 \"library/algebra/lazy/SetMin.cpp\"\
     \ntemplate <typename X> struct LazySetMin {\n    using MX = MonoidMin<X>;\n  \
     \  using MF = MonoidSet<X>;\n    using F = typename MF::value_type;\n    static\
     \ constexpr X mapping(const F &f, const X &x) { return f.value_or(x); }\n};\n\
@@ -100,7 +102,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_F.test.cpp

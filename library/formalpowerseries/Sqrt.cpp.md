@@ -121,26 +121,28 @@ data:
     \ // exp(nx)\n    static FPS exp(const T n) {\n        if (n == 0)\n         \
     \   return unit();\n        FPS res(MX, 1);\n        for (int i = 1; i < MX; i++)\n\
     \            res[i] = res[i - 1] * n / i;\n        return res;\n    }\n};\n#undef\
-    \ REP_\n#line 3 \"library/formalpowerseries/Sqrt.cpp\"\ntemplate<typename FPS>\n\
-    optional<FPS> sqrt(FPS f){\n  f.shrink();\n  if(f.size()==0)return FPS(0);\n \
-    \ int d;\n  for(d=0;f[d]==0;d++){}\n  if(d&1)return nullopt;\n  f >>= d;\n  FPS\
-    \ res{at}\n}\n\nassert(size() and at(0)!=0);\n    FPS res(1,at(0).inv());\n  \
-    \  for(int n=0;(1<<n)<SZ;n++){\n      // mod[1<<n] \u2192 mod[1<<(n+1)]\n    \
-    \  res *= (2- (res*pre(1<<(n+1))).pre(1<<(n+1)));\n      res.strict(1<<(n+1));\n\
-    \    }\n    return res.pre(SZ);\n"
-  code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\ntemplate<typename\
-    \ FPS>\noptional<FPS> sqrt(FPS f){\n  f.shrink();\n  if(f.size()==0)return FPS(0);\n\
-    \  int d;\n  for(d=0;f[d]==0;d++){}\n  if(d&1)return nullopt;\n  f >>= d;\n  FPS\
-    \ res{at}\n}\n\nassert(size() and at(0)!=0);\n    FPS res(1,at(0).inv());\n  \
-    \  for(int n=0;(1<<n)<SZ;n++){\n      // mod[1<<n] \u2192 mod[1<<(n+1)]\n    \
-    \  res *= (2- (res*pre(1<<(n+1))).pre(1<<(n+1)));\n      res.strict(1<<(n+1));\n\
-    \    }\n    return res.pre(SZ);"
+    \ REP_\n#line 3 \"library/formalpowerseries/Sqrt.cpp\"\ntemplate <typename FPS>\
+    \ std::optional<FPS> sqrt(FPS f) {\n    f.shrink();\n    if (f.size() == 0)\n\
+    \        return FPS(0);\n    int d;\n    for (d = 0; f[d] == 0; d++) {\n    }\n\
+    \    if (d & 1)\n        return nullopt;\n    f >>= d;\n    FPS res { at }\n}\n\
+    \nassert(size() and at(0) != 0);\nFPS res(1, at(0).inv());\nfor (int n = 0; (1\
+    \ << n) < SZ; n++) {\n    // mod[1<<n] \u2192 mod[1<<(n+1)]\n    res *= (2 - (res\
+    \ * pre(1 << (n + 1))).pre(1 << (n + 1)));\n    res.strict(1 << (n + 1));\n}\n\
+    return res.pre(SZ);\n"
+  code: "#pragma once\n#include \"library/formalpowerseries/Base.cpp\"\ntemplate <typename\
+    \ FPS> std::optional<FPS> sqrt(FPS f) {\n    f.shrink();\n    if (f.size() ==\
+    \ 0)\n        return FPS(0);\n    int d;\n    for (d = 0; f[d] == 0; d++) {\n\
+    \    }\n    if (d & 1)\n        return nullopt;\n    f >>= d;\n    FPS res { at\
+    \ }\n}\n\nassert(size() and at(0) != 0);\nFPS res(1, at(0).inv());\nfor (int n\
+    \ = 0; (1 << n) < SZ; n++) {\n    // mod[1<<n] \u2192 mod[1<<(n+1)]\n    res *=\
+    \ (2 - (res * pre(1 << (n + 1))).pre(1 << (n + 1)));\n    res.strict(1 << (n +\
+    \ 1));\n}\nreturn res.pre(SZ);"
   dependsOn:
   - library/formalpowerseries/Base.cpp
   isVerificationFile: false
   path: library/formalpowerseries/Sqrt.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/Sqrt.cpp

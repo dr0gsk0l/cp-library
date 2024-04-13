@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/geometry/UtilFunction.cpp
     title: library/geometry/UtilFunction.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
@@ -24,13 +24,13 @@ data:
     \                                                     \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A\"\
     \n#include <bits/stdc++.h>\n\n#line 2 \"library/r2/XY.cpp\"\ntemplate <typename\
     \ T> struct XY {\n    T x, y;\n    XY() = default;\n    XY(T x, T y) : x(x), y(y)\
-    \ {}\n    XY(const pair<T, T> &xy) : x(xy.first), y(xy.second) {}\n\n    XY operator+()\
-    \ const { return *this; }\n    XY operator-() const { return XY(-x, -y); }\n\n\
-    \    XY &operator++() {\n        x++;\n        y++;\n        return *this;\n \
-    \   }\n    XY &operator--() {\n        x--;\n        y--;\n        return *this;\n\
-    \    }\n    XY &operator++(int) {\n        XY a = *this;\n        ++*this;\n \
-    \       return a;\n    }\n    XY &operator--(int) {\n        XY a = *this;\n \
-    \       --*this;\n        return a;\n    }\n\n    XY &operator+=(const XY &v)\
+    \ {}\n    XY(const std::pair<T, T> &xy) : x(xy.first), y(xy.second) {}\n\n   \
+    \ XY operator+() const { return *this; }\n    XY operator-() const { return XY(-x,\
+    \ -y); }\n\n    XY &operator++() {\n        x++;\n        y++;\n        return\
+    \ *this;\n    }\n    XY &operator--() {\n        x--;\n        y--;\n        return\
+    \ *this;\n    }\n    XY &operator++(int) {\n        XY a = *this;\n        ++*this;\n\
+    \        return a;\n    }\n    XY &operator--(int) {\n        XY a = *this;\n\
+    \        --*this;\n        return a;\n    }\n\n    XY &operator+=(const XY &v)\
     \ {\n        x += v.x;\n        y += v.y;\n        return *this;\n    }\n    XY\
     \ &operator-=(const XY &v) {\n        x -= v.x;\n        y -= v.y;\n        return\
     \ *this;\n    }\n    XY &operator*=(const T &a) {\n        x *= a;\n        y\
@@ -106,8 +106,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-13 18:46:02+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp
 layout: document

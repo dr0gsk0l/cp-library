@@ -196,7 +196,7 @@ data:
   requiredBy:
   - library/template/input.hpp
   - library/template/util_func.hpp
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/macro.hpp

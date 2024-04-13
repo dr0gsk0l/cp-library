@@ -73,8 +73,8 @@ data:
     \        cerr << \"\\n\";\n        }\n    }\n};\n#line 5 \"library/flow/Dinic.cpp\"\
     \ntemplate <typename T> class Dinic {\n    struct EdgeInfo {\n        T cap;\n\
     \        int rev;\n    };\n    WeightedGraph<EdgeInfo> G;\n    std::vector<int>\
-    \ level, current_edge, out_deg;\n    int s, t;\n    std::vector<pair<int, int>>\
-    \ edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
+    \ level, current_edge, out_deg;\n    int s, t;\n    std::vector<std::pair<int,\
+    \ int>> edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
     \uFF08\u5BB9\u91CF\u6B63\u306E\u8FBA\u306B\u3088\u308B\uFF09s\u304B\u3089\u306E\
     \u6700\u77ED\u8DDD\u96E2\u306B\u3059\u308B\n        // \u5230\u9054\u51FA\u6765\
     \u306A\u3051\u308C\u3070-1\n        fill(level.begin(), level.end(), -1);\n  \
@@ -127,8 +127,8 @@ data:
     \        for (int i = 0; i < A; i++)\n            fl.add_arc(S, i, 1);\n     \
     \   for (int j = 0; j < B; j++)\n            fl.add_arc(A + j, T, 1);\n    }\n\
     \    void add_edge(int u, int v) {\n        assert(0 <= u and u < A);\n      \
-    \  assert(0 <= v and v < B);\n        fl.add_arc(u, A + v, 1);\n    }\n    std::vector<pair<int,\
-    \ int>> solve() {\n        int K = fl.flow(min(A, B));\n        std::vector<pair<int,\
+    \  assert(0 <= v and v < B);\n        fl.add_arc(u, A + v, 1);\n    }\n    std::vector<std::pair<int,\
+    \ int>> solve() {\n        int K = fl.flow(min(A, B));\n        std::vector<std::pair<int,\
     \ int>> res;\n        res.reserve(K);\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow] = all_edge[i];\n            if (flow)\n                res.emplace_back(from,\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_7_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_7_A.test.cpp

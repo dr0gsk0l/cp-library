@@ -13,8 +13,8 @@ data:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp\"\
     \nclass IntegerSumRuleUnionFind {\n    using ll = long long;\n    int n, num;\n\
-    \    std::vector<int> sz, parent;\n    std::vector<pair<int, ll>> potential;\n\
-    \    std::vector<optional<ll>> value;\n\n  public:\n    IntegerSumRuleUnionFind()\
+    \    std::vector<int> sz, parent;\n    std::vector<std::pair<int, ll>> potential;\n\
+    \    std::vector<std::optional<ll>> value;\n\n  public:\n    IntegerSumRuleUnionFind()\
     \ = default;\n    IntegerSumRuleUnionFind(int n)\n        : n(n), num(n), sz(n,\
     \ 1), parent(n, 0), potential(n, {1, 0}),\n          value(n, nullopt) {\n   \
     \     iota(parent.begin(), parent.end(), 0);\n    }\n\n    tuple<int, int, ll>\
@@ -40,21 +40,21 @@ data:
     \ - b - d) * a;\n            if (value[rx] and value[rx].value() != k)\n     \
     \           return false;\n            value[rx] = k;\n        }\n        sz[rx]\
     \ += sz[ry];\n        parent[ry] = rx;\n        potential[ry] = {-a * c, (sum\
-    \ - b - d) * c};\n        num--;\n        return true;\n    }\n\n    optional<ll>\
+    \ - b - d) * c};\n        num--;\n        return true;\n    }\n\n    std::optional<ll>\
     \ val(int x) {\n        auto [r, a, b] = from_root(x);\n        if (value[r])\n\
     \            return value[r].value() * a + b;\n        return nullopt;\n    }\n\
     \n    // x \u3068 y \u304C\u96A3\u63A5\u3057\u3066\u306A\u3044\u306A\u3089 nullopt\n\
     \    // x \u3068 y \u304C\u96A3\u63A5\u3057\u3066\u3044\u308B\u304C\u3001sum \u304C\
-    \u4E00\u610F\u3067\u306A\u3044\u5834\u5408\u3082 nullopt\n    optional<ll> sum(int\
-    \ x, int y) {\n        auto [rx, a, b] = from_root(x);\n        auto [ry, c, d]\
-    \ = from_root(y);\n        if (rx != ry)\n            return nullopt;\n      \
-    \  if (a == c) {\n            assert(b == d);\n            return nullopt;\n \
-    \       }\n        return b + d;\n    }\n\n    int size(const int x) {\n     \
-    \   assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
+    \u4E00\u610F\u3067\u306A\u3044\u5834\u5408\u3082 nullopt\n    std::optional<ll>\
+    \ sum(int x, int y) {\n        auto [rx, a, b] = from_root(x);\n        auto [ry,\
+    \ c, d] = from_root(y);\n        if (rx != ry)\n            return nullopt;\n\
+    \        if (a == c) {\n            assert(b == d);\n            return nullopt;\n\
+    \        }\n        return b + d;\n    }\n\n    int size(const int x) {\n    \
+    \    assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
     \ count() const { return num; }\n};\n"
   code: "class IntegerSumRuleUnionFind {\n    using ll = long long;\n    int n, num;\n\
-    \    std::vector<int> sz, parent;\n    std::vector<pair<int, ll>> potential;\n\
-    \    std::vector<optional<ll>> value;\n\n  public:\n    IntegerSumRuleUnionFind()\
+    \    std::vector<int> sz, parent;\n    std::vector<std::pair<int, ll>> potential;\n\
+    \    std::vector<std::optional<ll>> value;\n\n  public:\n    IntegerSumRuleUnionFind()\
     \ = default;\n    IntegerSumRuleUnionFind(int n)\n        : n(n), num(n), sz(n,\
     \ 1), parent(n, 0), potential(n, {1, 0}),\n          value(n, nullopt) {\n   \
     \     iota(parent.begin(), parent.end(), 0);\n    }\n\n    tuple<int, int, ll>\
@@ -80,23 +80,23 @@ data:
     \ - b - d) * a;\n            if (value[rx] and value[rx].value() != k)\n     \
     \           return false;\n            value[rx] = k;\n        }\n        sz[rx]\
     \ += sz[ry];\n        parent[ry] = rx;\n        potential[ry] = {-a * c, (sum\
-    \ - b - d) * c};\n        num--;\n        return true;\n    }\n\n    optional<ll>\
+    \ - b - d) * c};\n        num--;\n        return true;\n    }\n\n    std::optional<ll>\
     \ val(int x) {\n        auto [r, a, b] = from_root(x);\n        if (value[r])\n\
     \            return value[r].value() * a + b;\n        return nullopt;\n    }\n\
     \n    // x \u3068 y \u304C\u96A3\u63A5\u3057\u3066\u306A\u3044\u306A\u3089 nullopt\n\
     \    // x \u3068 y \u304C\u96A3\u63A5\u3057\u3066\u3044\u308B\u304C\u3001sum \u304C\
-    \u4E00\u610F\u3067\u306A\u3044\u5834\u5408\u3082 nullopt\n    optional<ll> sum(int\
-    \ x, int y) {\n        auto [rx, a, b] = from_root(x);\n        auto [ry, c, d]\
-    \ = from_root(y);\n        if (rx != ry)\n            return nullopt;\n      \
-    \  if (a == c) {\n            assert(b == d);\n            return nullopt;\n \
-    \       }\n        return b + d;\n    }\n\n    int size(const int x) {\n     \
-    \   assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
+    \u4E00\u610F\u3067\u306A\u3044\u5834\u5408\u3082 nullopt\n    std::optional<ll>\
+    \ sum(int x, int y) {\n        auto [rx, a, b] = from_root(x);\n        auto [ry,\
+    \ c, d] = from_root(y);\n        if (rx != ry)\n            return nullopt;\n\
+    \        if (a == c) {\n            assert(b == d);\n            return nullopt;\n\
+    \        }\n        return b + d;\n    }\n\n    int size(const int x) {\n    \
+    \    assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
     \ count() const { return num; }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-13 18:08:10+09:00'
+  timestamp: '2024-04-13 18:46:02+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1502.test.cpp
