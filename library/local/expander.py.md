@@ -14,11 +14,11 @@ data:
     - https://note.nkmk.me/python-raw-string-escape/
     - https://note.nkmk.me/python-re-match-search-findall-etc/
     - https://qiita.com/kzkadc/items/e4fc7bc9c003de1eb6d0
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/python.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/python.py\"\
     , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "#!/usr/bin/env python3\n\n# This code is based on [ac-lirary](https://github.com/atcoder/ac-library)'s\
     \ expander.py.\n\nimport re\nimport sys\nimport argparse\nfrom logging import\
@@ -132,12 +132,13 @@ data:
     \    parser.add_argument('--pbcopy', '-cp', action='store_true', help='output\
     \ to pbcopy')\n    parser.add_argument('--acl', action='store_true', help='expand\
     \ acl')\n    parser.add_argument('--endl', action='store_false', help='not replace\
-    \ endl')\n    opts = parser.parse_args()\n\n    print(\"[INFO] \" + GREEN + \"\
-    expand library\" + END)\n\n    lib_paths = []\n    if opts.lib:\n        for lib\
-    \ in opts.lib:\n            lib_paths.append(Path(lib))\n\n    # \u74B0\u5883\u5909\
-    \u6570\uFF08environ\uFF09\u306E 'CPLUS_INCLUDE_PATH' \u3067\u81EA\u5206\u306E\u30E9\
-    \u30A4\u30D6\u30E9\u30EA\u306E\u30D1\u30B9\u3092\u6307\u5B9A\u3057\u305F\u3044\
-    \u6642\u306B\u4F7F\u3046\u3082\u306E\u3060\u3068\u601D\u3046\uFF08https://atcoder.github.io/ac-library/production/document_ja/appendix.html\uFF09\
+    \ std::endl')\n    opts = parser.parse_args()\n\n    print(\"[INFO] \" + GREEN\
+    \ + \"expand library\" + END)\n\n    lib_paths = []\n    if opts.lib:\n      \
+    \  for lib in opts.lib:\n            lib_paths.append(Path(lib))\n\n    # \u74B0\
+    \u5883\u5909\u6570\uFF08environ\uFF09\u306E 'CPLUS_INCLUDE_PATH' \u3067\u81EA\u5206\
+    \u306E\u30E9\u30A4\u30D6\u30E9\u30EA\u306E\u30D1\u30B9\u3092\u6307\u5B9A\u3057\
+    \u305F\u3044\u6642\u306B\u4F7F\u3046\u3082\u306E\u3060\u3068\u601D\u3046\uFF08\
+    https://atcoder.github.io/ac-library/production/document_ja/appendix.html\uFF09\
     \n    if 'CPLUS_INCLUDE_PATH' in environ:\n        lib_paths.extend(map(Path,\
     \ filter(None, environ['CPLUS_INCLUDE_PATH'].split(pathsep))))\n    \n    # \u30AB\
     \u30EC\u30F3\u30C8\u30C7\u30A3\u30EC\u30AF\u30C8\u30EA\u3092 lib_paths \u306B\u8FFD\

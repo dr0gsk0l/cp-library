@@ -3,31 +3,34 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/ALDS1_11_C.test.cpp
     title: test/AOJ/ALDS1_11_C.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"library/graph/shortest_path/BFS.cpp\"\ntemplate<typename\
-    \ GRAPH>\npair<vector<int>,vector<int>> BFS(const GRAPH&g,int s=0){\n  assert(g.is_prepared());\n\
-    \  vector<int> d(g.n,-1),pre(g.n,-1);\n  queue<int> que;\n  d[s]=0;\n  que.push(s);\n\
-    \  while(que.size()){\n    int v=que.front();que.pop();\n    for(int to:g[v])\n\
-    \      if(d[to]<0){\n        d[to]=d[v]+1;\n        que.push(to);\n      }\n \
-    \ }\n  return {d,pre};\n}\n"
-  code: "#pragma once\ntemplate<typename GRAPH>\npair<vector<int>,vector<int>> BFS(const\
-    \ GRAPH&g,int s=0){\n  assert(g.is_prepared());\n  vector<int> d(g.n,-1),pre(g.n,-1);\n\
-    \  queue<int> que;\n  d[s]=0;\n  que.push(s);\n  while(que.size()){\n    int v=que.front();que.pop();\n\
-    \    for(int to:g[v])\n      if(d[to]<0){\n        d[to]=d[v]+1;\n        que.push(to);\n\
-    \      }\n  }\n  return {d,pre};\n}"
+  bundledCode: "#line 2 \"library/graph/shortest_path/BFS.cpp\"\ntemplate <typename\
+    \ GRAPH>\npair<vector<int>, vector<int>> BFS(const GRAPH &g, int s = 0) {\n  \
+    \  assert(g.is_prepared());\n    std::vector<int> d(g.n, -1), pre(g.n, -1);\n\
+    \    queue<int> que;\n    d[s] = 0;\n    que.push(s);\n    while (que.size())\
+    \ {\n        int v = que.front();\n        que.pop();\n        for (int to : g[v])\n\
+    \            if (d[to] < 0) {\n                d[to] = d[v] + 1;\n           \
+    \     que.push(to);\n            }\n    }\n    return {d, pre};\n}\n"
+  code: "#pragma once\ntemplate <typename GRAPH>\npair<vector<int>, vector<int>> BFS(const\
+    \ GRAPH &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<int> d(g.n,\
+    \ -1), pre(g.n, -1);\n    queue<int> que;\n    d[s] = 0;\n    que.push(s);\n \
+    \   while (que.size()) {\n        int v = que.front();\n        que.pop();\n \
+    \       for (int to : g[v])\n            if (d[to] < 0) {\n                d[to]\
+    \ = d[v] + 1;\n                que.push(to);\n            }\n    }\n    return\
+    \ {d, pre};\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/graph/shortest_path/BFS.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_11_C.test.cpp
 documentation_of: library/graph/shortest_path/BFS.cpp

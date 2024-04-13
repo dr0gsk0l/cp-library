@@ -1,60 +1,60 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/group/Concepts.cpp
     title: library/algebra/group/Concepts.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
   - icon: ':warning:'
     path: library/math/FactorialNumberSystem.cpp
     title: library/math/FactorialNumberSystem.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_B.test.cpp
     title: test/AOJ/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/algebra/group/Concepts.cpp: line 3: #pragma once found in a non-first\
     \ line\n"
   code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/algebra/group/Concepts.cpp\"\
     \n\ntemplate <group G = GroupAdd<long long>> class FenwickTree {\n    using T\
-    \ = typename G::value_type;\n    int n;\n    vector<T> dat, raw;\n\n  public:\n\
+    \ = typename G::value_type;\n    int n;\n    std::vector<T> dat, raw;\n\n  public:\n\
     \    FenwickTree() { assert(G::commute); }\n    FenwickTree(int n) : n(n) {\n\
-    \        assert(G::commute);\n        dat = raw = vector<T>(n, G::unit());\n \
-    \   }\n    FenwickTree(const vector<T> &v) : n(v.size()), raw(v), dat(v) {\n \
-    \       assert(G::commute);\n        for (int i = 1; i <= n; i++) {\n        \
-    \    int j = i + (i & -i);\n            if (j <= n)\n                G::Rchop(dat[j\
+    \        assert(G::commute);\n        dat = raw = std::vector<T>(n, G::unit());\n\
+    \    }\n    FenwickTree(const std::vector<T> &v) : n(v.size()), raw(v), dat(v)\
+    \ {\n        assert(G::commute);\n        for (int i = 1; i <= n; i++) {\n   \
+    \         int j = i + (i & -i);\n            if (j <= n)\n                G::Rchop(dat[j\
     \ - 1], dat[i - 1]);\n        }\n    }\n\n    T operator[](int k) const { return\
     \ raw[k]; }\n    T get(int k) const { return raw[k]; }\n\n    void multiply(int\
     \ k, const T &x) {\n        G::Rchop(raw[k], x);\n        for (++k; k <= n; k\
@@ -84,15 +84,15 @@ data:
   isVerificationFile: false
   path: library/datastructure/FenwickTree.cpp
   requiredBy:
-  - library/math/FactorialNumberSystem.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/math/FactorialNumberSystem.cpp
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/AOJ/DSL_2_B.test.cpp
   - test/yukicoder/924.test.cpp
+  - test/AOJ/DSL_2_B.test.cpp
 documentation_of: library/datastructure/FenwickTree.cpp
 layout: document
 redirect_from:

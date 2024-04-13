@@ -1,89 +1,93 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/Reverse.cpp
     title: library/algebra/Reverse.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/group/Affine.cpp
     title: library/algebra/group/Affine.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/linearalgebra/Linear.cpp
     title: library/linearalgebra/Linear.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/tree/HLD.cpp
     title: library/tree/HLD.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/tree/Tree.cpp
     title: library/tree/Tree.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/tree/TreeMonoid.cpp
     title: library/tree/TreeMonoid.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_set_path_composite
     links:
     - https://judge.yosupo.jp/problem/vertex_set_path_composite
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/segtree/SegmentTree.cpp: line 3: #pragma once found in a non-first line\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"library/algebra/group/Affine.cpp\"\
-    \n#include \"library/tree/Tree.cpp\"\n#include \"library/tree/TreeMonoid.cpp\"\
-    \n#include \"library/mod/Modint.cpp\"\nusing mint=Mint<long long>;\n\nint main(){\n\
-    \  ios::sync_with_stdio(false);\n  cin.tie(nullptr);\n  using G=AlgebraReverse<GroupAffine<mint>>;\n\
-    \  using F=G::value_type;\n\n  int n,q;cin>>n>>q; \n\n  vector<F> f(n);\n  for(int\
-    \ i=0;i<n;i++)cin>>f[i];\n\n  Tree t(n);\n  t.scan(0);\n\n  TreeMonoid<Tree,G>\
-    \ TM(t,f);\n\n  while(q--){\n    int c;cin>>c;\n    if(c){\n      int u,v,x;cin>>u>>v>>x;\n\
-    \      F g=TM.path_prod(u,v);\n      cout<<g(x)<<endl;\n    }\n    else{\n   \
-    \   int p;cin>>p;\n      F f;cin>>f;\n      TM.set(p,f);\n    }\n  }\n}"
+    \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Affine.cpp\"\n\
+    #include \"library/mod/Modint.cpp\"\n#include \"library/tree/Tree.cpp\"\n#include\
+    \ \"library/tree/TreeMonoid.cpp\"\nusing mint = Mint<long long>;\n\nint main()\
+    \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n    using\
+    \ G = AlgebraReverse<GroupAffine<mint>>;\n    using F = G::value_type;\n\n   \
+    \ int n, q;\n    cin >> n >> q;\n\n    std::vector<F> f(n);\n    for (int i =\
+    \ 0; i < n; i++)\n        cin >> f[i];\n\n    Tree t(n);\n    t.scan(0);\n\n \
+    \   TreeMonoid<Tree, G> TM(t, f);\n\n    while (q--) {\n        int c;\n     \
+    \   cin >> c;\n        if (c) {\n            int u, v, x;\n            cin >>\
+    \ u >> v >> x;\n            F g = TM.path_prod(u, v);\n            std::cout <<\
+    \ g(x) << std::endl;\n        } else {\n            int p;\n            cin >>\
+    \ p;\n            F f;\n            cin >> f;\n            TM.set(p, f);\n   \
+    \     }\n    }\n}"
   dependsOn:
   - library/algebra/group/Affine.cpp
   - library/linearalgebra/Linear.cpp
+  - library/mod/Modint.cpp
+  - library/math/ExtraGCD.cpp
   - library/tree/Tree.cpp
   - library/graph/Graph.cpp
   - library/tree/TreeMonoid.cpp
+  - library/algebra/Reverse.cpp
   - library/segtree/SegmentTree.cpp
   - library/algebra/monoid/Concepts.cpp
-  - library/algebra/Reverse.cpp
   - library/tree/HLD.cpp
-  - library/mod/Modint.cpp
-  - library/math/ExtraGCD.cpp
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_set_path_composite.test.cpp
 layout: document

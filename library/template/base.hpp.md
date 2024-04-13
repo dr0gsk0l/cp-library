@@ -46,13 +46,13 @@ data:
   path: library/template/base.hpp
   requiredBy:
   - library/template/input.hpp
-  - library/template/type.hpp
-  - library/template/output.hpp
   - library/template/original_ostream.hpp
-  - library/template/original_istream.hpp
-  - library/template/macro.hpp
   - library/template/util_func.hpp
-  timestamp: '2023-12-10 20:25:08+09:00'
+  - library/template/original_istream.hpp
+  - library/template/type.hpp
+  - library/template/macro.hpp
+  - library/template/output.hpp
+  timestamp: '2024-04-13 17:39:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/base.hpp

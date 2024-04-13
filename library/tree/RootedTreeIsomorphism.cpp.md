@@ -3,31 +3,33 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
     title: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/tree/RootedTreeIsomorphism.cpp\"\ntemplate<typename\
-    \ TREE>\npair<int,vector<int>> rooted_tree_isomorphism(TREE&t){\n  assert(~t.root);\n\
-    \  vector<int> res(t.n);\n  map<vector<int>,int> mp;\n  for(const int v:t.DFS){\n\
-    \    vector<int> h;\n    for(int to:t.son(v))h.push_back(res[to]);\n    sort(h.begin(),h.end());\n\
-    \    if(!mp.count(h))mp[h]=mp.size();\n    res[v]=mp[h];\n  }\n  return {mp.size(),res};\n\
-    }\n"
-  code: "template<typename TREE>\npair<int,vector<int>> rooted_tree_isomorphism(TREE&t){\n\
-    \  assert(~t.root);\n  vector<int> res(t.n);\n  map<vector<int>,int> mp;\n  for(const\
-    \ int v:t.DFS){\n    vector<int> h;\n    for(int to:t.son(v))h.push_back(res[to]);\n\
-    \    sort(h.begin(),h.end());\n    if(!mp.count(h))mp[h]=mp.size();\n    res[v]=mp[h];\n\
-    \  }\n  return {mp.size(),res};\n}"
+  bundledCode: "#line 1 \"library/tree/RootedTreeIsomorphism.cpp\"\ntemplate <typename\
+    \ TREE>\npair<int, vector<int>> rooted_tree_isomorphism(TREE &t) {\n    assert(~t.root);\n\
+    \    std::vector<int> res(t.n);\n    map<vector<int>, int> mp;\n    for (const\
+    \ int v : t.DFS) {\n        std::vector<int> h;\n        for (int to : t.son(v))\n\
+    \            h.push_back(res[to]);\n        sort(h.begin(), h.end());\n      \
+    \  if (!mp.count(h))\n            mp[h] = mp.size();\n        res[v] = mp[h];\n\
+    \    }\n    return {mp.size(), res};\n}\n"
+  code: "template <typename TREE>\npair<int, vector<int>> rooted_tree_isomorphism(TREE\
+    \ &t) {\n    assert(~t.root);\n    std::vector<int> res(t.n);\n    map<vector<int>,\
+    \ int> mp;\n    for (const int v : t.DFS) {\n        std::vector<int> h;\n   \
+    \     for (int to : t.son(v))\n            h.push_back(res[to]);\n        sort(h.begin(),\
+    \ h.end());\n        if (!mp.count(h))\n            mp[h] = mp.size();\n     \
+    \   res[v] = mp[h];\n    }\n    return {mp.size(), res};\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/tree/RootedTreeIsomorphism.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
 documentation_of: library/tree/RootedTreeIsomorphism.cpp

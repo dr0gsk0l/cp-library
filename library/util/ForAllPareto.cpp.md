@@ -8,19 +8,22 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/util/ForAllPareto.cpp\"\ntemplate<typename F>\n\
-    void for_all_pareto(const vector<int>&v, const F&f){\n  int n=v.size();\n  vector<int>\
-    \ a(n,0);\n  while(true){\n    f(a);\n    int idx=0;\n    while(idx<n and a[idx]==v[idx])a[idx++]=0;\n\
-    \    if(idx==n)break;\n    a[idx]++;\n  }\n}\n"
-  code: "template<typename F>\nvoid for_all_pareto(const vector<int>&v, const F&f){\n\
-    \  int n=v.size();\n  vector<int> a(n,0);\n  while(true){\n    f(a);\n    int\
-    \ idx=0;\n    while(idx<n and a[idx]==v[idx])a[idx++]=0;\n    if(idx==n)break;\n\
-    \    a[idx]++;\n  }\n}"
+  bundledCode: "#line 1 \"library/util/ForAllPareto.cpp\"\ntemplate <typename F>\n\
+    void for_all_pareto(const std::vector<int> &v, const F &f) {\n    int n = v.size();\n\
+    \    std::vector<int> a(n, 0);\n    while (true) {\n        f(a);\n        int\
+    \ idx = 0;\n        while (idx < n and a[idx] == v[idx])\n            a[idx++]\
+    \ = 0;\n        if (idx == n)\n            break;\n        a[idx]++;\n    }\n\
+    }\n"
+  code: "template <typename F>\nvoid for_all_pareto(const std::vector<int> &v, const\
+    \ F &f) {\n    int n = v.size();\n    std::vector<int> a(n, 0);\n    while (true)\
+    \ {\n        f(a);\n        int idx = 0;\n        while (idx < n and a[idx] ==\
+    \ v[idx])\n            a[idx++] = 0;\n        if (idx == n)\n            break;\n\
+    \        a[idx]++;\n    }\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/util/ForAllPareto.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
+  timestamp: '2024-04-13 17:39:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/ForAllPareto.cpp
@@ -38,7 +41,7 @@ vector<int> base={2,3,1};
 auto f=[&](vector<int>a){
   int x=1;
   for(int i=0;i<3;i++)while(a[i]--)x*=base[i];
-  cout<<x<<endl;
+  std::cout<<x<<endl;
 };
 for_all_pareto({2,3,5},f);
 ```

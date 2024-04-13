@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/geometry/Judge.cpp
     title: library/geometry/Judge.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/geometry/UtilFunction.cpp
     title: library/geometry/UtilFunction.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/CGL_4_A.test.cpp
     title: test/AOJ/CGL_4_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/r2/XY.cpp\"\ntemplate<typename T>\nstruct XY{\n\
@@ -50,39 +50,43 @@ data:
     \ ostream&operator<<(ostream&os,const XY&v){ os<<v.x<<\" \"<<v.y; return os;}\n\
     \n  static XY direction(const char&c){\n    if(c=='R')return {1,0};\n    if(c=='L')return\
     \ {-1,0};\n    if(c=='U')return {0,-1};\n    if(c=='D')return {0,1};\n    return\
-    \ {0,0};\n  }\n};\n#line 3 \"library/geometry/Base.cpp\"\nnamespace geometry{\n\
-    \  constexpr double EPS = 1e-10, PI = acos(-1);\n  \n  bool is_equal(double a,double\
-    \ b){\n    return abs(a-b)<EPS;\n  }\n\n  using Point=XY<double>;\n  bool cmp_y(const\
-    \ Point&p1,const Point&p2){\n    return p1.y!=p2.y ? p1.y<p2.y : p1.x<p2.x;\n\
-    \  }\n\n  using Vector = Point;\n  using Polygon = vector<Point>;\n\n  istream&operator>>(istream\
-    \ &is,Polygon&p){\n    for(Point&c:p)is>>c;\n    return is;\n  }\n\n  struct Segment{\n\
-    \    Point p1,p2;\n    Segment(){}\n    Segment(Point p1, Point p2):p1(p1),p2(p2){}\n\
-    \    friend istream&operator>>(istream &is,Segment&s){\n      is>>s.p1>>s.p2;\n\
-    \      return is;\n    }\n    double arg()const{ return (p2-p1).arg(); }\n  };\n\
-    \  using Line = Segment;\n\n  struct Circle{\n    Point c;\n    double r;\n  \
-    \  Circle(){}\n    Circle(Point c,double r):c(c),r(r){}\n    friend istream &operator>>(istream\
-    \ &is,Circle &c){\n      is>>c.c>>c.r;\n      return is;\n    }\n  };\n}\n"
-  code: "#pragma once\n#include \"library/r2/XY.cpp\"\nnamespace geometry{\n  constexpr\
-    \ double EPS = 1e-10, PI = acos(-1);\n  \n  bool is_equal(double a,double b){\n\
-    \    return abs(a-b)<EPS;\n  }\n\n  using Point=XY<double>;\n  bool cmp_y(const\
-    \ Point&p1,const Point&p2){\n    return p1.y!=p2.y ? p1.y<p2.y : p1.x<p2.x;\n\
-    \  }\n\n  using Vector = Point;\n  using Polygon = vector<Point>;\n\n  istream&operator>>(istream\
-    \ &is,Polygon&p){\n    for(Point&c:p)is>>c;\n    return is;\n  }\n\n  struct Segment{\n\
-    \    Point p1,p2;\n    Segment(){}\n    Segment(Point p1, Point p2):p1(p1),p2(p2){}\n\
-    \    friend istream&operator>>(istream &is,Segment&s){\n      is>>s.p1>>s.p2;\n\
-    \      return is;\n    }\n    double arg()const{ return (p2-p1).arg(); }\n  };\n\
-    \  using Line = Segment;\n\n  struct Circle{\n    Point c;\n    double r;\n  \
-    \  Circle(){}\n    Circle(Point c,double r):c(c),r(r){}\n    friend istream &operator>>(istream\
-    \ &is,Circle &c){\n      is>>c.c>>c.r;\n      return is;\n    }\n  };\n}"
+    \ {0,0};\n  }\n};\n#line 3 \"library/geometry/Base.cpp\"\nnamespace geometry {\n\
+    constexpr double EPS = 1e-10, PI = acos(-1);\n\nbool is_equal(double a, double\
+    \ b) { return abs(a - b) < EPS; }\n\nusing Point = XY<double>;\nbool cmp_y(const\
+    \ Point &p1, const Point &p2) {\n    return p1.y != p2.y ? p1.y < p2.y : p1.x\
+    \ < p2.x;\n}\n\nusing Vector = Point;\nusing Polygon = std::vector<Point>;\n\n\
+    istream &operator>>(istream &is, Polygon &p) {\n    for (Point &c : p)\n     \
+    \   is >> c;\n    return is;\n}\n\nstruct Segment {\n    Point p1, p2;\n    Segment()\
+    \ {}\n    Segment(Point p1, Point p2) : p1(p1), p2(p2) {}\n    friend istream\
+    \ &operator>>(istream &is, Segment &s) {\n        is >> s.p1 >> s.p2;\n      \
+    \  return is;\n    }\n    double arg() const { return (p2 - p1).arg(); }\n};\n\
+    using Line = Segment;\n\nstruct Circle {\n    Point c;\n    double r;\n    Circle()\
+    \ {}\n    Circle(Point c, double r) : c(c), r(r) {}\n    friend istream &operator>>(istream\
+    \ &is, Circle &c) {\n        is >> c.c >> c.r;\n        return is;\n    }\n};\n\
+    } // namespace geometry\n"
+  code: "#pragma once\n#include \"library/r2/XY.cpp\"\nnamespace geometry {\nconstexpr\
+    \ double EPS = 1e-10, PI = acos(-1);\n\nbool is_equal(double a, double b) { return\
+    \ abs(a - b) < EPS; }\n\nusing Point = XY<double>;\nbool cmp_y(const Point &p1,\
+    \ const Point &p2) {\n    return p1.y != p2.y ? p1.y < p2.y : p1.x < p2.x;\n}\n\
+    \nusing Vector = Point;\nusing Polygon = std::vector<Point>;\n\nistream &operator>>(istream\
+    \ &is, Polygon &p) {\n    for (Point &c : p)\n        is >> c;\n    return is;\n\
+    }\n\nstruct Segment {\n    Point p1, p2;\n    Segment() {}\n    Segment(Point\
+    \ p1, Point p2) : p1(p1), p2(p2) {}\n    friend istream &operator>>(istream &is,\
+    \ Segment &s) {\n        is >> s.p1 >> s.p2;\n        return is;\n    }\n    double\
+    \ arg() const { return (p2 - p1).arg(); }\n};\nusing Line = Segment;\n\nstruct\
+    \ Circle {\n    Point c;\n    double r;\n    Circle() {}\n    Circle(Point c,\
+    \ double r) : c(c), r(r) {}\n    friend istream &operator>>(istream &is, Circle\
+    \ &c) {\n        is >> c.c >> c.r;\n        return is;\n    }\n};\n} // namespace\
+    \ geometry"
   dependsOn:
   - library/r2/XY.cpp
   isVerificationFile: false
   path: library/geometry/Base.cpp
   requiredBy:
-  - library/geometry/UtilFunction.cpp
   - library/geometry/Judge.cpp
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/geometry/UtilFunction.cpp
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp
 documentation_of: library/geometry/Base.cpp

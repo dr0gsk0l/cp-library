@@ -1,51 +1,53 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/segtree/SegmentTree.cpp
     title: library/segtree/SegmentTree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
     - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/segtree/SegmentTree.cpp: line 3: #pragma once found in a non-first line\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n\n#include \"library/segtree/SegmentTree.cpp\"\
-    \n#include \"library/algebra/group/Add.cpp\"\n\nusing ll=long long;\nusing G=GroupAdd<ll>;\n\
-    \nint main(){\n  int n,q;cin>>n>>q;\n  vector<ll> v(n);\n  for(int i=0;i<n;i++)cin>>v[i];\n\
-    \  SegmentTree<G> seg(v);\n  while(q--){\n    int t,l,r;cin>>t>>l>>r;\n    if(t)cout<<seg.prod(l,r)<<\"\
-    \\n\";\n    else seg.multiply(l,r);\n  }\n}"
+    #include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
+    \ \"library/segtree/SegmentTree.cpp\"\n\nusing ll = long long;\nusing G = GroupAdd<ll>;\n\
+    \nint main() {\n    int n, q;\n    cin >> n >> q;\n    std::vector<ll> v(n);\n\
+    \    for (int i = 0; i < n; i++)\n        cin >> v[i];\n    SegmentTree<G> seg(v);\n\
+    \    while (q--) {\n        int t, l, r;\n        cin >> t >> l >> r;\n      \
+    \  if (t)\n            std::cout << seg.prod(l, r) << \"\\n\";\n        else\n\
+    \            seg.multiply(l, r);\n    }\n}"
   dependsOn:
+  - library/algebra/group/Add.cpp
   - library/segtree/SegmentTree.cpp
   - library/algebra/monoid/Concepts.cpp
-  - library/algebra/group/Add.cpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
 layout: document

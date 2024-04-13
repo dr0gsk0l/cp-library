@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/geometry/Base.cpp
     title: library/geometry/Base.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
     path: library/geometry/Judge.cpp
     title: library/geometry/Judge.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/CGL_4_A.test.cpp
     title: test/AOJ/CGL_4_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/r2/XY.cpp\"\ntemplate<typename T>\nstruct XY{\n\
@@ -50,29 +50,31 @@ data:
     \ ostream&operator<<(ostream&os,const XY&v){ os<<v.x<<\" \"<<v.y; return os;}\n\
     \n  static XY direction(const char&c){\n    if(c=='R')return {1,0};\n    if(c=='L')return\
     \ {-1,0};\n    if(c=='U')return {0,-1};\n    if(c=='D')return {0,1};\n    return\
-    \ {0,0};\n  }\n};\n#line 3 \"library/geometry/Base.cpp\"\nnamespace geometry{\n\
-    \  constexpr double EPS = 1e-10, PI = acos(-1);\n  \n  bool is_equal(double a,double\
-    \ b){\n    return abs(a-b)<EPS;\n  }\n\n  using Point=XY<double>;\n  bool cmp_y(const\
-    \ Point&p1,const Point&p2){\n    return p1.y!=p2.y ? p1.y<p2.y : p1.x<p2.x;\n\
-    \  }\n\n  using Vector = Point;\n  using Polygon = vector<Point>;\n\n  istream&operator>>(istream\
-    \ &is,Polygon&p){\n    for(Point&c:p)is>>c;\n    return is;\n  }\n\n  struct Segment{\n\
-    \    Point p1,p2;\n    Segment(){}\n    Segment(Point p1, Point p2):p1(p1),p2(p2){}\n\
-    \    friend istream&operator>>(istream &is,Segment&s){\n      is>>s.p1>>s.p2;\n\
-    \      return is;\n    }\n    double arg()const{ return (p2-p1).arg(); }\n  };\n\
-    \  using Line = Segment;\n\n  struct Circle{\n    Point c;\n    double r;\n  \
-    \  Circle(){}\n    Circle(Point c,double r):c(c),r(r){}\n    friend istream &operator>>(istream\
-    \ &is,Circle &c){\n      is>>c.c>>c.r;\n      return is;\n    }\n  };\n}\n#line\
-    \ 3 \"library/geometry/UtilFunction.cpp\"\nnamespace geometry{\n  double cross(Vector\
-    \ a,Vector b){\n    //cerr << a <<\" \"<<b<<\":\"<<a.x*b.y-a.y*b.x<<endl;\n  \
-    \  return a.x*b.y-a.y*b.x;\n  }\n\n  Point orth(Point p){return Point(-p.y,p.x);}\n\
-    \n  Point project(Segment s,Point p){\n    Vector base=s.p2-s.p1;\n    double\
-    \ r=dot(p-s.p1,base)/base.norm();\n    return s.p1+base*r;\n  }\n\n  Point reflect(Segment\
-    \ s,Point p){\n    return p+(project(s,p)-p)*2.0;\n  }\n\n  Polygon convex_hull(Polygon\
-    \ ps){\n    int n=ps.size();\n    sort(ps.begin(),ps.end(),cmp_y);\n    int k=0;\n\
-    \    Polygon qs(n*2);\n    for(int i=0;i<n;i++){\n      while(k>1 and cross(qs[k-1]-qs[k-2],ps[i]-qs[k-1])<0)\
-    \ k--;\n      qs[k++]=ps[i];\n    }\n    for(int i=n-2,t=k;i>=0;i--){\n      while(k>t\
+    \ {0,0};\n  }\n};\n#line 3 \"library/geometry/Base.cpp\"\nnamespace geometry {\n\
+    constexpr double EPS = 1e-10, PI = acos(-1);\n\nbool is_equal(double a, double\
+    \ b) { return abs(a - b) < EPS; }\n\nusing Point = XY<double>;\nbool cmp_y(const\
+    \ Point &p1, const Point &p2) {\n    return p1.y != p2.y ? p1.y < p2.y : p1.x\
+    \ < p2.x;\n}\n\nusing Vector = Point;\nusing Polygon = std::vector<Point>;\n\n\
+    istream &operator>>(istream &is, Polygon &p) {\n    for (Point &c : p)\n     \
+    \   is >> c;\n    return is;\n}\n\nstruct Segment {\n    Point p1, p2;\n    Segment()\
+    \ {}\n    Segment(Point p1, Point p2) : p1(p1), p2(p2) {}\n    friend istream\
+    \ &operator>>(istream &is, Segment &s) {\n        is >> s.p1 >> s.p2;\n      \
+    \  return is;\n    }\n    double arg() const { return (p2 - p1).arg(); }\n};\n\
+    using Line = Segment;\n\nstruct Circle {\n    Point c;\n    double r;\n    Circle()\
+    \ {}\n    Circle(Point c, double r) : c(c), r(r) {}\n    friend istream &operator>>(istream\
+    \ &is, Circle &c) {\n        is >> c.c >> c.r;\n        return is;\n    }\n};\n\
+    } // namespace geometry\n#line 3 \"library/geometry/UtilFunction.cpp\"\nnamespace\
+    \ geometry{\n  double cross(Vector a,Vector b){\n    //cerr << a <<\" \"<<b<<\"\
+    :\"<<a.x*b.y-a.y*b.x<<endl;\n    return a.x*b.y-a.y*b.x;\n  }\n\n  Point orth(Point\
+    \ p){return Point(-p.y,p.x);}\n\n  Point project(Segment s,Point p){\n    Vector\
+    \ base=s.p2-s.p1;\n    double r=dot(p-s.p1,base)/base.norm();\n    return s.p1+base*r;\n\
+    \  }\n\n  Point reflect(Segment s,Point p){\n    return p+(project(s,p)-p)*2.0;\n\
+    \  }\n\n  Polygon convex_hull(Polygon ps){\n    int n=ps.size();\n    sort(ps.begin(),ps.end(),cmp_y);\n\
+    \    int k=0;\n    Polygon qs(n*2);\n    for(int i=0;i<n;i++){\n      while(k>1\
     \ and cross(qs[k-1]-qs[k-2],ps[i]-qs[k-1])<0) k--;\n      qs[k++]=ps[i];\n   \
-    \ }\n    qs.resize(k-1);\n    return qs;\n  }\n}\n"
+    \ }\n    for(int i=n-2,t=k;i>=0;i--){\n      while(k>t and cross(qs[k-1]-qs[k-2],ps[i]-qs[k-1])<0)\
+    \ k--;\n      qs[k++]=ps[i];\n    }\n    qs.resize(k-1);\n    return qs;\n  }\n\
+    }\n"
   code: "#pragma once\n#include \"library/geometry/Base.cpp\"\nnamespace geometry{\n\
     \  double cross(Vector a,Vector b){\n    //cerr << a <<\" \"<<b<<\":\"<<a.x*b.y-a.y*b.x<<endl;\n\
     \    return a.x*b.y-a.y*b.x;\n  }\n\n  Point orth(Point p){return Point(-p.y,p.x);}\n\
@@ -91,8 +93,8 @@ data:
   path: library/geometry/UtilFunction.cpp
   requiredBy:
   - library/geometry/Judge.cpp
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp
 documentation_of: library/geometry/UtilFunction.cpp

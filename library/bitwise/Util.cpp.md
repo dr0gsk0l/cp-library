@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/bitwise/And.cpp
     title: library/bitwise/And.cpp
   - icon: ':warning:'
     path: library/bitwise/Or.cpp
     title: library/bitwise/Or.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/bitwise/Ranked.cpp
     title: library/bitwise/Ranked.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/bitwise/Xor.cpp
     title: library/bitwise/Xor.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Convolution/SubsetConvolution.test.cpp
     title: test/library-checker/Convolution/SubsetConvolution.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/bitwise/Util.cpp\"\nnamespace bitwise{\n  static\
@@ -39,16 +39,16 @@ data:
   isVerificationFile: false
   path: library/bitwise/Util.cpp
   requiredBy:
-  - library/bitwise/Ranked.cpp
+  - library/bitwise/Xor.cpp
   - library/bitwise/Or.cpp
   - library/bitwise/And.cpp
-  - library/bitwise/Xor.cpp
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/bitwise/Ranked.cpp
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
   - test/library-checker/Convolution/SubsetConvolution.test.cpp
-  - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
 documentation_of: library/bitwise/Util.cpp
 layout: document
 redirect_from:

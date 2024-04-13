@@ -3,36 +3,40 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/New/NumberOfSubsequence.test.cpp
     title: test/library-checker/New/NumberOfSubsequence.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/util/Subsequence.cpp\"\ntemplate<typename T,typename\
-    \ U>\nT sparse_subsequence(const vector<U>&v){\n  map<U,T> mp;\n  T res=1;\n \
-    \ for(const U&p:v){\n    T tmp=res;\n    res=res*2-mp[p];\n    mp[p]=tmp;\n  }\n\
-    \  return res;\n}\ntemplate<typename T,int SIZE>\nT subsequence(const vector<int>&v){\n\
-    \  vector<T> memo(SIZE,0);\n  T res=1;\n  for(int p:v){\n    T tmp=res;\n    res=res*2-memo[p];\n\
-    \    memo[p]=tmp;\n  }\n  return res;\n}\ntemplate<typename T>\nT subsequence_alphabet(const\
-    \ string&s){\n  vector<int> v;v.reserve(s.size());\n  for(char c:s)v.push_back(c-(c<='Z'?'A':'a'));\n\
-    \  return subsequence<T,26>(v);\n}\n"
-  code: "template<typename T,typename U>\nT sparse_subsequence(const vector<U>&v){\n\
-    \  map<U,T> mp;\n  T res=1;\n  for(const U&p:v){\n    T tmp=res;\n    res=res*2-mp[p];\n\
-    \    mp[p]=tmp;\n  }\n  return res;\n}\ntemplate<typename T,int SIZE>\nT subsequence(const\
-    \ vector<int>&v){\n  vector<T> memo(SIZE,0);\n  T res=1;\n  for(int p:v){\n  \
-    \  T tmp=res;\n    res=res*2-memo[p];\n    memo[p]=tmp;\n  }\n  return res;\n\
-    }\ntemplate<typename T>\nT subsequence_alphabet(const string&s){\n  vector<int>\
-    \ v;v.reserve(s.size());\n  for(char c:s)v.push_back(c-(c<='Z'?'A':'a'));\n  return\
-    \ subsequence<T,26>(v);\n}"
+  bundledCode: "#line 1 \"library/util/Subsequence.cpp\"\ntemplate <typename T, typename\
+    \ U>\nT sparse_subsequence(const std::vector<U> &v) {\n    map<U, T> mp;\n   \
+    \ T res = 1;\n    for (const U &p : v) {\n        T tmp = res;\n        res =\
+    \ res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n    return res;\n}\ntemplate\
+    \ <typename T, int SIZE> T subsequence(const std::vector<int> &v) {\n    std::vector<T>\
+    \ memo(SIZE, 0);\n    T res = 1;\n    for (int p : v) {\n        T tmp = res;\n\
+    \        res = res * 2 - memo[p];\n        memo[p] = tmp;\n    }\n    return res;\n\
+    }\ntemplate <typename T> T subsequence_alphabet(const string &s) {\n    std::vector<int>\
+    \ v;\n    v.reserve(s.size());\n    for (char c : s)\n        v.push_back(c -\
+    \ (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T, 26>(v);\n}\n"
+  code: "template <typename T, typename U>\nT sparse_subsequence(const std::vector<U>\
+    \ &v) {\n    map<U, T> mp;\n    T res = 1;\n    for (const U &p : v) {\n     \
+    \   T tmp = res;\n        res = res * 2 - mp[p];\n        mp[p] = tmp;\n    }\n\
+    \    return res;\n}\ntemplate <typename T, int SIZE> T subsequence(const std::vector<int>\
+    \ &v) {\n    std::vector<T> memo(SIZE, 0);\n    T res = 1;\n    for (int p : v)\
+    \ {\n        T tmp = res;\n        res = res * 2 - memo[p];\n        memo[p] =\
+    \ tmp;\n    }\n    return res;\n}\ntemplate <typename T> T subsequence_alphabet(const\
+    \ string &s) {\n    std::vector<int> v;\n    v.reserve(s.size());\n    for (char\
+    \ c : s)\n        v.push_back(c - (c <= 'Z' ? 'A' : 'a'));\n    return subsequence<T,\
+    \ 26>(v);\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/util/Subsequence.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp
 documentation_of: library/util/Subsequence.cpp
@@ -41,7 +45,7 @@ title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
 ---
 
 配列の（非連続を許す）部分列の種類数を求める
-* ```<T,SIZE> T subsequence(const vector<int>&v)```  
+* ```<T,SIZE> T subsequence(const std::vector<int>&v)```  
 要素が $[0,SIZE)$ であるような配列 $v$ に対して求める  
 時間 $O(|v|)$  
 空間 $O(SIZE)$
@@ -51,7 +55,7 @@ title: "\u90E8\u5206\u5217\u306E\u7A2E\u985E\u6570"
 時間 $O(|s|)$  
 空間 $O(1)$
 
-* ```<T,U> T sparse_subsequence(const vector<U>&v)```  
+* ```<T,U> T sparse_subsequence(const std::vector<U>&v)```  
 一般の配列 $v$ に対して求める  
 時間 $O(|v|\log|v|)$  
 空間 $O(|v|)$  

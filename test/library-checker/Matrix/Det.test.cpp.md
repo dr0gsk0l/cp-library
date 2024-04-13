@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/linearalgebra/Matrix.cpp
     title: library/linearalgebra/Matrix.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/matrix_det
     links:
     - https://judge.yosupo.jp/problem/matrix_det
   bundledCode: "#line 1 \"test/library-checker/Matrix/Det.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/matrix_det\"\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\n\n#line 2 \"library/linearalgebra/Matrix.cpp\"\n#define REP_(i,n)\
-    \ for(int i=0;i<(n);i++)\n#define REP2_(i,s,n) for(int i=(s);i<(n);i++)\ntemplate<typename\
-    \ K>\nstruct Matrix{\n  using value_type=K;\n  using vec=vector<K>;\n  using mat=vector<vec>;\n\
-    \  size_t r,c;\n  mat M;\n\n  Matrix(size_t r,size_t c):r(r),c(c),M(r,vec(c,K())){}\n\
+    \ \"https://judge.yosupo.jp/problem/matrix_det\"\n#include <bits/stdc++.h>\n\n\
+    #line 2 \"library/linearalgebra/Matrix.cpp\"\n#define REP_(i,n) for(int i=0;i<(n);i++)\n\
+    #define REP2_(i,s,n) for(int i=(s);i<(n);i++)\ntemplate<typename K>\nstruct Matrix{\n\
+    \  using value_type=K;\n  using vec=vector<K>;\n  using mat=vector<vec>;\n  size_t\
+    \ r,c;\n  mat M;\n\n  Matrix(size_t r,size_t c):r(r),c(c),M(r,vec(c,K())){}\n\
     \  Matrix(mat A):M(A),r(A.size()),c(A[0].size()){}\n\n  vec& operator[](size_t\
     \ k){return M[k];}\n  const vec& operator[](size_t k)const{return M[k];}\n\n \
     \ \n  Matrix& operator+=(const Matrix &A){\n    assert(r==A.r&&c==A.c);\n    REP_(i,r)REP_(j,c)M[i][j]+=A[i][j];\n\
@@ -80,14 +80,15 @@ data:
     \ long n,int k){\n    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n\
     \      dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n\n  friend ostream& operator<<(ostream&os,const\
     \ Mint &m){os<<m.v;return os;}\n  friend istream& operator>>(istream&is,Mint &m){is>>m.v;m.v%=MOD;if(m.v<0)m.v+=MOD;return\
-    \ is;}\n};\n#line 7 \"test/library-checker/Matrix/Det.test.cpp\"\n\nusing mint=Mint<long\
-    \ long,998244353>;\nusing M=Matrix<mint>;\n\nint main(){\n  int n;cin>>n;\n  M\
-    \ A(n,n);\n  cin>>A;\n  cout<<A.det()<<endl;\n}\n"
+    \ is;}\n};\n#line 6 \"test/library-checker/Matrix/Det.test.cpp\"\n\nusing mint\
+    \ = Mint<long long, 998244353>;\nusing M = Matrix<mint>;\n\nint main() {\n   \
+    \ int n;\n    cin >> n;\n    M A(n, n);\n    cin >> A;\n    std::cout << A.det()\
+    \ << std::endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_det\"\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"library/linearalgebra/Matrix.cpp\"\
-    \n#include \"library/mod/Modint.cpp\"\n\nusing mint=Mint<long long,998244353>;\n\
-    using M=Matrix<mint>;\n\nint main(){\n  int n;cin>>n;\n  M A(n,n);\n  cin>>A;\n\
-    \  cout<<A.det()<<endl;\n}"
+    \ <bits/stdc++.h>\n\n#include \"library/linearalgebra/Matrix.cpp\"\n#include \"\
+    library/mod/Modint.cpp\"\n\nusing mint = Mint<long long, 998244353>;\nusing M\
+    \ = Matrix<mint>;\n\nint main() {\n    int n;\n    cin >> n;\n    M A(n, n);\n\
+    \    cin >> A;\n    std::cout << A.det() << std::endl;\n}"
   dependsOn:
   - library/linearalgebra/Matrix.cpp
   - library/mod/Modint.cpp
@@ -95,8 +96,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Matrix/Det.test.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Matrix/Det.test.cpp
 layout: document

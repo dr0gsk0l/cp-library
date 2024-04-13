@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/convolution/NTT.cpp
     title: library/convolution/NTT.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -22,7 +22,30 @@ data:
     - https://judge.yosupo.jp/problem/convolution_mod
   bundledCode: "#line 1 \"test/library-checker/Polynomial/Convolution.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"library/math/ExtraGCD.cpp\"\
+    \ <bits/stdc++.h>\n\n#line 2 \"library/convolution/NTT.cpp\"\n#define REP_(i,\
+    \ n) for (int i = 0; i < (n); i++)\n#define RREP_(i, n) for (int i = (n)-1; i\
+    \ >= 0; i--)\n\ntemplate <typename MINT>\nvector<MINT> convolution(vector<MINT>\
+    \ f, vector<MINT> g) {\n    int nf = f.size(), ng = g.size();\n    if (!nf or\
+    \ !ng)\n        return std::vector<MINT>{};\n    int M = nf + ng - 1;\n\n    if\
+    \ (nf <= 60 or ng <= 60) {\n        std::vector<MINT> res(M, 0);\n        REP_(i,\
+    \ nf) REP_(j, ng) res[i + j] += f[i] * g[j];\n        return res;\n    }\n\n \
+    \   int lg;\n    for (lg = 0; (1 << lg) < M; lg++) {\n    }\n    const int N =\
+    \ 1 << lg;\n    f.resize(N, 0);\n    g.resize(N, 0);\n\n    static_assert(MINT::mod\
+    \ == 998244353);\n    MINT c = MINT(3).pow((MINT::mod - 1) >> lg);\n    std::vector<MINT>\
+    \ cs(N);\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c : 1);\n\n    std::vector<int>\
+    \ x(N, 0);\n    REP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1))\
+    \ {\n        int l = (S << (lg - h)) | T;\n        int r = l | (1 << (lg - h -\
+    \ 1));\n\n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n    \
+    \    MINT a = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]])\
+    \ += a;\n\n        a = g[l];\n        g[l] += g[r] * cs[x[l]];\n        (g[r]\
+    \ *= cs[x[r]]) += a;\n    }\n    REP_(i, N) f[i] *= g[i];\n\n    fill(x.begin(),\
+    \ x.end(), 0);\n    c = c.inv();\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c :\
+    \ 1);\n    RREP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1)) {\n\
+    \        int l = (S << (lg - h)) | T;\n        int r = l | (1 << (lg - h - 1));\n\
+    \n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n        MINT\
+    \ a = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n\
+    \    }\n    f.resize(M);\n    MINT Ninv = MINT(N).inv();\n    REP_(i, M) f[i]\
+    \ *= Ninv;\n    return f;\n}\n#undef REP_\n#undef RREP_\n#line 2 \"library/math/ExtraGCD.cpp\"\
     \nusing ll=long long;\npair<ll,ll> ext_gcd(ll a,ll b){\n  if(b==0)return {1,0};\n\
     \  auto [X,Y]=ext_gcd(b,a%b);\n  // bX + (a%b)Y = gcd(a,b)\n  // a%b = a - b(a/b)\n\
     \  // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n\
@@ -47,45 +70,28 @@ data:
     \ long n,int k){\n    Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n\
     \      dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n\n  friend ostream& operator<<(ostream&os,const\
     \ Mint &m){os<<m.v;return os;}\n  friend istream& operator>>(istream&is,Mint &m){is>>m.v;m.v%=MOD;if(m.v<0)m.v+=MOD;return\
-    \ is;}\n};\n#line 2 \"library/convolution/NTT.cpp\"\n#define REP_(i,n) for(int\
-    \ i=0;i<(n);i++)\n#define RREP_(i,n) for(int i=(n)-1;i>=0;i--)\n\ntemplate<typename\
-    \ MINT>\nvector<MINT> convolution(vector<MINT>f,vector<MINT>g){\n  int nf=f.size(),ng=g.size();\n\
-    \  if(!nf or !ng)return vector<MINT>{};\n  int M=nf+ng-1;\n\n  if(nf<=60 or ng<=60){\n\
-    \    vector<MINT> res(M,0);\n    REP_(i,nf)REP_(j,ng)res[i+j]+=f[i]*g[j];\n  \
-    \  return res;\n  }\n  \n  int lg;\n  for(lg=0;(1<<lg)<M;lg++){}\n  const int\
-    \ N=1<<lg;\n  f.resize(N,0);\n  g.resize(N,0);\n\n  static_assert(MINT::mod ==\
-    \ 998244353);\n  MINT c=MINT(3).pow((MINT::mod-1)>>lg);\n  vector<MINT> cs(N);\n\
-    \  REP_(i,N)cs[i] = (i ? cs[i-1]*c : 1);\n  \n  vector<int> x(N,0);\n  REP_(h,lg)\n\
-    \    REP_(S,1<<h)\n      REP_(T,1<<(lg-h-1)){\n        int l=(S<<(lg-h))|T;\n\
-    \        int r=l|(1<<(lg-h-1));\n\n        x[l] >>= 1;\n        (x[r] >>= 1) |=\
-    \ 1<<(lg-1);\n\n        MINT a=f[l];\n        f[l] += f[r] * cs[x[l]];\n     \
-    \   (f[r] *= cs[x[r]]) += a;\n\n        a = g[l];\n        g[l] += g[r] * cs[x[l]];\n\
-    \        (g[r] *= cs[x[r]]) += a;\n      }\n  REP_(i,N)f[i]*=g[i];\n\n  fill(x.begin(),x.end(),0);\n\
-    \  c = c.inv();\n  REP_(i,N)cs[i] = (i ? cs[i-1]*c : 1);\n  RREP_(h,lg)\n    REP_(S,1<<h)\n\
-    \      REP_(T,1<<(lg-h-1)){\n        int l=(S<<(lg-h))|T;\n        int r=l|(1<<(lg-h-1));\n\
-    \n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1<<(lg-1);\n\n        MINT a=f[l];\n\
-    \        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n      }\n\
-    \  f.resize(M);\n  MINT Ninv=MINT(N).inv();\n  REP_(i,M)f[i]*=Ninv;\n  return\
-    \ f;\n}\n#undef REP_\n#undef RREP_\n#line 7 \"test/library-checker/Polynomial/Convolution.test.cpp\"\
-    \n\nusing mint = Mint<long long,998244353>;\n\nint main(){\n  ios::sync_with_stdio(false);\n\
-    \  cin.tie(nullptr);\n\n  int n,m;cin>>n>>m;\n  vector<mint> f(n),g(m);\n  for(mint&p:f)cin>>p;\n\
-    \  for(mint&p:g)cin>>p;\n  auto h = convolution(f,g);\n  for(mint&p:h)cout<<p<<\"\
-    \ \";cout<<endl;\n}\n"
+    \ is;}\n};\n#line 6 \"test/library-checker/Polynomial/Convolution.test.cpp\"\n\
+    \nusing mint = Mint<long long, 998244353>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \    std::cin.tie(nullptr);\n\n    int n, m;\n    cin >> n >> m;\n    std::vector<mint>\
+    \ f(n), g(m);\n    for (mint &p : f)\n        cin >> p;\n    for (mint &p : g)\n\
+    \        cin >> p;\n    auto h = convolution(f, g);\n    for (mint &p : h)\n \
+    \       std::cout << p << \" \";\n    std::cout << std::endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"library/mod/Modint.cpp\"\
-    \n#include \"library/convolution/NTT.cpp\"\n\nusing mint = Mint<long long,998244353>;\n\
-    \nint main(){\n  ios::sync_with_stdio(false);\n  cin.tie(nullptr);\n\n  int n,m;cin>>n>>m;\n\
-    \  vector<mint> f(n),g(m);\n  for(mint&p:f)cin>>p;\n  for(mint&p:g)cin>>p;\n \
-    \ auto h = convolution(f,g);\n  for(mint&p:h)cout<<p<<\" \";cout<<endl;\n}"
+    \ <bits/stdc++.h>\n\n#include \"library/convolution/NTT.cpp\"\n#include \"library/mod/Modint.cpp\"\
+    \n\nusing mint = Mint<long long, 998244353>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \    std::cin.tie(nullptr);\n\n    int n, m;\n    cin >> n >> m;\n    std::vector<mint>\
+    \ f(n), g(m);\n    for (mint &p : f)\n        cin >> p;\n    for (mint &p : g)\n\
+    \        cin >> p;\n    auto h = convolution(f, g);\n    for (mint &p : h)\n \
+    \       std::cout << p << \" \";\n    std::cout << std::endl;\n}"
   dependsOn:
+  - library/convolution/NTT.cpp
   - library/mod/Modint.cpp
   - library/math/ExtraGCD.cpp
-  - library/convolution/NTT.cpp
   isVerificationFile: true
   path: test/library-checker/Polynomial/Convolution.test.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Convolution.test.cpp
 layout: document

@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/bitwise/Xor.cpp
     title: library/bitwise/Xor.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/math/ExtraGCD.cpp
     title: library/math/ExtraGCD.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/mod/Modint.cpp
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -25,8 +25,26 @@ data:
     - https://judge.yosupo.jp/problem/bitwise_xor_convolution
   bundledCode: "#line 1 \"test/library-checker/Convolution/BitwiseXorConvolution.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\n\
-    #include <bits/stdc++.h>\nusing namespace std;\n#define REP(i,n) for(int i=0;i<(n);i++)\n\
-    \n#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll=long long;\npair<ll,ll> ext_gcd(ll\
+    #include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\n\
+    #line 2 \"library/bitwise/Util.cpp\"\nnamespace bitwise{\n  static int log2(int\
+    \ N){\n    int n=__builtin_ffs(N)-1;\n    assert((1<<n)==N);\n    return n;\n\
+    \  }\n  static bool in(int S,int a){ return (S>>a)&1; }\n}\n#line 3 \"library/bitwise/Xor.cpp\"\
+    \n#define REP_(i, n) for (int i = 0; i < (n); i++)\n#define RREP_(i, n) for (int\
+    \ i = (n)-1; i >= 0; i--)\nstruct BitwiseXor {\n    template <typename T> static\
+    \ void zeta(vector<T> &A) {\n        const int n = bitwise::log2(A.size());\n\
+    \        REP_(i, n)\n        REP_(S, 1 << n) {\n            if (bitwise::in(S,\
+    \ i))\n                continue;\n            T x = A[S], y = A[S | (1 << i)];\n\
+    \            A[S] -= y;\n            A[S | (1 << i)] += x;\n        }\n    }\n\
+    \    template <typename T> static void mobius(vector<T> &A) {\n        const int\
+    \ n = bitwise::log2(A.size());\n        RREP_(i, n)\n        REP_(S, 1 << n) {\n\
+    \            if (bitwise::in(S, i))\n                continue;\n            T\
+    \ x = A[S], y = A[S | (1 << i)];\n            A[S] += y;\n            A[S | (1\
+    \ << i)] -= x;\n        }\n        T inv = T(1) / (1 << n);\n        REP (S, 1\
+    \ << n)\n            A[S] *= inv;\n    }\n    template <typename T>\n    static\
+    \ std::vector<T> convolution(vector<T> A, vector<T> B) {\n        zeta(A);\n \
+    \       zeta(B);\n        REP (S, A.size())\n            A[S] *= B[S];\n     \
+    \   mobius(A);\n        return A;\n    }\n};\n#undef REP_\n#undef RREP_\n#line\
+    \ 2 \"library/math/ExtraGCD.cpp\"\nusing ll=long long;\npair<ll,ll> ext_gcd(ll\
     \ a,ll b){\n  if(b==0)return {1,0};\n  auto [X,Y]=ext_gcd(b,a%b);\n  // bX + (a%b)Y\
     \ = gcd(a,b)\n  // a%b = a - b(a/b)\n  // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n\
     \  ll x=Y,y=X-(a/b)*Y;\n  return {x,y};\n}\n#line 3 \"library/mod/Modint.cpp\"\
@@ -51,42 +69,30 @@ data:
     \ Mint num(1),dom(1);\n    for(int i=0;i<k;i++){\n      num*=Mint(n-i);\n    \
     \  dom*=Mint(i+1);\n    }\n    return num/dom;\n  }\n\n  friend ostream& operator<<(ostream&os,const\
     \ Mint &m){os<<m.v;return os;}\n  friend istream& operator>>(istream&is,Mint &m){is>>m.v;m.v%=MOD;if(m.v<0)m.v+=MOD;return\
-    \ is;}\n};\n#line 2 \"library/bitwise/Util.cpp\"\nnamespace bitwise{\n  static\
-    \ int log2(int N){\n    int n=__builtin_ffs(N)-1;\n    assert((1<<n)==N);\n  \
-    \  return n;\n  }\n  static bool in(int S,int a){ return (S>>a)&1; }\n}\n#line\
-    \ 3 \"library/bitwise/Xor.cpp\"\n#define REP_(i,n) for(int i=0;i<(n);i++)\n#define\
-    \ RREP_(i,n) for(int i=(n)-1;i>=0;i--)\nstruct BitwiseXor{\n  template<typename\
-    \ T>\n  static void zeta(vector<T>&A){\n    const int n=bitwise::log2(A.size());\n\
-    \    REP_(i,n)\n      REP_(S,1<<n){\n        if(bitwise::in(S,i))continue;\n \
-    \       T x=A[S],y=A[S|(1<<i)];\n        A[S]-=y;\n        A[S|(1<<i)]+=x;\n \
-    \     }\n  }\n  template<typename T>\n  static void mobius(vector<T>&A){\n   \
-    \ const int n=bitwise::log2(A.size());\n    RREP_(i,n)\n      REP_(S,1<<n){\n\
-    \        if(bitwise::in(S,i))continue;\n        T x=A[S],y=A[S|(1<<i)];\n    \
-    \    A[S]+=y;\n        A[S|(1<<i)]-=x;\n      }\n    T inv=T(1)/(1<<n);\n    REP(S,1<<n)A[S]*=inv;\n\
-    \  }\n  template<typename T>\n  static vector<T> convolution(vector<T> A,vector<T>\
-    \ B){\n    zeta(A);\n    zeta(B);\n    REP(S,A.size())A[S]*=B[S];\n    mobius(A);\n\
-    \    return A;\n  }\n};\n#undef REP_\n#undef RREP_\n#line 8 \"test/library-checker/Convolution/BitwiseXorConvolution.test.cpp\"\
-    \n\nusing mint=Mint<long long>;\n\nint main(){\n  ios::sync_with_stdio(false);\n\
-    \  cin.tie(nullptr);\n\n  int n;cin>>n;\n  int N=1<<n;\n  vector<mint> a(N),b(N);\n\
-    \  REP(i,N)cin>>a[i];\n  REP(i,N)cin>>b[i];\n  auto c=BitwiseXor::convolution(a,b);\n\
-    \  REP(i,N)cout<<c[i]<<\"\\n \"[i+1<N];\n}\n"
+    \ is;}\n};\n#line 8 \"test/library-checker/Convolution/BitwiseXorConvolution.test.cpp\"\
+    \n\nusing mint = Mint<long long>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    int N = 1 << n;\n\
+    \    std::vector<mint> a(N), b(N);\n    REP (i, N)\n        cin >> a[i];\n   \
+    \ REP (i, N)\n        cin >> b[i];\n    auto c = BitwiseXor::convolution(a, b);\n\
+    \    REP (i, N)\n        std::cout << c[i] << \"\\n \"[i + 1 < N];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n#define REP(i,n) for(int i=0;i<(n);i++)\n\
-    \n#include \"library/mod/Modint.cpp\"\n#include \"library/bitwise/Xor.cpp\"\n\n\
-    using mint=Mint<long long>;\n\nint main(){\n  ios::sync_with_stdio(false);\n \
-    \ cin.tie(nullptr);\n\n  int n;cin>>n;\n  int N=1<<n;\n  vector<mint> a(N),b(N);\n\
-    \  REP(i,N)cin>>a[i];\n  REP(i,N)cin>>b[i];\n  auto c=BitwiseXor::convolution(a,b);\n\
-    \  REP(i,N)cout<<c[i]<<\"\\n \"[i+1<N];\n}"
+    \n#include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\
+    \n#include \"library/bitwise/Xor.cpp\"\n#include \"library/mod/Modint.cpp\"\n\n\
+    using mint = Mint<long long>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \    std::cin.tie(nullptr);\n\n    int n;\n    cin >> n;\n    int N = 1 << n;\n\
+    \    std::vector<mint> a(N), b(N);\n    REP (i, N)\n        cin >> a[i];\n   \
+    \ REP (i, N)\n        cin >> b[i];\n    auto c = BitwiseXor::convolution(a, b);\n\
+    \    REP (i, N)\n        std::cout << c[i] << \"\\n \"[i + 1 < N];\n}"
   dependsOn:
-  - library/mod/Modint.cpp
-  - library/math/ExtraGCD.cpp
   - library/bitwise/Xor.cpp
   - library/bitwise/Util.cpp
+  - library/mod/Modint.cpp
+  - library/math/ExtraGCD.cpp
   isVerificationFile: true
   path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
 layout: document

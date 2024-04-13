@@ -8,17 +8,18 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"library/superstd/Vector.cpp\"\ntemplate<typename T>\nclass\
-    \ Vector{\n  int m;\n  vector<T> v;\n\n  Vector()=default;\n  Vector(int n,T x={}):v(n,x),m(0){}\n\
-    \  Vector(int L,int R,T x):v(L+R,x),m(L){}\n};\n"
-  code: "#pragma once\ntemplate<typename T>\nclass Vector{\n  int m;\n  vector<T>\
-    \ v;\n\n  Vector()=default;\n  Vector(int n,T x={}):v(n,x),m(0){}\n  Vector(int\
-    \ L,int R,T x):v(L+R,x),m(L){}\n};"
+  bundledCode: "#line 2 \"library/superstd/Vector.cpp\"\ntemplate <typename T> class\
+    \ Vector {\n    int m;\n    std::vector<T> v;\n\n    Vector() = default;\n   \
+    \ Vector(int n, T x = {}) : v(n, x), m(0) {}\n    Vector(int L, int R, T x) :\
+    \ v(L + R, x), m(L) {}\n};\n"
+  code: "#pragma once\ntemplate <typename T> class Vector {\n    int m;\n    std::vector<T>\
+    \ v;\n\n    Vector() = default;\n    Vector(int n, T x = {}) : v(n, x), m(0) {}\n\
+    \    Vector(int L, int R, T x) : v(L + R, x), m(L) {}\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/superstd/Vector.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
+  timestamp: '2024-04-13 17:39:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/superstd/Vector.cpp

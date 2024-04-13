@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2971.test.cpp
     title: test/AOJ/2971.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/Multiply.cpp\"\ntemplate<typename\
@@ -35,11 +35,11 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Multiply.cpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/AOJ/2971.test.cpp
   - test/yukicoder/650.test.cpp
+  - test/AOJ/2971.test.cpp
 documentation_of: library/algebra/group/Multiply.cpp
 layout: document
 redirect_from:

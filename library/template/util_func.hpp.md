@@ -61,34 +61,36 @@ data:
     using vvvvll = vvvvec<ll>;\nusing vs = vec<std::string>;\nusing pi = ptt<int>;\n\
     using pll = ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\n\
     using pqg = std::priority_queue<T, vec<T>, std::greater<T>>;\n#line 3 \"library/template/util_func.hpp\"\
-    \n#pragma region queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n  assert(que.size());\n\
-    \  T a = que.front();\n  que.pop();\n  return a;\n}\nTYPE(T)\nT pick(pq<T> &que)\
-    \ {\n  assert(que.size());\n  T a = que.top();\n  que.pop();\n  return a;\n}\n\
-    TYPE(T)\nT pick(pqg<T> &que) {\n  assert(que.size());\n  T a = que.top();\n  que.pop();\n\
-    \  return a;\n}\nTYPE(T)\nT pick(std::stack<T> &sta) {\n  assert(sta.size());\n\
-    \  T a = sta.top();\n  sta.pop();\n  return a;\n}\nTYPE(T)\nvoid clear(T &v) {\
-    \ v = decltype(v)(); }\n#pragma endregion\n#pragma region vec\nvi iota(int n)\
-    \ {\n  vi a(n);\n  std::iota(ALL(a), 0);\n  return a;\n}\nTYPE(T)\nvoid add(vec<T>\
-    \ &v, const T &a = 1) {\n  AFOR (p, v)\n    p += a;\n}\nTYPE(T)\nT rev(T a) {\n\
-    \  REVERSE(a);\n  return a;\n}\n\nll sum(const vi &v) { return std::accumulate(ALL(v),\
-    \ 0LL); }\nTYPE(T) T sum(const vec<T> &v) { return std::accumulate(ALL(v), T(0));\
-    \ }\n\nTYPE(T, Ns)\nauto make_vector(T x, int n, Ns... ns) {\n  if constexpr (sizeof...(ns)\
-    \ == 0)\n    return vector<T>(n, x);\n  else\n    return vector(n, make_vector<T>(x,\
+    \n#pragma region queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
+    \    T a = que.front();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pq<T>\
+    \ &que) {\n    assert(que.size());\n    T a = que.top();\n    que.pop();\n   \
+    \ return a;\n}\nTYPE(T)\nT pick(pqg<T> &que) {\n    assert(que.size());\n    T\
+    \ a = que.top();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(std::stack<T>\
+    \ &sta) {\n    assert(sta.size());\n    T a = sta.top();\n    sta.pop();\n   \
+    \ return a;\n}\nTYPE(T)\nvoid clear(T &v) { v = decltype(v)(); }\n#pragma endregion\n\
+    #pragma region vec\nvi iota(int n) {\n    vi a(n);\n    std::iota(ALL(a), 0);\n\
+    \    return a;\n}\nTYPE(T)\nvoid add(vec<T> &v, const T &a = 1) {\n    AFOR (p,\
+    \ v)\n        p += a;\n}\nTYPE(T)\nT rev(T a) {\n    REVERSE(a);\n    return a;\n\
+    }\n\nll sum(const vi &v) { return std::accumulate(ALL(v), 0LL); }\nTYPE(T) T sum(const\
+    \ vec<T> &v) { return std::accumulate(ALL(v), T(0)); }\n\nTYPE(T, Ns)\nauto make_vector(T\
+    \ x, int n, Ns... ns) {\n    if constexpr (sizeof...(ns) == 0)\n        return\
+    \ std::vector<T>(n, x);\n    else\n        return std::vector(n, make_vector<T>(x,\
     \ ns...));\n}\n#pragma endregion\n"
   code: "#include \"library/template/macro.hpp\"\n#include \"library/template/type.hpp\"\
-    \n#pragma region queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n  assert(que.size());\n\
-    \  T a = que.front();\n  que.pop();\n  return a;\n}\nTYPE(T)\nT pick(pq<T> &que)\
-    \ {\n  assert(que.size());\n  T a = que.top();\n  que.pop();\n  return a;\n}\n\
-    TYPE(T)\nT pick(pqg<T> &que) {\n  assert(que.size());\n  T a = que.top();\n  que.pop();\n\
-    \  return a;\n}\nTYPE(T)\nT pick(std::stack<T> &sta) {\n  assert(sta.size());\n\
-    \  T a = sta.top();\n  sta.pop();\n  return a;\n}\nTYPE(T)\nvoid clear(T &v) {\
-    \ v = decltype(v)(); }\n#pragma endregion\n#pragma region vec\nvi iota(int n)\
-    \ {\n  vi a(n);\n  std::iota(ALL(a), 0);\n  return a;\n}\nTYPE(T)\nvoid add(vec<T>\
-    \ &v, const T &a = 1) {\n  AFOR (p, v)\n    p += a;\n}\nTYPE(T)\nT rev(T a) {\n\
-    \  REVERSE(a);\n  return a;\n}\n\nll sum(const vi &v) { return std::accumulate(ALL(v),\
-    \ 0LL); }\nTYPE(T) T sum(const vec<T> &v) { return std::accumulate(ALL(v), T(0));\
-    \ }\n\nTYPE(T, Ns)\nauto make_vector(T x, int n, Ns... ns) {\n  if constexpr (sizeof...(ns)\
-    \ == 0)\n    return vector<T>(n, x);\n  else\n    return vector(n, make_vector<T>(x,\
+    \n#pragma region queue\nTYPE(T)\nT pick(std::queue<T> &que) {\n    assert(que.size());\n\
+    \    T a = que.front();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(pq<T>\
+    \ &que) {\n    assert(que.size());\n    T a = que.top();\n    que.pop();\n   \
+    \ return a;\n}\nTYPE(T)\nT pick(pqg<T> &que) {\n    assert(que.size());\n    T\
+    \ a = que.top();\n    que.pop();\n    return a;\n}\nTYPE(T)\nT pick(std::stack<T>\
+    \ &sta) {\n    assert(sta.size());\n    T a = sta.top();\n    sta.pop();\n   \
+    \ return a;\n}\nTYPE(T)\nvoid clear(T &v) { v = decltype(v)(); }\n#pragma endregion\n\
+    #pragma region vec\nvi iota(int n) {\n    vi a(n);\n    std::iota(ALL(a), 0);\n\
+    \    return a;\n}\nTYPE(T)\nvoid add(vec<T> &v, const T &a = 1) {\n    AFOR (p,\
+    \ v)\n        p += a;\n}\nTYPE(T)\nT rev(T a) {\n    REVERSE(a);\n    return a;\n\
+    }\n\nll sum(const vi &v) { return std::accumulate(ALL(v), 0LL); }\nTYPE(T) T sum(const\
+    \ vec<T> &v) { return std::accumulate(ALL(v), T(0)); }\n\nTYPE(T, Ns)\nauto make_vector(T\
+    \ x, int n, Ns... ns) {\n    if constexpr (sizeof...(ns) == 0)\n        return\
+    \ std::vector<T>(n, x);\n    else\n        return std::vector(n, make_vector<T>(x,\
     \ ns...));\n}\n#pragma endregion"
   dependsOn:
   - library/template/macro.hpp
@@ -97,7 +99,7 @@ data:
   isVerificationFile: false
   path: library/template/util_func.hpp
   requiredBy: []
-  timestamp: '2023-12-10 20:25:08+09:00'
+  timestamp: '2024-04-13 17:39:36+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/util_func.hpp

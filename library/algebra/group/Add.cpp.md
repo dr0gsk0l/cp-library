@@ -2,88 +2,88 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/lazy/AddMin.cpp
     title: library/algebra/lazy/AddMin.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/algebra/lazy/AddSum.cpp
     title: library/algebra/lazy/AddSum.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
   - icon: ':warning:'
     path: library/math/FactorialNumberSystem.cpp
     title: library/math/FactorialNumberSystem.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/1330.test.cpp
     title: test/AOJ/1330.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2207.test.cpp
     title: test/AOJ/2207.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_B.test.cpp
     title: test/AOJ/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_E.test.cpp
     title: test/AOJ/DSL_2_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_G.test.cpp
     title: test/AOJ/DSL_2_G.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_2_H.test.cpp
     title: test/AOJ/DSL_2_H.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1038.test.cpp
     title: test/yukicoder/1038.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1097.test.cpp
     title: test/yukicoder/1097.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/group/Add.cpp\"\ntemplate<typename X>\n\
@@ -104,35 +104,35 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Add.cpp
   requiredBy:
-  - library/math/FactorialNumberSystem.cpp
-  - library/datastructure/FenwickTree.cpp
+  - library/algebra/lazy/AddSum.cpp
+  - library/algebra/lazy/AddMin.cpp
   - library/datastructure/GroupWaveletMatrix.cpp
+  - library/datastructure/FenwickTree.cpp
+  - library/math/FactorialNumberSystem.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
-  - library/algebra/lazy/AddMin.cpp
-  - library/algebra/lazy/AddSum.cpp
-  timestamp: '2023-12-10 20:25:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-13 17:39:36+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - test/AOJ/DSL_2_B.test.cpp
-  - test/AOJ/DSL_2_H.test.cpp
-  - test/AOJ/DSL_2_E.test.cpp
-  - test/AOJ/1330.test.cpp
-  - test/AOJ/2212.test.cpp
-  - test/AOJ/2207.test.cpp
-  - test/AOJ/DSL_2_G.test.cpp
-  - test/AOJ/GRL_5_E.test.cpp
-  - test/AOJ/DSL_1_B.test.cpp
+  - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/430.test.cpp
+  - test/yukicoder/1097.test.cpp
   - test/yukicoder/1038.test.cpp
   - test/yukicoder/924.test.cpp
-  - test/yukicoder/430_2.test.cpp
-  - test/yukicoder/1097.test.cpp
-  - test/yukicoder/430.test.cpp
+  - test/AOJ/1330.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
+  - test/AOJ/DSL_1_B.test.cpp
+  - test/AOJ/DSL_2_E.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
+  - test/AOJ/2212.test.cpp
+  - test/AOJ/2207.test.cpp
+  - test/AOJ/DSL_2_B.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
 documentation_of: library/algebra/group/Add.cpp
 layout: document
 redirect_from:
