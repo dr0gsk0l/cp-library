@@ -29,7 +29,7 @@ template <typename T, bool Sentinel = false> class Compress {
     void build() {
         assert(!prepared);
         prepared = true;
-        sort(ALL_(v));
+        std::sort(ALL_(v));
         v.erase(unique(ALL_(v)), v.end());
     }
 

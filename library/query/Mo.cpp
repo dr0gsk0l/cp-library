@@ -23,7 +23,7 @@ class Mo {
         int B = std::max(1, n / int(sqrt(q)));
         std::vector<int> ord(q);
         iota(ord.begin(), ord.end(), 0);
-        sort(ord.begin(), ord.end(), [&](int a, int b) -> bool {
+        std::sort(ord.begin(), ord.end(), [&](int a, int b) -> bool {
             int Ba = lr[a].first / B, Bb = lr[b].first / B;
             if (Ba != Bb)
                 return Ba < Bb;

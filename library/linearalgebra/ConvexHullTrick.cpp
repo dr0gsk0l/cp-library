@@ -74,7 +74,7 @@ template <typename T, Objective OBJ> class ConvexHullTrick : deque<Line<T>> {
         if (OBJ == -1)
             for (auto &l : lines)
                 l = -l;
-        sort(lines.begin(), lines.end());
+        std::sort(lines.begin(), lines.end());
         for (const auto &l : lines)
             internal_push_back(l);
     }
@@ -120,8 +120,8 @@ template <typename T, Objective OBJ> class ConvexHullTrick : deque<Line<T>> {
         int n = xs.size();
         std::vector<int> idx(n);
         iota(idx.begin(), idx.end(), 0);
-        sort(idx.begin(), idx.end(),
-             [&](int i, int j) { return xs[i] < xs[j]; });
+        std::sort(idx.begin(), idx.end(),
+                  [&](int i, int j) { return xs[i] < xs[j]; });
         std::vector<T> ans(n);
         for (int id : idx)
             ans[id] = query_monotone_inc(xs[id]);

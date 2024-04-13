@@ -43,7 +43,7 @@ int main() {
             next_val(-1, Edge{root, root});
     };
     auto finish = [&](bool add) {
-        sort(events.begin(), events.end());
+        std::sort(events.begin(), events.end());
         for (int id : events) {
             const auto &[x, y, z] = query[id];
             int d = D[x];

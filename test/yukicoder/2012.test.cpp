@@ -19,7 +19,7 @@ int main() {
     std::vector<XY<ld>> xy(n);
     for (int i = 0; i < n; i++)
         std::cin >> xy[i];
-    sort(xy.begin(), xy.end());
+    std::sort(xy.begin(), xy.end());
 
     MinConvexHullTrick<ld> CHT1;
     MaxConvexHullTrick<ld> CHT2;

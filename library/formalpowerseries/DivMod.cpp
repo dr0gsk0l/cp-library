@@ -1,6 +1,6 @@
 #pragma once
 #include "library/formalpowerseries/Base.cpp"
-#define REVERSE_(f) reverse(f.begin(), f.end());
+#define REVERSE_(f) std::reverse(f.begin(), f.end());
 template <typename FPS> std::pair<FPS, FPS> div_mod(FPS f, FPS g) {
     f.shrink();
     g.shrink();

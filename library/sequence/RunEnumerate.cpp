@@ -17,7 +17,7 @@ struct RunEnumerate {
 
     std::queue<std::pair<int, int>> que;
     std::string REV(std::string s) {
-        reverse(s.begin(), s.end());
+        std::reverse(s.begin(), s.end());
         return s;
     }
     void solve(int l, int r) {
@@ -68,7 +68,7 @@ struct RunEnumerate {
 
     void arrangement() {
         std::vector<Run> fans;
-        sort(ans.begin(), ans.end(), [](Run a, Run b) {
+        std::sort(ans.begin(), ans.end(), [](Run a, Run b) {
             if (a.t != b.t)
                 return a.t < b.t;
             if (a.l != b.l)

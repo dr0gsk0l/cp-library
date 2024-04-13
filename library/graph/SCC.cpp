@@ -32,7 +32,7 @@ template <typename DirectedGraph> class SCC {
         R = reverse_graph(G);
         REP_(v, n) if (!used[v]) dfs(v);
         fill(ALL_(used), false);
-        reverse(ALL_(visit));
+        std::reverse(ALL_(visit));
         int k = 0;
         for (const int &v : visit)
             if (!used[v])
@@ -47,7 +47,7 @@ template <typename DirectedGraph> class SCC {
         }
         DAG = Graph(k);
         REP_(from, k) {
-            sort(ALL_(edges[from]));
+            std::sort(ALL_(edges[from]));
             REP_(i, edges[from].size())
             if (!i || edges[from][i] != edges[from][i - 1])
                 DAG.add_arc(from, edges[from][i]);

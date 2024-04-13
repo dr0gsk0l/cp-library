@@ -92,7 +92,7 @@ template <typename T, int MX> struct FormalPowerSeries : std::vector<T> {
     FPS &operator<<=(const int d) {
         if (d >= MX)
             return *this = FPS(0);
-        resize(min(MX, int(size()) + d));
+        resize(std::min(MX, int(size()) + d));
         for (int i = int(size()) - 1 - d; i >= 0; i--)
             at(i + d) = at(i);
         for (int i = d - 1; i >= 0; i--)
@@ -239,10 +239,10 @@ template <typename T, int MX> struct FormalPowerSeries : std::vector<T> {
                 fact *= i;
             at(i) *= fact;
         }
-        reverse(begin(), end());
+        std::reverse(begin(), end());
         *this *= exp(c).pre(n);
         strict(n);
-        reverse(begin(), end());
+        std::reverse(begin(), end());
         T finv = fact.inv();
         for (int i = n - 1; i >= 0; i--) {
             at(i) *= finv;

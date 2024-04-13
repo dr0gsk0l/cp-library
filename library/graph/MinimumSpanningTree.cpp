@@ -6,7 +6,7 @@ std::pair<W, std::vector<int>> minimum_spanning_tree(const WG &g) {
     UnionFind uf(n);
     std::vector<int> id(m);
     iota(id.begin(), id.end(), 0);
-    sort(id.begin(), id.end(), [&](const int i, const int j) {
+    std::sort(id.begin(), id.end(), [&](const int i, const int j) {
         return g.edges[i].weight < g.edges[j].weight;
     });
     W res = 0;

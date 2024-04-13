@@ -81,7 +81,7 @@ class Trie {
                 }
             node_id = pre;
         }
-        reverse(res.begin(), res.end());
+        std::reverse(res.begin(), res.end());
         return res;
     }
     X prod() const { return nodes[0].suffix_val; }
