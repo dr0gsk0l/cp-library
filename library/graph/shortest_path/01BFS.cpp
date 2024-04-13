@@ -5,7 +5,7 @@ std::pair<std::vector<T>, std::vector<int>> bfs01(const WG &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);
-    deque<std::pair<T, int>> deq;
+    std::deque<std::pair<T, int>> deq;
     d[s] = 0;
     deq.emplace_back(0, s);
     while (deq.size()) {
