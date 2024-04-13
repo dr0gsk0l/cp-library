@@ -23,7 +23,7 @@ template <typename T, int MX> struct FormalPowerSeries : std::vector<T> {
     }
 
     FormalPowerSeries(const std::vector<T> &f) {
-        int n = min(MX, int(f.size()));
+        int n = std::min(MX, int(f.size()));
         resize(n);
         REP_(i, n) at(i) = f[i];
         shrink();

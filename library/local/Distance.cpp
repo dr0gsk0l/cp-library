@@ -11,7 +11,7 @@ template <typename T> class Distance {
             return d[s] = 0;
         int res = 1e9;
         for (const T &to : f(s))
-            res = min(res, shortest_path(f, to) + 1);
+            res = std::min(res, shortest_path(f, to) + 1);
         return d[s] = res;
     }
 

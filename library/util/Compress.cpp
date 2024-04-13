@@ -7,17 +7,17 @@ template <typename T, bool Sentinel = false> class Compress {
   public:
     Compress() : prepared(false) {
         if constexpr (Sentinel) {
-            static_assert(std::numeric_limits<T>::is_specialized,
+            static_assert(std::std::numeric_limits<T>::is_specialized,
                           "cannot use Sentinel");
-            v = {numeric_limits<T>::min(), numeric_limits<T>::max()};
+            v = {std::numeric_limits<T>::min(), std::numeric_limits<T>::max()};
         }
     }
     Compress(const std::vector<T> &w) : v(w), prepared(false) {
         if constexpr (Sentinel) {
-            static_assert(std::numeric_limits<T>::is_specialized,
+            static_assert(std::std::numeric_limits<T>::is_specialized,
                           "cannot use Sentinel");
-            v.push_back(numeric_limits<T>::min());
-            v.push_back(numeric_limits<T>::max());
+            v.push_back(std::numeric_limits<T>::min());
+            v.push_back(std::numeric_limits<T>::max());
         }
         build();
     }

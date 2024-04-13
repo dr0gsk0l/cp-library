@@ -38,12 +38,12 @@ template <typename T> class Grid {
     }
 
     Grid(const std::vector<vector<T>> &grid,
-         const std::optional<T> &ban = nullopt)
+         const std::optional<T> &ban = std::nullopt)
         : h(grid.size()), w(grid[0].size()), ban(ban), v(h * w), G(h * w) {
         build(grid);
     }
     Grid(const std::vector<std::string> &s,
-         const std::optional<T> &ban = nullopt)
+         const std::optional<T> &ban = std::nullopt)
         : h(s.size()), w(s[0].size()), ban(ban), v(h * w), G(h * w) {
         static_assert(is_same<T, char>::value, "value_type==char");
         build(s);

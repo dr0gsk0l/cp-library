@@ -74,7 +74,7 @@ template <typename T, int LOG> class F2 {
             if (xor_chmin(a, e))
                 v.push_back(e);
         if (a)
-            return nullopt;
+            return std::nullopt;
         return v;
     }
 };

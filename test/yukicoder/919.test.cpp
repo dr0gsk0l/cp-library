@@ -6,7 +6,7 @@
 using ll = long long;
 const int INF = 1000'000'000;
 
-void chmax(ll &a, ll b) { a = max(a, b); }
+void chmax(ll &a, ll b) { a = std::max(a, b); }
 
 int main() {
     std::ios::sync_with_stdio(false);

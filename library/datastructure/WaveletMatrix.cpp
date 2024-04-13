@@ -159,7 +159,7 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         int cnt = range_freq(l, r, x);
         if (cnt)
             return kth_smallest(l, r, cnt - 1);
-        return nullopt;
+        return std::nullopt;
     }
     std::optional<T> leq(int l, int r, const T &x) {
         if (rank(l, r, x))
@@ -170,7 +170,7 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         int cnt = r - l - range_freq(l, r, x);
         if (cnt)
             return kth_largest(l, r, cnt - 1);
-        return nullopt;
+        return std::nullopt;
     }
     std::optional<T> gt(int l, int r, const T &x) {
         T y;

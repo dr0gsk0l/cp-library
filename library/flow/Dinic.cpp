@@ -43,7 +43,7 @@ template <typename T> class Dinic {
                 level[v] <
                     level
                         [e.to]) { // bfsをしているのでlevel[v]<level[e.to]ならlevel[v]+1==level[e.to]
-                T d = dfs(e.to, min(f, cap));
+                T d = dfs(e.to, std::min(f, cap));
                 if (d == 0)
                     continue;
                 cap -= d;
@@ -85,7 +85,7 @@ template <typename T> class Dinic {
         G.add_arc(to, from, {0, out_deg[from]++});
         edge_memo.emplace_back(to, out_deg[to]++);
     }
-    T flow(T lim = numeric_limits<T>::max() / 2) {
+    T flow(T lim = std::numeric_limits<T>::max() / 2) {
         if (!G.is_prepared())
             G.build();
         T fl = 0;
@@ -105,7 +105,7 @@ template <typename T> class Dinic {
         return fl;
     }
 
-    T st_flow(int s_, int t_, T lim = numeric_limits<T>::max() / 2) {
+    T st_flow(int s_, int t_, T lim = std::numeric_limits<T>::max() / 2) {
         s = s_;
         t = t_;
         return flow(lim);

@@ -10,7 +10,7 @@ template <typename TF, typename TC> class MCF {
     int n, s, t;
     WeightedGraph<EdgeInfo> G;
     std::vector<TC> potential, dist;
-    static constexpr TC INF = numeric_limits<TC>::max() / 2;
+    static constexpr TC INF = std::numeric_limits<TC>::max() / 2;
     std::vector<std::pair<int, int>> pre,
         edge_memo; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;
@@ -122,7 +122,7 @@ template <typename TF, typename TC> class MCF {
     }
 
     std::pair<TC, bool>
-    flow(TF f = numeric_limits<
+    flow(TF f = std::numeric_limits<
              TF>::max()) { // second が 0
                            // で返ってきた場合はそもそも最大流がfに達しない
         if (!G.is_prepared())
@@ -156,7 +156,7 @@ template <typename TF, typename TC> class MCF {
     }
 
     std::pair<TC, bool> st_flow(int s_, int t_,
-                                TF lim = numeric_limits<TF>::max() / 2) {
+                                TF lim = std::numeric_limits<TF>::max() / 2) {
         s = s_;
         t = t_;
         return flow(lim);

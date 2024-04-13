@@ -7,8 +7,8 @@
 #include "library/mod/Modint.cpp"
 using mint = Mint<long long, 1000'000'007>;
 
-void chmin(int &a, int b) { a = min(a, b); }
-void chmax(int &a, int b) { a = max(a, b); }
+void chmin(int &a, int b) { a = std::min(a, b); }
+void chmax(int &a, int b) { a = std::max(a, b); }
 
 int main() {
     std::ios::sync_with_stdio(false);
@@ -51,7 +51,7 @@ int main() {
         mint res = 1;
         REP (r, n)
             if (UF.leader(r) == r and !UF.val(r))
-                res *= max(high[r] - low[r] + 1, 0);
+                res *= std::max(high[r] - low[r] + 1, 0);
         return res;
     };
 

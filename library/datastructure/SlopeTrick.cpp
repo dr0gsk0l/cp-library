@@ -1,7 +1,7 @@
 // reference:https://maspypy.com/slope-trick-1-解説編
 template <typename T> class SlopeTrick {
-    static constexpr T MIN = numeric_limits<T>::lowest() / 2;
-    static constexpr T MAX = numeric_limits<T>::max() / 2;
+    static constexpr T MIN = std::numeric_limits<T>::lowest() / 2;
+    static constexpr T MAX = std::numeric_limits<T>::max() / 2;
     std::priority_queue<T> L;
     std::priority_queue<T, std::vector<T>, std::greater<T>> R;
     T add_l, add_r;

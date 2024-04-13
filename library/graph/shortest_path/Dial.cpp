@@ -9,7 +9,7 @@ std::pair<vector<T>, std::vector<int>> dial(const WG &g, int s = 0) {
 
     T K = 0, rem = 0;
     for (const auto &e : g.edges)
-        K = max(K, e.weight);
+        K = std::max(K, e.weight);
     std::vector<std::queue<int>> que(K + 1);
     auto cmp = [&](T a, T b) {
         if (a == rem || b == rem)

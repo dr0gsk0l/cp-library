@@ -103,7 +103,7 @@ template <typename K> struct Matrix {
         REP_(i, r) REP_(j, c) A[i][j] = M[i][j];
         REP_(i, r) REP_(j, c) A[i][c + j] = K(i == j);
         A.GaussJordan();
-        REP_(i, r) if (A[i][i] == 0) return nullopt;
+        REP_(i, r) if (A[i][i] == 0) return std::nullopt;
         Matrix res(r, c);
         REP_(i, r) REP_(j, c) res[i][j] = A[i][c + j] / A[i][i];
         return res;

@@ -7,20 +7,20 @@ class Mo {
     Mo(const std::vector<std::pair<int, int>> &lr) : lr(lr) {
         for (const auto &[l, r] : lr) {
             assert(0 <= l and l <= r);
-            n = max(n, r);
+            n = std::max(n, r);
         }
     }
     void add(int l, int r) {
         assert(0 <= l and l <= r);
         lr.emplace_back(l, r);
-        n = max(n, r);
+        n = std::max(n, r);
     }
 
     template <typename AL, typename AR, typename EL, typename ER, typename F>
     void calc(const AL &add_left, const AR &add_right, const EL &erase_left,
               const ER &erase_right, const F &f) {
         int q = lr.size();
-        int B = max(1, n / int(sqrt(q)));
+        int B = std::max(1, n / int(sqrt(q)));
         std::vector<int> ord(q);
         iota(ord.begin(), ord.end(), 0);
         sort(ord.begin(), ord.end(), [&](int a, int b) -> bool {

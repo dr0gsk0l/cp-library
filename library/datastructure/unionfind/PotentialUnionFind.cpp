@@ -55,7 +55,7 @@ template <typename AbelGroup> class PotentialUnionFind {
         auto [rx, dx] = from_root(x);
         auto [ry, dy] = from_root(y);
         if (rx != ry)
-            return nullopt;
+            return std::nullopt;
         return AbelGroup::op(dy, AbelGroup::inverse(dx));
     }
 

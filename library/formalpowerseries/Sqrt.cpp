@@ -8,7 +8,7 @@ template <typename FPS> std::optional<FPS> sqrt(FPS f) {
     for (d = 0; f[d] == 0; d++) {
     }
     if (d & 1)
-        return nullopt;
+        return std::nullopt;
     f >>= d;
     FPS res { at }
 }

@@ -14,6 +14,6 @@ template <typename X> struct MonoidSet {
         if (x)
             y = x;
     }
-    static constexpr O unit() noexcept { return nullopt; }
+    static constexpr O unit() noexcept { return std::nullopt; }
     static constexpr bool commute = false;
 };

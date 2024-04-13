@@ -9,7 +9,7 @@ class IntegerSumRuleUnionFind {
     IntegerSumRuleUnionFind() = default;
     IntegerSumRuleUnionFind(int n)
         : n(n), num(n), sz(n, 1), parent(n, 0), potential(n, {1, 0}),
-          value(n, nullopt) {
+          value(n, std::nullopt) {
         iota(parent.begin(), parent.end(), 0);
     }
 
@@ -72,19 +72,19 @@ class IntegerSumRuleUnionFind {
         auto [r, a, b] = from_root(x);
         if (value[r])
             return value[r].value() * a + b;
-        return nullopt;
+        return std::nullopt;
     }
 
-    // x と y が隣接してないなら nullopt
-    // x と y が隣接しているが、sum が一意でない場合も nullopt
+    // x と y が隣接してないなら std::nullopt
+    // x と y が隣接しているが、sum が一意でない場合も std::nullopt
     std::optional<ll> sum(int x, int y) {
         auto [rx, a, b] = from_root(x);
         auto [ry, c, d] = from_root(y);
         if (rx != ry)
-            return nullopt;
+            return std::nullopt;
         if (a == c) {
             assert(b == d);
-            return nullopt;
+            return std::nullopt;
         }
         return b + d;
     }

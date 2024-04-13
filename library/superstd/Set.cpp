@@ -65,7 +65,7 @@ template <typename T> struct Set : std::set<T> {
     }
 
     void banpei() {
-        insert(numeric_limits<T>::max() / 2);
-        insert(numeric_limits<T>::min() / 2);
+        insert(std::numeric_limits<T>::max() / 2);
+        insert(std::numeric_limits<T>::min() / 2);
     }
 };

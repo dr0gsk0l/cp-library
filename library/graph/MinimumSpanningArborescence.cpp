@@ -57,7 +57,7 @@ minimum_spanning_arborescence(WG g, int r = 0) {
             state[now] = 1;
             auto &[pq, add] = pq_add[pq_id[now]];
             if (!pq.size())
-                return nullopt;
+                return std::nullopt;
             int edge_id = pq.top();
             pq.pop();
             auto &e = g.edges[edge_id];

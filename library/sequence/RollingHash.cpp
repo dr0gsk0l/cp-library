@@ -9,8 +9,8 @@ std::mt19937 rollonghash_mt(rollonghash_rnd());
 template <typename CHAR = char, typename MINT = Modint61> class RollingHash {
     using ll = long long;
     static constexpr ll mod = (1LL << 61) - 1;
-    // using T = conditional_t< less<ll>(mod,ll(numeric_limits<int>::max())),
-    // int, ll>;
+    // using T = conditional_t< less<ll>(mod,ll(
+    // std::numeric_limits<int>::max())), int, ll>;
     using T = ll;
     inline static const MINT base = MINT::raw(rollonghash_mt() % (mod - 2) + 2);
 

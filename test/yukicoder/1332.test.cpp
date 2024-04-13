@@ -21,8 +21,8 @@ int main() {
         int l, r, x;
         std::cin >> l >> r >> x;
         l--;
-        std::cout << min(x - (WM.leq(l, r, x)).value_or(-INF),
-                         (WM.geq(l, r, x)).value_or(2 * INF) - x)
+        std::cout << std::min(x - (WM.leq(l, r, x)).value_or(-INF),
+                              (WM.geq(l, r, x)).value_or(2 * INF) - x)
                   << "\n";
     }
 }

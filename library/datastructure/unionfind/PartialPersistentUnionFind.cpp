@@ -4,7 +4,7 @@ class PartialPersistentUnionFind {
     int now; // 現在時刻
     std::vector<int> par, rank, time;
     std::vector<vector<std::pair<int, int>>> sz;
-    static constexpr int NOW = numeric_limits<int>::max();
+    static constexpr int NOW = std::numeric_limits<int>::max();
 
   public:
     PartialPersistentUnionFind(int n)
@@ -38,11 +38,11 @@ class PartialPersistentUnionFind {
         int res = 0;
         while (X != Y) {
             if (diff > 0) {
-                res = max(res, time[X]);
+                res = std::max(res, time[X]);
                 X = par[X];
                 diff--;
             } else {
-                res = max(res, time[Y]);
+                res = std::max(res, time[Y]);
                 Y = par[Y];
                 diff++;
             }

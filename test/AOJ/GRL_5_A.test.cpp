@@ -24,6 +24,6 @@ int main() {
 
     int fans = 0;
     for (int p : ans)
-        fans = max(fans, p);
+        fans = std::max(fans, p);
     std::cout << fans << std::endl;
 }

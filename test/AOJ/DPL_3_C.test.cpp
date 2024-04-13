@@ -5,7 +5,7 @@
 #include "library/tree/CartesianTree.cpp"
 
 using ll = long long;
-void chmax(ll &a, ll b) { a = max(a, b); }
+void chmax(ll &a, ll b) { a = std::max(a, b); }
 
 int main() {
     std::ios::sync_with_stdio(false);
