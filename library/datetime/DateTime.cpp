@@ -42,7 +42,7 @@ class DateTime {
         return DateTime(y, m, d);
     }
 
-    void std::set_day_of_week(int day_of_week_) {
+    void set_day_of_week(int day_of_week_) {
         int now = to_int() % 7;
         day_of_week = day_of_week_ - now;
         if (day_of_week < 0)

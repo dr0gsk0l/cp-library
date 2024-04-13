@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/exp_of_std::set_power_series"
+#define PROBLEM "https://judge.yosupo.jp/problem/exp_of_set_power_series"
 #include <bits/stdc++.h>
 
 #include <atcoder/convolution>

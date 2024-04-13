@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/vertex_std::set_path_composite"
+#define PROBLEM "https://judge.yosupo.jp/problem/vertex_set_path_composite"
 #include <bits/stdc++.h>
 
 #include "library/algebra/group/Affine.cpp"

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/std::set_xor_min"
+#define PROBLEM "https://judge.yosupo.jp/problem/set_xor_min"
 #include <bits/stdc++.h>
 
 #include "library/datastructure/BinaryTrie.cpp"

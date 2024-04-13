@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/substd::set_convolution"
+#define PROBLEM "https://judge.yosupo.jp/problem/subset_convolution"
 #include <bits/stdc++.h>
 
 #define REP(i, n) for (int i = 0; i < (n); i++)

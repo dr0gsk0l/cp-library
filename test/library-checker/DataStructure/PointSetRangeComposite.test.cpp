@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/point_std::set_range_composite"
+#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
 #include <bits/stdc++.h>
 
 #include "library/algebra/Reverse.cpp"
