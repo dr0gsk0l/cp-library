@@ -2,7 +2,7 @@
 template <typename T> struct SetPowerSeries : std::vector<T> {
     using SPS = SetPowerSeries;
     using value_type = T;
-    using std::vector<T>::vector;
+    using std::vector<T>::std::vector;
     using std::vector<T>::resize;
     using std::vector<T>::at;
     using std::vector<T>::size;

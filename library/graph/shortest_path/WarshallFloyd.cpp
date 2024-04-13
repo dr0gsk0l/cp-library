@@ -1,5 +1,5 @@
 template <typename WG, typename T = typename WG::weight_type>
-vector<vector<T>> warshall_floyd(const WG &g) {
+std::vector<std::vector<T>> warshall_floyd(const WG &g) {
     int n = g.n;
     static constexpr T INF = std::numeric_limits<T>::max() / 2;
     std::vector d(n, std::vector<T>(n, INF));

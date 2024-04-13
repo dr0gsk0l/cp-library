@@ -1,5 +1,5 @@
 template <typename WG, typename T = typename WG::weight_type>
-std::pair<vector<T>, std::vector<int>> dijkstra(const WG &g, int s = 0) {
+std::pair<std::vector<T>, std::vector<int>> dijkstra(const WG &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);

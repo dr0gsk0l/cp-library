@@ -14,7 +14,7 @@ template <typename K, size_t N> struct SquareMatrix {
             REP_(i, N) M[i][i] = a;
     }
     SquareMatrix(const mat &A) : M(A) {}
-    SquareMatrix(const std::vector<vector<K>> &v) {
+    SquareMatrix(const std::vector<std::vector<K>> &v) {
         assert(v.size() == N and v[0].size() == N);
         REP_(i, N) REP_(j, N) M[i][j] = v[i][j];
     }

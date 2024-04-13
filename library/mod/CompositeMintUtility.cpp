@@ -1,7 +1,7 @@
 #pragma once
 // std::set_mod より後で宣言する
 template <typename MINT> class MintUtility {
-    std::vector<vector<MINT>> nCk_{vector<MINT>{1}};
+    std::vector<std::vector<MINT>> nCk_{std::vector<MINT>{1}};
     int S = 1;
 
     void extend(const int n) {

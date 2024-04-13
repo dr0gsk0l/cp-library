@@ -20,7 +20,7 @@ int main() {
     T.scan(1);
 
     std::vector<tuple<int, int, int>> query(q);
-    std::vector<vector<int>> query_at(n);
+    std::vector<std::vector<int>> query_at(n);
     REP (i, q) {
         auto &[x, y, z] = query[i];
         std::cin >> x >> y >> z;

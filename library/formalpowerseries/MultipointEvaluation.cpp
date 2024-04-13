@@ -2,7 +2,7 @@
 #include "library/formalpowerseries/Base.cpp"
 #include "library/formalpowerseries/DivMod.cpp"
 template <typename FPS, typename T = typename FPS::value_type>
-vector<T> multipoint_evaluation(const FPS &f, std::vector<T> v) {
+std::vector<T> multipoint_evaluation(const FPS &f, std::vector<T> v) {
     int m = v.size();
     int sz;
     for (sz = 1; sz < m; sz *= 2) {

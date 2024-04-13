@@ -19,7 +19,7 @@ constexpr ll LINF = ll(1e18) + 7;
 constexpr ld EPS = 1e-10;
 
 TYPE(T)
-vector<std::pair<T, int>> query_sort(const std::vector<T> &v) {
+std::vector<std::pair<T, int>> query_sort(const std::vector<T> &v) {
     std::vector<std::pair<T, int>> res(v.size());
     REP (i, v.size())
         res[i] = {v[i], i};

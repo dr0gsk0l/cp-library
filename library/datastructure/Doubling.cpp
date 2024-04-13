@@ -5,7 +5,7 @@ template <typename Monoid, int LOG> class Doubling {
 
     using P = std::pair<int, X>;
     static constexpr P unit = {-1, Monoid::unit()};
-    std::vector<vector<P>> DP;
+    std::vector<std::vector<P>> DP;
 
     // a から 2^k 動く
     P k_move(const P &a, int k) {

@@ -37,7 +37,7 @@ template <typename T> class Grid8 {
         return {a / w, a % w};
     }
 
-    Grid8(const std::vector<vector<T>> &grid,
+    Grid8(const std::vector<std::vector<T>> &grid,
           const std::optional<T> &ban = std::nullopt)
         : h(grid.size()), w(grid[0].size()), ban(ban), v(h * w), G(h * w) {
         build(grid);

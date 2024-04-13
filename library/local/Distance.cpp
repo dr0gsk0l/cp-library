@@ -17,8 +17,9 @@ template <typename T> class Distance {
 
     // s からの最短距離が MAX 以下のものを列挙
     template <typename F>
-    std::vector<vector<T>> from_root(const F &f, const T &s, int MAX = 10) {
-        std::vector<vector<T>> level(MAX + 1);
+    std::vector<std::vector<T>> from_root(const F &f, const T &s,
+                                          int MAX = 10) {
+        std::vector<std::vector<T>> level(MAX + 1);
         d[s] = 0;
         que.push(s);
         while (que.size()) {
@@ -39,9 +40,9 @@ template <typename T> class Distance {
     }
 
     template <typename F>
-    std::vector<vector<T>> from_root(const F &f, const std::vector<T> &s,
-                                     int MAX = 10) {
-        std::vector<vector<T>> level(MAX + 1);
+    std::vector<std::vector<T>> from_root(const F &f, const std::vector<T> &s,
+                                          int MAX = 10) {
+        std::vector<std::vector<T>> level(MAX + 1);
         for (const T &v : s) {
             d[v] = 0;
             que.push(v);

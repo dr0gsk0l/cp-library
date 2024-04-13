@@ -6,7 +6,7 @@ template <typename T, int MX> struct FormalPowerSeries : std::vector<T> {
     using std::vector<T>::size;
     using std::vector<T>::at;
     using std::vector<T>::assign;
-    using std::vector<T>::vector;
+    using std::vector<T>::std::vector;
     using std::vector<T>::begin;
     using std::vector<T>::end;
     using std::vector<T>::back;

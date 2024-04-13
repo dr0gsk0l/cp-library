@@ -5,7 +5,7 @@ class OfflineDynamicConnectivity {
 
     UnionFindUndo uf;
     int V, Q, segsz;
-    std::vector<vector<edge>> seg;
+    std::vector<std::vector<edge>> seg;
     int comp;
 
     std::vector<std::pair<std::pair<int, int>, edge>> pend;

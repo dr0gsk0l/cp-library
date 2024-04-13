@@ -3,7 +3,7 @@
 #define RREP_(i, n) for (int i = (n)-1; i >= 0; i--)
 
 template <typename MINT>
-vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
+std::vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
     int nf = f.size(), ng = g.size();
     if (!nf or !ng)
         return std::vector<MINT>{};

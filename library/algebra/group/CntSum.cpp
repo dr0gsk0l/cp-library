@@ -20,7 +20,7 @@ template <typename X> std::vector<std::pair<X, X>> cnt_init(int n, const X &x) {
     return std::vector<std::pair<X, X>>(n, {x, 1});
 }
 template <typename X>
-vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {
+std::vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {
     int n = v.size();
     std::vector<std::pair<X, X>> res(n);
     for (int i = 0; i < n; i++)

@@ -5,9 +5,9 @@ template <typename MINT> class OnlineNTT {
     static_assert(MINT::mod == 998244353);
     int d;
     std::vector<MINT> f, g, fg, change_f, change_g, tmp;
-    std::vector<vector<MINT>> F, G;
+    std::vector<std::vector<MINT>> F, G;
     // F[i] : 幅 1<<i の DFT 結果
-    std::vector<vector<MINT>> cs, cs_inv;
+    std::vector<std::vector<MINT>> cs, cs_inv;
     std::vector<int> x, fst, lst;
     std::vector<MINT> inv;
     int d_lst, lg;

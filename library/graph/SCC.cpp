@@ -25,7 +25,7 @@ template <typename DirectedGraph> class SCC {
 
   public:
     Graph DAG;
-    std::vector<vector<int>> component;
+    std::vector<std::vector<int>> component;
     SCC(const DirectedGraph &G) : n(G.n), G(G), belong(n), used(n, false) {
         assert(G.is_prepared());
         visit.reserve(n);
@@ -37,7 +37,7 @@ template <typename DirectedGraph> class SCC {
         for (const int &v : visit)
             if (!used[v])
                 rdfs(v, k++);
-        std::vector<vector<int>> edges(k);
+        std::vector<std::vector<int>> edges(k);
         component.resize(k);
         REP_(v, n) {
             component[belong[v]].push_back(v);
