@@ -70,7 +70,7 @@ template <typename T, Objective OBJ> class ConvexHullTrick : deque<Line<T>> {
     using deque<L>::size;
 
     ConvexHullTrick() = default;
-    ConvexHullTrick(vector<L> lines) {
+    ConvexHullTrick(std::vector<L> lines) {
         if (OBJ == -1)
             for (auto &l : lines)
                 l = -l;

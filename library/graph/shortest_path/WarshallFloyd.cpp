@@ -2,7 +2,7 @@ template <typename WG, typename T = typename WG::weight_type>
 vector<vector<T>> warshall_floyd(const WG &g) {
     int n = g.n;
     static constexpr T INF = numeric_limits<T>::max() / 2;
-    std::vector d(n, vector<T>(n, INF));
+    std::vector d(n, std::vector<T>(n, INF));
     for (int i = 0; i < n; i++)
         d[i][i] = 0;
     for (const auto &e : g.edges)

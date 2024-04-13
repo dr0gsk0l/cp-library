@@ -20,7 +20,8 @@ template <typename TREE, typename Lazy> struct TreeLazy {
         T.build(r);
         hld_id = hld.build(r);
     }
-    TreeLazy(const TREE &T_, vector<X> a, int r = 0) : T(T_), hld(T_), n(T_.n) {
+    TreeLazy(const TREE &T_, std::vector<X> a, int r = 0)
+        : T(T_), hld(T_), n(T_.n) {
         T.build(r);
         hld_id = hld.build(r);
         std::vector<X> hld_a(n);

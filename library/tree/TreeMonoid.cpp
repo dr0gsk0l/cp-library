@@ -16,7 +16,7 @@ template <typename TREE, typename Monoid> struct TreeMonoid {
         T.build(r);
         hld_id = hld.build(r);
     }
-    TreeMonoid(TREE T, vector<X> a, int r = 0) : T(T), hld(T), n(T.n) {
+    TreeMonoid(TREE T, std::vector<X> a, int r = 0) : T(T), hld(T), n(T.n) {
         T.build(r);
         hld_id = hld.build(r);
         std::vector<X> hld_a(n);

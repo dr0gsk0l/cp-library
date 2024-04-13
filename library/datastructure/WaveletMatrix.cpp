@@ -41,7 +41,8 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
     }
 
   public:
-    WaveletMatrix(vector<T> v, int log_ = 0) : n(v.size()), data(v), log(log_) {
+    WaveletMatrix(std::vector<T> v, int log_ = 0)
+        : n(v.size()), data(v), log(log_) {
         std::vector<U> cv(n);
         if constexpr (COMPRESS) {
             C = Compress<T, true>(v);

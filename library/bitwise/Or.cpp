@@ -2,18 +2,18 @@
 #include "library/bitwise/Util.cpp"
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 struct BitwiseOr {
-    template <typename T> static void zeta(vector<T> &A) {
+    template <typename T> static void zeta(std::vector<T> &A) {
         int n = bitwise::log2(A.size());
         REP_(k, n)
         REP_(S, 1 << n) if (bitwise::in(S, k)) A[S] += A[S ^ (1 << k)];
     }
-    template <typename T> static void mobius(vector<T> &A) {
+    template <typename T> static void mobius(std::vector<T> &A) {
         int n = bitwise::log2(A.size());
         REP_(k, n)
         REP_(S, 1 << n) if (bitwise::in(S, k)) A[S] -= A[S ^ (1 << k)];
     }
     template <typename T>
-    static std::vector<T> convolution(vector<T> A, vector<T> B) {
+    static std::vector<T> convolution(std::vector<T> A, std::vector<T> B) {
         assert(A.size() == B.size());
         zeta(A);
         zeta(B);

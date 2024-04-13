@@ -11,7 +11,7 @@ int main() {
 
     int n, q;
     std::cin >> n >> q;
-    LazySegmentTree<LazyAddMin<int>> seg(vector<int>(n, 0));
+    LazySegmentTree<LazyAddMin<int>> seg(std::vector<int>(n, 0));
     while (q--) {
         int t, l, r;
         std::cin >> t >> l >> r;

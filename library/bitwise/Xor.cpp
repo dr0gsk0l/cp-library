@@ -3,7 +3,7 @@
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 #define RREP_(i, n) for (int i = (n)-1; i >= 0; i--)
 struct BitwiseXor {
-    template <typename T> static void zeta(vector<T> &A) {
+    template <typename T> static void zeta(std::vector<T> &A) {
         const int n = bitwise::log2(A.size());
         REP_(i, n)
         REP_(S, 1 << n) {
@@ -14,7 +14,7 @@ struct BitwiseXor {
             A[S | (1 << i)] += x;
         }
     }
-    template <typename T> static void mobius(vector<T> &A) {
+    template <typename T> static void mobius(std::vector<T> &A) {
         const int n = bitwise::log2(A.size());
         RREP_(i, n)
         REP_(S, 1 << n) {
@@ -29,7 +29,7 @@ struct BitwiseXor {
             A[S] *= inv;
     }
     template <typename T>
-    static std::vector<T> convolution(vector<T> A, vector<T> B) {
+    static std::vector<T> convolution(std::vector<T> A, std::vector<T> B) {
         zeta(A);
         zeta(B);
         REP (S, A.size())

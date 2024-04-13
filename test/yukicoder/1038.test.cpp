@@ -29,7 +29,7 @@ int main() {
     }
 
     std::vector<ll> ans(q, 0);
-    DualSegmentTree<LazyAddMin<ll>> seg(vector<ll>(n, 0));
+    DualSegmentTree<LazyAddMin<ll>> seg(std::vector<ll>(n, 0));
     std::vector<int> D(n), events;
     int root;
 

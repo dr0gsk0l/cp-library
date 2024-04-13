@@ -1,7 +1,7 @@
 #pragma once
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 struct Perm {
-    using vi = vector<int>;
+    using vi = std::vector<int>;
     // (v[i],i) で座圧
     template <typename T> static vi make_perm(const std::vector<T> &v) {
         vi w = v;

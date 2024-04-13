@@ -3,8 +3,8 @@
 #define REP2_(i, s, n) for (int i = (s); i < (n); i++)
 template <typename K> struct Matrix {
     using value_type = K;
-    using vec = vector<K>;
-    using mat = vector<vec>;
+    using vec = std::vector<K>;
+    using mat = std::vector<vec>;
     size_t r, c;
     mat M;
 

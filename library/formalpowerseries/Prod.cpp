@@ -25,7 +25,7 @@ template <typename FPS> class FPSProdDiversity {
     static constexpr auto cmp = [](const FPS &f, const FPS &g) {
         return f.size() > g.size();
     };
-    std::priority_queue<FPS, vector<FPS>, decltype(cmp)> que{cmp};
+    std::priority_queue<FPS, std::vector<FPS>, decltype(cmp)> que{cmp};
 
   public:
     void add(const FPS &f) { que.push(f); }

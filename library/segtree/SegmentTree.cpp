@@ -10,8 +10,8 @@ template <monoid M> class SegmentTree {
 
   public:
     SegmentTree() : SegmentTree(0) {}
-    SegmentTree(int n) : SegmentTree(vector<X>(n, M::unit())) {}
-    SegmentTree(vector<X> v) : n(v.size()) {
+    SegmentTree(int n) : SegmentTree(std::vector<X>(n, M::unit())) {}
+    SegmentTree(std::vector<X> v) : n(v.size()) {
         for (log = 1; (1 << log) < n; log++) {
         }
         size = 1 << log;

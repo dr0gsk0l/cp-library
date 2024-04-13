@@ -9,18 +9,21 @@ class BitwiseRanked {
     template <typename T>
     static std::vector<vector<T>> zeta(const std::vector<T> &A) {
         const int n = bitwise::log2(A.size());
-        std::vector<vector<T>> RA(1 << n, vector<T>(n + 1, 0));
+        std::vector<vector<T>> RA(1 << n, std::vector<T>(n + 1, 0));
         REP_(S, 1 << n) RA[S][popcount(S)] = A[S];
         REP_(i, n)
-        REP_(S, 1 << n) if (!bitwise::in(S, i)) REP_(d, n + 1)
-            RA[S | (1 << i)][d] += RA[S][d];
+        REP_(S, 1 << n)
+        if (!bitwise::in(S, i))
+            REP_(d, n + 1) RA[S | (1 << i)][d] += RA[S][d];
         return RA;
     }
-    template <typename T> static std::vector<T> mobius(vector<vector<T>> RA) {
+    template <typename T>
+    static std::vector<T> mobius(std::vector<vector<T>> RA) {
         const int n = bitwise::log2(RA.size());
         REP_(i, n)
-        REP_(S, 1 << n) if (!bitwise::in(S, i)) REP_(d, n + 1)
-            RA[S | (1 << i)][d] -= RA[S][d];
+        REP_(S, 1 << n)
+        if (!bitwise::in(S, i))
+            REP_(d, n + 1) RA[S | (1 << i)][d] -= RA[S][d];
         std::vector<T> A(1 << n);
         REP_(S, 1 << n) A[S] = RA[S][popcount(S)];
         return A;

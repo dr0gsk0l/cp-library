@@ -1,7 +1,7 @@
 #pragma once
 #include "library/graph/WeightedGraph.cpp"
 template <typename WG, typename T = typename WG::weight_type>
-std::pair<vector<T>, vector<int>> bfs01(const WG &g, int s = 0) {
+std::pair<vector<T>, std::vector<int>> bfs01(const WG &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);

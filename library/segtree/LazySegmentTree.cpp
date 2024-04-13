@@ -38,7 +38,7 @@ template <typename Lazy> class LazySegmentTree {
 
   public:
     LazySegmentTree() : LazySegmentTree(0) {}
-    LazySegmentTree(int n) : LazySegmentTree(vector<X>(n, MX::unit())) {}
+    LazySegmentTree(int n) : LazySegmentTree(std::vector<X>(n, MX::unit())) {}
     LazySegmentTree(const std::vector<X> &v) : n(v.size()) {
         for (log = 1; (1 << log) < n; log++) {
         }

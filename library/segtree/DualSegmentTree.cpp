@@ -25,7 +25,7 @@ template <typename Lazy> class DualSegmentTree {
 
   public:
     DualSegmentTree() : DualSegmentTree(0) {}
-    DualSegmentTree(int n) : DualSegmentTree(vector<X>(n, MX::unit())) {}
+    DualSegmentTree(int n) : DualSegmentTree(std::vector<X>(n, MX::unit())) {}
     DualSegmentTree(const std::vector<X> &v) : n(v.size()), dat(v) {
         for (log = 1; (1 << log) < n; log++) {
         }

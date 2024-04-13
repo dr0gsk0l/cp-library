@@ -15,12 +15,12 @@ class GroupWaveletMatrix : WaveletMatrix<T, true> {
   public:
     using super::rank, super::select, super::kth_largest, super::kth_smallest,
         super::range_freq, super::lt, super::leq, super::gt, super::geq;
-    GroupWaveletMatrix(vector<T> v) : super::WaveletMatrix(v) {
+    GroupWaveletMatrix(std::vector<T> v) : super::WaveletMatrix(v) {
         ft.resize(log);
         for (auto &p : ft)
             p = FT(n);
     }
-    GroupWaveletMatrix(vector<T> v, const std::vector<S> &w)
+    GroupWaveletMatrix(std::vector<T> v, const std::vector<S> &w)
         : GroupWaveletMatrix(v) {
         for (int i = 0; i < n; i++)
             add(i, w[i]);

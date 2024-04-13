@@ -16,7 +16,7 @@ template <typename X> struct GroupCntSum {
     static constexpr P unit() { return {0, 0}; }
     static constexpr bool commute = true;
 };
-template <typename X> vector<std::pair<X, X>> cnt_init(int n, const X &x) {
+template <typename X> std::vector<std::pair<X, X>> cnt_init(int n, const X &x) {
     return std::vector<std::pair<X, X>>(n, {x, 1});
 }
 template <typename X>

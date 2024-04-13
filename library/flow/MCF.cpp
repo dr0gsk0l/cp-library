@@ -34,7 +34,7 @@ template <typename TF, typename TC> class MCF {
         return false;
     }
 
-    std::priority_queue<std::pair<TC, int>, vector<std::pair<TC, int>>,
+    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC, int>>,
                         greater<std::pair<TC, int>>>
         que;
     void dijkstra() { // dist[i]:sから残余グラフで辺の重みによるiへの最短路

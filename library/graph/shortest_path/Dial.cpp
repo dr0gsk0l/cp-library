@@ -1,7 +1,7 @@
 #pragma once
 #include "library/graph/WeightedGraph.cpp"
 template <typename WG, typename T = typename WG::weight_type>
-std::pair<vector<T>, vector<int>> dial(const WG &g, int s = 0) {
+std::pair<vector<T>, std::vector<int>> dial(const WG &g, int s = 0) {
     assert(g.is_prepared());
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);
@@ -18,7 +18,7 @@ std::pair<vector<T>, vector<int>> dial(const WG &g, int s = 0) {
             return a < rem;
         return a > b;
     };
-    std::priority_queue<T, vector<T>, decltype(cmp)> nxt{cmp};
+    std::priority_queue<T, std::vector<T>, decltype(cmp)> nxt{cmp};
 
     d[s] = 0;
     que[0].push(0);

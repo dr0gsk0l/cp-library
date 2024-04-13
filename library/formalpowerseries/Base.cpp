@@ -1,6 +1,6 @@
 #pragma once
 #define REP_(i, n) for (int i = 0; i < (n); i++)
-template <typename T, int MX> struct FormalPowerSeries : vector<T> {
+template <typename T, int MX> struct FormalPowerSeries : std::vector<T> {
     using FPS = FormalPowerSeries;
     using std::vector<T>::resize;
     using std::vector<T>::size;

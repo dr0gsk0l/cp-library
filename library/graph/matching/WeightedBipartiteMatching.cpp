@@ -22,7 +22,7 @@ template <typename TC> class WeightedBipartiteMatching {
 
     // first は重みの総和
     // second はマッチした各 [u,v,weight]
-    std::pair<TC, vector<tuple<int, int, TC>>> solve() {
+    std::pair<TC, std::vector<tuple<int, int, TC>>> solve() {
         auto [sum, ok] = fl.flow(min(A, B));
         std::vector<tuple<int, int, TC>> res;
         auto all_edge = fl.all_edge();

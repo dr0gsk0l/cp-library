@@ -11,7 +11,7 @@ int main() {
 
     int n, q;
     std::cin >> n >> q;
-    DualSegmentTree<LazyAddMin<int>> seg(vector<int>(n, 0));
+    DualSegmentTree<LazyAddMin<int>> seg(std::vector<int>(n, 0));
     while (q--) {
         int t;
         std::cin >> t;

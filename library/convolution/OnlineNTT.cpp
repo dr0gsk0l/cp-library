@@ -12,7 +12,7 @@ template <typename MINT> class OnlineNTT {
     std::vector<MINT> inv;
     int d_lst, lg;
 
-    void DFT(vector<MINT> &f, vector<MINT> &g, const int lg) {
+    void DFT(std::vector<MINT> &f, std::vector<MINT> &g, const int lg) {
         // 1<<lg の DFT を行う
         const int n = 1 << lg;
         // f[n/2,n) , g[n/2,n) = 0 が保証されている
@@ -36,7 +36,7 @@ template <typename MINT> class OnlineNTT {
         }
     }
 
-    void IDFT(vector<MINT> &f, const int lg) {
+    void IDFT(std::vector<MINT> &f, const int lg) {
         const int n = 1 << lg;
         fill(x.begin(), x.begin() + n, 0);
         RREP_(h, lg)
@@ -55,7 +55,7 @@ template <typename MINT> class OnlineNTT {
         REP_(i, n) f[i] *= inv[lg];
     }
 
-    void IDFT(vector<MINT> &f, vector<MINT> &g, const int lg) {
+    void IDFT(std::vector<MINT> &f, std::vector<MINT> &g, const int lg) {
         const int n = 1 << lg;
         fill(x.begin(), x.begin() + n, 0);
         RREP_(h, lg)
@@ -115,8 +115,8 @@ template <typename MINT> class OnlineNTT {
         if (d_lst + (1 << lg) == d) {
             // サイズ 1<<lg が完成（DFT 後のサイズは 1<<(lg+1))
             const int N = 1 << (lg + 1);
-            F.emplace_back(vector<MINT>(N, 0));
-            G.emplace_back(vector<MINT>(N, 0));
+            F.emplace_back(std::vector<MINT>(N, 0));
+            G.emplace_back(std::vector<MINT>(N, 0));
             REP_(i, 1 << lg) {
                 F.back()[i] = f[d - (1 << lg) + 1 + i];
                 G.back()[i] = g[d - (1 << lg) + 1 + i];
@@ -124,7 +124,7 @@ template <typename MINT> class OnlineNTT {
 
             x.resize(N);
             MINT c = MINT(3).pow((MINT::mod - 1) >> (lg + 1));
-            cs.emplace_back(vector<MINT>(N));
+            cs.emplace_back(std::vector<MINT>(N));
             REP_(i, N) cs.back()[i] = (i ? cs.back()[i - 1] * c : 1);
             DFT(F.back(), G.back(), lg + 1);
 
@@ -132,7 +132,7 @@ template <typename MINT> class OnlineNTT {
             REP_(i, N) tmp[i] = F.back()[i] * G.back()[i];
 
             c = c.inv();
-            cs_inv.emplace_back(vector<MINT>(N));
+            cs_inv.emplace_back(std::vector<MINT>(N));
             REP_(i, N) cs_inv.back()[i] = (i ? cs_inv.back()[i - 1] * c : 1);
             inv.push_back(MINT(N).inv());
             IDFT(tmp, lg + 1);

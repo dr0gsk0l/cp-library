@@ -6,9 +6,9 @@ template <typename T> class CumulativeSum2D {
 
   public:
     CumulativeSum2D(int h = 0, int w = 0)
-        : h(h), w(w), A(h + 1, vector<U>(w + 1, 0)), prepared(false) {}
+        : h(h), w(w), A(h + 1, std::vector<U>(w + 1, 0)), prepared(false) {}
     CumulativeSum2D(const std::vector<vector<T>> &v)
-        : h(v.size()), w(v[0].size()), A(h + 1, vector<U>(w + 1, 0)),
+        : h(v.size()), w(v[0].size()), A(h + 1, std::vector<U>(w + 1, 0)),
           prepared(false) {
         for (int i = 0; i < h; i++)
             for (int j = 0; j < w; j++)

@@ -52,7 +52,7 @@ struct Tree : Graph {
             return;
         }
         root = r;
-        depth = vector<int>(n, 0);
+        depth = std::vector<int>(n, 0);
         DFS.reserve(n);
         BFS.reserve(n);
         dfs(root);
