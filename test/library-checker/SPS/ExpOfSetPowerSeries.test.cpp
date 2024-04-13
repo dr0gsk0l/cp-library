@@ -18,7 +18,7 @@ std::istream &operator>>(std::istream &is, mint &a) {
 }
 } // namespace atcoder
 
-#include "library/std::setpowerseries/Compose.cpp"
+#include "library/setpowerseries/Compose.cpp"
 using SPS = SetPowerSeries<mint>;
 
 int main() {

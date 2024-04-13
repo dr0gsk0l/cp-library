@@ -1,5 +1,5 @@
 #pragma once
-#include <atcoder/std::string>
+#include <atcoder/string>
 using namespace atcoder;
 
 #define SIZE_(s) int(s.size())
