@@ -10,7 +10,7 @@ template <typename AbelGroup> class PotentialUnionFind {
         : n(n), num(n), sz(n, 1), parent(n, 0),
           potential(n, AbelGroup::unit()) {
         assert(AbelGroup::commute);
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
 
     std::pair<int, T> from_root(int x) {

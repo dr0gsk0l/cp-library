@@ -10,7 +10,7 @@ class IntegerSumRuleUnionFind {
     IntegerSumRuleUnionFind(int n)
         : n(n), num(n), sz(n, 1), parent(n, 0), potential(n, {1, 0}),
           value(n, std::nullopt) {
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
 
     std::tuple<int, int, ll> from_root(int x) {

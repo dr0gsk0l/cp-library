@@ -39,7 +39,7 @@ template <typename TF, typename TC> class MCF {
         que;
     void dijkstra() { // dist[i]:sから残余グラフで辺の重みによるiへの最短路
                       // となるようにdistを作る
-        fill(dist.begin(), dist.end(), INF);
+        std::ranges::fill(dist, INF);
         dist[s] = 0;
         que.emplace(0, s);
         while (que.size()) {
@@ -55,7 +55,7 @@ template <typename TF, typename TC> class MCF {
 
     void DAG() {
         negative = false;
-        fill(dist.begin(), dist.end(), INF);
+        std::ranges::fill(dist, INF);
         dist[s] = 0;
         std::queue<int> que;
         REP_(i, n) if (!in_deg[i]) que.push(i);
@@ -72,7 +72,7 @@ template <typename TF, typename TC> class MCF {
 
     void BellmanFord() {
         negative = false;
-        fill(dist.begin(), dist.end(), INF);
+        std::ranges::fill(dist, INF);
         dist[s] = 0;
         REP_(_, n) {
             bool update = false;
@@ -128,8 +128,9 @@ template <typename TF, typename TC> class MCF {
         if (!G.is_prepared())
             G.build();
         TC res = 0;
-        fill(potential.begin(), potential.end(),
-             0); // 一番最初は負のコストの辺が無いからポテンシャルは0にしていい
+        std::ranges::fill(
+            potential,
+            0); // 一番最初は負のコストの辺が無いからポテンシャルは0にしていい
         while (f > 0) {
             if (negative)
                 if (dag)

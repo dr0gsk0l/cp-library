@@ -18,7 +18,7 @@ minimum_spanning_arborescence(WG g, int r = 0) {
     for (int i = 0; i < g.edges.size(); i++)
         pq_add[g.edges[i].to].first.push(i);
     std::vector<int> pq_id(n);
-    iota(pq_id.begin(), pq_id.end(), 0);
+    std::ranges::iota(pq_id, 0);
 
     auto merge = [&](int u, int v) {
         u = uf.leader(u);

@@ -7,7 +7,7 @@ std::pair<int, std::vector<int>> rooted_tree_isomorphism(TREE &t) {
         std::vector<int> h;
         for (int to : t.son(v))
             h.push_back(res[to]);
-        std::sort(h.begin(), h.end());
+        std::ranges::sort(h);
         if (!mp.count(h))
             mp[h] = mp.size();
         res[v] = mp[h];

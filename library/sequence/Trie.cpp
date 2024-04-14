@@ -12,7 +12,7 @@ class Trie {
         Node(int pre)
             : pre(pre), val(AbelMonoid::unit()),
               suffix_val(AbelMonoid::unit()) {
-            fill(nxt.begin(), nxt.end(), -1);
+            std::ranges::fill(nxt, -1);
         }
     };
     std::vector<Node> nodes;
@@ -81,7 +81,7 @@ class Trie {
                 }
             node_id = pre;
         }
-        std::reverse(res.begin(), res.end());
+        std::ranges::reverse(res);
         return res;
     }
     X prod() const { return nodes[0].suffix_val; }

@@ -35,7 +35,7 @@ template <typename T, int LOG> class F2 {
 
     std::vector<T> base() {
         if (!is_sorted) {
-            std::sort(B.begin(), B.end());
+            std::ranges::sort(B);
             is_sorted = true;
         }
         return B;
@@ -46,7 +46,7 @@ template <typename T, int LOG> class F2 {
         if (k == 0)
             return 0;
         if (!is_sorted) {
-            std::sort(B.begin(), B.end());
+            std::ranges::sort(B);
             is_sorted = true;
         }
         T res = 0;

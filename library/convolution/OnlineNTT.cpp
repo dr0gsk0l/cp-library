@@ -16,7 +16,7 @@ template <typename MINT> class OnlineNTT {
         // 1<<lg の DFT を行う
         const int n = 1 << lg;
         // f[n/2,n) , g[n/2,n) = 0 が保証されている
-        fill(x.begin(), x.begin() + n, 0);
+        std::fill(x.begin(), x.begin() + n, 0);
         REP_(h, lg)
         REP_(S, 1 << h)
         REP_(T, 1 << (lg - h - 1)) {
@@ -38,7 +38,7 @@ template <typename MINT> class OnlineNTT {
 
     void IDFT(std::vector<MINT> &f, const int lg) {
         const int n = 1 << lg;
-        fill(x.begin(), x.begin() + n, 0);
+        std::fill(x.begin(), x.begin() + n, 0);
         RREP_(h, lg)
         REP_(S, 1 << h)
         REP_(T, 1 << (lg - h - 1)) {
@@ -57,7 +57,7 @@ template <typename MINT> class OnlineNTT {
 
     void IDFT(std::vector<MINT> &f, std::vector<MINT> &g, const int lg) {
         const int n = 1 << lg;
-        fill(x.begin(), x.begin() + n, 0);
+        std::fill(x.begin(), x.begin() + n, 0);
         RREP_(h, lg)
         REP_(S, 1 << h)
         REP_(T, 1 << (lg - h - 1)) {
@@ -88,8 +88,8 @@ template <typename MINT> class OnlineNTT {
         f.push_back(f_i);
         g.push_back(g_i);
 
-        fill(change_f.begin(), change_f.end(), 0);
-        fill(change_g.begin(), change_g.end(), 0);
+        std::ranges::fill(change_f, 0);
+        std::ranges::fill(change_g, 0);
 
         REP_(h, F.size()) {
             if (lst[h] + (1 << h) != d)

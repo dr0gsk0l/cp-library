@@ -5,7 +5,7 @@ class UnionFind {
   public:
     UnionFind() = default;
     UnionFind(int n) : n(n), num(n), sz(n, 1), parent(n, 0) {
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
 
     int leader(int x) {

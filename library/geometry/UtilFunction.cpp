@@ -18,7 +18,7 @@ Point reflect(Segment s, Point p) { return p + (project(s, p) - p) * 2.0; }
 
 Polygon convex_hull(Polygon ps) {
     int n = ps.size();
-    std::sort(ps.begin(), ps.end(), cmp_y);
+    std::ranges::sort(ps, cmp_y);
     int k = 0;
     Polygon qs(n * 2);
     for (int i = 0; i < n; i++) {

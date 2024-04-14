@@ -16,7 +16,7 @@ SPS SPS_exp_comp(const std::vector<T> &f, const SPS &a) {
             SPS pre(ret[d + 1].begin(), ret[d + 1].begin() + (1 << m));
             SPS a2(a.begin() + (1 << m), a.begin() + (1 << (m + 1)));
             pre *= a2;
-            std::copy(pre.begin(), pre.end(), ret[d].begin() + (1 << m));
+            std::ranges::copy(pre, ret[d].begin() + (1 << m));
         }
     }
     return ret[0];
@@ -54,7 +54,7 @@ template <typename SPS, typename T = typename SPS::value_type> SPS exp(SPS a) {
         SPS pre(ret.begin(), ret.begin() + M);
         SPS a2(a.begin() + M, a.begin() + 2 * M);
         pre *= a2;
-        std::copy(pre.begin(), pre.end(), ret.begin() + M);
+        std::ranges::copy(pre, ret.begin() + M);
     }
     return ret;
 }

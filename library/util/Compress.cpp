@@ -1,5 +1,4 @@
 #pragma once
-#define ALL_(v) v.begin(), v.end()
 template <typename T, bool Sentinel = false> class Compress {
     std::vector<T> v;
     bool prepared;
@@ -29,37 +28,38 @@ template <typename T, bool Sentinel = false> class Compress {
     void build() {
         assert(!prepared);
         prepared = true;
-        std::sort(ALL_(v));
-        v.erase(unique(ALL_(v)), v.end());
+        std::ranges::sort(v);
+        auto result = std::ranges::unique(v);
+        v.erase(result.begin(), result.end());
     }
 
     bool is_prepared() const { return prepared; }
 
     int operator[](const T &a) const {
         assert(prepared);
-        auto it = lower_bound(ALL_(v), a);
+        auto it = std::ranges::lower_bound(v, a);
         assert(*it == a);
-        return distance(v.begin(), it);
+        return std::distance(v.begin(), it);
     }
     int geq(const T &a) const {
         assert(prepared);
-        auto it = lower_bound(ALL_(v), a);
-        return distance(v.begin(), it);
+        auto it = std::ranges::lower_bound(v, a);
+        return std::distance(v.begin(), it);
     }
     int gt(const T &a) const {
         assert(prepared);
-        auto it = upper_bound(ALL_(v), a);
-        return distance(v.begin(), it);
+        auto it = std::ranges::upper_bound(v, a);
+        return std::distance(v.begin(), it);
     }
     int leq(const T &a) const {
         assert(prepared);
-        auto it = --upper_bound(ALL_(v), a);
-        return distance(v.begin(), it);
+        auto it = --std::ranges::upper_bound(v, a);
+        return std::distance(v.begin(), it);
     }
     int lt(const T &a) const {
         assert(prepared);
-        auto it = --lower_bound(ALL_(v), a);
-        return distance(v.begin(), it);
+        auto it = --std::ranges::lower_bound(v, a);
+        return std::distance(v.begin(), it);
     }
     T r(int id) const {
         assert(prepared);
@@ -67,7 +67,7 @@ template <typename T, bool Sentinel = false> class Compress {
     }
     bool exist(const T &a) const {
         assert(prepared);
-        return (*lower_bound(ALL_(v), a)) == a;
+        return (*std::ranges::lower_bound(v, a)) == a;
     }
     int size() const { return v.size(); }
     T max() const { return v.back(); }
@@ -79,4 +79,3 @@ template <typename T, bool Sentinel = false> class Compress {
         return os;
     }
 };
-#undef ALL_

@@ -47,7 +47,7 @@ std::vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
     }
     REP_(i, N) f[i] *= g[i];
 
-    fill(x.begin(), x.end(), 0);
+    std::ranges::fill(x, 0);
     c = c.inv();
     REP_(i, N) cs[i] = (i ? cs[i - 1] * c : 1);
     RREP_(h, lg)

@@ -16,7 +16,7 @@ template <typename TREE> class CentroidDecomposition {
             }
         }
         int SZ = S.size();
-        std::reverse(S.begin(), S.end());
+        std::ranges::reverse(S);
         for (int u : S) {
             if (SZ - sz[u] <= SZ / 2)
                 return u;

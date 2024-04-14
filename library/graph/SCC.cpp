@@ -1,7 +1,6 @@
 #pragma once
 #include "library/graph/Graph.cpp"
 #include "library/graph/ReverseGraph.cpp"
-#define ALL_(v) v.begin(), v.end()
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename DirectedGraph> class SCC {
     int n;
@@ -31,8 +30,8 @@ template <typename DirectedGraph> class SCC {
         visit.reserve(n);
         R = reverse_graph(G);
         REP_(v, n) if (!used[v]) dfs(v);
-        fill(ALL_(used), false);
-        std::reverse(ALL_(visit));
+        std::ranges::fill(used, false);
+        std::ranges::reverse(visit);
         int k = 0;
         for (const int &v : visit)
             if (!used[v])
@@ -47,7 +46,7 @@ template <typename DirectedGraph> class SCC {
         }
         DAG = Graph(k);
         REP_(from, k) {
-            std::sort(ALL_(edges[from]));
+            std::ranges::sort(edges[from]);
             REP_(i, edges[from].size())
             if (!i || edges[from][i] != edges[from][i - 1])
                 DAG.add_arc(from, edges[from][i]);
@@ -55,5 +54,4 @@ template <typename DirectedGraph> class SCC {
     }
     int operator[](int k) { return belong[k]; }
 };
-#undef ALL_
 #undef REP_

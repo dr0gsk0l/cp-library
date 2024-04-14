@@ -11,11 +11,11 @@ template <typename AbelGroup> class ApplyUnionFind {
     ApplyUnionFind() = default;
     ApplyUnionFind(size_t n)
         : n(n), num(n), sz(n, 1), parent(n), value(n, AbelGroup::unit()) {
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
     ApplyUnionFind(const std::vector<T> &v)
         : n(v.size()), num(n), sz(n, 1), parent(n), value(v) {
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
 
     size_t leader(int x) {

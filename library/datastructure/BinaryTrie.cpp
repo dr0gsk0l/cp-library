@@ -4,7 +4,7 @@ template <int LOG, typename COUNT> class BinaryTrie {
     struct Node {
         std::array<int, 2> nxt_node;
         COUNT count; //
-        Node() : count(0) { fill(nxt_node.begin(), nxt_node.end(), -1); }
+        Node() : count(0) { std::ranges::fill(nxt_node, -1); }
     };
     std::vector<Node> nodes;
     int &nxt(int now, bool f) { return nodes[now].nxt_node[f]; }

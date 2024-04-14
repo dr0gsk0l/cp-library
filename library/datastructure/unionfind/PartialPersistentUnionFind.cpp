@@ -9,7 +9,7 @@ class PartialPersistentUnionFind {
   public:
     PartialPersistentUnionFind(int n)
         : now(0), par(n), rank(n, 0), time(n, 0), sz(n) {
-        iota(par.begin(), par.end(), 0);
+        std::ranges::iota(par, 0);
     }
 
     // 時刻 t の leader

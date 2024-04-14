@@ -23,7 +23,7 @@ int main() {
         ans.emplace_back(pre[t], t);
         t = pre[t];
     }
-    std::reverse(ans.begin(), ans.end());
+    std::ranges::reverse(ans);
     std::cout << " " << ans.size() << "\n";
     for (const auto &[from, to] : ans)
         std::cout << from << " " << to << "\n";

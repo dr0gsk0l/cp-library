@@ -8,11 +8,11 @@ template <typename AbelMonoid> class UnionFind {
     UnionFind() = default;
     UnionFind(int n)
         : n(n), num(n), sz(n, 1), parent(n), value(n, AbelMonoid::unit()) {
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
     UnionFind(const std::vector<T> &v)
         : n(v.size()), num(n), sz(n, 1), parent(n), value(v) {
-        iota(parent.begin(), parent.end(), 0);
+        std::ranges::iota(parent, 0);
     }
 
     int leader(int x) {

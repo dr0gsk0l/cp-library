@@ -16,7 +16,7 @@ template <typename T> class Dinic {
     void bfs() {
         // level[v]を（容量正の辺による）sからの最短距離にする
         // 到達出来なければ-1
-        fill(level.begin(), level.end(), -1);
+        std::ranges::fill(level, -1);
         level[s] = 0;
         que.emplace(s);
         while (que.size()) {
@@ -93,7 +93,7 @@ template <typename T> class Dinic {
             bfs();
             if (level[t] < 0)
                 break;
-            fill(current_edge.begin(), current_edge.end(), 0);
+            std::ranges::fill(current_edge, 0);
             while (true) {
                 T f = dfs(s, lim);
                 if (f == 0)
