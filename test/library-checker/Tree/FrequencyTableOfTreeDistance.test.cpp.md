@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':heavy_check_mark:'
@@ -31,9 +31,9 @@ data:
     \    const int u = S[i];\n            sz[u] = 1;\n            for (int to : T[u])\
     \ {\n                if (to == pre[u] || ~timing[to])\n                    continue;\n\
     \                pre[to] = u;\n                S.push_back(to);\n            }\n\
-    \        }\n        int SZ = S.size();\n        std::reverse(S.begin(), S.end());\n\
-    \        for (int u : S) {\n            if (SZ - sz[u] <= SZ / 2)\n          \
-    \      return u;\n            sz[pre[u]] += sz[u];\n        }\n        assert(false);\n\
+    \        }\n        int SZ = S.size();\n        std::ranges::reverse(S);\n   \
+    \     for (int u : S) {\n            if (SZ - sz[u] <= SZ / 2)\n             \
+    \   return u;\n            sz[pre[u]] += sz[u];\n        }\n        assert(false);\n\
     \        return -1;\n    };\n\n  public:\n    std::vector<int> order;\n    CentroidDecomposition(TREE\
     \ T) : T(T), sz(T.n), pre(T.n), timing(T.n, -1) {\n        order.reserve(T.n);\n\
     \        std::queue<int> que;\n        que.push(0);\n        while (que.size())\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

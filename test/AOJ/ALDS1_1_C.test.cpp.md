@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_1_C.test.cpp

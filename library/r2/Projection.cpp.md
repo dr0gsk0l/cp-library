@@ -62,10 +62,10 @@ data:
     \ XY direction(const char &c) {\n        if (c == 'R')\n            return {1,\
     \ 0};\n        if (c == 'L')\n            return {-1, 0};\n        if (c == 'U')\n\
     \            return {0, -1};\n        if (c == 'D')\n            return {0, 1};\n\
-    \        return {0, 0};\n    }\n};\n#line 2 \"library/util/Compress.cpp\"\n#define\
-    \ ALL_(v) v.begin(), v.end()\ntemplate <typename T, bool Sentinel = false> class\
-    \ Compress {\n    std::vector<T> v;\n    bool prepared;\n\n  public:\n    Compress()\
-    \ : prepared(false) {\n        if constexpr (Sentinel) {\n            static_assert(std::numeric_limits<T>::is_specialized,\n\
+    \        return {0, 0};\n    }\n};\n#line 2 \"library/util/Compress.cpp\"\ntemplate\
+    \ <typename T, bool Sentinel = false> class Compress {\n    std::vector<T> v;\n\
+    \    bool prepared;\n\n  public:\n    Compress() : prepared(false) {\n       \
+    \ if constexpr (Sentinel) {\n            static_assert(std::numeric_limits<T>::is_specialized,\n\
     \                          \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
     \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
@@ -74,34 +74,36 @@ data:
     \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
-    \        std::sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n   \
-    \ }\n\n    bool is_prepared() const { return prepared; }\n\n    int operator[](const\
-    \ T &a) const {\n        assert(prepared);\n        auto it = lower_bound(ALL_(v),\
-    \ a);\n        assert(*it == a);\n        return distance(v.begin(), it);\n  \
-    \  }\n    int geq(const T &a) const {\n        assert(prepared);\n        auto\
-    \ it = lower_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n   \
-    \ }\n    int gt(const T &a) const {\n        assert(prepared);\n        auto it\
-    \ = upper_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n    }\n\
-    \    int leq(const T &a) const {\n        assert(prepared);\n        auto it =\
-    \ --upper_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n    }\n\
-    \    int lt(const T &a) const {\n        assert(prepared);\n        auto it =\
-    \ --lower_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n    }\n\
-    \    T r(int id) const {\n        assert(prepared);\n        return v[id];\n \
-    \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
-    \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
-    \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
-    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
-    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 4\
-    \ \"library/r2/Projection.cpp\"\ntemplate <typename T> class Projection {\n  \
-    \  using r2 = XY<T>;\n    Compress<r2> C;\n\n  public:\n    Projection(const std::vector<r2>\
-    \ &v) : C(v) {}\n    int size() { return C.size(); }\n    int id(r2 xy) { return\
-    \ C[xy]; }\n    int id(int x, int y) { return C[r2(x, y)]; }\n    r2 r(int id)\
-    \ { return C.r(id); }\n    //[l,r) \u3092\u8FD4\u3059\n    std::pair<int, int>\
-    \ interval(const T &l, const T &r) {\n        if (C.max().x < l or r <= C.min().x)\n\
-    \            return std::make_pair(0, 0);\n        T mn = std::numeric_limits<T>::min();\n\
-    \        int L = C.geq(r2(l, mn));\n        int R = C.geq(r2(r, mn));\n      \
-    \  return std::make_pair(L, R);\n    }\n};\n"
+    \        std::ranges::sort(v);\n        auto result = std::ranges::unique(v);\n\
+    \        v.erase(result.begin(), result.end());\n    }\n\n    bool is_prepared()\
+    \ const { return prepared; }\n\n    int operator[](const T &a) const {\n     \
+    \   assert(prepared);\n        auto it = std::ranges::lower_bound(v, a);\n   \
+    \     assert(*it == a);\n        return std::distance(v.begin(), it);\n    }\n\
+    \    int geq(const T &a) const {\n        assert(prepared);\n        auto it =\
+    \ std::ranges::lower_bound(v, a);\n        return std::distance(v.begin(), it);\n\
+    \    }\n    int gt(const T &a) const {\n        assert(prepared);\n        auto\
+    \ it = std::ranges::upper_bound(v, a);\n        return std::distance(v.begin(),\
+    \ it);\n    }\n    int leq(const T &a) const {\n        assert(prepared);\n  \
+    \      auto it = --std::ranges::upper_bound(v, a);\n        return std::distance(v.begin(),\
+    \ it);\n    }\n    int lt(const T &a) const {\n        assert(prepared);\n   \
+    \     auto it = --std::ranges::lower_bound(v, a);\n        return std::distance(v.begin(),\
+    \ it);\n    }\n    T r(int id) const {\n        assert(prepared);\n        return\
+    \ v[id];\n    }\n    bool exist(const T &a) const {\n        assert(prepared);\n\
+    \        return (*std::ranges::lower_bound(v, a)) == a;\n    }\n    int size()\
+    \ const { return v.size(); }\n    T max() const { return v.back(); }\n    T min()\
+    \ const { return v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os,\
+    \ const Compress &C) {\n        for (int i = 0; i < C.v.size(); i++)\n       \
+    \     os << C.v[i] << \":\" << i << \" \";\n        return os;\n    }\n};\n#line\
+    \ 4 \"library/r2/Projection.cpp\"\ntemplate <typename T> class Projection {\n\
+    \    using r2 = XY<T>;\n    Compress<r2> C;\n\n  public:\n    Projection(const\
+    \ std::vector<r2> &v) : C(v) {}\n    int size() { return C.size(); }\n    int\
+    \ id(r2 xy) { return C[xy]; }\n    int id(int x, int y) { return C[r2(x, y)];\
+    \ }\n    r2 r(int id) { return C.r(id); }\n    //[l,r) \u3092\u8FD4\u3059\n  \
+    \  std::pair<int, int> interval(const T &l, const T &r) {\n        if (C.max().x\
+    \ < l or r <= C.min().x)\n            return std::make_pair(0, 0);\n        T\
+    \ mn = std::numeric_limits<T>::min();\n        int L = C.geq(r2(l, mn));\n   \
+    \     int R = C.geq(r2(r, mn));\n        return std::make_pair(L, R);\n    }\n\
+    };\n"
   code: "#pragma once\n#include \"library/r2/XY.cpp\"\n#include \"library/util/Compress.cpp\"\
     \ntemplate <typename T> class Projection {\n    using r2 = XY<T>;\n    Compress<r2>\
     \ C;\n\n  public:\n    Projection(const std::vector<r2> &v) : C(v) {}\n    int\
@@ -118,7 +120,7 @@ data:
   isVerificationFile: false
   path: library/r2/Projection.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

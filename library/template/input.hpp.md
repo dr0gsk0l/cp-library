@@ -141,7 +141,7 @@ data:
   isVerificationFile: false
   path: library/template/input.hpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/input.hpp

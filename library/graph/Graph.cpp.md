@@ -5,7 +5,7 @@ data:
   - icon: ':warning:'
     path: library/graph/EdgeVertex.cpp
     title: library/graph/EdgeVertex.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
   - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_5_E.test.cpp
     title: test/AOJ/GRL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Graph/SCC.test.cpp
     title: test/library-checker/Graph/SCC.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,9 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.cpp\"\nstruct Edge {\n    int from,\
@@ -146,8 +146,8 @@ data:
   - library/tree/EdgeVertex.cpp
   - library/graph/EdgeVertex.cpp
   - library/graph/SCC.cpp
-  timestamp: '2024-04-14 21:36:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-14 23:11:29+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

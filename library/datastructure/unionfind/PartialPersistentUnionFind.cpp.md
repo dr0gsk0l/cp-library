@@ -17,17 +17,17 @@ data:
     \ {\n    int now; // \u73FE\u5728\u6642\u523B\n    std::vector<int> par, rank,\
     \ time;\n    std::vector<std::vector<std::pair<int, int>>> sz;\n    static constexpr\
     \ int NOW = std::numeric_limits<int>::max();\n\n  public:\n    PartialPersistentUnionFind(int\
-    \ n)\n        : now(0), par(n), rank(n, 0), time(n, 0), sz(n) {\n        iota(par.begin(),\
-    \ par.end(), 0);\n    }\n\n    // \u6642\u523B t \u306E leader\n    int find(int\
-    \ x, int t = NOW) {\n        while (x != par[x] and time[x] < t)\n           \
-    \ x = par[x];\n        return x;\n    }\n    // \u6642\u523B t \u3067 x,y \u304C\
-    \u9023\u7D50\u304B\n    bool same(int x, int y, int t = NOW) { return find(x,\
-    \ t) == find(y, t); }\n    // x \u3068 y \u304C\u3044\u3064\u9023\u7D50\u306B\u306A\
-    \u3063\u305F\u304B\uFF08\u307E\u3060\u975E\u9023\u7D50\u306A\u3089 -1 \uFF09\n\
-    \    // stack \u3092\u4F7F\u3046\u5B9F\u88C5\u3082\u8003\u3048\u305F\u3051\u3069\
-    \u5C11\u3057\u9045\u305D\u3046 atcoder/submissions/37116694\n    int when_same(int\
-    \ x, int y) {\n        int diff = 0; // x \u306E\u6DF1\u3055 - y \u306E\u6DF1\u3055\
-    \n        int X = x, Y = y;\n        while (par[x] != x) {\n            x = par[x];\n\
+    \ n)\n        : now(0), par(n), rank(n, 0), time(n, 0), sz(n) {\n        std::ranges::iota(par,\
+    \ 0);\n    }\n\n    // \u6642\u523B t \u306E leader\n    int find(int x, int t\
+    \ = NOW) {\n        while (x != par[x] and time[x] < t)\n            x = par[x];\n\
+    \        return x;\n    }\n    // \u6642\u523B t \u3067 x,y \u304C\u9023\u7D50\
+    \u304B\n    bool same(int x, int y, int t = NOW) { return find(x, t) == find(y,\
+    \ t); }\n    // x \u3068 y \u304C\u3044\u3064\u9023\u7D50\u306B\u306A\u3063\u305F\
+    \u304B\uFF08\u307E\u3060\u975E\u9023\u7D50\u306A\u3089 -1 \uFF09\n    // stack\
+    \ \u3092\u4F7F\u3046\u5B9F\u88C5\u3082\u8003\u3048\u305F\u3051\u3069\u5C11\u3057\
+    \u9045\u305D\u3046 atcoder/submissions/37116694\n    int when_same(int x, int\
+    \ y) {\n        int diff = 0; // x \u306E\u6DF1\u3055 - y \u306E\u6DF1\u3055\n\
+    \        int X = x, Y = y;\n        while (par[x] != x) {\n            x = par[x];\n\
     \            diff++;\n        }\n        while (par[y] != y) {\n            y\
     \ = par[y];\n            diff--;\n        }\n        if (x != y)\n           \
     \ return -1;\n        int res = 0;\n        while (X != Y) {\n            if (diff\
@@ -54,21 +54,21 @@ data:
     \    std::vector<int> par, rank, time;\n    std::vector<std::vector<std::pair<int,\
     \ int>>> sz;\n    static constexpr int NOW = std::numeric_limits<int>::max();\n\
     \n  public:\n    PartialPersistentUnionFind(int n)\n        : now(0), par(n),\
-    \ rank(n, 0), time(n, 0), sz(n) {\n        iota(par.begin(), par.end(), 0);\n\
-    \    }\n\n    // \u6642\u523B t \u306E leader\n    int find(int x, int t = NOW)\
-    \ {\n        while (x != par[x] and time[x] < t)\n            x = par[x];\n  \
-    \      return x;\n    }\n    // \u6642\u523B t \u3067 x,y \u304C\u9023\u7D50\u304B\
-    \n    bool same(int x, int y, int t = NOW) { return find(x, t) == find(y, t);\
-    \ }\n    // x \u3068 y \u304C\u3044\u3064\u9023\u7D50\u306B\u306A\u3063\u305F\u304B\
-    \uFF08\u307E\u3060\u975E\u9023\u7D50\u306A\u3089 -1 \uFF09\n    // stack \u3092\
-    \u4F7F\u3046\u5B9F\u88C5\u3082\u8003\u3048\u305F\u3051\u3069\u5C11\u3057\u9045\
-    \u305D\u3046 atcoder/submissions/37116694\n    int when_same(int x, int y) {\n\
-    \        int diff = 0; // x \u306E\u6DF1\u3055 - y \u306E\u6DF1\u3055\n      \
-    \  int X = x, Y = y;\n        while (par[x] != x) {\n            x = par[x];\n\
-    \            diff++;\n        }\n        while (par[y] != y) {\n            y\
-    \ = par[y];\n            diff--;\n        }\n        if (x != y)\n           \
-    \ return -1;\n        int res = 0;\n        while (X != Y) {\n            if (diff\
-    \ > 0) {\n                res = std::max(res, time[X]);\n                X = par[X];\n\
+    \ rank(n, 0), time(n, 0), sz(n) {\n        std::ranges::iota(par, 0);\n    }\n\
+    \n    // \u6642\u523B t \u306E leader\n    int find(int x, int t = NOW) {\n  \
+    \      while (x != par[x] and time[x] < t)\n            x = par[x];\n        return\
+    \ x;\n    }\n    // \u6642\u523B t \u3067 x,y \u304C\u9023\u7D50\u304B\n    bool\
+    \ same(int x, int y, int t = NOW) { return find(x, t) == find(y, t); }\n    //\
+    \ x \u3068 y \u304C\u3044\u3064\u9023\u7D50\u306B\u306A\u3063\u305F\u304B\uFF08\
+    \u307E\u3060\u975E\u9023\u7D50\u306A\u3089 -1 \uFF09\n    // stack \u3092\u4F7F\
+    \u3046\u5B9F\u88C5\u3082\u8003\u3048\u305F\u3051\u3069\u5C11\u3057\u9045\u305D\
+    \u3046 atcoder/submissions/37116694\n    int when_same(int x, int y) {\n     \
+    \   int diff = 0; // x \u306E\u6DF1\u3055 - y \u306E\u6DF1\u3055\n        int\
+    \ X = x, Y = y;\n        while (par[x] != x) {\n            x = par[x];\n    \
+    \        diff++;\n        }\n        while (par[y] != y) {\n            y = par[y];\n\
+    \            diff--;\n        }\n        if (x != y)\n            return -1;\n\
+    \        int res = 0;\n        while (X != Y) {\n            if (diff > 0) {\n\
+    \                res = std::max(res, time[X]);\n                X = par[X];\n\
     \                diff--;\n            } else {\n                res = std::max(res,\
     \ time[Y]);\n                Y = par[Y];\n                diff++;\n          \
     \  }\n        }\n        return res;\n    }\n    // merge \u304C\u6210\u529F\u3057\
@@ -90,7 +90,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/416.test.cpp

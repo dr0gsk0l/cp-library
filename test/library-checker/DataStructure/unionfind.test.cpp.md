@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
@@ -19,8 +19,8 @@ data:
     \n#line 1 \"library/datastructure/unionfind/UnionFind.cpp\"\nclass UnionFind {\n\
     \    int n, num;\n    std::vector<int> sz, parent;\n\n  public:\n    UnionFind()\
     \ = default;\n    UnionFind(int n) : n(n), num(n), sz(n, 1), parent(n, 0) {\n\
-    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    int leader(int x)\
-    \ {\n        assert(0 <= x and x < n);\n        return (x == parent[x] ? x : parent[x]\
+    \        std::ranges::iota(parent, 0);\n    }\n\n    int leader(int x) {\n   \
+    \     assert(0 <= x and x < n);\n        return (x == parent[x] ? x : parent[x]\
     \ = leader(parent[x]));\n    }\n\n    bool same(int x, int y) {\n        assert(0\
     \ <= x and x < n and 0 <= y and y < n);\n        return leader(x) == leader(y);\n\
     \    }\n\n    bool merge(int x, int y) {\n        assert(0 <= x and x < n and\
@@ -45,8 +45,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-14 23:11:29+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/unionfind.test.cpp
 layout: document

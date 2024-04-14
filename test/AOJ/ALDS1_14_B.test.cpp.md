@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: library/mod/Modint61.cpp
     title: library/mod/Modint61.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
   - icon: ':x:'
@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_14_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_14_B.test.cpp

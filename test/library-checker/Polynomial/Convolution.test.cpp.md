@@ -38,12 +38,12 @@ data:
     \ 1));\n\n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n    \
     \    MINT a = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]])\
     \ += a;\n\n        a = g[l];\n        g[l] += g[r] * cs[x[l]];\n        (g[r]\
-    \ *= cs[x[r]]) += a;\n    }\n    REP_(i, N) f[i] *= g[i];\n\n    fill(x.begin(),\
-    \ x.end(), 0);\n    c = c.inv();\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c :\
-    \ 1);\n    RREP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1)) {\n\
-    \        int l = (S << (lg - h)) | T;\n        int r = l | (1 << (lg - h - 1));\n\
-    \n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n        MINT\
-    \ a = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n\
+    \ *= cs[x[r]]) += a;\n    }\n    REP_(i, N) f[i] *= g[i];\n\n    std::ranges::fill(x,\
+    \ 0);\n    c = c.inv();\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c : 1);\n   \
+    \ RREP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1)) {\n      \
+    \  int l = (S << (lg - h)) | T;\n        int r = l | (1 << (lg - h - 1));\n\n\
+    \        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n        MINT a\
+    \ = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n\
     \    }\n    f.resize(M);\n    MINT Ninv = MINT(N).inv();\n    REP_(i, M) f[i]\
     \ *= Ninv;\n    return f;\n}\n#undef REP_\n#undef RREP_\n#line 2 \"library/math/ExtraGCD.cpp\"\
     \nusing ll = long long;\nstd::pair<ll, ll> ext_gcd(ll a, ll b) {\n    if (b ==\
@@ -101,7 +101,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Convolution.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Convolution.test.cpp

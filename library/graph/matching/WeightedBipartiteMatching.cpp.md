@@ -83,29 +83,29 @@ data:
     \    void dijkstra() { // dist[i]:s\u304B\u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\
     \u8FBA\u306E\u91CD\u307F\u306B\u3088\u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n  \
     \                    // \u3068\u306A\u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\
-    \n        fill(dist.begin(), dist.end(), INF);\n        dist[s] = 0;\n       \
-    \ que.emplace(0, s);\n        while (que.size()) {\n            const auto [now,\
-    \ v] = que.top();\n            que.pop();\n            if (dist[v] < now)\n  \
-    \              continue;\n            REP_(i, G[v].size())\n            if (SP_update(v,\
-    \ i))\n                que.emplace(dist[G[v][i].to], G[v][i].to);\n        }\n\
-    \    }\n\n    void DAG() {\n        negative = false;\n        fill(dist.begin(),\
-    \ dist.end(), INF);\n        dist[s] = 0;\n        std::queue<int> que;\n    \
-    \    REP_(i, n) if (!in_deg[i]) que.push(i);\n        while (que.size()) {\n \
-    \           int v = que.front();\n            que.pop();\n            REP_(i,\
-    \ G[v].size()) {\n                SP_update(v, i);\n                if (!--in_deg[G[v][i].to])\n\
-    \                    que.push(G[v][i].to);\n            }\n        }\n    }\n\n\
-    \    void BellmanFord() {\n        negative = false;\n        fill(dist.begin(),\
-    \ dist.end(), INF);\n        dist[s] = 0;\n        REP_(_, n) {\n            bool\
-    \ update = false;\n            REP_(v, n)\n            if (dist[v] < INF)\n  \
-    \              REP_(i, G[v].size()) if (SP_update(v, i)) update = true;\n    \
-    \        if (!update)\n                return;\n        }\n        assert(false);\
-    \ // \u8CA0\u9589\u8DEF\n    }\n\n  public:\n    MCF() {}\n    MCF(int n_, int\
-    \ s_ = 0, int t_ = -1)\n        : n(n_), G(n_), potential(n_, 0), dist(n_), pre(n_),\
-    \ in_deg(n_, 0),\n          out_deg(n_, 0), negative(false), dag(true), s(s_),\
-    \ t(t_) {\n        if (t < 0)\n            t = n - 1;\n    }\n    void use_bellman_ford()\
-    \ { dag = false; }\n\n    TF operator[](const int edge_id) const {\n        assert(G.is_prepared());\n\
-    \        const auto &[from, id] = edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n\
-    \    }\n    std::vector<std::tuple<int, int, TF, TC>> all_edge() {\n        assert(G.is_prepared());\n\
+    \n        std::ranges::fill(dist, INF);\n        dist[s] = 0;\n        que.emplace(0,\
+    \ s);\n        while (que.size()) {\n            const auto [now, v] = que.top();\n\
+    \            que.pop();\n            if (dist[v] < now)\n                continue;\n\
+    \            REP_(i, G[v].size())\n            if (SP_update(v, i))\n        \
+    \        que.emplace(dist[G[v][i].to], G[v][i].to);\n        }\n    }\n\n    void\
+    \ DAG() {\n        negative = false;\n        std::ranges::fill(dist, INF);\n\
+    \        dist[s] = 0;\n        std::queue<int> que;\n        REP_(i, n) if (!in_deg[i])\
+    \ que.push(i);\n        while (que.size()) {\n            int v = que.front();\n\
+    \            que.pop();\n            REP_(i, G[v].size()) {\n                SP_update(v,\
+    \ i);\n                if (!--in_deg[G[v][i].to])\n                    que.push(G[v][i].to);\n\
+    \            }\n        }\n    }\n\n    void BellmanFord() {\n        negative\
+    \ = false;\n        std::ranges::fill(dist, INF);\n        dist[s] = 0;\n    \
+    \    REP_(_, n) {\n            bool update = false;\n            REP_(v, n)\n\
+    \            if (dist[v] < INF)\n                REP_(i, G[v].size()) if (SP_update(v,\
+    \ i)) update = true;\n            if (!update)\n                return;\n    \
+    \    }\n        assert(false); // \u8CA0\u9589\u8DEF\n    }\n\n  public:\n   \
+    \ MCF() {}\n    MCF(int n_, int s_ = 0, int t_ = -1)\n        : n(n_), G(n_),\
+    \ potential(n_, 0), dist(n_), pre(n_), in_deg(n_, 0),\n          out_deg(n_, 0),\
+    \ negative(false), dag(true), s(s_), t(t_) {\n        if (t < 0)\n           \
+    \ t = n - 1;\n    }\n    void use_bellman_ford() { dag = false; }\n\n    TF operator[](const\
+    \ int edge_id) const {\n        assert(G.is_prepared());\n        const auto &[from,\
+    \ id] = edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n   \
+    \ }\n    std::vector<std::tuple<int, int, TF, TC>> all_edge() {\n        assert(G.is_prepared());\n\
     \        std::vector<std::tuple<int, int, TF, TC>> res;\n        res.reserve(edge_memo.size());\n\
     \        for (const auto &[v, id] : edge_memo) {\n            const auto &[to,\
     \ from, weight] = G[v][id];\n            res.emplace_back(from, to, weight.cap,\
@@ -118,7 +118,7 @@ data:
     \ 0\n                           // \u3067\u8FD4\u3063\u3066\u304D\u305F\u5834\u5408\
     \u306F\u305D\u3082\u305D\u3082\u6700\u5927\u6D41\u304Cf\u306B\u9054\u3057\u306A\
     \u3044\n        if (!G.is_prepared())\n            G.build();\n        TC res\
-    \ = 0;\n        fill(potential.begin(), potential.end(),\n             0); //\
+    \ = 0;\n        std::ranges::fill(\n            potential,\n            0); //\
     \ \u4E00\u756A\u6700\u521D\u306F\u8CA0\u306E\u30B3\u30B9\u30C8\u306E\u8FBA\u304C\
     \u7121\u3044\u304B\u3089\u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u306F0\u306B\u3057\
     \u3066\u3044\u3044\n        while (f > 0) {\n            if (negative)\n     \
@@ -176,7 +176,7 @@ data:
   isVerificationFile: false
   path: library/graph/matching/WeightedBipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: library/datastructure/unionfind/UnionFind.cpp
     title: library/datastructure/unionfind/UnionFind.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/graph/MinimumSpanningTree.cpp
     title: library/graph/MinimumSpanningTree.cpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -25,23 +25,23 @@ data:
     \n#include <bits/stdc++.h>\n\n#line 1 \"library/datastructure/unionfind/UnionFind.cpp\"\
     \nclass UnionFind {\n    int n, num;\n    std::vector<int> sz, parent;\n\n  public:\n\
     \    UnionFind() = default;\n    UnionFind(int n) : n(n), num(n), sz(n, 1), parent(n,\
-    \ 0) {\n        iota(parent.begin(), parent.end(), 0);\n    }\n\n    int leader(int\
-    \ x) {\n        assert(0 <= x and x < n);\n        return (x == parent[x] ? x\
-    \ : parent[x] = leader(parent[x]));\n    }\n\n    bool same(int x, int y) {\n\
-    \        assert(0 <= x and x < n and 0 <= y and y < n);\n        return leader(x)\
-    \ == leader(y);\n    }\n\n    bool merge(int x, int y) {\n        assert(0 <=\
-    \ x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
-    \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
-    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
-    \        num--;\n        return true;\n    }\n\n    int size(const int x) {\n\
-    \        assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n \
-    \   int count() const { return num; }\n};\n#line 2 \"library/graph/MinimumSpanningTree.cpp\"\
+    \ 0) {\n        std::ranges::iota(parent, 0);\n    }\n\n    int leader(int x)\
+    \ {\n        assert(0 <= x and x < n);\n        return (x == parent[x] ? x : parent[x]\
+    \ = leader(parent[x]));\n    }\n\n    bool same(int x, int y) {\n        assert(0\
+    \ <= x and x < n and 0 <= y and y < n);\n        return leader(x) == leader(y);\n\
+    \    }\n\n    bool merge(int x, int y) {\n        assert(0 <= x and x < n and\
+    \ 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n       \
+    \ if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n       \
+    \     std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n    \
+    \    num--;\n        return true;\n    }\n\n    int size(const int x) {\n    \
+    \    assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n    int\
+    \ count() const { return num; }\n};\n#line 2 \"library/graph/MinimumSpanningTree.cpp\"\
     \ntemplate <typename WG, typename W = typename WG::weight_type>\nstd::pair<W,\
     \ std::vector<int>> minimum_spanning_tree(const WG &g) {\n    assert(g.is_prepared());\n\
     \    int n = g.n, m = g.edges.size();\n    UnionFind uf(n);\n    std::vector<int>\
-    \ id(m);\n    iota(id.begin(), id.end(), 0);\n    std::sort(id.begin(), id.end(),\
-    \ [&](const int i, const int j) {\n        return g.edges[i].weight < g.edges[j].weight;\n\
-    \    });\n    W res = 0;\n    std::vector<int> tree;\n    tree.reserve(n - 1);\n\
+    \ id(m);\n    std::ranges::iota(id, 0);\n    std::ranges::sort(id, [&](const int\
+    \ i, const int j) {\n        return g.edges[i].weight < g.edges[j].weight;\n \
+    \   });\n    W res = 0;\n    std::vector<int> tree;\n    tree.reserve(n - 1);\n\
     \    for (int i : id) {\n        const auto &[from, to, weight] = g.edges[i];\n\
     \        if (uf.same(from, to))\n            continue;\n        tree.push_back(i);\n\
     \        uf.merge(from, to);\n        res += weight;\n    }\n    assert(uf.count()\
@@ -111,8 +111,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-14 23:11:29+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/GRL_2_A.test.cpp
 layout: document

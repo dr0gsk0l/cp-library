@@ -17,7 +17,7 @@ data:
     \ x, fst, lst;\n    std::vector<MINT> inv;\n    int d_lst, lg;\n\n    void DFT(std::vector<MINT>\
     \ &f, std::vector<MINT> &g, const int lg) {\n        // 1<<lg \u306E DFT \u3092\
     \u884C\u3046\n        const int n = 1 << lg;\n        // f[n/2,n) , g[n/2,n) =\
-    \ 0 \u304C\u4FDD\u8A3C\u3055\u308C\u3066\u3044\u308B\n        fill(x.begin(),\
+    \ 0 \u304C\u4FDD\u8A3C\u3055\u308C\u3066\u3044\u308B\n        std::fill(x.begin(),\
     \ x.begin() + n, 0);\n        REP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T,\
     \ 1 << (lg - h - 1)) {\n            int l = (S << (lg - h)) | T;\n           \
     \ int r = l | (1 << (lg - h - 1));\n\n            x[l] >>= 1;\n            (x[r]\
@@ -25,26 +25,26 @@ data:
     \ f[r] * cs[lg][x[l]];\n            (f[r] *= cs[lg][x[r]]) += a;\n\n         \
     \   a = g[l];\n            g[l] += g[r] * cs[lg][x[l]];\n            (g[r] *=\
     \ cs[lg][x[r]]) += a;\n        }\n    }\n\n    void IDFT(std::vector<MINT> &f,\
-    \ const int lg) {\n        const int n = 1 << lg;\n        fill(x.begin(), x.begin()\
-    \ + n, 0);\n        RREP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T, 1 <<\
-    \ (lg - h - 1)) {\n            int l = (S << (lg - h)) | T;\n            int r\
-    \ = l | (1 << (lg - h - 1));\n\n            x[l] >>= 1;\n            (x[r] >>=\
-    \ 1) |= 1 << (lg - 1);\n\n            MINT a = f[l];\n            f[l] += f[r]\
-    \ * cs_inv[lg][x[l]];\n            (f[r] *= cs_inv[lg][x[r]]) += a;\n        }\n\
-    \        REP_(i, n) f[i] *= inv[lg];\n    }\n\n    void IDFT(std::vector<MINT>\
+    \ const int lg) {\n        const int n = 1 << lg;\n        std::fill(x.begin(),\
+    \ x.begin() + n, 0);\n        RREP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T,\
+    \ 1 << (lg - h - 1)) {\n            int l = (S << (lg - h)) | T;\n           \
+    \ int r = l | (1 << (lg - h - 1));\n\n            x[l] >>= 1;\n            (x[r]\
+    \ >>= 1) |= 1 << (lg - 1);\n\n            MINT a = f[l];\n            f[l] +=\
+    \ f[r] * cs_inv[lg][x[l]];\n            (f[r] *= cs_inv[lg][x[r]]) += a;\n   \
+    \     }\n        REP_(i, n) f[i] *= inv[lg];\n    }\n\n    void IDFT(std::vector<MINT>\
     \ &f, std::vector<MINT> &g, const int lg) {\n        const int n = 1 << lg;\n\
-    \        fill(x.begin(), x.begin() + n, 0);\n        RREP_(h, lg)\n        REP_(S,\
-    \ 1 << h)\n        REP_(T, 1 << (lg - h - 1)) {\n            int l = (S << (lg\
-    \ - h)) | T;\n            int r = l | (1 << (lg - h - 1));\n\n            x[l]\
-    \ >>= 1;\n            (x[r] >>= 1) |= 1 << (lg - 1);\n\n            MINT a = f[l];\n\
-    \            f[l] += f[r] * cs_inv[lg][x[l]];\n            (f[r] *= cs_inv[lg][x[r]])\
-    \ += a;\n            a = g[l];\n            g[l] += g[r] * cs_inv[lg][x[l]];\n\
-    \            (g[r] *= cs_inv[lg][x[r]]) += a;\n        }\n        REP_(i, n) {\n\
-    \            f[i] *= inv[lg];\n            g[i] *= inv[lg];\n        }\n    }\n\
-    \n  public:\n    OnlineNTT(int n, int m)\n        : d(0), d_lst(-1), lg(0), cs(1),\
-    \ cs_inv(1), inv(1), fg(n + m - 1) {}\n\n    MINT query(MINT f_i, MINT g_i) {\n\
-    \        f.push_back(f_i);\n        g.push_back(g_i);\n\n        fill(change_f.begin(),\
-    \ change_f.end(), 0);\n        fill(change_g.begin(), change_g.end(), 0);\n\n\
+    \        std::fill(x.begin(), x.begin() + n, 0);\n        RREP_(h, lg)\n     \
+    \   REP_(S, 1 << h)\n        REP_(T, 1 << (lg - h - 1)) {\n            int l =\
+    \ (S << (lg - h)) | T;\n            int r = l | (1 << (lg - h - 1));\n\n     \
+    \       x[l] >>= 1;\n            (x[r] >>= 1) |= 1 << (lg - 1);\n\n          \
+    \  MINT a = f[l];\n            f[l] += f[r] * cs_inv[lg][x[l]];\n            (f[r]\
+    \ *= cs_inv[lg][x[r]]) += a;\n            a = g[l];\n            g[l] += g[r]\
+    \ * cs_inv[lg][x[l]];\n            (g[r] *= cs_inv[lg][x[r]]) += a;\n        }\n\
+    \        REP_(i, n) {\n            f[i] *= inv[lg];\n            g[i] *= inv[lg];\n\
+    \        }\n    }\n\n  public:\n    OnlineNTT(int n, int m)\n        : d(0), d_lst(-1),\
+    \ lg(0), cs(1), cs_inv(1), inv(1), fg(n + m - 1) {}\n\n    MINT query(MINT f_i,\
+    \ MINT g_i) {\n        f.push_back(f_i);\n        g.push_back(g_i);\n\n      \
+    \  std::ranges::fill(change_f, 0);\n        std::ranges::fill(change_g, 0);\n\n\
     \        REP_(h, F.size()) {\n            if (lst[h] + (1 << h) != d)\n      \
     \          continue;\n            REP (i, 1 << h) {\n                change_f[i]\
     \ = f[d - (1 << h) + 1 + i];\n                change_g[i] = g[d - (1 << h) + 1\
@@ -82,22 +82,22 @@ data:
     \    int d_lst, lg;\n\n    void DFT(std::vector<MINT> &f, std::vector<MINT> &g,\
     \ const int lg) {\n        // 1<<lg \u306E DFT \u3092\u884C\u3046\n        const\
     \ int n = 1 << lg;\n        // f[n/2,n) , g[n/2,n) = 0 \u304C\u4FDD\u8A3C\u3055\
-    \u308C\u3066\u3044\u308B\n        fill(x.begin(), x.begin() + n, 0);\n       \
-    \ REP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T, 1 << (lg - h - 1)) {\n\
-    \            int l = (S << (lg - h)) | T;\n            int r = l | (1 << (lg -\
-    \ h - 1));\n\n            x[l] >>= 1;\n            (x[r] >>= 1) |= 1 << (lg -\
-    \ 1);\n\n            MINT a = f[l];\n            f[l] += f[r] * cs[lg][x[l]];\n\
+    \u308C\u3066\u3044\u308B\n        std::fill(x.begin(), x.begin() + n, 0);\n  \
+    \      REP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T, 1 << (lg - h - 1))\
+    \ {\n            int l = (S << (lg - h)) | T;\n            int r = l | (1 << (lg\
+    \ - h - 1));\n\n            x[l] >>= 1;\n            (x[r] >>= 1) |= 1 << (lg\
+    \ - 1);\n\n            MINT a = f[l];\n            f[l] += f[r] * cs[lg][x[l]];\n\
     \            (f[r] *= cs[lg][x[r]]) += a;\n\n            a = g[l];\n         \
     \   g[l] += g[r] * cs[lg][x[l]];\n            (g[r] *= cs[lg][x[r]]) += a;\n \
     \       }\n    }\n\n    void IDFT(std::vector<MINT> &f, const int lg) {\n    \
-    \    const int n = 1 << lg;\n        fill(x.begin(), x.begin() + n, 0);\n    \
-    \    RREP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T, 1 << (lg - h - 1))\
-    \ {\n            int l = (S << (lg - h)) | T;\n            int r = l | (1 << (lg\
-    \ - h - 1));\n\n            x[l] >>= 1;\n            (x[r] >>= 1) |= 1 << (lg\
-    \ - 1);\n\n            MINT a = f[l];\n            f[l] += f[r] * cs_inv[lg][x[l]];\n\
+    \    const int n = 1 << lg;\n        std::fill(x.begin(), x.begin() + n, 0);\n\
+    \        RREP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T, 1 << (lg - h -\
+    \ 1)) {\n            int l = (S << (lg - h)) | T;\n            int r = l | (1\
+    \ << (lg - h - 1));\n\n            x[l] >>= 1;\n            (x[r] >>= 1) |= 1\
+    \ << (lg - 1);\n\n            MINT a = f[l];\n            f[l] += f[r] * cs_inv[lg][x[l]];\n\
     \            (f[r] *= cs_inv[lg][x[r]]) += a;\n        }\n        REP_(i, n) f[i]\
     \ *= inv[lg];\n    }\n\n    void IDFT(std::vector<MINT> &f, std::vector<MINT>\
-    \ &g, const int lg) {\n        const int n = 1 << lg;\n        fill(x.begin(),\
+    \ &g, const int lg) {\n        const int n = 1 << lg;\n        std::fill(x.begin(),\
     \ x.begin() + n, 0);\n        RREP_(h, lg)\n        REP_(S, 1 << h)\n        REP_(T,\
     \ 1 << (lg - h - 1)) {\n            int l = (S << (lg - h)) | T;\n           \
     \ int r = l | (1 << (lg - h - 1));\n\n            x[l] >>= 1;\n            (x[r]\
@@ -108,16 +108,16 @@ data:
     \     f[i] *= inv[lg];\n            g[i] *= inv[lg];\n        }\n    }\n\n  public:\n\
     \    OnlineNTT(int n, int m)\n        : d(0), d_lst(-1), lg(0), cs(1), cs_inv(1),\
     \ inv(1), fg(n + m - 1) {}\n\n    MINT query(MINT f_i, MINT g_i) {\n        f.push_back(f_i);\n\
-    \        g.push_back(g_i);\n\n        fill(change_f.begin(), change_f.end(), 0);\n\
-    \        fill(change_g.begin(), change_g.end(), 0);\n\n        REP_(h, F.size())\
-    \ {\n            if (lst[h] + (1 << h) != d)\n                continue;\n    \
-    \        REP (i, 1 << h) {\n                change_f[i] = f[d - (1 << h) + 1 +\
-    \ i];\n                change_g[i] = g[d - (1 << h) + 1 + i];\n            }\n\
-    \            DFT(change_f, change_g, h + 1);\n            REP (i, 1 << (h + 1))\
-    \ {\n                change_f[i] *= G[h][i];\n                change_g[i] *= F[h][i];\n\
-    \            }\n            IDFT(change_f, change_g, h + 1);\n            REP\
-    \ (i, (1 << (h + 1)) - 1) {\n                if (fst[h] + lst[h] + 1 + i >= fg.size())\n\
-    \                    break;\n                fg[fst[h] + lst[h] + 1 + i] += change_f[i]\
+    \        g.push_back(g_i);\n\n        std::ranges::fill(change_f, 0);\n      \
+    \  std::ranges::fill(change_g, 0);\n\n        REP_(h, F.size()) {\n          \
+    \  if (lst[h] + (1 << h) != d)\n                continue;\n            REP (i,\
+    \ 1 << h) {\n                change_f[i] = f[d - (1 << h) + 1 + i];\n        \
+    \        change_g[i] = g[d - (1 << h) + 1 + i];\n            }\n            DFT(change_f,\
+    \ change_g, h + 1);\n            REP (i, 1 << (h + 1)) {\n                change_f[i]\
+    \ *= G[h][i];\n                change_g[i] *= F[h][i];\n            }\n      \
+    \      IDFT(change_f, change_g, h + 1);\n            REP (i, (1 << (h + 1)) -\
+    \ 1) {\n                if (fst[h] + lst[h] + 1 + i >= fg.size())\n          \
+    \          break;\n                fg[fst[h] + lst[h] + 1 + i] += change_f[i]\
     \ + change_g[i];\n            }\n            lst[h] = d;\n        }\n\n      \
     \  if (d_lst + (1 << lg) == d) {\n            // \u30B5\u30A4\u30BA 1<<lg \u304C\
     \u5B8C\u6210\uFF08DFT \u5F8C\u306E\u30B5\u30A4\u30BA\u306F 1<<(lg+1))\n      \
@@ -142,7 +142,7 @@ data:
   isVerificationFile: false
   path: library/convolution/OnlineNTT.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/convolution/OnlineNTT.cpp

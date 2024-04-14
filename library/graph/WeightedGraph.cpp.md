@@ -39,7 +39,7 @@ data:
   - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2647.test.cpp
     title: test/AOJ/2647.test.cpp
   - icon: ':x:'
@@ -60,10 +60,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_1_C.test.cpp
     title: test/AOJ/GRL_1_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_A.test.cpp
     title: test/AOJ/GRL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/GRL_2_B.test.cpp
     title: test/AOJ/GRL_2_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -212,7 +212,7 @@ data:
   - library/flow/MCF.cpp
   - library/flow/NondecreasingMCF.cpp
   - library/flow/Dinic.cpp
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/ShortestPath.test.cpp

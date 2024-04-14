@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':heavy_check_mark:'
@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/tree/EdgeVertex.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp

@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
   - icon: ':x:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
@@ -18,15 +18,15 @@ data:
   - icon: ':x:'
     path: test/AOJ/ALDS1_14_B.test.cpp
     title: test/AOJ/ALDS1_14_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/sequence/ForString.cpp\"\ntemplate <char MARGIN>\
@@ -87,8 +87,8 @@ data:
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
   - library/sequence/RollingHash.cpp
-  timestamp: '2024-04-14 21:36:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-14 23:11:29+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp
   - test/yukicoder/430.test.cpp

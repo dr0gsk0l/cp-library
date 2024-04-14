@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: library/algebra/monoid/Concepts.cpp
     title: library/algebra/monoid/Concepts.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':heavy_check_mark:'
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':heavy_check_mark:'
@@ -27,12 +27,12 @@ data:
     \ntemplate <typename TREE>\nstd::pair<int, std::vector<int>> rooted_tree_isomorphism(TREE\
     \ &t) {\n    assert(~t.root);\n    std::vector<int> res(t.n);\n    std::map<std::vector<int>,\
     \ int> mp;\n    for (const int v : t.DFS) {\n        std::vector<int> h;\n   \
-    \     for (int to : t.son(v))\n            h.push_back(res[to]);\n        std::sort(h.begin(),\
-    \ h.end());\n        if (!mp.count(h))\n            mp[h] = mp.size();\n     \
-    \   res[v] = mp[h];\n    }\n    return {mp.size(), res};\n}\n#line 2 \"library/graph/Graph.cpp\"\
-    \nstruct Edge {\n    int from, to;\n    Edge() = default;\n    Edge(int from,\
-    \ int to) : from(from), to(to) {}\n    operator int() const { return to; }\n};\n\
-    \nstruct Graph {\n    int n;\n    using edge_type = Edge;\n    std::vector<edge_type>\
+    \     for (int to : t.son(v))\n            h.push_back(res[to]);\n        std::ranges::sort(h);\n\
+    \        if (!mp.count(h))\n            mp[h] = mp.size();\n        res[v] = mp[h];\n\
+    \    }\n    return {mp.size(), res};\n}\n#line 2 \"library/graph/Graph.cpp\"\n\
+    struct Edge {\n    int from, to;\n    Edge() = default;\n    Edge(int from, int\
+    \ to) : from(from), to(to) {}\n    operator int() const { return to; }\n};\n\n\
+    struct Graph {\n    int n;\n    using edge_type = Edge;\n    std::vector<edge_type>\
     \ edges;\n\n  protected:\n    std::vector<int> in_deg;\n    bool prepared;\n \
     \   class OutgoingEdges {\n        Graph *g;\n        int l, r;\n\n      public:\n\
     \        OutgoingEdges(Graph *g, int l, int r) : g(g), l(l), r(r) {}\n       \
@@ -113,7 +113,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp

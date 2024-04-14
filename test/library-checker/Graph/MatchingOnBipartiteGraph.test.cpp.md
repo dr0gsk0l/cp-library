@@ -77,35 +77,34 @@ data:
     \ int>> edge_memo;\n\n    std::queue<int> que;\n    void bfs() {\n        // level[v]\u3092\
     \uFF08\u5BB9\u91CF\u6B63\u306E\u8FBA\u306B\u3088\u308B\uFF09s\u304B\u3089\u306E\
     \u6700\u77ED\u8DDD\u96E2\u306B\u3059\u308B\n        // \u5230\u9054\u51FA\u6765\
-    \u306A\u3051\u308C\u3070-1\n        fill(level.begin(), level.end(), -1);\n  \
-    \      level[s] = 0;\n        que.emplace(s);\n        while (que.size()) {\n\
-    \            int v = que.front();\n            que.pop();\n            for (const\
-    \ auto &e : G[v]) {\n                const auto &[cap, rev] = e.weight;\n    \
-    \            if (cap == 0 || ~level[e.to])\n                    continue;\n  \
-    \              level[e.to] = level[v] + 1;\n                que.emplace(e.to);\n\
-    \            }\n        }\n    }\n    T dfs(int v, T f) {\n        // v\u304B\u3089\
-    t\u306B\u6700\u77ED\u8DEF\u3067\u6C34\u3092\u6D41\u3059 f\u304Cv\u307E\u3067\u6301\
-    \u3063\u3066\u3053\u308C\u305F\u6C34\u91CF \u6D41\u305B\u305F\u91CF\u304C\u8FD4\
-    \u308A\u5024\n        if (v == t)\n            return f;\n        for (int &i\
-    \ = current_edge[v]; i < G[v].size();\n             i++) { // \u3053\u306Edfs\u3067\
-    \u4F7F\u308F\u306A\u304B\u3063\u305F\u8FBA\u306F\u6B21\u306EBFS\u307E\u3067\u4F7F\
-    \u308F\u308C\u308B\u3053\u3068\u306F\u306A\u3044\n            auto &e = G[v][i];\n\
-    \            auto &[cap, rev] = e.weight;\n            if (cap > 0 &&\n      \
-    \          level[v] <\n                    level\n                        [e.to])\
-    \ { // bfs\u3092\u3057\u3066\u3044\u308B\u306E\u3067level[v]<level[e.to]\u306A\
-    \u3089level[v]+1==level[e.to]\n                T d = dfs(e.to, std::min(f, cap));\n\
-    \                if (d == 0)\n                    continue;\n                cap\
-    \ -= d;\n                G[e.to][rev].weight.cap += d;\n                return\
-    \ d; // \u4E00\u672C\u6D41\u305B\u305F\u3089return\n            }\n        }\n\
-    \        return 0;\n    }\n\n  public:\n    Dinic() = default;\n    Dinic(int\
-    \ n, int s = 0, int t_ = -1)\n        : G(n), level(n), current_edge(n), out_deg(n,\
-    \ 0), s(s), t(t_) {\n        if (t < 0)\n            t = n - 1;\n    }\n\n   \
-    \ // 0-indexed \u3067 edge_id \u756A\u76EE\u306B\u8FFD\u52A0\u3057\u305F\u8FBA\
-    \u306B\u6D41\u3057\u305F\u91CF\u3092\u8FD4\u3059\n    T operator[](const int edge_id)\
-    \ const {\n        assert(G.is_prepared());\n        const auto &[from, id] =\
-    \ edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n    }\n  \
-    \  // \u8FBA\u3092\u8FFD\u52A0\u3057\u305F\u9806\u756A\u306B [from,to,\u6D41\u91CF\
-    ]\n    std::vector<std::tuple<int, int, T>> all_edge() {\n        assert(G.is_prepared());\n\
+    \u306A\u3051\u308C\u3070-1\n        std::ranges::fill(level, -1);\n        level[s]\
+    \ = 0;\n        que.emplace(s);\n        while (que.size()) {\n            int\
+    \ v = que.front();\n            que.pop();\n            for (const auto &e : G[v])\
+    \ {\n                const auto &[cap, rev] = e.weight;\n                if (cap\
+    \ == 0 || ~level[e.to])\n                    continue;\n                level[e.to]\
+    \ = level[v] + 1;\n                que.emplace(e.to);\n            }\n       \
+    \ }\n    }\n    T dfs(int v, T f) {\n        // v\u304B\u3089t\u306B\u6700\u77ED\
+    \u8DEF\u3067\u6C34\u3092\u6D41\u3059 f\u304Cv\u307E\u3067\u6301\u3063\u3066\u3053\
+    \u308C\u305F\u6C34\u91CF \u6D41\u305B\u305F\u91CF\u304C\u8FD4\u308A\u5024\n  \
+    \      if (v == t)\n            return f;\n        for (int &i = current_edge[v];\
+    \ i < G[v].size();\n             i++) { // \u3053\u306Edfs\u3067\u4F7F\u308F\u306A\
+    \u304B\u3063\u305F\u8FBA\u306F\u6B21\u306EBFS\u307E\u3067\u4F7F\u308F\u308C\u308B\
+    \u3053\u3068\u306F\u306A\u3044\n            auto &e = G[v][i];\n            auto\
+    \ &[cap, rev] = e.weight;\n            if (cap > 0 &&\n                level[v]\
+    \ <\n                    level\n                        [e.to]) { // bfs\u3092\
+    \u3057\u3066\u3044\u308B\u306E\u3067level[v]<level[e.to]\u306A\u3089level[v]+1==level[e.to]\n\
+    \                T d = dfs(e.to, std::min(f, cap));\n                if (d ==\
+    \ 0)\n                    continue;\n                cap -= d;\n             \
+    \   G[e.to][rev].weight.cap += d;\n                return d; // \u4E00\u672C\u6D41\
+    \u305B\u305F\u3089return\n            }\n        }\n        return 0;\n    }\n\
+    \n  public:\n    Dinic() = default;\n    Dinic(int n, int s = 0, int t_ = -1)\n\
+    \        : G(n), level(n), current_edge(n), out_deg(n, 0), s(s), t(t_) {\n   \
+    \     if (t < 0)\n            t = n - 1;\n    }\n\n    // 0-indexed \u3067 edge_id\
+    \ \u756A\u76EE\u306B\u8FFD\u52A0\u3057\u305F\u8FBA\u306B\u6D41\u3057\u305F\u91CF\
+    \u3092\u8FD4\u3059\n    T operator[](const int edge_id) const {\n        assert(G.is_prepared());\n\
+    \        const auto &[from, id] = edge_memo[edge_id];\n        return G.edge[from][id].weight.cap;\n\
+    \    }\n    // \u8FBA\u3092\u8FFD\u52A0\u3057\u305F\u9806\u756A\u306B [from,to,\u6D41\
+    \u91CF]\n    std::vector<std::tuple<int, int, T>> all_edge() {\n        assert(G.is_prepared());\n\
     \        std::vector<std::tuple<int, int, T>> res;\n        res.reserve(edge_memo.size());\n\
     \        for (const auto &[v, id] : edge_memo) {\n            const auto &[to,\
     \ from, weight] = G[v][id];\n            res.emplace_back(from, to, weight.cap);\n\
@@ -115,12 +114,12 @@ data:
     \    }\n    T flow(T lim = std::numeric_limits<T>::max() / 2) {\n        if (!G.is_prepared())\n\
     \            G.build();\n        T fl = 0;\n        while (lim > 0) {\n      \
     \      bfs();\n            if (level[t] < 0)\n                break;\n       \
-    \     fill(current_edge.begin(), current_edge.end(), 0);\n            while (true)\
-    \ {\n                T f = dfs(s, lim);\n                if (f == 0)\n       \
-    \             break;\n                fl += f;\n                lim -= f;\n  \
-    \          }\n        }\n        return fl;\n    }\n\n    T st_flow(int s_, int\
-    \ t_, T lim = std::numeric_limits<T>::max() / 2) {\n        s = s_;\n        t\
-    \ = t_;\n        return flow(lim);\n    }\n};\n#line 5 \"library/graph/matching/BipartiteMatching.cpp\"\
+    \     std::ranges::fill(current_edge, 0);\n            while (true) {\n      \
+    \          T f = dfs(s, lim);\n                if (f == 0)\n                 \
+    \   break;\n                fl += f;\n                lim -= f;\n            }\n\
+    \        }\n        return fl;\n    }\n\n    T st_flow(int s_, int t_, T lim =\
+    \ std::numeric_limits<T>::max() / 2) {\n        s = s_;\n        t = t_;\n   \
+    \     return flow(lim);\n    }\n};\n#line 5 \"library/graph/matching/BipartiteMatching.cpp\"\
     \nclass BipartiteMatching {\n    int A, B; // \u5DE6\u53F3\u306E\u9802\u70B9\u6570\
     \n    int S, T;\n    Dinic<int> fl;\n\n  public:\n    BipartiteMatching(int A,\
     \ int B)\n        : A(A), B(B), S(A + B), T(A + B + 1), fl(A + B + 2, S, T) {\n\
@@ -154,7 +153,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

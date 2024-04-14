@@ -128,12 +128,12 @@ data:
     \ == 0)\n            return unit();\n        FPS res(MX, 1);\n        for (int\
     \ i = 1; i < MX; i++)\n            res[i] = res[i - 1] * n / i;\n        return\
     \ res;\n    }\n};\n#undef REP_\n#line 3 \"library/formalpowerseries/DivMod.cpp\"\
-    \n#define REVERSE_(f) std::reverse(f.begin(), f.end());\ntemplate <typename FPS>\
-    \ std::pair<FPS, FPS> div_mod(FPS f, FPS g) {\n    f.shrink();\n    g.shrink();\n\
-    \    assert(g.size());\n    if (f.size() < g.size())\n        return {FPS(0),\
-    \ f};\n    REVERSE_(f);\n    REVERSE_(g);\n    int d = f.size() - g.size() + 1;\n\
-    \    FPS q = (f.pre(d) * g.inv(d)).pre(d);\n    if (q.size() < d)\n        q.resize(d,\
-    \ 0);\n    REVERSE_(q);\n    REVERSE_(f);\n    REVERSE_(g);\n    return {q, f\
+    \ntemplate <typename FPS> std::pair<FPS, FPS> div_mod(FPS f, FPS g) {\n    f.shrink();\n\
+    \    g.shrink();\n    assert(g.size());\n    if (f.size() < g.size())\n      \
+    \  return {FPS(0), f};\n    std::ranges::reverse(f);\n    std::ranges::reverse(g);\n\
+    \    int d = f.size() - g.size() + 1;\n    FPS q = (f.pre(d) * g.inv(d)).pre(d);\n\
+    \    if (q.size() < d)\n        q.resize(d, 0);\n    std::ranges::reverse(q);\n\
+    \    std::ranges::reverse(f);\n    std::ranges::reverse(g);\n    return {q, f\
     \ - q * g};\n}\n#undef REVERSE_\n#line 4 \"library/formalpowerseries/MultipointEvaluation.cpp\"\
     \ntemplate <typename FPS, typename T = typename FPS::value_type>\nstd::vector<T>\
     \ multipoint_evaluation(const FPS &f, std::vector<T> v) {\n    int m = v.size();\n\
@@ -159,7 +159,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/MultipointEvaluation.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp

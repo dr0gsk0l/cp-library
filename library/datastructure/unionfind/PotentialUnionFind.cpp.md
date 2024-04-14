@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/1330.test.cpp
     title: test/AOJ/1330.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2207.test.cpp
     title: test/AOJ/2207.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/2971.test.cpp
     title: test/AOJ/2971.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/1420.test.cpp
     title: test/yukicoder/1420.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/datastructure/unionfind/PotentialUnionFind.cpp\"\
@@ -30,8 +30,8 @@ data:
     \u6642\u306E x \u306E\u5024\n  public:\n    PotentialUnionFind() = default;\n\
     \    PotentialUnionFind(int n)\n        : n(n), num(n), sz(n, 1), parent(n, 0),\n\
     \          potential(n, AbelGroup::unit()) {\n        assert(AbelGroup::commute);\n\
-    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    std::pair<int, T>\
-    \ from_root(int x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
+    \        std::ranges::iota(parent, 0);\n    }\n\n    std::pair<int, T> from_root(int\
+    \ x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
     \        auto [r, add] = from_root(parent[x]);\n        parent[x] = r;\n     \
     \   AbelGroup::Rchop(potential[x], add);\n        return {r, potential[x]};\n\
     \    }\n\n    int leader(int x) { return from_root(x).first; }\n\n    bool same(int\
@@ -58,8 +58,8 @@ data:
     \u3057\u305F\u6642\u306E x \u306E\u5024\n  public:\n    PotentialUnionFind() =\
     \ default;\n    PotentialUnionFind(int n)\n        : n(n), num(n), sz(n, 1), parent(n,\
     \ 0),\n          potential(n, AbelGroup::unit()) {\n        assert(AbelGroup::commute);\n\
-    \        iota(parent.begin(), parent.end(), 0);\n    }\n\n    std::pair<int, T>\
-    \ from_root(int x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
+    \        std::ranges::iota(parent, 0);\n    }\n\n    std::pair<int, T> from_root(int\
+    \ x) {\n        if (x == parent[x])\n            return {x, AbelGroup::unit()};\n\
     \        auto [r, add] = from_root(parent[x]);\n        parent[x] = r;\n     \
     \   AbelGroup::Rchop(potential[x], add);\n        return {r, potential[x]};\n\
     \    }\n\n    int leader(int x) { return from_root(x).first; }\n\n    bool same(int\
@@ -84,8 +84,8 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-04-14 23:11:29+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/1420.test.cpp
   - test/AOJ/1330.test.cpp

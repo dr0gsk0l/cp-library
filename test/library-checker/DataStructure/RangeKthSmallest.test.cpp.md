@@ -44,11 +44,11 @@ data:
     \            (rank(m, f) >= k + 1 ? r : l) = m;\n        }\n        return r -\
     \ 1;\n    }\n    // l\u4EE5\u4E0A\u3067 k \u756A\u76EE\u306E f \u306E\u5834\u6240\
     \n    int select(int k, bool f, int l) { return select(rank(l, f) + k, f); }\n\
-    };\n#line 2 \"library/util/Compress.cpp\"\n#define ALL_(v) v.begin(), v.end()\n\
-    template <typename T, bool Sentinel = false> class Compress {\n    std::vector<T>\
-    \ v;\n    bool prepared;\n\n  public:\n    Compress() : prepared(false) {\n  \
-    \      if constexpr (Sentinel) {\n            static_assert(std::numeric_limits<T>::is_specialized,\n\
-    \                          \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
+    };\n#line 2 \"library/util/Compress.cpp\"\ntemplate <typename T, bool Sentinel\
+    \ = false> class Compress {\n    std::vector<T> v;\n    bool prepared;\n\n  public:\n\
+    \    Compress() : prepared(false) {\n        if constexpr (Sentinel) {\n     \
+    \       static_assert(std::numeric_limits<T>::is_specialized,\n              \
+    \            \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
     \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
     \   static_assert(std::numeric_limits<T>::is_specialized,\n                  \
@@ -56,27 +56,28 @@ data:
     \            v.push_back(std::numeric_limits<T>::max());\n        }\n        build();\n\
     \    }\n\n    void add(T a) {\n        assert(!prepared);\n        v.push_back(a);\n\
     \    }\n    void build() {\n        assert(!prepared);\n        prepared = true;\n\
-    \        std::sort(ALL_(v));\n        v.erase(unique(ALL_(v)), v.end());\n   \
-    \ }\n\n    bool is_prepared() const { return prepared; }\n\n    int operator[](const\
-    \ T &a) const {\n        assert(prepared);\n        auto it = lower_bound(ALL_(v),\
-    \ a);\n        assert(*it == a);\n        return distance(v.begin(), it);\n  \
-    \  }\n    int geq(const T &a) const {\n        assert(prepared);\n        auto\
-    \ it = lower_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n   \
-    \ }\n    int gt(const T &a) const {\n        assert(prepared);\n        auto it\
-    \ = upper_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n    }\n\
-    \    int leq(const T &a) const {\n        assert(prepared);\n        auto it =\
-    \ --upper_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n    }\n\
-    \    int lt(const T &a) const {\n        assert(prepared);\n        auto it =\
-    \ --lower_bound(ALL_(v), a);\n        return distance(v.begin(), it);\n    }\n\
-    \    T r(int id) const {\n        assert(prepared);\n        return v[id];\n \
-    \   }\n    bool exist(const T &a) const {\n        assert(prepared);\n       \
-    \ return (*lower_bound(ALL_(v), a)) == a;\n    }\n    int size() const { return\
-    \ v.size(); }\n    T max() const { return v.back(); }\n    T min() const { return\
-    \ v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os, const Compress\
-    \ &C) {\n        for (int i = 0; i < C.v.size(); i++)\n            os << C.v[i]\
-    \ << \":\" << i << \" \";\n        return os;\n    }\n};\n#undef ALL_\n#line 4\
-    \ \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i =\
-    \ 0; i < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
+    \        std::ranges::sort(v);\n        auto result = std::ranges::unique(v);\n\
+    \        v.erase(result.begin(), result.end());\n    }\n\n    bool is_prepared()\
+    \ const { return prepared; }\n\n    int operator[](const T &a) const {\n     \
+    \   assert(prepared);\n        auto it = std::ranges::lower_bound(v, a);\n   \
+    \     assert(*it == a);\n        return std::distance(v.begin(), it);\n    }\n\
+    \    int geq(const T &a) const {\n        assert(prepared);\n        auto it =\
+    \ std::ranges::lower_bound(v, a);\n        return std::distance(v.begin(), it);\n\
+    \    }\n    int gt(const T &a) const {\n        assert(prepared);\n        auto\
+    \ it = std::ranges::upper_bound(v, a);\n        return std::distance(v.begin(),\
+    \ it);\n    }\n    int leq(const T &a) const {\n        assert(prepared);\n  \
+    \      auto it = --std::ranges::upper_bound(v, a);\n        return std::distance(v.begin(),\
+    \ it);\n    }\n    int lt(const T &a) const {\n        assert(prepared);\n   \
+    \     auto it = --std::ranges::lower_bound(v, a);\n        return std::distance(v.begin(),\
+    \ it);\n    }\n    T r(int id) const {\n        assert(prepared);\n        return\
+    \ v[id];\n    }\n    bool exist(const T &a) const {\n        assert(prepared);\n\
+    \        return (*std::ranges::lower_bound(v, a)) == a;\n    }\n    int size()\
+    \ const { return v.size(); }\n    T max() const { return v.back(); }\n    T min()\
+    \ const { return v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os,\
+    \ const Compress &C) {\n        for (int i = 0; i < C.v.size(); i++)\n       \
+    \     os << C.v[i] << \":\" << i << \" \";\n        return os;\n    }\n};\n#line\
+    \ 4 \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i\
+    \ = 0; i < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
     \ {\n  protected:\n    using U = conditional_t<COMPRESS, int, T>;\n    static_assert(is_integral_v<U>,\
     \ \"Wavelet Matrix is only for integer\");\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary>\
     \ mat;\n    std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T>\
@@ -189,7 +190,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeKthSmallest.test.cpp

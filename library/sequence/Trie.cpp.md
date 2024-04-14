@@ -4,26 +4,26 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/sequence/ForString.cpp
     title: library/sequence/ForString.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430.test.cpp
     title: test/yukicoder/430.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/group/Add.cpp\"\ntemplate<typename X>\n\
@@ -64,7 +64,7 @@ data:
     \ SIGMA> nxt;\n        int pre;\n        X val, suffix_val; // suffix_val \u306F\
     \u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n        Node(int pre)\n          \
     \  : pre(pre), val(AbelMonoid::unit()),\n              suffix_val(AbelMonoid::unit())\
-    \ {\n            fill(nxt.begin(), nxt.end(), -1);\n        }\n    };\n    std::vector<Node>\
+    \ {\n            std::ranges::fill(nxt, -1);\n        }\n    };\n    std::vector<Node>\
     \ nodes;\n\n  public:\n    Trie() : nodes(1, Node(-1)) {}\n\n    int &nxt(int\
     \ now, const CHAR &a) { return nodes[now].nxt[a]; }\n    const int &nxt(int now,\
     \ const CHAR &a) const { return nodes[now].nxt[a]; }\n\n    int add(const std::vector<CHAR>\
@@ -93,21 +93,20 @@ data:
     \       int pre = nodes[node_id].pre;\n            for (int j = 0; j < SIGMA;\
     \ j++)\n                if (nxt(pre, j) == node_id) {\n                    res.push_back(j);\n\
     \                    break;\n                }\n            node_id = pre;\n \
-    \       }\n        std::reverse(res.begin(), res.end());\n        return res;\n\
-    \    }\n    X prod() const { return nodes[0].suffix_val; }\n    int size() const\
-    \ { return nodes.size(); }\n\n    template <typename F>\n    void query(const\
-    \ std::vector<CHAR> &v, const F &f, int l = 0, int r = -1) {\n        if (r <\
-    \ 0)\n            r = v.size();\n        int now = 0;\n        for (int i = l;\
-    \ i < r; i++) {\n            now = nxt(now, v[i]);\n            if (~now)\n  \
-    \              f(now);\n            else\n                break;\n        }\n\
-    \    }\n};\n"
+    \       }\n        std::ranges::reverse(res);\n        return res;\n    }\n  \
+    \  X prod() const { return nodes[0].suffix_val; }\n    int size() const { return\
+    \ nodes.size(); }\n\n    template <typename F>\n    void query(const std::vector<CHAR>\
+    \ &v, const F &f, int l = 0, int r = -1) {\n        if (r < 0)\n            r\
+    \ = v.size();\n        int now = 0;\n        for (int i = l; i < r; i++) {\n \
+    \           now = nxt(now, v[i]);\n            if (~now)\n                f(now);\n\
+    \            else\n                break;\n        }\n    }\n};\n"
   code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/sequence/ForString.cpp\"\
     \ntemplate <typename CHAR, int SIGMA, typename AbelMonoid = GroupAdd<int>>\nclass\
     \ Trie {\n  protected:\n    using X = typename AbelMonoid::value_type;\n    struct\
     \ Node {\n        std::array<int, SIGMA> nxt;\n        int pre;\n        X val,\
     \ suffix_val; // suffix_val \u306F\u81EA\u8EAB\u3092\u542B\u307E\u306A\u3044\n\
     \        Node(int pre)\n            : pre(pre), val(AbelMonoid::unit()),\n   \
-    \           suffix_val(AbelMonoid::unit()) {\n            fill(nxt.begin(), nxt.end(),\
+    \           suffix_val(AbelMonoid::unit()) {\n            std::ranges::fill(nxt,\
     \ -1);\n        }\n    };\n    std::vector<Node> nodes;\n\n  public:\n    Trie()\
     \ : nodes(1, Node(-1)) {}\n\n    int &nxt(int now, const CHAR &a) { return nodes[now].nxt[a];\
     \ }\n    const int &nxt(int now, const CHAR &a) const { return nodes[now].nxt[a];\
@@ -136,14 +135,13 @@ data:
     \       int pre = nodes[node_id].pre;\n            for (int j = 0; j < SIGMA;\
     \ j++)\n                if (nxt(pre, j) == node_id) {\n                    res.push_back(j);\n\
     \                    break;\n                }\n            node_id = pre;\n \
-    \       }\n        std::reverse(res.begin(), res.end());\n        return res;\n\
-    \    }\n    X prod() const { return nodes[0].suffix_val; }\n    int size() const\
-    \ { return nodes.size(); }\n\n    template <typename F>\n    void query(const\
-    \ std::vector<CHAR> &v, const F &f, int l = 0, int r = -1) {\n        if (r <\
-    \ 0)\n            r = v.size();\n        int now = 0;\n        for (int i = l;\
-    \ i < r; i++) {\n            now = nxt(now, v[i]);\n            if (~now)\n  \
-    \              f(now);\n            else\n                break;\n        }\n\
-    \    }\n};\n"
+    \       }\n        std::ranges::reverse(res);\n        return res;\n    }\n  \
+    \  X prod() const { return nodes[0].suffix_val; }\n    int size() const { return\
+    \ nodes.size(); }\n\n    template <typename F>\n    void query(const std::vector<CHAR>\
+    \ &v, const F &f, int l = 0, int r = -1) {\n        if (r < 0)\n            r\
+    \ = v.size();\n        int now = 0;\n        for (int i = l; i < r; i++) {\n \
+    \           now = nxt(now, v[i]);\n            if (~now)\n                f(now);\n\
+    \            else\n                break;\n        }\n    }\n};\n"
   dependsOn:
   - library/algebra/group/Add.cpp
   - library/sequence/ForString.cpp
@@ -151,8 +149,8 @@ data:
   path: library/sequence/Trie.cpp
   requiredBy:
   - library/sequence/AhoCorasick.cpp
-  timestamp: '2024-04-14 21:36:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-14 23:11:29+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp
   - test/yukicoder/430.test.cpp

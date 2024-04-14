@@ -27,12 +27,12 @@ data:
     \ 1));\n\n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n    \
     \    MINT a = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]])\
     \ += a;\n\n        a = g[l];\n        g[l] += g[r] * cs[x[l]];\n        (g[r]\
-    \ *= cs[x[r]]) += a;\n    }\n    REP_(i, N) f[i] *= g[i];\n\n    fill(x.begin(),\
-    \ x.end(), 0);\n    c = c.inv();\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c :\
-    \ 1);\n    RREP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1)) {\n\
-    \        int l = (S << (lg - h)) | T;\n        int r = l | (1 << (lg - h - 1));\n\
-    \n        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n        MINT\
-    \ a = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n\
+    \ *= cs[x[r]]) += a;\n    }\n    REP_(i, N) f[i] *= g[i];\n\n    std::ranges::fill(x,\
+    \ 0);\n    c = c.inv();\n    REP_(i, N) cs[i] = (i ? cs[i - 1] * c : 1);\n   \
+    \ RREP_(h, lg)\n    REP_(S, 1 << h)\n    REP_(T, 1 << (lg - h - 1)) {\n      \
+    \  int l = (S << (lg - h)) | T;\n        int r = l | (1 << (lg - h - 1));\n\n\
+    \        x[l] >>= 1;\n        (x[r] >>= 1) |= 1 << (lg - 1);\n\n        MINT a\
+    \ = f[l];\n        f[l] += f[r] * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n\
     \    }\n    f.resize(M);\n    MINT Ninv = MINT(N).inv();\n    REP_(i, M) f[i]\
     \ *= Ninv;\n    return f;\n}\n#undef REP_\n#undef RREP_\n"
   code: "#pragma once\n#define REP_(i, n) for (int i = 0; i < (n); i++)\n#define RREP_(i,\
@@ -51,18 +51,18 @@ data:
     \  (x[r] >>= 1) |= 1 << (lg - 1);\n\n        MINT a = f[l];\n        f[l] += f[r]\
     \ * cs[x[l]];\n        (f[r] *= cs[x[r]]) += a;\n\n        a = g[l];\n       \
     \ g[l] += g[r] * cs[x[l]];\n        (g[r] *= cs[x[r]]) += a;\n    }\n    REP_(i,\
-    \ N) f[i] *= g[i];\n\n    fill(x.begin(), x.end(), 0);\n    c = c.inv();\n   \
-    \ REP_(i, N) cs[i] = (i ? cs[i - 1] * c : 1);\n    RREP_(h, lg)\n    REP_(S, 1\
-    \ << h)\n    REP_(T, 1 << (lg - h - 1)) {\n        int l = (S << (lg - h)) | T;\n\
-    \        int r = l | (1 << (lg - h - 1));\n\n        x[l] >>= 1;\n        (x[r]\
-    \ >>= 1) |= 1 << (lg - 1);\n\n        MINT a = f[l];\n        f[l] += f[r] * cs[x[l]];\n\
+    \ N) f[i] *= g[i];\n\n    std::ranges::fill(x, 0);\n    c = c.inv();\n    REP_(i,\
+    \ N) cs[i] = (i ? cs[i - 1] * c : 1);\n    RREP_(h, lg)\n    REP_(S, 1 << h)\n\
+    \    REP_(T, 1 << (lg - h - 1)) {\n        int l = (S << (lg - h)) | T;\n    \
+    \    int r = l | (1 << (lg - h - 1));\n\n        x[l] >>= 1;\n        (x[r] >>=\
+    \ 1) |= 1 << (lg - 1);\n\n        MINT a = f[l];\n        f[l] += f[r] * cs[x[l]];\n\
     \        (f[r] *= cs[x[r]]) += a;\n    }\n    f.resize(M);\n    MINT Ninv = MINT(N).inv();\n\
     \    REP_(i, M) f[i] *= Ninv;\n    return f;\n}\n#undef REP_\n#undef RREP_"
   dependsOn: []
   isVerificationFile: false
   path: library/convolution/NTT.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/Convolution.test.cpp

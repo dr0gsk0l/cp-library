@@ -15,13 +15,13 @@ data:
     \ typename COUNT> class BinaryTrie {\n    static_assert(LOG <= 64, \"Binary Trie\
     \ overflow\");\n    using T = conditional_t<LOG <= 32, unsigned int, unsigned\
     \ long long>;\n    struct Node {\n        std::array<int, 2> nxt_node;\n     \
-    \   COUNT count; //\n        Node() : count(0) { fill(nxt_node.begin(), nxt_node.end(),\
-    \ -1); }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f)\
-    \ { return nodes[now].nxt_node[f]; }\n    bool bit(const T &a, int i) const {\
-    \ return (a >> i) & 1; }\n\n  public:\n    BinaryTrie() : nodes(1, Node()) {}\n\
-    \n    int add(const T &a, COUNT num = 1) {\n        int now = 0;\n        for\
-    \ (int i = LOG - 1; i >= 0; i--) {\n            if (!~nxt(now, bit(a, i))) {\n\
-    \                nxt(now, bit(a, i)) = nodes.size();\n                nodes.emplace_back();\n\
+    \   COUNT count; //\n        Node() : count(0) { std::ranges::fill(nxt_node, -1);\
+    \ }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f) { return\
+    \ nodes[now].nxt_node[f]; }\n    bool bit(const T &a, int i) const { return (a\
+    \ >> i) & 1; }\n\n  public:\n    BinaryTrie() : nodes(1, Node()) {}\n\n    int\
+    \ add(const T &a, COUNT num = 1) {\n        int now = 0;\n        for (int i =\
+    \ LOG - 1; i >= 0; i--) {\n            if (!~nxt(now, bit(a, i))) {\n        \
+    \        nxt(now, bit(a, i)) = nodes.size();\n                nodes.emplace_back();\n\
     \            }\n            nodes[now].count += num;\n            now = nxt(now,\
     \ bit(a, i));\n        }\n        nodes[now].count += num;\n        return now;\n\
     \    }\n\n    int node_idx(const T &a) {\n        int now = 0;\n        for (int\
@@ -44,7 +44,7 @@ data:
   code: "template <int LOG, typename COUNT> class BinaryTrie {\n    static_assert(LOG\
     \ <= 64, \"Binary Trie overflow\");\n    using T = conditional_t<LOG <= 32, unsigned\
     \ int, unsigned long long>;\n    struct Node {\n        std::array<int, 2> nxt_node;\n\
-    \        COUNT count; //\n        Node() : count(0) { fill(nxt_node.begin(), nxt_node.end(),\
+    \        COUNT count; //\n        Node() : count(0) { std::ranges::fill(nxt_node,\
     \ -1); }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f)\
     \ { return nodes[now].nxt_node[f]; }\n    bool bit(const T &a, int i) const {\
     \ return (a >> i) & 1; }\n\n  public:\n    BinaryTrie() : nodes(1, Node()) {}\n\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/BinaryTrie.cpp
   requiredBy: []
-  timestamp: '2024-04-14 21:36:11+09:00'
+  timestamp: '2024-04-14 23:11:29+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/SetXor-Min.test.cpp

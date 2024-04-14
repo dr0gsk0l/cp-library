@@ -32,9 +32,9 @@ data:
     \ = 0; m < n - d; m++) {\n            // ret[d] \u306E [2^m, 2^{m+1}] \u3092\u6C42\
     \u3081\u308B\n            SPS pre(ret[d + 1].begin(), ret[d + 1].begin() + (1\
     \ << m));\n            SPS a2(a.begin() + (1 << m), a.begin() + (1 << (m + 1)));\n\
-    \            pre *= a2;\n            std::copy(pre.begin(), pre.end(), ret[d].begin()\
-    \ + (1 << m));\n        }\n    }\n    return ret[0];\n}\n\n// sum_k f_k a^k\n\
-    template <typename SPS, typename T = typename SPS::value_type>\nSPS SPS_composition(const\
+    \            pre *= a2;\n            std::ranges::copy(pre, ret[d].begin() + (1\
+    \ << m));\n        }\n    }\n    return ret[0];\n}\n\n// sum_k f_k a^k\ntemplate\
+    \ <typename SPS, typename T = typename SPS::value_type>\nSPS SPS_composition(const\
     \ std::vector<T> &f, SPS a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\
     \n    std::vector<T> c_pow(f.size() + 1, 1);\n    for (int i = 1; i <= f.size();\
     \ i++)\n        c_pow[i] = c_pow[i - 1] * a[0];\n\n    std::vector<T> f2(n + 1,\
@@ -45,9 +45,9 @@ data:
     \ SPS exp(SPS a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\n \
     \   SPS ret(N, 1);\n    for (int d = n - 1; d >= 0; d--) {\n        const int\
     \ M = 1 << (n - d - 1);\n        SPS pre(ret.begin(), ret.begin() + M);\n    \
-    \    SPS a2(a.begin() + M, a.begin() + 2 * M);\n        pre *= a2;\n        std::copy(pre.begin(),\
-    \ pre.end(), ret.begin() + M);\n    }\n    return ret;\n}\n\ntemplate <typename\
-    \ SPS, typename T = typename SPS::value_type> SPS log(SPS a) {\n    int n = bitwise::log2(a.size());\n\
+    \    SPS a2(a.begin() + M, a.begin() + 2 * M);\n        pre *= a2;\n        std::ranges::copy(pre,\
+    \ ret.begin() + M);\n    }\n    return ret;\n}\n\ntemplate <typename SPS, typename\
+    \ T = typename SPS::value_type> SPS log(SPS a) {\n    int n = bitwise::log2(a.size());\n\
     \    assert((1 << n) == a.size() and a[0] == 1);\n    std::vector<T> lg(n + 1,\
     \ 0);\n    for (int k = 1; k <= n; k++)\n        lg[k] = T(-1) / k;\n    return\
     \ SPS_composition(lg, SPS(1, 1) - a);\n}\n"
