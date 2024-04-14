@@ -106,7 +106,7 @@ data:
   isVerificationFile: false
   path: library/graph/shortest_path/Dial.cpp
   requiredBy: []
-  timestamp: '2024-04-13 20:35:54+09:00'
+  timestamp: '2024-04-14 21:36:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_12_B.test.cpp

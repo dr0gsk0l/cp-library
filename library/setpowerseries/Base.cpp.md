@@ -22,8 +22,8 @@ data:
     \ line -1: no such header\n"
   code: "#include \"bitwise/Ranked.cpp\"\ntemplate <typename T> struct SetPowerSeries\
     \ : std::vector<T> {\n    using SPS = SetPowerSeries;\n    using value_type =\
-    \ T;\n    using std::vector<T>::std::vector;\n    using std::vector<T>::resize;\n\
-    \    using std::vector<T>::at;\n    using std::vector<T>::size;\n\n    SetPowerSeries(const\
+    \ T;\n    using std::vector<T>::vector;\n    using std::vector<T>::resize;\n \
+    \   using std::vector<T>::at;\n    using std::vector<T>::size;\n\n    SetPowerSeries(const\
     \ std::vector<T> &f) {\n        resize(f.size());\n        for (int i = 0; i <\
     \ size(); i++)\n            at(i) = f[i];\n    }\n\n    SPS operator-() const\
     \ {\n        SPS ret(*this);\n        for (auto &a : ret)\n            a = -a;\n\

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/Base.cpp
     title: library/formalpowerseries/Base.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_taylor_shift
@@ -25,8 +25,8 @@ data:
     \ i = 0; i < (n); i++)\ntemplate <typename T, int MX> struct FormalPowerSeries\
     \ : std::vector<T> {\n    using FPS = FormalPowerSeries;\n    using std::vector<T>::resize;\n\
     \    using std::vector<T>::size;\n    using std::vector<T>::at;\n    using std::vector<T>::assign;\n\
-    \    using std::vector<T>::std::vector;\n    using std::vector<T>::begin;\n  \
-    \  using std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
+    \    using std::vector<T>::vector;\n    using std::vector<T>::begin;\n    using\
+    \ std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
     \    using value_type = T;\n\n    void strict(int n) {\n        if (size() > n)\n\
     \            resize(n);\n    }\n    void shrink() {\n        while (size() and\
     \ back() == 0)\n            pop_back();\n    }\n\n    FormalPowerSeries(const\
@@ -153,8 +153,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/TaylorShift.test.cpp
   requiredBy: []
-  timestamp: '2024-04-13 20:35:54+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-14 21:36:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/TaylorShift.test.cpp
 layout: document

@@ -198,19 +198,19 @@ data:
       title: library/flow/NondecreasingMCF.cpp
   - name: library/formalpowerseries
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/Base.cpp
       title: library/formalpowerseries/Base.cpp
     - icon: ':warning:'
       path: library/formalpowerseries/ComposeEXP.cpp
       title: library/formalpowerseries/ComposeEXP.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/DivMod.cpp
       title: library/formalpowerseries/DivMod.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/MultipointEvaluation.cpp
       title: library/formalpowerseries/MultipointEvaluation.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/Prod.cpp
       title: library/formalpowerseries/Prod.cpp
     - icon: ':warning:'
@@ -710,34 +710,34 @@ data:
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
       title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Exp.test.cpp
       title: test/library-checker/Polynomial/Exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Inv.test.cpp
       title: test/library-checker/Polynomial/Inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
       title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Pow.test.cpp
       title: test/library-checker/Polynomial/Pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
       title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/TaylorShift.test.cpp
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
   - name: test/library-checker/SPS
