@@ -83,6 +83,7 @@
     "unordered_set": "cpp",
     "__memory": "cpp",
     "__verbose_abort": "cpp",
-    "execution": "cpp"
+    "execution": "cpp",
+    "utility": "cpp"
   }
 }

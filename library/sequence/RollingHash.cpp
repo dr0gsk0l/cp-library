@@ -3,6 +3,9 @@
 #include "library/mod/Modint61.cpp"
 #include "library/sequence/ForString.cpp"
 
+#include <random>
+#include <vector>
+
 std::random_device rollonghash_rnd;
 std::mt19937 rollonghash_mt(rollonghash_rnd());
 
@@ -18,10 +21,12 @@ template <typename CHAR = char, typename MINT = Modint61> class RollingHash {
     std::vector<MINT> hash;
 
   public:
-    static std::vector<MINT> power(1, 1);
+    static std::vector<MINT> power;
 
     RollingHash() = default;
     RollingHash(const std::vector<CHAR> &v) : n(v.size()), hash(n + 1, 0) {
+        if (!power.size())
+            power.push_back(1);
         for (int i = 0; i < n; i++)
             hash[i + 1] = nxt_hash(hash[i], v[i]);
 
