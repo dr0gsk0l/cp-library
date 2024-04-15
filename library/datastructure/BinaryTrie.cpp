@@ -1,6 +1,6 @@
 template <int LOG, typename COUNT> class BinaryTrie {
     static_assert(LOG <= 64, "Binary Trie overflow");
-    using T = conditional_t<LOG <= 32, unsigned int, unsigned long long>;
+    using T = std::conditional_t<LOG <= 32, unsigned int, unsigned long long>;
     struct Node {
         std::array<int, 2> nxt_node;
         COUNT count; //

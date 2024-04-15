@@ -4,19 +4,19 @@
 
 template <int MAX, bool PRIME_FACTOR = false, bool DIVISOR = false>
 class PrimeUtil {
-    using u32 = unsigned long long;
-    using u64 = unsigned long long;
+    using u32 = std::uint32_t;
+    using u64 = std::uint64_t;
     using PF = std::vector<std::pair<u32, int>>;
 
-    template <size_t SZ> using ARR = std::array<T, SZ + 1>;
+    template <typename T> using ARR = std::array<T, MAX + 1>;
     template <typename T, bool F> using COND = std::conditional_t<F, T, bool>;
 
     ARR<bool> isP;
     std::vector<u32> primes;
     COND<ARR<PF>, PRIME_FACTOR> prime_factors;
-    COND<ARR<std::vector<u32>>> divisors; // 自明な約数は入らない
+    COND<ARR<std::vector<u32>>, DIVISOR> divisors; // 自明な約数は入らない
 
-    static ll pow2(ll a) { return a * a; }
+    static u64 pow2(u64 a) { return a * a; }
 
   public:
     PrimeUtil() {
@@ -34,14 +34,14 @@ class PrimeUtil {
             if (!isP[i])
                 continue;
             primes.push_back(i);
-            for (ll j = pow2(i); j <= MAX; j += i)
+            for (u64 j = pow2(i); j <= MAX; j += i)
                 isP[j] = false;
             // 素因数分解
             if constexpr (PRIME_FACTOR) {
                 for (int j = i; j <= MAX; j += i)
                     prime_factors[j].emplace_back(i, 1);
                 int limit = MAX / i + 1;
-                for (ll j = pow2(i); j <= MAX; j *= i) {
+                for (u64 j = pow2(i); j <= MAX; j *= i) {
                     for (int k = j; k <= MAX; k += j)
                         prime_factors[k].back().second++;
                     if (j > limit)
@@ -70,7 +70,7 @@ class PrimeUtil {
 
     // 素因数分解
     PF prime_factor(u64 n) const {
-        asseert(n <= pow(MAX));
+        assert(n <= pow2(MAX));
 
         if constexpr (PRIME_FACTOR)
             if (n <= MAX)

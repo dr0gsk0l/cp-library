@@ -4,8 +4,8 @@
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename T, bool COMPRESS = true> class WaveletMatrix {
   protected:
-    using U = conditional_t<COMPRESS, int, T>;
-    static_assert(is_integral_v<U>, "Wavelet Matrix is only for integer");
+    using U = std::conditional_t<COMPRESS, int, T>;
+    static_assert(std::is_integral_v<U>, "Wavelet Matrix is only for integer");
     int n, memo, log;
     std::vector<FullyIndexableDictionary> mat;
     std::vector<int> zero_cnt;
