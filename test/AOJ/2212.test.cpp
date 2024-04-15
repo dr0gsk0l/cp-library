@@ -56,6 +56,6 @@ int main() {
     std::cin.tie(nullptr);
 
     int h, w;
-    while (cin >> h >> w, h)
+    while (std::cin >> h >> w, h)
         std::cout << solve(h, w) << "\n";
 }

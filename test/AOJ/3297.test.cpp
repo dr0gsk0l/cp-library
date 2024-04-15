@@ -11,7 +11,7 @@ int main() {
     std::cin.tie(nullptr);
 
     int n, m, k;
-    while (cin >> n >> m >> k, n) {
+    while (std::cin >> n >> m >> k, n) {
         NondecreasingMCF<__int128> fl(n);
         for (int i = 0; i < m; i++) {
             ll s, t, c, d;
