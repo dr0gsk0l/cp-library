@@ -4,7 +4,7 @@ std::pair<std::vector<T>, std::vector<int>> dijkstra(const WG &g, int s = 0) {
     std::vector<T> d(g.n, -1);
     std::vector<int> pre(g.n, -1);
     std::priority_queue<std::pair<T, int>, std::vector<std::pair<T, int>>,
-                        greater<std::pair<T, int>>>
+                        std::greater<std::pair<T, int>>>
         que;
     d[s] = 0;
     que.emplace(0, s);
