@@ -9,7 +9,7 @@ class BitwiseRanked {
     template <typename T>
     static std::vector<std::vector<T>> zeta(const std::vector<T> &A) {
         const int n = bitwise::log2(A.size());
-        std::vector << T >> RA(1 << n, std::vector<T>(n + 1, 0));
+        std::vector<std::vector<T>> RA(1 << n, std::vector<T>(n + 1, 0));
         REP_(S, 1 << n) RA[S][popcount(S)] = A[S];
         REP_(i, n)
         REP_(S, 1 << n)
