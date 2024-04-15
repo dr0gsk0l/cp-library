@@ -4,7 +4,7 @@
 #include "library/graph/WeightedGraph.cpp"
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename TC> class NondecreasingMCF {
-    using F = function<TC(int)>;
+    using F = std::function<TC(int)>;
     struct EdgeInfo {
         int cap, flow, rev;
         bool reverse_edge;
