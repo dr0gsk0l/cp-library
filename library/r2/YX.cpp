@@ -59,6 +59,8 @@ template <typename T> struct YX {
     bool operator<(const YX &v) const { return y != v.y ? y < v.y : x < v.x; }
     bool operator>(const YX &v) const { return y != v.y ? y > v.y : x > v.x; }
     bool operator==(const YX &v) const { return y == v.y and x == v.x; }
+    bool operator<=(const YX &v) const { return !(*this > v); }
+    bool operator>=(const YX &v) const { return !(*this < v); }
     bool operator!=(const YX &v) const { return !(*this == v); }
 
     friend T dot(const YX &u, const YX &v) { return u.y * v.y + u.x * v.x; }

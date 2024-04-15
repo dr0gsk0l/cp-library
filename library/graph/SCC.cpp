@@ -6,7 +6,7 @@ template <typename DirectedGraph> class SCC {
     int n;
     DirectedGraph G, R;
     std::vector<int> visit, belong;
-    std::vector<bool> used;
+    std::vector<uint8_t> used;
     void dfs(int v) {
         used[v] = true;
         for (int to : G[v])

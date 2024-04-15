@@ -59,6 +59,8 @@ template <typename T> struct XY {
     bool operator<(const XY &v) const { return x != v.x ? x < v.x : y < v.y; }
     bool operator>(const XY &v) const { return x != v.x ? x > v.x : y > v.y; }
     bool operator==(const XY &v) const { return x == v.x and y == v.y; }
+    bool operator<=(const XY &v) const { return !(*this > v); }
+    bool operator>=(const XY &v) const { return !(*this < v); }
     bool operator!=(const XY &v) const { return !(*this == v); }
 
     double arg() const { return atan2(y, x); }

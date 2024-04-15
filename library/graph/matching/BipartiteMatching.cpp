@@ -21,7 +21,7 @@ class BipartiteMatching {
         fl.add_arc(u, A + v, 1);
     }
     std::vector<std::pair<int, int>> solve() {
-        int K = fl.flow(min(A, B));
+        int K = fl.flow(std::min(A, B));
         std::vector<std::pair<int, int>> res;
         res.reserve(K);
         auto all_edge = fl.all_edge();
