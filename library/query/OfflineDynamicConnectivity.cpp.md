@@ -36,10 +36,10 @@ data:
     \ pend;\n    std::map<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
     \ V, int Q) : uf(V), V(V), Q(Q), comp(V) {\n        segsz = 1;\n        while\
     \ (segsz < Q)\n            segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n\
-    \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
+    \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = std::minmax(s,\
     \ t);\n        if (cnt[e]++ == 0)\n            appear[e] = idx;\n    }\n\n   \
-    \ void erase(int idx, int s, int t) {\n        auto e = minmax(s, t);\n      \
-    \  if (--cnt[e] == 0)\n            pend.emplace_back(std::make_pair(appear[e],\
+    \ void erase(int idx, int s, int t) {\n        auto e = std::minmax(s, t);\n \
+    \       if (--cnt[e] == 0)\n            pend.emplace_back(std::make_pair(appear[e],\
     \ idx), e);\n    }\n\n    void add(int a, int b, const edge &e, int k, int l,\
     \ int r) {\n        if (r <= a || b <= l)\n            return;\n        if (a\
     \ <= l && r <= b) {\n            seg[k].emplace_back(e);\n            return;\n\
@@ -62,10 +62,10 @@ data:
     \ int>, edge>> pend;\n    std::map<edge, int> cnt, appear;\n\n    OfflineDynamicConnectivity(int\
     \ V, int Q) : uf(V), V(V), Q(Q), comp(V) {\n        segsz = 1;\n        while\
     \ (segsz < Q)\n            segsz <<= 1;\n        seg.resize(2 * segsz - 1);\n\
-    \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = minmax(s,\
+    \    }\n\n    void insert(int idx, int s, int t) {\n        auto e = std::minmax(s,\
     \ t);\n        if (cnt[e]++ == 0)\n            appear[e] = idx;\n    }\n\n   \
-    \ void erase(int idx, int s, int t) {\n        auto e = minmax(s, t);\n      \
-    \  if (--cnt[e] == 0)\n            pend.emplace_back(std::make_pair(appear[e],\
+    \ void erase(int idx, int s, int t) {\n        auto e = std::minmax(s, t);\n \
+    \       if (--cnt[e] == 0)\n            pend.emplace_back(std::make_pair(appear[e],\
     \ idx), e);\n    }\n\n    void add(int a, int b, const edge &e, int k, int l,\
     \ int r) {\n        if (r <= a || b <= l)\n            return;\n        if (a\
     \ <= l && r <= b) {\n            seg[k].emplace_back(e);\n            return;\n\
@@ -87,7 +87,7 @@ data:
   isVerificationFile: false
   path: library/query/OfflineDynamicConnectivity.cpp
   requiredBy: []
-  timestamp: '2024-04-15 12:10:38+09:00'
+  timestamp: '2024-04-15 22:22:25+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/OfflineDynamicConnectivity.cpp

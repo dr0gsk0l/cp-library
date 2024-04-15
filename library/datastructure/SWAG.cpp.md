@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/SWAG.cpp
   requiredBy: []
-  timestamp: '2024-04-15 12:10:38+09:00'
+  timestamp: '2024-04-15 22:22:25+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

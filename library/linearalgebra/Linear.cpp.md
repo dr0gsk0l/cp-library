@@ -103,7 +103,7 @@ data:
   - library/algebra/group/Affine.cpp
   - library/linearalgebra/InsertConvexHullTrick.cpp
   - library/linearalgebra/ConvexHullTrick.cpp
-  timestamp: '2024-04-15 12:10:38+09:00'
+  timestamp: '2024-04-15 22:22:25+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

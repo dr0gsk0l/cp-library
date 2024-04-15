@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/MCF.cpp
     title: library/flow/MCF.cpp
   - icon: ':question:'
@@ -9,12 +9,12 @@ data:
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/AssignmentProblem.test.cpp
     title: test/library-checker/Graph/AssignmentProblem.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T>\
@@ -147,8 +147,8 @@ data:
     \        assert(0 <= v and v < B);\n        fl.add_arc(u, A + v, 1, -weight);\n\
     \    }\n\n    // first \u306F\u91CD\u307F\u306E\u7DCF\u548C\n    // second \u306F\
     \u30DE\u30C3\u30C1\u3057\u305F\u5404 [u,v,weight]\n    std::pair<TC, std::vector<std::tuple<int,\
-    \ int, TC>>> solve() {\n        auto [sum, ok] = fl.flow(min(A, B));\n       \
-    \ std::vector<std::tuple<int, int, TC>> res;\n        auto all_edge = fl.all_edge();\n\
+    \ int, TC>>> solve() {\n        auto [sum, ok] = fl.flow(std::min(A, B));\n  \
+    \      std::vector<std::tuple<int, int, TC>> res;\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow, cost] = all_edge[i];\n            if (flow)\n            \
     \    res.emplace_back(from, to - A, -cost);\n        }\n        return std::make_pair(-sum,\
@@ -164,8 +164,8 @@ data:
     \ <= v and v < B);\n        fl.add_arc(u, A + v, 1, -weight);\n    }\n\n    //\
     \ first \u306F\u91CD\u307F\u306E\u7DCF\u548C\n    // second \u306F\u30DE\u30C3\
     \u30C1\u3057\u305F\u5404 [u,v,weight]\n    std::pair<TC, std::vector<std::tuple<int,\
-    \ int, TC>>> solve() {\n        auto [sum, ok] = fl.flow(min(A, B));\n       \
-    \ std::vector<std::tuple<int, int, TC>> res;\n        auto all_edge = fl.all_edge();\n\
+    \ int, TC>>> solve() {\n        auto [sum, ok] = fl.flow(std::min(A, B));\n  \
+    \      std::vector<std::tuple<int, int, TC>> res;\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow, cost] = all_edge[i];\n            if (flow)\n            \
     \    res.emplace_back(from, to - A, -cost);\n        }\n        return std::make_pair(-sum,\
@@ -176,8 +176,8 @@ data:
   isVerificationFile: false
   path: library/graph/matching/WeightedBipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2024-04-15 12:10:38+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 22:22:25+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp
 documentation_of: library/graph/matching/WeightedBipartiteMatching.cpp

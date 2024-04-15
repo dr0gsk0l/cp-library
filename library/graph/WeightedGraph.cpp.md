@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/MCF.cpp
     title: library/flow/MCF.cpp
   - icon: ':heavy_check_mark:'
@@ -20,7 +20,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/matching/WeightedBipartiteMatching.cpp
     title: library/graph/matching/WeightedBipartiteMatching.cpp
   - icon: ':warning:'
@@ -78,7 +78,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/AssignmentProblem.test.cpp
     title: test/library-checker/Graph/AssignmentProblem.test.cpp
   - icon: ':x:'
@@ -212,7 +212,7 @@ data:
   - library/flow/MCF.cpp
   - library/flow/NondecreasingMCF.cpp
   - library/flow/Dinic.cpp
-  timestamp: '2024-04-15 12:10:38+09:00'
+  timestamp: '2024-04-15 22:22:25+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/ShortestPath.test.cpp

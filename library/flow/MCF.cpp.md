@@ -5,19 +5,19 @@ data:
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/matching/WeightedBipartiteMatching.cpp
     title: library/graph/matching/WeightedBipartiteMatching.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_B.test.cpp
     title: test/AOJ/GRL_6_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/AssignmentProblem.test.cpp
     title: test/library-checker/Graph/AssignmentProblem.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T>\
@@ -219,8 +219,8 @@ data:
   path: library/flow/MCF.cpp
   requiredBy:
   - library/graph/matching/WeightedBipartiteMatching.cpp
-  timestamp: '2024-04-15 12:10:38+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-04-15 22:22:25+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp
   - test/AOJ/GRL_6_B.test.cpp

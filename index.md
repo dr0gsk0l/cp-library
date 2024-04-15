@@ -165,7 +165,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/unionfind/MonoidUnionFind.cpp
       title: library/datastructure/unionfind/MonoidUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
       title: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
     - icon: ':heavy_check_mark:'
@@ -190,7 +190,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/flow/Dinic.cpp
       title: library/flow/Dinic.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/flow/MCF.cpp
       title: library/flow/MCF.cpp
     - icon: ':heavy_check_mark:'
@@ -267,7 +267,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/matching/BipartiteMatching.cpp
       title: library/graph/matching/BipartiteMatching.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/matching/WeightedBipartiteMatching.cpp
       title: library/graph/matching/WeightedBipartiteMatching.cpp
   - name: library/graph/shortest_path
@@ -672,7 +672,7 @@ data:
       title: test/library-checker/DataStructure/unionfind.test.cpp
   - name: test/library-checker/Graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/AssignmentProblem.test.cpp
       title: test/library-checker/Graph/AssignmentProblem.test.cpp
     - icon: ':x:'
@@ -808,7 +808,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/2109.test.cpp
       title: test/yukicoder/2109.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/416.test.cpp
       title: test/yukicoder/416.test.cpp
     - icon: ':heavy_check_mark:'
