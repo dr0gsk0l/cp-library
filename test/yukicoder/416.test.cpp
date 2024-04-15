@@ -17,7 +17,7 @@ int main() {
         std::cin >> a >> b;
         a--;
         b--;
-        edge.insert(minmax(a, b));
+        edge.insert(std::minmax(a, b));
     }
 
     std::vector<std::pair<int, int>> query(q);
@@ -26,8 +26,8 @@ int main() {
         std::cin >> a >> b;
         a--;
         b--;
-        edge.erase(minmax(a, b));
-        query[i] = minmax(a, b);
+        edge.erase(std::minmax(a, b));
+        query[i] = std::minmax(a, b);
     }
 
     for (const auto &[a, b] : edge)

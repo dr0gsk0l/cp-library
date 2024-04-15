@@ -19,13 +19,13 @@ class OfflineDynamicConnectivity {
     }
 
     void insert(int idx, int s, int t) {
-        auto e = minmax(s, t);
+        auto e = std::minmax(s, t);
         if (cnt[e]++ == 0)
             appear[e] = idx;
     }
 
     void erase(int idx, int s, int t) {
-        auto e = minmax(s, t);
+        auto e = std::minmax(s, t);
         if (--cnt[e] == 0)
             pend.emplace_back(std::make_pair(appear[e], idx), e);
     }
