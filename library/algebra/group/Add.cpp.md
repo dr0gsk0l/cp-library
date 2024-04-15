@@ -11,7 +11,7 @@ data:
   - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
   - icon: ':warning:'
@@ -78,7 +78,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/430_2.test.cpp
     title: test/yukicoder/430_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
@@ -111,7 +111,7 @@ data:
   - library/math/FactorialNumberSystem.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
-  timestamp: '2024-04-15 10:07:57+09:00'
+  timestamp: '2024-04-15 11:27:40+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

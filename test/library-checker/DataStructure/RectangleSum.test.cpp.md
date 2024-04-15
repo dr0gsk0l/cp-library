@@ -13,13 +13,13 @@ data:
   - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
   - icon: ':x:'
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 10:07:57+09:00'
+  timestamp: '2024-04-15 11:27:40+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum.test.cpp

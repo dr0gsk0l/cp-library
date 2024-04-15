@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: library/bitwise/Xor.cpp
   requiredBy: []
-  timestamp: '2024-04-15 10:07:57+09:00'
+  timestamp: '2024-04-15 11:27:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp

@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: library/tree/ReRooting.cpp
   requiredBy: []
-  timestamp: '2024-04-15 10:07:57+09:00'
+  timestamp: '2024-04-15 11:27:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_A.test.cpp

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
@@ -78,7 +78,7 @@ data:
     \     os << C.v[i] << \":\" << i << \" \";\n        return os;\n    }\n};\n#line\
     \ 4 \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i\
     \ = 0; i < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
-    \ {\n  protected:\n    using U = conditional_t<COMPRESS, int, T>;\n    static_assert(is_integral_v<U>,\
+    \ {\n  protected:\n    using U = std::conditional_t<COMPRESS, int, T>;\n    static_assert(std::is_integral_v<U>,\
     \ \"Wavelet Matrix is only for integer\");\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary>\
     \ mat;\n    std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T>\
     \ data;\n\n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS)\
@@ -190,8 +190,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 10:07:57+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 11:27:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
 layout: document

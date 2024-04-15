@@ -2,17 +2,17 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
     title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - icon: ':x:'
@@ -21,21 +21,21 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
     title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1332.test.cpp
     title: test/yukicoder/1332.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/919.test.cpp
     title: test/yukicoder/919.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/datastructure/FullyIndexableDictionary.cpp\"\n#include\
@@ -89,8 +89,8 @@ data:
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
   - library/datastructure/WaveletMatrix.cpp
-  timestamp: '2024-04-15 10:07:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 11:27:40+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

@@ -107,7 +107,7 @@ data:
       title: library/datastructure/2D/CumulativeSum.cpp
   - name: library/datastructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/BinaryTrie.cpp
       title: library/datastructure/BinaryTrie.cpp
     - icon: ':warning:'
@@ -125,10 +125,10 @@ data:
     - icon: ':question:'
       path: library/datastructure/FenwickTree.cpp
       title: library/datastructure/FenwickTree.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/FullyIndexableDictionary.cpp
       title: library/datastructure/FullyIndexableDictionary.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/GroupWaveletMatrix.cpp
       title: library/datastructure/GroupWaveletMatrix.cpp
     - icon: ':warning:'
@@ -140,7 +140,7 @@ data:
     - icon: ':x:'
       path: library/datastructure/SlopeTrick.cpp
       title: SlopeTrick
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/WaveletMatrix.cpp
       title: library/datastructure/WaveletMatrix.cpp
   - name: library/datastructure/binary_search_tree
@@ -198,19 +198,19 @@ data:
       title: library/flow/NondecreasingMCF.cpp
   - name: library/formalpowerseries
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/formalpowerseries/Base.cpp
       title: library/formalpowerseries/Base.cpp
     - icon: ':warning:'
       path: library/formalpowerseries/ComposeEXP.cpp
       title: library/formalpowerseries/ComposeEXP.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/formalpowerseries/DivMod.cpp
       title: library/formalpowerseries/DivMod.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/formalpowerseries/MultipointEvaluation.cpp
       title: library/formalpowerseries/MultipointEvaluation.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/formalpowerseries/Prod.cpp
       title: library/formalpowerseries/Prod.cpp
     - icon: ':warning:'
@@ -507,7 +507,7 @@ data:
     - icon: ':warning:'
       path: library/util/Permutation.cpp
       title: library/util/Permutation.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/util/PrimeUtil.cpp
       title: library/util/PrimeUtil.cpp
     - icon: ':heavy_check_mark:'
@@ -546,7 +546,7 @@ data:
     - icon: ':x:'
       path: test/AOJ/ALDS1_14_B.test.cpp
       title: test/AOJ/ALDS1_14_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/ALDS1_1_C.test.cpp
       title: test/AOJ/ALDS1_1_C.test.cpp
     - icon: ':heavy_check_mark:'
@@ -649,7 +649,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
       title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
       title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
     - icon: ':x:'
@@ -658,10 +658,10 @@ data:
     - icon: ':x:'
       path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
       title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/SetXor-Min.test.cpp
       title: test/library-checker/DataStructure/SetXor-Min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
       title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
     - icon: ':heavy_check_mark:'
@@ -710,34 +710,34 @@ data:
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
       title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Exp.test.cpp
       title: test/library-checker/Polynomial/Exp.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Inv.test.cpp
       title: test/library-checker/Polynomial/Inv.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
       title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Pow.test.cpp
       title: test/library-checker/Polynomial/Pow.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
       title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/TaylorShift.test.cpp
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
   - name: test/library-checker/SPS
@@ -793,7 +793,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/117.test.cpp
       title: test/yukicoder/117.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1332.test.cpp
       title: test/yukicoder/1332.test.cpp
     - icon: ':heavy_check_mark:'
@@ -823,10 +823,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/755.test.cpp
       title: test/yukicoder/755.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/919.test.cpp
       title: test/yukicoder/919.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/924.test.cpp
       title: test/yukicoder/924.test.cpp
 layout: toppage

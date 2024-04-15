@@ -3,17 +3,17 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/SetXor-Min.test.cpp
     title: test/library-checker/DataStructure/SetXor-Min.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/BinaryTrie.cpp\"\ntemplate <int LOG,\
     \ typename COUNT> class BinaryTrie {\n    static_assert(LOG <= 64, \"Binary Trie\
-    \ overflow\");\n    using T = conditional_t<LOG <= 32, unsigned int, unsigned\
+    \ overflow\");\n    using T = std::conditional_t<LOG <= 32, unsigned int, unsigned\
     \ long long>;\n    struct Node {\n        std::array<int, 2> nxt_node;\n     \
     \   COUNT count; //\n        Node() : count(0) { std::ranges::fill(nxt_node, -1);\
     \ }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f) { return\
@@ -42,9 +42,9 @@ data:
     \       return res;\n    }\n    T min(T xor_add = 0) { return k_th(0, xor_add);\
     \ }\n    T max(T xor_add = 0) { return k_th(size() - 1, xor_add); }\n};\n"
   code: "template <int LOG, typename COUNT> class BinaryTrie {\n    static_assert(LOG\
-    \ <= 64, \"Binary Trie overflow\");\n    using T = conditional_t<LOG <= 32, unsigned\
-    \ int, unsigned long long>;\n    struct Node {\n        std::array<int, 2> nxt_node;\n\
-    \        COUNT count; //\n        Node() : count(0) { std::ranges::fill(nxt_node,\
+    \ <= 64, \"Binary Trie overflow\");\n    using T = std::conditional_t<LOG <= 32,\
+    \ unsigned int, unsigned long long>;\n    struct Node {\n        std::array<int,\
+    \ 2> nxt_node;\n        COUNT count; //\n        Node() : count(0) { std::ranges::fill(nxt_node,\
     \ -1); }\n    };\n    std::vector<Node> nodes;\n    int &nxt(int now, bool f)\
     \ { return nodes[now].nxt_node[f]; }\n    bool bit(const T &a, int i) const {\
     \ return (a >> i) & 1; }\n\n  public:\n    BinaryTrie() : nodes(1, Node()) {}\n\
@@ -74,8 +74,8 @@ data:
   isVerificationFile: false
   path: library/datastructure/BinaryTrie.cpp
   requiredBy: []
-  timestamp: '2024-04-15 10:07:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 11:27:40+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/SetXor-Min.test.cpp
 documentation_of: library/datastructure/BinaryTrie.cpp

@@ -49,7 +49,7 @@ data:
   requiredBy:
   - library/algebra/lazy/AddMin.cpp
   - library/algebra/lazy/SetMin.cpp
-  timestamp: '2024-04-15 10:07:57+09:00'
+  timestamp: '2024-04-15 11:27:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1038.test.cpp

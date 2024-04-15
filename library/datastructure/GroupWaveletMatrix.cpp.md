@@ -13,10 +13,10 @@ data:
   - icon: ':question:'
     path: library/datastructure/FenwickTree.cpp
     title: library/datastructure/FenwickTree.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
   - icon: ':question:'
@@ -30,12 +30,12 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -93,8 +93,8 @@ data:
   isVerificationFile: false
   path: library/datastructure/GroupWaveletMatrix.cpp
   requiredBy: []
-  timestamp: '2024-04-15 10:07:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 11:27:40+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp

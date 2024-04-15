@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
   - icon: ':question:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/datastructure/GroupWaveletMatrix.cpp
     title: library/datastructure/GroupWaveletMatrix.cpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
     title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - icon: ':x:'
@@ -24,21 +24,21 @@ data:
   - icon: ':x:'
     path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
     title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1332.test.cpp
     title: test/yukicoder/1332.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/919.test.cpp
     title: test/yukicoder/919.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/924.test.cpp
     title: test/yukicoder/924.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/datastructure/FullyIndexableDictionary.cpp\"\n#include\
@@ -97,7 +97,7 @@ data:
     \     os << C.v[i] << \":\" << i << \" \";\n        return os;\n    }\n};\n#line\
     \ 4 \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i\
     \ = 0; i < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
-    \ {\n  protected:\n    using U = conditional_t<COMPRESS, int, T>;\n    static_assert(is_integral_v<U>,\
+    \ {\n  protected:\n    using U = std::conditional_t<COMPRESS, int, T>;\n    static_assert(std::is_integral_v<U>,\
     \ \"Wavelet Matrix is only for integer\");\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary>\
     \ mat;\n    std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T>\
     \ data;\n\n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS)\
@@ -193,7 +193,7 @@ data:
   code: "#pragma once\n#include \"library/datastructure/FullyIndexableDictionary.cpp\"\
     \n#include \"library/util/Compress.cpp\"\n#define REP_(i, n) for (int i = 0; i\
     \ < (n); i++)\ntemplate <typename T, bool COMPRESS = true> class WaveletMatrix\
-    \ {\n  protected:\n    using U = conditional_t<COMPRESS, int, T>;\n    static_assert(is_integral_v<U>,\
+    \ {\n  protected:\n    using U = std::conditional_t<COMPRESS, int, T>;\n    static_assert(std::is_integral_v<U>,\
     \ \"Wavelet Matrix is only for integer\");\n    int n, memo, log;\n    std::vector<FullyIndexableDictionary>\
     \ mat;\n    std::vector<int> zero_cnt;\n    Compress<T, true> C;\n    std::vector<T>\
     \ data;\n\n    constexpr U comp(const T &x) const {\n        if constexpr (COMPRESS)\
@@ -293,8 +293,8 @@ data:
   path: library/datastructure/WaveletMatrix.cpp
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
-  timestamp: '2024-04-15 10:07:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 11:27:40+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

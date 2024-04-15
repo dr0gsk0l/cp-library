@@ -54,7 +54,7 @@ data:
   - library/bitwise/Ranked.cpp
   - library/setpowerseries/Base.cpp
   - library/setpowerseries/Compose.cpp
-  timestamp: '2024-04-15 10:07:57+09:00'
+  timestamp: '2024-04-15 11:27:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
