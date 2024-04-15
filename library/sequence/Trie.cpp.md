@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
   - icon: ':question:'
@@ -149,7 +149,7 @@ data:
   path: library/sequence/Trie.cpp
   requiredBy:
   - library/sequence/AhoCorasick.cpp
-  timestamp: '2024-04-15 11:27:40+09:00'
+  timestamp: '2024-04-15 12:10:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

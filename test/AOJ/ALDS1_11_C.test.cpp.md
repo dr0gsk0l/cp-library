@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
   - icon: ':heavy_check_mark:'
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/ALDS1_11_C.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
+  timestamp: '2024-04-15 12:10:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_11_C.test.cpp

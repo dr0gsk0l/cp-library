@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/Base.cpp
     title: library/formalpowerseries/Base.cpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/MultipointEvaluation.cpp
     title: library/formalpowerseries/MultipointEvaluation.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/formalpowerseries/Base.cpp\"\n#define REP_(i, n)\
     \ for (int i = 0; i < (n); i++)\ntemplate <typename T, int MX> struct FormalPowerSeries\
     \ : std::vector<T> {\n    using FPS = FormalPowerSeries;\n    using std::vector<T>::resize;\n\
     \    using std::vector<T>::size;\n    using std::vector<T>::at;\n    using std::vector<T>::assign;\n\
-    \    using std::vector<T>::std::vector;\n    using std::vector<T>::begin;\n  \
-    \  using std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
+    \    using std::vector<T>::vector;\n    using std::vector<T>::begin;\n    using\
+    \ std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
     \    using value_type = T;\n\n    void strict(int n) {\n        if (size() > n)\n\
     \            resize(n);\n    }\n    void shrink() {\n        while (size() and\
     \ back() == 0)\n            pop_back();\n    }\n\n    FormalPowerSeries(const\
@@ -151,8 +151,8 @@ data:
   path: library/formalpowerseries/DivMod.cpp
   requiredBy:
   - library/formalpowerseries/MultipointEvaluation.cpp
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp

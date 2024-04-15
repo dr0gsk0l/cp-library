@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/ReverseGraph.cpp
     title: library/graph/ReverseGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/SCC.cpp
     title: library/graph/SCC.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
@@ -69,9 +69,9 @@ data:
     \ e.to);\n        r.add_arc(e);\n    }\n    r.build();\n    return r;\n}\n#line\
     \ 4 \"library/graph/SCC.cpp\"\n#define REP_(i, n) for (int i = 0; i < (n); i++)\n\
     template <typename DirectedGraph> class SCC {\n    int n;\n    DirectedGraph G,\
-    \ R;\n    std::vector<int> visit, belong;\n    std::vector<bool> used;\n    void\
-    \ dfs(int v) {\n        used[v] = true;\n        for (int to : G[v])\n       \
-    \     if (!used[to])\n                dfs(to);\n        visit.push_back(v);\n\
+    \ R;\n    std::vector<int> visit, belong;\n    std::vector<uint8_t> used;\n  \
+    \  void dfs(int v) {\n        used[v] = true;\n        for (int to : G[v])\n \
+    \           if (!used[to])\n                dfs(to);\n        visit.push_back(v);\n\
     \    }\n    void rdfs(int v, int k) {\n        used[v] = true;\n        belong[v]\
     \ = k;\n        for (int to : R[v])\n            if (!used[to])\n            \
     \    rdfs(to, k);\n    }\n\n  public:\n    Graph DAG;\n    std::vector<std::vector<int>>\
@@ -110,8 +110,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/SCC.test.cpp
 layout: document

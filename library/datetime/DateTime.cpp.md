@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/2109.test.cpp
     title: test/yukicoder/2109.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datetime/DateTime.cpp\"\nclass DateTime {\n    static\
@@ -51,12 +51,12 @@ data:
     \       while (y.size() < 4)\n            y = \"0\" + y;\n        while (m.size()\
     \ < 2)\n            m = \"0\" + m;\n        while (d.size() < 2)\n           \
     \ d = \"0\" + d;\n        return y + sep + m + sep + d;\n    }\n\n    std::tuple<int,\
-    \ int, int> std::to_tuple() const {\n        return {year, month, day};\n    }\n\
-    \n#define define_cmp(op)                                                     \
-    \    \\\n    bool operator op(const DateTime &a) const {                     \
-    \           \\\n        return std::to_tuple() op a.std::to_tuple();         \
-    \                  \\\n    }\n    define_cmp(==) define_cmp(!=) define_cmp(<)\
-    \ define_cmp(>) define_cmp(<=)\n        define_cmp(>=)\n#undef define_cmp\n};\n"
+    \ int, int> to_tuple() const { return {year, month, day}; }\n\n#define define_cmp(op)\
+    \                                                         \\\n    bool operator\
+    \ op(const DateTime &a) const {                                \\\n        return\
+    \ to_tuple() op a.to_tuple();                                     \\\n    }\n\
+    \    define_cmp(==) define_cmp(!=) define_cmp(<) define_cmp(>) define_cmp(<=)\n\
+    \        define_cmp(>=)\n#undef define_cmp\n};\n"
   code: "class DateTime {\n    static int day_of_week; // 1\u5E741\u67081\u65E5\u306E\
     \u66DC\u65E5\n  public:\n    int year, month, day;\n    DateTime(int y, int m,\
     \ int d) : year(y), month(m), day(d) {}\n\n    static bool is_leap_year(int y)\
@@ -96,18 +96,18 @@ data:
     \       while (y.size() < 4)\n            y = \"0\" + y;\n        while (m.size()\
     \ < 2)\n            m = \"0\" + m;\n        while (d.size() < 2)\n           \
     \ d = \"0\" + d;\n        return y + sep + m + sep + d;\n    }\n\n    std::tuple<int,\
-    \ int, int> std::to_tuple() const {\n        return {year, month, day};\n    }\n\
-    \n#define define_cmp(op)                                                     \
-    \    \\\n    bool operator op(const DateTime &a) const {                     \
-    \           \\\n        return std::to_tuple() op a.std::to_tuple();         \
-    \                  \\\n    }\n    define_cmp(==) define_cmp(!=) define_cmp(<)\
-    \ define_cmp(>) define_cmp(<=)\n        define_cmp(>=)\n#undef define_cmp\n};"
+    \ int, int> to_tuple() const { return {year, month, day}; }\n\n#define define_cmp(op)\
+    \                                                         \\\n    bool operator\
+    \ op(const DateTime &a) const {                                \\\n        return\
+    \ to_tuple() op a.to_tuple();                                     \\\n    }\n\
+    \    define_cmp(==) define_cmp(!=) define_cmp(<) define_cmp(>) define_cmp(<=)\n\
+    \        define_cmp(>=)\n#undef define_cmp\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/datetime/DateTime.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2109.test.cpp
 documentation_of: library/datetime/DateTime.cpp

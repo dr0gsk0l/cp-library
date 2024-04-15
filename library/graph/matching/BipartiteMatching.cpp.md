@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
   - icon: ':question:'
@@ -9,15 +9,15 @@ data:
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_7_A.test.cpp
     title: test/AOJ/GRL_7_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
     title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/matching/BipartiteMatching.cpp\"\n\n// \u91CD\
@@ -125,7 +125,7 @@ data:
     \   for (int j = 0; j < B; j++)\n            fl.add_arc(A + j, T, 1);\n    }\n\
     \    void add_edge(int u, int v) {\n        assert(0 <= u and u < A);\n      \
     \  assert(0 <= v and v < B);\n        fl.add_arc(u, A + v, 1);\n    }\n    std::vector<std::pair<int,\
-    \ int>> solve() {\n        int K = fl.flow(min(A, B));\n        std::vector<std::pair<int,\
+    \ int>> solve() {\n        int K = fl.flow(std::min(A, B));\n        std::vector<std::pair<int,\
     \ int>> res;\n        res.reserve(K);\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow] = all_edge[i];\n            if (flow)\n                res.emplace_back(from,\
@@ -138,7 +138,7 @@ data:
     \   for (int j = 0; j < B; j++)\n            fl.add_arc(A + j, T, 1);\n    }\n\
     \    void add_edge(int u, int v) {\n        assert(0 <= u and u < A);\n      \
     \  assert(0 <= v and v < B);\n        fl.add_arc(u, A + v, 1);\n    }\n    std::vector<std::pair<int,\
-    \ int>> solve() {\n        int K = fl.flow(min(A, B));\n        std::vector<std::pair<int,\
+    \ int>> solve() {\n        int K = fl.flow(std::min(A, B));\n        std::vector<std::pair<int,\
     \ int>> res;\n        res.reserve(K);\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow] = all_edge[i];\n            if (flow)\n                res.emplace_back(from,\
@@ -149,8 +149,8 @@ data:
   isVerificationFile: false
   path: library/graph/matching/BipartiteMatching.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   - test/AOJ/GRL_7_A.test.cpp

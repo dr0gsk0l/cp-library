@@ -5,13 +5,13 @@ data:
   - icon: ':warning:'
     path: library/formalpowerseries/ComposeEXP.cpp
     title: library/formalpowerseries/ComposeEXP.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/DivMod.cpp
     title: library/formalpowerseries/DivMod.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/MultipointEvaluation.cpp
     title: library/formalpowerseries/MultipointEvaluation.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/Prod.cpp
     title: library/formalpowerseries/Prod.cpp
   - icon: ':warning:'
@@ -21,44 +21,44 @@ data:
     path: library/formalpowerseries/Sqrt.cpp
     title: library/formalpowerseries/Sqrt.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Composition.test.cpp
     title: test/library-checker/Polynomial/Composition.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Exp.test.cpp
     title: test/library-checker/Polynomial/Exp.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Inv.test.cpp
     title: test/library-checker/Polynomial/Inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Log.test.cpp
     title: test/library-checker/Polynomial/Log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Pow.test.cpp
     title: test/library-checker/Polynomial/Pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
     title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/TaylorShift.test.cpp
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/formalpowerseries/Base.cpp\"\n#define REP_(i, n)\
     \ for (int i = 0; i < (n); i++)\ntemplate <typename T, int MX> struct FormalPowerSeries\
     \ : std::vector<T> {\n    using FPS = FormalPowerSeries;\n    using std::vector<T>::resize;\n\
     \    using std::vector<T>::size;\n    using std::vector<T>::at;\n    using std::vector<T>::assign;\n\
-    \    using std::vector<T>::std::vector;\n    using std::vector<T>::begin;\n  \
-    \  using std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
+    \    using std::vector<T>::vector;\n    using std::vector<T>::begin;\n    using\
+    \ std::vector<T>::end;\n    using std::vector<T>::back;\n    using std::vector<T>::pop_back;\n\
     \    using value_type = T;\n\n    void strict(int n) {\n        if (size() > n)\n\
     \            resize(n);\n    }\n    void shrink() {\n        while (size() and\
     \ back() == 0)\n            pop_back();\n    }\n\n    FormalPowerSeries(const\
@@ -167,7 +167,7 @@ data:
   code: "#pragma once\n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate\
     \ <typename T, int MX> struct FormalPowerSeries : std::vector<T> {\n    using\
     \ FPS = FormalPowerSeries;\n    using std::vector<T>::resize;\n    using std::vector<T>::size;\n\
-    \    using std::vector<T>::at;\n    using std::vector<T>::assign;\n    using std::vector<T>::std::vector;\n\
+    \    using std::vector<T>::at;\n    using std::vector<T>::assign;\n    using std::vector<T>::vector;\n\
     \    using std::vector<T>::begin;\n    using std::vector<T>::end;\n    using std::vector<T>::back;\n\
     \    using std::vector<T>::pop_back;\n    using value_type = T;\n\n    void strict(int\
     \ n) {\n        if (size() > n)\n            resize(n);\n    }\n    void shrink()\
@@ -285,8 +285,8 @@ data:
   - library/formalpowerseries/Sqrt.cpp
   - library/formalpowerseries/MultipointEvaluation.cpp
   - library/formalpowerseries/ComposeEXP.cpp
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/Log.test.cpp
   - test/library-checker/Polynomial/Inv.test.cpp

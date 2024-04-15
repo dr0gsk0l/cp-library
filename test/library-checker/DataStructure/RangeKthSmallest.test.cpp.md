@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
@@ -190,7 +190,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
+  timestamp: '2024-04-15 12:10:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeKthSmallest.test.cpp

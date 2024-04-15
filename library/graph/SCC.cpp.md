@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.cpp
     title: library/graph/Graph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/ReverseGraph.cpp
     title: library/graph/ReverseGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Graph/SCC.test.cpp
     title: test/library-checker/Graph/SCC.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.cpp\"\nstruct Edge {\n    int from,\
@@ -65,7 +65,7 @@ data:
     \  }\n    r.build();\n    return r;\n}\n#line 4 \"library/graph/SCC.cpp\"\n#define\
     \ REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename DirectedGraph>\
     \ class SCC {\n    int n;\n    DirectedGraph G, R;\n    std::vector<int> visit,\
-    \ belong;\n    std::vector<bool> used;\n    void dfs(int v) {\n        used[v]\
+    \ belong;\n    std::vector<uint8_t> used;\n    void dfs(int v) {\n        used[v]\
     \ = true;\n        for (int to : G[v])\n            if (!used[to])\n         \
     \       dfs(to);\n        visit.push_back(v);\n    }\n    void rdfs(int v, int\
     \ k) {\n        used[v] = true;\n        belong[v] = k;\n        for (int to :\
@@ -87,7 +87,7 @@ data:
   code: "#pragma once\n#include \"library/graph/Graph.cpp\"\n#include \"library/graph/ReverseGraph.cpp\"\
     \n#define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename DirectedGraph>\
     \ class SCC {\n    int n;\n    DirectedGraph G, R;\n    std::vector<int> visit,\
-    \ belong;\n    std::vector<bool> used;\n    void dfs(int v) {\n        used[v]\
+    \ belong;\n    std::vector<uint8_t> used;\n    void dfs(int v) {\n        used[v]\
     \ = true;\n        for (int to : G[v])\n            if (!used[to])\n         \
     \       dfs(to);\n        visit.push_back(v);\n    }\n    void rdfs(int v, int\
     \ k) {\n        used[v] = true;\n        belong[v] = k;\n        for (int to :\
@@ -112,8 +112,8 @@ data:
   isVerificationFile: false
   path: library/graph/SCC.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp
 documentation_of: library/graph/SCC.cpp

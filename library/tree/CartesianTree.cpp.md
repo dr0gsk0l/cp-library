@@ -141,7 +141,7 @@ data:
   isVerificationFile: false
   path: library/tree/CartesianTree.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
+  timestamp: '2024-04-15 12:10:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp

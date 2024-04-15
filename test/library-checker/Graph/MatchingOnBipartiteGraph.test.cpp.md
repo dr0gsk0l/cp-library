@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.cpp
     title: library/flow/Dinic.cpp
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/matching/BipartiteMatching.cpp
     title: library/graph/matching/BipartiteMatching.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bipartitematching
@@ -127,7 +127,7 @@ data:
     \   for (int j = 0; j < B; j++)\n            fl.add_arc(A + j, T, 1);\n    }\n\
     \    void add_edge(int u, int v) {\n        assert(0 <= u and u < A);\n      \
     \  assert(0 <= v and v < B);\n        fl.add_arc(u, A + v, 1);\n    }\n    std::vector<std::pair<int,\
-    \ int>> solve() {\n        int K = fl.flow(min(A, B));\n        std::vector<std::pair<int,\
+    \ int>> solve() {\n        int K = fl.flow(std::min(A, B));\n        std::vector<std::pair<int,\
     \ int>> res;\n        res.reserve(K);\n        auto all_edge = fl.all_edge();\n\
     \        for (int i = A + B; i < all_edge.size(); i++) {\n            const auto\
     \ &[from, to, flow] = all_edge[i];\n            if (flow)\n                res.emplace_back(from,\
@@ -153,8 +153,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
 layout: document

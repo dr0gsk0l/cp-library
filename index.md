@@ -8,7 +8,7 @@ data:
       title: library/algebra/Reverse.cpp
   - name: library/algebra/group
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Add.cpp
       title: library/algebra/group/Add.cpp
     - icon: ':question:'
@@ -17,7 +17,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/algebra/group/CntSum.cpp
       title: library/algebra/group/CntSum.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Concepts.cpp
       title: library/algebra/group/Concepts.cpp
     - icon: ':heavy_check_mark:'
@@ -116,19 +116,19 @@ data:
     - icon: ':warning:'
       path: library/datastructure/CumulativeMonoid.cpp
       title: library/datastructure/CumulativeMonoid.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/CumulativeSum.cpp
       title: library/datastructure/CumulativeSum.cpp
     - icon: ':heavy_check_mark:'
       path: library/datastructure/Doubling.cpp
       title: library/datastructure/Doubling.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/FenwickTree.cpp
       title: library/datastructure/FenwickTree.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/FullyIndexableDictionary.cpp
       title: library/datastructure/FullyIndexableDictionary.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/GroupWaveletMatrix.cpp
       title: library/datastructure/GroupWaveletMatrix.cpp
     - icon: ':warning:'
@@ -140,7 +140,7 @@ data:
     - icon: ':x:'
       path: library/datastructure/SlopeTrick.cpp
       title: SlopeTrick
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/WaveletMatrix.cpp
       title: library/datastructure/WaveletMatrix.cpp
   - name: library/datastructure/binary_search_tree
@@ -182,12 +182,12 @@ data:
       title: library/datastructure/unionfind/UnionFind.cpp
   - name: library/datetime
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datetime/DateTime.cpp
       title: library/datetime/DateTime.cpp
   - name: library/flow
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/flow/Dinic.cpp
       title: library/flow/Dinic.cpp
     - icon: ':question:'
@@ -198,19 +198,19 @@ data:
       title: library/flow/NondecreasingMCF.cpp
   - name: library/formalpowerseries
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/Base.cpp
       title: library/formalpowerseries/Base.cpp
     - icon: ':warning:'
       path: library/formalpowerseries/ComposeEXP.cpp
       title: library/formalpowerseries/ComposeEXP.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/DivMod.cpp
       title: library/formalpowerseries/DivMod.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/MultipointEvaluation.cpp
       title: library/formalpowerseries/MultipointEvaluation.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/Prod.cpp
       title: library/formalpowerseries/Prod.cpp
     - icon: ':warning:'
@@ -235,7 +235,7 @@ data:
     - icon: ':warning:'
       path: library/graph/EdgeVertex.cpp
       title: library/graph/EdgeVertex.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/Graph.cpp
       title: library/graph/Graph.cpp
     - icon: ':heavy_check_mark:'
@@ -253,10 +253,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/NegativeCycleFind.cpp
       title: library/graph/NegativeCycleFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/ReverseGraph.cpp
       title: library/graph/ReverseGraph.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/SCC.cpp
       title: library/graph/SCC.cpp
     - icon: ':question:'
@@ -264,7 +264,7 @@ data:
       title: library/graph/WeightedGraph.cpp
   - name: library/graph/matching
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/matching/BipartiteMatching.cpp
       title: library/graph/matching/BipartiteMatching.cpp
     - icon: ':x:'
@@ -373,7 +373,7 @@ data:
       title: library/query/OfflineRangeQuery.cpp
   - name: library/r2
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/r2/Projection.cpp
       title: library/r2/Projection.cpp
     - icon: ':question:'
@@ -495,7 +495,7 @@ data:
     - icon: ':warning:'
       path: library/util/BubbleNumber.cpp
       title: library/util/BubbleNumber.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/util/Compress.cpp
       title: library/util/Compress.cpp
     - icon: ':warning:'
@@ -609,7 +609,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_6_B.test.cpp
       title: test/AOJ/GRL_6_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_7_A.test.cpp
       title: test/AOJ/GRL_7_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -634,7 +634,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
       title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
       title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -652,10 +652,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
       title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RectangleSum.test.cpp
       title: test/library-checker/DataStructure/RectangleSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
       title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
     - icon: ':heavy_check_mark:'
@@ -678,10 +678,10 @@ data:
     - icon: ':x:'
       path: test/library-checker/Graph/DirectedMST.test.cpp
       title: test/library-checker/Graph/DirectedMST.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
       title: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/SCC.test.cpp
       title: test/library-checker/Graph/SCC.test.cpp
     - icon: ':heavy_check_mark:'
@@ -710,34 +710,34 @@ data:
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
       title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Exp.test.cpp
       title: test/library-checker/Polynomial/Exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Inv.test.cpp
       title: test/library-checker/Polynomial/Inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
       title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Pow.test.cpp
       title: test/library-checker/Polynomial/Pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
       title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/TaylorShift.test.cpp
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
   - name: test/library-checker/SPS
@@ -805,7 +805,7 @@ data:
     - icon: ':x:'
       path: test/yukicoder/2012.test.cpp
       title: test/yukicoder/2012.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/2109.test.cpp
       title: test/yukicoder/2109.test.cpp
     - icon: ':x:'

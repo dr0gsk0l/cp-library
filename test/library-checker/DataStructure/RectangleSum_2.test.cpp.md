@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/CumulativeSum.cpp
     title: library/datastructure/CumulativeSum.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/FullyIndexableDictionary.cpp
     title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/WaveletMatrix.cpp
     title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/r2/Projection.cpp
     title: library/r2/Projection.cpp
   - icon: ':question:'
     path: library/r2/XY.cpp
     title: library/r2/XY.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/util/Compress.cpp
     title: library/util/Compress.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
@@ -207,31 +207,32 @@ data:
     \ T &a) { return XY(u) /= a; }\n\n    bool operator<(const XY &v) const { return\
     \ x != v.x ? x < v.x : y < v.y; }\n    bool operator>(const XY &v) const { return\
     \ x != v.x ? x > v.x : y > v.y; }\n    bool operator==(const XY &v) const { return\
-    \ x == v.x and y == v.y; }\n    bool operator!=(const XY &v) const { return !(*this\
-    \ == v); }\n\n    double arg() const { return atan2(y, x); }\n\n    // [0,2pi)\
-    \ \u3067 \u03B8(u)<\u03B8(v) \u306E\u6642 true\n    // (0,0) \u306F 2pi \u306B\
-    \u76F8\u5F53\n    // static bool angle_cmp(const XY&u,const XY&v){\n    //  using\
-    \ U=conditional_t< is_same_v<T,int>,long long,T>;\n    //  if(u==XY(0,0))return\
-    \ false;\n    //  if(v==XY(0,0))return true;\n    //  if(u.y==0){\n    //    if(u.x>0)return\
-    \ true;\n    //    if(v.y==0)return v.x<0;\n    //    return v.y<0;\n    //  }\n\
-    \    //  if(u.y>0){\n    //    if(v.y==0)return v.x<0;\n    //    if(v.y<0)return\
-    \ true;\n    //    return U(v.x)*u.y <= U(u.x)*v.y;\n    //  }\n    //  if(v.y>=0)return\
-    \ false;\n    //  return U(v.x)*u.y <= U(u.x)*v.y;\n    //}\n\n    friend T dot(const\
-    \ XY &u, const XY &v) { return u.x * v.x + u.y * v.y; }\n    T norm() { return\
-    \ dot(*this, *this); }\n    T abs() { return sqrt(norm()); }\n\n    friend std::istream\
-    \ &operator>>(std::istream &is, XY &v) {\n        is >> v.x >> v.y;\n        return\
-    \ is;\n    }\n    friend std::ostream &operator<<(std::ostream &os, const XY &v)\
-    \ {\n        os << v.x << \" \" << v.y;\n        return os;\n    }\n\n    static\
-    \ XY direction(const char &c) {\n        if (c == 'R')\n            return {1,\
-    \ 0};\n        if (c == 'L')\n            return {-1, 0};\n        if (c == 'U')\n\
-    \            return {0, -1};\n        if (c == 'D')\n            return {0, 1};\n\
-    \        return {0, 0};\n    }\n};\n#line 4 \"library/r2/Projection.cpp\"\ntemplate\
-    \ <typename T> class Projection {\n    using r2 = XY<T>;\n    Compress<r2> C;\n\
-    \n  public:\n    Projection(const std::vector<r2> &v) : C(v) {}\n    int size()\
-    \ { return C.size(); }\n    int id(r2 xy) { return C[xy]; }\n    int id(int x,\
-    \ int y) { return C[r2(x, y)]; }\n    r2 r(int id) { return C.r(id); }\n    //[l,r)\
-    \ \u3092\u8FD4\u3059\n    std::pair<int, int> interval(const T &l, const T &r)\
-    \ {\n        if (C.max().x < l or r <= C.min().x)\n            return std::make_pair(0,\
+    \ x == v.x and y == v.y; }\n    bool operator<=(const XY &v) const { return !(*this\
+    \ > v); }\n    bool operator>=(const XY &v) const { return !(*this < v); }\n \
+    \   bool operator!=(const XY &v) const { return !(*this == v); }\n\n    double\
+    \ arg() const { return atan2(y, x); }\n\n    // [0,2pi) \u3067 \u03B8(u)<\u03B8\
+    (v) \u306E\u6642 true\n    // (0,0) \u306F 2pi \u306B\u76F8\u5F53\n    // static\
+    \ bool angle_cmp(const XY&u,const XY&v){\n    //  using U=conditional_t< is_same_v<T,int>,long\
+    \ long,T>;\n    //  if(u==XY(0,0))return false;\n    //  if(v==XY(0,0))return\
+    \ true;\n    //  if(u.y==0){\n    //    if(u.x>0)return true;\n    //    if(v.y==0)return\
+    \ v.x<0;\n    //    return v.y<0;\n    //  }\n    //  if(u.y>0){\n    //    if(v.y==0)return\
+    \ v.x<0;\n    //    if(v.y<0)return true;\n    //    return U(v.x)*u.y <= U(u.x)*v.y;\n\
+    \    //  }\n    //  if(v.y>=0)return false;\n    //  return U(v.x)*u.y <= U(u.x)*v.y;\n\
+    \    //}\n\n    friend T dot(const XY &u, const XY &v) { return u.x * v.x + u.y\
+    \ * v.y; }\n    T norm() { return dot(*this, *this); }\n    T abs() { return sqrt(norm());\
+    \ }\n\n    friend std::istream &operator>>(std::istream &is, XY &v) {\n      \
+    \  is >> v.x >> v.y;\n        return is;\n    }\n    friend std::ostream &operator<<(std::ostream\
+    \ &os, const XY &v) {\n        os << v.x << \" \" << v.y;\n        return os;\n\
+    \    }\n\n    static XY direction(const char &c) {\n        if (c == 'R')\n  \
+    \          return {1, 0};\n        if (c == 'L')\n            return {-1, 0};\n\
+    \        if (c == 'U')\n            return {0, -1};\n        if (c == 'D')\n \
+    \           return {0, 1};\n        return {0, 0};\n    }\n};\n#line 4 \"library/r2/Projection.cpp\"\
+    \ntemplate <typename T> class Projection {\n    using r2 = XY<T>;\n    Compress<r2>\
+    \ C;\n\n  public:\n    Projection(const std::vector<r2> &v) : C(v) {}\n    int\
+    \ size() { return C.size(); }\n    int id(r2 xy) { return C[xy]; }\n    int id(int\
+    \ x, int y) { return C[r2(x, y)]; }\n    r2 r(int id) { return C.r(id); }\n  \
+    \  //[l,r) \u3092\u8FD4\u3059\n    std::pair<int, int> interval(const T &l, const\
+    \ T &r) {\n        if (C.max().x < l or r <= C.min().x)\n            return std::make_pair(0,\
     \ 0);\n        T mn = std::numeric_limits<T>::min();\n        int L = C.geq(r2(l,\
     \ mn));\n        int R = C.geq(r2(r, mn));\n        return std::make_pair(L, R);\n\
     \    }\n};\n#line 10 \"test/library-checker/DataStructure/RectangleSum_2.test.cpp\"\
@@ -281,8 +282,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 11:27:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 12:10:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp
 layout: document
