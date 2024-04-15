@@ -20,10 +20,10 @@ data:
     - icon: ':question:'
       path: library/algebra/group/Concepts.cpp
       title: library/algebra/group/Concepts.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Multiply.cpp
       title: library/algebra/group/Multiply.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/algebra/group/Xor.cpp
       title: library/algebra/group/Xor.cpp
   - name: library/algebra/lazy
@@ -159,7 +159,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/unionfind/ApplyUnionFind.cpp
       title: library/datastructure/unionfind/ApplyUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
       title: library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp
     - icon: ':warning:'
@@ -168,7 +168,7 @@ data:
     - icon: ':x:'
       path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
       title: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/datastructure/unionfind/PotentialUnionFind.cpp
       title: library/datastructure/unionfind/PotentialUnionFind.cpp
     - icon: ':warning:'
@@ -177,7 +177,7 @@ data:
     - icon: ':warning:'
       path: library/datastructure/unionfind/UndoUnionFind.cpp
       title: library/datastructure/unionfind/UndoUnionFind.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/datastructure/unionfind/UnionFind.cpp
       title: library/datastructure/unionfind/UnionFind.cpp
   - name: library/datetime
@@ -244,10 +244,10 @@ data:
     - icon: ':warning:'
       path: library/graph/Grid8.cpp
       title: library/graph/Grid8.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/graph/MinimumSpanningArborescence.cpp
       title: library/graph/MinimumSpanningArborescence.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/MinimumSpanningTree.cpp
       title: library/graph/MinimumSpanningTree.cpp
     - icon: ':heavy_check_mark:'
@@ -519,19 +519,19 @@ data:
   verificationCategories:
   - name: test/AOJ
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/1330.test.cpp
       title: test/AOJ/1330.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2207.test.cpp
       title: test/AOJ/2207.test.cpp
     - icon: ':x:'
       path: test/AOJ/2212.test.cpp
       title: test/AOJ/2212.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2647.test.cpp
       title: test/AOJ/2647.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2971.test.cpp
       title: test/AOJ/2971.test.cpp
     - icon: ':x:'
@@ -561,7 +561,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/DPL_3_C.test.cpp
       title: test/AOJ/DPL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/DSL_1_B.test.cpp
       title: test/AOJ/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -591,10 +591,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_1_C.test.cpp
       title: test/AOJ/GRL_1_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_A.test.cpp
       title: test/AOJ/GRL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_2_B.test.cpp
       title: test/AOJ/GRL_2_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -667,7 +667,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
       title: test/library-checker/DataStructure/StaticRangeSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/unionfind.test.cpp
       title: test/library-checker/DataStructure/unionfind.test.cpp
   - name: test/library-checker/Graph
@@ -796,10 +796,10 @@ data:
     - icon: ':x:'
       path: test/yukicoder/1332.test.cpp
       title: test/yukicoder/1332.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1420.test.cpp
       title: test/yukicoder/1420.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1502.test.cpp
       title: test/yukicoder/1502.test.cpp
     - icon: ':x:'

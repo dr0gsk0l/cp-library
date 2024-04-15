@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/algebra/group/Add.cpp
     title: library/algebra/group/Add.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/unionfind/PotentialUnionFind.cpp
     title: library/datastructure/unionfind/PotentialUnionFind.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
@@ -32,8 +32,8 @@ data:
     \ // parent[x] \u3092\u57FA\u6E96\u3068\u3057\u305F\u6642\u306E x \u306E\u5024\
     \n  public:\n    PotentialUnionFind() = default;\n    PotentialUnionFind(int n)\n\
     \        : n(n), num(n), sz(n, 1), parent(n, 0),\n          potential(n, AbelGroup::unit())\
-    \ {\n        assert(AbelGroup::commute);\n        std::ranges::iota(parent, 0);\n\
-    \    }\n\n    std::pair<int, T> from_root(int x) {\n        if (x == parent[x])\n\
+    \ {\n        assert(AbelGroup::commute);\n        std::iota(parent.begin(), parent.end(),\
+    \ 0);\n    }\n\n    std::pair<int, T> from_root(int x) {\n        if (x == parent[x])\n\
     \            return {x, AbelGroup::unit()};\n        auto [r, add] = from_root(parent[x]);\n\
     \        parent[x] = r;\n        AbelGroup::Rchop(potential[x], add);\n      \
     \  return {r, potential[x]};\n    }\n\n    int leader(int x) { return from_root(x).first;\
@@ -80,8 +80,8 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-14 23:11:29+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 09:29:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_B.test.cpp
 layout: document

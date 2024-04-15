@@ -14,18 +14,18 @@ data:
     \ sz, parent;\n    std::stack<std::pair<size_t, size_t>> sta;\n    std::vector<T>\
     \ value;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n)\n        : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit())\
-    \ {\n        std::ranges::iota(parent, 0);\n    }\n\n    size_t leader(size_t\
-    \ x) const {\n        assert(0 <= x and x < n);\n        return (x == parent[x]\
-    \ ? x : leader(parent[x]));\n    }\n\n    T get(size_t x) const {\n        assert(0\
-    \ <= x and x < n);\n        if (x == parent[x])\n            return value[x];\n\
-    \        T ret = value[x];\n        while (x != parent[x]) {\n            x =\
-    \ parent[x];\n            AbelGroup::Rchop(ret, value[x]);\n        }\n      \
-    \  return ret;\n    }\n\n    bool same(size_t x, size_t y) const {\n        assert(0\
-    \ <= x and x < n and 0 <= y and y < n);\n        return leader(x) == leader(y);\n\
-    \    }\n\n    bool merge(size_t x, size_t y) {\n        assert(0 <= x and x <\
-    \ n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n \
-    \       if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n \
-    \           std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
+    \ {\n        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    size_t\
+    \ leader(size_t x) const {\n        assert(0 <= x and x < n);\n        return\
+    \ (x == parent[x] ? x : leader(parent[x]));\n    }\n\n    T get(size_t x) const\
+    \ {\n        assert(0 <= x and x < n);\n        if (x == parent[x])\n        \
+    \    return value[x];\n        T ret = value[x];\n        while (x != parent[x])\
+    \ {\n            x = parent[x];\n            AbelGroup::Rchop(ret, value[x]);\n\
+    \        }\n        return ret;\n    }\n\n    bool same(size_t x, size_t y) const\
+    \ {\n        assert(0 <= x and x < n and 0 <= y and y < n);\n        return leader(x)\
+    \ == leader(y);\n    }\n\n    bool merge(size_t x, size_t y) {\n        assert(0\
+    \ <= x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
+    \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
+    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
     \        AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));\n        num--;\n\
     \        sta.emplace(x, y);\n        return true;\n    }\n\n    void undo() {\n\
     \        if (!sta.size())\n            return;\n        auto [x, y] = sta.top();\n\
@@ -38,18 +38,18 @@ data:
     \ sz, parent;\n    std::stack<std::pair<size_t, size_t>> sta;\n    std::vector<T>\
     \ value;\n\n  public:\n    UndoUnionFind() = default;\n    UndoUnionFind(size_t\
     \ n)\n        : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit())\
-    \ {\n        std::ranges::iota(parent, 0);\n    }\n\n    size_t leader(size_t\
-    \ x) const {\n        assert(0 <= x and x < n);\n        return (x == parent[x]\
-    \ ? x : leader(parent[x]));\n    }\n\n    T get(size_t x) const {\n        assert(0\
-    \ <= x and x < n);\n        if (x == parent[x])\n            return value[x];\n\
-    \        T ret = value[x];\n        while (x != parent[x]) {\n            x =\
-    \ parent[x];\n            AbelGroup::Rchop(ret, value[x]);\n        }\n      \
-    \  return ret;\n    }\n\n    bool same(size_t x, size_t y) const {\n        assert(0\
-    \ <= x and x < n and 0 <= y and y < n);\n        return leader(x) == leader(y);\n\
-    \    }\n\n    bool merge(size_t x, size_t y) {\n        assert(0 <= x and x <\
-    \ n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n \
-    \       if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n \
-    \           std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
+    \ {\n        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    size_t\
+    \ leader(size_t x) const {\n        assert(0 <= x and x < n);\n        return\
+    \ (x == parent[x] ? x : leader(parent[x]));\n    }\n\n    T get(size_t x) const\
+    \ {\n        assert(0 <= x and x < n);\n        if (x == parent[x])\n        \
+    \    return value[x];\n        T ret = value[x];\n        while (x != parent[x])\
+    \ {\n            x = parent[x];\n            AbelGroup::Rchop(ret, value[x]);\n\
+    \        }\n        return ret;\n    }\n\n    bool same(size_t x, size_t y) const\
+    \ {\n        assert(0 <= x and x < n and 0 <= y and y < n);\n        return leader(x)\
+    \ == leader(y);\n    }\n\n    bool merge(size_t x, size_t y) {\n        assert(0\
+    \ <= x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
+    \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
+    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
     \        AbelGroup::Rchop(value[y], AbelGroup::inverse(value[x]));\n        num--;\n\
     \        sta.emplace(x, y);\n        return true;\n    }\n\n    void undo() {\n\
     \        if (!sta.size())\n            return;\n        auto [x, y] = sta.top();\n\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/ApplyUndoUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-14 23:11:29+09:00'
+  timestamp: '2024-04-15 09:29:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/ApplyUndoUnionFind.cpp

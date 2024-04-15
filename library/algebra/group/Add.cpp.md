@@ -24,16 +24,16 @@ data:
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/1330.test.cpp
     title: test/AOJ/1330.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2207.test.cpp
     title: test/AOJ/2207.test.cpp
   - icon: ':x:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
@@ -111,7 +111,7 @@ data:
   - library/math/FactorialNumberSystem.cpp
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
-  timestamp: '2024-04-14 23:11:29+09:00'
+  timestamp: '2024-04-15 09:29:10+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

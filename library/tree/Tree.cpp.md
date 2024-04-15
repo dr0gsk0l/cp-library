@@ -133,7 +133,7 @@ data:
   path: library/tree/Tree.cpp
   requiredBy:
   - library/tree/EdgeVertex.cpp
-  timestamp: '2024-04-14 23:11:29+09:00'
+  timestamp: '2024-04-15 09:29:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp

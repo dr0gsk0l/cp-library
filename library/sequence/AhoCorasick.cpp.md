@@ -145,7 +145,7 @@ data:
   isVerificationFile: false
   path: library/sequence/AhoCorasick.cpp
   requiredBy: []
-  timestamp: '2024-04-14 23:11:29+09:00'
+  timestamp: '2024-04-15 09:29:10+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

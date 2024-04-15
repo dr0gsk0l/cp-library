@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1420.test.cpp
     title: test/yukicoder/1420.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/Xor.cpp\"\ntemplate<typename X>\n\
@@ -29,8 +29,8 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Xor.cpp
   requiredBy: []
-  timestamp: '2024-04-14 23:11:29+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 09:29:10+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1420.test.cpp
 documentation_of: library/algebra/group/Xor.cpp

@@ -146,7 +146,7 @@ data:
   - library/tree/EdgeVertex.cpp
   - library/graph/EdgeVertex.cpp
   - library/graph/SCC.cpp
-  timestamp: '2024-04-14 23:11:29+09:00'
+  timestamp: '2024-04-15 09:29:10+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp
