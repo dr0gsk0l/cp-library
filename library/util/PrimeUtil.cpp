@@ -8,7 +8,7 @@ class PrimeUtil {
     using u64 = unsigned long long;
     using PF = std::vector<std::pair<u32, int>>;
 
-    template <int MAX> using ARR = std::array<T, MAX + 1>;
+    template <size_t SZ> using ARR = std::array<T, SZ + 1>;
     template <typename T, bool F> using COND = std::conditional_t<F, T, bool>;
 
     ARR<bool> isP;
