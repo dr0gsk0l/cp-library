@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/graph/WeightedGraph.cpp
     title: library/graph/WeightedGraph.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/shortest_path/Dijkstra.cpp
     title: library/graph/shortest_path/Dijkstra.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
@@ -70,7 +70,7 @@ data:
     \ WG, typename T = typename WG::weight_type>\nstd::pair<std::vector<T>, std::vector<int>>\
     \ dijkstra(const WG &g, int s = 0) {\n    assert(g.is_prepared());\n    std::vector<T>\
     \ d(g.n, -1);\n    std::vector<int> pre(g.n, -1);\n    std::priority_queue<std::pair<T,\
-    \ int>, std::vector<std::pair<T, int>>,\n                        greater<std::pair<T,\
+    \ int>, std::vector<std::pair<T, int>>,\n                        std::greater<std::pair<T,\
     \ int>>>\n        que;\n    d[s] = 0;\n    que.emplace(0, s);\n    while (que.size())\
     \ {\n        auto [now, id] = que.top();\n        que.pop();\n        if (d[id]\
     \ < now)\n            continue;\n        for (const auto &e : g[id])\n       \
@@ -101,8 +101,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/ShortestPath.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 10:07:57+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/ShortestPath.test.cpp
 layout: document

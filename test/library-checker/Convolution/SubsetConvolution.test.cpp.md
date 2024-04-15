@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Ranked.cpp
     title: library/bitwise/Ranked.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: library/mod/Modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/subset_convolution
@@ -33,8 +33,8 @@ data:
     \ i = (n)-1; i >= 0; i--)\nclass BitwiseRanked {\n    static int popcount(int\
     \ S) { return __builtin_popcount(S); }\n\n  public:\n    template <typename T>\n\
     \    static std::vector<std::vector<T>> zeta(const std::vector<T> &A) {\n    \
-    \    const int n = bitwise::log2(A.size());\n        std::vector << T >> RA(1\
-    \ << n, std::vector<T>(n + 1, 0));\n        REP_(S, 1 << n) RA[S][popcount(S)]\
+    \    const int n = bitwise::log2(A.size());\n        std::vector<std::vector<T>>\
+    \ RA(1 << n, std::vector<T>(n + 1, 0));\n        REP_(S, 1 << n) RA[S][popcount(S)]\
     \ = A[S];\n        REP_(i, n)\n        REP_(S, 1 << n)\n        if (!bitwise::in(S,\
     \ i))\n            REP_(d, n + 1) RA[S | (1 << i)][d] += RA[S][d];\n        return\
     \ RA;\n    }\n    template <typename T>\n    static std::vector<T> mobius(std::vector<std::vector<T>>\
@@ -106,8 +106,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Convolution/SubsetConvolution.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-15 10:07:57+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Convolution/SubsetConvolution.test.cpp
 layout: document

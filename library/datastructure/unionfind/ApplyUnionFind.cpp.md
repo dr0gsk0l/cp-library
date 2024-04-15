@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/ApplyUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/ApplyUnionFind.cpp

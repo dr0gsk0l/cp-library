@@ -83,10 +83,10 @@ data:
     - icon: ':warning:'
       path: library/bitwise/Or.cpp
       title: library/bitwise/Or.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/bitwise/Ranked.cpp
       title: library/bitwise/Ranked.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/bitwise/Util.cpp
       title: library/bitwise/Util.cpp
     - icon: ':heavy_check_mark:'
@@ -190,10 +190,10 @@ data:
     - icon: ':question:'
       path: library/flow/Dinic.cpp
       title: library/flow/Dinic.cpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/flow/MCF.cpp
       title: library/flow/MCF.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/flow/NondecreasingMCF.cpp
       title: library/flow/NondecreasingMCF.cpp
   - name: library/formalpowerseries
@@ -238,7 +238,7 @@ data:
     - icon: ':question:'
       path: library/graph/Graph.cpp
       title: library/graph/Graph.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/Grid.cpp
       title: library/graph/Grid.cpp
     - icon: ':warning:'
@@ -284,7 +284,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/Dial.cpp
       title: library/graph/shortest_path/Dial.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/graph/shortest_path/Dijkstra.cpp
       title: library/graph/shortest_path/Dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -395,7 +395,7 @@ data:
       title: library/segtree/SegmentTree.cpp
   - name: library/sequence
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/AhoCorasick.cpp
       title: AhoCorasick
     - icon: ':question:'
@@ -407,15 +407,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/sequence/RunEnumerate.cpp
       title: library/sequence/RunEnumerate.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/sequence/Trie.cpp
       title: library/sequence/Trie.cpp
   - name: library/setpowerseries
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/setpowerseries/Base.cpp
       title: library/setpowerseries/Base.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/setpowerseries/Compose.cpp
       title: library/setpowerseries/Compose.cpp
   - name: library/superstd
@@ -525,7 +525,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/2207.test.cpp
       title: test/AOJ/2207.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/2212.test.cpp
       title: test/AOJ/2212.test.cpp
     - icon: ':heavy_check_mark:'
@@ -534,7 +534,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/2971.test.cpp
       title: test/AOJ/2971.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/3297.test.cpp
       title: test/AOJ/3297.test.cpp
     - icon: ':heavy_check_mark:'
@@ -606,7 +606,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_6_A.test.cpp
       title: test/AOJ/GRL_6_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/AOJ/GRL_6_B.test.cpp
       title: test/AOJ/GRL_6_B.test.cpp
     - icon: ':x:'
@@ -623,7 +623,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
       title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Convolution/SubsetConvolution.test.cpp
       title: test/library-checker/Convolution/SubsetConvolution.test.cpp
   - name: test/library-checker/DataStructure
@@ -684,7 +684,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/Graph/SCC.test.cpp
       title: test/library-checker/Graph/SCC.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Graph/ShortestPath.test.cpp
       title: test/library-checker/Graph/ShortestPath.test.cpp
   - name: test/library-checker/Math
@@ -742,7 +742,7 @@ data:
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
   - name: test/library-checker/SPS
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
       title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - name: test/library-checker/String

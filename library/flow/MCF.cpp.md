@@ -9,7 +9,7 @@ data:
     path: library/graph/matching/WeightedBipartiteMatching.cpp
     title: library/graph/matching/WeightedBipartiteMatching.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/GRL_6_B.test.cpp
     title: test/AOJ/GRL_6_B.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: test/library-checker/Graph/AssignmentProblem.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/WeightedGraph.cpp\"\ntemplate <typename T>\
@@ -82,7 +82,7 @@ data:
     \ + potential[from] -\n                                  potential[e.to])) {\n\
     \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
     \        return false;\n    }\n\n    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC,\
-    \ int>>,\n                        greater<std::pair<TC, int>>>\n        que;\n\
+    \ int>>,\n                        std::greater<std::pair<TC, int>>>\n        que;\n\
     \    void dijkstra() { // dist[i]:s\u304B\u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\
     \u8FBA\u306E\u91CD\u307F\u306B\u3088\u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n  \
     \                    // \u3068\u306A\u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\
@@ -155,7 +155,7 @@ data:
     \ + potential[from] -\n                                  potential[e.to])) {\n\
     \            pre[e.to] = {from, edge_id};\n            return true;\n        }\n\
     \        return false;\n    }\n\n    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC,\
-    \ int>>,\n                        greater<std::pair<TC, int>>>\n        que;\n\
+    \ int>>,\n                        std::greater<std::pair<TC, int>>>\n        que;\n\
     \    void dijkstra() { // dist[i]:s\u304B\u3089\u6B8B\u4F59\u30B0\u30E9\u30D5\u3067\
     \u8FBA\u306E\u91CD\u307F\u306B\u3088\u308Bi\u3078\u306E\u6700\u77ED\u8DEF\n  \
     \                    // \u3068\u306A\u308B\u3088\u3046\u306Bdist\u3092\u4F5C\u308B\
@@ -219,8 +219,8 @@ data:
   path: library/flow/MCF.cpp
   requiredBy:
   - library/graph/matching/WeightedBipartiteMatching.cpp
-  timestamp: '2024-04-15 09:29:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 10:07:57+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp
   - test/AOJ/GRL_6_B.test.cpp

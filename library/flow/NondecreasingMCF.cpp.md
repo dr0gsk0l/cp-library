@@ -6,12 +6,12 @@ data:
     title: library/graph/WeightedGraph.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/3297.test.cpp
     title: test/AOJ/3297.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/flow/NondecreasingMCF.cpp\"\n// \u8FBA\u306E\u91CD\
@@ -68,20 +68,20 @@ data:
     \                    << \")\";\n            std::cerr << \"\\n\";\n        }\n\
     \    }\n};\n#line 5 \"library/flow/NondecreasingMCF.cpp\"\n#define REP_(i, n)\
     \ for (int i = 0; i < (n); i++)\ntemplate <typename TC> class NondecreasingMCF\
-    \ {\n    using F = function<TC(int)>;\n    struct EdgeInfo {\n        int cap,\
-    \ flow, rev;\n        bool reverse_edge;\n        F cost_func;\n\n        EdgeInfo()\
-    \ = default;\n        EdgeInfo(int cap, F cost_func, int rev, bool reverse_edge)\n\
-    \            : cap(cap), cost_func(cost_func), rev(rev),\n              reverse_edge(reverse_edge),\
-    \ flow(0) {}\n\n        TC cost() const {\n            if (!reverse_edge)\n  \
-    \              return cost_func(flow);\n            return -cost_func(cap - 1);\n\
-    \        }\n    };\n    int n;\n    WeightedGraph<EdgeInfo> G;\n    std::vector<TC>\
-    \ potential, dist;\n    static constexpr TC INF = std::is_same_v<TC, __int128>\n\
-    \                                  ? TC(1e30)\n                              \
-    \    : std::numeric_limits<TC>::max() / 2;\n    //  std::numeric_limits<__int128\
+    \ {\n    using F = std::function<TC(int)>;\n    struct EdgeInfo {\n        int\
+    \ cap, flow, rev;\n        bool reverse_edge;\n        F cost_func;\n\n      \
+    \  EdgeInfo() = default;\n        EdgeInfo(int cap, F cost_func, int rev, bool\
+    \ reverse_edge)\n            : cap(cap), cost_func(cost_func), rev(rev),\n   \
+    \           reverse_edge(reverse_edge), flow(0) {}\n\n        TC cost() const\
+    \ {\n            if (!reverse_edge)\n                return cost_func(flow);\n\
+    \            return -cost_func(cap - 1);\n        }\n    };\n    int n;\n    WeightedGraph<EdgeInfo>\
+    \ G;\n    std::vector<TC> potential, dist;\n    static constexpr TC INF = std::is_same_v<TC,\
+    \ __int128>\n                                  ? TC(1e30)\n                  \
+    \                : std::numeric_limits<TC>::max() / 2;\n    //  std::numeric_limits<__int128\
     \ >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\n    std::vector<std::pair<int,\
     \ int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\u6765\u305F\n    std::vector<int>\
     \ in_deg, out_deg;\n    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC,\
-    \ int>>,\n                        greater<std::pair<TC, int>>>\n        que;\n\
+    \ int>>,\n                        std::greater<std::pair<TC, int>>>\n        que;\n\
     \    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\u304B\n\n\
     \    template <typename T> bool chmin(T &a, const T &b) {\n        return (a >\
     \ b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id) {\n\
@@ -128,8 +128,8 @@ data:
     \ 1 \u6D41\u3059\u6642\u306B\u304B\u304B\u308B\u30B3\u30B9\u30C8\u3092\u8FD4\u3059\
     \u95A2\u6570\u3092\u6E21\u3059\n#include \"library/graph/WeightedGraph.cpp\"\n\
     #define REP_(i, n) for (int i = 0; i < (n); i++)\ntemplate <typename TC> class\
-    \ NondecreasingMCF {\n    using F = function<TC(int)>;\n    struct EdgeInfo {\n\
-    \        int cap, flow, rev;\n        bool reverse_edge;\n        F cost_func;\n\
+    \ NondecreasingMCF {\n    using F = std::function<TC(int)>;\n    struct EdgeInfo\
+    \ {\n        int cap, flow, rev;\n        bool reverse_edge;\n        F cost_func;\n\
     \n        EdgeInfo() = default;\n        EdgeInfo(int cap, F cost_func, int rev,\
     \ bool reverse_edge)\n            : cap(cap), cost_func(cost_func), rev(rev),\n\
     \              reverse_edge(reverse_edge), flow(0) {}\n\n        TC cost() const\
@@ -141,7 +141,7 @@ data:
     \ >::max() \u306F AOJ \u3067\u30D0\u30B0\u3063\u305F\n    std::vector<std::pair<int,\
     \ int>> pre; // pre[v]=[u,i] : G[u][i] \u3067 v \u306B\u6765\u305F\n    std::vector<int>\
     \ in_deg, out_deg;\n    std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC,\
-    \ int>>,\n                        greater<std::pair<TC, int>>>\n        que;\n\
+    \ int>>,\n                        std::greater<std::pair<TC, int>>>\n        que;\n\
     \    bool negative = false; // \u8CA0\u8FBA\u5B58\u5728\u3059\u308B\u304B\n\n\
     \    template <typename T> bool chmin(T &a, const T &b) {\n        return (a >\
     \ b and (a = b, true));\n    }\n    bool SP_update(int from, int edge_id) {\n\
@@ -187,8 +187,8 @@ data:
   isVerificationFile: false
   path: library/flow/NondecreasingMCF.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-15 10:07:57+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/3297.test.cpp
 documentation_of: library/flow/NondecreasingMCF.cpp

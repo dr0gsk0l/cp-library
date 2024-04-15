@@ -15,7 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/SubsetConvolution.test.cpp
     title: test/library-checker/Convolution/SubsetConvolution.test.cpp
   - icon: ':heavy_check_mark:'
@@ -133,7 +133,7 @@ data:
   isVerificationFile: false
   path: library/mod/Modint.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/New/NumberOfSubsequence.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
   _extendedRequiredBy: []
@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: library/bitwise/Or.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/bitwise/Or.cpp

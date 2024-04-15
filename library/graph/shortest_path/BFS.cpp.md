@@ -29,7 +29,7 @@ data:
   isVerificationFile: false
   path: library/graph/shortest_path/BFS.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_11_C.test.cpp

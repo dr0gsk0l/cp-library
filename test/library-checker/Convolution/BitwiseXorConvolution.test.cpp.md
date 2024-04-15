@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
   - icon: ':heavy_check_mark:'
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp

@@ -2,17 +2,17 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/AhoCorasick.cpp
     title: AhoCorasick
   - icon: ':x:'
     path: library/sequence/RollingHash.cpp
     title: library/sequence/RollingHash.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/sequence/Trie.cpp
     title: library/sequence/Trie.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/AOJ/2212.test.cpp
     title: test/AOJ/2212.test.cpp
   - icon: ':x:'
@@ -87,7 +87,7 @@ data:
   - library/sequence/AhoCorasick.cpp
   - library/sequence/Trie.cpp
   - library/sequence/RollingHash.cpp
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/430_2.test.cpp

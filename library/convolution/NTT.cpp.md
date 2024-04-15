@@ -62,7 +62,7 @@ data:
   isVerificationFile: false
   path: library/convolution/NTT.cpp
   requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
+  timestamp: '2024-04-15 10:07:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/Convolution.test.cpp

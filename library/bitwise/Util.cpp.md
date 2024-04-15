@@ -8,12 +8,18 @@ data:
   - icon: ':warning:'
     path: library/bitwise/Or.cpp
     title: library/bitwise/Or.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Ranked.cpp
     title: library/bitwise/Ranked.cpp
   - icon: ':heavy_check_mark:'
     path: library/bitwise/Xor.cpp
     title: library/bitwise/Xor.cpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Base.cpp
+    title: library/setpowerseries/Base.cpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Compose.cpp
+    title: library/setpowerseries/Compose.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
@@ -21,12 +27,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
     title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/SubsetConvolution.test.cpp
     title: test/library-checker/Convolution/SubsetConvolution.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+    title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/bitwise/Util.cpp\"\nnamespace bitwise{\n  static\
@@ -43,9 +52,12 @@ data:
   - library/bitwise/Or.cpp
   - library/bitwise/And.cpp
   - library/bitwise/Ranked.cpp
-  timestamp: '2024-04-15 09:29:10+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  - library/setpowerseries/Base.cpp
+  - library/setpowerseries/Compose.cpp
+  timestamp: '2024-04-15 10:07:57+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
   - test/library-checker/Convolution/SubsetConvolution.test.cpp

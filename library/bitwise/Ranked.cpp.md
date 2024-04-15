@@ -1,17 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.cpp
     title: library/bitwise/Util.cpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Base.cpp
+    title: library/setpowerseries/Base.cpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Compose.cpp
+    title: library/setpowerseries/Compose.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Convolution/SubsetConvolution.test.cpp
     title: test/library-checker/Convolution/SubsetConvolution.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+    title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/bitwise/Util.cpp\"\nnamespace bitwise{\n  static\
@@ -22,15 +31,15 @@ data:
     \ {\n    static int popcount(int S) { return __builtin_popcount(S); }\n\n  public:\n\
     \    template <typename T>\n    static std::vector<std::vector<T>> zeta(const\
     \ std::vector<T> &A) {\n        const int n = bitwise::log2(A.size());\n     \
-    \   std::vector << T >> RA(1 << n, std::vector<T>(n + 1, 0));\n        REP_(S,\
-    \ 1 << n) RA[S][popcount(S)] = A[S];\n        REP_(i, n)\n        REP_(S, 1 <<\
-    \ n)\n        if (!bitwise::in(S, i))\n            REP_(d, n + 1) RA[S | (1 <<\
-    \ i)][d] += RA[S][d];\n        return RA;\n    }\n    template <typename T>\n\
-    \    static std::vector<T> mobius(std::vector<std::vector<T>> RA) {\n        const\
-    \ int n = bitwise::log2(RA.size());\n        REP_(i, n)\n        REP_(S, 1 <<\
-    \ n)\n        if (!bitwise::in(S, i))\n            REP_(d, n + 1) RA[S | (1 <<\
-    \ i)][d] -= RA[S][d];\n        std::vector<T> A(1 << n);\n        REP_(S, 1 <<\
-    \ n) A[S] = RA[S][popcount(S)];\n        return A;\n    }\n    template <typename\
+    \   std::vector<std::vector<T>> RA(1 << n, std::vector<T>(n + 1, 0));\n      \
+    \  REP_(S, 1 << n) RA[S][popcount(S)] = A[S];\n        REP_(i, n)\n        REP_(S,\
+    \ 1 << n)\n        if (!bitwise::in(S, i))\n            REP_(d, n + 1) RA[S |\
+    \ (1 << i)][d] += RA[S][d];\n        return RA;\n    }\n    template <typename\
+    \ T>\n    static std::vector<T> mobius(std::vector<std::vector<T>> RA) {\n   \
+    \     const int n = bitwise::log2(RA.size());\n        REP_(i, n)\n        REP_(S,\
+    \ 1 << n)\n        if (!bitwise::in(S, i))\n            REP_(d, n + 1) RA[S |\
+    \ (1 << i)][d] -= RA[S][d];\n        std::vector<T> A(1 << n);\n        REP_(S,\
+    \ 1 << n) A[S] = RA[S][popcount(S)];\n        return A;\n    }\n    template <typename\
     \ T>\n    static std::vector<T> convolution(const std::vector<T> &A,\n       \
     \                               const std::vector<T> &B) {\n        const int\
     \ n = bitwise::log2(A.size());\n        auto RA = zeta(A);\n        auto RB =\
@@ -43,30 +52,33 @@ data:
     class BitwiseRanked {\n    static int popcount(int S) { return __builtin_popcount(S);\
     \ }\n\n  public:\n    template <typename T>\n    static std::vector<std::vector<T>>\
     \ zeta(const std::vector<T> &A) {\n        const int n = bitwise::log2(A.size());\n\
-    \        std::vector << T >> RA(1 << n, std::vector<T>(n + 1, 0));\n        REP_(S,\
-    \ 1 << n) RA[S][popcount(S)] = A[S];\n        REP_(i, n)\n        REP_(S, 1 <<\
-    \ n)\n        if (!bitwise::in(S, i))\n            REP_(d, n + 1) RA[S | (1 <<\
-    \ i)][d] += RA[S][d];\n        return RA;\n    }\n    template <typename T>\n\
-    \    static std::vector<T> mobius(std::vector<std::vector<T>> RA) {\n        const\
-    \ int n = bitwise::log2(RA.size());\n        REP_(i, n)\n        REP_(S, 1 <<\
-    \ n)\n        if (!bitwise::in(S, i))\n            REP_(d, n + 1) RA[S | (1 <<\
-    \ i)][d] -= RA[S][d];\n        std::vector<T> A(1 << n);\n        REP_(S, 1 <<\
-    \ n) A[S] = RA[S][popcount(S)];\n        return A;\n    }\n    template <typename\
-    \ T>\n    static std::vector<T> convolution(const std::vector<T> &A,\n       \
-    \                               const std::vector<T> &B) {\n        const int\
-    \ n = bitwise::log2(A.size());\n        auto RA = zeta(A);\n        auto RB =\
-    \ zeta(B);\n        REP_(S, 1 << n) {\n            auto &ra = RA[S], rb = RB[S];\n\
-    \            RREP_(d, n + 1) {\n                ra[d] *= rb[0];\n            \
-    \    REP_(i, d) ra[d] += ra[i] * rb[d - i];\n            }\n        }\n      \
-    \  return mobius(RA);\n    }\n};\n#undef REP_\n#undef RREP_"
+    \        std::vector<std::vector<T>> RA(1 << n, std::vector<T>(n + 1, 0));\n \
+    \       REP_(S, 1 << n) RA[S][popcount(S)] = A[S];\n        REP_(i, n)\n     \
+    \   REP_(S, 1 << n)\n        if (!bitwise::in(S, i))\n            REP_(d, n +\
+    \ 1) RA[S | (1 << i)][d] += RA[S][d];\n        return RA;\n    }\n    template\
+    \ <typename T>\n    static std::vector<T> mobius(std::vector<std::vector<T>> RA)\
+    \ {\n        const int n = bitwise::log2(RA.size());\n        REP_(i, n)\n   \
+    \     REP_(S, 1 << n)\n        if (!bitwise::in(S, i))\n            REP_(d, n\
+    \ + 1) RA[S | (1 << i)][d] -= RA[S][d];\n        std::vector<T> A(1 << n);\n \
+    \       REP_(S, 1 << n) A[S] = RA[S][popcount(S)];\n        return A;\n    }\n\
+    \    template <typename T>\n    static std::vector<T> convolution(const std::vector<T>\
+    \ &A,\n                                      const std::vector<T> &B) {\n    \
+    \    const int n = bitwise::log2(A.size());\n        auto RA = zeta(A);\n    \
+    \    auto RB = zeta(B);\n        REP_(S, 1 << n) {\n            auto &ra = RA[S],\
+    \ rb = RB[S];\n            RREP_(d, n + 1) {\n                ra[d] *= rb[0];\n\
+    \                REP_(i, d) ra[d] += ra[i] * rb[d - i];\n            }\n     \
+    \   }\n        return mobius(RA);\n    }\n};\n#undef REP_\n#undef RREP_"
   dependsOn:
   - library/bitwise/Util.cpp
   isVerificationFile: false
   path: library/bitwise/Ranked.cpp
-  requiredBy: []
-  timestamp: '2024-04-15 09:29:10+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  requiredBy:
+  - library/setpowerseries/Base.cpp
+  - library/setpowerseries/Compose.cpp
+  timestamp: '2024-04-15 10:07:57+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - test/library-checker/Convolution/SubsetConvolution.test.cpp
 documentation_of: library/bitwise/Ranked.cpp
 layout: document
