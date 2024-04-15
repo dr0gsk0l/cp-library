@@ -10,7 +10,7 @@ class UndoUnionFind {
   public:
     UndoUnionFind() = default;
     UndoUnionFind(size_t n) : n(n), num(n), sz(n, 1), parent(n) {
-        std::ranges::iota(parent, 0);
+        std::iota(parent.begin(), parent.end(), 0);
     }
 
     size_t leader(size_t x) const {

@@ -11,7 +11,7 @@ template <typename AbelGroup> class UndoUnionFind {
     UndoUnionFind() = default;
     UndoUnionFind(size_t n)
         : n(n), num(n), sz(n, 1), parent(n, 0), value(n, AbelGroup::unit()) {
-        std::ranges::iota(parent, 0);
+        std::iota(parent.begin(), parent.end(), 0);
     }
 
     size_t leader(size_t x) const {
