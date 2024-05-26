@@ -15,3 +15,35 @@ monotone 行列に対して $b$ を $O(N+M\log M)$ で求めるアルゴリズ�
 monotone 行列に対して $b$ を求める．  
 計算時間 $O(N+M\log M)$.  
 ただし $\arg\min(i,l,r)$ を$O(r-l)$ で$\arg\min_{j\in[l,r)} A_{i,j}$ を返す関数とする．
+
+# 使用例
+```cpp
+#include <bits/stdc++.h>
+#include "library/convex/MonotoneMinima.cpp"
+
+using ll = long long;
+
+int main() {
+    int n;
+    std::cin >> n;
+    std::vector<ll> v(n);
+    for (ll &x : v)
+        std::cin >> x;
+
+    auto score = [&v](ll canon_id, ll area_id) {
+        return v[area_id] + (canon_id - area_id) * (canon_id - area_id);
+    };
+
+    auto ans = monotone_minima(n, n, [&](int i, int l, int r) {
+        int res = l;
+        for (int j = l + 1; j < r; j++)
+            if (score(i, res) > score(i, j))
+                res = j;
+        return res;
+    });
+
+    for (int i = 0; i < n; i++)
+        std::cout << score(i, ans[i]) << '\n';
+}
+```
+[提出](https://atcoder.jp/contests/colopl2018-final/submissions/53923676)
