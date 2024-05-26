@@ -15,7 +15,7 @@ std::vector<int> monotone_minima(int n, int m, const F &argmin) {
         que.pop();
 
         if (u == d)
-            return;
+            continue;
         int m = (u + d) >> 1;
         res[m] = argmin(m, l, r);
         que.emplace(u, m, l, res[m] + 1);
