@@ -92,6 +92,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/bitwise/Xor.cpp
       title: library/bitwise/Xor.cpp
+  - name: library/convex
+    pages:
+    - icon: ':warning:'
+      path: library/convex/MonotoneMinima.cpp
+      title: monotone_minima
+    - icon: ':warning:'
+      path: library/convex/SMAWK.cpp
+      title: SMAWK
   - name: library/convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -359,7 +367,7 @@ data:
     pages:
     - icon: ':warning:'
       path: library/monotone/MonotoneMinima.cpp
-      title: monotone_minima
+      title: library/monotone/MonotoneMinima.cpp
   - name: library/query
     pages:
     - icon: ':warning:'

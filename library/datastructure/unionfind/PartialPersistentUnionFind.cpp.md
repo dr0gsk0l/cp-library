@@ -90,7 +90,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PartialPersistentUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/416.test.cpp

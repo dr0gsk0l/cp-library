@@ -48,19 +48,19 @@ data:
   isVerificationFile: false
   path: library/bitwise/Util.cpp
   requiredBy:
-  - library/bitwise/Xor.cpp
-  - library/bitwise/Or.cpp
-  - library/bitwise/And.cpp
-  - library/bitwise/Ranked.cpp
-  - library/setpowerseries/Base.cpp
   - library/setpowerseries/Compose.cpp
-  timestamp: '2024-04-15 22:22:25+09:00'
+  - library/setpowerseries/Base.cpp
+  - library/bitwise/Xor.cpp
+  - library/bitwise/And.cpp
+  - library/bitwise/Or.cpp
+  - library/bitwise/Ranked.cpp
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
-  - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
   - test/library-checker/Convolution/SubsetConvolution.test.cpp
+  - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
+  - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
 documentation_of: library/bitwise/Util.cpp
 layout: document
 redirect_from:

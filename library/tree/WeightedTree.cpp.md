@@ -134,14 +134,14 @@ data:
   path: library/tree/WeightedTree.cpp
   requiredBy:
   - library/tree/CartesianTree.cpp
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp
   - test/yukicoder/1002.test.cpp
+  - test/AOJ/DPL_3_C.test.cpp
   - test/AOJ/DPL_3_B.test.cpp
   - test/AOJ/GRL_5_A.test.cpp
-  - test/AOJ/DPL_3_C.test.cpp
 documentation_of: library/tree/WeightedTree.cpp
 layout: document
 redirect_from:

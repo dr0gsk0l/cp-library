@@ -84,14 +84,14 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.cpp
   requiredBy: []
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1420.test.cpp
+  - test/AOJ/2207.test.cpp
   - test/AOJ/1330.test.cpp
   - test/AOJ/DSL_1_B.test.cpp
   - test/AOJ/2971.test.cpp
-  - test/AOJ/2207.test.cpp
 documentation_of: library/datastructure/unionfind/PotentialUnionFind.cpp
 layout: document
 redirect_from:

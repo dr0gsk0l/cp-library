@@ -47,16 +47,16 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/Min.cpp
   requiredBy:
-  - library/algebra/lazy/AddMin.cpp
   - library/algebra/lazy/SetMin.cpp
-  timestamp: '2024-04-15 22:22:25+09:00'
+  - library/algebra/lazy/AddMin.cpp
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1038.test.cpp
-  - test/AOJ/DSL_2_D.test.cpp
+  - test/AOJ/DSL_2_F.test.cpp
   - test/AOJ/DSL_2_E.test.cpp
   - test/AOJ/DSL_2_H.test.cpp
-  - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/DSL_2_D.test.cpp
 documentation_of: library/algebra/monoid/Min.cpp
 layout: document
 redirect_from:

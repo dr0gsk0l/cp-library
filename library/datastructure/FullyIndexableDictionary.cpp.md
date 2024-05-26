@@ -89,17 +89,17 @@ data:
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.cpp
   - library/datastructure/WaveletMatrix.cpp
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/yukicoder/924.test.cpp
   - test/yukicoder/919.test.cpp
   - test/yukicoder/1332.test.cpp
-  - test/yukicoder/924.test.cpp
 documentation_of: library/datastructure/FullyIndexableDictionary.cpp
 layout: document
 redirect_from:

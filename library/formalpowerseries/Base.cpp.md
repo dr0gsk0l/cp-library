@@ -279,24 +279,24 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/Base.cpp
   requiredBy:
+  - library/formalpowerseries/ComposeEXP.cpp
+  - library/formalpowerseries/MultipointEvaluation.cpp
   - library/formalpowerseries/Prod.cpp
+  - library/formalpowerseries/Sqrt.cpp
   - library/formalpowerseries/DivMod.cpp
   - library/formalpowerseries/RationalSum.cpp
-  - library/formalpowerseries/Sqrt.cpp
-  - library/formalpowerseries/MultipointEvaluation.cpp
-  - library/formalpowerseries/ComposeEXP.cpp
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Polynomial/Log.test.cpp
-  - test/library-checker/Polynomial/Inv.test.cpp
-  - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-  - test/library-checker/Polynomial/Pow.test.cpp
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - test/library-checker/Polynomial/Composition.test.cpp
-  - test/library-checker/Polynomial/TaylorShift.test.cpp
-  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - test/library-checker/Polynomial/Exp.test.cpp
+  - test/library-checker/Polynomial/TaylorShift.test.cpp
+  - test/library-checker/Polynomial/Pow.test.cpp
+  - test/library-checker/Polynomial/Inv.test.cpp
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
+  - test/library-checker/Polynomial/Log.test.cpp
 documentation_of: library/formalpowerseries/Base.cpp
 layout: document
 redirect_from:

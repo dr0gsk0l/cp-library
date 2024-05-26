@@ -12,9 +12,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/superstd/Multiset.cpp\"\ntemplate <typename T> struct\
-    \ Multistd::set : std::map<T, int> {\n    using std::map<T, int>::at;\n    using\
-    \ std::map<T, int>::size;\n    using std::map<T, int>::begin;\n    using std::map<T,\
-    \ int>::rbegin;\n    using std::map<T, int>::erase;\n    using std::map<T, int>::lower_bound;\n\
+    \ Multiset : std::map<T, int> {\n    using std::map<T, int>::at;\n    using std::map<T,\
+    \ int>::size;\n    using std::map<T, int>::begin;\n    using std::map<T, int>::rbegin;\n\
+    \    using std::map<T, int>::erase;\n    using std::map<T, int>::lower_bound;\n\
     \    using std::map<T, int>::upper_bound;\n\n    int count(const T &a) const {\n\
     \        return (std::map<T, int>::count(a) ? at(a) : 0);\n    }\n    void insert(const\
     \ T &a) { (*this)[a]++; }\n    void erase1(const T &a) {\n        if (std::map<T,\
@@ -38,10 +38,10 @@ data:
     \          std::cin >> a;\n            insert(a);\n        }\n    }\n\n    void\
     \ banpei() {\n        insert(std::numeric_limits<T>::max() / 2);\n        insert(std::numeric_limits<T>::min()\
     \ / 2);\n    }\n};\n"
-  code: "template <typename T> struct Multistd::set : std::map<T, int> {\n    using\
-    \ std::map<T, int>::at;\n    using std::map<T, int>::size;\n    using std::map<T,\
-    \ int>::begin;\n    using std::map<T, int>::rbegin;\n    using std::map<T, int>::erase;\n\
-    \    using std::map<T, int>::lower_bound;\n    using std::map<T, int>::upper_bound;\n\
+  code: "template <typename T> struct Multiset : std::map<T, int> {\n    using std::map<T,\
+    \ int>::at;\n    using std::map<T, int>::size;\n    using std::map<T, int>::begin;\n\
+    \    using std::map<T, int>::rbegin;\n    using std::map<T, int>::erase;\n   \
+    \ using std::map<T, int>::lower_bound;\n    using std::map<T, int>::upper_bound;\n\
     \n    int count(const T &a) const {\n        return (std::map<T, int>::count(a)\
     \ ? at(a) : 0);\n    }\n    void insert(const T &a) { (*this)[a]++; }\n    void\
     \ erase1(const T &a) {\n        if (std::map<T, int>::count(a) and !--at(a))\n\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: false
   path: library/superstd/Multiset.cpp
   requiredBy: []
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp

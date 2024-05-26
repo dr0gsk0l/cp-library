@@ -83,29 +83,29 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/Concepts.cpp
   requiredBy:
-  - library/algebra/group/Concepts.cpp
-  - library/segtree/SegmentTree.cpp
-  - library/datastructure/GroupWaveletMatrix.cpp
   - library/datastructure/SWAG.cpp
   - library/datastructure/CumulativeMonoid.cpp
+  - library/datastructure/GroupWaveletMatrix.cpp
   - library/datastructure/FenwickTree.cpp
   - library/datastructure/CumulativeGroup.cpp
-  - library/tree/TreeMonoid.cpp
   - library/math/FactorialNumberSystem.cpp
-  timestamp: '2024-04-15 22:22:25+09:00'
+  - library/segtree/SegmentTree.cpp
+  - library/algebra/group/Concepts.cpp
+  - library/tree/TreeMonoid.cpp
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/yukicoder/924.test.cpp
   - test/yukicoder/1036.test.cpp
   - test/yukicoder/650.test.cpp
-  - test/yukicoder/924.test.cpp
   - test/AOJ/DSL_2_B.test.cpp
 documentation_of: library/algebra/monoid/Concepts.cpp
 layout: document

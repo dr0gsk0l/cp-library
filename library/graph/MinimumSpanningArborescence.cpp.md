@@ -108,12 +108,12 @@ data:
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.cpp
   requiredBy: []
-  timestamp: '2024-04-15 22:22:25+09:00'
+  timestamp: '2024-05-26 19:55:08+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp
-  - test/AOJ/GRL_2_B.test.cpp
   - test/AOJ/2647.test.cpp
+  - test/AOJ/GRL_2_B.test.cpp
 documentation_of: library/graph/MinimumSpanningArborescence.cpp
 layout: document
 redirect_from:
