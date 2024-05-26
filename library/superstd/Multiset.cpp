@@ -1,4 +1,4 @@
-template <typename T> struct Multistd::set : std::map<T, int> {
+template <typename T> struct Multiset : std::map<T, int> {
     using std::map<T, int>::at;
     using std::map<T, int>::size;
     using std::map<T, int>::begin;

@@ -11,7 +11,7 @@ template <group G> struct CumulativeGroup {
     void add(const T &a) { A.push_back(G::op(A.back(), a)); }
     T sum(int l, int r) {
         assert(0 <= l and l <= r and r < A.size());
-        return G::op(A[r], Group::inverse(A[l]));
+        return G::op(A[r], G::inverse(A[l]));
     }
     T sum() { return A.back(); }
 };
