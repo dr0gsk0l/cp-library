@@ -1,4 +1,9 @@
 #pragma once
+
+#include <cassert>
+#include <iostream>
+#include <vector>
+
 struct Edge {
     int from, to;
     Edge() = default;

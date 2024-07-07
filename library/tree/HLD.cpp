@@ -43,7 +43,7 @@ template <typename TREE> struct HLD {
         return id;
     }
 
-    int lca(int u, int v) {
+    int lca(int u, int v) const {
         assert(prepared);
         while (head[u] != head[v])
             if (T.depth[head[u]] > T.depth[head[v]])
@@ -52,14 +52,14 @@ template <typename TREE> struct HLD {
                 v = T.parent(head[v]);
         return (T.depth[u] < T.depth[v] ? u : v);
     }
-    int distance(int u, int v) {
+    int distance(int u, int v) const {
         int w = lca(u, v);
         return T.depth[u] + T.depth[v] - T.depth[w] * 2;
     }
 
     // l=lca(u,v) とした時、[u,l] パスと [v,l] パス を閉区間の組みで返す
     using path_t = std::vector<std::pair<int, int>>;
-    std::pair<path_t, path_t> path(int u, int v) {
+    std::pair<path_t, path_t> path(int u, int v) const {
         assert(prepared);
         path_t path_u, path_v;
         while (u != v) {
@@ -84,7 +84,7 @@ template <typename TREE> struct HLD {
     }
 
     // [l,r) が v の部分木
-    std::pair<int, int> subtree(int v) {
+    std::pair<int, int> subtree(int v) const {
         assert(prepared);
         return {id[v], id2[v]};
     }

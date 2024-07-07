@@ -23,6 +23,11 @@ struct Tree : Graph {
         assert(~root and root != v);
         return (*this)[v][0];
     }
+    const edge_type &parent(int v) const {
+        assert(~root and root != v);
+        return (*this)[v][0];
+    }
+
     OutgoingEdges son(int v) {
         assert(~root);
         if (v == root)
