@@ -1,53 +1,24 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':question:'
-    path: library/algebra/Reverse.cpp
-    title: library/algebra/Reverse.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/algebra/group/Add.cpp
-    title: library/algebra/group/Add.cpp
-  - icon: ':question:'
-    path: library/algebra/monoid/Concepts.cpp
-    title: library/algebra/monoid/Concepts.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/graph/Graph.cpp
-    title: library/graph/Graph.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/segtree/SegmentTree.cpp
-    title: library/segtree/SegmentTree.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/tree/HLD.cpp
-    title: library/tree/HLD.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/tree/Tree.cpp
-    title: library/tree/Tree.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/tree/TreeMonoid.cpp
-    title: library/tree/TreeMonoid.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
-    links:
-    - https://judge.yosupo.jp/problem/vertex_add_path_sum
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ library/segtree/SegmentTree.cpp: line 3: #pragma once found in a non-first line\n"
+    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
+    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/group/Add.cpp:\
+    \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
     #include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
     \ \"library/tree/Tree.cpp\"\n#include \"library/tree/TreeMonoid.cpp\"\n\nint main()\
@@ -59,20 +30,12 @@ data:
     \    int u, v;\n            std::cin >> u >> v;\n            std::cout << TM.path_prod(u,\
     \ v) << \"\\n\";\n        } else {\n            int p, x;\n            std::cin\
     \ >> p >> x;\n            TM.multiply(p, x);\n        }\n    }\n}"
-  dependsOn:
-  - library/algebra/group/Add.cpp
-  - library/tree/Tree.cpp
-  - library/graph/Graph.cpp
-  - library/tree/TreeMonoid.cpp
-  - library/algebra/Reverse.cpp
-  - library/segtree/SegmentTree.cpp
-  - library/algebra/monoid/Concepts.cpp
-  - library/tree/HLD.cpp
+  dependsOn: []
   isVerificationFile: true
   path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-05-26 19:55:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/vertex_add_path_sum.test.cpp
 layout: document

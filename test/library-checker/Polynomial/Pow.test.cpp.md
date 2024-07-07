@@ -1,19 +1,12 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/formalpowerseries/Base.cpp
-    title: library/formalpowerseries/Base.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/pow_of_formal_power_series
-    links:
-    - https://judge.yosupo.jp/problem/pow_of_formal_power_series
+  _verificationStatusIcon: ':x:'
+  attributes: {}
   bundledCode: "#line 1 \"test/library-checker/Polynomial/Pow.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\n#include\
     \ <bits/stdc++.h>\n\n#include <library/formalpowerseries/Base.cpp>\n\n#include\
@@ -37,13 +30,12 @@ data:
     \ >> m;\n    FPS f(n);\n    for (int i = 0; i < n; i++)\n        std::cin >> f[i];\n\
     \    f = f.pow(m);\n    for (int i = 0; i < n; i++)\n        std::cout << (i <\
     \ f.size() ? f[i] : 0) << \"\\n \"[i + 1 < n];\n}"
-  dependsOn:
-  - library/formalpowerseries/Base.cpp
+  dependsOn: []
   isVerificationFile: true
   path: test/library-checker/Polynomial/Pow.test.cpp
   requiredBy: []
-  timestamp: '2024-05-26 19:55:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-07-07 16:34:26+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Pow.test.cpp
 layout: document

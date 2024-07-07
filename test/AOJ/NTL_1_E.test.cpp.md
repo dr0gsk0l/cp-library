@@ -1,42 +1,36 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':question:'
-    path: library/math/ExtraGCD.cpp
-    title: library/math/ExtraGCD.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E
-    links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E
-  bundledCode: "#line 1 \"test/AOJ/NTL_1_E.test.cpp\"\n#define PROBLEM           \
-    \                                                     \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
-    \n#include <bits/stdc++.h>\n\n#line 2 \"library/math/ExtraGCD.cpp\"\nusing ll\
-    \ = long long;\nstd::pair<ll, ll> ext_gcd(ll a, ll b) {\n    if (b == 0)\n   \
-    \     return {1, 0};\n    auto [X, Y] = ext_gcd(b, a % b);\n    // bX + (a%b)Y\
-    \ = gcd(a,b)\n    // a%b = a - b(a/b)\n    // \u2234 aY + b(X-(a/b)Y) = gcd(a,b)\n\
-    \    ll x = Y, y = X - (a / b) * Y;\n    return {x, y};\n}\n#line 6 \"test/AOJ/NTL_1_E.test.cpp\"\
-    \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int a, b;\n    std::cin >> a >> b;\n    auto [x, y] = ext_gcd(a, b);\n \
-    \   std::cout << x << \" \" << y << std::endl;\n}\n"
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
+    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/math/ExtraGCD.cpp:\
+    \ line -1: no such header\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/math/ExtraGCD.cpp\"\n\nint main()\
     \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\n   \
     \ int a, b;\n    std::cin >> a >> b;\n    auto [x, y] = ext_gcd(a, b);\n    std::cout\
     \ << x << \" \" << y << std::endl;\n}"
-  dependsOn:
-  - library/math/ExtraGCD.cpp
+  dependsOn: []
   isVerificationFile: true
   path: test/AOJ/NTL_1_E.test.cpp
   requiredBy: []
-  timestamp: '2024-05-26 19:55:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/NTL_1_E.test.cpp
 layout: document

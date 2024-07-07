@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: library/template/original_ostream.hpp
   requiredBy: []
-  timestamp: '2024-05-26 19:55:08+09:00'
+  timestamp: '2024-07-07 16:34:26+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/original_ostream.hpp

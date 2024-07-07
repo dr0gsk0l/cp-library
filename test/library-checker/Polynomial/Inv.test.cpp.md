@@ -1,19 +1,12 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/formalpowerseries/Base.cpp
-    title: library/formalpowerseries/Base.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/inv_of_formal_power_series
-    links:
-    - https://judge.yosupo.jp/problem/inv_of_formal_power_series
+  _verificationStatusIcon: ':x:'
+  attributes: {}
   bundledCode: "#line 1 \"test/library-checker/Polynomial/Inv.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series\"\n#include\
     \ <bits/stdc++.h>\n\n#include <library/formalpowerseries/Base.cpp>\n\n#include\
@@ -37,13 +30,12 @@ data:
     \    for (int i = 0; i < n; i++)\n        std::cin >> f[i];\n    auto g = f.inv();\n\
     \    for (int i = 0; i < n; i++)\n        std::cout << g[i] << \"\\n \"[i + 1\
     \ < n];\n}"
-  dependsOn:
-  - library/formalpowerseries/Base.cpp
+  dependsOn: []
   isVerificationFile: true
   path: test/library-checker/Polynomial/Inv.test.cpp
   requiredBy: []
-  timestamp: '2024-05-26 19:55:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-07-07 16:34:26+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Inv.test.cpp
 layout: document

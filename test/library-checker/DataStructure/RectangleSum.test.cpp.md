@@ -1,62 +1,24 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/algebra/group/Add.cpp
-    title: library/algebra/group/Add.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/algebra/group/Concepts.cpp
-    title: library/algebra/group/Concepts.cpp
-  - icon: ':question:'
-    path: library/algebra/monoid/Concepts.cpp
-    title: library/algebra/monoid/Concepts.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/datastructure/FenwickTree.cpp
-    title: library/datastructure/FenwickTree.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/datastructure/FullyIndexableDictionary.cpp
-    title: library/datastructure/FullyIndexableDictionary.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/datastructure/GroupWaveletMatrix.cpp
-    title: library/datastructure/GroupWaveletMatrix.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/datastructure/WaveletMatrix.cpp
-    title: library/datastructure/WaveletMatrix.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/r2/Projection.cpp
-    title: library/r2/Projection.cpp
-  - icon: ':question:'
-    path: library/r2/XY.cpp
-    title: library/r2/XY.cpp
-  - icon: ':heavy_check_mark:'
-    path: library/util/Compress.cpp
-    title: library/util/Compress.cpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
-    links:
-    - https://judge.yosupo.jp/problem/rectangle_sum
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.3/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ library/algebra/group/Concepts.cpp: line 3: #pragma once found in a non-first\
-    \ line\n"
+    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
+    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/group/Add.cpp:\
+    \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n#include\
     \ <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\n#include\
     \ \"library/algebra/group/Add.cpp\"\n#include \"library/datastructure/GroupWaveletMatrix.cpp\"\
@@ -72,22 +34,12 @@ data:
     \      int l, r, d, u;\n        std::cin >> l >> d >> r >> u;\n        auto [L,\
     \ R] = P.interval(l, r);\n        std::cout << WM.sum(L, R, d, u) << \"\\n\";\n\
     \    }\n}"
-  dependsOn:
-  - library/algebra/group/Add.cpp
-  - library/datastructure/GroupWaveletMatrix.cpp
-  - library/datastructure/FenwickTree.cpp
-  - library/algebra/group/Concepts.cpp
-  - library/algebra/monoid/Concepts.cpp
-  - library/datastructure/WaveletMatrix.cpp
-  - library/datastructure/FullyIndexableDictionary.cpp
-  - library/util/Compress.cpp
-  - library/r2/Projection.cpp
-  - library/r2/XY.cpp
+  dependsOn: []
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum.test.cpp
   requiredBy: []
-  timestamp: '2024-05-26 19:55:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum.test.cpp
 layout: document
