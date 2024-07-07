@@ -1,6 +1,6 @@
 #pragma once
-#include "library/algebra/group/Add.cpp"
-#include "library/algebra/group/Concepts.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/algebra/group/Concepts.hpp"
 
 template <group G = GroupAdd<long long>> class FenwickTree {
     using T = typename G::value_type;

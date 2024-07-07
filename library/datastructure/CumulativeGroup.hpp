@@ -1,4 +1,4 @@
-#include "library/algebra/group/Concepts.cpp"
+#include "library/algebra/group/Concepts.hpp"
 
 template <group G> struct CumulativeGroup {
     using T = typename G::value_type;

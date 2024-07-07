@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2971"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Multiply.cpp"
-#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/algebra/group/Multiply.hpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.hpp"
+#include "library/mod/Modint.hpp"
 using ll = long long;
 using mint1 = Mint<ll, 998244341>;
 using mint2 = Mint<ll, 998244389>;

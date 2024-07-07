@@ -1,5 +1,5 @@
 #pragma once
-#include "library/linearalgebra/Linear.cpp"
+#include "library/linearalgebra/Linear.hpp"
 namespace insert_convex_hull_trick {
 enum Objective {
     MINIMIZE = +1,

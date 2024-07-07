@@ -1,8 +1,8 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1036"
 #include <bits/stdc++.h>
 
-#include "library/algebra/monoid/Gcd.cpp"
-#include "library/datastructure/SWAG.cpp"
+#include "library/algebra/monoid/Gcd.hpp"
+#include "library/datastructure/SWAG.hpp"
 
 using ll = long long;
 

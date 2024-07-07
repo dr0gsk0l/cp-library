@@ -1,10 +1,10 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
 #include <bits/stdc++.h>
 
-#include "library/algebra/Reverse.cpp"
-#include "library/algebra/group/Affine.cpp"
-#include "library/mod/Modint.cpp"
-#include "library/segtree/SegmentTree.cpp"
+#include "library/algebra/Reverse.hpp"
+#include "library/algebra/group/Affine.hpp"
+#include "library/mod/Modint.hpp"
+#include "library/segtree/SegmentTree.hpp"
 
 using ll = long long;
 using mint = Mint<ll>;

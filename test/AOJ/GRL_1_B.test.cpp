@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B"
 #include <bits/stdc++.h>
 
-#include "library/graph/WeightedGraph.cpp"
-#include "library/graph/shortest_path/BellmanFord.cpp"
+#include "library/graph/WeightedGraph.hpp"
+#include "library/graph/shortest_path/BellmanFord.hpp"
 
 using ll = long long;
 

@@ -2,8 +2,8 @@
 #include <bits/stdc++.h>
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/graph/Grid.cpp"
-#include "library/sequence/AhoCorasick.cpp"
+#include "library/graph/Grid.hpp"
+#include "library/sequence/AhoCorasick.hpp"
 
 const std::map<char, int> mp{{'D', 0}, {'R', 1}, {'U', 2}, {'L', 3}};
 

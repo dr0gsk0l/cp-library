@@ -2,8 +2,8 @@
 #define ERROR 1 // Check only whether the answer is -1 or not (by hitonanode)
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Xor.cpp"
-#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
+#include "library/algebra/group/Xor.hpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Add.cpp"
-#include "library/datastructure/FenwickTree.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/datastructure/FenwickTree.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

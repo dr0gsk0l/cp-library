@@ -1,4 +1,4 @@
-#include "library/bitwise/Ranked.cpp"
+#include "library/bitwise/Ranked.hpp"
 template <typename T> struct SetPowerSeries : std::vector<T> {
     using SPS = SetPowerSeries;
     using value_type = T;

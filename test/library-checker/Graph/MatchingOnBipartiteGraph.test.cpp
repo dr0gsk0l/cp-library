@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/bipartitematching"
 #include <bits/stdc++.h>
 
-#include "library/graph/matching/BipartiteMatching.cpp"
+#include "library/graph/matching/BipartiteMatching.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

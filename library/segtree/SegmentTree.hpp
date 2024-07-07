@@ -1,4 +1,4 @@
-#include "library/algebra/monoid/Concepts.cpp"
+#include "library/algebra/monoid/Concepts.hpp"
 
 #pragma once
 template <monoid M> class SegmentTree {

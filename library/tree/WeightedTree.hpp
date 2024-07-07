@@ -1,5 +1,5 @@
 #pragma once
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/WeightedGraph.hpp"
 template <typename T> struct WeightedTree : WeightedGraph<T> {
     using WeightedGraph<T>::WeightedGraph;
     using edge_type = typename WeightedGraph<T>::edge_type;

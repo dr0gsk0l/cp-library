@@ -3,8 +3,8 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/datastructure/unionfind/IntegerSumRuleUnionFind.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/datastructure/unionfind/IntegerSumRuleUnionFind.hpp"
+#include "library/mod/Modint.hpp"
 using mint = Mint<long long, 1000'000'007>;
 
 void chmin(int &a, int b) { a = std::min(a, b); }

@@ -4,7 +4,7 @@
 #define REP(i, n) for (int i = 0; i < (n); i++)
 #define REP2(i, s, n) for (int i = (s); i < (n); i++)
 
-#include "library/datastructure/2D/CumulativeSum.cpp"
+#include "library/datastructure/2D/CumulativeSum.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

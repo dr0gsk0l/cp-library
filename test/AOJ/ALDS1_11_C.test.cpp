@@ -4,8 +4,8 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/graph/Graph.cpp"
-#include "library/graph/shortest_path/BFS.cpp"
+#include "library/graph/Graph.hpp"
+#include "library/graph/shortest_path/BFS.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

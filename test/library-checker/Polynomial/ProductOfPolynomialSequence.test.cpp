@@ -18,9 +18,9 @@ std::istream &operator>>(std::istream &is, mint &a) {
     return is;
 }
 
-#include "library/formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/Base.hpp"
 using FPS = FormalPowerSeries<mint, 500001>;
-#include "library/formalpowerseries/Prod.cpp"
+#include "library/formalpowerseries/Prod.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

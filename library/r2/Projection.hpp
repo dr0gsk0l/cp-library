@@ -1,6 +1,6 @@
 #pragma once
-#include "library/r2/XY.cpp"
-#include "library/util/Compress.cpp"
+#include "library/r2/XY.hpp"
+#include "library/util/Compress.hpp"
 template <typename T> class Projection {
     using r2 = XY<T>;
     Compress<r2> C;

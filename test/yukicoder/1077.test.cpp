@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1077"
 #include <bits/stdc++.h>
 
-#include "library/datastructure/SlopeTrick.cpp"
+#include "library/datastructure/SlopeTrick.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

@@ -2,7 +2,7 @@
     "https://judge.yosupo.jp/problem/double_ended_std::priority_queue"
 #include <bits/stdc++.h>
 
-#include "library/superstd/Multiset.cpp"
+#include "library/superstd/Multiset.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

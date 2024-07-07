@@ -3,8 +3,8 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/graph/MinimumSpanningArborescence.cpp"
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/MinimumSpanningArborescence.hpp"
+#include "library/graph/WeightedGraph.hpp"
 
 int main() {
     int n, m;

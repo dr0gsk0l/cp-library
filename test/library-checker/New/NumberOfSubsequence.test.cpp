@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/number_of_subsequences"
 #include <bits/stdc++.h>
 
-#include "library/mod/Modint.cpp"
-#include "library/util/Subsequence.cpp"
+#include "library/mod/Modint.hpp"
+#include "library/util/Subsequence.hpp"
 using mint = Mint<long long>;
 
 int main() {

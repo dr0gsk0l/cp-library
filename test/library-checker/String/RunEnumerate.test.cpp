@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/runenumerate"
 #include <bits/stdc++.h>
 
-#include "library/sequence/RunEnumerate.cpp"
+#include "library/sequence/RunEnumerate.hpp"
 
 int main() {
     std::string s;

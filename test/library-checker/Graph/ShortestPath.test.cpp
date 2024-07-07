@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 #include <bits/stdc++.h>
 
-#include "library/graph/WeightedGraph.cpp"
-#include "library/graph/shortest_path/Dijkstra.cpp"
+#include "library/graph/WeightedGraph.hpp"
+#include "library/graph/shortest_path/Dijkstra.hpp"
 
 using ll = long long;
 

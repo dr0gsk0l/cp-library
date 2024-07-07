@@ -1,5 +1,5 @@
 #pragma once
-#include "library/flow/MCF.cpp"
+#include "library/flow/MCF.hpp"
 // 重みの最大化
 template <typename TC> class WeightedBipartiteMatching {
     int A, B; // 左右の頂点数

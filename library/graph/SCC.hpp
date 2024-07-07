@@ -1,6 +1,6 @@
 #pragma once
-#include "library/graph/Graph.cpp"
-#include "library/graph/ReverseGraph.cpp"
+#include "library/graph/Graph.hpp"
+#include "library/graph/ReverseGraph.hpp"
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename DirectedGraph> class SCC {
     int n;

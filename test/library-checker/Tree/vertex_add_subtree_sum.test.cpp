@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_add_subtree_sum"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Add.cpp"
-#include "library/tree/Tree.cpp"
-#include "library/tree/TreeMonoid.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/tree/Tree.hpp"
+#include "library/tree/TreeMonoid.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

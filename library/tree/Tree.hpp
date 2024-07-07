@@ -1,5 +1,5 @@
 #pragma once
-#include "library/graph/Graph.cpp"
+#include "library/graph/Graph.hpp"
 struct Tree : Graph {
     using Graph::Graph;
     Tree() = default;

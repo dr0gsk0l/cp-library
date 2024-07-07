@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1332"
 #include <bits/stdc++.h>
 
-#include "library/datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/WaveletMatrix.hpp"
 const int INF = 1e9;
 
 int main() {

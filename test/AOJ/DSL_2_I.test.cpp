@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I"
 #include <bits/stdc++.h>
 
-#include "library/algebra/lazy/SetSum.cpp"
-#include "library/segtree/LazySegmentTree.cpp"
+#include "library/algebra/lazy/SetSum.hpp"
+#include "library/segtree/LazySegmentTree.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

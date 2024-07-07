@@ -1,8 +1,8 @@
 #define PROBLEM "https://yukicoder.me/problems/no/2012"
 #include <bits/stdc++.h>
 
-#include "library/linearalgebra/ConvexHullTrick.cpp"
-#include "library/r2/XY.cpp"
+#include "library/linearalgebra/ConvexHullTrick.hpp"
+#include "library/r2/XY.hpp"
 using ll = long long;
 using ld = long double;
 void chmax(ld &a, ld b) {

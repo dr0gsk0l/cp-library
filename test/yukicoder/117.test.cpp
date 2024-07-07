@@ -1,8 +1,8 @@
 #define PROBLEM "https://yukicoder.me/problems/no/117"
 #include <bits/stdc++.h>
 
-#include "library/mod/MintUtility.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/mod/MintUtility.hpp"
+#include "library/mod/Modint.hpp"
 
 using mint = Mint<long long, 1000'000'007>;
 MintUtility<mint> M;

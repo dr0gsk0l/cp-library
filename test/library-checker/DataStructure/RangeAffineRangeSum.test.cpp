@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_affine_range_sum"
 #include <bits/stdc++.h>
 
-#include "library/algebra/lazy/AffineSum.cpp"
-#include "library/mod/Modint.cpp"
-#include "library/segtree/LazySegmentTree.cpp"
+#include "library/algebra/lazy/AffineSum.hpp"
+#include "library/mod/Modint.hpp"
+#include "library/segtree/LazySegmentTree.hpp"
 
 using mint = Mint<long long>;
 

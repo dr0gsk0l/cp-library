@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G"
 #include <bits/stdc++.h>
 
-#include "library/algebra/lazy/AddSum.cpp"
-#include "library/segtree/LazySegmentTree.cpp"
+#include "library/algebra/lazy/AddSum.hpp"
+#include "library/segtree/LazySegmentTree.hpp"
 
 using ll = long long;
 

@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A"
 #include <bits/stdc++.h>
 
-#include "library/graph/MinimumSpanningTree.cpp"
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/MinimumSpanningTree.hpp"
+#include "library/graph/WeightedGraph.hpp"
 
 int main() {
     int n, m;

@@ -1,5 +1,5 @@
 #pragma once
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/WeightedGraph.hpp"
 template <typename WG, typename T = typename WG::weight_type>
 std::pair<std::vector<T>, std::vector<int>> bfs01(const WG &g, int s = 0) {
     assert(g.is_prepared());

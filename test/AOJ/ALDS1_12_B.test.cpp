@@ -4,8 +4,8 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/graph/WeightedGraph.cpp"
-#include "library/graph/shortest_path/Dial.cpp"
+#include "library/graph/WeightedGraph.hpp"
+#include "library/graph/shortest_path/Dial.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 #include <bits/stdc++.h>
 
-#include "library/convolution/NTT.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/convolution/NTT.hpp"
+#include "library/mod/Modint.hpp"
 
 using mint = Mint<long long, 998244353>;
 

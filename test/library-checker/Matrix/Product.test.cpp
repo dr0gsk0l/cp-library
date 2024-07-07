@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/matrix_product"
 #include <bits/stdc++.h>
 
-#include "library/linearalgebra/Matrix.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/linearalgebra/Matrix.hpp"
+#include "library/mod/Modint.hpp"
 
 using mint = Mint<long long, 998244353>;
 using M = Matrix<mint>;

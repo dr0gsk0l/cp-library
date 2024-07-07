@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_B"
 #include <bits/stdc++.h>
 
-#include "library/sequence/RollingHash.cpp"
+#include "library/sequence/RollingHash.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

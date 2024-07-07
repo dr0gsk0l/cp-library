@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/919"
 #include <bits/stdc++.h>
 
-#include "library/datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/WaveletMatrix.hpp"
 
 using ll = long long;
 const int INF = 1000'000'000;

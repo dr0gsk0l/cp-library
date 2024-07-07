@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_E"
 #include <bits/stdc++.h>
 
-#include "library/algebra/lazy/AddMin.cpp"
-#include "library/segtree/DualSegmentTree.cpp"
+#include "library/algebra/lazy/AddMin.hpp"
+#include "library/segtree/DualSegmentTree.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

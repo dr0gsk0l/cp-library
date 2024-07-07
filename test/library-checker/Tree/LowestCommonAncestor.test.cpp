@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 #include <bits/stdc++.h>
 
-#include "library/tree/HLD.cpp"
-#include "library/tree/Tree.cpp"
+#include "library/tree/HLD.hpp"
+#include "library/tree/Tree.hpp"
 
 int main() {
     int n, q;

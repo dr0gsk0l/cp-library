@@ -3,12 +3,12 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/algebra/group/Multiply.cpp"
-#include "library/linearalgebra/SquareMatrix.cpp"
-#include "library/mod/Modint.cpp"
-#include "library/tree/EdgeVertex.cpp"
-#include "library/tree/Tree.cpp"
-#include "library/tree/TreeMonoid.cpp"
+#include "library/algebra/group/Multiply.hpp"
+#include "library/linearalgebra/SquareMatrix.hpp"
+#include "library/mod/Modint.hpp"
+#include "library/tree/EdgeVertex.hpp"
+#include "library/tree/Tree.hpp"
+#include "library/tree/TreeMonoid.hpp"
 
 using mint = Mint<long long, 1000'000'007>;
 using MAT = SquareMatrix<mint, 2>;

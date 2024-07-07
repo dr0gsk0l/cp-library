@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B"
 #include <bits/stdc++.h>
 
-#include "library/tree/CartesianTree.cpp"
+#include "library/tree/CartesianTree.hpp"
 
 void chmax(int &a, int b) { a = std::max(a, b); }
 

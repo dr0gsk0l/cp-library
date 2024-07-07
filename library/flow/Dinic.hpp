@@ -1,7 +1,7 @@
 #pragma once
 
 // https://misawa.github.io/others/flow/dinic_time_complexity.html
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/WeightedGraph.hpp"
 template <typename T> class Dinic {
     struct EdgeInfo {
         T cap;

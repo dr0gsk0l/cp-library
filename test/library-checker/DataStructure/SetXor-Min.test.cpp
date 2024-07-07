@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/set_xor_min"
 #include <bits/stdc++.h>
 
-#include "library/datastructure/BinaryTrie.cpp"
+#include "library/datastructure/BinaryTrie.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

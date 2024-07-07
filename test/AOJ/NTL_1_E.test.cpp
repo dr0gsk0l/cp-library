@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E"
 #include <bits/stdc++.h>
 
-#include "library/math/ExtraGCD.cpp"
+#include "library/math/ExtraGCD.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

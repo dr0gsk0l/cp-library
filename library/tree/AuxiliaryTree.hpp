@@ -1,9 +1,9 @@
 #pragma once
 
-#include "library/tree/HLD.cpp"
-#include "library/tree/Tree.cpp"
-#include "library/tree/WeightedTree.cpp"
-#include "library/util/Compress.cpp"
+#include "library/tree/HLD.hpp"
+#include "library/tree/Tree.hpp"
+#include "library/tree/WeightedTree.hpp"
+#include "library/util/Compress.hpp"
 
 template <typename TREE>
 std::pair<WeightedTree<int>, std::vector<int>>

@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Add.cpp"
-#include "library/segtree/SegmentTree.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/segtree/SegmentTree.hpp"
 
 using ll = long long;
 using G = GroupAdd<ll>;

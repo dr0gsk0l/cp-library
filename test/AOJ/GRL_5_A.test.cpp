@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A"
 #include <bits/stdc++.h>
 
-#include "library/tree/ReRooting.cpp"
-#include "library/tree/WeightedTree.cpp"
+#include "library/tree/ReRooting.hpp"
+#include "library/tree/WeightedTree.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

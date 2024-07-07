@@ -1,10 +1,10 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/vertex_set_path_composite"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Affine.cpp"
-#include "library/mod/Modint.cpp"
-#include "library/tree/Tree.cpp"
-#include "library/tree/TreeMonoid.cpp"
+#include "library/algebra/group/Affine.hpp"
+#include "library/mod/Modint.hpp"
+#include "library/tree/Tree.hpp"
+#include "library/tree/TreeMonoid.hpp"
 using mint = Mint<long long>;
 
 int main() {

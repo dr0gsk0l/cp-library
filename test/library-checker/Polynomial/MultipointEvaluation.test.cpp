@@ -17,9 +17,9 @@ std::istream &operator>>(std::istream &is, mint &a) {
     a = b;
     return is;
 }
-#include "library/formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/Base.hpp"
 using FPS = FormalPowerSeries<mint, (1 << 17) + 1>;
-#include "library/formalpowerseries/MultipointEvaluation.cpp"
+#include "library/formalpowerseries/MultipointEvaluation.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

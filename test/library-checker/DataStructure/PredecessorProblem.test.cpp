@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/predecessor_problem"
 #include <bits/stdc++.h>
 
-#include "library/superstd/Set.cpp"
+#include "library/superstd/Set.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

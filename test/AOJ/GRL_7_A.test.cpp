@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_7_A"
 #include <bits/stdc++.h>
 
-#include "library/graph/matching/BipartiteMatching.cpp"
+#include "library/graph/matching/BipartiteMatching.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

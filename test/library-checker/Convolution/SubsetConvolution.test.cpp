@@ -3,8 +3,8 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/bitwise/Ranked.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/bitwise/Ranked.hpp"
+#include "library/mod/Modint.hpp"
 using mint = Mint<long long>;
 
 int main() {

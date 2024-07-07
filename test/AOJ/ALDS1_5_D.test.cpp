@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D"
 #include <bits/stdc++.h>
 
-#include "library/util/InversionNumber.cpp"
+#include "library/util/InversionNumber.hpp"
 
 int main() {
     int n;

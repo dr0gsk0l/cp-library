@@ -1,5 +1,5 @@
 #pragma once
-#include "library/r2/XY.cpp"
+#include "library/r2/XY.hpp"
 namespace geometry {
 constexpr double EPS = 1e-10, PI = acos(-1);
 

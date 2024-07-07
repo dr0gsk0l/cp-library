@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3297"
 #include <bits/stdc++.h>
 
-#include "library/flow/NondecreasingMCF.cpp"
+#include "library/flow/NondecreasingMCF.hpp"
 
 using ll = long long;
 const __int128 LINF = 1e20;

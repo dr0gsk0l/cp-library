@@ -2,8 +2,8 @@
 #define IGNORE
 #include <bits/stdc++.h>
 
-#include "library/graph/MinimumSpanningArborescence.cpp"
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/MinimumSpanningArborescence.hpp"
+#include "library/graph/WeightedGraph.hpp"
 using ll = long long;
 
 int main() {

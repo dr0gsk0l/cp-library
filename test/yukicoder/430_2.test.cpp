@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/430"
 #include <bits/stdc++.h>
 
-#include "library/sequence/AhoCorasick.cpp"
+#include "library/sequence/AhoCorasick.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

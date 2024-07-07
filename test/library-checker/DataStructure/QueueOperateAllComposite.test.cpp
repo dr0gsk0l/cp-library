@@ -2,10 +2,10 @@
     "https://judge.yosupo.jp/problem/std::queue_operate_all_composite"
 #include <bits/stdc++.h>
 
-#include "library/algebra/Reverse.cpp"
-#include "library/algebra/group/Affine.cpp"
-#include "library/datastructure/SWAG.cpp"
-#include "library/mod/Modint.cpp"
+#include "library/algebra/Reverse.hpp"
+#include "library/algebra/group/Affine.hpp"
+#include "library/datastructure/SWAG.hpp"
+#include "library/mod/Modint.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

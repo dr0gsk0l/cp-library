@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A"
 #include <bits/stdc++.h>
 
-#include "library/geometry/UtilFunction.cpp"
+#include "library/geometry/UtilFunction.hpp"
 using namespace geometry;
 
 int main() {

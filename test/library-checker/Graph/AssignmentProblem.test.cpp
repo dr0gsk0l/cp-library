@@ -3,7 +3,7 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/graph/matching/WeightedBipartiteMatching.cpp"
+#include "library/graph/matching/WeightedBipartiteMatching.hpp"
 using ll = long long;
 constexpr ll INF = ll(1e9) + 1;
 

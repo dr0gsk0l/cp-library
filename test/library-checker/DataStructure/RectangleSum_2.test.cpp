@@ -3,10 +3,10 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/datastructure/CumulativeSum.cpp"
-#include "library/datastructure/WaveletMatrix.cpp"
-#include "library/r2/Projection.cpp"
-#include "library/r2/XY.cpp"
+#include "library/datastructure/CumulativeSum.hpp"
+#include "library/datastructure/WaveletMatrix.hpp"
+#include "library/r2/Projection.hpp"
+#include "library/r2/XY.hpp"
 
 using ll = long long;
 using r2 = XY<ll>;

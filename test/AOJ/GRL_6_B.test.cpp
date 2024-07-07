@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B"
 #include <bits/stdc++.h>
 
-#include "library/flow/MCF.cpp"
+#include "library/flow/MCF.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

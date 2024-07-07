@@ -1,8 +1,8 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1097"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Add.cpp"
-#include "library/datastructure/Doubling.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/datastructure/Doubling.hpp"
 
 using ll = long long;
 

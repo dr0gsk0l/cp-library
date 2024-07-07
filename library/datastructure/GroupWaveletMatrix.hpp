@@ -1,6 +1,6 @@
 #pragma once
-#include "library/datastructure/FenwickTree.cpp"
-#include "library/datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/FenwickTree.hpp"
+#include "library/datastructure/WaveletMatrix.hpp"
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename T, group G>
 class GroupWaveletMatrix : WaveletMatrix<T, true> {

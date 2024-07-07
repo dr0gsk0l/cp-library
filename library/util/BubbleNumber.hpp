@@ -1,5 +1,5 @@
 #pragma once
-#include "library/util/InversionNumber.cpp"
+#include "library/util/InversionNumber.hpp"
 template <typename T>
 long long bubble_number(const std::vector<T> &v, const std::vector<T> &w) {
     int n = v.size();

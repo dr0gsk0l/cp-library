@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/scc"
 #include <bits/stdc++.h>
 
-#include "library/graph/Graph.cpp"
-#include "library/graph/SCC.cpp"
+#include "library/graph/Graph.hpp"
+#include "library/graph/SCC.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

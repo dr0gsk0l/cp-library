@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/2109"
 #include <bits/stdc++.h>
 
-#include "library/datetime/DateTime.cpp"
+#include "library/datetime/DateTime.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

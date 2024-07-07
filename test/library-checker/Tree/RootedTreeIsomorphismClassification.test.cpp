@@ -2,8 +2,8 @@
     "https://judge.yosupo.jp/problem/rooted_tree_isomorphism_classification"
 #include <bits/stdc++.h>
 
-#include "library/tree/RootedTreeIsomorphism.cpp"
-#include "library/tree/Tree.cpp"
+#include "library/tree/RootedTreeIsomorphism.hpp"
+#include "library/tree/Tree.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

@@ -1,7 +1,7 @@
 #pragma once
 // 辺の重みが流量に対して単調増加な関数
 // 現在の流量を引数として、そこに新たに 1 流す時にかかるコストを返す関数を渡す
-#include "library/graph/WeightedGraph.cpp"
+#include "library/graph/WeightedGraph.hpp"
 #define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename TC> class NondecreasingMCF {
     using F = std::function<TC(int)>;

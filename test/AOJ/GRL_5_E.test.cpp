@@ -4,9 +4,9 @@
 
 #define REP(i, n) for (int i = 0; i < (n); i++)
 
-#include "library/algebra/lazy/AddSum.cpp"
-#include "library/tree/Tree.cpp"
-#include "library/tree/TreeLazy.cpp"
+#include "library/algebra/lazy/AddSum.hpp"
+#include "library/tree/Tree.hpp"
+#include "library/tree/TreeLazy.hpp"
 using ll = long long;
 
 int main() {

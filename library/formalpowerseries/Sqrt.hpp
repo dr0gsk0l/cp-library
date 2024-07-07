@@ -1,5 +1,5 @@
 #pragma once
-#include "library/formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/Base.hpp"
 template <typename FPS> std::optional<FPS> sqrt(FPS f) {
     f.shrink();
     if (f.size() == 0)

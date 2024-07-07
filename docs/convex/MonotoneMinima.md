@@ -19,7 +19,7 @@ monotone 行列に対して $b$ を求める．
 # 使用例
 ```cpp
 #include <bits/stdc++.h>
-#include "library/convex/MonotoneMinima.cpp"
+#include "library/convex/MonotoneMinima.hpp"
 
 using ll = long long;
 

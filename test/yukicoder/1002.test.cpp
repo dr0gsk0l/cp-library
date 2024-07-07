@@ -1,8 +1,8 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1002"
 #include <bits/stdc++.h>
 
-#include "library/tree/CentroidDecomposition.cpp"
-#include "library/tree/WeightedTree.cpp"
+#include "library/tree/CentroidDecomposition.hpp"
+#include "library/tree/WeightedTree.hpp"
 
 using ll = long long;
 

@@ -1,6 +1,6 @@
 #pragma once
 // https://xuzijian629.hatenablog.com/entry/2018/12/08/000452
-#include "library/math/XorShift.cpp"
+#include "library/math/XorShift.hpp"
 template <typename Lazy> class ImplicitTreap {
     using MX = typename Lazy::MX;
     using MF = typename Lazy::MF;

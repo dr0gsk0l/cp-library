@@ -2,7 +2,7 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
 #include <bits/stdc++.h>
 
-#include "library/util/PrimeUtil.cpp"
+#include "library/util/PrimeUtil.hpp"
 PrimeUtil<1000000> PU;
 
 int main() {

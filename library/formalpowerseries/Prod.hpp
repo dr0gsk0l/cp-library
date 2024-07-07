@@ -1,5 +1,5 @@
 #pragma once
-#include "library/formalpowerseries/Base.cpp"
+#include "library/formalpowerseries/Base.hpp"
 template <typename FPS> class FPSProd {
     std::queue<FPS> que;
 

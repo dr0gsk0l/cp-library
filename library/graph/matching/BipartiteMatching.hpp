@@ -1,7 +1,7 @@
 #pragma once
 
 // 重み無し
-#include "library/flow/Dinic.cpp"
+#include "library/flow/Dinic.hpp"
 class BipartiteMatching {
     int A, B; // 左右の頂点数
     int S, T;

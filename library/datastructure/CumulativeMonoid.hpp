@@ -1,4 +1,4 @@
-#include "library/algebra/monoid/Concepts.cpp"
+#include "library/algebra/monoid/Concepts.hpp"
 
 template <monoid M> class CumulativeMonoid {
     using T = typename M::value_type;

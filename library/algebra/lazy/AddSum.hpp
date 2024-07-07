@@ -1,6 +1,6 @@
 #pragma once
-#include "library/algebra/group/Add.cpp"
-#include "library/algebra/group/CntSum.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/algebra/group/CntSum.hpp"
 template <typename X> struct LazyAddSum {
     using MX = GroupCntSum<X>;
     using MF = GroupAdd<X>;

@@ -2,8 +2,8 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
 #include <bits/stdc++.h>
 
-#include "library/algebra/group/Add.cpp"
-#include "library/datastructure/unionfind/PotentialUnionFind.cpp"
+#include "library/algebra/group/Add.hpp"
+#include "library/datastructure/unionfind/PotentialUnionFind.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

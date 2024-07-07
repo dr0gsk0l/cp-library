@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/430"
 #include <bits/stdc++.h>
 
-#include "library/sequence/Trie.cpp"
+#include "library/sequence/Trie.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);
@@ -24,7 +24,6 @@ int main() {
 
     int ans = 0;
     for (int i = 0; i < ss.size(); i++)
-        T.query(
-            ss, [&](int id) { ans += T.val(id); }, i);
+        T.query(ss, [&](int id) { ans += T.val(id); }, i);
     std::cout << ans << std::endl;
 }

@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/416"
 #include <bits/stdc++.h>
 
-#include "library/datastructure/unionfind/PartialPersistentUnionFind.cpp"
+#include "library/datastructure/unionfind/PartialPersistentUnionFind.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

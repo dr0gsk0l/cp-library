@@ -1,7 +1,7 @@
 // reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
 #pragma once
-#include "library/mod/Modint61.cpp"
-#include "library/sequence/ForString.cpp"
+#include "library/mod/Modint61.hpp"
+#include "library/sequence/ForString.hpp"
 
 #include <random>
 #include <vector>

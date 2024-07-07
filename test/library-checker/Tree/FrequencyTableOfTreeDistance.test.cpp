@@ -5,8 +5,8 @@
 #include <atcoder/convolution>
 using namespace atcoder;
 
-#include "library/tree/CentroidDecomposition.cpp"
-#include "library/tree/Tree.cpp"
+#include "library/tree/CentroidDecomposition.hpp"
+#include "library/tree/Tree.hpp"
 
 using ll = long long;
 

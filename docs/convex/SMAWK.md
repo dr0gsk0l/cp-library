@@ -21,7 +21,7 @@ max についても使える．
 # 使用例
 ```cpp
 #include <bits/stdc++.h>
-#include "library/convex/SMAWK.cpp"
+#include "library/convex/SMAWK.hpp"
 
 using ll = long long;
 

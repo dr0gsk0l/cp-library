@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 #include <bits/stdc++.h>
 
-#include "library/datastructure/WaveletMatrix.cpp"
+#include "library/datastructure/WaveletMatrix.hpp"
 
 int main() {
     std::ios::sync_with_stdio(false);

@@ -2,9 +2,9 @@
     "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C"
 #include <bits/stdc++.h>
 
-#include "library/graph/NegativeCycleFind.cpp"
-#include "library/graph/WeightedGraph.cpp"
-#include "library/graph/shortest_path/WarshallFloyd.cpp"
+#include "library/graph/NegativeCycleFind.hpp"
+#include "library/graph/WeightedGraph.hpp"
+#include "library/graph/shortest_path/WarshallFloyd.hpp"
 
 using ll = long long;
 
@@ -21,7 +21,6 @@ int main() {
                 if (d[i][j] < 1e10)
                     std::cout << d[i][j] << "\n "[j + 1 < n];
                 else
-                    std::cout << "INF"
-                              << "\n "[j + 1 < n];
+                    std::cout << "INF" << "\n "[j + 1 < n];
     }
 }

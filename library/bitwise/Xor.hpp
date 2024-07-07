@@ -1,7 +1,7 @@
 #pragma once
-#include "library/bitwise/Util.cpp"
+#include "library/bitwise/Util.hpp"
 #define REP_(i, n) for (int i = 0; i < (n); i++)
-#define RREP_(i, n) for (int i = (n)-1; i >= 0; i--)
+#define RREP_(i, n) for (int i = (n) - 1; i >= 0; i--)
 struct BitwiseXor {
     template <typename T> static void zeta(std::vector<T> &A) {
         const int n = bitwise::log2(A.size());
