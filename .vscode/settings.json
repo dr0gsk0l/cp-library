@@ -84,6 +84,7 @@
     "__memory": "cpp",
     "__verbose_abort": "cpp",
     "execution": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "ranges": "cpp"
   }
 }

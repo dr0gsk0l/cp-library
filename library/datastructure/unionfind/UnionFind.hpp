@@ -1,3 +1,6 @@
+#include <numeric>
+#include <vector>
+
 class UnionFind {
     int n, num;
     std::vector<int> sz, parent;
@@ -38,4 +41,12 @@ class UnionFind {
     }
 
     int count() const { return num; }
+
+    std::vector<std::vector<int>> groups() {
+        std::vector<std::vector<int>> res(n);
+        for (int i = 0; i < n; i++)
+            res[leader(i)].push_back(i);
+        std::erase_if(res, [](const auto &vec) { return vec.empty(); });
+        return res;
+    }
 };
