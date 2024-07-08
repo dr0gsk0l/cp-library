@@ -1,11 +1,32 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/AddSum.hpp
+    title: library/algebra/lazy/AddSum.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/AffineSum.hpp
+    title: library/algebra/lazy/AffineSum.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/SetSum.hpp
+    title: library/algebra/lazy/SetSum.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_G.test.cpp
+    title: test/AOJ/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_I.test.cpp
+    title: test/AOJ/DSL_2_I.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_E.test.cpp
+    title: test/AOJ/GRL_5_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+    title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/algebra/group/CntSum.hpp\"\ntemplate <typename X>\
@@ -38,10 +59,17 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/algebra/group/CntSum.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/algebra/lazy/AddSum.hpp
+  - library/algebra/lazy/SetSum.hpp
+  - library/algebra/lazy/AffineSum.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
 documentation_of: library/algebra/group/CntSum.hpp
 layout: document
 redirect_from:

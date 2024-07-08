@@ -1,37 +1,66 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Add.hpp
+    title: library/algebra/group/Add.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/CntSum.hpp
+    title: library/algebra/group/CntSum.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_G.test.cpp
+    title: test/AOJ/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_E.test.cpp
+    title: test/AOJ/GRL_5_E.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/group/Add.cpp:\
-    \ line -1: no such header\n"
-  code: "#pragma once\n#include \"library/algebra/group/Add.cpp\"\n#include \"library/algebra/group/CntSum.cpp\"\
+  bundledCode: "#line 2 \"library/algebra/group/Add.hpp\"\ntemplate<typename X>\n\
+    struct GroupAdd {\n  using value_type = X;\n  static constexpr X op(const X &x,\
+    \ const X &y) noexcept { return x + y; }\n  static constexpr void Rchop(X&x, const\
+    \ X&y){ x+=y; }\n  static constexpr void Lchop(const X&x, X&y){ y+=x; }\n  static\
+    \ constexpr X inverse(const X &x) noexcept { return -x; }\n  static constexpr\
+    \ X power(const X &x, long long n) noexcept { return X(n) * x; }\n  static constexpr\
+    \ X unit() { return X(0); }\n  static constexpr bool commute = true;\n};\n#line\
+    \ 1 \"library/algebra/group/CntSum.hpp\"\ntemplate <typename X> struct GroupCntSum\
+    \ {\n    using P = std::pair<X, X>;\n    using value_type = P;\n    static constexpr\
+    \ P op(const P &x, const P &y) {\n        return {x.first + y.first, x.second\
+    \ + y.second};\n    }\n    static constexpr void Rchop(P &x, const P &y) {\n \
+    \       x.first += y.first;\n        x.second += y.second;\n    }\n    static\
+    \ constexpr void Lchop(const P &x, P &y) {\n        y.first += x.first;\n    \
+    \    y.second += x.second;\n    }\n    static constexpr P inverse(const P &x)\
+    \ { return {-x.fi, -x.se}; }\n    static constexpr P unit() { return {0, 0}; }\n\
+    \    static constexpr bool commute = true;\n};\ntemplate <typename X> std::vector<std::pair<X,\
+    \ X>> cnt_init(int n, const X &x) {\n    return std::vector<std::pair<X, X>>(n,\
+    \ {x, 1});\n}\ntemplate <typename X>\nstd::vector<std::pair<X, X>> cnt_init(const\
+    \ std::vector<X> &v) {\n    int n = v.size();\n    std::vector<std::pair<X, X>>\
+    \ res(n);\n    for (int i = 0; i < n; i++)\n        res[i] = {v[i], 1};\n    return\
+    \ res;\n}\n#line 4 \"library/algebra/lazy/AddSum.hpp\"\ntemplate <typename X>\
+    \ struct LazyAddSum {\n    using MX = GroupCntSum<X>;\n    using MF = GroupAdd<X>;\n\
+    \    using S = typename MX::value_type;\n    static constexpr S mapping(const\
+    \ X &f, const S &x) {\n        return {x.first + f * x.second, x.second};\n  \
+    \  }\n};\n"
+  code: "#pragma once\n#include \"library/algebra/group/Add.hpp\"\n#include \"library/algebra/group/CntSum.hpp\"\
     \ntemplate <typename X> struct LazyAddSum {\n    using MX = GroupCntSum<X>;\n\
     \    using MF = GroupAdd<X>;\n    using S = typename MX::value_type;\n    static\
     \ constexpr S mapping(const X &f, const S &x) {\n        return {x.first + f *\
     \ x.second, x.second};\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/group/Add.hpp
+  - library/algebra/group/CntSum.hpp
   isVerificationFile: false
   path: library/algebra/lazy/AddSum.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/GRL_5_E.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
 documentation_of: library/algebra/lazy/AddSum.hpp
 layout: document
 redirect_from:

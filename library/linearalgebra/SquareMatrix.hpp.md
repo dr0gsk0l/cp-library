@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/650.test.cpp
+    title: test/yukicoder/650.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/SquareMatrix.hpp\"\n#define REP_(i,\
@@ -122,9 +125,10 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/SquareMatrix.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/650.test.cpp
 documentation_of: library/linearalgebra/SquareMatrix.hpp
 layout: document
 redirect_from:

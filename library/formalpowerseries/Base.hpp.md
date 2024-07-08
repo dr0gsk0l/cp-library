@@ -1,11 +1,41 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/formalpowerseries/ComposeEXP.hpp
+    title: library/formalpowerseries/ComposeEXP.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/formalpowerseries/DivMod.hpp
+    title: library/formalpowerseries/DivMod.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/formalpowerseries/MultipointEvaluation.hpp
+    title: library/formalpowerseries/MultipointEvaluation.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/formalpowerseries/Prod.hpp
+    title: library/formalpowerseries/Prod.hpp
+  - icon: ':warning:'
+    path: library/formalpowerseries/RationalSum.hpp
+    title: library/formalpowerseries/RationalSum.hpp
+  - icon: ':warning:'
+    path: library/formalpowerseries/Sqrt.hpp
+    title: library/formalpowerseries/Sqrt.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+    title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+    title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
+    title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/TaylorShift.test.cpp
+    title: test/library-checker/Polynomial/TaylorShift.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/formalpowerseries/Base.hpp\"\n#define REP_(i, n)\
@@ -233,10 +263,20 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/formalpowerseries/Base.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/formalpowerseries/MultipointEvaluation.hpp
+  - library/formalpowerseries/DivMod.hpp
+  - library/formalpowerseries/Sqrt.hpp
+  - library/formalpowerseries/ComposeEXP.hpp
+  - library/formalpowerseries/RationalSum.hpp
+  - library/formalpowerseries/Prod.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - test/library-checker/Polynomial/TaylorShift.test.cpp
+  - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
 documentation_of: library/formalpowerseries/Base.hpp
 layout: document
 redirect_from:

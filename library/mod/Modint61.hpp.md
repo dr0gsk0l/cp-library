@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: library/sequence/RollingHash.hpp
+    title: library/sequence/RollingHash.hpp
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/ALDS1_14_B.test.cpp
+    title: test/AOJ/ALDS1_14_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/mod/Modint61.hpp\"\n#include <utility>\nstruct Modint61\
@@ -70,10 +76,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/mod/Modint61.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/sequence/RollingHash.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/ALDS1_14_B.test.cpp
 documentation_of: library/mod/Modint61.hpp
 layout: document
 redirect_from:

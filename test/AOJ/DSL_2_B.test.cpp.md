@@ -1,12 +1,28 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Add.hpp
+    title: library/algebra/group/Add.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Concepts.hpp
+    title: library/algebra/group/Concepts.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FenwickTree.hpp
+    title: library/datastructure/FenwickTree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+    links:
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -14,26 +30,32 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/group/Add.cpp:\
-    \ line -1: no such header\n"
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/algebra/group/Concepts.hpp: line 3: #pragma once found in a non-first\
+    \ line\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.cpp\"\n#include\
-    \ \"library/datastructure/FenwickTree.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \n#include <bits/stdc++.h>\n\n#include \"library/algebra/group/Add.hpp\"\n#include\
+    \ \"library/datastructure/FenwickTree.hpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    FenwickTree<GroupAdd<int>>\
     \ ft(n);\n    while (q--) {\n        int c, s, t;\n        std::cin >> c >> s\
     \ >> t;\n        s--;\n        if (c) {\n            assert(s <= t);\n       \
     \     std::cout << ft.prod(s, t) << \"\\n\";\n        } else\n            ft.multiply(s,\
     \ t);\n    }\n}"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/group/Add.hpp
+  - library/datastructure/FenwickTree.hpp
+  - library/algebra/group/Concepts.hpp
+  - library/algebra/monoid/Concepts.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_B.test.cpp
 layout: document

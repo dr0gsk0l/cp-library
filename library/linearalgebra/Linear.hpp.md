@@ -1,11 +1,38 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':question:'
+    path: library/algebra/group/Affine.hpp
+    title: library/algebra/group/Affine.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/AffineSum.hpp
+    title: library/algebra/lazy/AffineSum.hpp
+  - icon: ':x:'
+    path: library/linearalgebra/ConvexHullTrick.hpp
+    title: library/linearalgebra/ConvexHullTrick.hpp
+  - icon: ':warning:'
+    path: library/linearalgebra/InsertConvexHullTrick.hpp
+    title: library/linearalgebra/InsertConvexHullTrick.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+    title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+    title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+    title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+    title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - icon: ':x:'
+    path: test/yukicoder/2012.test.cpp
+    title: test/yukicoder/2012.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/linearalgebra/Linear.hpp\"\ntemplate <typename T>\
@@ -71,10 +98,19 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/linearalgebra/Linear.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/algebra/lazy/AffineSum.hpp
+  - library/algebra/group/Affine.hpp
+  - library/linearalgebra/InsertConvexHullTrick.hpp
+  - library/linearalgebra/ConvexHullTrick.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/yukicoder/2012.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
 documentation_of: library/linearalgebra/Linear.hpp
 layout: document
 redirect_from:

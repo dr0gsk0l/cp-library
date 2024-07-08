@@ -1,11 +1,35 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/algebra/Reverse.hpp
+    title: library/algebra/Reverse.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/segtree/SegmentTree.hpp
+    title: library/segtree/SegmentTree.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/tree/HLD.hpp
+    title: library/tree/HLD.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+    title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/650.test.cpp
+    title: test/yukicoder/650.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -15,13 +39,12 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/Reverse.cpp:\
-    \ line -1: no such header\n"
-  code: "#pragma once\n#include \"library/algebra/Reverse.cpp\"\n#include \"library/segtree/SegmentTree.cpp\"\
-    \n#include \"library/tree/HLD.cpp\"\ntemplate <typename TREE, typename Monoid>\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/segtree/SegmentTree.hpp: line 3: #pragma once found in a non-first line\n"
+  code: "#pragma once\n#include \"library/algebra/Reverse.hpp\"\n#include \"library/segtree/SegmentTree.hpp\"\
+    \n#include \"library/tree/HLD.hpp\"\ntemplate <typename TREE, typename Monoid>\
     \ struct TreeMonoid {\n    using X = typename Monoid::value_type;\n    using Monoid_r\
     \ = AlgebraReverse<Monoid>;\n    int n;\n    TREE T;\n    HLD<Tree> hld;\n   \
     \ std::vector<int> hld_id, euler_in, euler_out;\n    SegmentTree<Monoid> seg;\n\
@@ -46,13 +69,21 @@ data:
     \ prod_v);\n    }\n    // root -> path\n    X path_root(int v) { return path(T.root,\
     \ v); }\n\n    X subtree_prod(int v) {\n        assert(Monoid::commute);\n   \
     \     auto [l, r] = hld.subtree(v);\n        return seg.prod(l, r);\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/Reverse.hpp
+  - library/segtree/SegmentTree.hpp
+  - library/algebra/monoid/Concepts.hpp
+  - library/tree/HLD.hpp
   isVerificationFile: false
   path: library/tree/TreeMonoid.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/650.test.cpp
+  - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
 documentation_of: library/tree/TreeMonoid.hpp
 layout: document
 redirect_from:

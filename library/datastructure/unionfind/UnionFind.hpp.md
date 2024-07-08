@@ -1,11 +1,32 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':question:'
+    path: library/graph/MinimumSpanningArborescence.hpp
+    title: library/graph/MinimumSpanningArborescence.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/graph/MinimumSpanningTree.hpp
+    title: library/graph/MinimumSpanningTree.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2647.test.cpp
+    title: test/AOJ/2647.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_2_A.test.cpp
+    title: test/AOJ/GRL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_2_B.test.cpp
+    title: test/AOJ/GRL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/unionfind.test.cpp
+    title: test/library-checker/DataStructure/unionfind.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Graph/DirectedMST.test.cpp
+    title: test/library-checker/Graph/DirectedMST.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/datastructure/unionfind/UnionFind.hpp\"\nclass UnionFind\
@@ -38,10 +59,17 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/datastructure/unionfind/UnionFind.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/graph/MinimumSpanningTree.hpp
+  - library/graph/MinimumSpanningArborescence.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/library-checker/Graph/DirectedMST.test.cpp
+  - test/library-checker/DataStructure/unionfind.test.cpp
+  - test/AOJ/2647.test.cpp
+  - test/AOJ/GRL_2_A.test.cpp
+  - test/AOJ/GRL_2_B.test.cpp
 documentation_of: library/datastructure/unionfind/UnionFind.hpp
 layout: document
 redirect_from:

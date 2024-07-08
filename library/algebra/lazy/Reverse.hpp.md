@@ -1,35 +1,42 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/algebra/Reverse.hpp
+    title: library/algebra/Reverse.hpp
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeLazy.hpp
+    title: library/tree/TreeLazy.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_E.test.cpp
+    title: test/AOJ/GRL_5_E.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/Reverse.cpp:\
-    \ line -1: no such header\n"
-  code: "#pragma once\n#include \"library/algebra/Reverse.cpp\"\ntemplate<typename\
-    \ Lazy>\nstruct LazyReverse:Lazy{\n  using MX=AlgebraReverse<typename Lazy::MX>;\n\
+  bundledCode: "#line 2 \"library/algebra/Reverse.hpp\"\ntemplate<typename Algebra>\n\
+    struct AlgebraReverse:Algebra{\n  using X=typename Algebra::value_type;\n  static\
+    \ constexpr X op(const X& x, const X& y){ return Algebra::op(y,x); }\n  static\
+    \ constexpr void Rchop(X&x,const X&y){ Algebra::Lchop(y,x); }\n  static constexpr\
+    \ void Lchop(const X&x,X&y){ Algebra::Rchop(y,x); }\n};\n#line 3 \"library/algebra/lazy/Reverse.hpp\"\
+    \ntemplate <typename Lazy> struct LazyReverse : Lazy {\n    using MX = AlgebraReverse<typename\
+    \ Lazy::MX>;\n};\n"
+  code: "#pragma once\n#include \"library/algebra/Reverse.hpp\"\ntemplate <typename\
+    \ Lazy> struct LazyReverse : Lazy {\n    using MX = AlgebraReverse<typename Lazy::MX>;\n\
     };\n"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/Reverse.hpp
   isVerificationFile: false
   path: library/algebra/lazy/Reverse.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/tree/TreeLazy.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/algebra/lazy/Reverse.hpp
 layout: document
 redirect_from:

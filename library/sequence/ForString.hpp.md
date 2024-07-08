@@ -1,11 +1,32 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/sequence/AhoCorasick.hpp
+    title: library/sequence/AhoCorasick.hpp
+  - icon: ':x:'
+    path: library/sequence/RollingHash.hpp
+    title: library/sequence/RollingHash.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/sequence/Trie.hpp
+    title: library/sequence/Trie.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/2212.test.cpp
+    title: test/AOJ/2212.test.cpp
+  - icon: ':x:'
+    path: test/AOJ/ALDS1_14_B.test.cpp
+    title: test/AOJ/ALDS1_14_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/430.test.cpp
+    title: test/yukicoder/430.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/430_2.test.cpp
+    title: test/yukicoder/430_2.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/sequence/ForString.hpp\"\ntemplate <char MARGIN>\
@@ -62,10 +83,17 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/sequence/ForString.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/sequence/Trie.hpp
+  - library/sequence/AhoCorasick.hpp
+  - library/sequence/RollingHash.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/yukicoder/430.test.cpp
+  - test/yukicoder/430_2.test.cpp
+  - test/AOJ/2212.test.cpp
+  - test/AOJ/ALDS1_14_B.test.cpp
 documentation_of: library/sequence/ForString.hpp
 layout: document
 redirect_from:

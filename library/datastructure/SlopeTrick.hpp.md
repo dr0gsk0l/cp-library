@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/yukicoder/1077.test.cpp
+    title: test/yukicoder/1077.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - "https://maspypy.com/slope-trick-1-\u89E3\u8AAC\u7DE8"
@@ -97,9 +100,10 @@ data:
   isVerificationFile: false
   path: library/datastructure/SlopeTrick.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/yukicoder/1077.test.cpp
 documentation_of: library/datastructure/SlopeTrick.hpp
 layout: document
 redirect_from:

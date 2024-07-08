@@ -1,12 +1,46 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Add.hpp
+    title: library/algebra/group/Add.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Concepts.hpp
+    title: library/algebra/group/Concepts.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FenwickTree.hpp
+    title: library/datastructure/FenwickTree.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FullyIndexableDictionary.hpp
+    title: library/datastructure/FullyIndexableDictionary.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/GroupWaveletMatrix.hpp
+    title: library/datastructure/GroupWaveletMatrix.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/WaveletMatrix.hpp
+    title: library/datastructure/WaveletMatrix.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/r2/Projection.hpp
+    title: library/r2/Projection.hpp
+  - icon: ':question:'
+    path: library/r2/XY.hpp
+    title: library/r2/XY.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/util/Compress.hpp
+    title: library/util/Compress.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
+    links:
+    - https://judge.yosupo.jp/problem/point_add_rectangle_sum
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -14,15 +48,19 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/group/Add.cpp:\
-    \ line -1: no such header\n"
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/algebra/group/Concepts.hpp: line 3: #pragma once found in a non-first\
+    \ line\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\
     \n#include <bits/stdc++.h>\n\n#define REP(i, n) for (int i = 0; i < (n); i++)\n\
-    \n#include \"library/algebra/group/Add.cpp\"\n#include \"library/datastructure/GroupWaveletMatrix.cpp\"\
-    \n#include \"library/r2/Projection.cpp\"\n#include \"library/r2/XY.cpp\"\n\nusing\
+    \n#include \"library/algebra/group/Add.hpp\"\n#include \"library/datastructure/GroupWaveletMatrix.hpp\"\
+    \n#include \"library/r2/Projection.hpp\"\n#include \"library/r2/XY.hpp\"\n\nusing\
     \ ll = long long;\nusing r2 = XY<ll>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<r2>\
     \ r2s(n);\n    r2s.reserve(n + q);\n    std::vector<int> x(n), y(n), w(n), qt(q),\
@@ -38,12 +76,22 @@ data:
     \  auto [L, R] = P.interval(l[j], r[j]);\n            std::cout << WM.sum(L, R,\
     \ d[j], u[j]) << \"\\n\";\n        } else {\n            int id = P.id(l[j], d[j]);\n\
     \            WM.add(id, r[j]);\n        }\n}"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/group/Add.hpp
+  - library/datastructure/GroupWaveletMatrix.hpp
+  - library/datastructure/FenwickTree.hpp
+  - library/algebra/group/Concepts.hpp
+  - library/algebra/monoid/Concepts.hpp
+  - library/datastructure/WaveletMatrix.hpp
+  - library/datastructure/FullyIndexableDictionary.hpp
+  - library/util/Compress.hpp
+  - library/r2/Projection.hpp
+  - library/r2/XY.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
 layout: document

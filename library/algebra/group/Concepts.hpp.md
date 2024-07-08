@@ -1,11 +1,38 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/datastructure/CumulativeGroup.hpp
+    title: library/datastructure/CumulativeGroup.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FenwickTree.hpp
+    title: library/datastructure/FenwickTree.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/GroupWaveletMatrix.hpp
+    title: library/datastructure/GroupWaveletMatrix.hpp
+  - icon: ':warning:'
+    path: library/math/FactorialNumberSystem.hpp
+    title: library/math/FactorialNumberSystem.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_B.test.cpp
+    title: test/AOJ/DSL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+    title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/924.test.cpp
+    title: test/yukicoder/924.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -14,23 +41,30 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/monoid/Concepts.cpp:\
-    \ line -1: no such header\n"
-  code: "#include \"library/algebra/monoid/Concepts.cpp\"\n\n#pragma once\n\ntemplate\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/algebra/group/Concepts.hpp: line 3: #pragma once found in a non-first\
+    \ line\n"
+  code: "#include \"library/algebra/monoid/Concepts.hpp\"\n\n#pragma once\n\ntemplate\
     \ <class G>\nconcept group = monoid<G> and requires(typename G::value_type x)\
     \ {\n    { G::inverse(x) } -> std::same_as<typename G::value_type>;\n};\n\n//\
     \ todo : able_group"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/algebra/group/Concepts.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/datastructure/CumulativeGroup.hpp
+  - library/datastructure/GroupWaveletMatrix.hpp
+  - library/datastructure/FenwickTree.hpp
+  - library/math/FactorialNumberSystem.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/924.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/AOJ/DSL_2_B.test.cpp
 documentation_of: library/algebra/group/Concepts.hpp
 layout: document
 redirect_from:

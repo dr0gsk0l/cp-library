@@ -1,36 +1,46 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/CumulativeSum.hpp
+    title: library/datastructure/CumulativeSum.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/datastructure/CumulativeSum.cpp:\
-    \ line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
+    links:
+    - https://judge.yosupo.jp/problem/static_range_sum
+  bundledCode: "#line 1 \"test/library-checker/DataStructure/StaticRangeSum.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
+    \ <bits/stdc++.h>\n\n#line 1 \"library/datastructure/CumulativeSum.hpp\"\ntemplate\
+    \ <typename T> struct CumulativeSum {\n    using U = std::conditional_t<std::is_same_v<T,\
+    \ int>, long long, T>;\n    std::vector<U> A;\n    CumulativeSum() : A(1, 0) {}\n\
+    \    CumulativeSum(const std::vector<T> &v) : A(v.size() + 1, 0) {\n        for\
+    \ (int i = 0; i < v.size(); i++)\n            A[i + 1] = A[i] + v[i];\n    }\n\
+    \    void add(const T &a) { A.push_back(A.back() + a); }\n    U sum(int l, int\
+    \ r) { return A[r] - A[l]; }\n    U sum() { return A.back(); }\n};\n#line 5 \"\
+    test/library-checker/DataStructure/StaticRangeSum.test.cpp\"\n\nint main() {\n\
+    \    int n, q;\n    std::cin >> n >> q;\n    std::vector<int> v(n);\n    for (int\
+    \ i = 0; i < n; i++)\n        std::cin >> v[i];\n    auto wa = CumulativeSum(v);\n\
+    \    while (q--) {\n        int l, r;\n        std::cin >> l >> r;\n        std::cout\
+    \ << wa.sum(l, r) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
-    \ <bits/stdc++.h>\n\n#include \"library/datastructure/CumulativeSum.cpp\"\n\n\
+    \ <bits/stdc++.h>\n\n#include \"library/datastructure/CumulativeSum.hpp\"\n\n\
     int main() {\n    int n, q;\n    std::cin >> n >> q;\n    std::vector<int> v(n);\n\
     \    for (int i = 0; i < n; i++)\n        std::cin >> v[i];\n    auto wa = CumulativeSum(v);\n\
     \    while (q--) {\n        int l, r;\n        std::cin >> l >> r;\n        std::cout\
     \ << wa.sum(l, r) << '\\n';\n    }\n}"
-  dependsOn: []
+  dependsOn:
+  - library/datastructure/CumulativeSum.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/StaticRangeSum.test.cpp
 layout: document

@@ -1,11 +1,41 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/bitwise/And.hpp
+    title: library/bitwise/And.hpp
+  - icon: ':warning:'
+    path: library/bitwise/Or.hpp
+    title: library/bitwise/Or.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/bitwise/Ranked.hpp
+    title: library/bitwise/Ranked.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/bitwise/Xor.hpp
+    title: library/bitwise/Xor.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Base.hpp
+    title: library/setpowerseries/Base.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Compose.hpp
+    title: library/setpowerseries/Compose.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
+    title: test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
+    title: test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Convolution/SubsetConvolution.test.cpp
+    title: test/library-checker/Convolution/SubsetConvolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+    title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/bitwise/Util.hpp\"\nnamespace bitwise{\n  static\
@@ -17,10 +47,20 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/bitwise/Util.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/bitwise/Ranked.hpp
+  - library/bitwise/Xor.hpp
+  - library/bitwise/Or.hpp
+  - library/bitwise/And.hpp
+  - library/setpowerseries/Compose.hpp
+  - library/setpowerseries/Base.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
+  - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
+  - test/library-checker/Convolution/SubsetConvolution.test.cpp
+  - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
 documentation_of: library/bitwise/Util.hpp
 layout: document
 redirect_from:

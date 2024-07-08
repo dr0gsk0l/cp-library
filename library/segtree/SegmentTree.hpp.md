@@ -1,11 +1,35 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeMonoid.hpp
+    title: library/tree/TreeMonoid.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
+    title: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+    title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+    title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/650.test.cpp
+    title: test/yukicoder/650.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://codeforces.com/contest/1401/problem/F
@@ -15,13 +39,10 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/monoid/Concepts.cpp:\
-    \ line -1: no such header\n"
-  code: "#include \"library/algebra/monoid/Concepts.cpp\"\n\n#pragma once\ntemplate\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/segtree/SegmentTree.hpp: line 3: #pragma once found in a non-first line\n"
+  code: "#include \"library/algebra/monoid/Concepts.hpp\"\n\n#pragma once\ntemplate\
     \ <monoid M> class SegmentTree {\n    using X = typename M::value_type;\n    std::vector<X>\
     \ dat;\n    int n, log, size;\n\n    void update(int i) { dat[i] = M::op(dat[2\
     \ * i], dat[2 * i + 1]); }\n\n  public:\n    SegmentTree() : SegmentTree(0) {}\n\
@@ -71,13 +92,21 @@ data:
     \   if (j + 1 < (L << 1))\n                    os << \",\";\n            }\n \
     \           os << \"]\";\n        }\n        os << \")\";\n        return os;\n\
     \    }\n};"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/segtree/SegmentTree.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/tree/TreeMonoid.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/650.test.cpp
+  - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
 documentation_of: library/segtree/SegmentTree.hpp
 layout: document
 redirect_from:

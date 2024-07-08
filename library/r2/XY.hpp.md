@@ -1,11 +1,38 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/geometry/Base.hpp
+    title: library/geometry/Base.hpp
+  - icon: ':warning:'
+    path: library/geometry/Judge.hpp
+    title: library/geometry/Judge.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/geometry/UtilFunction.hpp
+    title: library/geometry/UtilFunction.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/r2/Projection.hpp
+    title: library/r2/Projection.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/CGL_4_A.test.cpp
+    title: test/AOJ/CGL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+    title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - icon: ':x:'
+    path: test/yukicoder/2012.test.cpp
+    title: test/yukicoder/2012.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/r2/XY.hpp\"\ntemplate <typename T> struct XY {\n\
@@ -93,10 +120,19 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/r2/XY.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/r2/Projection.hpp
+  - library/geometry/Judge.hpp
+  - library/geometry/UtilFunction.hpp
+  - library/geometry/Base.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/yukicoder/2012.test.cpp
+  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/AOJ/CGL_4_A.test.cpp
 documentation_of: library/r2/XY.hpp
 layout: document
 redirect_from:

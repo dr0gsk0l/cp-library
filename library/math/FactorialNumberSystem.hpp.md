@@ -1,6 +1,18 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Add.hpp
+    title: library/algebra/group/Add.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Concepts.hpp
+    title: library/algebra/group/Concepts.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FenwickTree.hpp
+    title: library/datastructure/FenwickTree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,12 +27,14 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/datastructure/FenwickTree.cpp:\
-    \ line -1: no such header\n"
-  code: "#pragma once\n#include \"library/datastructure/FenwickTree.cpp\"\nnamespace\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/algebra/group/Concepts.hpp: line 3: #pragma once found in a non-first\
+    \ line\n"
+  code: "#pragma once\n#include \"library/datastructure/FenwickTree.hpp\"\nnamespace\
     \ factorial_number_system {\n// std::vector<int> \u3067\u8868\u3059\n// v[i]*i!\
     \ \u306E\u7DCF\u548C\u3092\u8868\u73FE\u3057\u3066\u3044\u308B(0<=v[i]<=i)\n//\
     \ \u7279\u306B v[0]=0 \u306F\u78BA\u5B9A\n\n// N \u6841\u306E\u968E\u4E57\u9032\
@@ -46,11 +60,15 @@ data:
     \ {\n            q[i] = i + 1 - p[i];\n            if (i + 1 < N)\n          \
     \      p[i + 1]++;\n        } else\n            q[i] = 0;\n    }\n    return q;\n\
     }\n} // namespace factorial_number_system\n"
-  dependsOn: []
+  dependsOn:
+  - library/datastructure/FenwickTree.hpp
+  - library/algebra/group/Add.hpp
+  - library/algebra/group/Concepts.hpp
+  - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/math/FactorialNumberSystem.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2024-07-08 08:43:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/FactorialNumberSystem.hpp

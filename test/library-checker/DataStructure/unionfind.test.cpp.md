@@ -1,36 +1,52 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/datastructure/unionfind/UnionFind.hpp
+    title: library/datastructure/unionfind/UnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/datastructure/unionfind/UnionFind.cpp:\
-    \ line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    links:
+    - https://judge.yosupo.jp/problem/unionfind
+  bundledCode: "#line 1 \"test/library-checker/DataStructure/unionfind.test.cpp\"\n\
+    #define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include <bits/stdc++.h>\n\
+    \n#line 1 \"library/datastructure/unionfind/UnionFind.hpp\"\nclass UnionFind {\n\
+    \    int n, num;\n    std::vector<int> sz, parent;\n\n  public:\n    UnionFind()\
+    \ = default;\n    UnionFind(int n) : n(n), num(n), sz(n, 1), parent(n, 0) {\n\
+    \        std::iota(parent.begin(), parent.end(), 0);\n    }\n\n    int leader(int\
+    \ x) {\n        assert(0 <= x and x < n);\n        return (x == parent[x] ? x\
+    \ : parent[x] = leader(parent[x]));\n    }\n\n    bool same(int x, int y) {\n\
+    \        assert(0 <= x and x < n and 0 <= y and y < n);\n        return leader(x)\
+    \ == leader(y);\n    }\n\n    bool merge(int x, int y) {\n        assert(0 <=\
+    \ x and x < n and 0 <= y and y < n);\n        x = leader(x);\n        y = leader(y);\n\
+    \        if (x == y)\n            return false;\n        if (sz[x] < sz[y])\n\
+    \            std::swap(x, y);\n        sz[x] += sz[y];\n        parent[y] = x;\n\
+    \        num--;\n        return true;\n    }\n\n    int size(const int x) {\n\
+    \        assert(0 <= x and x < n);\n        return sz[leader(x)];\n    }\n\n \
+    \   int count() const { return num; }\n};\n#line 5 \"test/library-checker/DataStructure/unionfind.test.cpp\"\
+    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    UnionFind uf(n);\n\
+    \    while (q--) {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n \
+    \       if (t)\n            std::cout << uf.same(u, v) << \"\\n\";\n        else\n\
+    \            uf.merge(u, v);\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include <bits/stdc++.h>\n\
-    \n#include \"library/datastructure/unionfind/UnionFind.cpp\"\n\nint main() {\n\
+    \n#include \"library/datastructure/unionfind/UnionFind.hpp\"\n\nint main() {\n\
     \    int n, q;\n    std::cin >> n >> q;\n    UnionFind uf(n);\n    while (q--)\
     \ {\n        int t, u, v;\n        std::cin >> t >> u >> v;\n        if (t)\n\
     \            std::cout << uf.same(u, v) << \"\\n\";\n        else\n          \
     \  uf.merge(u, v);\n    }\n}"
-  dependsOn: []
+  dependsOn:
+  - library/datastructure/unionfind/UnionFind.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/unionfind.test.cpp
 layout: document

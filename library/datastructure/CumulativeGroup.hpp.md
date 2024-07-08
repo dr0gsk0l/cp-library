@@ -1,6 +1,12 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Concepts.hpp
+    title: library/algebra/group/Concepts.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,12 +21,12 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/group/Concepts.cpp:\
-    \ line -1: no such header\n"
-  code: "#include \"library/algebra/group/Concepts.cpp\"\n\ntemplate <group G> struct\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/algebra/group/Concepts.hpp: line 3: #pragma once found in a non-first\
+    \ line\n"
+  code: "#include \"library/algebra/group/Concepts.hpp\"\n\ntemplate <group G> struct\
     \ CumulativeGroup {\n    using T = typename G::value_type;\n    std::vector<T>\
     \ A;\n    CumulativeGroup() : A(1, G::unit()) {}\n    CumulativeGroup(const std::vector<T>\
     \ &v) : A(v.size() + 1, G::unit()) {\n        for (int i = 0; i < v.size(); i++)\n\
@@ -28,11 +34,13 @@ data:
     \ A.push_back(G::op(A.back(), a)); }\n    T sum(int l, int r) {\n        assert(0\
     \ <= l and l <= r and r < A.size());\n        return G::op(A[r], G::inverse(A[l]));\n\
     \    }\n    T sum() { return A.back(); }\n};"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/group/Concepts.hpp
+  - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/datastructure/CumulativeGroup.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2024-07-08 08:43:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/CumulativeGroup.hpp

@@ -1,11 +1,56 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/GroupWaveletMatrix.hpp
+    title: library/datastructure/GroupWaveletMatrix.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/WaveletMatrix.hpp
+    title: library/datastructure/WaveletMatrix.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/r2/Projection.hpp
+    title: library/r2/Projection.hpp
+  - icon: ':warning:'
+    path: library/tree/AuxiliaryTree.hpp
+    title: library/tree/AuxiliaryTree.hpp
+  - icon: ':warning:'
+    path: library/util/BubbleNumber.hpp
+    title: library/util/BubbleNumber.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/util/InversionNumber.hpp
+    title: library/util/InversionNumber.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/ALDS1_5_D.test.cpp
+    title: test/AOJ/ALDS1_5_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+    title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
+    title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+    title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1332.test.cpp
+    title: test/yukicoder/1332.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/919.test.cpp
+    title: test/yukicoder/919.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/924.test.cpp
+    title: test/yukicoder/924.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/util/Compress.hpp\"\ntemplate <typename T, bool\
@@ -74,10 +119,25 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/util/Compress.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/datastructure/WaveletMatrix.hpp
+  - library/datastructure/GroupWaveletMatrix.hpp
+  - library/r2/Projection.hpp
+  - library/tree/AuxiliaryTree.hpp
+  - library/util/InversionNumber.hpp
+  - library/util/BubbleNumber.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/924.test.cpp
+  - test/yukicoder/1332.test.cpp
+  - test/yukicoder/919.test.cpp
+  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
+  - test/AOJ/ALDS1_5_D.test.cpp
 documentation_of: library/util/Compress.hpp
 layout: document
 redirect_from:

@@ -1,11 +1,32 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeLazy.hpp
+    title: library/tree/TreeLazy.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_F.test.cpp
+    title: test/AOJ/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_G.test.cpp
+    title: test/AOJ/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_H.test.cpp
+    title: test/AOJ/DSL_2_H.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_I.test.cpp
+    title: test/AOJ/DSL_2_I.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_E.test.cpp
+    title: test/AOJ/GRL_5_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+    title: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/segtree/LazySegmentTree.hpp\"\n\ntemplate <typename\
@@ -82,10 +103,17 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/segtree/LazySegmentTree.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/tree/TreeLazy.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
+  - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
 documentation_of: library/segtree/LazySegmentTree.hpp
 layout: document
 redirect_from:

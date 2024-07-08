@@ -1,12 +1,37 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/algebra/Reverse.hpp
+    title: library/algebra/Reverse.hpp
+  - icon: ':question:'
+    path: library/algebra/group/Affine.hpp
+    title: library/algebra/group/Affine.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  - icon: ':question:'
+    path: library/datastructure/SWAG.hpp
+    title: library/datastructure/SWAG.hpp
+  - icon: ':question:'
+    path: library/linearalgebra/Linear.hpp
+    title: library/linearalgebra/Linear.hpp
+  - icon: ':question:'
+    path: library/math/ExtraGCD.hpp
+    title: library/math/ExtraGCD.hpp
+  - icon: ':question:'
+    path: library/mod/Modint.hpp
+    title: library/mod/Modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
-  attributes: {}
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/std::queue_operate_all_composite
+    links:
+    - https://judge.yosupo.jp/problem/std::queue_operate_all_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -14,16 +39,15 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/Reverse.cpp:\
-    \ line -1: no such header\n"
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/datastructure/SWAG.hpp: line 3: #pragma once found in a non-first line\n"
   code: "#define PROBLEM                                                         \
     \       \\\n    \"https://judge.yosupo.jp/problem/std::queue_operate_all_composite\"\
-    \n#include <bits/stdc++.h>\n\n#include \"library/algebra/Reverse.cpp\"\n#include\
-    \ \"library/algebra/group/Affine.cpp\"\n#include \"library/datastructure/SWAG.cpp\"\
-    \n#include \"library/mod/Modint.cpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
+    \n#include <bits/stdc++.h>\n\n#include \"library/algebra/Reverse.hpp\"\n#include\
+    \ \"library/algebra/group/Affine.hpp\"\n#include \"library/datastructure/SWAG.hpp\"\
+    \n#include \"library/mod/Modint.hpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    using mint = Mint<long long>;\n    using G\
     \ = AlgebraReverse<GroupAffine<mint>>;\n    using F = G::value_type;\n\n    SWAG<G>\
     \ S;\n\n    int q;\n    std::cin >> q;\n    while (q--) {\n        int t;\n  \
@@ -32,11 +56,18 @@ data:
     \     S.pop_front();\n        if (t == 2) {\n            int x;\n            std::cin\
     \ >> x;\n            F f = S.prod();\n            std::cout << f(x) << \"\\n\"\
     ;\n        }\n    }\n}"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/Reverse.hpp
+  - library/algebra/group/Affine.hpp
+  - library/linearalgebra/Linear.hpp
+  - library/datastructure/SWAG.hpp
+  - library/algebra/monoid/Concepts.hpp
+  - library/mod/Modint.hpp
+  - library/math/ExtraGCD.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2024-07-08 08:43:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

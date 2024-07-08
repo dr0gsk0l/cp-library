@@ -1,11 +1,41 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/GroupWaveletMatrix.hpp
+    title: library/datastructure/GroupWaveletMatrix.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/WaveletMatrix.hpp
+    title: library/datastructure/WaveletMatrix.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+    title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
+    title: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+    title: test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1332.test.cpp
+    title: test/yukicoder/1332.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/919.test.cpp
+    title: test/yukicoder/919.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/924.test.cpp
+    title: test/yukicoder/924.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/datastructure/FullyIndexableDictionary.hpp\"\n#include\
@@ -56,10 +86,20 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/datastructure/FullyIndexableDictionary.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/datastructure/WaveletMatrix.hpp
+  - library/datastructure/GroupWaveletMatrix.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/924.test.cpp
+  - test/yukicoder/1332.test.cpp
+  - test/yukicoder/919.test.cpp
+  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
 documentation_of: library/datastructure/FullyIndexableDictionary.hpp
 layout: document
 redirect_from:

@@ -2,10 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_D.test.cpp
+    title: test/AOJ/DSL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_E.test.cpp
+    title: test/AOJ/DSL_2_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1038.test.cpp
+    title: test/yukicoder/1038.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/segtree/DualSegmentTree.hpp\"\ntemplate <typename\
@@ -57,9 +66,12 @@ data:
   isVerificationFile: false
   path: library/segtree/DualSegmentTree.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/1038.test.cpp
+  - test/AOJ/DSL_2_D.test.cpp
+  - test/AOJ/DSL_2_E.test.cpp
 documentation_of: library/segtree/DualSegmentTree.hpp
 layout: document
 redirect_from:

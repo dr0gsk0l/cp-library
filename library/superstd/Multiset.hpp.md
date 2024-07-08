@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
+    title: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/superstd/Multiset.hpp\"\ntemplate <typename T> struct\
@@ -65,9 +68,10 @@ data:
   isVerificationFile: false
   path: library/superstd/Multiset.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
 documentation_of: library/superstd/Multiset.hpp
 layout: document
 redirect_from:

@@ -1,11 +1,26 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/SetMin.hpp
+    title: library/algebra/lazy/SetMin.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/SetSum.hpp
+    title: library/algebra/lazy/SetSum.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_D.test.cpp
+    title: test/AOJ/DSL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_F.test.cpp
+    title: test/AOJ/DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/DSL_2_I.test.cpp
+    title: test/AOJ/DSL_2_I.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/monoid/Set.hpp\"\n// \u5408\u6210\u306E\u9806\
@@ -28,10 +43,15 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/algebra/monoid/Set.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/algebra/lazy/SetSum.hpp
+  - library/algebra/lazy/SetMin.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/DSL_2_I.test.cpp
+  - test/AOJ/DSL_2_D.test.cpp
+  - test/AOJ/DSL_2_F.test.cpp
 documentation_of: library/algebra/monoid/Set.hpp
 layout: document
 redirect_from:

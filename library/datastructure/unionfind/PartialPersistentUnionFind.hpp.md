@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/416.test.cpp
+    title: test/yukicoder/416.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://tiramister.net/blog/posts/persistent-unionfind/
@@ -87,9 +90,10 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PartialPersistentUnionFind.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/416.test.cpp
 documentation_of: library/datastructure/unionfind/PartialPersistentUnionFind.hpp
 layout: document
 redirect_from:

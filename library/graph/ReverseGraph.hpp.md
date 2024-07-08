@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/graph/SCC.hpp
+    title: library/graph/SCC.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Graph/SCC.test.cpp
+    title: test/library-checker/Graph/SCC.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/ReverseGraph.hpp\"\ntemplate <typename GRAPH>\
@@ -18,10 +24,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/graph/ReverseGraph.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/graph/SCC.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library-checker/Graph/SCC.test.cpp
 documentation_of: library/graph/ReverseGraph.hpp
 layout: document
 redirect_from:

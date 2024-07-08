@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/datastructure/binary_search_tree/ImplicitTreap.hpp
+    title: library/datastructure/binary_search_tree/ImplicitTreap.hpp
+  - icon: ':warning:'
+    path: library/datastructure/binary_search_tree/Treap.hpp
+    title: library/datastructure/binary_search_tree/Treap.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -18,8 +24,10 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/math/XorShift.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
+  requiredBy:
+  - library/datastructure/binary_search_tree/Treap.hpp
+  - library/datastructure/binary_search_tree/ImplicitTreap.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/XorShift.hpp

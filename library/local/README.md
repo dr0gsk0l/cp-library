@@ -6,7 +6,7 @@
 デバッグは debug 関数を書いたままでも提出できるように、
 ```cpp
 #ifdef __LOCAL
- #include "library/Debug.cpp"
+ #include "library/Debug.hpp"
 #else
  #define debug(...) void(0)
 #endif

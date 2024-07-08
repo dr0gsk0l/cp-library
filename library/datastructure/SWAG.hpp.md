@@ -1,11 +1,20 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+    title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1036.test.cpp
+    title: test/yukicoder/1036.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -14,13 +23,10 @@ data:
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/algebra/monoid/Concepts.cpp:\
-    \ line -1: no such header\n"
-  code: "#include \"library/algebra/monoid/Concepts.cpp\"\n\n#pragma once\ntemplate\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/datastructure/SWAG.hpp: line 3: #pragma once found in a non-first line\n"
+  code: "#include \"library/algebra/monoid/Concepts.hpp\"\n\n#pragma once\ntemplate\
     \ <monoid M> class SWAG {\n    using X = typename M::value_type;\n\n    std::stack<X>\
     \ back_stack,\n        front_stack; // back \u306F\u5F8C\u308D\u306E\u5404\u8981\
     \u7D20 front \u306F\u524D\u306E\u7D2F\u7A4D\u548C\n    X back_value;\n\n    inline\
@@ -34,13 +40,16 @@ data:
     \            }\n            back_value = M::unit();\n        }\n        front_stack.pop();\n\
     \    }\n    X prod() { return M::op(front_value(), back_value); }\n    int size()\
     \ { return back_stack.size() + front_stack.size(); }\n};"
-  dependsOn: []
+  dependsOn:
+  - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/datastructure/SWAG.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/yukicoder/1036.test.cpp
+  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
 documentation_of: library/datastructure/SWAG.hpp
 layout: document
 redirect_from:

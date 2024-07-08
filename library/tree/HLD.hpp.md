@@ -1,11 +1,38 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/tree/AuxiliaryTree.hpp
+    title: library/tree/AuxiliaryTree.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeLazy.hpp
+    title: library/tree/TreeLazy.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeMonoid.hpp
+    title: library/tree/TreeMonoid.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_E.test.cpp
+    title: test/AOJ/GRL_5_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
+    title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+    title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/650.test.cpp
+    title: test/yukicoder/650.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/tree/HLD.hpp\"\ntemplate <typename TREE> struct\
@@ -81,10 +108,19 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/tree/HLD.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/tree/AuxiliaryTree.hpp
+  - library/tree/TreeMonoid.hpp
+  - library/tree/TreeLazy.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/650.test.cpp
+  - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/LowestCommonAncestor.test.cpp
+  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/tree/HLD.hpp
 layout: document
 redirect_from:

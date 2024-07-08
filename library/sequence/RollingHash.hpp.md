@@ -1,11 +1,20 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':x:'
+    path: library/mod/Modint61.hpp
+    title: library/mod/Modint61.hpp
+  - icon: ':question:'
+    path: library/sequence/ForString.hpp
+    title: library/sequence/ForString.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/AOJ/ALDS1_14_B.test.cpp
+    title: test/AOJ/ALDS1_14_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
@@ -20,7 +29,7 @@ data:
     \ library/sequence/RollingHash.hpp: line 2: #pragma once found in a non-first\
     \ line\n"
   code: "// reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6\n#pragma\
-    \ once\n#include \"library/mod/Modint61.cpp\"\n#include \"library/sequence/ForString.cpp\"\
+    \ once\n#include \"library/mod/Modint61.hpp\"\n#include \"library/sequence/ForString.hpp\"\
     \n\n#include <random>\n#include <vector>\n\nstd::random_device rollonghash_rnd;\n\
     std::mt19937 rollonghash_mt(rollonghash_rnd());\n\ntemplate <typename CHAR = char,\
     \ typename MINT = Modint61> class RollingHash {\n    using ll = long long;\n \
@@ -40,13 +49,16 @@ data:
     \ - hash[l] * power[r - l]).v;\n    }\n\n    static T full_hash(const std::vector<CHAR>\
     \ &v) {\n        MINT res = 0;\n        for (const char &c : v)\n            res\
     \ = nxt_hash(res, c);\n        return res.v;\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - library/mod/Modint61.hpp
+  - library/sequence/ForString.hpp
   isVerificationFile: false
   path: library/sequence/RollingHash.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/AOJ/ALDS1_14_B.test.cpp
 documentation_of: library/sequence/RollingHash.hpp
 layout: document
 redirect_from:

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_1_C.test.cpp
+    title: test/AOJ/GRL_1_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/graph/NegativeCycleFind.hpp\"\n// \u30B0\u30E9\u30D5\
@@ -25,9 +28,10 @@ data:
   isVerificationFile: false
   path: library/graph/NegativeCycleFind.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ/GRL_1_C.test.cpp
 documentation_of: library/graph/NegativeCycleFind.hpp
 layout: document
 redirect_from:

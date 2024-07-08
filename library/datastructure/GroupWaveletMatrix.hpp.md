@@ -1,11 +1,41 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Add.hpp
+    title: library/algebra/group/Add.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/group/Concepts.hpp
+    title: library/algebra/group/Concepts.hpp
+  - icon: ':question:'
+    path: library/algebra/monoid/Concepts.hpp
+    title: library/algebra/monoid/Concepts.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FenwickTree.hpp
+    title: library/datastructure/FenwickTree.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/FullyIndexableDictionary.hpp
+    title: library/datastructure/FullyIndexableDictionary.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/datastructure/WaveletMatrix.hpp
+    title: library/datastructure/WaveletMatrix.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/util/Compress.hpp
+    title: library/util/Compress.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+    title: test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/RectangleSum.test.cpp
+    title: test/library-checker/DataStructure/RectangleSum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/924.test.cpp
+    title: test/yukicoder/924.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -15,13 +45,15 @@ data:
     \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: library/datastructure/FenwickTree.cpp:\
-    \ line -1: no such header\n"
-  code: "#pragma once\n#include \"library/datastructure/FenwickTree.cpp\"\n#include\
-    \ \"library/datastructure/WaveletMatrix.cpp\"\n#define REP_(i, n) for (int i =\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.4/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ library/algebra/group/Concepts.hpp: line 3: #pragma once found in a non-first\
+    \ line\n"
+  code: "#pragma once\n#include \"library/datastructure/FenwickTree.hpp\"\n#include\
+    \ \"library/datastructure/WaveletMatrix.hpp\"\n#define REP_(i, n) for (int i =\
     \ 0; i < (n); i++)\ntemplate <typename T, group G>\nclass GroupWaveletMatrix :\
     \ WaveletMatrix<T, true> {\n    using super = WaveletMatrix<T, true>;\n    using\
     \ super::log, super::n, super::nxt, super::comp, super::data,\n        super::high_bit,\
@@ -50,13 +82,23 @@ data:
     \ ft[h].sum(L + zero_cnt[h], R + zero_cnt[h]));\n                k -= R - L;\n\
     \                l -= L;\n                r -= R;\n            }\n        }\n\
     \        return res;\n    }\n};\n#undef REP_\n"
-  dependsOn: []
+  dependsOn:
+  - library/datastructure/FenwickTree.hpp
+  - library/algebra/group/Add.hpp
+  - library/algebra/group/Concepts.hpp
+  - library/algebra/monoid/Concepts.hpp
+  - library/datastructure/WaveletMatrix.hpp
+  - library/datastructure/FullyIndexableDictionary.hpp
+  - library/util/Compress.hpp
   isVerificationFile: false
   path: library/datastructure/GroupWaveletMatrix.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/924.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
 documentation_of: library/datastructure/GroupWaveletMatrix.hpp
 layout: document
 redirect_from:

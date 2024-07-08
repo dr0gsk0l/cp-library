@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/query/OfflineDynamicConnectivity.hpp
+    title: library/query/OfflineDynamicConnectivity.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -48,8 +51,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/datastructure/unionfind/UndoUnionFind.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
+  requiredBy:
+  - library/query/OfflineDynamicConnectivity.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/UndoUnionFind.hpp

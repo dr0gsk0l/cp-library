@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/New/NumberOfSubsequence.test.cpp
+    title: test/library-checker/New/NumberOfSubsequence.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Subsequence.hpp\"\ntemplate <typename T, typename\
@@ -32,9 +35,10 @@ data:
   isVerificationFile: false
   path: library/util/Subsequence.hpp
   requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/library-checker/New/NumberOfSubsequence.test.cpp
 documentation_of: library/util/Subsequence.hpp
 layout: document
 redirect_from:

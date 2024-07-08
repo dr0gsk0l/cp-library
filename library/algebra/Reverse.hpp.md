@@ -1,11 +1,41 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/algebra/lazy/Reverse.hpp
+    title: library/algebra/lazy/Reverse.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeLazy.hpp
+    title: library/tree/TreeLazy.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/tree/TreeMonoid.hpp
+    title: library/tree/TreeMonoid.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ/GRL_5_E.test.cpp
+    title: test/AOJ/GRL_5_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+    title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+    title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+    title: test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+    title: test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/650.test.cpp
+    title: test/yukicoder/650.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/Reverse.hpp\"\ntemplate<typename Algebra>\n\
@@ -21,10 +51,20 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/algebra/Reverse.hpp
-  requiredBy: []
-  timestamp: '2024-07-07 16:34:26+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - library/algebra/lazy/Reverse.hpp
+  - library/tree/TreeMonoid.hpp
+  - library/tree/TreeLazy.hpp
+  timestamp: '2024-07-08 08:43:48+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/yukicoder/650.test.cpp
+  - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/algebra/Reverse.hpp
 layout: document
 redirect_from:
