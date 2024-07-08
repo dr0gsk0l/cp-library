@@ -138,7 +138,7 @@ data:
   requiredBy:
   - library/tree/AuxiliaryTree.hpp
   - library/tree/CartesianTree.hpp
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1002.test.cpp

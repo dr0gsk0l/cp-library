@@ -153,7 +153,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp
   requiredBy: []
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

@@ -27,7 +27,7 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/Gcd.hpp
   requiredBy: []
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1036.test.cpp

@@ -125,7 +125,7 @@ data:
   - library/geometry/Judge.hpp
   - library/geometry/UtilFunction.hpp
   - library/geometry/Base.hpp
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/2012.test.cpp

@@ -270,7 +270,7 @@ data:
   - library/formalpowerseries/ComposeEXP.hpp
   - library/formalpowerseries/RationalSum.hpp
   - library/formalpowerseries/Prod.hpp
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/MultipointEvaluation.test.cpp

@@ -92,7 +92,7 @@ data:
   - library/segtree/SegmentTree.hpp
   - library/math/FactorialNumberSystem.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/650.test.cpp

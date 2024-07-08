@@ -46,7 +46,7 @@ data:
   requiredBy:
   - library/algebra/lazy/SetSum.hpp
   - library/algebra/lazy/SetMin.hpp
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_I.test.cpp

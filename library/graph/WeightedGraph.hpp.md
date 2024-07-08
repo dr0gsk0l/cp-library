@@ -216,7 +216,7 @@ data:
   - library/graph/shortest_path/01BFS.hpp
   - library/graph/shortest_path/Dial.hpp
   - library/graph/Grid8.hpp
-  timestamp: '2024-07-08 08:43:48+09:00'
+  timestamp: '2024-07-08 10:24:29+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1002.test.cpp

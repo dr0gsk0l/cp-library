@@ -252,6 +252,9 @@ data:
     - icon: ':warning:'
       path: library/graph/Grid8.hpp
       title: library/graph/Grid8.hpp
+    - icon: ':warning:'
+      path: library/graph/LowLink.hpp
+      title: library/graph/LowLink.hpp
     - icon: ':question:'
       path: library/graph/MinimumSpanningArborescence.hpp
       title: library/graph/MinimumSpanningArborescence.hpp
@@ -267,6 +270,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/graph/SCC.hpp
       title: library/graph/SCC.hpp
+    - icon: ':warning:'
+      path: library/graph/TwoEdgeConnectedComponents.hpp
+      title: library/graph/TwoEdgeConnectedComponents.hpp
     - icon: ':question:'
       path: library/graph/WeightedGraph.hpp
       title: library/graph/WeightedGraph.hpp
