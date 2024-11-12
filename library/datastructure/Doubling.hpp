@@ -24,6 +24,7 @@ template <typename Monoid, int LOG> class Doubling {
     }
 
   public:
+    Doubling() = default;
     Doubling(int n) : n(n), is_prepared(false) {
         DP.assign(LOG, std::vector<P>(n, unit));
     }

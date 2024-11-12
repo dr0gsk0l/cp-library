@@ -7,6 +7,9 @@ template <typename T> struct CumulativeSum {
             A[i + 1] = A[i] + v[i];
     }
     void add(const T &a) { A.push_back(A.back() + a); }
-    U sum(int l, int r) { return A[r] - A[l]; }
+    U sum(int l, int r) {
+        assert(0 <= l and l <= r and r < A.size());
+        return A[r] - A[l];
+    }
     U sum() { return A.back(); }
 };
