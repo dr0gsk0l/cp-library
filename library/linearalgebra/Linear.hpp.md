@@ -99,18 +99,18 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/Linear.hpp
   requiredBy:
-  - library/algebra/lazy/AffineSum.hpp
   - library/algebra/group/Affine.hpp
-  - library/linearalgebra/InsertConvexHullTrick.hpp
+  - library/algebra/lazy/AffineSum.hpp
   - library/linearalgebra/ConvexHullTrick.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  - library/linearalgebra/InsertConvexHullTrick.hpp
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/2012.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/yukicoder/2012.test.cpp
 documentation_of: library/linearalgebra/Linear.hpp
 layout: document
 redirect_from:

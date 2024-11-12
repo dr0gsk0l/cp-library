@@ -56,11 +56,11 @@ data:
   isVerificationFile: false
   path: library/algebra/lazy/AddSum.hpp
   requiredBy: []
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/GRL_5_E.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/algebra/lazy/AddSum.hpp
 layout: document
 redirect_from:

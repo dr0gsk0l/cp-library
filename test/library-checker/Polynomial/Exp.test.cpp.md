@@ -34,7 +34,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Exp.test.cpp
   requiredBy: []
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Exp.test.cpp

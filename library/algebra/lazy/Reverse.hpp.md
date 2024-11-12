@@ -33,7 +33,7 @@ data:
   path: library/algebra/lazy/Reverse.hpp
   requiredBy:
   - library/tree/TreeLazy.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp

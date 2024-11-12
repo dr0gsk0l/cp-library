@@ -84,16 +84,16 @@ data:
   isVerificationFile: false
   path: library/sequence/ForString.hpp
   requiredBy:
-  - library/sequence/Trie.hpp
-  - library/sequence/AhoCorasick.hpp
   - library/sequence/RollingHash.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  - library/sequence/AhoCorasick.hpp
+  - library/sequence/Trie.hpp
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/430.test.cpp
-  - test/yukicoder/430_2.test.cpp
-  - test/AOJ/2212.test.cpp
   - test/AOJ/ALDS1_14_B.test.cpp
+  - test/AOJ/2212.test.cpp
+  - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: library/sequence/ForString.hpp
 layout: document
 redirect_from:

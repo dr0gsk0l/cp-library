@@ -83,30 +83,30 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/Concepts.hpp
   requiredBy:
-  - library/algebra/group/Concepts.hpp
-  - library/datastructure/SWAG.hpp
-  - library/datastructure/CumulativeGroup.hpp
-  - library/datastructure/CumulativeMonoid.hpp
-  - library/datastructure/GroupWaveletMatrix.hpp
-  - library/datastructure/FenwickTree.hpp
-  - library/segtree/SegmentTree.hpp
   - library/math/FactorialNumberSystem.hpp
+  - library/datastructure/CumulativeMonoid.hpp
+  - library/datastructure/SWAG.hpp
+  - library/datastructure/FenwickTree.hpp
+  - library/datastructure/GroupWaveletMatrix.hpp
+  - library/datastructure/CumulativeGroup.hpp
+  - library/algebra/group/Concepts.hpp
+  - library/segtree/SegmentTree.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/650.test.cpp
-  - test/yukicoder/924.test.cpp
-  - test/yukicoder/1036.test.cpp
+  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
-  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/AOJ/DSL_2_B.test.cpp
+  - test/yukicoder/1036.test.cpp
+  - test/yukicoder/924.test.cpp
+  - test/yukicoder/650.test.cpp
 documentation_of: library/algebra/monoid/Concepts.hpp
 layout: document
 redirect_from:

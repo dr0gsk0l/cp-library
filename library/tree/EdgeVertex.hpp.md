@@ -102,7 +102,7 @@ data:
   isVerificationFile: false
   path: library/tree/EdgeVertex.hpp
   requiredBy: []
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp

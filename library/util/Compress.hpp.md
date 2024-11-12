@@ -120,24 +120,24 @@ data:
   isVerificationFile: false
   path: library/util/Compress.hpp
   requiredBy:
+  - library/r2/Projection.hpp
   - library/datastructure/WaveletMatrix.hpp
   - library/datastructure/GroupWaveletMatrix.hpp
-  - library/r2/Projection.hpp
-  - library/tree/AuxiliaryTree.hpp
   - library/util/InversionNumber.hpp
   - library/util/BubbleNumber.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  - library/tree/AuxiliaryTree.hpp
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/924.test.cpp
-  - test/yukicoder/1332.test.cpp
-  - test/yukicoder/919.test.cpp
+  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   - test/AOJ/ALDS1_5_D.test.cpp
+  - test/yukicoder/919.test.cpp
+  - test/yukicoder/924.test.cpp
+  - test/yukicoder/1332.test.cpp
 documentation_of: library/util/Compress.hpp
 layout: document
 redirect_from:

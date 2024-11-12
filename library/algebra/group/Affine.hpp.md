@@ -82,13 +82,13 @@ data:
   path: library/algebra/group/Affine.hpp
   requiredBy:
   - library/algebra/lazy/AffineSum.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
 documentation_of: library/algebra/group/Affine.hpp
 layout: document
 redirect_from:

@@ -37,8 +37,9 @@ data:
     \ long, T>;\n    std::vector<U> A;\n    CumulativeSum() : A(1, 0) {}\n    CumulativeSum(const\
     \ std::vector<T> &v) : A(v.size() + 1, 0) {\n        for (int i = 0; i < v.size();\
     \ i++)\n            A[i + 1] = A[i] + v[i];\n    }\n    void add(const T &a) {\
-    \ A.push_back(A.back() + a); }\n    U sum(int l, int r) { return A[r] - A[l];\
-    \ }\n    U sum() { return A.back(); }\n};\n#line 4 \"library/datastructure/FullyIndexableDictionary.hpp\"\
+    \ A.push_back(A.back() + a); }\n    U sum(int l, int r) {\n        assert(0 <=\
+    \ l and l <= r and r < A.size());\n        return A[r] - A[l];\n    }\n    U sum()\
+    \ { return A.back(); }\n};\n#line 4 \"library/datastructure/FullyIndexableDictionary.hpp\"\
     \nclass FullyIndexableDictionary {\n    int n,\n        block; // 64\u500B\u4E8B\
     \u306B\u533A\u5207\u3063\u305F\u30D6\u30ED\u30C3\u30AF\u306E\u500B\u6570\n   \
     \ std::vector<unsigned long long> bit;\n    std::vector<unsigned int> sum; //\
@@ -282,7 +283,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp

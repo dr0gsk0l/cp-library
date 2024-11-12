@@ -149,12 +149,12 @@ data:
   path: library/sequence/Trie.hpp
   requiredBy:
   - library/sequence/AhoCorasick.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/430.test.cpp
-  - test/yukicoder/430_2.test.cpp
   - test/AOJ/2212.test.cpp
+  - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: library/sequence/Trie.hpp
 layout: document
 redirect_from:

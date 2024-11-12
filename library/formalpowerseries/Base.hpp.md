@@ -264,19 +264,19 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/Base.hpp
   requiredBy:
-  - library/formalpowerseries/MultipointEvaluation.hpp
-  - library/formalpowerseries/DivMod.hpp
   - library/formalpowerseries/Sqrt.hpp
-  - library/formalpowerseries/ComposeEXP.hpp
-  - library/formalpowerseries/RationalSum.hpp
+  - library/formalpowerseries/MultipointEvaluation.hpp
   - library/formalpowerseries/Prod.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  - library/formalpowerseries/RationalSum.hpp
+  - library/formalpowerseries/DivMod.hpp
+  - library/formalpowerseries/ComposeEXP.hpp
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - test/library-checker/Polynomial/TaylorShift.test.cpp
-  - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
+  - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
 documentation_of: library/formalpowerseries/Base.hpp
 layout: document
 redirect_from:

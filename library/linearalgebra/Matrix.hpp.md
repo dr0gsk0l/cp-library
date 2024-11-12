@@ -113,12 +113,12 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/Matrix.hpp
   requiredBy: []
-  timestamp: '2024-07-08 10:24:29+09:00'
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/library-checker/Matrix/Det.test.cpp
   - test/library-checker/Matrix/Product.test.cpp
   - test/library-checker/Matrix/Inverse.test.cpp
-  - test/library-checker/Matrix/Det.test.cpp
 documentation_of: library/linearalgebra/Matrix.hpp
 layout: document
 redirect_from:

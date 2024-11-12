@@ -73,13 +73,13 @@ data:
   isVerificationFile: false
   path: library/bitwise/Ranked.hpp
   requiredBy:
-  - library/setpowerseries/Compose.hpp
   - library/setpowerseries/Base.hpp
-  timestamp: '2024-07-08 10:24:29+09:00'
+  - library/setpowerseries/Compose.hpp
+  timestamp: '2024-11-12 15:55:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/Convolution/SubsetConvolution.test.cpp
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+  - test/library-checker/Convolution/SubsetConvolution.test.cpp
 documentation_of: library/bitwise/Ranked.hpp
 layout: document
 redirect_from:
