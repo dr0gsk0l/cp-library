@@ -23,3 +23,4 @@ int main() {
         std::cin >> u >> v >> k;
         std::cout << hld.jump(u, v, k) << "\n";
     }
+}
