@@ -145,11 +145,11 @@ data:
   isVerificationFile: false
   path: library/sequence/AhoCorasick.hpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/2212.test.cpp
   - test/yukicoder/430_2.test.cpp
+  - test/AOJ/2212.test.cpp
 documentation_of: library/sequence/AhoCorasick.hpp
 layout: document
 redirect_from:

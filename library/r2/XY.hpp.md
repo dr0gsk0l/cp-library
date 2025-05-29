@@ -122,17 +122,17 @@ data:
   path: library/r2/XY.hpp
   requiredBy:
   - library/r2/Projection.hpp
-  - library/geometry/Base.hpp
   - library/geometry/Judge.hpp
+  - library/geometry/Base.hpp
   - library/geometry/UtilFunction.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/AOJ/CGL_4_A.test.cpp
   - test/yukicoder/2012.test.cpp
+  - test/AOJ/CGL_4_A.test.cpp
 documentation_of: library/r2/XY.hpp
 layout: document
 redirect_from:

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':heavy_check_mark:'
@@ -176,7 +176,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp

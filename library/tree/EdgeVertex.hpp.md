@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/tree/Tree.hpp
     title: library/tree/Tree.hpp
   _extendedRequiredBy: []
@@ -102,7 +102,7 @@ data:
   isVerificationFile: false
   path: library/tree/EdgeVertex.hpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp

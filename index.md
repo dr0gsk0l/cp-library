@@ -206,16 +206,16 @@ data:
       title: library/flow/NondecreasingMCF.hpp
   - name: library/formalpowerseries
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/formalpowerseries/Base.hpp
       title: library/formalpowerseries/Base.hpp
     - icon: ':warning:'
       path: library/formalpowerseries/ComposeEXP.hpp
       title: library/formalpowerseries/ComposeEXP.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/formalpowerseries/DivMod.hpp
       title: library/formalpowerseries/DivMod.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/formalpowerseries/MultipointEvaluation.hpp
       title: library/formalpowerseries/MultipointEvaluation.hpp
     - icon: ':heavy_check_mark:'
@@ -243,7 +243,7 @@ data:
     - icon: ':warning:'
       path: library/graph/EdgeVertex.hpp
       title: library/graph/EdgeVertex.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/graph/Graph.hpp
       title: library/graph/Graph.hpp
     - icon: ':heavy_check_mark:'
@@ -486,7 +486,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/tree/EdgeVertex.hpp
       title: library/tree/EdgeVertex.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/tree/HLD.hpp
       title: library/tree/HLD.hpp
     - icon: ':heavy_check_mark:'
@@ -495,7 +495,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/tree/RootedTreeIsomorphism.hpp
       title: library/tree/RootedTreeIsomorphism.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/tree/Tree.hpp
       title: library/tree/Tree.hpp
     - icon: ':heavy_check_mark:'
@@ -685,6 +685,9 @@ data:
       path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
       title: test/library-checker/DataStructure/StaticRangeSum.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+      title: test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/DataStructure/unionfind.test.cpp
       title: test/library-checker/DataStructure/unionfind.test.cpp
   - name: test/library-checker/Graph
@@ -745,7 +748,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
       title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     - icon: ':x:'
@@ -775,6 +778,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
       title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
+    - icon: ':x:'
+      path: test/library-checker/Tree/JumpOnTree.test.cpp
+      title: test/library-checker/Tree/JumpOnTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
       title: test/library-checker/Tree/LowestCommonAncestor.test.cpp

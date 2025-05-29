@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   _extendedRequiredBy:
@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Tree/JumpOnTree.test.cpp
+    title: test/library-checker/Tree/JumpOnTree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
     title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
@@ -39,9 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.hpp\"\n\n#include <cassert>\n#include\
@@ -139,20 +142,21 @@ data:
   isVerificationFile: false
   path: library/tree/Tree.hpp
   requiredBy:
-  - library/tree/AuxiliaryTree.hpp
   - library/tree/EdgeVertex.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/tree/AuxiliaryTree.hpp
+  timestamp: '2025-05-29 20:57:39+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
+  - test/library-checker/Tree/JumpOnTree.test.cpp
+  - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   - test/library-checker/Tree/LowestCommonAncestor.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - test/AOJ/GRL_5_E.test.cpp
   - test/yukicoder/1038.test.cpp
   - test/yukicoder/650.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/tree/Tree.hpp
 layout: document
 redirect_from:

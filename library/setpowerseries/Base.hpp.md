@@ -84,7 +84,7 @@ data:
   path: library/setpowerseries/Base.hpp
   requiredBy:
   - library/setpowerseries/Compose.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

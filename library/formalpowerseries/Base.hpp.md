@@ -5,10 +5,10 @@ data:
   - icon: ':warning:'
     path: library/formalpowerseries/ComposeEXP.hpp
     title: library/formalpowerseries/ComposeEXP.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/formalpowerseries/DivMod.hpp
     title: library/formalpowerseries/DivMod.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/formalpowerseries/MultipointEvaluation.hpp
     title: library/formalpowerseries/MultipointEvaluation.hpp
   - icon: ':heavy_check_mark:'
@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/TaylorShift.test.cpp
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/formalpowerseries/Base.hpp\"\n#define REP_(i, n)\
@@ -264,19 +264,19 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/Base.hpp
   requiredBy:
-  - library/formalpowerseries/Sqrt.hpp
   - library/formalpowerseries/MultipointEvaluation.hpp
-  - library/formalpowerseries/Prod.hpp
-  - library/formalpowerseries/RationalSum.hpp
-  - library/formalpowerseries/DivMod.hpp
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - library/formalpowerseries/DivMod.hpp
+  - library/formalpowerseries/RationalSum.hpp
+  - library/formalpowerseries/Sqrt.hpp
+  - library/formalpowerseries/Prod.hpp
+  timestamp: '2025-05-29 20:57:39+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/TaylorShift.test.cpp
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
 documentation_of: library/formalpowerseries/Base.hpp
 layout: document
 redirect_from:

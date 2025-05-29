@@ -44,14 +44,14 @@ data:
   isVerificationFile: false
   path: library/algebra/monoid/Set.hpp
   requiredBy:
-  - library/algebra/lazy/SetMin.hpp
   - library/algebra/lazy/SetSum.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  - library/algebra/lazy/SetMin.hpp
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
   - test/AOJ/DSL_2_D.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
 documentation_of: library/algebra/monoid/Set.hpp
 layout: document
 redirect_from:

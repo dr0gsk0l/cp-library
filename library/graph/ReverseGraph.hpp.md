@@ -26,7 +26,7 @@ data:
   path: library/graph/ReverseGraph.hpp
   requiredBy:
   - library/graph/SCC.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp

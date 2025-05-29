@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':heavy_check_mark:'
     path: library/tree/RootedTreeIsomorphism.hpp
     title: library/tree/RootedTreeIsomorphism.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/tree/Tree.hpp
     title: library/tree/Tree.hpp
   _extendedRequiredBy: []
@@ -115,7 +115,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp

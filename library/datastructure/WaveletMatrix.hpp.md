@@ -293,16 +293,16 @@ data:
   path: library/datastructure/WaveletMatrix.hpp
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
-  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
-  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/yukicoder/919.test.cpp
+  - test/library-checker/DataStructure/RangeKthSmallest.test.cpp
+  - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/StaticRangeFrequency.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/yukicoder/924.test.cpp
+  - test/yukicoder/919.test.cpp
   - test/yukicoder/1332.test.cpp
 documentation_of: library/datastructure/WaveletMatrix.hpp
 layout: document

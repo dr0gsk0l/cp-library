@@ -36,7 +36,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Math/2Sat.test.cpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Math/2Sat.test.cpp

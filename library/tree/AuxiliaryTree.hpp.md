@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/tree/HLD.hpp
     title: library/tree/HLD.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/tree/Tree.hpp
     title: library/tree/Tree.hpp
   - icon: ':heavy_check_mark:'
@@ -28,13 +28,14 @@ data:
     links: []
   bundledCode: "#line 2 \"library/tree/AuxiliaryTree.hpp\"\n\n#line 2 \"library/tree/HLD.hpp\"\
     \ntemplate <typename TREE> struct HLD {\n    int n;\n    TREE T;\n    std::vector<int>\
-    \ sz, head, id, id2;\n    bool prepared;\n    HLD(TREE T_)\n        : T(T_), n(T_.n),\
-    \ sz(n), head(n), id(n), id2(n), prepared(false) {}\n    HLD() = default;\n\n\
-    \  private:\n    void dfs_sz(int v) {\n        sz[v] = 1;\n        for (auto &e\
-    \ : T.son(v)) {\n            dfs_sz(e.to);\n            sz[v] += sz[e.to];\n \
-    \           if (sz[e.to] > sz[T.son(v)[0].to])\n                std::swap(e, T.son(v)[0]);\n\
-    \        }\n    }\n    void dfs_hld(int v, int &k) {\n        id[v] = k++;\n \
-    \       for (int i = 0; i < T.son(v).size(); i++) {\n            int to = T.son(v)[i];\n\
+    \ sz, head, id, id2, rev_id;\n    bool prepared;\n    HLD(TREE T_)\n        :\
+    \ T(T_), n(T_.n), sz(n), head(n), id(n), id2(n), rev_id(n), prepared(false) {}\n\
+    \    HLD() = default;\n\n  private:\n    void dfs_sz(int v) {\n        sz[v] =\
+    \ 1;\n        for (auto &e : T.son(v)) {\n            dfs_sz(e.to);\n        \
+    \    sz[v] += sz[e.to];\n            if (sz[e.to] > sz[T.son(v)[0].to])\n    \
+    \            std::swap(e, T.son(v)[0]);\n        }\n    }\n    void dfs_hld(int\
+    \ v, int &k) {\n        id[v] = k++;\n        rev_id[id[v]] = v;\n        for\
+    \ (int i = 0; i < T.son(v).size(); i++) {\n            int to = T.son(v)[i];\n\
     \            head[to] = (i ? to : head[v]);\n            dfs_hld(to, k);\n   \
     \     }\n        id2[v] = k;\n    }\n\n  public:\n    std::vector<int> build(int\
     \ r = 0) {\n        assert(!prepared);\n        prepared = true;\n        if (~T.root)\n\
@@ -46,27 +47,38 @@ data:
     \                v = T.parent(head[v]);\n        return (T.depth[u] < T.depth[v]\
     \ ? u : v);\n    }\n    int distance(int u, int v) const {\n        int w = lca(u,\
     \ v);\n        return T.depth[u] + T.depth[v] - T.depth[w] * 2;\n    }\n\n   \
-    \ // l=lca(u,v) \u3068\u3057\u305F\u6642\u3001[u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\
-    \u30B9 \u3092\u9589\u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using\
-    \ path_t = std::vector<std::pair<int, int>>;\n    std::pair<path_t, path_t> path(int\
-    \ u, int v) const {\n        assert(prepared);\n        path_t path_u, path_v;\n\
-    \        while (u != v) {\n            if (head[u] == head[v]) {\n           \
-    \     if (T.depth[u] < T.depth[v])\n                    path_v.emplace_back(id[v],\
-    \ id[u]);\n                else\n                    path_u.emplace_back(id[u],\
-    \ id[v]);\n                break;\n            }\n            if (T.depth[head[u]]\
-    \ < T.depth[head[v]]) {\n                path_v.emplace_back(id[v], id[head[v]]);\n\
-    \                v = T.parent(head[v]);\n            } else {\n              \
-    \  path_u.emplace_back(id[u], id[head[u]]);\n                u = T.parent(head[u]);\n\
-    \            }\n        }\n        if (u == v)\n            path_u.emplace_back(id[u],\
-    \ id[u]);\n        return {path_u, path_v};\n    }\n\n    // [l,r) \u304C v \u306E\
-    \u90E8\u5206\u6728\n    std::pair<int, int> subtree(int v) const {\n        assert(prepared);\n\
-    \        return {id[v], id2[v]};\n    }\n};\n#line 2 \"library/graph/Graph.hpp\"\
-    \n\n#include <cassert>\n#include <iostream>\n#include <vector>\n\nstruct Edge\
-    \ {\n    int from, to;\n    Edge() = default;\n    Edge(int from, int to) : from(from),\
-    \ to(to) {}\n    operator int() const { return to; }\n};\n\nstruct Graph {\n \
-    \   int n;\n    using edge_type = Edge;\n    std::vector<edge_type> edges;\n\n\
-    \  protected:\n    std::vector<int> in_deg;\n    bool prepared;\n    class OutgoingEdges\
-    \ {\n        Graph *g;\n        int l, r;\n\n      public:\n        OutgoingEdges(Graph\
+    \ // v \u306E k \u500B\u4E0A\u306E\u9802\u70B9\u3092\u8FD4\u3059\n    int kth_parent(int\
+    \ v, int k) const {\n        assert(prepared);\n        if(T.depth[v] < k)\n \
+    \           return -1;\n        while(T.depth[v] - T.depth[head[v]] < k){\n  \
+    \          k -= T.depth[v] - T.depth[head[v]] + 1;\n            v = T.parent(head[v]);\n\
+    \        }\n        return rev_id[id[v] - k];\n    }\n\n    // u \u304B\u3089\
+    \ v \u3078 k \u56DE\u79FB\u52D5\u3057\u305F\u9802\u70B9\u3092\u8FD4\u3059\n  \
+    \  int jump(int u, int v, int k) const {\n        assert(prepared);\n        int\
+    \ w = lca(u, v);\n        if(T.depth[u] + T.depth[v] - T.depth[w] * 2 < k)\n \
+    \           return -1;\n        if(T.depth[u] - T.depth[w] >= k)\n           \
+    \ return kth_parent(u, k);\n        return kth_parent(v, T.depth[u] + T.depth[v]\
+    \ - T.depth[w] * 2 - k);\n    }\n\n    // l=lca(u,v) \u3068\u3057\u305F\u6642\u3001\
+    [u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\u533A\u9593\u306E\u7D44\
+    \u307F\u3067\u8FD4\u3059\n    using path_t = std::vector<std::pair<int, int>>;\n\
+    \    std::pair<path_t, path_t> path(int u, int v) const {\n        assert(prepared);\n\
+    \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
+    \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
+    \      path_v.emplace_back(id[v], id[u]);\n                else\n            \
+    \        path_u.emplace_back(id[u], id[v]);\n                break;\n        \
+    \    }\n            if (T.depth[head[u]] < T.depth[head[v]]) {\n             \
+    \   path_v.emplace_back(id[v], id[head[v]]);\n                v = T.parent(head[v]);\n\
+    \            } else {\n                path_u.emplace_back(id[u], id[head[u]]);\n\
+    \                u = T.parent(head[u]);\n            }\n        }\n        if\
+    \ (u == v)\n            path_u.emplace_back(id[u], id[u]);\n        return {path_u,\
+    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
+    \ int> subtree(int v) const {\n        assert(prepared);\n        return {id[v],\
+    \ id2[v]};\n    }\n};\n#line 2 \"library/graph/Graph.hpp\"\n\n#include <cassert>\n\
+    #include <iostream>\n#include <vector>\n\nstruct Edge {\n    int from, to;\n \
+    \   Edge() = default;\n    Edge(int from, int to) : from(from), to(to) {}\n  \
+    \  operator int() const { return to; }\n};\n\nstruct Graph {\n    int n;\n   \
+    \ using edge_type = Edge;\n    std::vector<edge_type> edges;\n\n  protected:\n\
+    \    std::vector<int> in_deg;\n    bool prepared;\n    class OutgoingEdges {\n\
+    \        Graph *g;\n        int l, r;\n\n      public:\n        OutgoingEdges(Graph\
     \ *g, int l, int r) : g(g), l(l), r(r) {}\n        edge_type *begin() { return\
     \ &(g->edges[l]); }\n        edge_type *end() { return &(g->edges[r]); }\n   \
     \     edge_type &operator[](int i) { return g->edges[l + i]; }\n        int size()\
@@ -279,7 +291,7 @@ data:
   isVerificationFile: false
   path: library/tree/AuxiliaryTree.hpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/tree/AuxiliaryTree.hpp

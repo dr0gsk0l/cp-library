@@ -63,12 +63,12 @@ data:
   - library/algebra/lazy/AffineSum.hpp
   - library/algebra/lazy/AddSum.hpp
   - library/algebra/lazy/SetSum.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/algebra/group/CntSum.hpp
 layout: document

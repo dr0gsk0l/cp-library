@@ -141,12 +141,12 @@ data:
   isVerificationFile: false
   path: library/tree/CartesianTree.hpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp
-  - test/AOJ/DPL_3_B.test.cpp
   - test/AOJ/DPL_3_C.test.cpp
+  - test/AOJ/DPL_3_B.test.cpp
 documentation_of: library/tree/CartesianTree.hpp
 layout: document
 redirect_from:

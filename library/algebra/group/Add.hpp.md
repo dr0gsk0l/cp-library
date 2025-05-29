@@ -61,6 +61,9 @@ data:
     path: test/library-checker/DataStructure/RectangleSum.test.cpp
     title: test/library-checker/DataStructure/RectangleSum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+    title: test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/vertex_add_path_sum.test.cpp
     title: test/library-checker/Tree/vertex_add_path_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -104,35 +107,36 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Add.hpp
   requiredBy:
-  - library/math/FactorialNumberSystem.hpp
-  - library/datastructure/FenwickTree.hpp
-  - library/datastructure/GroupWaveletMatrix.hpp
-  - library/algebra/lazy/AddMin.hpp
-  - library/algebra/lazy/AddSum.hpp
-  - library/sequence/AhoCorasick.hpp
   - library/sequence/Trie.hpp
-  timestamp: '2024-11-12 15:55:13+09:00'
+  - library/sequence/AhoCorasick.hpp
+  - library/math/FactorialNumberSystem.hpp
+  - library/algebra/lazy/AddSum.hpp
+  - library/algebra/lazy/AddMin.hpp
+  - library/datastructure/GroupWaveletMatrix.hpp
+  - library/datastructure/FenwickTree.hpp
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
-  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum.test.cpp
+  - test/library-checker/DataStructure/PointAddRangeSum.test.cpp
+  - test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
-  - test/AOJ/DSL_2_H.test.cpp
+  - test/yukicoder/1097.test.cpp
+  - test/yukicoder/430.test.cpp
+  - test/yukicoder/924.test.cpp
+  - test/yukicoder/1038.test.cpp
+  - test/yukicoder/430_2.test.cpp
   - test/AOJ/DSL_2_G.test.cpp
+  - test/AOJ/DSL_1_B.test.cpp
   - test/AOJ/1330.test.cpp
-  - test/AOJ/2212.test.cpp
-  - test/AOJ/DSL_2_B.test.cpp
+  - test/AOJ/DSL_2_H.test.cpp
   - test/AOJ/2207.test.cpp
   - test/AOJ/DSL_2_E.test.cpp
+  - test/AOJ/DSL_2_B.test.cpp
+  - test/AOJ/2212.test.cpp
   - test/AOJ/GRL_5_E.test.cpp
-  - test/AOJ/DSL_1_B.test.cpp
-  - test/yukicoder/1038.test.cpp
-  - test/yukicoder/924.test.cpp
-  - test/yukicoder/430_2.test.cpp
-  - test/yukicoder/430.test.cpp
-  - test/yukicoder/1097.test.cpp
 documentation_of: library/algebra/group/Add.hpp
 layout: document
 redirect_from:

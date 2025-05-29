@@ -16,6 +16,9 @@ data:
     path: test/AOJ/DSL_1_B.test.cpp
     title: test/AOJ/DSL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+    title: test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1420.test.cpp
     title: test/yukicoder/1420.test.cpp
   _isVerificationFailed: false
@@ -84,14 +87,15 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.hpp
   requiredBy: []
-  timestamp: '2024-11-12 15:55:13+09:00'
+  timestamp: '2025-05-29 20:57:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/2971.test.cpp
-  - test/AOJ/1330.test.cpp
-  - test/AOJ/2207.test.cpp
-  - test/AOJ/DSL_1_B.test.cpp
+  - test/library-checker/DataStructure/UnionfindWithPotential.test.cpp
   - test/yukicoder/1420.test.cpp
+  - test/AOJ/DSL_1_B.test.cpp
+  - test/AOJ/1330.test.cpp
+  - test/AOJ/2971.test.cpp
+  - test/AOJ/2207.test.cpp
 documentation_of: library/datastructure/unionfind/PotentialUnionFind.hpp
 layout: document
 redirect_from:

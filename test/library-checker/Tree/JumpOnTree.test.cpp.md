@@ -12,63 +12,18 @@ data:
     title: library/tree/Tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/lca
+    PROBLEM: https://judge.yosupo.jp/problem/jump_on_tree
     links:
-    - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"test/library-checker/Tree/LowestCommonAncestor.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include <bits/stdc++.h>\n\
-    \n#line 2 \"library/tree/HLD.hpp\"\ntemplate <typename TREE> struct HLD {\n  \
-    \  int n;\n    TREE T;\n    std::vector<int> sz, head, id, id2, rev_id;\n    bool\
-    \ prepared;\n    HLD(TREE T_)\n        : T(T_), n(T_.n), sz(n), head(n), id(n),\
-    \ id2(n), rev_id(n), prepared(false) {}\n    HLD() = default;\n\n  private:\n\
-    \    void dfs_sz(int v) {\n        sz[v] = 1;\n        for (auto &e : T.son(v))\
-    \ {\n            dfs_sz(e.to);\n            sz[v] += sz[e.to];\n            if\
-    \ (sz[e.to] > sz[T.son(v)[0].to])\n                std::swap(e, T.son(v)[0]);\n\
-    \        }\n    }\n    void dfs_hld(int v, int &k) {\n        id[v] = k++;\n \
-    \       rev_id[id[v]] = v;\n        for (int i = 0; i < T.son(v).size(); i++)\
-    \ {\n            int to = T.son(v)[i];\n            head[to] = (i ? to : head[v]);\n\
-    \            dfs_hld(to, k);\n        }\n        id2[v] = k;\n    }\n\n  public:\n\
-    \    std::vector<int> build(int r = 0) {\n        assert(!prepared);\n       \
-    \ prepared = true;\n        if (~T.root)\n            assert(T.root == r);\n \
-    \       else\n            T.build(r);\n        head[r] = r;\n        dfs_sz(r);\n\
-    \        int k = 0;\n        dfs_hld(r, k);\n        return id;\n    }\n\n   \
-    \ int lca(int u, int v) const {\n        assert(prepared);\n        while (head[u]\
-    \ != head[v])\n            if (T.depth[head[u]] > T.depth[head[v]])\n        \
-    \        u = T.parent(head[u]);\n            else\n                v = T.parent(head[v]);\n\
-    \        return (T.depth[u] < T.depth[v] ? u : v);\n    }\n    int distance(int\
-    \ u, int v) const {\n        int w = lca(u, v);\n        return T.depth[u] + T.depth[v]\
-    \ - T.depth[w] * 2;\n    }\n\n    // v \u306E k \u500B\u4E0A\u306E\u9802\u70B9\
-    \u3092\u8FD4\u3059\n    int kth_parent(int v, int k) const {\n        assert(prepared);\n\
-    \        if(T.depth[v] < k)\n            return -1;\n        while(T.depth[v]\
-    \ - T.depth[head[v]] < k){\n            k -= T.depth[v] - T.depth[head[v]] + 1;\n\
-    \            v = T.parent(head[v]);\n        }\n        return rev_id[id[v] -\
-    \ k];\n    }\n\n    // u \u304B\u3089 v \u3078 k \u56DE\u79FB\u52D5\u3057\u305F\
-    \u9802\u70B9\u3092\u8FD4\u3059\n    int jump(int u, int v, int k) const {\n  \
-    \      assert(prepared);\n        int w = lca(u, v);\n        if(T.depth[u] +\
-    \ T.depth[v] - T.depth[w] * 2 < k)\n            return -1;\n        if(T.depth[u]\
-    \ - T.depth[w] >= k)\n            return kth_parent(u, k);\n        return kth_parent(v,\
-    \ T.depth[u] + T.depth[v] - T.depth[w] * 2 - k);\n    }\n\n    // l=lca(u,v) \u3068\
-    \u3057\u305F\u6642\u3001[u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\
-    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = std::vector<std::pair<int,\
-    \ int>>;\n    std::pair<path_t, path_t> path(int u, int v) const {\n        assert(prepared);\n\
-    \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
-    \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
-    \      path_v.emplace_back(id[v], id[u]);\n                else\n            \
-    \        path_u.emplace_back(id[u], id[v]);\n                break;\n        \
-    \    }\n            if (T.depth[head[u]] < T.depth[head[v]]) {\n             \
-    \   path_v.emplace_back(id[v], id[head[v]]);\n                v = T.parent(head[v]);\n\
-    \            } else {\n                path_u.emplace_back(id[u], id[head[u]]);\n\
-    \                u = T.parent(head[u]);\n            }\n        }\n        if\
-    \ (u == v)\n            path_u.emplace_back(id[u], id[u]);\n        return {path_u,\
-    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
-    \ int> subtree(int v) const {\n        assert(prepared);\n        return {id[v],\
-    \ id2[v]};\n    }\n};\n#line 2 \"library/graph/Graph.hpp\"\n\n#line 6 \"library/graph/Graph.hpp\"\
-    \n\nstruct Edge {\n    int from, to;\n    Edge() = default;\n    Edge(int from,\
+    - https://judge.yosupo.jp/problem/jump_on_tree
+  bundledCode: "#line 1 \"test/library-checker/Tree/JumpOnTree.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#include <bits/stdc++.h>\n\
+    \n#line 2 \"library/graph/Graph.hpp\"\n\n#line 6 \"library/graph/Graph.hpp\"\n\
+    \nstruct Edge {\n    int from, to;\n    Edge() = default;\n    Edge(int from,\
     \ int to) : from(from), to(to) {}\n    operator int() const { return to; }\n};\n\
     \nstruct Graph {\n    int n;\n    using edge_type = Edge;\n    std::vector<edge_type>\
     \ edges;\n\n  protected:\n    std::vector<int> in_deg;\n    bool prepared;\n \
@@ -132,31 +87,78 @@ data:
     \ que;\n        que.push(root);\n        while (que.size()) {\n            int\
     \ p = que.front();\n            que.pop();\n            BFS.push_back(p);\n  \
     \          for (const auto &e : son(p))\n                que.push(e.to);\n   \
-    \     }\n    }\n};\n#line 6 \"test/library-checker/Tree/LowestCommonAncestor.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n    Tree t(n);\n   \
-    \ t.scan_root(0);\n    HLD hld(t);\n    hld.build();\n    while (q--) {\n    \
-    \    int u, v;\n        std::cin >> u >> v;\n        std::cout << hld.lca(u, v)\
-    \ << \"\\n\";\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include <bits/stdc++.h>\n\
-    \n#include \"library/tree/HLD.hpp\"\n#include \"library/tree/Tree.hpp\"\n\nint\
-    \ main() {\n    int n, q;\n    std::cin >> n >> q;\n    Tree t(n);\n    t.scan_root(0);\n\
-    \    HLD hld(t);\n    hld.build();\n    while (q--) {\n        int u, v;\n   \
-    \     std::cin >> u >> v;\n        std::cout << hld.lca(u, v) << \"\\n\";\n  \
-    \  }\n}"
+    \     }\n    }\n};\n#line 2 \"library/tree/HLD.hpp\"\ntemplate <typename TREE>\
+    \ struct HLD {\n    int n;\n    TREE T;\n    std::vector<int> sz, head, id, id2,\
+    \ rev_id;\n    bool prepared;\n    HLD(TREE T_)\n        : T(T_), n(T_.n), sz(n),\
+    \ head(n), id(n), id2(n), rev_id(n), prepared(false) {}\n    HLD() = default;\n\
+    \n  private:\n    void dfs_sz(int v) {\n        sz[v] = 1;\n        for (auto\
+    \ &e : T.son(v)) {\n            dfs_sz(e.to);\n            sz[v] += sz[e.to];\n\
+    \            if (sz[e.to] > sz[T.son(v)[0].to])\n                std::swap(e,\
+    \ T.son(v)[0]);\n        }\n    }\n    void dfs_hld(int v, int &k) {\n       \
+    \ id[v] = k++;\n        rev_id[id[v]] = v;\n        for (int i = 0; i < T.son(v).size();\
+    \ i++) {\n            int to = T.son(v)[i];\n            head[to] = (i ? to :\
+    \ head[v]);\n            dfs_hld(to, k);\n        }\n        id2[v] = k;\n   \
+    \ }\n\n  public:\n    std::vector<int> build(int r = 0) {\n        assert(!prepared);\n\
+    \        prepared = true;\n        if (~T.root)\n            assert(T.root ==\
+    \ r);\n        else\n            T.build(r);\n        head[r] = r;\n        dfs_sz(r);\n\
+    \        int k = 0;\n        dfs_hld(r, k);\n        return id;\n    }\n\n   \
+    \ int lca(int u, int v) const {\n        assert(prepared);\n        while (head[u]\
+    \ != head[v])\n            if (T.depth[head[u]] > T.depth[head[v]])\n        \
+    \        u = T.parent(head[u]);\n            else\n                v = T.parent(head[v]);\n\
+    \        return (T.depth[u] < T.depth[v] ? u : v);\n    }\n    int distance(int\
+    \ u, int v) const {\n        int w = lca(u, v);\n        return T.depth[u] + T.depth[v]\
+    \ - T.depth[w] * 2;\n    }\n\n    // v \u306E k \u500B\u4E0A\u306E\u9802\u70B9\
+    \u3092\u8FD4\u3059\n    int kth_parent(int v, int k) const {\n        assert(prepared);\n\
+    \        if(T.depth[v] < k)\n            return -1;\n        while(T.depth[v]\
+    \ - T.depth[head[v]] < k){\n            k -= T.depth[v] - T.depth[head[v]] + 1;\n\
+    \            v = T.parent(head[v]);\n        }\n        return rev_id[id[v] -\
+    \ k];\n    }\n\n    // u \u304B\u3089 v \u3078 k \u56DE\u79FB\u52D5\u3057\u305F\
+    \u9802\u70B9\u3092\u8FD4\u3059\n    int jump(int u, int v, int k) const {\n  \
+    \      assert(prepared);\n        int w = lca(u, v);\n        if(T.depth[u] +\
+    \ T.depth[v] - T.depth[w] * 2 < k)\n            return -1;\n        if(T.depth[u]\
+    \ - T.depth[w] >= k)\n            return kth_parent(u, k);\n        return kth_parent(v,\
+    \ T.depth[u] + T.depth[v] - T.depth[w] * 2 - k);\n    }\n\n    // l=lca(u,v) \u3068\
+    \u3057\u305F\u6642\u3001[u,l] \u30D1\u30B9\u3068 [v,l] \u30D1\u30B9 \u3092\u9589\
+    \u533A\u9593\u306E\u7D44\u307F\u3067\u8FD4\u3059\n    using path_t = std::vector<std::pair<int,\
+    \ int>>;\n    std::pair<path_t, path_t> path(int u, int v) const {\n        assert(prepared);\n\
+    \        path_t path_u, path_v;\n        while (u != v) {\n            if (head[u]\
+    \ == head[v]) {\n                if (T.depth[u] < T.depth[v])\n              \
+    \      path_v.emplace_back(id[v], id[u]);\n                else\n            \
+    \        path_u.emplace_back(id[u], id[v]);\n                break;\n        \
+    \    }\n            if (T.depth[head[u]] < T.depth[head[v]]) {\n             \
+    \   path_v.emplace_back(id[v], id[head[v]]);\n                v = T.parent(head[v]);\n\
+    \            } else {\n                path_u.emplace_back(id[u], id[head[u]]);\n\
+    \                u = T.parent(head[u]);\n            }\n        }\n        if\
+    \ (u == v)\n            path_u.emplace_back(id[u], id[u]);\n        return {path_u,\
+    \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
+    \ int> subtree(int v) const {\n        assert(prepared);\n        return {id[v],\
+    \ id2[v]};\n    }\n};\n#line 6 \"test/library-checker/Tree/JumpOnTree.test.cpp\"\
+    \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
+    \n    int n;\n    std::cin >> n;\n    Tree T(n);\n    T.scan(0);\n\n    HLD hld(T);\n\
+    \    hld.build();\n\n    int q;\n    std::cin >> q;\n    while(q--){\n       \
+    \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
+    \ v, k) << \"\\n\";\n    }\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#include\
+    \ <bits/stdc++.h>\n\n#include \"library/tree/Tree.hpp\"\n#include \"library/tree/HLD.hpp\"\
+    \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
+    \n    int n;\n    std::cin >> n;\n    Tree T(n);\n    T.scan(0);\n\n    HLD hld(T);\n\
+    \    hld.build();\n\n    int q;\n    std::cin >> q;\n    while(q--){\n       \
+    \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
+    \ v, k) << \"\\n\";\n    }"
   dependsOn:
-  - library/tree/HLD.hpp
   - library/tree/Tree.hpp
   - library/graph/Graph.hpp
+  - library/tree/HLD.hpp
   isVerificationFile: true
-  path: test/library-checker/Tree/LowestCommonAncestor.test.cpp
+  path: test/library-checker/Tree/JumpOnTree.test.cpp
   requiredBy: []
   timestamp: '2025-05-29 20:57:39+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/library-checker/Tree/LowestCommonAncestor.test.cpp
+documentation_of: test/library-checker/Tree/JumpOnTree.test.cpp
 layout: document
 redirect_from:
-- /verify/test/library-checker/Tree/LowestCommonAncestor.test.cpp
-- /verify/test/library-checker/Tree/LowestCommonAncestor.test.cpp.html
-title: test/library-checker/Tree/LowestCommonAncestor.test.cpp
+- /verify/test/library-checker/Tree/JumpOnTree.test.cpp
+- /verify/test/library-checker/Tree/JumpOnTree.test.cpp.html
+title: test/library-checker/Tree/JumpOnTree.test.cpp
 ---
