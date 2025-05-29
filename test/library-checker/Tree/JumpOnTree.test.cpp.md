@@ -137,14 +137,14 @@ data:
     \n    int n;\n    std::cin >> n;\n    Tree T(n);\n    T.scan(0);\n\n    HLD hld(T);\n\
     \    hld.build();\n\n    int q;\n    std::cin >> q;\n    while(q--){\n       \
     \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
-    \ v, k) << \"\\n\";\n    }\n"
+    \ v, k) << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#include\
     \ <bits/stdc++.h>\n\n#include \"library/tree/Tree.hpp\"\n#include \"library/tree/HLD.hpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n;\n    std::cin >> n;\n    Tree T(n);\n    T.scan(0);\n\n    HLD hld(T);\n\
     \    hld.build();\n\n    int q;\n    std::cin >> q;\n    while(q--){\n       \
     \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
-    \ v, k) << \"\\n\";\n    }"
+    \ v, k) << \"\\n\";\n    }\n}"
   dependsOn:
   - library/tree/Tree.hpp
   - library/graph/Graph.hpp
@@ -152,7 +152,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/JumpOnTree.test.cpp
   requiredBy: []
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/JumpOnTree.test.cpp

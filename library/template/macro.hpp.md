@@ -194,9 +194,9 @@ data:
   isVerificationFile: false
   path: library/template/macro.hpp
   requiredBy:
-  - library/template/util_func.hpp
   - library/template/input.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  - library/template/util_func.hpp
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/macro.hpp

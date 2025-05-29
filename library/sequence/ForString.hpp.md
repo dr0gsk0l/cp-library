@@ -87,13 +87,13 @@ data:
   - library/sequence/Trie.hpp
   - library/sequence/RollingHash.hpp
   - library/sequence/AhoCorasick.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/430.test.cpp
-  - test/yukicoder/430_2.test.cpp
   - test/AOJ/2212.test.cpp
   - test/AOJ/ALDS1_14_B.test.cpp
+  - test/yukicoder/430_2.test.cpp
+  - test/yukicoder/430.test.cpp
 documentation_of: library/sequence/ForString.hpp
 layout: document
 redirect_from:

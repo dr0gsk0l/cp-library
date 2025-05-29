@@ -219,7 +219,7 @@ data:
   path: library/flow/MCF.hpp
   requiredBy:
   - library/graph/matching/WeightedBipartiteMatching.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/AssignmentProblem.test.cpp

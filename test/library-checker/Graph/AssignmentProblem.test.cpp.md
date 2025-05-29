@@ -186,7 +186,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Graph/AssignmentProblem.test.cpp
   requiredBy: []
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/AssignmentProblem.test.cpp

@@ -29,7 +29,7 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Xor.hpp
   requiredBy: []
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1420.test.cpp

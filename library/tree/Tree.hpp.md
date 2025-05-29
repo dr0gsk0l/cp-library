@@ -144,19 +144,19 @@ data:
   requiredBy:
   - library/tree/EdgeVertex.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   - test/library-checker/Tree/JumpOnTree.test.cpp
-  - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/library-checker/Tree/LowestCommonAncestor.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
+  - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/AOJ/GRL_5_E.test.cpp
   - test/yukicoder/1038.test.cpp
   - test/yukicoder/650.test.cpp
-  - test/AOJ/GRL_5_E.test.cpp
 documentation_of: library/tree/Tree.hpp
 layout: document
 redirect_from:

@@ -78,7 +78,7 @@ data:
   path: library/mod/Modint61.hpp
   requiredBy:
   - library/sequence/RollingHash.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

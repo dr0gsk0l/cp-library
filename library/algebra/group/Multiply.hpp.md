@@ -35,11 +35,11 @@ data:
   isVerificationFile: false
   path: library/algebra/group/Multiply.hpp
   requiredBy: []
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/650.test.cpp
   - test/AOJ/2971.test.cpp
+  - test/yukicoder/650.test.cpp
 documentation_of: library/algebra/group/Multiply.hpp
 layout: document
 redirect_from:

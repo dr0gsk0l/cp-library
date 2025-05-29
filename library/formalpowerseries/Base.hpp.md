@@ -22,11 +22,26 @@ data:
     title: library/formalpowerseries/Sqrt.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/Composition.test.cpp
+    title: test/library-checker/Polynomial/Composition.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/Exp.test.cpp
+    title: test/library-checker/Polynomial/Exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/Inv.test.cpp
+    title: test/library-checker/Polynomial/Inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/Log.test.cpp
+    title: test/library-checker/Polynomial/Log.test.cpp
   - icon: ':x:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/Polynomial/Pow.test.cpp
+    title: test/library-checker/Polynomial/Pow.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
     title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
@@ -264,19 +279,24 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/Base.hpp
   requiredBy:
-  - library/formalpowerseries/MultipointEvaluation.hpp
-  - library/formalpowerseries/ComposeEXP.hpp
-  - library/formalpowerseries/DivMod.hpp
-  - library/formalpowerseries/RationalSum.hpp
   - library/formalpowerseries/Sqrt.hpp
+  - library/formalpowerseries/DivMod.hpp
+  - library/formalpowerseries/ComposeEXP.hpp
+  - library/formalpowerseries/MultipointEvaluation.hpp
   - library/formalpowerseries/Prod.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  - library/formalpowerseries/RationalSum.hpp
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/Polynomial/TaylorShift.test.cpp
-  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-  - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
+  - test/library-checker/Polynomial/Composition.test.cpp
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
+  - test/library-checker/Polynomial/Pow.test.cpp
+  - test/library-checker/Polynomial/Log.test.cpp
+  - test/library-checker/Polynomial/TaylorShift.test.cpp
+  - test/library-checker/Polynomial/Inv.test.cpp
+  - test/library-checker/Polynomial/Exp.test.cpp
+  - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
 documentation_of: library/formalpowerseries/Base.hpp
 layout: document
 redirect_from:

@@ -730,7 +730,7 @@ data:
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
     - icon: ':heavy_check_mark:'
@@ -739,19 +739,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
       title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Exp.test.cpp
       title: test/library-checker/Polynomial/Exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Inv.test.cpp
       title: test/library-checker/Polynomial/Inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
     - icon: ':x:'
       path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
       title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Pow.test.cpp
       title: test/library-checker/Polynomial/Pow.test.cpp
     - icon: ':heavy_check_mark:'

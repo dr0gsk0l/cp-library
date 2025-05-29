@@ -66,12 +66,12 @@ data:
   isVerificationFile: false
   path: library/segtree/DualSegmentTree.hpp
   requiredBy: []
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1038.test.cpp
   - test/AOJ/DSL_2_D.test.cpp
   - test/AOJ/DSL_2_E.test.cpp
+  - test/yukicoder/1038.test.cpp
 documentation_of: library/segtree/DualSegmentTree.hpp
 layout: document
 redirect_from:

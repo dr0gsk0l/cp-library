@@ -25,9 +25,9 @@ data:
   isVerificationFile: false
   path: library/math/XorShift.hpp
   requiredBy:
-  - library/datastructure/binary_search_tree/ImplicitTreap.hpp
   - library/datastructure/binary_search_tree/Treap.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  - library/datastructure/binary_search_tree/ImplicitTreap.hpp
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/XorShift.hpp

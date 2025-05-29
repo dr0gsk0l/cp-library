@@ -151,11 +151,11 @@ data:
   path: library/formalpowerseries/DivMod.hpp
   requiredBy:
   - library/formalpowerseries/MultipointEvaluation.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
   - test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
+  - test/library-checker/Polynomial/MultipointEvaluation.test.cpp
 documentation_of: library/formalpowerseries/DivMod.hpp
 layout: document
 redirect_from:

@@ -45,14 +45,14 @@ data:
   isVerificationFile: false
   path: library/template/base.hpp
   requiredBy:
-  - library/template/macro.hpp
-  - library/template/original_ostream.hpp
-  - library/template/util_func.hpp
-  - library/template/input.hpp
   - library/template/type.hpp
-  - library/template/original_istream.hpp
+  - library/template/input.hpp
+  - library/template/original_ostream.hpp
   - library/template/output.hpp
-  timestamp: '2025-05-29 20:57:39+09:00'
+  - library/template/original_istream.hpp
+  - library/template/util_func.hpp
+  - library/template/macro.hpp
+  timestamp: '2025-05-29 22:07:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/base.hpp
