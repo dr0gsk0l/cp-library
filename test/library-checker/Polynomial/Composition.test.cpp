@@ -2,7 +2,7 @@
     "https://judge.yosupo.jp/problem/composition_of_formal_power_series"
 #include <bits/stdc++.h>
 
-#include <library/formalpowerseries/Base.cpp>
+#include "library/formalpowerseries/Base.hpp"
 
 #include <atcoder/convolution>
 #include <atcoder/modint>

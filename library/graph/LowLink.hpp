@@ -3,7 +3,7 @@
 #include <utility>
 #include <vector>
 
-#include "graph/Graph.hpp"
+#include "library/graph/Graph.hpp"
 
 class LowLink {
     Graph g;
