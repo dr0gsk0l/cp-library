@@ -2,10 +2,10 @@
 template <typename TREE> struct HLD {
     int n;
     TREE T;
-    std::vector<int> sz, head, id, id2;
+    std::vector<int> sz, head, id, id2, rev_id;
     bool prepared;
     HLD(TREE T_)
-        : T(T_), n(T_.n), sz(n), head(n), id(n), id2(n), prepared(false) {}
+        : T(T_), n(T_.n), sz(n), head(n), id(n), id2(n), rev_id(n), prepared(false) {}
     HLD() = default;
 
   private:
@@ -20,6 +20,7 @@ template <typename TREE> struct HLD {
     }
     void dfs_hld(int v, int &k) {
         id[v] = k++;
+        rev_id[id[v]] = v;
         for (int i = 0; i < T.son(v).size(); i++) {
             int to = T.son(v)[i];
             head[to] = (i ? to : head[v]);
@@ -55,6 +56,29 @@ template <typename TREE> struct HLD {
     int distance(int u, int v) const {
         int w = lca(u, v);
         return T.depth[u] + T.depth[v] - T.depth[w] * 2;
+    }
+
+    // v の k 個上の頂点を返す
+    int kth_parent(int v, int k) const {
+        assert(prepared);
+        if(T.depth[v] < k)
+            return -1;
+        while(T.depth[v] - T.depth[head[v]] < k){
+            k -= T.depth[v] - T.depth[head[v]] + 1;
+            v = T.parent(head[v]);
+        }
+        return rev_id[id[v] - k];
+    }
+
+    // u から v へ k 回移動した頂点を返す
+    int jump(int u, int v, int k) const {
+        assert(prepared);
+        int w = lca(u, v);
+        if(T.depth[u] + T.depth[v] - T.depth[w] * 2 < k)
+            return -1;
+        if(T.depth[u] - T.depth[w] >= k)
+            return kth_parent(u, k);
+        return kth_parent(v, T.depth[u] + T.depth[v] - T.depth[w] * 2 - k);
     }
 
     // l=lca(u,v) とした時、[u,l] パスと [v,l] パス を閉区間の組みで返す
