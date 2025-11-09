@@ -8,6 +8,10 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3]
+        total_shards: [4]
 
     steps:
     - uses: actions/checkout@v2
@@ -34,7 +38,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
         GH_PAT: ${{ secrets.GH_PAT }}
-      run: oj-verify all --timeout 100000
+      run: oj-verify all --timeout 100000 --shard ${{ matrix.shard }} --total-shards ${{ matrix.total_shards }}
 
     # - name: Run yukicoder
     #   env:
