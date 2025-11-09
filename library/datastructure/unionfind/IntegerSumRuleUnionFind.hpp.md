@@ -98,7 +98,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/IntegerSumRuleUnionFind.hpp
   requiredBy: []
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1502.test.cpp

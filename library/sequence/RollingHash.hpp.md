@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: library/sequence/RollingHash.hpp
   requiredBy: []
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

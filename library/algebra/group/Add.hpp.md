@@ -114,7 +114,7 @@ data:
   - library/math/FactorialNumberSystem.hpp
   - library/sequence/AhoCorasick.hpp
   - library/sequence/Trie.hpp
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRangeSum.test.cpp

@@ -118,7 +118,7 @@ data:
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/log.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/functions/differential.hpp

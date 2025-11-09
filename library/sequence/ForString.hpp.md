@@ -87,7 +87,7 @@ data:
   - library/sequence/AhoCorasick.hpp
   - library/sequence/Trie.hpp
   - library/sequence/RollingHash.hpp
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

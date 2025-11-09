@@ -120,7 +120,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/InsertConvexHullTrick.hpp
   requiredBy: []
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/linearalgebra/InsertConvexHullTrick.hpp

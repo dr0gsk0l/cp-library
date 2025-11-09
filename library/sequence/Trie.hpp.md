@@ -149,7 +149,7 @@ data:
   path: library/sequence/Trie.hpp
   requiredBy:
   - library/sequence/AhoCorasick.hpp
-  timestamp: '2025-11-09 20:16:41+09:00'
+  timestamp: '2025-11-09 21:16:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2212.test.cpp
