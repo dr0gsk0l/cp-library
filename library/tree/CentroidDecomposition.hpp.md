@@ -86,12 +86,12 @@ data:
   isVerificationFile: false
   path: library/tree/CentroidDecomposition.hpp
   requiredBy: []
-  timestamp: '2025-05-29 22:07:03+09:00'
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - test/yukicoder/1002.test.cpp
   - test/yukicoder/1038.test.cpp
+  - test/yukicoder/1002.test.cpp
 documentation_of: library/tree/CentroidDecomposition.hpp
 layout: document
 redirect_from:

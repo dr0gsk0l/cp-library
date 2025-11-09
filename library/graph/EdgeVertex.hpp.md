@@ -83,7 +83,7 @@ data:
   isVerificationFile: false
   path: library/graph/EdgeVertex.hpp
   requiredBy: []
-  timestamp: '2025-05-29 22:07:03+09:00'
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/EdgeVertex.hpp

@@ -4,7 +4,13 @@ data:
   - icon: ':question:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: library/formalpowerseries/Sqrt.hpp
+    title: library/formalpowerseries/Sqrt.hpp
+  - icon: ':warning:'
+    path: library/math/ModularSqrt.hpp
+    title: library/math/ModularSqrt.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/AOJ/2971.test.cpp
@@ -132,22 +138,24 @@ data:
   - library/math/ExtraGCD.hpp
   isVerificationFile: false
   path: library/mod/Modint.hpp
-  requiredBy: []
-  timestamp: '2025-05-29 22:07:03+09:00'
+  requiredBy:
+  - library/formalpowerseries/Sqrt.hpp
+  - library/math/ModularSqrt.hpp
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
+  - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
   - test/library-checker/Convolution/SubsetConvolution.test.cpp
-  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
-  - test/library-checker/Polynomial/Convolution.test.cpp
-  - test/library-checker/New/NumberOfSubsequence.test.cpp
+  - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/library-checker/Matrix/Det.test.cpp
   - test/library-checker/Matrix/Product.test.cpp
   - test/library-checker/Matrix/Inverse.test.cpp
-  - test/library-checker/Matrix/Det.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
+  - test/library-checker/New/NumberOfSubsequence.test.cpp
+  - test/library-checker/Polynomial/Convolution.test.cpp
   - test/AOJ/2971.test.cpp
   - test/yukicoder/117.test.cpp
   - test/yukicoder/1502.test.cpp

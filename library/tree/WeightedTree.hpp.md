@@ -136,15 +136,15 @@ data:
   isVerificationFile: false
   path: library/tree/WeightedTree.hpp
   requiredBy:
-  - library/tree/AuxiliaryTree.hpp
   - library/tree/CartesianTree.hpp
-  timestamp: '2025-05-29 22:07:03+09:00'
+  - library/tree/AuxiliaryTree.hpp
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp
-  - test/AOJ/GRL_5_A.test.cpp
-  - test/AOJ/DPL_3_C.test.cpp
   - test/AOJ/DPL_3_B.test.cpp
+  - test/AOJ/DPL_3_C.test.cpp
+  - test/AOJ/GRL_5_A.test.cpp
   - test/yukicoder/1002.test.cpp
 documentation_of: library/tree/WeightedTree.hpp
 layout: document

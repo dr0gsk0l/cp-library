@@ -33,11 +33,11 @@ data:
   isVerificationFile: false
   path: library/datastructure/CumulativeSum.hpp
   requiredBy: []
-  timestamp: '2025-05-29 22:07:03+09:00'
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/DataStructure/StaticRangeSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/StaticRangeSum.test.cpp
 documentation_of: library/datastructure/CumulativeSum.hpp
 layout: document
 redirect_from:

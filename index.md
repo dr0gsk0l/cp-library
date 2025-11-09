@@ -206,19 +206,19 @@ data:
       title: library/flow/NondecreasingMCF.hpp
   - name: library/formalpowerseries
     pages:
-    - icon: ':question:'
+    - icon: ':x:'
       path: library/formalpowerseries/Base.hpp
       title: library/formalpowerseries/Base.hpp
     - icon: ':warning:'
       path: library/formalpowerseries/ComposeEXP.hpp
       title: library/formalpowerseries/ComposeEXP.hpp
-    - icon: ':question:'
+    - icon: ':x:'
       path: library/formalpowerseries/DivMod.hpp
       title: library/formalpowerseries/DivMod.hpp
     - icon: ':x:'
       path: library/formalpowerseries/MultipointEvaluation.hpp
       title: library/formalpowerseries/MultipointEvaluation.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/formalpowerseries/Prod.hpp
       title: library/formalpowerseries/Prod.hpp
     - icon: ':warning:'
@@ -227,6 +227,29 @@ data:
     - icon: ':warning:'
       path: library/formalpowerseries/Sqrt.hpp
       title: library/formalpowerseries/Sqrt.hpp
+  - name: library/formalpowerseries/functions
+    pages:
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/composition.hpp
+      title: library/formalpowerseries/functions/composition.hpp
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/differential.hpp
+      title: library/formalpowerseries/functions/differential.hpp
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/exp.hpp
+      title: library/formalpowerseries/functions/exp.hpp
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/integral.hpp
+      title: library/formalpowerseries/functions/integral.hpp
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/log.hpp
+      title: library/formalpowerseries/functions/log.hpp
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/pow.hpp
+      title: library/formalpowerseries/functions/pow.hpp
+    - icon: ':warning:'
+      path: library/formalpowerseries/functions/taylor_shift.hpp
+      title: library/formalpowerseries/functions/taylor_shift.hpp
   - name: library/geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -349,6 +372,9 @@ data:
     - icon: ':warning:'
       path: library/math/Fraction.hpp
       title: library/math/Fraction.hpp
+    - icon: ':warning:'
+      path: library/math/ModularSqrt.hpp
+      title: library/math/ModularSqrt.hpp
     - icon: ':warning:'
       path: library/math/Quotient.hpp
       title: library/math/Quotient.hpp
@@ -530,6 +556,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/util/Subsequence.hpp
       title: library/util/Subsequence.hpp
+    - icon: ':x:'
+      path: library/util/Valarray.hpp
+      title: library/util/Valarray.hpp
     - icon: ':warning:'
       path: library/util/template.hpp
       title: library/util/template.hpp
@@ -730,34 +759,34 @@ data:
       title: test/library-checker/New/NumberOfSubsequence.test.cpp
   - name: test/library-checker/Polynomial
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Composition.test.cpp
       title: test/library-checker/Polynomial/Composition.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
       title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Exp.test.cpp
       title: test/library-checker/Polynomial/Exp.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Inv.test.cpp
       title: test/library-checker/Polynomial/Inv.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
     - icon: ':x:'
       path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
       title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/Pow.test.cpp
       title: test/library-checker/Polynomial/Pow.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
       title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/library-checker/Polynomial/TaylorShift.test.cpp
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
   - name: test/library-checker/SPS

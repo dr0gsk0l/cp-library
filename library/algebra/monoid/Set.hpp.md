@@ -46,12 +46,12 @@ data:
   requiredBy:
   - library/algebra/lazy/SetMin.hpp
   - library/algebra/lazy/SetSum.hpp
-  timestamp: '2025-05-29 22:07:03+09:00'
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/AOJ/DSL_2_I.test.cpp
   - test/AOJ/DSL_2_D.test.cpp
   - test/AOJ/DSL_2_F.test.cpp
+  - test/AOJ/DSL_2_I.test.cpp
 documentation_of: library/algebra/monoid/Set.hpp
 layout: document
 redirect_from:

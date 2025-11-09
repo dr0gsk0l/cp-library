@@ -121,16 +121,16 @@ data:
   isVerificationFile: false
   path: library/r2/XY.hpp
   requiredBy:
-  - library/geometry/Judge.hpp
-  - library/geometry/Base.hpp
-  - library/geometry/UtilFunction.hpp
   - library/r2/Projection.hpp
-  timestamp: '2025-05-29 22:07:03+09:00'
+  - library/geometry/Judge.hpp
+  - library/geometry/UtilFunction.hpp
+  - library/geometry/Base.hpp
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/library-checker/DataStructure/RectangleSum.test.cpp
-  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp
+  - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp
+  - test/library-checker/DataStructure/RectangleSum.test.cpp
   - test/AOJ/CGL_4_A.test.cpp
   - test/yukicoder/2012.test.cpp
 documentation_of: library/r2/XY.hpp

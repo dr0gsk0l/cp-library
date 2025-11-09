@@ -134,17 +134,17 @@ data:
   isVerificationFile: false
   path: library/tree/HLD.hpp
   requiredBy:
-  - library/tree/AuxiliaryTree.hpp
   - library/tree/TreeLazy.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2025-05-29 22:07:03+09:00'
+  - library/tree/AuxiliaryTree.hpp
+  timestamp: '2025-11-09 20:16:41+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/JumpOnTree.test.cpp
-  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
-  - test/library-checker/Tree/LowestCommonAncestor.test.cpp
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp
   - test/library-checker/Tree/vertex_add_subtree_sum.test.cpp
+  - test/library-checker/Tree/LowestCommonAncestor.test.cpp
+  - test/library-checker/Tree/vertex_set_path_composite.test.cpp
   - test/AOJ/GRL_5_E.test.cpp
   - test/yukicoder/650.test.cpp
 documentation_of: library/tree/HLD.hpp
