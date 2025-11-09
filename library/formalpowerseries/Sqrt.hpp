@@ -1,23 +1,44 @@
 #pragma once
 #include "library/formalpowerseries/Base.hpp"
-template <typename FPS> std::optional<FPS> sqrt(FPS f) {
-    f.shrink();
-    if (f.size() == 0)
-        return FPS(0);
-    int d;
-    for (d = 0; f[d] == 0; d++) {
-    }
-    if (d & 1)
-        return std::nullopt;
-    f >>= d;
-    FPS res { at }
-}
+#include "library/math/ModularSqrt.hpp"
+#include <optional>
 
-assert(size() and at(0) != 0);
-FPS res(1, at(0).inv());
-for (int n = 0; (1 << n) < SZ; n++) {
-    // mod[1<<n] → mod[1<<(n+1)]
-    res *= (2 - (res * pre(1 << (n + 1))).pre(1 << (n + 1)));
-    res.strict(1 << (n + 1));
+// Computes the square root of a formal power series f.
+// Returns std::nullopt if the square root does not exist.
+template <typename FPS> std::optional<FPS> sqrt(FPS f) {
+    using T = typename FPS::value_type;
+    f.shrink();
+    if (f.size() == 0) {
+        return FPS(0);
+    }
+
+    int d = 0;
+    while (d < f.size() && f[d] == 0) {
+        d++;
+    }
+    if (d == f.size()) {
+        return FPS(0);
+    }
+
+    if (d % 2 != 0) {
+        return std::nullopt;
+    }
+
+    f >>= d;
+
+    std::optional<T> s0 = mod_sqrt(f[0]);
+    if (!s0) {
+        return std::nullopt;
+    }
+
+    FPS res(1, *s0);
+    int n = 1;
+    constexpr int MX = FPS::max_size;
+    while (n < MX) {
+        n <<= 1;
+        res = (res + f.pre(n) * res.inv(n)) / 2;
+    }
+    res.strict(MX);
+    res <<= (d / 2);
+    return res;
 }
-return res.pre(SZ);
