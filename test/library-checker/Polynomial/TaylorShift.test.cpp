@@ -19,6 +19,7 @@ std::istream &operator>>(std::istream &is, mint &a) {
 }
 
 #include "library/formalpowerseries/Base.hpp"
+#include "library/formalpowerseries/functions/taylor_shift.hpp"
 using FPS = FormalPowerSeries<mint, 524288>;
 
 int main() {
@@ -30,7 +31,7 @@ int main() {
     FPS f(n);
     REP (i, n)
         std::cin >> f[i];
-    f.taylor_shift(c);
+    fps::taylor_shift(f, c);
     REP (i, n)
         std::cout << (i < f.size() ? f[i] : 0) << "\n "[i + 1 < n];
 }

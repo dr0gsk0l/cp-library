@@ -1,84 +1,81 @@
-template <typename T> struct Multiset : std::map<T, int> {
-    using std::map<T, int>::at;
-    using std::map<T, int>::size;
-    using std::map<T, int>::begin;
-    using std::map<T, int>::rbegin;
-    using std::map<T, int>::erase;
-    using std::map<T, int>::lower_bound;
-    using std::map<T, int>::upper_bound;
+template <typename T> class Multiset {
+    using u32 = std::uint32_t;
+    u32 size_;
 
-    int count(const T &a) const {
-        return (std::map<T, int>::count(a) ? at(a) : 0);
+  public:
+    std::map<T, u32> m;
+
+    Multiset() : size_(0) {}
+
+    void banpei() {
+        insert(std::numeric_limits<T>::max() / 2);
+        insert(std::numeric_limits<T>::min() / 2);
+        size_ -= 2;
     }
-    void insert(const T &a) { (*this)[a]++; }
-    void erase1(const T &a) {
-        if (std::map<T, int>::count(a) and !--at(a))
-            erase(a);
+
+    bool contains(const T &a) const { return m.contains(a); }
+    u32 count(const T &a) { return contains(a) ? m[a] : 0; }
+    u32 size() const { return size_; }
+    void clear() {
+        m.clear();
+        size_ = 0;
     }
-    void erase_k(const T &a, int k) {
-        if (std::map<T, int>::count(a))
+
+    void insert(const T &a, u32 k = 1) {
+        if (!k)
             return;
-        at(a) -= k;
-        if (at(a) <= 0)
-            erase(a);
+        m[a] += k;
+        size_ += k;
     }
 
-    T mn() const {
-        assert(size());
-        return begin()->first;
+    void erase(const T &a) {
+        size_ -= count(a);
+        m.erase(a);
     }
-    T mx() const {
-        assert(size());
-        return rbegin()->first;
+    void erase_k(const T &a, u32 k = 1) {
+        if (count(a) <= k) {
+            size_ -= count(a);
+            erase(a);
+        } else {
+            m[a] -= k;
+            size_ -= k;
+        }
     }
-    T pick_mn() { // ピクミン
-        T res = mn();
+
+    T min_value() const {
+        assert(size());
+        return m.begin()->first;
+    }
+    T max_value() const { // MaxValu
+        assert(size());
+        return m.rbegin()->first;
+    }
+
+    T pick_min() { // ピクミン
+        T res = min_value();
         erase1(res);
         return res;
     }
-    T pick_mx() {
-        T res = mx();
+    T pick_max() {
+        T res = max_value();
         erase1(res);
         return res;
     }
 
     T lt(const T &a) const {
-        assert(mn() < a);
-        if (mx() < a)
-            return mx();
-        return (--lower_bound(a))->first;
+        assert(min_value() < a);
+        return (--m.lower_bound(a))->first;
     }
     T leq(const T &a) const {
-        assert(mn() <= a);
-        if (mx() <= a)
-            return mx();
-        return (--upper_bound(a))->first;
+        assert(min_value() <= a);
+        return (--m.upper_bound(a))->first;
     }
     T gt(const T &a) const {
-        assert(mx() > a);
+        assert(max_value() > a);
         return upper_bound(a)->first;
     }
     T geq(const T &a) const {
-        assert(mx() >= a);
+        assert(max_value() >= a);
         return lower_bound(a)->first;
-    }
-
-    Multiset() = default;
-    Multiset(const std::vector<T> &v) {
-        for (const auto &p : v)
-            insert(p);
-    }
-
-    void scan(int n) {
-        while (n--) {
-            T a;
-            std::cin >> a;
-            insert(a);
-        }
-    }
-
-    void banpei() {
-        insert(std::numeric_limits<T>::max() / 2);
-        insert(std::numeric_limits<T>::min() / 2);
     }
 };

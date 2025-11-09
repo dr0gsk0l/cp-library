@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 
 #include "library/formalpowerseries/Base.hpp"
+#include "library/formalpowerseries/functions/pow.hpp"
 
 #include <atcoder/convolution>
 #include <atcoder/modint>
@@ -30,7 +31,7 @@ int main() {
     FPS f(n);
     for (int i = 0; i < n; i++)
         std::cin >> f[i];
-    f = f.pow(m);
+    f = fps::pow(f, m);
     for (int i = 0; i < n; i++)
         std::cout << (i < f.size() ? f[i] : 0) << "\n "[i + 1 < n];
 }

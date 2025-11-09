@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 
 #include "library/formalpowerseries/Base.hpp"
+#include "library/formalpowerseries/functions/composition.hpp"
 
 #include <atcoder/convolution>
 #include <atcoder/modint>
@@ -32,7 +33,7 @@ int main() {
         std::cin >> f[i];
     for (int i = 0; i < n; i++)
         std::cin >> g[i];
-    f = f(g);
+    f = fps::composition(f, g);
     for (int i = 0; i < n; i++)
         std::cout << f[i] << "\n "[i + 1 < n];
 }

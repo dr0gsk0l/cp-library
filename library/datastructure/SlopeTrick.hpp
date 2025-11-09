@@ -14,9 +14,6 @@ template <typename T> class SlopeTrick {
   public:
     T min_f;
     SlopeTrick() : add_l(0), add_r(0), min_f(0) {}
-    SlopeTrick(const std::vector<T> &l, const std::vector<T> &r, T min_f = 0)
-        : L(l.begin().l.end()), R(r.begin(), r.end()), min_f(min_f), add_l(0),
-          add_r(0) {}
 
     int size() const { return L.size() + R.size(); }
 

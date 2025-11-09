@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 
 #include "library/formalpowerseries/Base.hpp"
+#include "library/formalpowerseries/functions/log.hpp"
 
 #include <atcoder/convolution>
 #include <atcoder/modint>
@@ -29,7 +30,7 @@ int main() {
     FPS f(n);
     for (int i = 0; i < n; i++)
         std::cin >> f[i];
-    auto g = FPS::log(f);
+    auto g = fps::log(f);
     for (int i = 0; i < n; i++)
         std::cout << g[i] << "\n "[i + 1 < n];
 }

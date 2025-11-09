@@ -1,5 +1,5 @@
 #pragma once
-template <typename T> struct Fraction {
+template <std::integral T> struct Fraction {
     T num, den;
     Fraction(T n = 0, T d = 1) : num(n), den(d) {
         assert(den != 0);
@@ -26,21 +26,21 @@ template <typename T> struct Fraction {
     Fraction &operator-=(const Fraction &b) { return *this = (*this) - b; }
     Fraction &operator*=(const Fraction &b) { return *this = (*this) * b; }
     Fraction &operator/=(const Fraction &b) { return *this = (*this) / b; }
-    Fraction operator+(const T &c) const { return (*this) + Fraction(c, 1); }
-    Fraction operator-(const T &c) const { return (*this) - Fraction(c, 1); }
-    Fraction operator*(const T &c) const { return (*this) * Fraction(c, 1); }
-    Fraction operator/(const T &c) const { return (*this) / Fraction(c, 1); }
+    Fraction operator+(const T &c) const { return (*this) + Fraction(c); }
+    Fraction operator-(const T &c) const { return (*this) - Fraction(c); }
+    Fraction operator*(const T &c) const { return (*this) * Fraction(c); }
+    Fraction operator/(const T &c) const { return (*this) / Fraction(c); }
     friend Fraction operator+(const T &c, Fraction b) {
-        return Fraction(c, 1) + b;
+        return Fraction(c) + b;
     }
     friend Fraction operator-(const T &c, Fraction b) {
-        return Fraction(c, 1) - b;
+        return Fraction(c) - b;
     }
     friend Fraction operator*(const T &c, Fraction b) {
-        return Fraction(c, 1) * b;
+        return Fraction(c) * b;
     }
     friend Fraction operator/(const T &c, Fraction b) {
-        return Fraction(c, 1) / b;
+        return Fraction(c) / b;
     }
     Fraction &operator+=(const T &c) { return *this = (*this) + c; }
     Fraction &operator-=(const T &c) { return *this = (*this) - c; }
@@ -53,9 +53,8 @@ template <typename T> struct Fraction {
     Fraction operator+() const { return *this; }
     Fraction operator-() const { return Fraction(-num, den); }
 
-    static Fraction raw(T a) { return Fraction(a, 1); }
     Fraction pow(long long k) const {
-        Fraction res(1, 1), tmp(*this);
+        Fraction res = 1, tmp(*this);
         while (k) {
             if (k & 1)
                 res *= res;
