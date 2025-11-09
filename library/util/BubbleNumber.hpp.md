@@ -15,11 +15,11 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/InversionNumber.hpp\"\n#include <atcoder/fenwicktree>\n\
-    using namespace atcoder;\n\n#line 2 \"library/util/Compress.hpp\"\ntemplate <typename\
-    \ T, bool Sentinel = false> class Compress {\n    std::vector<T> v;\n    bool\
-    \ prepared;\n\n  public:\n    Compress() : prepared(false) {\n        if constexpr\
-    \ (Sentinel) {\n            static_assert(std::numeric_limits<T>::is_specialized,\n\
-    \                          \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
+    \n#line 2 \"library/util/Compress.hpp\"\ntemplate <typename T, bool Sentinel =\
+    \ false> class Compress {\n    std::vector<T> v;\n    bool prepared;\n\n  public:\n\
+    \    Compress() : prepared(false) {\n        if constexpr (Sentinel) {\n     \
+    \       static_assert(std::numeric_limits<T>::is_specialized,\n              \
+    \            \"cannot use Sentinel\");\n            v = {std::numeric_limits<T>::min(),\
     \ std::numeric_limits<T>::max()};\n        }\n    }\n    Compress(const std::vector<T>\
     \ &w) : v(w), prepared(false) {\n        if constexpr (Sentinel) {\n         \
     \   static_assert(std::numeric_limits<T>::is_specialized,\n                  \
@@ -47,8 +47,8 @@ data:
     \ const { return v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os,\
     \ const Compress &C) {\n        for (int i = 0; i < C.v.size(); i++)\n       \
     \     os << C.v[i] << \":\" << i << \" \";\n        return os;\n    }\n};\n#line\
-    \ 5 \"library/util/InversionNumber.hpp\"\n\ntemplate <typename T> long long inversion_number(const\
-    \ std::vector<T> &v) {\n    Compress cmp(v);\n    fenwick_tree<int> ft(cmp.size());\n\
+    \ 4 \"library/util/InversionNumber.hpp\"\n\ntemplate <typename T> long long inversion_number(const\
+    \ std::vector<T> &v) {\n    Compress cmp(v);\n    atcoder::fenwick_tree<int> ft(cmp.size());\n\
     \    long long res = 0;\n    for (int i = int(v.size()) - 1; i >= 0; i--) {\n\
     \        int j = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n\
     \    }\n    return res;\n}\n#line 3 \"library/util/BubbleNumber.hpp\"\ntemplate\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: false
   path: library/util/BubbleNumber.hpp
   requiredBy: []
-  timestamp: '2025-11-09 21:16:52+09:00'
+  timestamp: '2025-11-09 23:27:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/BubbleNumber.hpp

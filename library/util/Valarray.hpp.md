@@ -23,25 +23,25 @@ data:
   - icon: ':warning:'
     path: library/formalpowerseries/Sqrt.hpp
     title: library/formalpowerseries/Sqrt.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/composition.hpp
     title: library/formalpowerseries/functions/composition.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/integral.hpp
     title: library/formalpowerseries/functions/integral.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/taylor_shift.hpp
     title: library/formalpowerseries/functions/taylor_shift.hpp
   _extendedVerifiedWith:
@@ -129,7 +129,7 @@ data:
   - library/formalpowerseries/functions/pow.hpp
   - library/formalpowerseries/functions/integral.hpp
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2025-11-09 21:16:52+09:00'
+  timestamp: '2025-11-09 23:27:39+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp

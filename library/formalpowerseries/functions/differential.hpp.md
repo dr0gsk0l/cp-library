@@ -8,25 +8,40 @@ data:
     path: library/util/Valarray.hpp
     title: library/util/Valarray.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/composition.hpp
     title: library/formalpowerseries/functions/composition.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/taylor_shift.hpp
     title: library/formalpowerseries/functions/taylor_shift.hpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Composition.test.cpp
+    title: test/library-checker/Polynomial/Composition.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Exp.test.cpp
+    title: test/library-checker/Polynomial/Exp.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Log.test.cpp
+    title: test/library-checker/Polynomial/Log.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/Pow.test.cpp
+    title: test/library-checker/Polynomial/Pow.test.cpp
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/TaylorShift.test.cpp
+    title: test/library-checker/Polynomial/TaylorShift.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <vector>\n#include\
@@ -118,9 +133,14 @@ data:
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/log.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-09 21:16:52+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2025-11-09 23:27:39+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/library-checker/Polynomial/Log.test.cpp
+  - test/library-checker/Polynomial/TaylorShift.test.cpp
+  - test/library-checker/Polynomial/Exp.test.cpp
+  - test/library-checker/Polynomial/Pow.test.cpp
+  - test/library-checker/Polynomial/Composition.test.cpp
 documentation_of: library/formalpowerseries/functions/differential.hpp
 layout: document
 redirect_from:

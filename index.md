@@ -229,25 +229,25 @@ data:
       title: library/formalpowerseries/Sqrt.hpp
   - name: library/formalpowerseries/functions
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/composition.hpp
       title: library/formalpowerseries/functions/composition.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/differential.hpp
       title: library/formalpowerseries/functions/differential.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/exp.hpp
       title: library/formalpowerseries/functions/exp.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/integral.hpp
       title: library/formalpowerseries/functions/integral.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/log.hpp
       title: library/formalpowerseries/functions/log.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/pow.hpp
       title: library/formalpowerseries/functions/pow.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/formalpowerseries/functions/taylor_shift.hpp
       title: library/formalpowerseries/functions/taylor_shift.hpp
   - name: library/geometry

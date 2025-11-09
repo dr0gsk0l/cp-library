@@ -73,7 +73,7 @@ data:
   - library/template/input.hpp
   - library/template/output.hpp
   - library/template/original_ostream.hpp
-  timestamp: '2025-11-09 21:16:52+09:00'
+  timestamp: '2025-11-09 23:27:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/type.hpp

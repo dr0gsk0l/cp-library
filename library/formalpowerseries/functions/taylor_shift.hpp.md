@@ -4,26 +4,29 @@ data:
   - icon: ':x:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/integral.hpp
     title: library/formalpowerseries/functions/integral.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
   - icon: ':x:'
     path: library/util/Valarray.hpp
     title: library/util/Valarray.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/library-checker/Polynomial/TaylorShift.test.cpp
+    title: test/library-checker/Polynomial/TaylorShift.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <vector>\n#include\
@@ -143,9 +146,10 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/functions/taylor_shift.hpp
   requiredBy: []
-  timestamp: '2025-11-09 21:16:52+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2025-11-09 23:27:39+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/library-checker/Polynomial/TaylorShift.test.cpp
 documentation_of: library/formalpowerseries/functions/taylor_shift.hpp
 layout: document
 redirect_from:

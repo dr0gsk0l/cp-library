@@ -191,7 +191,7 @@ data:
   isVerificationFile: false
   path: library/tree/TreeLazy.hpp
   requiredBy: []
-  timestamp: '2025-11-09 21:16:52+09:00'
+  timestamp: '2025-11-09 23:27:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp

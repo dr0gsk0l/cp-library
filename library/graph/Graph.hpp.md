@@ -158,7 +158,7 @@ data:
   - library/tree/Tree.hpp
   - library/tree/EdgeVertex.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-11-09 21:16:52+09:00'
+  timestamp: '2025-11-09 23:27:39+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

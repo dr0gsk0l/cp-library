@@ -5,6 +5,15 @@ data:
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':x:'
+    path: library/formalpowerseries/functions/differential.hpp
+    title: library/formalpowerseries/functions/differential.hpp
+  - icon: ':x:'
+    path: library/formalpowerseries/functions/integral.hpp
+    title: library/formalpowerseries/functions/integral.hpp
+  - icon: ':x:'
+    path: library/formalpowerseries/functions/log.hpp
+    title: library/formalpowerseries/functions/log.hpp
+  - icon: ':x:'
     path: library/util/Valarray.hpp
     title: library/util/Valarray.hpp
   _extendedRequiredBy: []
@@ -85,33 +94,49 @@ data:
     \        strict(n);\n        return f_2;\n    }\n\n    T operator()(T a) const\
     \ {\n        T res = 0, b = 1;\n        for (size_t i = 0; i < size(); i++, b\
     \ *= a)\n            res += at(i) * b;\n        return res;\n    }\n};\n#line\
-    \ 5 \"test/library-checker/Polynomial/Log.test.cpp\"\n\n#include <atcoder/convolution>\n\
+    \ 3 \"library/formalpowerseries/functions/differential.hpp\"\n\nnamespace fps\
+    \ {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T, MX> differential(FormalPowerSeries<T,\
+    \ MX> f) {\n    if (f.size() <= 1) {\n        return FormalPowerSeries<T, MX>{};\n\
+    \    }\n    for (std::size_t i = 0; i < f.size() - 1; i++) {\n        f[i] = (i\
+    \ + 1) * f[i + 1];\n    }\n    f.pop_back();\n    return f;\n}\n\n} // namespace\
+    \ fps\n#line 3 \"library/formalpowerseries/functions/integral.hpp\"\n\nnamespace\
+    \ fps {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T, MX> integral(FormalPowerSeries<T,\
+    \ MX> f) {\n    if (f.size() < MX) {\n        f.resize(f.size() + 1);\n    }\n\
+    \    for (int i = f.size() - 1; i > 0; i--) {\n        f[i] = f[i - 1] / i;\n\
+    \    }\n    f[0] = 0;\n    return f;\n}\n\n} // namespace fps\n#line 5 \"library/formalpowerseries/functions/log.hpp\"\
+    \n\nnamespace fps {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T, MX>\
+    \ log(const FormalPowerSeries<T, MX> &f) {\n    assert(f.size() and f[0] == 1);\n\
+    \    return integral(differential(f) / f);\n}\n\n} // namespace fps\n#line 6 \"\
+    test/library-checker/Polynomial/Log.test.cpp\"\n\n#include <atcoder/convolution>\n\
     #include <atcoder/modint>\nusing namespace atcoder;\nusing mint = modint998244353;\n\
     std::ostream &operator<<(std::ostream &os, mint a) {\n    os << a.val();\n   \
     \ return os;\n}\nstd::istream &operator>>(std::istream &is, mint &a) {\n    long\
     \ long b;\n    is >> b;\n    a = b;\n    return is;\n}\n\nusing FPS = FormalPowerSeries<mint,\
     \ 500000>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n;\n    std::cin >> n;\n    FPS f(n);\n    for (int i = 0; i < n; i++)\n\
-    \        std::cin >> f[i];\n    auto g = FPS::log(f);\n    for (int i = 0; i <\
+    \        std::cin >> f[i];\n    auto g = fps::log(f);\n    for (int i = 0; i <\
     \ n; i++)\n        std::cout << g[i] << \"\\n \"[i + 1 < n];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/formalpowerseries/Base.hpp\"\n\
-    \n#include <atcoder/convolution>\n#include <atcoder/modint>\nusing namespace atcoder;\n\
-    using mint = modint998244353;\nstd::ostream &operator<<(std::ostream &os, mint\
-    \ a) {\n    os << a.val();\n    return os;\n}\nstd::istream &operator>>(std::istream\
-    \ &is, mint &a) {\n    long long b;\n    is >> b;\n    a = b;\n    return is;\n\
-    }\n\nusing FPS = FormalPowerSeries<mint, 500000>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n\n    int n;\n    std::cin >> n;\n    FPS f(n);\n\
-    \    for (int i = 0; i < n; i++)\n        std::cin >> f[i];\n    auto g = FPS::log(f);\n\
-    \    for (int i = 0; i < n; i++)\n        std::cout << g[i] << \"\\n \"[i + 1\
-    \ < n];\n}"
+    #include \"library/formalpowerseries/functions/log.hpp\"\n\n#include <atcoder/convolution>\n\
+    #include <atcoder/modint>\nusing namespace atcoder;\nusing mint = modint998244353;\n\
+    std::ostream &operator<<(std::ostream &os, mint a) {\n    os << a.val();\n   \
+    \ return os;\n}\nstd::istream &operator>>(std::istream &is, mint &a) {\n    long\
+    \ long b;\n    is >> b;\n    a = b;\n    return is;\n}\n\nusing FPS = FormalPowerSeries<mint,\
+    \ 500000>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
+    \n    int n;\n    std::cin >> n;\n    FPS f(n);\n    for (int i = 0; i < n; i++)\n\
+    \        std::cin >> f[i];\n    auto g = fps::log(f);\n    for (int i = 0; i <\
+    \ n; i++)\n        std::cout << g[i] << \"\\n \"[i + 1 < n];\n}"
   dependsOn:
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
+  - library/formalpowerseries/functions/log.hpp
+  - library/formalpowerseries/functions/differential.hpp
+  - library/formalpowerseries/functions/integral.hpp
   isVerificationFile: true
   path: test/library-checker/Polynomial/Log.test.cpp
   requiredBy: []
-  timestamp: '2025-11-09 21:16:52+09:00'
+  timestamp: '2025-11-09 23:27:39+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Log.test.cpp
