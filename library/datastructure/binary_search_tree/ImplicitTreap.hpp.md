@@ -124,7 +124,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/binary_search_tree/ImplicitTreap.hpp
   requiredBy: []
-  timestamp: '2025-11-10 09:08:40+09:00'
+  timestamp: '2025-11-10 10:09:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/binary_search_tree/ImplicitTreap.hpp

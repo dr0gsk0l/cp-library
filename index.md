@@ -206,7 +206,7 @@ data:
       title: library/flow/NondecreasingMCF.hpp
   - name: library/formalpowerseries
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/formalpowerseries/Base.hpp
       title: library/formalpowerseries/Base.hpp
     - icon: ':warning:'
@@ -218,7 +218,7 @@ data:
     - icon: ':x:'
       path: library/formalpowerseries/MultipointEvaluation.hpp
       title: library/formalpowerseries/MultipointEvaluation.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/Prod.hpp
       title: library/formalpowerseries/Prod.hpp
     - icon: ':warning:'
@@ -556,7 +556,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/util/Subsequence.hpp
       title: library/util/Subsequence.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/util/Valarray.hpp
       title: library/util/Valarray.hpp
     - icon: ':warning:'
@@ -783,7 +783,7 @@ data:
     - icon: ':x:'
       path: test/library-checker/Polynomial/Pow.test.cpp
       title: test/library-checker/Polynomial/Pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
       title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
     - icon: ':x:'

@@ -177,7 +177,7 @@ data:
   path: library/flow/Dinic.hpp
   requiredBy:
   - library/graph/matching/BipartiteMatching.hpp
-  timestamp: '2025-11-10 09:08:40+09:00'
+  timestamp: '2025-11-10 10:09:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

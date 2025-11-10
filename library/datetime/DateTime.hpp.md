@@ -106,7 +106,7 @@ data:
   isVerificationFile: false
   path: library/datetime/DateTime.hpp
   requiredBy: []
-  timestamp: '2025-11-10 09:08:40+09:00'
+  timestamp: '2025-11-10 10:09:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/2109.test.cpp

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/util/Valarray.hpp
     title: library/util/Valarray.hpp
   _extendedRequiredBy:
@@ -20,8 +20,8 @@ data:
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <functional>\n#include\
     \ <ranges>\n#include <vector>\n\ntemplate <typename T> struct Valarray : std::vector<T>\
     \ {\n    using std::vector<T>::vector; // \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\
-    \u30BF\u7D99\u627F\n    Valarray(const std::vector<T> &v) : std::vector<T>(std::from_range,\
-    \ v) {}\n\n  private:\n    template <typename Op>\n    Valarray &apply_inplace(const\
+    \u30BF\u7D99\u627F\n    Valarray(const std::vector<T> &v) : std::vector<T>(v.begin(),\
+    \ v.end()) {}\n\n  private:\n    template <typename Op>\n    Valarray &apply_inplace(const\
     \ Valarray &other, Op op) {\n        if (this->size() < other.size())\n      \
     \      this->resize(other.size(), T(0));\n\n        for (auto [a, b] : std::views::zip(*this,\
     \ other))\n            a = op(a, b);\n\n        return *this;\n    }\n\n  public:\n\
@@ -34,31 +34,31 @@ data:
     \ Valarray &b) { return a += b; }\n    friend Valarray operator-(Valarray a, const\
     \ Valarray &b) { return a -= b; }\n    friend Valarray operator*(Valarray a, const\
     \ Valarray &b) { return a *= b; }\n    friend Valarray operator/(Valarray a, const\
-    \ Valarray &b) { return a /= b; }\n};\n#line 3 \"library/formalpowerseries/Base.hpp\"\
-    \n\ntemplate <typename T, int MX> struct FormalPowerSeries : Valarray<T> {\n \
-    \   using FPS = FormalPowerSeries;\n    static constexpr int max_size = MX;\n\
-    \    using Valarray<T>::Valarray;\n    using Valarray<T>::size;\n    using Valarray<T>::resize;\n\
-    \    using Valarray<T>::at;\n    using Valarray<T>::begin;\n    using Valarray<T>::end;\n\
-    \    using Valarray<T>::back;\n    using Valarray<T>::pop_back;\n    using value_type\
-    \ = T;\n\n    void strict(int n) {\n        if (size() > n)\n            resize(n);\n\
-    \    }\n    void shrink() {\n        while (size() and back() == 0)\n        \
-    \    pop_back();\n    }\n\n    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const\
-    \ std::vector<T> &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n\
-    \    }\n\n    static FPS unit() { return {1}; }\n    static FPS x() { return {0,\
-    \ 1}; }\n#pragma region operator\n    FPS operator-() const {\n        FPS g =\
-    \ *this;\n        for (T &a : g)\n            a = -a;\n        return g;\n   \
-    \ }\n\n    FPS &operator+=(const T &a) {\n        if (!size())\n            resize(1);\n\
-    \        at(0) += a;\n        return *this;\n    }\n    FPS operator+(const T\
-    \ &a) const { return FPS(*this) += a; }\n    friend FPS operator+(const T &a,\
-    \ const FPS &f) { return f + a; }\n\n    FPS &operator-=(const T &a) {\n     \
-    \   if (!size())\n            resize(1);\n        at(0) -= a;\n        return\
-    \ *this;\n    }\n    FPS operator-(const T &a) { return FPS(*this) -= a; }\n \
-    \   friend FPS operator-(const T &a, const FPS &f) { return a + (-f); }\n\n  \
-    \  FPS operator*(const FPS &g) const { return FPS(convolution(*this, g)); }\n\
-    \    FPS &operator*=(const FPS &g) { return (*this) = (*this) * g; }\n\n    FPS\
-    \ &operator*=(const T &a) {\n        for (size_t i = 0; i < size(); i++)\n   \
-    \         at(i) *= a;\n        return *this;\n    }\n    FPS operator*(const T\
-    \ &a) const { return FPS(*this) *= a; }\n    friend FPS operator*(const T &a,\
+    \ Valarray &b) { return a /= b; }\n\n    Valarray operator-() const {\n      \
+    \  Valarray g = *this;\n        for (T &a : g)\n            a = -a;\n        return\
+    \ g;\n    }\n};\n#line 3 \"library/formalpowerseries/Base.hpp\"\n\ntemplate <typename\
+    \ T, int MX> struct FormalPowerSeries : Valarray<T> {\n    using FPS = FormalPowerSeries;\n\
+    \    static constexpr int max_size = MX;\n    using Valarray<T>::Valarray;\n \
+    \   using Valarray<T>::size;\n    using Valarray<T>::resize;\n    using Valarray<T>::at;\n\
+    \    using Valarray<T>::begin;\n    using Valarray<T>::end;\n    using Valarray<T>::back;\n\
+    \    using Valarray<T>::pop_back;\n    using value_type = T;\n\n    void strict(int\
+    \ n) {\n        if (size() > n)\n            resize(n);\n    }\n    void shrink()\
+    \ {\n        while (size() and back() == 0)\n            pop_back();\n    }\n\n\
+    \    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const std::vector<T>\
+    \ &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n    }\n\n  \
+    \  static FPS unit() { return {1}; }\n    static FPS x() { return {0, 1}; }\n\
+    #pragma region operator\n    FPS &operator+=(const T &a) {\n        if (!size())\n\
+    \            resize(1);\n        at(0) += a;\n        return *this;\n    }\n \
+    \   FPS operator+(const T &a) const { return FPS(*this) += a; }\n    friend FPS\
+    \ operator+(const T &a, const FPS &f) { return f + a; }\n\n    FPS &operator-=(const\
+    \ T &a) {\n        if (!size())\n            resize(1);\n        at(0) -= a;\n\
+    \        return *this;\n    }\n    FPS operator-(const T &a) { return FPS(*this)\
+    \ -= a; }\n    friend FPS operator-(const T &a, const FPS &f) { return a + (-f);\
+    \ }\n\n    FPS operator*(const FPS &g) const { return FPS(convolution(*this, g));\
+    \ }\n    FPS &operator*=(const FPS &g) { return (*this) = (*this) * g; }\n\n \
+    \   FPS &operator*=(const T &a) {\n        for (size_t i = 0; i < size(); i++)\n\
+    \            at(i) *= a;\n        return *this;\n    }\n    FPS operator*(const\
+    \ T &a) const { return FPS(*this) *= a; }\n    friend FPS operator*(const T &a,\
     \ const FPS &f) { return f * a; }\n\n    FPS operator/(const FPS &g) const { return\
     \ (*this) * g.inv(); }\n    FPS &operator/=(const FPS &g) { return (*this) = (*this)\
     \ / g; }\n\n    FPS &operator/=(const T &a) { return *this *= a.inv(); }\n   \
@@ -107,7 +107,7 @@ data:
   path: library/formalpowerseries/RationalSum.hpp
   requiredBy:
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2025-11-10 09:08:40+09:00'
+  timestamp: '2025-11-10 10:09:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/RationalSum.hpp

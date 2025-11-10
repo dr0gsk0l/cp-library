@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':warning:'
@@ -14,7 +14,7 @@ data:
   - icon: ':x:'
     path: library/formalpowerseries/MultipointEvaluation.hpp
     title: library/formalpowerseries/MultipointEvaluation.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/Prod.hpp
     title: library/formalpowerseries/Prod.hpp
   - icon: ':warning:'
@@ -44,6 +44,12 @@ data:
   - icon: ':x:'
     path: library/formalpowerseries/functions/taylor_shift.hpp
     title: library/formalpowerseries/functions/taylor_shift.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Base.hpp
+    title: library/setpowerseries/Base.hpp
+  - icon: ':heavy_check_mark:'
+    path: library/setpowerseries/Compose.hpp
+    title: library/setpowerseries/Compose.hpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/library-checker/Polynomial/Composition.test.cpp
@@ -66,22 +72,25 @@ data:
   - icon: ':x:'
     path: test/library-checker/Polynomial/Pow.test.cpp
     title: test/library-checker/Polynomial/Pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
     title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   - icon: ':x:'
     path: test/library-checker/Polynomial/TaylorShift.test.cpp
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
+    title: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <functional>\n#include\
     \ <ranges>\n#include <vector>\n\ntemplate <typename T> struct Valarray : std::vector<T>\
     \ {\n    using std::vector<T>::vector; // \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\
-    \u30BF\u7D99\u627F\n    Valarray(const std::vector<T> &v) : std::vector<T>(std::from_range,\
-    \ v) {}\n\n  private:\n    template <typename Op>\n    Valarray &apply_inplace(const\
+    \u30BF\u7D99\u627F\n    Valarray(const std::vector<T> &v) : std::vector<T>(v.begin(),\
+    \ v.end()) {}\n\n  private:\n    template <typename Op>\n    Valarray &apply_inplace(const\
     \ Valarray &other, Op op) {\n        if (this->size() < other.size())\n      \
     \      this->resize(other.size(), T(0));\n\n        for (auto [a, b] : std::views::zip(*this,\
     \ other))\n            a = op(a, b);\n\n        return *this;\n    }\n\n  public:\n\
@@ -94,11 +103,13 @@ data:
     \ Valarray &b) { return a += b; }\n    friend Valarray operator-(Valarray a, const\
     \ Valarray &b) { return a -= b; }\n    friend Valarray operator*(Valarray a, const\
     \ Valarray &b) { return a *= b; }\n    friend Valarray operator/(Valarray a, const\
-    \ Valarray &b) { return a /= b; }\n};\n"
+    \ Valarray &b) { return a /= b; }\n\n    Valarray operator-() const {\n      \
+    \  Valarray g = *this;\n        for (T &a : g)\n            a = -a;\n        return\
+    \ g;\n    }\n};\n"
   code: "#include <functional>\n#include <ranges>\n#include <vector>\n\ntemplate <typename\
     \ T> struct Valarray : std::vector<T> {\n    using std::vector<T>::vector; //\
     \ \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF\u7D99\u627F\n    Valarray(const std::vector<T>\
-    \ &v) : std::vector<T>(std::from_range, v) {}\n\n  private:\n    template <typename\
+    \ &v) : std::vector<T>(v.begin(), v.end()) {}\n\n  private:\n    template <typename\
     \ Op>\n    Valarray &apply_inplace(const Valarray &other, Op op) {\n        if\
     \ (this->size() < other.size())\n            this->resize(other.size(), T(0));\n\
     \n        for (auto [a, b] : std::views::zip(*this, other))\n            a = op(a,\
@@ -112,7 +123,8 @@ data:
     \ a += b; }\n    friend Valarray operator-(Valarray a, const Valarray &b) { return\
     \ a -= b; }\n    friend Valarray operator*(Valarray a, const Valarray &b) { return\
     \ a *= b; }\n    friend Valarray operator/(Valarray a, const Valarray &b) { return\
-    \ a /= b; }\n};"
+    \ a /= b; }\n\n    Valarray operator-() const {\n        Valarray g = *this;\n\
+    \        for (T &a : g)\n            a = -a;\n        return g;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/util/Valarray.hpp
@@ -131,9 +143,12 @@ data:
   - library/formalpowerseries/functions/pow.hpp
   - library/formalpowerseries/functions/integral.hpp
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2025-11-10 09:08:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  - library/setpowerseries/Base.hpp
+  - library/setpowerseries/Compose.hpp
+  timestamp: '2025-11-10 10:09:22+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   - test/library-checker/Polynomial/Log.test.cpp
   - test/library-checker/Polynomial/TaylorShift.test.cpp

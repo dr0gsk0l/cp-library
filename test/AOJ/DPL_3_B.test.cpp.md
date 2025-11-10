@@ -142,7 +142,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DPL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2025-11-10 09:08:40+09:00'
+  timestamp: '2025-11-10 10:09:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DPL_3_B.test.cpp

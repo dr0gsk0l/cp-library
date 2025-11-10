@@ -13,6 +13,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/setpowerseries/Compose.hpp
     title: library/setpowerseries/Compose.hpp
+  - icon: ':question:'
+    path: library/util/Valarray.hpp
+    title: library/util/Valarray.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -54,45 +57,53 @@ data:
     \ rb = RB[S];\n            RREP_(d, n + 1) {\n                ra[d] *= rb[0];\n\
     \                REP_(i, d) ra[d] += ra[i] * rb[d - i];\n            }\n     \
     \   }\n        return mobius(RA);\n    }\n};\n#undef REP_\n#undef RREP_\n#line\
-    \ 2 \"library/setpowerseries/Base.hpp\"\ntemplate <typename T> struct SetPowerSeries\
-    \ : std::vector<T> {\n    using SPS = SetPowerSeries;\n    using value_type =\
-    \ T;\n    using std::vector<T>::vector;\n    using std::vector<T>::resize;\n \
-    \   using std::vector<T>::at;\n    using std::vector<T>::size;\n\n    SetPowerSeries(const\
-    \ std::vector<T> &f) {\n        resize(f.size());\n        for (int i = 0; i <\
-    \ size(); i++)\n            at(i) = f[i];\n    }\n\n    SPS operator-() const\
-    \ {\n        SPS ret(*this);\n        for (auto &a : ret)\n            a = -a;\n\
-    \        return ret;\n    }\n\n    SPS &operator+=(const SPS &b) {\n        if\
-    \ (size() < b.size())\n            resize(b.size(), 0);\n        for (int i =\
-    \ 0; i < size(); i++)\n            at(i) += b[i];\n        return *this;\n   \
-    \ }\n    SPS operator+(const SPS &b) const { return SPS(*this) += b; }\n\n   \
-    \ SPS &operator-=(const SPS &b) {\n        if (size() < b.size())\n          \
-    \  resize(b.size(), 0);\n        for (int i = 0; i < size(); i++)\n          \
-    \  at(i) -= b[i];\n        return *this;\n    }\n    SPS operator-(const SPS &b)\
-    \ const { return SPS(*this) -= b; }\n\n    SPS operator*(const SPS &b) const {\n\
-    \        return SPS(BitwiseRanked::convolution<T>(*this, b));\n    }\n    SPS\
-    \ &operator*=(const SPS &b) { return (*this) = (*this) * b; }\n};\n#line 4 \"\
-    library/setpowerseries/Compose.hpp\"\n\ntemplate <typename SPS, typename T = typename\
-    \ SPS::value_type>\nSPS SPS_exp_comp(const std::vector<T> &f, const SPS &a) {\n\
-    \    int N = a.size();\n    int n = bitwise::log2(N);\n\n    std::vector<SPS>\
-    \ ret(n + 1);\n    for (int d = n; d >= 0; d--) {\n        ret[d].resize(1 <<\
-    \ (n - d));\n        ret[d][0] = f[d];\n        for (int m = 0; m < n - d; m++)\
-    \ {\n            // ret[d] \u306E [2^m, 2^{m+1}] \u3092\u6C42\u3081\u308B\n  \
-    \          SPS pre(ret[d + 1].begin(), ret[d + 1].begin() + (1 << m));\n     \
-    \       SPS a2(a.begin() + (1 << m), a.begin() + (1 << (m + 1)));\n          \
-    \  pre *= a2;\n            std::ranges::copy(pre, ret[d].begin() + (1 << m));\n\
-    \        }\n    }\n    return ret[0];\n}\n\n// sum_k f_k a^k\ntemplate <typename\
-    \ SPS, typename T = typename SPS::value_type>\nSPS SPS_composition(const std::vector<T>\
-    \ &f, SPS a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\n    std::vector<T>\
-    \ c_pow(f.size() + 1, 1);\n    for (int i = 1; i <= f.size(); i++)\n        c_pow[i]\
-    \ = c_pow[i - 1] * a[0];\n\n    std::vector<T> f2(n + 1, 0);\n    for (int i =\
-    \ 0; i < f.size(); i++) {\n        T now = f[i];\n        for (int k = 0; k <=\
-    \ std::min(i, n); k++) {\n            f2[k] += now * c_pow[i - k];\n         \
-    \   now *= i - k;\n        }\n    }\n    a[0] = 0;\n    return SPS_exp_comp(f2,\
-    \ a);\n}\n\ntemplate <typename SPS, typename T = typename SPS::value_type> SPS\
-    \ exp(SPS a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\n    SPS\
-    \ ret(N, 1);\n    for (int d = n - 1; d >= 0; d--) {\n        const int M = 1\
-    \ << (n - d - 1);\n        SPS pre(ret.begin(), ret.begin() + M);\n        SPS\
-    \ a2(a.begin() + M, a.begin() + 2 * M);\n        pre *= a2;\n        std::ranges::copy(pre,\
+    \ 2 \"library/util/Valarray.hpp\"\n#include <ranges>\n#line 4 \"library/util/Valarray.hpp\"\
+    \n\ntemplate <typename T> struct Valarray : std::vector<T> {\n    using std::vector<T>::vector;\
+    \ // \u30B3\u30F3\u30B9\u30C8\u30E9\u30AF\u30BF\u7D99\u627F\n    Valarray(const\
+    \ std::vector<T> &v) : std::vector<T>(v.begin(), v.end()) {}\n\n  private:\n \
+    \   template <typename Op>\n    Valarray &apply_inplace(const Valarray &other,\
+    \ Op op) {\n        if (this->size() < other.size())\n            this->resize(other.size(),\
+    \ T(0));\n\n        for (auto [a, b] : std::views::zip(*this, other))\n      \
+    \      a = op(a, b);\n\n        return *this;\n    }\n\n  public:\n    Valarray\
+    \ &operator+=(const Valarray &other) {\n        return apply_inplace(other, std::plus<>());\n\
+    \    }\n    Valarray &operator-=(const Valarray &other) {\n        return apply_inplace(other,\
+    \ std::minus<>());\n    }\n    Valarray &operator*=(const Valarray &other) {\n\
+    \        return apply_inplace(other, std::multiplies<>());\n    }\n    Valarray\
+    \ &operator/=(const Valarray &other) {\n        return apply_inplace(other, std::divides<>());\n\
+    \    }\n\n    friend Valarray operator+(Valarray a, const Valarray &b) { return\
+    \ a += b; }\n    friend Valarray operator-(Valarray a, const Valarray &b) { return\
+    \ a -= b; }\n    friend Valarray operator*(Valarray a, const Valarray &b) { return\
+    \ a *= b; }\n    friend Valarray operator/(Valarray a, const Valarray &b) { return\
+    \ a /= b; }\n\n    Valarray operator-() const {\n        Valarray g = *this;\n\
+    \        for (T &a : g)\n            a = -a;\n        return g;\n    }\n};\n#line\
+    \ 4 \"library/setpowerseries/Base.hpp\"\n\ntemplate <typename T> struct SetPowerSeries\
+    \ : Valarray<T> {\n    using SPS = SetPowerSeries;\n    using Valarray<T>::Valarray;\n\
+    \    using Valarray<T>::size;\n    using Valarray<T>::at;\n    using value_type\
+    \ = T;\n\n    SetPowerSeries(const std::vector<T> &f) : Valarray<T>(f) {}\n\n\
+    \    SPS operator*(const SPS &b) const {\n        return SPS(BitwiseRanked::convolution<T>(*this,\
+    \ b));\n    }\n    SPS &operator*=(const SPS &b) { return (*this) = (*this) *\
+    \ b; }\n};\n#line 4 \"library/setpowerseries/Compose.hpp\"\n\ntemplate <typename\
+    \ SPS, typename T = typename SPS::value_type>\nSPS SPS_exp_comp(const std::vector<T>\
+    \ &f, const SPS &a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\n\
+    \    std::vector<SPS> ret(n + 1);\n    for (int d = n; d >= 0; d--) {\n      \
+    \  ret[d].resize(1 << (n - d));\n        ret[d][0] = f[d];\n        for (int m\
+    \ = 0; m < n - d; m++) {\n            // ret[d] \u306E [2^m, 2^{m+1}] \u3092\u6C42\
+    \u3081\u308B\n            SPS pre(ret[d + 1].begin(), ret[d + 1].begin() + (1\
+    \ << m));\n            SPS a2(a.begin() + (1 << m), a.begin() + (1 << (m + 1)));\n\
+    \            pre *= a2;\n            std::ranges::copy(pre, ret[d].begin() + (1\
+    \ << m));\n        }\n    }\n    return ret[0];\n}\n\n// sum_k f_k a^k\ntemplate\
+    \ <typename SPS, typename T = typename SPS::value_type>\nSPS SPS_composition(const\
+    \ std::vector<T> &f, SPS a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\
+    \n    std::vector<T> c_pow(f.size() + 1, 1);\n    for (int i = 1; i <= f.size();\
+    \ i++)\n        c_pow[i] = c_pow[i - 1] * a[0];\n\n    std::vector<T> f2(n + 1,\
+    \ 0);\n    for (int i = 0; i < f.size(); i++) {\n        T now = f[i];\n     \
+    \   for (int k = 0; k <= std::min(i, n); k++) {\n            f2[k] += now * c_pow[i\
+    \ - k];\n            now *= i - k;\n        }\n    }\n    a[0] = 0;\n    return\
+    \ SPS_exp_comp(f2, a);\n}\n\ntemplate <typename SPS, typename T = typename SPS::value_type>\
+    \ SPS exp(SPS a) {\n    int N = a.size();\n    int n = bitwise::log2(N);\n\n \
+    \   SPS ret(N, 1);\n    for (int d = n - 1; d >= 0; d--) {\n        const int\
+    \ M = 1 << (n - d - 1);\n        SPS pre(ret.begin(), ret.begin() + M);\n    \
+    \    SPS a2(a.begin() + M, a.begin() + 2 * M);\n        pre *= a2;\n        std::ranges::copy(pre,\
     \ ret.begin() + M);\n    }\n    return ret;\n}\n\ntemplate <typename SPS, typename\
     \ T = typename SPS::value_type> SPS log(SPS a) {\n    int n = bitwise::log2(a.size());\n\
     \    assert((1 << n) == a.size() and a[0] == 1);\n    std::vector<T> lg(n + 1,\
@@ -119,10 +130,11 @@ data:
   - library/setpowerseries/Base.hpp
   - library/bitwise/Ranked.hpp
   - library/bitwise/Util.hpp
+  - library/util/Valarray.hpp
   isVerificationFile: true
   path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   requiredBy: []
-  timestamp: '2025-11-10 09:08:40+09:00'
+  timestamp: '2025-11-10 10:09:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
