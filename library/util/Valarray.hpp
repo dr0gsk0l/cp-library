@@ -1,9 +1,10 @@
-#include <vector>
 #include <functional>
 #include <ranges>
+#include <vector>
 
 template <typename T> struct Valarray : std::vector<T> {
     using std::vector<T>::vector; // コンストラクタ継承
+    Valarray(const std::vector<T> &v) : std::vector<T>(std::from_range, v) {}
 
   private:
     template <typename Op>

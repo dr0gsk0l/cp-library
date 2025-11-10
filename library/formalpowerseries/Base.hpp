@@ -62,13 +62,14 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
     FPS &operator*=(const FPS &g) { return (*this) = (*this) * g; }
 
     FPS &operator*=(const T &a) {
-        for (size_t i = 0; i < size(); i++) at(i) *= a;
+        for (size_t i = 0; i < size(); i++)
+            at(i) *= a;
         return *this;
     }
     FPS operator*(const T &a) const { return FPS(*this) *= a; }
     friend FPS operator*(const T &a, const FPS &f) { return f * a; }
 
-    FPS operator/(const FPS& g) const { return (*this) * g.inv(); }
+    FPS operator/(const FPS &g) const { return (*this) * g.inv(); }
     FPS &operator/=(const FPS &g) { return (*this) = (*this) / g; }
 
     FPS &operator/=(const T &a) { return *this *= a.inv(); }
