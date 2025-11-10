@@ -4,7 +4,7 @@
 
 template <typename T> struct Valarray : std::vector<T> {
     using std::vector<T>::vector; // コンストラクタ継承
-    Valarray(const std::vector<T> &v) : std::vector<T>(std::from_range, v) {}
+    Valarray(const std::vector<T> &v) : std::vector<T>(v.begin(), v.end()) {}
 
   private:
     template <typename Op>
@@ -36,4 +36,11 @@ template <typename T> struct Valarray : std::vector<T> {
     friend Valarray operator-(Valarray a, const Valarray &b) { return a -= b; }
     friend Valarray operator*(Valarray a, const Valarray &b) { return a *= b; }
     friend Valarray operator/(Valarray a, const Valarray &b) { return a /= b; }
+
+    Valarray operator-() const {
+        Valarray g = *this;
+        for (T &a : g)
+            a = -a;
+        return g;
+    }
 };
