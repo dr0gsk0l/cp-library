@@ -70,16 +70,18 @@ data:
     \ : Valarray<T> {\n    using SPS = SetPowerSeries;\n    using Valarray<T>::Valarray;\n\
     \    using Valarray<T>::size;\n    using Valarray<T>::at;\n    using value_type\
     \ = T;\n\n    SetPowerSeries(const std::vector<T> &f) : Valarray<T>(f) {}\n\n\
-    \    SPS operator*(const SPS &b) const {\n        return SPS(BitwiseRanked::convolution<T>(*this,\
+    \    SPS operator-() const { return SPS(Valarray<T>::operator-()); }\n    SPS\
+    \ operator*(const SPS &b) const {\n        return SPS(BitwiseRanked::convolution<T>(*this,\
     \ b));\n    }\n    SPS &operator*=(const SPS &b) { return (*this) = (*this) *\
     \ b; }\n};\n"
   code: "#pragma once\n#include \"library/bitwise/Ranked.hpp\"\n#include \"library/util/Valarray.hpp\"\
     \n\ntemplate <typename T> struct SetPowerSeries : Valarray<T> {\n    using SPS\
     \ = SetPowerSeries;\n    using Valarray<T>::Valarray;\n    using Valarray<T>::size;\n\
     \    using Valarray<T>::at;\n    using value_type = T;\n\n    SetPowerSeries(const\
-    \ std::vector<T> &f) : Valarray<T>(f) {}\n\n    SPS operator*(const SPS &b) const\
-    \ {\n        return SPS(BitwiseRanked::convolution<T>(*this, b));\n    }\n   \
-    \ SPS &operator*=(const SPS &b) { return (*this) = (*this) * b; }\n};\n"
+    \ std::vector<T> &f) : Valarray<T>(f) {}\n\n    SPS operator-() const { return\
+    \ SPS(Valarray<T>::operator-()); }\n    SPS operator*(const SPS &b) const {\n\
+    \        return SPS(BitwiseRanked::convolution<T>(*this, b));\n    }\n    SPS\
+    \ &operator*=(const SPS &b) { return (*this) = (*this) * b; }\n};\n"
   dependsOn:
   - library/bitwise/Ranked.hpp
   - library/bitwise/Util.hpp
@@ -88,7 +90,7 @@ data:
   path: library/setpowerseries/Base.hpp
   requiredBy:
   - library/setpowerseries/Compose.hpp
-  timestamp: '2025-11-10 10:09:22+09:00'
+  timestamp: '2025-11-11 01:03:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

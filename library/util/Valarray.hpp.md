@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: library/formalpowerseries/ComposeEXP.hpp
     title: library/formalpowerseries/ComposeEXP.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/DivMod.hpp
     title: library/formalpowerseries/DivMod.hpp
   - icon: ':x:'
@@ -26,16 +26,16 @@ data:
   - icon: ':x:'
     path: library/formalpowerseries/functions/composition.hpp
     title: library/formalpowerseries/functions/composition.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
   - icon: ':x:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/integral.hpp
     title: library/formalpowerseries/functions/integral.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
   - icon: ':x:'
@@ -54,16 +54,16 @@ data:
   - icon: ':x:'
     path: test/library-checker/Polynomial/Composition.test.cpp
     title: test/library-checker/Polynomial/Composition.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   - icon: ':x:'
     path: test/library-checker/Polynomial/Exp.test.cpp
     title: test/library-checker/Polynomial/Exp.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Inv.test.cpp
     title: test/library-checker/Polynomial/Inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Log.test.cpp
     title: test/library-checker/Polynomial/Log.test.cpp
   - icon: ':x:'
@@ -145,7 +145,7 @@ data:
   - library/formalpowerseries/ComposeEXP.hpp
   - library/setpowerseries/Base.hpp
   - library/setpowerseries/Compose.hpp
-  timestamp: '2025-11-10 10:09:22+09:00'
+  timestamp: '2025-11-11 01:03:47+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

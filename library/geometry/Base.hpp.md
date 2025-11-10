@@ -95,7 +95,7 @@ data:
   requiredBy:
   - library/geometry/Judge.hpp
   - library/geometry/UtilFunction.hpp
-  timestamp: '2025-11-10 10:09:22+09:00'
+  timestamp: '2025-11-11 01:03:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp

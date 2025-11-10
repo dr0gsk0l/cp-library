@@ -212,7 +212,7 @@ data:
     - icon: ':warning:'
       path: library/formalpowerseries/ComposeEXP.hpp
       title: library/formalpowerseries/ComposeEXP.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/formalpowerseries/DivMod.hpp
       title: library/formalpowerseries/DivMod.hpp
     - icon: ':x:'
@@ -232,16 +232,16 @@ data:
     - icon: ':x:'
       path: library/formalpowerseries/functions/composition.hpp
       title: library/formalpowerseries/functions/composition.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/formalpowerseries/functions/differential.hpp
       title: library/formalpowerseries/functions/differential.hpp
     - icon: ':x:'
       path: library/formalpowerseries/functions/exp.hpp
       title: library/formalpowerseries/functions/exp.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/formalpowerseries/functions/integral.hpp
       title: library/formalpowerseries/functions/integral.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/formalpowerseries/functions/log.hpp
       title: library/formalpowerseries/functions/log.hpp
     - icon: ':x:'
@@ -765,16 +765,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Convolution.test.cpp
       title: test/library-checker/Polynomial/Convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
       title: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
     - icon: ':x:'
       path: test/library-checker/Polynomial/Exp.test.cpp
       title: test/library-checker/Polynomial/Exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Inv.test.cpp
       title: test/library-checker/Polynomial/Inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/Log.test.cpp
       title: test/library-checker/Polynomial/Log.test.cpp
     - icon: ':x:'

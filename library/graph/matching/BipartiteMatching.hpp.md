@@ -149,7 +149,7 @@ data:
   isVerificationFile: false
   path: library/graph/matching/BipartiteMatching.hpp
   requiredBy: []
-  timestamp: '2025-11-10 10:09:22+09:00'
+  timestamp: '2025-11-11 01:03:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

@@ -71,7 +71,8 @@ data:
     \ T> struct SetPowerSeries : Valarray<T> {\n    using SPS = SetPowerSeries;\n\
     \    using Valarray<T>::Valarray;\n    using Valarray<T>::size;\n    using Valarray<T>::at;\n\
     \    using value_type = T;\n\n    SetPowerSeries(const std::vector<T> &f) : Valarray<T>(f)\
-    \ {}\n\n    SPS operator*(const SPS &b) const {\n        return SPS(BitwiseRanked::convolution<T>(*this,\
+    \ {}\n\n    SPS operator-() const { return SPS(Valarray<T>::operator-()); }\n\
+    \    SPS operator*(const SPS &b) const {\n        return SPS(BitwiseRanked::convolution<T>(*this,\
     \ b));\n    }\n    SPS &operator*=(const SPS &b) { return (*this) = (*this) *\
     \ b; }\n};\n#line 4 \"library/setpowerseries/Compose.hpp\"\n\ntemplate <typename\
     \ SPS, typename T = typename SPS::value_type>\nSPS SPS_exp_comp(const std::vector<T>\
@@ -136,7 +137,7 @@ data:
   isVerificationFile: false
   path: library/setpowerseries/Compose.hpp
   requiredBy: []
-  timestamp: '2025-11-10 10:09:22+09:00'
+  timestamp: '2025-11-11 01:03:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

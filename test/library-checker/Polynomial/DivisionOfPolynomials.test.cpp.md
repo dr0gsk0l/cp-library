@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/DivMod.hpp
     title: library/formalpowerseries/DivMod.hpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: library/util/Valarray.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/division_of_polynomials
@@ -56,9 +56,10 @@ data:
     \ back() == 0)\n            pop_back();\n    }\n\n    FormalPowerSeries() = default;\n\
     \n    FormalPowerSeries(const std::vector<T> &f) : Valarray<T>(f) {\n        strict(MX);\n\
     \        shrink();\n    }\n\n    static FPS unit() { return {1}; }\n    static\
-    \ FPS x() { return {0, 1}; }\n#pragma region operator\n    FPS &operator+=(const\
-    \ T &a) {\n        if (!size())\n            resize(1);\n        at(0) += a;\n\
-    \        return *this;\n    }\n    FPS operator+(const T &a) const { return FPS(*this)\
+    \ FPS x() { return {0, 1}; }\n#pragma region operator\n    FPS operator-() const\
+    \ { return FPS(Valarray<T>::operator-()); }\n\n    FPS &operator+=(const T &a)\
+    \ {\n        if (!size())\n            resize(1);\n        at(0) += a;\n     \
+    \   return *this;\n    }\n    FPS operator+(const T &a) const { return FPS(*this)\
     \ += a; }\n    friend FPS operator+(const T &a, const FPS &f) { return f + a;\
     \ }\n\n    FPS &operator-=(const T &a) {\n        if (!size())\n            resize(1);\n\
     \        at(0) -= a;\n        return *this;\n    }\n    FPS operator-(const T\
@@ -131,8 +132,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   requiredBy: []
-  timestamp: '2025-11-10 10:09:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-11-11 01:03:47+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
 layout: document

@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/integral.hpp
     title: library/formalpowerseries/functions/integral.hpp
   - icon: ':question:'
@@ -33,7 +33,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/Polynomial/Exp.test.cpp
     title: test/library-checker/Polynomial/Exp.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Log.test.cpp
     title: test/library-checker/Polynomial/Log.test.cpp
   - icon: ':x:'
@@ -44,7 +44,7 @@ data:
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <functional>\n#include\
@@ -77,18 +77,19 @@ data:
     \    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const std::vector<T>\
     \ &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n    }\n\n  \
     \  static FPS unit() { return {1}; }\n    static FPS x() { return {0, 1}; }\n\
-    #pragma region operator\n    FPS &operator+=(const T &a) {\n        if (!size())\n\
-    \            resize(1);\n        at(0) += a;\n        return *this;\n    }\n \
-    \   FPS operator+(const T &a) const { return FPS(*this) += a; }\n    friend FPS\
-    \ operator+(const T &a, const FPS &f) { return f + a; }\n\n    FPS &operator-=(const\
-    \ T &a) {\n        if (!size())\n            resize(1);\n        at(0) -= a;\n\
-    \        return *this;\n    }\n    FPS operator-(const T &a) { return FPS(*this)\
-    \ -= a; }\n    friend FPS operator-(const T &a, const FPS &f) { return a + (-f);\
-    \ }\n\n    FPS operator*(const FPS &g) const { return FPS(convolution(*this, g));\
-    \ }\n    FPS &operator*=(const FPS &g) { return (*this) = (*this) * g; }\n\n \
-    \   FPS &operator*=(const T &a) {\n        for (size_t i = 0; i < size(); i++)\n\
-    \            at(i) *= a;\n        return *this;\n    }\n    FPS operator*(const\
-    \ T &a) const { return FPS(*this) *= a; }\n    friend FPS operator*(const T &a,\
+    #pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
+    \ }\n\n    FPS &operator+=(const T &a) {\n        if (!size())\n            resize(1);\n\
+    \        at(0) += a;\n        return *this;\n    }\n    FPS operator+(const T\
+    \ &a) const { return FPS(*this) += a; }\n    friend FPS operator+(const T &a,\
+    \ const FPS &f) { return f + a; }\n\n    FPS &operator-=(const T &a) {\n     \
+    \   if (!size())\n            resize(1);\n        at(0) -= a;\n        return\
+    \ *this;\n    }\n    FPS operator-(const T &a) { return FPS(*this) -= a; }\n \
+    \   friend FPS operator-(const T &a, const FPS &f) { return a + (-f); }\n\n  \
+    \  FPS operator*(const FPS &g) const { return FPS(convolution(*this, g)); }\n\
+    \    FPS &operator*=(const FPS &g) { return (*this) = (*this) * g; }\n\n    FPS\
+    \ &operator*=(const T &a) {\n        for (size_t i = 0; i < size(); i++)\n   \
+    \         at(i) *= a;\n        return *this;\n    }\n    FPS operator*(const T\
+    \ &a) const { return FPS(*this) *= a; }\n    friend FPS operator*(const T &a,\
     \ const FPS &f) { return f * a; }\n\n    FPS operator/(const FPS &g) const { return\
     \ (*this) * g.inv(); }\n    FPS &operator/=(const FPS &g) { return (*this) = (*this)\
     \ / g; }\n\n    FPS &operator/=(const T &a) { return *this *= a.inv(); }\n   \
@@ -144,8 +145,8 @@ data:
   - library/formalpowerseries/functions/exp.hpp
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-10 10:09:22+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-11-11 01:03:47+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/Log.test.cpp
   - test/library-checker/Polynomial/TaylorShift.test.cpp
