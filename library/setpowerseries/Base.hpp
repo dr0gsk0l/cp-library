@@ -11,6 +11,7 @@ template <typename T> struct SetPowerSeries : Valarray<T> {
 
     SetPowerSeries(const std::vector<T> &f) : Valarray<T>(f) {}
 
+    SPS operator-() const { return SPS(Valarray<T>::operator-()); }
     SPS operator*(const SPS &b) const {
         return SPS(BitwiseRanked::convolution<T>(*this, b));
     }
