@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/SetXor-Min.test.cpp
   requiredBy: []
-  timestamp: '2025-11-09 23:27:39+09:00'
+  timestamp: '2025-11-10 09:08:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/SetXor-Min.test.cpp

@@ -112,7 +112,7 @@ data:
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.hpp
   requiredBy: []
-  timestamp: '2025-11-09 23:27:39+09:00'
+  timestamp: '2025-11-10 09:08:40+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp

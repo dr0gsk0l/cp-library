@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/UndoMonoidUnionFind.hpp
   requiredBy: []
-  timestamp: '2025-11-09 23:27:39+09:00'
+  timestamp: '2025-11-10 09:08:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/UndoMonoidUnionFind.hpp

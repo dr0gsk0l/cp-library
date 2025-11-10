@@ -55,7 +55,7 @@ data:
   - library/algebra/lazy/Reverse.hpp
   - library/tree/TreeLazy.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2025-11-09 23:27:39+09:00'
+  timestamp: '2025-11-10 09:08:40+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

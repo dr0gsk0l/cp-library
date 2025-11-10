@@ -70,7 +70,7 @@ data:
   requiredBy:
   - library/graph/MinimumSpanningTree.hpp
   - library/graph/MinimumSpanningArborescence.hpp
-  timestamp: '2025-11-09 23:27:39+09:00'
+  timestamp: '2025-11-10 09:08:40+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/unionfind.test.cpp
