@@ -65,7 +65,12 @@ data:
     \ &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n    }\n\n  \
     \  static FPS unit() { return {1}; }\n    static FPS x() { return {0, 1}; }\n\
     #pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
-    \ }\n\n    FPS &operator+=(const T &a) {\n        if (!size())\n            resize(1);\n\
+    \ }\n\n    FPS &operator+=(const FPS &g) {\n        Valarray<T>::operator+=(g);\n\
+    \        shrink();\n        return *this;\n    }\n    FPS operator+(const FPS\
+    \ &g) const { return FPS(*this) += g; }\n\n    FPS &operator-=(const FPS &g) {\n\
+    \        Valarray<T>::operator-=(g);\n        shrink();\n        return *this;\n\
+    \    }\n    FPS operator-(const FPS &g) const { return FPS(*this) -= g; }\n\n\
+    \    FPS &operator+=(const T &a) {\n        if (!size())\n            resize(1);\n\
     \        at(0) += a;\n        return *this;\n    }\n    FPS operator+(const T\
     \ &a) const { return FPS(*this) += a; }\n    friend FPS operator+(const T &a,\
     \ const FPS &f) { return f + a; }\n\n    FPS &operator-=(const T &a) {\n     \
@@ -166,7 +171,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Pow.test.cpp
   requiredBy: []
-  timestamp: '2025-11-11 01:03:47+09:00'
+  timestamp: '2025-11-16 20:55:03+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Pow.test.cpp

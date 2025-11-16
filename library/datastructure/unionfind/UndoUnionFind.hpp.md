@@ -53,7 +53,7 @@ data:
   path: library/datastructure/unionfind/UndoUnionFind.hpp
   requiredBy:
   - library/query/OfflineDynamicConnectivity.hpp
-  timestamp: '2025-11-11 01:03:47+09:00'
+  timestamp: '2025-11-16 20:55:03+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/UndoUnionFind.hpp

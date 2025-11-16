@@ -92,7 +92,7 @@ data:
   - library/datastructure/SWAG.hpp
   - library/math/FactorialNumberSystem.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2025-11-11 01:03:47+09:00'
+  timestamp: '2025-11-16 20:55:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

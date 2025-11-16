@@ -137,7 +137,7 @@ data:
   - library/tree/TreeLazy.hpp
   - library/tree/TreeMonoid.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-11-11 01:03:47+09:00'
+  timestamp: '2025-11-16 20:55:03+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/JumpOnTree.test.cpp
