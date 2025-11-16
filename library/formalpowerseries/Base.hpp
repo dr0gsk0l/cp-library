@@ -35,6 +35,20 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
 #pragma region operator
     FPS operator-() const { return FPS(Valarray<T>::operator-()); }
 
+    FPS &operator+=(const FPS &g) {
+        Valarray<T>::operator+=(g);
+        shrink();
+        return *this;
+    }
+    FPS operator+(const FPS &g) const { return FPS(*this) += g; }
+
+    FPS &operator-=(const FPS &g) {
+        Valarray<T>::operator-=(g);
+        shrink();
+        return *this;
+    }
+    FPS operator-(const FPS &g) const { return FPS(*this) -= g; }
+
     FPS &operator+=(const T &a) {
         if (!size())
             resize(1);
