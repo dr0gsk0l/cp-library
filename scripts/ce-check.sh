@@ -24,6 +24,11 @@ if [[ -x "${SETUP_SCRIPT}" ]]; then
     "${SETUP_SCRIPT}" >/dev/null
 fi
 
+TOOLCHAIN_BIN="${ROOT_DIR}/build/toolchain/bin"
+if [[ -d "${TOOLCHAIN_BIN}" ]]; then
+    export PATH="${TOOLCHAIN_BIN}:${PATH}"
+fi
+
 # ccache のラッパーがあれば PATH に追加
 enable_ccache_path() {
     local candidates=(

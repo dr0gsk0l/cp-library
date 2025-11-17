@@ -28,6 +28,9 @@ jobs:
     - name: Install dependencies
       run: pip3 install -U online-judge-verify-helper
 
+    - name: Install ccache
+      run: sudo apt-get update && sudo apt-get install -y ccache
+
     - name: Prepare toolchain (PCH)
       run: bash scripts/setup-toolchain.sh
 
@@ -52,7 +55,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
         GH_PAT: ${{ secrets.GH_PAT }}
-      run: oj-verify all --timeout 100000
+      run: bash scripts/oj-verify.sh all --timeout 100000
 
     # - name: Run yukicoder
     #   env:

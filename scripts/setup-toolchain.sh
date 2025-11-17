@@ -9,6 +9,8 @@ mkdir -p "${PCH_DIR}"
 PCH_HEADER_SRC="${ROOT_DIR}/scripts/pch/stdc++.hpp"
 PCH_HEADER_DST="${PCH_DIR}/stdc++.hpp"
 PCH_PATH="${PCH_HEADER_DST}.gch"
+TOOLCHAIN_BIN="${ROOT_DIR}/build/toolchain/bin"
+mkdir -p "${TOOLCHAIN_BIN}"
 
 enable_ccache_path() {
     local candidates=(
@@ -43,7 +45,9 @@ if ! command -v "${PREFERRED_GXX}" >/dev/null 2>&1; then
         exit 1
     fi
 fi
-echo "[setup-toolchain] 使用コンパイラ: ${PREFERRED_GXX}"
+PREFERRED_GXX_PATH="$(command -v "${PREFERRED_GXX}")"
+echo "[setup-toolchain] 使用コンパイラ: ${PREFERRED_GXX_PATH}"
+ln -sf "${PREFERRED_GXX_PATH}" "${TOOLCHAIN_BIN}/g++"
 
 cp "${PCH_HEADER_SRC}" "${PCH_HEADER_DST}"
 
@@ -69,7 +73,7 @@ fi
 
 if [[ "${NEED_PCH}" == true ]]; then
     echo "[setup-toolchain] stdc++.hpp の PCH を再生成します。"
-    "${PREFERRED_GXX}" -std=gnu++23 -O0 -x c++-header "${PCH_HEADER_DST}" -o "${PCH_PATH}"
+    "${PREFERRED_GXX_PATH}" -std=gnu++23 -O0 -x c++-header "${PCH_HEADER_DST}" -o "${PCH_PATH}"
     printf '%s\n' "${CURRENT_HASH}" > "${PCH_PATH}.src-hash"
 else
     echo "[setup-toolchain] 既存の PCH を再利用します。"
