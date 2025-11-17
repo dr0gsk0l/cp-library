@@ -28,6 +28,12 @@ jobs:
     - name: Install dependencies
       run: pip3 install -U online-judge-verify-helper
 
+    - name: Prepare toolchain (PCH)
+      run: bash scripts/setup-toolchain.sh
+
+    - name: Compile tests (CE check)
+      run: bash scripts/ce-check.sh
+
     - name: Fetch
       run: |
         git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
@@ -46,4 +52,3 @@ jobs:
     #     YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
     #     GH_PAT: ${{ secrets.GH_PAT }}
     #   run: oj-verify run test/yukicoder/117.test.cpp
-

@@ -31,7 +31,7 @@ int main() {
     FPS f(n);
     REP (i, n)
         std::cin >> f[i];
-    fps::taylor_shift(f, c);
+    fps::taylor_shift(f, mint(c));
     REP (i, n)
         std::cout << (i < f.size() ? f[i] : 0) << "\n "[i + 1 < n];
 }

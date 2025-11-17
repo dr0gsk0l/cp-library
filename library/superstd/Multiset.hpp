@@ -41,6 +41,7 @@ template <typename T> class Multiset {
             size_ -= k;
         }
     }
+    void erase1(const T &a) { erase_k(a, 1); }
 
     T min_value() const {
         assert(size());
@@ -72,10 +73,21 @@ template <typename T> class Multiset {
     }
     T gt(const T &a) const {
         assert(max_value() > a);
-        return upper_bound(a)->first;
+        return m.upper_bound(a)->first;
     }
     T geq(const T &a) const {
         assert(max_value() >= a);
-        return lower_bound(a)->first;
+        return m.lower_bound(a)->first;
     }
+
+    void scan(int n) {
+        while (n--) {
+            T a;
+            std::cin >> a;
+            insert(a);
+        }
+    }
+
+    T pick_mn() { return pick_min(); }
+    T pick_mx() { return pick_max(); }
 };

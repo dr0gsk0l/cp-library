@@ -10,7 +10,7 @@ int main() {
 
     int n, q;
     std::cin >> n >> q;
-    Multistd::set<int> s;
+    Multiset<int> s;
     s.scan(n);
     while (q--) {
         int t;
