@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/datastructure/FullyIndexableDictionary.hpp
     title: library/datastructure/FullyIndexableDictionary.hpp
@@ -287,13 +290,14 @@ data:
     \                                        int k) {\n        return kth_largest_intervals(l,\
     \ r, r - l - k - 1);\n    }\n};\n#undef REP_"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/FullyIndexableDictionary.hpp
   - library/util/Compress.hpp
   isVerificationFile: false
   path: library/datastructure/WaveletMatrix.hpp
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

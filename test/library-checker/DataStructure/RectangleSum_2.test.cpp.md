@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/datastructure/CumulativeSum.hpp
     title: library/datastructure/CumulativeSum.hpp
@@ -274,6 +277,7 @@ data:
     \ R, d);\n        for (const auto &[h, l, r] : intervals2)\n            res -=\
     \ C[h].sum(l, r);\n        std::cout << res << \"\\n\";\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/CumulativeSum.hpp
   - library/datastructure/WaveletMatrix.hpp
   - library/datastructure/FullyIndexableDictionary.hpp
@@ -283,7 +287,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RectangleSum_2.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RectangleSum_2.test.cpp

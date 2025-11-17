@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Matrix.hpp
     title: library/linearalgebra/Matrix.hpp
@@ -113,13 +116,14 @@ data:
     \ = Matrix<mint>;\n\nint main() {\n    int n;\n    std::cin >> n;\n    M A(n,\
     \ n);\n    std::cin >> A;\n    std::cout << A.det() << std::endl;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/linearalgebra/Matrix.hpp
   - library/mod/Modint.hpp
   - library/math/ExtraGCD.hpp
   isVerificationFile: true
   path: test/library-checker/Matrix/Det.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Matrix/Det.test.cpp

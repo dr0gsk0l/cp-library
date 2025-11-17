@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.hpp
     title: library/bitwise/Util.hpp
@@ -69,13 +72,14 @@ data:
     \                REP_(i, d) ra[d] += ra[i] * rb[d - i];\n            }\n     \
     \   }\n        return mobius(RA);\n    }\n};\n#undef REP_\n#undef RREP_"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/bitwise/Util.hpp
   isVerificationFile: false
   path: library/bitwise/Ranked.hpp
   requiredBy:
   - library/setpowerseries/Base.hpp
   - library/setpowerseries/Compose.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Convolution/SubsetConvolution.test.cpp

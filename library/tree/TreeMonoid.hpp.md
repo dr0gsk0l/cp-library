@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
   - icon: ':question:'
@@ -72,6 +75,7 @@ data:
     \ v); }\n\n    X subtree_prod(int v) {\n        assert(Monoid::commute);\n   \
     \     auto [l, r] = hld.subtree(v);\n        return seg.prod(l, r);\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/Reverse.hpp
   - library/segtree/SegmentTree.hpp
   - library/algebra/monoid/Concepts.hpp
@@ -79,7 +83,7 @@ data:
   isVerificationFile: false
   path: library/tree/TreeMonoid.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/vertex_add_path_sum.test.cpp

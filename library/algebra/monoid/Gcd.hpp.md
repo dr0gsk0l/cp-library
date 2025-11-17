@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -23,11 +26,12 @@ data:
     \ y); }\n    static constexpr void Lchop(const X &x, X &y) { y = std::gcd(x, y);\
     \ }\n    static constexpr X unit() { return 0; }\n    static constexpr bool commute\
     \ = true;\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/algebra/monoid/Gcd.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1036.test.cpp

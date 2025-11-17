@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -86,6 +89,7 @@ data:
     \                l -= L;\n                r -= R;\n            }\n        }\n\
     \        return res;\n    }\n};\n#undef REP_\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/FenwickTree.hpp
   - library/algebra/group/Add.hpp
   - library/algebra/group/Concepts.hpp
@@ -96,7 +100,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/GroupWaveletMatrix.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

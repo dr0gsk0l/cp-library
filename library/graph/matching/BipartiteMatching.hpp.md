@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.hpp
     title: library/flow/Dinic.hpp
@@ -144,12 +147,13 @@ data:
     \ &[from, to, flow] = all_edge[i];\n            if (flow)\n                res.emplace_back(from,\
     \ to - A);\n        }\n        return res;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/flow/Dinic.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: false
   path: library/graph/matching/BipartiteMatching.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

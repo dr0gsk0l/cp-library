@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':heavy_check_mark:'
@@ -109,13 +112,14 @@ data:
     \ << k << \"\\n\";\n    for (int p : hsh)\n        std::cout << p << \" \";\n\
     \    std::cout << \"\\n\";\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/RootedTreeIsomorphism.hpp
   - library/tree/Tree.hpp
   - library/graph/Graph.hpp
   isVerificationFile: true
   path: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp

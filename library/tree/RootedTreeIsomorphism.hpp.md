@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -24,11 +27,12 @@ data:
     \     for (int to : t.son(v))\n            h.push_back(res[to]);\n        std::ranges::sort(h);\n\
     \        if (!mp.count(h))\n            mp[h] = mp.size();\n        res[v] = mp[h];\n\
     \    }\n    return {mp.size(), res};\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/tree/RootedTreeIsomorphism.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/RootedTreeIsomorphismClassification.test.cpp

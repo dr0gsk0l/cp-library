@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.hpp
     title: library/datastructure/unionfind/UnionFind.hpp
   - icon: ':question:'
@@ -142,13 +145,14 @@ data:
     \ assert(sum==val);\n    std::cout << val << \"\\n\";\n    for (int v = 0; v <\
     \ n; v++)\n        std::cout << p[v] << \"\\n \"[v + 1 < n];\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/MinimumSpanningArborescence.hpp
   - library/datastructure/unionfind/UnionFind.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/library-checker/Graph/DirectedMST.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Graph/DirectedMST.test.cpp

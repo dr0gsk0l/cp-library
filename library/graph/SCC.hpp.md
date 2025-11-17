@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':heavy_check_mark:'
@@ -108,12 +111,13 @@ data:
     \        }\n    }\n    int operator[](int k) { return belong[k]; }\n};\n#undef\
     \ REP_"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/Graph.hpp
   - library/graph/ReverseGraph.hpp
   isVerificationFile: false
   path: library/graph/SCC.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/SCC.test.cpp

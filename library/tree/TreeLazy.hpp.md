@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
   - icon: ':heavy_check_mark:'
@@ -184,6 +187,7 @@ data:
     \  auto [l, r] = hld.subtree(v);\n        seg.apply(l, r, f);\n        if (!MX::commute)\n\
     \            seg_r.apply(l, r, f);\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/lazy/Reverse.hpp
   - library/algebra/Reverse.hpp
   - library/segtree/LazySegmentTree.hpp
@@ -191,7 +195,7 @@ data:
   isVerificationFile: false
   path: library/tree/TreeLazy.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp

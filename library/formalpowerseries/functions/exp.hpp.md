@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -151,6 +154,7 @@ data:
     \    res[0] = 1;\n    for (int i = 1; i < MX; i++) {\n        res[i] = res[i -\
     \ 1] * n / i;\n    }\n    return res;\n}\n\n} // namespace fps\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/functions/log.hpp
@@ -162,7 +166,7 @@ data:
   - library/formalpowerseries/functions/composition.hpp
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/TaylorShift.test.cpp

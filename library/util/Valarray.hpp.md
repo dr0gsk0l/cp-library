@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
@@ -125,7 +128,8 @@ data:
     \ a *= b; }\n    friend Valarray operator/(Valarray a, const Valarray &b) { return\
     \ a /= b; }\n\n    Valarray operator-() const {\n        Valarray g = *this;\n\
     \        for (T &a : g)\n            a = -a;\n        return g;\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/util/Valarray.hpp
   requiredBy:
@@ -145,7 +149,7 @@ data:
   - library/formalpowerseries/ComposeEXP.hpp
   - library/setpowerseries/Base.hpp
   - library/setpowerseries/Compose.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

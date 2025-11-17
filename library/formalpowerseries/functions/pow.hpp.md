@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -151,6 +154,7 @@ data:
     \ = exp(n * log(f));\n    } else {\n        f = exp(log(f) * n);\n    }\n    f\
     \ <<= d;\n    \n    return f;\n}\n\n} // namespace fps\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/functions/exp.hpp
@@ -161,7 +165,7 @@ data:
   path: library/formalpowerseries/functions/pow.hpp
   requiredBy:
   - library/formalpowerseries/functions/composition.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/Pow.test.cpp

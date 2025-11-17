@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -32,11 +35,12 @@ data:
     \n  public:\n    MINT nCk(int n, int k) {\n        if (k < 0 || n < k)\n     \
     \       return 0;\n        extend(n);\n        return nCk_[n][min(k, n - k)];\n\
     \    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/mod/CompositeMintUtility.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/mod/CompositeMintUtility.hpp

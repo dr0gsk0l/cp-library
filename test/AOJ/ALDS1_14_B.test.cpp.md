@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':x:'
     path: library/mod/Modint61.hpp
     title: library/mod/Modint61.hpp
@@ -43,13 +46,14 @@ data:
     \n    for (int i = 0; i + p.size() <= t.size(); i++)\n        if (RH.get_hash(i,\
     \ i + p.size()) == h)\n            std::cout << i << \"\\n\";\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/sequence/RollingHash.hpp
   - library/mod/Modint61.hpp
   - library/sequence/ForString.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_14_B.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_14_B.test.cpp

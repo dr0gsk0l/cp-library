@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
   - icon: ':heavy_check_mark:'
@@ -296,6 +299,7 @@ data:
     \            int v, w;\n            std::cin >> v >> w;\n            TL.path_apply(v,\
     \ root2[v], w);\n        }\n    }\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/lazy/AddSum.hpp
   - library/algebra/group/Add.hpp
   - library/algebra/group/CntSum.hpp
@@ -309,7 +313,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/GRL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_E.test.cpp

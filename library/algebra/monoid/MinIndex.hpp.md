@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -29,11 +32,12 @@ data:
     \ bool commute = true;\n    static constexpr std::vector<P> arrange(const std::vector<X>\
     \ &v) {\n        std::vector<P> w(v.size());\n        for (int i = 0; i < v.size();\
     \ i++)\n            w[i] = P(v[i], i);\n        return w;\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/algebra/monoid/MinIndex.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/algebra/monoid/MinIndex.hpp

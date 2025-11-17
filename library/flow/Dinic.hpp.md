@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   _extendedRequiredBy:
@@ -172,12 +175,13 @@ data:
     \ std::numeric_limits<T>::max() / 2) {\n        s = s_;\n        t = t_;\n   \
     \     return flow(lim);\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: false
   path: library/flow/Dinic.hpp
   requiredBy:
   - library/graph/matching/BipartiteMatching.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Graph/MatchingOnBipartiteGraph.test.cpp

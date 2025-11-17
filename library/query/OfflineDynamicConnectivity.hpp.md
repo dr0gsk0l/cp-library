@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':warning:'
     path: library/datastructure/unionfind/UndoUnionFind.hpp
     title: library/datastructure/unionfind/UndoUnionFind.hpp
@@ -83,11 +86,12 @@ data:
     \ &e : seg[k]) {\n            uf.undo();\n        }\n        comp += add;\n  \
     \  }\n};\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/unionfind/UndoUnionFind.hpp
   isVerificationFile: false
   path: library/query/OfflineDynamicConnectivity.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/query/OfflineDynamicConnectivity.hpp

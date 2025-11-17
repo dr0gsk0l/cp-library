@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/tree/AuxiliaryTree.hpp
@@ -130,14 +133,15 @@ data:
     \ path_v};\n    }\n\n    // [l,r) \u304C v \u306E\u90E8\u5206\u6728\n    std::pair<int,\
     \ int> subtree(int v) const {\n        assert(prepared);\n        return {id[v],\
     \ id2[v]};\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/tree/HLD.hpp
   requiredBy:
   - library/tree/TreeLazy.hpp
   - library/tree/TreeMonoid.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/JumpOnTree.test.cpp

@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/graph/NegativeCycleFind.hpp
     title: library/graph/NegativeCycleFind.hpp
@@ -106,13 +109,14 @@ data:
     \ << \"\\n \"[j + 1 < n];\n                else\n                    std::cout\
     \ << \"INF\" << \"\\n \"[j + 1 < n];\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/NegativeCycleFind.hpp
   - library/graph/WeightedGraph.hpp
   - library/graph/shortest_path/WarshallFloyd.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_1_C.test.cpp

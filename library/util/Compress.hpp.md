@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/datastructure/GroupWaveletMatrix.hpp
@@ -116,7 +119,8 @@ data:
     \ const { return v[0]; }\n\n    friend std::ostream &operator<<(std::ostream &os,\
     \ const Compress &C) {\n        for (int i = 0; i < C.v.size(); i++)\n       \
     \     os << C.v[i] << \":\" << i << \" \";\n        return os;\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/util/Compress.hpp
   requiredBy:
@@ -126,7 +130,7 @@ data:
   - library/tree/AuxiliaryTree.hpp
   - library/util/BubbleNumber.hpp
   - library/util/InversionNumber.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

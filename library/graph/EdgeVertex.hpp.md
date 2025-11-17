@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   _extendedRequiredBy: []
@@ -79,11 +82,12 @@ data:
     \            G.add_arc(u, e);\n            G.add_arc(e, v);\n        }\n     \
     \   G.build();\n        return G;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/Graph.hpp
   isVerificationFile: false
   path: library/graph/EdgeVertex.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/EdgeVertex.hpp

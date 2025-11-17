@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.hpp
     title: library/datastructure/unionfind/UnionFind.hpp
   _extendedRequiredBy: []
@@ -54,11 +57,12 @@ data:
     \ to);\n        res += weight;\n    }\n    assert(uf.count() == 1);\n    return\
     \ {res, tree};\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/unionfind/UnionFind.hpp
   isVerificationFile: false
   path: library/graph/MinimumSpanningTree.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_2_A.test.cpp

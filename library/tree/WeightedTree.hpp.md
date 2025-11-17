@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   _extendedRequiredBy:
@@ -132,13 +135,14 @@ data:
     \            BFS.push_back(p);\n            for (const auto &e : son(p))\n   \
     \             que.push(e.to);\n        }\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: false
   path: library/tree/WeightedTree.hpp
   requiredBy:
   - library/tree/CartesianTree.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp

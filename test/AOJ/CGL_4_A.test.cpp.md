@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/geometry/Base.hpp
     title: library/geometry/Base.hpp
@@ -103,13 +106,14 @@ data:
     \ << \"\\n\";\n    for (const Point &p : Q)\n        std::cout << p << \"\\n\"\
     ;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/geometry/UtilFunction.hpp
   - library/geometry/Base.hpp
   - library/r2/XY.hpp
   isVerificationFile: true
   path: test/AOJ/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/CGL_4_A.test.cpp

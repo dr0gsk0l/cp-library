@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/linearalgebra/Matrix.hpp
     title: library/linearalgebra/Matrix.hpp
@@ -117,13 +120,14 @@ data:
     \    std::cin >> A >> B;\n    M C = A * B;\n    REP (i, n)\n        REP (j, k)\n\
     \            std::cout << C[i][j] << \"\\n \"[j + 1 < k];\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/linearalgebra/Matrix.hpp
   - library/mod/Modint.hpp
   - library/math/ExtraGCD.hpp
   isVerificationFile: true
   path: test/library-checker/Matrix/Product.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Matrix/Product.test.cpp

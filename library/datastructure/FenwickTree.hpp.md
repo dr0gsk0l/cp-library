@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -80,6 +83,7 @@ data:
     \ k) const {\n        return max_right([&k](T x) { return x <= k; });\n    }\n\
     };"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/Add.hpp
   - library/algebra/group/Concepts.hpp
   - library/algebra/monoid/Concepts.hpp
@@ -88,7 +92,7 @@ data:
   requiredBy:
   - library/datastructure/GroupWaveletMatrix.hpp
   - library/math/FactorialNumberSystem.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   _extendedRequiredBy: []
@@ -84,11 +87,12 @@ data:
     \ }\n    bool is_bridge(int u, int v) const {\n        if (ord[u] > ord[v])\n\
     \            std::swap(u, v);\n        return ord[u] < low_link[v];\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/Graph.hpp
   isVerificationFile: false
   path: library/graph/LowLink.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/LowLink.hpp

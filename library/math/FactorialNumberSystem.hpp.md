@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -64,6 +67,7 @@ data:
     \      p[i + 1]++;\n        } else\n            q[i] = 0;\n    }\n    return q;\n\
     }\n} // namespace factorial_number_system\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/FenwickTree.hpp
   - library/algebra/group/Add.hpp
   - library/algebra/group/Concepts.hpp
@@ -71,7 +75,7 @@ data:
   isVerificationFile: false
   path: library/math/FactorialNumberSystem.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/FactorialNumberSystem.hpp

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':question:'
@@ -146,13 +149,14 @@ data:
     \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
     \ v, k) << \"\\n\";\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/Tree.hpp
   - library/graph/Graph.hpp
   - library/tree/HLD.hpp
   isVerificationFile: true
   path: test/library-checker/Tree/JumpOnTree.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Tree/JumpOnTree.test.cpp

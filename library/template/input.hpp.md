@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':warning:'
     path: library/template/base.hpp
     title: library/template/base.hpp
@@ -135,13 +138,14 @@ data:
     \ v(n, vll(m));                                                         \\\n \
     \   input(v);\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/template/base.hpp
   - library/template/macro.hpp
   - library/template/type.hpp
   isVerificationFile: false
   path: library/template/input.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/input.hpp

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -161,6 +164,7 @@ data:
     \    for (int i = 0; i < n; i++)\n        std::cout << (i < f.size() ? f[i] :\
     \ 0) << \"\\n \"[i + 1 < n];\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/functions/pow.hpp
@@ -171,7 +175,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Pow.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Pow.test.cpp

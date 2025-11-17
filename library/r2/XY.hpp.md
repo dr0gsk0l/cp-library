@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/geometry/Base.hpp
@@ -117,7 +120,8 @@ data:
     \ 0};\n        if (c == 'L')\n            return {-1, 0};\n        if (c == 'U')\n\
     \            return {0, -1};\n        if (c == 'D')\n            return {0, 1};\n\
     \        return {0, 0};\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/r2/XY.hpp
   requiredBy:
@@ -125,7 +129,7 @@ data:
   - library/geometry/Judge.hpp
   - library/geometry/UtilFunction.hpp
   - library/geometry/Base.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

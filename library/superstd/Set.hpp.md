@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -52,11 +55,12 @@ data:
     \    while (n--) {\n            T a;\n            std::cin >> a;\n           \
     \ insert(a);\n        }\n    }\n\n    void banpei() {\n        insert(std::numeric_limits<T>::max()\
     \ / 2);\n        insert(std::numeric_limits<T>::min() / 2);\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/superstd/Set.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PredecessorProblem.test.cpp

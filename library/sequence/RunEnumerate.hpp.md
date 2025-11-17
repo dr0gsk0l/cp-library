@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -100,11 +103,12 @@ data:
     \ while (que.size()) {\n            auto [l, r] = que.front();\n            que.pop();\n\
     \            if (l + 1 == r)\n                continue;\n            solve(l,\
     \ r);\n        }\n        arrangement();\n    }\n};\n#undef SIZE_"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/sequence/RunEnumerate.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/String/RunEnumerate.test.cpp

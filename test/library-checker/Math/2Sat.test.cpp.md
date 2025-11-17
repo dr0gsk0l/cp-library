@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -32,11 +35,12 @@ data:
     \        for (int i = 0; i < n; i++)\n            std::cout << (A[i] ? i + 1 :\
     \ -(i + 1)) << \" \";\n        std::cout << \"0\\n\";\n    } else\n        std::cout\
     \ << \"s UNSATISFIABLE\\n\";\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: true
   path: test/library-checker/Math/2Sat.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Math/2Sat.test.cpp

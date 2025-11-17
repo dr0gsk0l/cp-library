@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/datastructure/BinaryTrie.hpp
     title: library/datastructure/BinaryTrie.hpp
@@ -63,11 +66,12 @@ data:
     \ BT.add(x, -1);\n        } else\n            std::cout << BT.min(x) << \"\\n\"\
     ;\n    }\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/BinaryTrie.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/SetXor-Min.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/SetXor-Min.test.cpp

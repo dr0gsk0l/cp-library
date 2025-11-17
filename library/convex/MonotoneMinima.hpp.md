@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -26,11 +29,12 @@ data:
     \ m = (u + d) >> 1;\n        res[m] = argmin(m, l, r);\n        que.emplace(u,\
     \ m, l, res[m] + 1);\n        que.emplace(m + 1, d, res[m], r);\n    }\n    return\
     \ res;\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/convex/MonotoneMinima.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/convex/MonotoneMinima.hpp

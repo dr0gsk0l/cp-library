@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetMin.hpp
     title: library/algebra/lazy/SetMin.hpp
@@ -97,6 +100,7 @@ data:
     \ else {\n            int x;\n            std::cin >> x;\n            seg.apply(l,\
     \ r, x);\n        }\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/lazy/SetMin.hpp
   - library/algebra/monoid/Min.hpp
   - library/algebra/monoid/Set.hpp
@@ -104,7 +108,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_2_F.test.cpp

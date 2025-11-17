@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/sequence/AhoCorasick.hpp
@@ -80,14 +83,15 @@ data:
     \                                                      \\\n    STR(s##tomato);\
     \                                                            \\\n    auto s =\
     \ FS0::change(s##tomato);\n#endif"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/sequence/ForString.hpp
   requiredBy:
   - library/sequence/AhoCorasick.hpp
   - library/sequence/Trie.hpp
   - library/sequence/RollingHash.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

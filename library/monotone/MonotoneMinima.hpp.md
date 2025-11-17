@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -27,11 +30,12 @@ data:
     \ ret.begin() + m - u + 1);\n    return ret;\n}\n\ntemplate <typename F>\nstd::vector<int>\
     \ monotone_minima(int n, int m, const F &argmin) {\n    return internal_monotone_minima(0,\
     \ n, 0, m, argmin);\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/monotone/MonotoneMinima.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/monotone/MonotoneMinima.hpp

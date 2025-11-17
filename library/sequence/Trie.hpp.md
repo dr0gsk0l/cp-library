@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -143,13 +146,14 @@ data:
     \           now = nxt(now, v[i]);\n            if (~now)\n                f(now);\n\
     \            else\n                break;\n        }\n    }\n};\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/Add.hpp
   - library/sequence/ForString.hpp
   isVerificationFile: false
   path: library/sequence/Trie.hpp
   requiredBy:
   - library/sequence/AhoCorasick.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/2212.test.cpp

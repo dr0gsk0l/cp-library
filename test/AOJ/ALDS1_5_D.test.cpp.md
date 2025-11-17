@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/util/Compress.hpp
     title: library/util/Compress.hpp
@@ -67,12 +70,13 @@ data:
     \ for (int i = 0; i < n; i++)\n        std::cin >> v[i];\n    std::cout << inversion_number(v)\
     \ << std::endl;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/util/InversionNumber.hpp
   - library/util/Compress.hpp
   isVerificationFile: true
   path: test/AOJ/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/ALDS1_5_D.test.cpp

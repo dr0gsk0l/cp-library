@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':x:'
     path: library/mod/Modint61.hpp
     title: library/mod/Modint61.hpp
@@ -51,12 +54,13 @@ data:
     \ &v) {\n        MINT res = 0;\n        for (const char &c : v)\n            res\
     \ = nxt_hash(res, c);\n        return res.v;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/mod/Modint61.hpp
   - library/sequence/ForString.hpp
   isVerificationFile: false
   path: library/sequence/RollingHash.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/AOJ/ALDS1_14_B.test.cpp

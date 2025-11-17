@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/util/Valarray.hpp
     title: library/util/Valarray.hpp
   _extendedRequiredBy:
@@ -205,6 +208,7 @@ data:
     \ a) const {\n        T res = 0, b = 1;\n        for (size_t i = 0; i < size();\
     \ i++, b *= a)\n            res += at(i) * b;\n        return res;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/util/Valarray.hpp
   isVerificationFile: false
   path: library/formalpowerseries/Base.hpp
@@ -222,7 +226,7 @@ data:
   - library/formalpowerseries/functions/pow.hpp
   - library/formalpowerseries/functions/integral.hpp
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp

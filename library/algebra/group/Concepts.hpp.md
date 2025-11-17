@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.hpp
     title: library/algebra/monoid/Concepts.hpp
   _extendedRequiredBy:
@@ -51,6 +54,7 @@ data:
     \ {\n    { G::inverse(x) } -> std::same_as<typename G::value_type>;\n};\n\n//\
     \ todo : able_group"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/algebra/group/Concepts.hpp
@@ -59,7 +63,7 @@ data:
   - library/datastructure/FenwickTree.hpp
   - library/datastructure/GroupWaveletMatrix.hpp
   - library/math/FactorialNumberSystem.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/PointAddRectangleSum.test.cpp

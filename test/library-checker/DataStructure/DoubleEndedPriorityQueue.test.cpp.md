@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':x:'
     path: library/superstd/Multiset.hpp
     title: library/superstd/Multiset.hpp
@@ -65,11 +68,12 @@ data:
     \  int a = s.pick_mx();\n            std::cout << a << \"\\n\";\n        }\n \
     \   }\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/superstd/Multiset.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp

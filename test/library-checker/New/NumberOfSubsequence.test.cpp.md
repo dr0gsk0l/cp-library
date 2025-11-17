@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
   - icon: ':question:'
@@ -81,13 +84,14 @@ data:
     \ n; i++)\n        std::cin >> v[i];\n    std::cout << sparse_subsequence<mint,\
     \ int>(v) - 1 << std::endl;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/mod/Modint.hpp
   - library/math/ExtraGCD.hpp
   - library/util/Subsequence.hpp
   isVerificationFile: true
   path: test/library-checker/New/NumberOfSubsequence.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/New/NumberOfSubsequence.test.cpp

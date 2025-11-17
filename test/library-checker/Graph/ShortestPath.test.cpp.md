@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   - icon: ':heavy_check_mark:'
@@ -96,12 +99,13 @@ data:
     \ << \" \" << ans.size() << \"\\n\";\n    for (const auto &[from, to] : ans)\n\
     \        std::cout << from << \" \" << to << \"\\n\";\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/WeightedGraph.hpp
   - library/graph/shortest_path/Dijkstra.hpp
   isVerificationFile: true
   path: test/library-checker/Graph/ShortestPath.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/ShortestPath.test.cpp

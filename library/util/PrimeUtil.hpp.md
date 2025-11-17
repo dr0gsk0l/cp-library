@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -88,11 +91,12 @@ data:
     \ 0);\n            while (n % p == 0) {\n                ret.back().second++;\n\
     \                n /= p;\n            }\n        }\n\n        if (n > 1)\n   \
     \         ret.emplace_back(n, 1);\n\n        return ret;\n    }\n};\n"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/util/PrimeUtil.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_1_C.test.cpp

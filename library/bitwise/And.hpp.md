@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/bitwise/Util.hpp
     title: library/bitwise/Util.hpp
@@ -40,11 +43,12 @@ data:
     \        zeta(B);\n        REP_(i, A.size()) A[i] *= B[i];\n        mobius(A);\n\
     \        return A;\n    }\n};\n#undef REP_"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/bitwise/Util.hpp
   isVerificationFile: false
   path: library/bitwise/And.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp

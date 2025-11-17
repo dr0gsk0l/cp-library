@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.hpp
     title: library/datastructure/unionfind/UnionFind.hpp
   _extendedRequiredBy: []
@@ -45,11 +48,12 @@ data:
     \            std::cout << uf.same(u, v) << \"\\n\";\n        else\n          \
     \  uf.merge(u, v);\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/unionfind/UnionFind.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/unionfind.test.cpp

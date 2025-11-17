@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   _extendedRequiredBy: []
@@ -106,11 +109,12 @@ data:
     \ T &c) const {\n        REP_(i, h * w) if (v[i] == c) return i;\n        return\
     \ -1;\n    }\n};\n#undef REP_"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: false
   path: library/graph/Grid8.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/graph/Grid8.hpp

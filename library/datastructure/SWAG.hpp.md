@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/monoid/Concepts.hpp
     title: library/algebra/monoid/Concepts.hpp
   _extendedRequiredBy: []
@@ -42,11 +45,12 @@ data:
     \    }\n    X prod() { return M::op(front_value(), back_value); }\n    int size()\
     \ { return back_stack.size() + front_stack.size(); }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/monoid/Concepts.hpp
   isVerificationFile: false
   path: library/datastructure/SWAG.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

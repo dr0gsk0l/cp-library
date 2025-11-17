@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/geometry/Base.hpp
     title: library/geometry/Base.hpp
@@ -117,13 +120,14 @@ data:
     \ f=1;\n//  int n=p.size();\n//  for(int i=0;i<n;i++){\n//    int t=ccw(p[(i+n-1)%n],p[i],p[(i+1)%n]);\n\
     //    f&=t!=CCW_CLOCKWISE;\n//  }\n//  return f;\n//}\n} // namespace geometry"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/geometry/Base.hpp
   - library/r2/XY.hpp
   - library/geometry/UtilFunction.hpp
   isVerificationFile: false
   path: library/geometry/Judge.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/geometry/Judge.hpp

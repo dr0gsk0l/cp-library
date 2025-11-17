@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -128,6 +131,7 @@ data:
     \ i = f.size() - 1; i > 0; i--) {\n        f[i] = f[i - 1] / i;\n    }\n    f[0]\
     \ = 0;\n    return f;\n}\n\n} // namespace fps\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   isVerificationFile: false
@@ -138,7 +142,7 @@ data:
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/log.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/Log.test.cpp

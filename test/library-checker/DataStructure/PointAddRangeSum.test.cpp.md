@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -42,13 +45,14 @@ data:
     \ >> r;\n        if (t)\n            std::cout << seg.prod(l, r) << \"\\n\";\n\
     \        else\n            seg.multiply(l, r);\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/Add.hpp
   - library/segtree/SegmentTree.hpp
   - library/algebra/monoid/Concepts.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRangeSum.test.cpp

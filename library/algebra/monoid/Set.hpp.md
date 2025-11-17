@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetMin.hpp
@@ -40,13 +43,14 @@ data:
     \    static constexpr void Lchop(const O &x, O &y) {\n        if (x)\n       \
     \     y = x;\n    }\n    static constexpr O unit() noexcept { return std::nullopt;\
     \ }\n    static constexpr bool commute = false;\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/algebra/monoid/Set.hpp
   requiredBy:
   - library/algebra/lazy/SetMin.hpp
   - library/algebra/lazy/SetSum.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_D.test.cpp

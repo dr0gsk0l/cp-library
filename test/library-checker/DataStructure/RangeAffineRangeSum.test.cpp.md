@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/group/Affine.hpp
     title: library/algebra/group/Affine.hpp
   - icon: ':heavy_check_mark:'
@@ -181,6 +184,7 @@ data:
     \ << '\\n';\n        else {\n            Line<mint> f;\n            std::cin >>\
     \ f;\n            seg.apply(l, r, f);\n        }\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/lazy/AffineSum.hpp
   - library/algebra/group/Affine.hpp
   - library/linearalgebra/Linear.hpp
@@ -191,7 +195,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

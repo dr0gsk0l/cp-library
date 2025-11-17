@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':warning:'
     path: library/math/XorShift.hpp
     title: library/math/XorShift.hpp
@@ -77,11 +80,12 @@ data:
     \    void erase(T key) { erase(root, key); }\n    bool find(T key) { return find(root,\
     \ key); }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/math/XorShift.hpp
   isVerificationFile: false
   path: library/datastructure/binary_search_tree/Treap.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/binary_search_tree/Treap.hpp

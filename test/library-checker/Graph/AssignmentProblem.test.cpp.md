@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/flow/MCF.hpp
     title: library/flow/MCF.hpp
@@ -180,13 +183,14 @@ data:
     \ to;\n\n    std::cout << sum << \"\\n\";\n    REP (i, n)\n        std::cout <<\
     \ res[i] << \"\\n \"[i + 1 < n];\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/matching/WeightedBipartiteMatching.hpp
   - library/flow/MCF.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/library-checker/Graph/AssignmentProblem.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/AssignmentProblem.test.cpp

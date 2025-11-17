@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':warning:'
     path: library/template/base.hpp
     title: library/template/base.hpp
@@ -64,6 +67,7 @@ data:
     \ ptt<ll>;\n\nTYPE(T)\nusing pq = std::priority_queue<T>;\nTYPE(T)\nusing pqg\
     \ = std::priority_queue<T, vec<T>, std::greater<T>>;\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/template/base.hpp
   isVerificationFile: false
   path: library/template/type.hpp
@@ -73,7 +77,7 @@ data:
   - library/template/input.hpp
   - library/template/output.hpp
   - library/template/original_ostream.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/type.hpp

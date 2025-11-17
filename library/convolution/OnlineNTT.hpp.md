@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -138,11 +141,12 @@ data:
     \n            fst.push_back(d - (1 << lg) + 1);\n            lst.push_back(d);\n\
     \            d_lst = d;\n            lg++;\n        }\n\n        return fg[d++];\n\
     \    }\n};\n#undef REP_\n#undef RREP_"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/convolution/OnlineNTT.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/convolution/OnlineNTT.hpp

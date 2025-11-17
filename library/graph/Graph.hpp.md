@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/graph/EdgeVertex.hpp
@@ -148,7 +151,8 @@ data:
     \            for (int i = in_deg[from]; i < in_deg[from + 1]; i++)\n         \
     \       std::cerr << edges[i].to << \" \";\n            std::cerr << \"\\n\";\n\
     \        }\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/graph/Graph.hpp
   requiredBy:
@@ -158,7 +162,7 @@ data:
   - library/tree/Tree.hpp
   - library/tree/EdgeVertex.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp

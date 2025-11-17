@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: build/pch
     pages:
-    - icon: ':warning:'
+    - icon: ':question:'
       path: build/pch/stdc++.hpp
       title: build/pch/stdc++.hpp
   - name: library/algebra

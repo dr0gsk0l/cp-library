@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   - icon: ':heavy_check_mark:'
@@ -127,13 +130,14 @@ data:
     \    for (int i = 0; i < n; i++)\n        std::cout << (i == T.root ? i : T.parent(i).to)\
     \ << \"\\n \"[i + 1 < n];\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/CartesianTree.hpp
   - library/tree/WeightedTree.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/library-checker/Tree/CartesianTree.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/CartesianTree.test.cpp

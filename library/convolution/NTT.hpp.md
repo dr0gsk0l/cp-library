@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -58,11 +61,12 @@ data:
     \ 1) |= 1 << (lg - 1);\n\n        MINT a = f[l];\n        f[l] += f[r] * cs[x[l]];\n\
     \        (f[r] *= cs[x[r]]) += a;\n    }\n    f.resize(M);\n    MINT Ninv = MINT(N).inv();\n\
     \    REP_(i, M) f[i] *= Ninv;\n    return f;\n}\n#undef REP_\n#undef RREP_"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/convolution/NTT.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/Convolution.test.cpp

@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -75,12 +78,13 @@ data:
     \           std::cin >> d;\n            assert(PUF.merge(x, y, d));\n        }\n\
     \    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/Add.hpp
   - library/datastructure/unionfind/PotentialUnionFind.hpp
   isVerificationFile: true
   path: test/AOJ/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DSL_1_B.test.cpp

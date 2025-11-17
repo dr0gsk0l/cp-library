@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/linearalgebra/Linear.hpp
     title: library/linearalgebra/Linear.hpp
   _extendedRequiredBy:
@@ -77,12 +80,13 @@ data:
     \      return {an,b*((1-an)/(1-a))};\n    }\n    */\n    static constexpr L unit()\
     \ { return L(1, 0); }\n    static constexpr bool commute = false;\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/linearalgebra/Linear.hpp
   isVerificationFile: false
   path: library/algebra/group/Affine.hpp
   requiredBy:
   - library/algebra/lazy/AffineSum.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

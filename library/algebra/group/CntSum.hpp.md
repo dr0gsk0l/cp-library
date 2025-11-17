@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/AddSum.hpp
@@ -56,14 +59,15 @@ data:
     \ X>\nstd::vector<std::pair<X, X>> cnt_init(const std::vector<X> &v) {\n    int\
     \ n = v.size();\n    std::vector<std::pair<X, X>> res(n);\n    for (int i = 0;\
     \ i < n; i++)\n        res[i] = {v[i], 1};\n    return res;\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/algebra/group/CntSum.hpp
   requiredBy:
   - library/algebra/lazy/AddSum.hpp
   - library/algebra/lazy/AffineSum.hpp
   - library/algebra/lazy/SetSum.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

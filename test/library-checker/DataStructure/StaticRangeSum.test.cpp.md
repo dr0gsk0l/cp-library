@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/datastructure/CumulativeSum.hpp
     title: library/datastructure/CumulativeSum.hpp
@@ -35,11 +38,12 @@ data:
     \    while (q--) {\n        int l, r;\n        std::cin >> l >> r;\n        std::cout\
     \ << wa.sum(l, r) << '\\n';\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/CumulativeSum.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/StaticRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/StaticRangeSum.test.cpp

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   _extendedRequiredBy: []
@@ -183,11 +186,12 @@ data:
     \            }\n        }\n        return std::make_pair(res, true);\n    }\n\
     };\n#undef REP_"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: false
   path: library/flow/NondecreasingMCF.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/3297.test.cpp

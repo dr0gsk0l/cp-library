@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
   _extendedRequiredBy:
@@ -135,13 +138,14 @@ data:
     \ &is, Mint &m) {\n        is >> m.v;\n        m.v %= MOD;\n        if (m.v <\
     \ 0)\n            m.v += MOD;\n        return is;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/math/ExtraGCD.hpp
   isVerificationFile: false
   path: library/mod/Modint.hpp
   requiredBy:
   - library/formalpowerseries/Sqrt.hpp
   - library/math/ModularSqrt.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp

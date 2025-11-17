@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
@@ -66,11 +69,12 @@ data:
     \  }\n\n    void scan(int n) {\n        while (n--) {\n            T a;\n    \
     \        std::cin >> a;\n            insert(a);\n        }\n    }\n\n    T pick_mn()\
     \ { return pick_min(); }\n    T pick_mx() { return pick_max(); }\n};\n"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/superstd/Multiset.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp

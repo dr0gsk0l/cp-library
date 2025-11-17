@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.hpp
     title: library/datastructure/unionfind/UnionFind.hpp
   _extendedRequiredBy: []
@@ -108,11 +111,12 @@ data:
     \       for (int v : processing)\n            state[v] = 2;\n    }\n    tree.erase(tree.begin()\
     \ + r);\n    return std::make_pair(res, tree);\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/unionfind/UnionFind.hpp
   isVerificationFile: false
   path: library/graph/MinimumSpanningArborescence.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Graph/DirectedMST.test.cpp

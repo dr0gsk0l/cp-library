@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   - icon: ':heavy_check_mark:'
@@ -136,12 +139,13 @@ data:
     \                else\n                    t.add_edge(r, i, lr[i]);\n        }\n\
     \    }\n    t.build(root);\n    return t;\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/WeightedTree.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: false
   path: library/tree/CartesianTree.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/CartesianTree.test.cpp

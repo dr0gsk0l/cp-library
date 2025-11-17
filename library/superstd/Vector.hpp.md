@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,11 +18,12 @@ data:
   code: "#pragma once\ntemplate <typename T> class Vector {\n    int m;\n    std::vector<T>\
     \ v;\n\n    Vector() = default;\n    Vector(int n, T x = {}) : v(n, x), m(0) {}\n\
     \    Vector(int L, int R, T x) : v(L + R, x), m(L) {}\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/superstd/Vector.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/superstd/Vector.hpp

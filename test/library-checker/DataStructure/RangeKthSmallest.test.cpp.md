@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/datastructure/FullyIndexableDictionary.hpp
     title: library/datastructure/FullyIndexableDictionary.hpp
@@ -184,13 +187,14 @@ data:
     \    while (q--) {\n        int l, r, k;\n        std::cin >> l >> r >> k;\n \
     \       std::cout << WM.kth_smallest(l, r, k) << \"\\n\";\n    }\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/datastructure/WaveletMatrix.hpp
   - library/datastructure/FullyIndexableDictionary.hpp
   - library/util/Compress.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/RangeKthSmallest.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/RangeKthSmallest.test.cpp

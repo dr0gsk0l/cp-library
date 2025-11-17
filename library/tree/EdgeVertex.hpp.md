@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':question:'
@@ -97,12 +100,13 @@ data:
     \       return w;\n    }\n\n    Tree build(int root = 0) {\n        assert(m ==\
     \ n - 1);\n        T.build(root);\n        return T;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/Tree.hpp
   - library/graph/Graph.hpp
   isVerificationFile: false
   path: library/tree/EdgeVertex.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/650.test.cpp

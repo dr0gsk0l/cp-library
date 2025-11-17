@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/superstd/Set.hpp
     title: library/superstd/Set.hpp
@@ -60,11 +63,12 @@ data:
     \ -1) << \"\\n\";\n        }\n        if (c == 4) {\n            int x = se.leq(k);\n\
     \            std::cout << (x >= 0 ? x : -1) << \"\\n\";\n        }\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/superstd/Set.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PredecessorProblem.test.cpp

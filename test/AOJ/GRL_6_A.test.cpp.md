@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/flow/Dinic.hpp
     title: library/flow/Dinic.hpp
@@ -128,12 +131,13 @@ data:
     \       fl.add_arc(u, v, c);\n    }\n    std::cout << fl.flow() << std::endl;\n\
     }"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/flow/Dinic.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_6_A.test.cpp

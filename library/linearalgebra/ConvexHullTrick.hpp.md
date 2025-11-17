@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/linearalgebra/Linear.hpp
     title: library/linearalgebra/Linear.hpp
   _extendedRequiredBy: []
@@ -164,11 +167,12 @@ data:
     \ MaxConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n          \
     \                             convex_hull_trick::Objective::MAXIMIZE>;"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/linearalgebra/Linear.hpp
   isVerificationFile: false
   path: library/linearalgebra/ConvexHullTrick.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2012.test.cpp

@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/convolution/NTT.hpp
     title: library/convolution/NTT.hpp
@@ -95,13 +98,14 @@ data:
     \ : g)\n        std::cin >> p;\n    auto h = convolution(f, g);\n    for (mint\
     \ &p : h)\n        std::cout << p << \" \";\n    std::cout << std::endl;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/convolution/NTT.hpp
   - library/mod/Modint.hpp
   - library/math/ExtraGCD.hpp
   isVerificationFile: true
   path: test/library-checker/Polynomial/Convolution.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Convolution.test.cpp

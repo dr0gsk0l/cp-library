@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
@@ -45,12 +48,13 @@ data:
     \  using MF = GroupAdd<X>;\n    static constexpr X mapping(const X &f, const X\
     \ &x) { return f + x; }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/Add.hpp
   - library/algebra/monoid/Min.hpp
   isVerificationFile: false
   path: library/algebra/lazy/AddMin.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_H.test.cpp

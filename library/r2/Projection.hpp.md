@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/r2/XY.hpp
     title: library/r2/XY.hpp
   - icon: ':heavy_check_mark:'
@@ -116,12 +119,13 @@ data:
     \ mn));\n        int R = C.geq(r2(r, mn));\n        return std::make_pair(L, R);\n\
     \    }\n};\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/r2/XY.hpp
   - library/util/Compress.hpp
   isVerificationFile: false
   path: library/r2/Projection.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

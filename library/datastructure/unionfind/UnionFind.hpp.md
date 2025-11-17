@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':question:'
     path: library/graph/MinimumSpanningArborescence.hpp
@@ -64,13 +67,14 @@ data:
     \ res(n);\n        for (int i = 0; i < n; i++)\n            res[leader(i)].push_back(i);\n\
     \        std::erase_if(res, [](const auto &vec) { return vec.empty(); });\n  \
     \      return res;\n    }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/datastructure/unionfind/UnionFind.hpp
   requiredBy:
   - library/graph/MinimumSpanningTree.hpp
   - library/graph/MinimumSpanningArborescence.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/unionfind.test.cpp

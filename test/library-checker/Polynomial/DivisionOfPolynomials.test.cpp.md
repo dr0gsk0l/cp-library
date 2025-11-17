@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -131,13 +134,14 @@ data:
     \ << q[i] << \" \";\n    std::cout << \"\\n\";\n    REP (i, r.size())\n      \
     \  std::cout << r[i] << \" \";\n    std::cout << \"\\n\";\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/DivMod.hpp
   isVerificationFile: true
   path: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/DivisionOfPolynomials.test.cpp

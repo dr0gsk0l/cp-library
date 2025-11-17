@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -68,11 +71,12 @@ data:
     \u306B\u3059\u308B\n    template <typename Head, typename... Tail>\n    static\
     \ void rearrange(const vi &p, Head &v, Tail &...tail) {\n        execute_rearrange(p,\
     \ v);\n        rearrange(p, tail...);\n    }\n};\n#undef REP_"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/util/Permutation.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/Permutation.hpp

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
   - icon: ':question:'
@@ -59,6 +62,7 @@ data:
     \ >> x;\n            F f = S.prod();\n            std::cout << f(x) << \"\\n\"\
     ;\n        }\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/Reverse.hpp
   - library/algebra/group/Affine.hpp
   - library/linearalgebra/Linear.hpp
@@ -69,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

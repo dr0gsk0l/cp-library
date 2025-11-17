@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':heavy_check_mark:'
@@ -136,13 +139,14 @@ data:
     \    std::cin >> f[i];\n        P.add(f);\n    }\n    FPS f = P.prod();\n    REP\
     \ (i, f.size())\n        std::cout << f[i] << \"\\n \"[i + 1 < f.size()];\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/Prod.hpp
   isVerificationFile: true
   path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp

@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/bitwise/And.hpp
@@ -44,7 +47,8 @@ data:
   code: "#pragma once\nnamespace bitwise{\n  static int log2(int N){\n    int n=__builtin_ffs(N)-1;\n\
     \    assert((1<<n)==N);\n    return n;\n  }\n  static bool in(int S,int a){ return\
     \ (S>>a)&1; }\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/bitwise/Util.hpp
   requiredBy:
@@ -54,7 +58,7 @@ data:
   - library/bitwise/Or.hpp
   - library/bitwise/And.hpp
   - library/bitwise/Xor.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp

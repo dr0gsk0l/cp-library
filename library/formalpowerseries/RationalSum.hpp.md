@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -107,13 +110,14 @@ data:
     \ que.emplace(a1 * b2 + a2 * b1, b1 * b2);\n        }\n        auto [a, b] = que.front();\n\
     \        que.pop();\n        return a / b;\n    }\n};\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   isVerificationFile: false
   path: library/formalpowerseries/RationalSum.hpp
   requiredBy:
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/RationalSum.hpp

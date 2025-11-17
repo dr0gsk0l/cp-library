@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -39,11 +42,12 @@ data:
     \ sqrtll(ll a) {\n    for (ll b = sqrt(a); b * b <= a; b++)\n        if (b * b\
     \ == a)\n            return b;\n    for (ll b = sqrt(a); b >= 0 and b * b >= a;\
     \ b--)\n        if (b * b == a)\n            return b;\n    return -1;\n}"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/util/template.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/util/template.hpp

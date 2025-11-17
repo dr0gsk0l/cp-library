@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/util/Compress.hpp
     title: library/util/Compress.hpp
@@ -62,12 +65,13 @@ data:
     \ j = cmp[v[i]];\n        res += ft.sum(0, j);\n        ft.add(j, 1);\n    }\n\
     \    return res;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/util/Compress.hpp
   isVerificationFile: false
   path: library/util/InversionNumber.hpp
   requiredBy:
   - library/util/BubbleNumber.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/ALDS1_5_D.test.cpp

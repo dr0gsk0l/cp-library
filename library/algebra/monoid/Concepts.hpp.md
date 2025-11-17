@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Concepts.hpp
@@ -79,7 +82,8 @@ data:
     \ x) {\n    { M::op(x, x) } -> std::same_as<typename M::value_type>;\n    { M::Lchop(x,\
     \ x) };\n    { M::Rchop(x, x) };\n    { M::unit() } -> std::same_as<typename M::value_type>;\n\
     };"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/algebra/monoid/Concepts.hpp
   requiredBy:
@@ -92,7 +96,7 @@ data:
   - library/datastructure/SWAG.hpp
   - library/math/FactorialNumberSystem.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

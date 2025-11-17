@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   - icon: ':heavy_check_mark:'
@@ -134,13 +137,14 @@ data:
     \ R] = e.weight;\n            chmax(ans, v[e.to] * (R - L));\n        }\n    std::cout\
     \ << ans << std::endl;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/CartesianTree.hpp
   - library/tree/WeightedTree.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/AOJ/DPL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/DPL_3_C.test.cpp

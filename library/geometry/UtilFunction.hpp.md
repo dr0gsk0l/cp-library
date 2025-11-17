@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/geometry/Base.hpp
     title: library/geometry/Base.hpp
@@ -102,13 +105,14 @@ data:
     \  k--;\n        qs[k++] = ps[i];\n    }\n    qs.resize(k - 1);\n    return qs;\n\
     }\n} // namespace geometry"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/geometry/Base.hpp
   - library/r2/XY.hpp
   isVerificationFile: false
   path: library/geometry/UtilFunction.hpp
   requiredBy:
   - library/geometry/Judge.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/CGL_4_A.test.cpp

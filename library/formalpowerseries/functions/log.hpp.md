@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -139,6 +142,7 @@ data:
     \ and f[0] == 1);\n    return integral(differential(f) / f);\n}\n\n} // namespace\
     \ fps\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/functions/differential.hpp
@@ -150,7 +154,7 @@ data:
   - library/formalpowerseries/functions/exp.hpp
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/Log.test.cpp

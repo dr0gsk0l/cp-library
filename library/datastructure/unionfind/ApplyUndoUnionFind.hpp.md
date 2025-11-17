@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -57,11 +60,12 @@ data:
     \ AbelGroup::Rchop(value[y], value[x]);\n        num++;\n    }\n\n    size_t size(const\
     \ size_t x) const {\n        assert(0 <= x and x < n);\n        return sz[leader(x)];\n\
     \    }\n\n    size_t count() const { return num; }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/datastructure/unionfind/ApplyUndoUnionFind.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/datastructure/unionfind/ApplyUndoUnionFind.hpp

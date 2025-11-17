@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':heavy_check_mark:'
@@ -104,13 +107,14 @@ data:
     \ p : ve)\n            std::cout << \" \" << p;\n        std::cout << \"\\n\"\
     ;\n    }\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/Graph.hpp
   - library/graph/SCC.hpp
   - library/graph/ReverseGraph.hpp
   isVerificationFile: true
   path: test/library-checker/Graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Graph/SCC.test.cpp

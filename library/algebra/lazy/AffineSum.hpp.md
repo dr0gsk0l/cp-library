@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/algebra/group/Affine.hpp
     title: library/algebra/group/Affine.hpp
   - icon: ':heavy_check_mark:'
@@ -85,13 +88,14 @@ data:
     \ constexpr P mapping(const F &f, const P &x) {\n        return {f.a * x.first\
     \ + f.b * x.second, x.second};\n    }\n};\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/Affine.hpp
   - library/linearalgebra/Linear.hpp
   - library/algebra/group/CntSum.hpp
   isVerificationFile: false
   path: library/algebra/lazy/AffineSum.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RangeAffineRangeSum.test.cpp

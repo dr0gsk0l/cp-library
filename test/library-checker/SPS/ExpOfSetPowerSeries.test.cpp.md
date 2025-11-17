@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/bitwise/Ranked.hpp
     title: library/bitwise/Ranked.hpp
@@ -127,6 +130,7 @@ data:
     \        std::cin >> x;\n\n    SPS c = exp(b);\n    for (auto &x : c)\n      \
     \  std::cout << x << \" \";\n    std::cout << std::endl;\n}"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/setpowerseries/Compose.hpp
   - library/setpowerseries/Base.hpp
   - library/bitwise/Ranked.hpp
@@ -135,7 +139,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

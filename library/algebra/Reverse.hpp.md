@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/Reverse.hpp
@@ -48,14 +51,15 @@ data:
     \ const X& y){ return Algebra::op(y,x); }\n  static constexpr void Rchop(X&x,const\
     \ X&y){ Algebra::Lchop(y,x); }\n  static constexpr void Lchop(const X&x,X&y){\
     \ Algebra::Rchop(y,x); }\n};"
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/algebra/Reverse.hpp
   requiredBy:
   - library/algebra/lazy/Reverse.hpp
   - library/tree/TreeLazy.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

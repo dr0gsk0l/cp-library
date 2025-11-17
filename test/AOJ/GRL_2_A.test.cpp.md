@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/datastructure/unionfind/UnionFind.hpp
     title: library/datastructure/unionfind/UnionFind.hpp
   - icon: ':heavy_check_mark:'
@@ -108,13 +111,14 @@ data:
     \ [sum, tree] = minimum_spanning_tree(g);\n    std::cout << sum << std::endl;\n\
     }"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/graph/MinimumSpanningTree.hpp
   - library/datastructure/unionfind/UnionFind.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_2_A.test.cpp

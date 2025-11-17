@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
   - icon: ':question:'
@@ -92,13 +95,14 @@ data:
     \ - i - 1));\n        m = i;\n        c = b * b;\n        t *= c;\n        r *=\
     \ b;\n    }\n    return r;\n}\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/mod/Modint.hpp
   - library/math/ExtraGCD.hpp
   isVerificationFile: false
   path: library/math/ModularSqrt.hpp
   requiredBy:
   - library/formalpowerseries/Sqrt.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/ModularSqrt.hpp

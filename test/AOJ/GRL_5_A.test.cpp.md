@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
   - icon: ':heavy_check_mark:'
@@ -129,13 +132,14 @@ data:
     \ (int p : ans)\n        fans = std::max(fans, p);\n    std::cout << fans << std::endl;\n\
     }"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/tree/ReRooting.hpp
   - library/tree/WeightedTree.hpp
   - library/graph/WeightedGraph.hpp
   isVerificationFile: true
   path: test/AOJ/GRL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/GRL_5_A.test.cpp

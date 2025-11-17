@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
+  - icon: ':question:'
     path: library/formalpowerseries/Base.hpp
     title: library/formalpowerseries/Base.hpp
   - icon: ':question:'
@@ -144,6 +147,7 @@ data:
     \  T finv = fact.inv();\n    for (int i = n - 1; i >= 0; i--) {\n        f[i]\
     \ *= finv;\n        if (i) finv *= i;\n    }\n}\n\n} // namespace fps\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
   - library/formalpowerseries/functions/exp.hpp
@@ -153,7 +157,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/functions/taylor_shift.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/TaylorShift.test.cpp

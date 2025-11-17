@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/bitwise/Ranked.hpp
     title: library/bitwise/Ranked.hpp
@@ -83,6 +86,7 @@ data:
     \        return SPS(BitwiseRanked::convolution<T>(*this, b));\n    }\n    SPS\
     \ &operator*=(const SPS &b) { return (*this) = (*this) * b; }\n};\n"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/bitwise/Ranked.hpp
   - library/bitwise/Util.hpp
   - library/util/Valarray.hpp
@@ -90,7 +94,7 @@ data:
   path: library/setpowerseries/Base.hpp
   requiredBy:
   - library/setpowerseries/Compose.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

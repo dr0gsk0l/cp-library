@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
     path: library/template/input.hpp
@@ -41,7 +44,8 @@ data:
     #include <bits/stdc++.h>
 
     '
-  dependsOn: []
+  dependsOn:
+  - build/pch/stdc++.hpp
   isVerificationFile: false
   path: library/template/base.hpp
   requiredBy:
@@ -52,7 +56,7 @@ data:
   - library/template/output.hpp
   - library/template/original_ostream.hpp
   - library/template/macro.hpp
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/template/base.hpp

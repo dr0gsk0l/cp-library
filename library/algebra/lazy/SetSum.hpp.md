@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: build/pch/stdc++.hpp
+    title: build/pch/stdc++.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/CntSum.hpp
     title: library/algebra/group/CntSum.hpp
@@ -51,12 +54,13 @@ data:
     \ P mapping(const F &f, const P &x) {\n        if (f.has_value())\n          \
     \  return {f.value() * x.second, x.second};\n        return x;\n    }\n};"
   dependsOn:
+  - build/pch/stdc++.hpp
   - library/algebra/group/CntSum.hpp
   - library/algebra/monoid/Set.hpp
   isVerificationFile: false
   path: library/algebra/lazy/SetSum.hpp
   requiredBy: []
-  timestamp: '2025-11-17 22:58:45+09:00'
+  timestamp: '2025-11-18 08:06:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/DSL_2_I.test.cpp
