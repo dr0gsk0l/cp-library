@@ -4,6 +4,10 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "${ROOT_DIR}"
 
+LOG_DIR="${ROOT_DIR}/build/ce-check"
+rm -rf "${LOG_DIR}"
+mkdir -p "${LOG_DIR}"
+
 SETUP_SCRIPT="${ROOT_DIR}/scripts/setup-toolchain.sh"
 if [[ -x "${SETUP_SCRIPT}" ]]; then
     "${SETUP_SCRIPT}" >/dev/null
@@ -59,6 +63,14 @@ CXX_FLAGS=(
     "${PCH_HEADER}"
 )
 
+escape_github_message() {
+    local text="$1"
+    text="${text//'%'/'%25'}"
+    text="${text//$'\n'/'%0A'}"
+    text="${text//$'\r'/'%0D'}"
+    printf '%s' "${text}"
+}
+
 TEST_SOURCES=()
 if command -v rg >/dev/null 2>&1; then
     while IFS= read -r path; do
@@ -91,8 +103,23 @@ echo "[ce-check] 並列ジョブ数: ${JOB_COUNT}"
 
 compile_one() {
     local src="$1"
+    local safe_name="${src//\//_}"
+    safe_name="${safe_name// /_}"
+    local log_file="${LOG_DIR}/${safe_name}.log"
     echo "[ce-check] ${src}"
-    "${CXX_BIN}" "${CXX_FLAGS[@]}" "${src}"
+    if "${CXX_BIN}" "${CXX_FLAGS[@]}" "${src}" >"${log_file}" 2>&1; then
+        rm -f "${log_file}"
+        return 0
+    fi
+
+    echo "[ce-check][ERROR] ${src}"
+    local snippet
+    snippet="$(tail -n 20 "${log_file}")"
+    printf '%s\n' "${snippet}"
+    if [[ -n "${GITHUB_ACTIONS:-}" ]]; then
+        printf '::error file=%s::%s\n' "${src}" "$(escape_github_message "${snippet}")"
+    fi
+    return 1
 }
 
 pids=()
