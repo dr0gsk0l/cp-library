@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
   - icon: ':question:'
@@ -21,12 +21,12 @@ data:
     title: library/util/Valarray.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/TaylorShift.test.cpp
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <functional>\n#include\
@@ -153,8 +153,8 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/functions/taylor_shift.hpp
   requiredBy: []
-  timestamp: '2025-11-16 20:55:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-11-17 22:58:45+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Polynomial/TaylorShift.test.cpp
 documentation_of: library/formalpowerseries/functions/taylor_shift.hpp

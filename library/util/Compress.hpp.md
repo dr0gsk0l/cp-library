@@ -126,7 +126,7 @@ data:
   - library/tree/AuxiliaryTree.hpp
   - library/util/BubbleNumber.hpp
   - library/util/InversionNumber.hpp
-  timestamp: '2025-11-16 20:55:03+09:00'
+  timestamp: '2025-11-17 22:58:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

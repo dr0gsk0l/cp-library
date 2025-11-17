@@ -23,19 +23,22 @@ data:
     \  }\n\n    void erase(const T &a) {\n        size_ -= count(a);\n        m.erase(a);\n\
     \    }\n    void erase_k(const T &a, u32 k = 1) {\n        if (count(a) <= k)\
     \ {\n            size_ -= count(a);\n            erase(a);\n        } else {\n\
-    \            m[a] -= k;\n            size_ -= k;\n        }\n    }\n\n    T min_value()\
-    \ const {\n        assert(size());\n        return m.begin()->first;\n    }\n\
-    \    T max_value() const { // MaxValu\n        assert(size());\n        return\
-    \ m.rbegin()->first;\n    }\n\n    T pick_min() { // \u30D4\u30AF\u30DF\u30F3\n\
-    \        T res = min_value();\n        erase1(res);\n        return res;\n   \
-    \ }\n    T pick_max() {\n        T res = max_value();\n        erase1(res);\n\
-    \        return res;\n    }\n\n    T lt(const T &a) const {\n        assert(min_value()\
-    \ < a);\n        return (--m.lower_bound(a))->first;\n    }\n    T leq(const T\
-    \ &a) const {\n        assert(min_value() <= a);\n        return (--m.upper_bound(a))->first;\n\
-    \    }\n    T gt(const T &a) const {\n        assert(max_value() > a);\n     \
-    \   return upper_bound(a)->first;\n    }\n    T geq(const T &a) const {\n    \
-    \    assert(max_value() >= a);\n        return lower_bound(a)->first;\n    }\n\
-    };\n"
+    \            m[a] -= k;\n            size_ -= k;\n        }\n    }\n    void erase1(const\
+    \ T &a) { erase_k(a, 1); }\n\n    T min_value() const {\n        assert(size());\n\
+    \        return m.begin()->first;\n    }\n    T max_value() const { // MaxValu\n\
+    \        assert(size());\n        return m.rbegin()->first;\n    }\n\n    T pick_min()\
+    \ { // \u30D4\u30AF\u30DF\u30F3\n        T res = min_value();\n        erase1(res);\n\
+    \        return res;\n    }\n    T pick_max() {\n        T res = max_value();\n\
+    \        erase1(res);\n        return res;\n    }\n\n    T lt(const T &a) const\
+    \ {\n        assert(min_value() < a);\n        return (--m.lower_bound(a))->first;\n\
+    \    }\n    T leq(const T &a) const {\n        assert(min_value() <= a);\n   \
+    \     return (--m.upper_bound(a))->first;\n    }\n    T gt(const T &a) const {\n\
+    \        assert(max_value() > a);\n        return m.upper_bound(a)->first;\n \
+    \   }\n    T geq(const T &a) const {\n        assert(max_value() >= a);\n    \
+    \    return m.lower_bound(a)->first;\n    }\n\n    void scan(int n) {\n      \
+    \  while (n--) {\n            T a;\n            std::cin >> a;\n            insert(a);\n\
+    \        }\n    }\n\n    T pick_mn() { return pick_min(); }\n    T pick_mx() {\
+    \ return pick_max(); }\n};\n"
   code: "template <typename T> class Multiset {\n    using u32 = std::uint32_t;\n\
     \    u32 size_;\n\n  public:\n    std::map<T, u32> m;\n\n    Multiset() : size_(0)\
     \ {}\n\n    void banpei() {\n        insert(std::numeric_limits<T>::max() / 2);\n\
@@ -48,23 +51,26 @@ data:
     \ T &a) {\n        size_ -= count(a);\n        m.erase(a);\n    }\n    void erase_k(const\
     \ T &a, u32 k = 1) {\n        if (count(a) <= k) {\n            size_ -= count(a);\n\
     \            erase(a);\n        } else {\n            m[a] -= k;\n           \
-    \ size_ -= k;\n        }\n    }\n\n    T min_value() const {\n        assert(size());\n\
-    \        return m.begin()->first;\n    }\n    T max_value() const { // MaxValu\n\
-    \        assert(size());\n        return m.rbegin()->first;\n    }\n\n    T pick_min()\
-    \ { // \u30D4\u30AF\u30DF\u30F3\n        T res = min_value();\n        erase1(res);\n\
-    \        return res;\n    }\n    T pick_max() {\n        T res = max_value();\n\
-    \        erase1(res);\n        return res;\n    }\n\n    T lt(const T &a) const\
-    \ {\n        assert(min_value() < a);\n        return (--m.lower_bound(a))->first;\n\
-    \    }\n    T leq(const T &a) const {\n        assert(min_value() <= a);\n   \
-    \     return (--m.upper_bound(a))->first;\n    }\n    T gt(const T &a) const {\n\
-    \        assert(max_value() > a);\n        return upper_bound(a)->first;\n   \
-    \ }\n    T geq(const T &a) const {\n        assert(max_value() >= a);\n      \
-    \  return lower_bound(a)->first;\n    }\n};"
+    \ size_ -= k;\n        }\n    }\n    void erase1(const T &a) { erase_k(a, 1);\
+    \ }\n\n    T min_value() const {\n        assert(size());\n        return m.begin()->first;\n\
+    \    }\n    T max_value() const { // MaxValu\n        assert(size());\n      \
+    \  return m.rbegin()->first;\n    }\n\n    T pick_min() { // \u30D4\u30AF\u30DF\
+    \u30F3\n        T res = min_value();\n        erase1(res);\n        return res;\n\
+    \    }\n    T pick_max() {\n        T res = max_value();\n        erase1(res);\n\
+    \        return res;\n    }\n\n    T lt(const T &a) const {\n        assert(min_value()\
+    \ < a);\n        return (--m.lower_bound(a))->first;\n    }\n    T leq(const T\
+    \ &a) const {\n        assert(min_value() <= a);\n        return (--m.upper_bound(a))->first;\n\
+    \    }\n    T gt(const T &a) const {\n        assert(max_value() > a);\n     \
+    \   return m.upper_bound(a)->first;\n    }\n    T geq(const T &a) const {\n  \
+    \      assert(max_value() >= a);\n        return m.lower_bound(a)->first;\n  \
+    \  }\n\n    void scan(int n) {\n        while (n--) {\n            T a;\n    \
+    \        std::cin >> a;\n            insert(a);\n        }\n    }\n\n    T pick_mn()\
+    \ { return pick_min(); }\n    T pick_mx() { return pick_max(); }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: library/superstd/Multiset.hpp
   requiredBy: []
-  timestamp: '2025-11-16 20:55:03+09:00'
+  timestamp: '2025-11-17 22:58:45+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp

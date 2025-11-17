@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
   - icon: ':question:'
@@ -204,7 +204,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Composition.test.cpp
   requiredBy: []
-  timestamp: '2025-11-16 20:55:03+09:00'
+  timestamp: '2025-11-17 22:58:45+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Composition.test.cpp

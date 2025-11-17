@@ -23,7 +23,7 @@ data:
   - icon: ':x:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/functions/taylor_shift.hpp
     title: library/formalpowerseries/functions/taylor_shift.hpp
   _extendedVerifiedWith:
@@ -36,12 +36,12 @@ data:
   - icon: ':x:'
     path: test/library-checker/Polynomial/Pow.test.cpp
     title: test/library-checker/Polynomial/Pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/TaylorShift.test.cpp
     title: test/library-checker/Polynomial/TaylorShift.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/util/Valarray.hpp\"\n#include <functional>\n#include\
@@ -162,8 +162,8 @@ data:
   - library/formalpowerseries/functions/composition.hpp
   - library/formalpowerseries/functions/taylor_shift.hpp
   - library/formalpowerseries/functions/pow.hpp
-  timestamp: '2025-11-16 20:55:03+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2025-11-17 22:58:45+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/Polynomial/TaylorShift.test.cpp
   - test/library-checker/Polynomial/Exp.test.cpp

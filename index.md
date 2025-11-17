@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: build/pch
+    pages:
+    - icon: ':warning:'
+      path: build/pch/stdc++.hpp
+      title: build/pch/stdc++.hpp
   - name: library/algebra
     pages:
     - icon: ':question:'
@@ -235,7 +240,7 @@ data:
     - icon: ':question:'
       path: library/formalpowerseries/functions/differential.hpp
       title: library/formalpowerseries/functions/differential.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/formalpowerseries/functions/exp.hpp
       title: library/formalpowerseries/functions/exp.hpp
     - icon: ':question:'
@@ -247,7 +252,7 @@ data:
     - icon: ':x:'
       path: library/formalpowerseries/functions/pow.hpp
       title: library/formalpowerseries/functions/pow.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/formalpowerseries/functions/taylor_shift.hpp
       title: library/formalpowerseries/functions/taylor_shift.hpp
   - name: library/geometry
@@ -562,6 +567,11 @@ data:
     - icon: ':warning:'
       path: library/util/template.hpp
       title: library/util/template.hpp
+  - name: scripts/pch
+    pages:
+    - icon: ':warning:'
+      path: scripts/pch/stdc++.hpp
+      title: scripts/pch/stdc++.hpp
   verificationCategories:
   - name: test/AOJ
     pages:
@@ -786,7 +796,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
       title: test/library-checker/Polynomial/ProductOfPolynomialSequence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/library-checker/Polynomial/TaylorShift.test.cpp
       title: test/library-checker/Polynomial/TaylorShift.test.cpp
   - name: test/library-checker/SPS

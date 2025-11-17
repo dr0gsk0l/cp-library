@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/differential.hpp
     title: library/formalpowerseries/functions/differential.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/exp.hpp
     title: library/formalpowerseries/functions/exp.hpp
   - icon: ':question:'
@@ -16,7 +16,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/formalpowerseries/functions/taylor_shift.hpp
     title: library/formalpowerseries/functions/taylor_shift.hpp
   - icon: ':question:'
@@ -24,9 +24,9 @@ data:
     title: library/util/Valarray.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/polynomial_taylor_shift
@@ -145,7 +145,7 @@ data:
     \ finv *= i;\n    }\n}\n\n} // namespace fps\n#line 23 \"test/library-checker/Polynomial/TaylorShift.test.cpp\"\
     \nusing FPS = FormalPowerSeries<mint, 524288>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    int n, c;\n    std::cin >> n >> c;\n    FPS\
-    \ f(n);\n    REP (i, n)\n        std::cin >> f[i];\n    fps::taylor_shift(f, c);\n\
+    \ f(n);\n    REP (i, n)\n        std::cin >> f[i];\n    fps::taylor_shift(f, mint(c));\n\
     \    REP (i, n)\n        std::cout << (i < f.size() ? f[i] : 0) << \"\\n \"[i\
     \ + 1 < n];\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_taylor_shift\"\
@@ -157,9 +157,9 @@ data:
     }\n\n#include \"library/formalpowerseries/Base.hpp\"\n#include \"library/formalpowerseries/functions/taylor_shift.hpp\"\
     \nusing FPS = FormalPowerSeries<mint, 524288>;\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    int n, c;\n    std::cin >> n >> c;\n    FPS\
-    \ f(n);\n    REP (i, n)\n        std::cin >> f[i];\n    fps::taylor_shift(f, c);\n\
+    \ f(n);\n    REP (i, n)\n        std::cin >> f[i];\n    fps::taylor_shift(f, mint(c));\n\
     \    REP (i, n)\n        std::cout << (i < f.size() ? f[i] : 0) << \"\\n \"[i\
-    \ + 1 < n];\n}"
+    \ + 1 < n];\n}\n"
   dependsOn:
   - library/formalpowerseries/Base.hpp
   - library/util/Valarray.hpp
@@ -171,8 +171,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/TaylorShift.test.cpp
   requiredBy: []
-  timestamp: '2025-11-16 20:55:03+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-11-17 22:58:45+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/TaylorShift.test.cpp
 layout: document
