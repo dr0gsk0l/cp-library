@@ -4,37 +4,37 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.hpp
     title: library/algebra/group/Affine.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Concepts.hpp
     title: library/algebra/monoid/Concepts.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/SWAG.hpp
     title: library/datastructure/SWAG.hpp
   - icon: ':question:'
     path: library/linearalgebra/Linear.hpp
     title: library/linearalgebra/Linear.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.hpp
     title: library/mod/Modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/std::queue_operate_all_composite
+    PROBLEM: https://judge.yosupo.jp/problem/queue_operate_all_composite
     links:
-    - https://judge.yosupo.jp/problem/std::queue_operate_all_composite
+    - https://judge.yosupo.jp/problem/queue_operate_all_composite
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.14.0/x64/lib/python3.14/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
@@ -49,18 +49,20 @@ data:
     \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ library/datastructure/SWAG.hpp: line 3: #pragma once found in a non-first line\n"
   code: "#define PROBLEM                                                         \
-    \       \\\n    \"https://judge.yosupo.jp/problem/std::queue_operate_all_composite\"\
+    \       \\\n    \"https://judge.yosupo.jp/problem/queue_operate_all_composite\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/algebra/Reverse.hpp\"\n#include\
     \ \"library/algebra/group/Affine.hpp\"\n#include \"library/datastructure/SWAG.hpp\"\
     \n#include \"library/mod/Modint.hpp\"\n\nint main() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n\n    using mint = Mint<long long>;\n    using G\
     \ = AlgebraReverse<GroupAffine<mint>>;\n    using F = G::value_type;\n\n    SWAG<G>\
     \ S;\n\n    int q;\n    std::cin >> q;\n    while (q--) {\n        int t;\n  \
-    \      std::cin >> t;\n        if (t == 0) {\n            F f;\n            std::cin\
-    \ >> f;\n            S.push_back(f);\n        }\n        if (t == 1)\n       \
-    \     S.pop_front();\n        if (t == 2) {\n            int x;\n            std::cin\
-    \ >> x;\n            F f = S.prod();\n            std::cout << f(x) << \"\\n\"\
-    ;\n        }\n    }\n}"
+    \      std::cin >> t;\n        switch (t) {\n            case 0: {\n         \
+    \       F f;\n                std::cin >> f;\n                S.push_back(f);\n\
+    \                break;\n            }\n            case 1:\n                S.pop_front();\n\
+    \                break;\n            case 2: {\n                int x;\n     \
+    \           std::cin >> x;\n                F f = S.prod();\n                std::cout\
+    \ << f(x) << \"\\n\";\n                break;\n            }\n            default:\n\
+    \                std::unreachable();\n        }\n    }\n}\n"
   dependsOn:
   - build/pch/stdc++.hpp
   - library/algebra/Reverse.hpp
@@ -73,8 +75,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-11-24 18:49:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
 layout: document

@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.hpp
     title: library/algebra/group/Affine.hpp
   - icon: ':heavy_check_mark:'
@@ -41,7 +41,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/lazy/SetSum.hpp
     title: library/algebra/lazy/SetSum.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Concepts.hpp
     title: library/algebra/monoid/Concepts.hpp
   - icon: ':heavy_check_mark:'
@@ -125,7 +125,7 @@ data:
   - icon: ':warning:'
     path: library/datastructure/Imos.hpp
     title: library/datastructure/Imos.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/datastructure/SWAG.hpp
     title: library/datastructure/SWAG.hpp
   - icon: ':x:'
@@ -215,7 +215,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
   - icon: ':heavy_check_mark:'
@@ -233,7 +233,7 @@ data:
   - icon: ':warning:'
     path: library/graph/EdgeVertex.hpp
     title: library/graph/EdgeVertex.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':heavy_check_mark:'
@@ -308,7 +308,7 @@ data:
   - icon: ':warning:'
     path: library/local/Distance.hpp
     title: library/local/Distance.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
   - icon: ':warning:'
@@ -335,7 +335,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/mod/MintUtility.hpp
     title: library/mod/MintUtility.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.hpp
     title: library/mod/Modint.hpp
   - icon: ':x:'
@@ -440,7 +440,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/EdgeVertex.hpp
     title: library/tree/EdgeVertex.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.hpp
     title: library/tree/HLD.hpp
   - icon: ':heavy_check_mark:'
@@ -449,7 +449,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/tree/RootedTreeIsomorphism.hpp
     title: library/tree/RootedTreeIsomorphism.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/Tree.hpp
     title: library/tree/Tree.hpp
   - icon: ':heavy_check_mark:'
@@ -612,7 +612,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PredecessorProblem.test.cpp
     title: test/library-checker/DataStructure/PredecessorProblem.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -693,7 +693,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Pow.test.cpp
     title: test/library-checker/Polynomial/Pow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -714,7 +714,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/JumpOnTree.test.cpp
     title: test/library-checker/Tree/JumpOnTree.test.cpp
   - icon: ':heavy_check_mark:'

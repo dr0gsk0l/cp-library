@@ -19,7 +19,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
   - icon: ':question:'
@@ -60,12 +60,12 @@ data:
     \   using Valarray<T>::size;\n    using Valarray<T>::resize;\n    using Valarray<T>::at;\n\
     \    using Valarray<T>::begin;\n    using Valarray<T>::end;\n    using Valarray<T>::back;\n\
     \    using Valarray<T>::pop_back;\n    using value_type = T;\n\n    void strict(int\
-    \ n) {\n        if (size() > n)\n            resize(n);\n    }\n    void shrink()\
-    \ {\n        while (size() and back() == 0)\n            pop_back();\n    }\n\n\
-    \    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const std::vector<T>\
-    \ &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n    }\n\n  \
-    \  static FPS unit() { return {1}; }\n    static FPS x() { return {0, 1}; }\n\
-    #pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
+    \ n) {\n        if (size() > n)\n            resize(n);\n        shrink();\n \
+    \   }\n    void shrink() {\n        while (size() and back() == 0)\n         \
+    \   pop_back();\n    }\n\n    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const\
+    \ std::vector<T> &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n\
+    \    }\n\n    static FPS unit() { return {1}; }\n    static FPS x() { return {0,\
+    \ 1}; }\n#pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
     \ }\n\n    FPS &operator+=(const FPS &g) {\n        Valarray<T>::operator+=(g);\n\
     \        shrink();\n        return *this;\n    }\n    FPS operator+(const FPS\
     \ &g) const { return FPS(*this) += g; }\n\n    FPS &operator-=(const FPS &g) {\n\
@@ -98,8 +98,12 @@ data:
     \ int d) const { return FPS(*this) >>= d; }\n#pragma endregion operator\n\n  \
     \  FPS pre(int n) const {\n        if (size() <= n)\n            return *this;\n\
     \        return FPS(Valarray<T>(this->begin(), this->begin() + n));\n    }\n\n\
-    \    FPS inv(int SZ = MX) const {\n        assert(size() and at(0) != 0);\n  \
-    \      FPS res = {at(0).inv()};\n        for (int n = 1; n < SZ; n <<= 1) {\n\
+    \    // \u6700\u5C0F\u306E\u975E\u30BC\u30ED\u6B21\u6570\uFF08\u3059\u3079\u3066\
+    \ 0 \u306E\u3068\u304D\u306F size()\uFF09\u3092\u8FD4\u3059\n    int order() const\
+    \ {\n        for (int i = 0; i < int(size()); i++) {\n            if (at(i) !=\
+    \ 0)\n                return i;\n        }\n        return int(size());\n    }\n\
+    \n    FPS inv(int SZ = MX) const {\n        assert(size() and at(0) != 0);\n \
+    \       FPS res = {at(0).inv()};\n        for (int n = 1; n < SZ; n <<= 1) {\n\
     \            res *= (2 - this->pre(n << 1) * res);\n            res.strict(n <<\
     \ 1);\n        }\n        res.strict(SZ);\n        return res;\n    }\n\n    //\
     \ *this = f_1 + f_2 x^n \u21D2 [*this\u2190f_1, return f_2]\n    FPS separate(int\
@@ -132,66 +136,77 @@ data:
     \    res[0] = 1;\n    for (int i = 1; i < MX; i++) {\n        res[i] = res[i -\
     \ 1] * n / i;\n    }\n    return res;\n}\n\n} // namespace fps\n#line 5 \"library/formalpowerseries/functions/pow.hpp\"\
     \n\nnamespace fps {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T, MX>\
-    \ pow(FormalPowerSeries<T, MX> f, long long n) {\n    assert(n >= 0);\n    if\
-    \ (n == 0) {\n        return {1};\n    }\n    if (n == 1) {\n        return f;\n\
-    \    }\n\n    f.shrink();\n    if (!f.size()) {\n        return f;\n    }\n  \
-    \  int d = 0;\n    while(d < f.size() && f[d] == 0) {\n        d++;\n    }\n \
-    \   \n    if (d > 0 && (unsigned __int128)d * n >= MX) {\n        return FormalPowerSeries<T,\
-    \ MX>{};\n    }\n    f >>= d;\n    d *= n;\n\n    if (f[0] == 1) {\n        f\
-    \ = exp(n * log(f));\n    } else {\n        f = exp(log(f) * n);\n    }\n    f\
-    \ <<= d;\n    \n    return f;\n}\n\n} // namespace fps\n#line 5 \"library/formalpowerseries/functions/composition.hpp\"\
+    \ pow(FormalPowerSeries<T, MX> f, long long n) {\n    using FPS = FormalPowerSeries<T,\
+    \ MX>;\n\n    assert(n >= 0);\n    f.shrink();\n\n    if(n == 0)\n        return\
+    \ FPS::unit();\n    if(n == 1)\n        return f;\n    \n    if(f.size() == 0)\n\
+    \        return f;\n    if(f.size() == 1)\n        return FPS{f[0].pow(n)};\n\
+    \    \n    int d = f.order();\n    if (d > 0 && (unsigned __int128)d * n >= MX)\
+    \ \n        return FPS(0);\n\n    // f(x) = x^d g(x) \u306E\u6642 f^n = x^{dn}\
+    \ g^n\n    f >>= d;\n\n    // f(x) = f_0 * g(x) \u306E\u3068\u304D f^n = f_0^n\
+    \ g^n\n    auto f_0 = f[0];\n    if(f_0 != 1)\n        f /= f_0;\n\n    // f^n\
+    \ = exp(n log(f))\n    return f_0.pow(n) * fps::exp(n * fps::log(f)) << (d * n);\n\
+    }\n\n} // namespace fps\n#line 5 \"library/formalpowerseries/functions/composition.hpp\"\
     \n\nnamespace fps {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T, MX>\
     \ composition(const FormalPowerSeries<T, MX>& f, FormalPowerSeries<T, MX> g) {\n\
-    \    assert(!g.size() or g[0] == 0);\n    if (f.size() == 0) {\n        return\
-    \ f;\n    }\n    if (f.size() == 1) {\n        return {f[0]};\n    }\n    if (f.size()\
-    \ == 2) {\n        return f[0] + f[1] * g;\n    }\n\n    int m = sqrt(MX / 20);\n\
-    \    FormalPowerSeries<T, MX> g1 = g;\n    FormalPowerSeries<T, MX> g2 = g1.separate(m);\n\
-    \n    int z;\n    for (z = 1; z < g1.size() and g1[z] == 0; z++) {\n    }\n  \
-    \  if (z == g1.size()) {\n        FormalPowerSeries<T, MX> res(0);\n        FormalPowerSeries<T,\
-    \ MX> g2pow = {1};\n        for (int i = 0; i * m < MX and i < f.size(); i++,\
-    \ g2pow *= g2) {\n            res += f[i] * g2pow << (i * m);\n        }\n   \
-    \     return res;\n    }\n\n    auto rec = [&](auto rec, int l, int d) -> FormalPowerSeries<T,\
-    \ MX> {\n        if (d == 0 or l >= f.size()) {\n            return {};\n    \
-    \    }\n        if (d == 1) {\n            return {f[l]};\n        }\n       \
-    \ if (d == 2) {\n            return f[l] + (l + 1 < f.size() ? f[l + 1] * g1 :\
-    \ FormalPowerSeries<T, MX>{});\n        }\n        FormalPowerSeries<T, MX> f1\
-    \ = rec(rec, l, d >> 1);\n        FormalPowerSeries<T, MX> f2 = rec(rec, l + (d\
-    \ >> 1), d - (d >> 1));\n        f2 *= fps::pow(g1, d >> 1);\n        return f1\
-    \ + f2;\n    };\n    FormalPowerSeries<T, MX> res = rec(rec, 0, f.size());\n\n\
-    \    FormalPowerSeries<T, MX> dfg = res;\n    FormalPowerSeries<T, MX> g1_diff\
-    \ = fps::differential(g);\n    g1_diff >>= (z-1);\n    FormalPowerSeries<T, MX>\
-    \ g1inv = g1_diff.inv();\n    FormalPowerSeries<T, MX> g2pow = {1};\n    T factinv\
-    \ = 1;\n\n    for (int i = 1; i * m < MX; i++) {\n        dfg = (fps::differential(dfg)\
-    \ >> z) * g1inv;\n        dfg.strict(MX - m * i);\n        (g2pow *= g2).strict(MX\
-    \ - m * i);\n        factinv /= i;\n        res += factinv * (dfg * g2pow) <<\
-    \ (m * i);\n    }\n    return res;\n}\n\n} // namespace fps\n"
+    \    using FPS = FormalPowerSeries<T, MX>;\n    // f(g(x)) \u3092\u30D6\u30ED\u30C3\
+    \u30AF\u5206\u5272\uFF0B\u30C6\u30A4\u30E9\u30FC\u5C55\u958B\u3067\u8A08\u7B97\
+    \u3059\u308B\n    assert(!g.size() or g[0] == 0);\n    switch (f.size()) {\n \
+    \       case 0:\n            return f;\n        case 1:\n            return {f[0]};\n\
+    \        case 2:\n            return f[0] + f[1] * g;\n        default:\n    \
+    \        break;\n    }\n\n    int m = sqrt(MX / 20);\n    // g(x) = g1(x) + x^m\
+    \ g2(x) \u306B\u5206\u5272\n    FPS g1 = g;\n    FPS g2 = g1.separate(m);\n  \
+    \  \n    if (g1 == FPS(0)) {\n        // f(g) = f(x^m g2(x))\n        FPS res(0),\
+    \ g2pow = FPS::unit();\n        for (int i = 0; i * m < MX and i < f.size(); i++,\
+    \ g2pow *= g2)\n            res += f[i] * g2pow << (i * m);\n        return res;\n\
+    \    }\n\n    // f \u3092\u4E8C\u5206\u3057\u3064\u3064 g1 \u306E\u7D2F\u4E57\u3092\
+    \u307E\u3068\u3081\u3066\u639B\u3051\u308B\u518D\u5E30\n    auto rec = [&](auto\
+    \ rec, int l, int d) -> FPS {\n        if (d == 0 or l >= f.size()) {\n      \
+    \      return {};\n        }\n        if (d == 1) {\n            return {f[l]};\n\
+    \        }\n        if (d == 2) {\n            return f[l] + (l + 1 < f.size()\
+    \ ? f[l + 1] * g1 : FPS{});\n        }\n        FPS f1 = rec(rec, l, d >> 1);\n\
+    \        FPS f2 = rec(rec, l + (d >> 1), d - (d >> 1));\n        f2 *= fps::pow(g1,\
+    \ d >> 1);\n        return f1 + f2;\n    };\n    FPS res = rec(rec, 0, f.size());\
+    \ // \u307E\u305A g1 \u3092\u4EE3\u5165\u3057\u305F\u5206\u3092\u8A08\u7B97\n\n\
+    \    FPS dfg = res; // d^k f(g1) \u3092\u9806\u306B\u66F4\u65B0\u3059\u308B\u305F\
+    \u3081\u306E\u4E00\u6642\u5909\u6570\n    FPS g1_diff = fps::differential(g);\n\
+    \    g1_diff >>= (g1.order() - 1);\n    FPS g1inv = g1_diff.inv();\n    FPS g2pow\
+    \ = {1};\n    T factinv = 1;\n\n    // g2 \u306B\u3088\u308B\u30C6\u30A4\u30E9\
+    \u30FC\u5C55\u958B\u306E\u5404\u9805\u3092\u8DB3\u3057\u8FBC\u3080\n    for (int\
+    \ i = 1; i * m < MX; i++) {\n        dfg = (fps::differential(dfg) >> g1.order())\
+    \ * g1inv;\n        dfg.strict(MX - m * i);\n        (g2pow *= g2).strict(MX -\
+    \ m * i);\n        factinv /= i;\n        res += factinv * (dfg * g2pow) << (m\
+    \ * i);\n    }\n    return res;\n}\n\n} // namespace fps\n"
   code: "#pragma once\n#include \"../Base.hpp\"\n#include \"./differential.hpp\"\n\
     #include \"./pow.hpp\"\n\nnamespace fps {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T,\
     \ MX> composition(const FormalPowerSeries<T, MX>& f, FormalPowerSeries<T, MX>\
-    \ g) {\n    assert(!g.size() or g[0] == 0);\n    if (f.size() == 0) {\n      \
-    \  return f;\n    }\n    if (f.size() == 1) {\n        return {f[0]};\n    }\n\
-    \    if (f.size() == 2) {\n        return f[0] + f[1] * g;\n    }\n\n    int m\
-    \ = sqrt(MX / 20);\n    FormalPowerSeries<T, MX> g1 = g;\n    FormalPowerSeries<T,\
-    \ MX> g2 = g1.separate(m);\n\n    int z;\n    for (z = 1; z < g1.size() and g1[z]\
-    \ == 0; z++) {\n    }\n    if (z == g1.size()) {\n        FormalPowerSeries<T,\
-    \ MX> res(0);\n        FormalPowerSeries<T, MX> g2pow = {1};\n        for (int\
-    \ i = 0; i * m < MX and i < f.size(); i++, g2pow *= g2) {\n            res +=\
-    \ f[i] * g2pow << (i * m);\n        }\n        return res;\n    }\n\n    auto\
-    \ rec = [&](auto rec, int l, int d) -> FormalPowerSeries<T, MX> {\n        if\
-    \ (d == 0 or l >= f.size()) {\n            return {};\n        }\n        if (d\
-    \ == 1) {\n            return {f[l]};\n        }\n        if (d == 2) {\n    \
-    \        return f[l] + (l + 1 < f.size() ? f[l + 1] * g1 : FormalPowerSeries<T,\
-    \ MX>{});\n        }\n        FormalPowerSeries<T, MX> f1 = rec(rec, l, d >> 1);\n\
-    \        FormalPowerSeries<T, MX> f2 = rec(rec, l + (d >> 1), d - (d >> 1));\n\
-    \        f2 *= fps::pow(g1, d >> 1);\n        return f1 + f2;\n    };\n    FormalPowerSeries<T,\
-    \ MX> res = rec(rec, 0, f.size());\n\n    FormalPowerSeries<T, MX> dfg = res;\n\
-    \    FormalPowerSeries<T, MX> g1_diff = fps::differential(g);\n    g1_diff >>=\
-    \ (z-1);\n    FormalPowerSeries<T, MX> g1inv = g1_diff.inv();\n    FormalPowerSeries<T,\
-    \ MX> g2pow = {1};\n    T factinv = 1;\n\n    for (int i = 1; i * m < MX; i++)\
-    \ {\n        dfg = (fps::differential(dfg) >> z) * g1inv;\n        dfg.strict(MX\
-    \ - m * i);\n        (g2pow *= g2).strict(MX - m * i);\n        factinv /= i;\n\
-    \        res += factinv * (dfg * g2pow) << (m * i);\n    }\n    return res;\n\
-    }\n\n} // namespace fps\n"
+    \ g) {\n    using FPS = FormalPowerSeries<T, MX>;\n    // f(g(x)) \u3092\u30D6\
+    \u30ED\u30C3\u30AF\u5206\u5272\uFF0B\u30C6\u30A4\u30E9\u30FC\u5C55\u958B\u3067\
+    \u8A08\u7B97\u3059\u308B\n    assert(!g.size() or g[0] == 0);\n    switch (f.size())\
+    \ {\n        case 0:\n            return f;\n        case 1:\n            return\
+    \ {f[0]};\n        case 2:\n            return f[0] + f[1] * g;\n        default:\n\
+    \            break;\n    }\n\n    int m = sqrt(MX / 20);\n    // g(x) = g1(x)\
+    \ + x^m g2(x) \u306B\u5206\u5272\n    FPS g1 = g;\n    FPS g2 = g1.separate(m);\n\
+    \    \n    if (g1 == FPS(0)) {\n        // f(g) = f(x^m g2(x))\n        FPS res(0),\
+    \ g2pow = FPS::unit();\n        for (int i = 0; i * m < MX and i < f.size(); i++,\
+    \ g2pow *= g2)\n            res += f[i] * g2pow << (i * m);\n        return res;\n\
+    \    }\n\n    // f \u3092\u4E8C\u5206\u3057\u3064\u3064 g1 \u306E\u7D2F\u4E57\u3092\
+    \u307E\u3068\u3081\u3066\u639B\u3051\u308B\u518D\u5E30\n    auto rec = [&](auto\
+    \ rec, int l, int d) -> FPS {\n        if (d == 0 or l >= f.size()) {\n      \
+    \      return {};\n        }\n        if (d == 1) {\n            return {f[l]};\n\
+    \        }\n        if (d == 2) {\n            return f[l] + (l + 1 < f.size()\
+    \ ? f[l + 1] * g1 : FPS{});\n        }\n        FPS f1 = rec(rec, l, d >> 1);\n\
+    \        FPS f2 = rec(rec, l + (d >> 1), d - (d >> 1));\n        f2 *= fps::pow(g1,\
+    \ d >> 1);\n        return f1 + f2;\n    };\n    FPS res = rec(rec, 0, f.size());\
+    \ // \u307E\u305A g1 \u3092\u4EE3\u5165\u3057\u305F\u5206\u3092\u8A08\u7B97\n\n\
+    \    FPS dfg = res; // d^k f(g1) \u3092\u9806\u306B\u66F4\u65B0\u3059\u308B\u305F\
+    \u3081\u306E\u4E00\u6642\u5909\u6570\n    FPS g1_diff = fps::differential(g);\n\
+    \    g1_diff >>= (g1.order() - 1);\n    FPS g1inv = g1_diff.inv();\n    FPS g2pow\
+    \ = {1};\n    T factinv = 1;\n\n    // g2 \u306B\u3088\u308B\u30C6\u30A4\u30E9\
+    \u30FC\u5C55\u958B\u306E\u5404\u9805\u3092\u8DB3\u3057\u8FBC\u3080\n    for (int\
+    \ i = 1; i * m < MX; i++) {\n        dfg = (fps::differential(dfg) >> g1.order())\
+    \ * g1inv;\n        dfg.strict(MX - m * i);\n        (g2pow *= g2).strict(MX -\
+    \ m * i);\n        factinv /= i;\n        res += factinv * (dfg * g2pow) << (m\
+    \ * i);\n    }\n    return res;\n}\n\n} // namespace fps\n"
   dependsOn:
   - build/pch/stdc++.hpp
   - library/formalpowerseries/Base.hpp
@@ -204,7 +219,7 @@ data:
   isVerificationFile: false
   path: library/formalpowerseries/functions/composition.hpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/Polynomial/Composition.test.cpp

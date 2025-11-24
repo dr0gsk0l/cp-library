@@ -4,20 +4,20 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.hpp
     title: library/tree/HLD.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/Tree.hpp
     title: library/tree/Tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/jump_on_tree
@@ -137,17 +137,17 @@ data:
     \ int> subtree(int v) const {\n        assert(prepared);\n        return {id[v],\
     \ id2[v]};\n    }\n};\n#line 6 \"test/library-checker/Tree/JumpOnTree.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n;\n    std::cin >> n;\n    Tree T(n);\n    T.scan(0);\n\n    HLD hld(T);\n\
-    \    hld.build();\n\n    int q;\n    std::cin >> q;\n    while(q--){\n       \
-    \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
-    \ v, k) << \"\\n\";\n    }\n}\n"
+    \n    int n, q;\n    std::cin >> n >> q;\n    Tree T(n);\n    T.scan(0);\n\n \
+    \   HLD hld(T);\n    hld.build();\n\n    while(q--){\n        int u, v, k;\n \
+    \       std::cin >> u >> v >> k;\n        std::cout << hld.jump(u, v, k) << \"\
+    \\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#include\
     \ <bits/stdc++.h>\n\n#include \"library/tree/Tree.hpp\"\n#include \"library/tree/HLD.hpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \n    int n;\n    std::cin >> n;\n    Tree T(n);\n    T.scan(0);\n\n    HLD hld(T);\n\
-    \    hld.build();\n\n    int q;\n    std::cin >> q;\n    while(q--){\n       \
-    \ int u, v, k;\n        std::cin >> u >> v >> k;\n        std::cout << hld.jump(u,\
-    \ v, k) << \"\\n\";\n    }\n}"
+    \n    int n, q;\n    std::cin >> n >> q;\n    Tree T(n);\n    T.scan(0);\n\n \
+    \   HLD hld(T);\n    hld.build();\n\n    while(q--){\n        int u, v, k;\n \
+    \       std::cin >> u >> v >> k;\n        std::cout << hld.jump(u, v, k) << \"\
+    \\n\";\n    }\n}"
   dependsOn:
   - build/pch/stdc++.hpp
   - library/tree/Tree.hpp
@@ -156,8 +156,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Tree/JumpOnTree.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-11-24 18:49:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Tree/JumpOnTree.test.cpp
 layout: document

@@ -45,12 +45,12 @@ data:
     \   using Valarray<T>::size;\n    using Valarray<T>::resize;\n    using Valarray<T>::at;\n\
     \    using Valarray<T>::begin;\n    using Valarray<T>::end;\n    using Valarray<T>::back;\n\
     \    using Valarray<T>::pop_back;\n    using value_type = T;\n\n    void strict(int\
-    \ n) {\n        if (size() > n)\n            resize(n);\n    }\n    void shrink()\
-    \ {\n        while (size() and back() == 0)\n            pop_back();\n    }\n\n\
-    \    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const std::vector<T>\
-    \ &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n    }\n\n  \
-    \  static FPS unit() { return {1}; }\n    static FPS x() { return {0, 1}; }\n\
-    #pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
+    \ n) {\n        if (size() > n)\n            resize(n);\n        shrink();\n \
+    \   }\n    void shrink() {\n        while (size() and back() == 0)\n         \
+    \   pop_back();\n    }\n\n    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const\
+    \ std::vector<T> &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n\
+    \    }\n\n    static FPS unit() { return {1}; }\n    static FPS x() { return {0,\
+    \ 1}; }\n#pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
     \ }\n\n    FPS &operator+=(const FPS &g) {\n        Valarray<T>::operator+=(g);\n\
     \        shrink();\n        return *this;\n    }\n    FPS operator+(const FPS\
     \ &g) const { return FPS(*this) += g; }\n\n    FPS &operator-=(const FPS &g) {\n\
@@ -83,8 +83,12 @@ data:
     \ int d) const { return FPS(*this) >>= d; }\n#pragma endregion operator\n\n  \
     \  FPS pre(int n) const {\n        if (size() <= n)\n            return *this;\n\
     \        return FPS(Valarray<T>(this->begin(), this->begin() + n));\n    }\n\n\
-    \    FPS inv(int SZ = MX) const {\n        assert(size() and at(0) != 0);\n  \
-    \      FPS res = {at(0).inv()};\n        for (int n = 1; n < SZ; n <<= 1) {\n\
+    \    // \u6700\u5C0F\u306E\u975E\u30BC\u30ED\u6B21\u6570\uFF08\u3059\u3079\u3066\
+    \ 0 \u306E\u3068\u304D\u306F size()\uFF09\u3092\u8FD4\u3059\n    int order() const\
+    \ {\n        for (int i = 0; i < int(size()); i++) {\n            if (at(i) !=\
+    \ 0)\n                return i;\n        }\n        return int(size());\n    }\n\
+    \n    FPS inv(int SZ = MX) const {\n        assert(size() and at(0) != 0);\n \
+    \       FPS res = {at(0).inv()};\n        for (int n = 1; n < SZ; n <<= 1) {\n\
     \            res *= (2 - this->pre(n << 1) * res);\n            res.strict(n <<\
     \ 1);\n        }\n        res.strict(SZ);\n        return res;\n    }\n\n    //\
     \ *this = f_1 + f_2 x^n \u21D2 [*this\u2190f_1, return f_2]\n    FPS separate(int\
@@ -117,7 +121,7 @@ data:
   path: library/formalpowerseries/RationalSum.hpp
   requiredBy:
   - library/formalpowerseries/ComposeEXP.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/formalpowerseries/RationalSum.hpp

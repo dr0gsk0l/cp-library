@@ -4,16 +4,16 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   - icon: ':question:'
     path: library/graph/WeightedGraph.hpp
     title: library/graph/WeightedGraph.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.hpp
     title: library/tree/HLD.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/Tree.hpp
     title: library/tree/Tree.hpp
   - icon: ':heavy_check_mark:'
@@ -295,7 +295,7 @@ data:
   isVerificationFile: false
   path: library/tree/AuxiliaryTree.hpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/tree/AuxiliaryTree.hpp

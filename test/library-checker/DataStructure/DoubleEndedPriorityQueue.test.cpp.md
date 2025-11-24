@@ -14,13 +14,13 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/double_ended_std::priority_queue
+    PROBLEM: https://judge.yosupo.jp/problem/double_ended_priority_queue
     links:
-    - https://judge.yosupo.jp/problem/double_ended_std::priority_queue
+    - https://judge.yosupo.jp/problem/double_ended_priority_queue
   bundledCode: "#line 1 \"test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp\"\
     \n#define PROBLEM                                                            \
-    \    \\\n    \"https://judge.yosupo.jp/problem/double_ended_std::priority_queue\"\
-    \n#include <bits/stdc++.h>\n\n#line 1 \"library/superstd/Multiset.hpp\"\ntemplate\
+    \    \\\n    \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\n\
+    #include <bits/stdc++.h>\n\n#line 1 \"library/superstd/Multiset.hpp\"\ntemplate\
     \ <typename T> class Multiset {\n    using u32 = std::uint32_t;\n    u32 size_;\n\
     \n  public:\n    std::map<T, u32> m;\n\n    Multiset() : size_(0) {}\n\n    void\
     \ banpei() {\n        insert(std::numeric_limits<T>::max() / 2);\n        insert(std::numeric_limits<T>::min()\
@@ -50,30 +50,34 @@ data:
     \ return pick_max(); }\n};\n#line 6 \"test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp\"\
     \n\nint main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n, q;\n    std::cin >> n >> q;\n    Multiset<int> s;\n    s.scan(n);\n\
-    \    while (q--) {\n        int t;\n        std::cin >> t;\n        if (t == 0)\
-    \ {\n            int x;\n            std::cin >> x;\n            s.insert(x);\n\
-    \        }\n        if (t == 1) {\n            int a = s.pick_mn();\n        \
-    \    std::cout << a << \"\\n\";\n        }\n        if (t == 2) {\n          \
-    \  int a = s.pick_mx();\n            std::cout << a << \"\\n\";\n        }\n \
-    \   }\n}\n"
+    \    while (q--) {\n        int t;\n        std::cin >> t;\n        switch (t)\
+    \ {\n            case 0: {\n                int x;\n                std::cin >>\
+    \ x;\n                s.insert(x);\n                break;\n            }\n  \
+    \          case 1: {\n                int a = s.pick_mn();\n                std::cout\
+    \ << a << \"\\n\";\n                break;\n            }\n            case 2:\
+    \ {\n                int a = s.pick_mx();\n                std::cout << a << \"\
+    \\n\";\n                break;\n            }\n            default:\n        \
+    \        std::unreachable();\n        }\n    }\n}\n"
   code: "#define PROBLEM                                                         \
-    \       \\\n    \"https://judge.yosupo.jp/problem/double_ended_std::priority_queue\"\
+    \       \\\n    \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
     \n#include <bits/stdc++.h>\n\n#include \"library/superstd/Multiset.hpp\"\n\nint\
     \ main() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
     \n    int n, q;\n    std::cin >> n >> q;\n    Multiset<int> s;\n    s.scan(n);\n\
-    \    while (q--) {\n        int t;\n        std::cin >> t;\n        if (t == 0)\
-    \ {\n            int x;\n            std::cin >> x;\n            s.insert(x);\n\
-    \        }\n        if (t == 1) {\n            int a = s.pick_mn();\n        \
-    \    std::cout << a << \"\\n\";\n        }\n        if (t == 2) {\n          \
-    \  int a = s.pick_mx();\n            std::cout << a << \"\\n\";\n        }\n \
-    \   }\n}\n"
+    \    while (q--) {\n        int t;\n        std::cin >> t;\n        switch (t)\
+    \ {\n            case 0: {\n                int x;\n                std::cin >>\
+    \ x;\n                s.insert(x);\n                break;\n            }\n  \
+    \          case 1: {\n                int a = s.pick_mn();\n                std::cout\
+    \ << a << \"\\n\";\n                break;\n            }\n            case 2:\
+    \ {\n                int a = s.pick_mx();\n                std::cout << a << \"\
+    \\n\";\n                break;\n            }\n            default:\n        \
+    \        std::unreachable();\n        }\n    }\n}\n"
   dependsOn:
   - build/pch/stdc++.hpp
   - library/superstd/Multiset.hpp
   isVerificationFile: true
   path: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/DoubleEndedPriorityQueue.test.cpp

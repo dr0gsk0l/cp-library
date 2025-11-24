@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
   _extendedRequiredBy: []
@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: test/AOJ/NTL_1_E.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ/NTL_1_E.test.cpp

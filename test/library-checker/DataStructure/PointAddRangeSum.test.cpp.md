@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/algebra/group/Add.hpp
     title: library/algebra/group/Add.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/monoid/Concepts.hpp
     title: library/algebra/monoid/Concepts.hpp
   - icon: ':heavy_check_mark:'
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/DataStructure/PointAddRangeSum.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/DataStructure/PointAddRangeSum.test.cpp

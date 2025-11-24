@@ -129,7 +129,7 @@ data:
   - library/geometry/Judge.hpp
   - library/geometry/UtilFunction.hpp
   - library/geometry/Base.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/RectangleSum_2.test.cpp

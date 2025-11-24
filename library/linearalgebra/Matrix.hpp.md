@@ -117,7 +117,7 @@ data:
   isVerificationFile: false
   path: library/linearalgebra/Matrix.hpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Matrix/Det.test.cpp

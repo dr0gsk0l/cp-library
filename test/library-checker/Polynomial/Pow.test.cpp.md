@@ -19,7 +19,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
   - icon: ':question:'
@@ -27,9 +27,9 @@ data:
     title: library/util/Valarray.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/pow_of_formal_power_series
@@ -62,12 +62,12 @@ data:
     \   using Valarray<T>::size;\n    using Valarray<T>::resize;\n    using Valarray<T>::at;\n\
     \    using Valarray<T>::begin;\n    using Valarray<T>::end;\n    using Valarray<T>::back;\n\
     \    using Valarray<T>::pop_back;\n    using value_type = T;\n\n    void strict(int\
-    \ n) {\n        if (size() > n)\n            resize(n);\n    }\n    void shrink()\
-    \ {\n        while (size() and back() == 0)\n            pop_back();\n    }\n\n\
-    \    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const std::vector<T>\
-    \ &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n    }\n\n  \
-    \  static FPS unit() { return {1}; }\n    static FPS x() { return {0, 1}; }\n\
-    #pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
+    \ n) {\n        if (size() > n)\n            resize(n);\n        shrink();\n \
+    \   }\n    void shrink() {\n        while (size() and back() == 0)\n         \
+    \   pop_back();\n    }\n\n    FormalPowerSeries() = default;\n\n    FormalPowerSeries(const\
+    \ std::vector<T> &f) : Valarray<T>(f) {\n        strict(MX);\n        shrink();\n\
+    \    }\n\n    static FPS unit() { return {1}; }\n    static FPS x() { return {0,\
+    \ 1}; }\n#pragma region operator\n    FPS operator-() const { return FPS(Valarray<T>::operator-());\
     \ }\n\n    FPS &operator+=(const FPS &g) {\n        Valarray<T>::operator+=(g);\n\
     \        shrink();\n        return *this;\n    }\n    FPS operator+(const FPS\
     \ &g) const { return FPS(*this) += g; }\n\n    FPS &operator-=(const FPS &g) {\n\
@@ -100,8 +100,12 @@ data:
     \ int d) const { return FPS(*this) >>= d; }\n#pragma endregion operator\n\n  \
     \  FPS pre(int n) const {\n        if (size() <= n)\n            return *this;\n\
     \        return FPS(Valarray<T>(this->begin(), this->begin() + n));\n    }\n\n\
-    \    FPS inv(int SZ = MX) const {\n        assert(size() and at(0) != 0);\n  \
-    \      FPS res = {at(0).inv()};\n        for (int n = 1; n < SZ; n <<= 1) {\n\
+    \    // \u6700\u5C0F\u306E\u975E\u30BC\u30ED\u6B21\u6570\uFF08\u3059\u3079\u3066\
+    \ 0 \u306E\u3068\u304D\u306F size()\uFF09\u3092\u8FD4\u3059\n    int order() const\
+    \ {\n        for (int i = 0; i < int(size()); i++) {\n            if (at(i) !=\
+    \ 0)\n                return i;\n        }\n        return int(size());\n    }\n\
+    \n    FPS inv(int SZ = MX) const {\n        assert(size() and at(0) != 0);\n \
+    \       FPS res = {at(0).inv()};\n        for (int n = 1; n < SZ; n <<= 1) {\n\
     \            res *= (2 - this->pre(n << 1) * res);\n            res.strict(n <<\
     \ 1);\n        }\n        res.strict(SZ);\n        return res;\n    }\n\n    //\
     \ *this = f_1 + f_2 x^n \u21D2 [*this\u2190f_1, return f_2]\n    FPS separate(int\
@@ -134,14 +138,16 @@ data:
     \    res[0] = 1;\n    for (int i = 1; i < MX; i++) {\n        res[i] = res[i -\
     \ 1] * n / i;\n    }\n    return res;\n}\n\n} // namespace fps\n#line 5 \"library/formalpowerseries/functions/pow.hpp\"\
     \n\nnamespace fps {\n\ntemplate <typename T, int MX>\nFormalPowerSeries<T, MX>\
-    \ pow(FormalPowerSeries<T, MX> f, long long n) {\n    assert(n >= 0);\n    if\
-    \ (n == 0) {\n        return {1};\n    }\n    if (n == 1) {\n        return f;\n\
-    \    }\n\n    f.shrink();\n    if (!f.size()) {\n        return f;\n    }\n  \
-    \  int d = 0;\n    while(d < f.size() && f[d] == 0) {\n        d++;\n    }\n \
-    \   \n    if (d > 0 && (unsigned __int128)d * n >= MX) {\n        return FormalPowerSeries<T,\
-    \ MX>{};\n    }\n    f >>= d;\n    d *= n;\n\n    if (f[0] == 1) {\n        f\
-    \ = exp(n * log(f));\n    } else {\n        f = exp(log(f) * n);\n    }\n    f\
-    \ <<= d;\n    \n    return f;\n}\n\n} // namespace fps\n#line 6 \"test/library-checker/Polynomial/Pow.test.cpp\"\
+    \ pow(FormalPowerSeries<T, MX> f, long long n) {\n    using FPS = FormalPowerSeries<T,\
+    \ MX>;\n\n    assert(n >= 0);\n    f.shrink();\n\n    if(n == 0)\n        return\
+    \ FPS::unit();\n    if(n == 1)\n        return f;\n    \n    if(f.size() == 0)\n\
+    \        return f;\n    if(f.size() == 1)\n        return FPS{f[0].pow(n)};\n\
+    \    \n    int d = f.order();\n    if (d > 0 && (unsigned __int128)d * n >= MX)\
+    \ \n        return FPS(0);\n\n    // f(x) = x^d g(x) \u306E\u6642 f^n = x^{dn}\
+    \ g^n\n    f >>= d;\n\n    // f(x) = f_0 * g(x) \u306E\u3068\u304D f^n = f_0^n\
+    \ g^n\n    auto f_0 = f[0];\n    if(f_0 != 1)\n        f /= f_0;\n\n    // f^n\
+    \ = exp(n log(f))\n    return f_0.pow(n) * fps::exp(n * fps::log(f)) << (d * n);\n\
+    }\n\n} // namespace fps\n#line 6 \"test/library-checker/Polynomial/Pow.test.cpp\"\
     \n\n#include <atcoder/convolution>\n#include <atcoder/modint>\nusing namespace\
     \ atcoder;\nusing mint = modint998244353;\nstd::ostream &operator<<(std::ostream\
     \ &os, mint a) {\n    os << a.val();\n    return os;\n}\nstd::istream &operator>>(std::istream\
@@ -175,8 +181,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/Polynomial/Pow.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-11-24 18:49:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/Polynomial/Pow.test.cpp
 layout: document

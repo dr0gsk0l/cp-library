@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/graph/Graph.hpp
     title: library/graph/Graph.hpp
   _extendedRequiredBy:
@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
     title: test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Tree/JumpOnTree.test.cpp
     title: test/library-checker/Tree/JumpOnTree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/graph/Graph.hpp\"\n\n#include <cassert>\n#include\
@@ -148,8 +148,8 @@ data:
   requiredBy:
   - library/tree/EdgeVertex.hpp
   - library/tree/AuxiliaryTree.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2025-11-24 18:49:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Tree/FrequencyTableOfTreeDistance.test.cpp
   - test/library-checker/Tree/JumpOnTree.test.cpp

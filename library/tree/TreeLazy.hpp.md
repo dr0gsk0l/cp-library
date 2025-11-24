@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/Reverse.hpp
     title: library/algebra/Reverse.hpp
   - icon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/segtree/LazySegmentTree.hpp
     title: library/segtree/LazySegmentTree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/tree/HLD.hpp
     title: library/tree/HLD.hpp
   _extendedRequiredBy: []
@@ -195,7 +195,7 @@ data:
   isVerificationFile: false
   path: library/tree/TreeLazy.hpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ/GRL_5_E.test.cpp

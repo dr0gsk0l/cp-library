@@ -91,7 +91,7 @@ data:
   isVerificationFile: false
   path: library/datastructure/unionfind/PotentialUnionFind.hpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/UnionfindWithPotential.test.cpp

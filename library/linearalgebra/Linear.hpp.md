@@ -5,7 +5,7 @@ data:
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/algebra/group/Affine.hpp
     title: library/algebra/group/Affine.hpp
   - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -107,7 +107,7 @@ data:
   - library/algebra/lazy/AffineSum.hpp
   - library/linearalgebra/InsertConvexHullTrick.hpp
   - library/linearalgebra/ConvexHullTrick.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp

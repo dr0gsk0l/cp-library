@@ -41,7 +41,7 @@ data:
   - icon: ':question:'
     path: library/formalpowerseries/functions/log.hpp
     title: library/formalpowerseries/functions/log.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/formalpowerseries/functions/pow.hpp
     title: library/formalpowerseries/functions/pow.hpp
   - icon: ':heavy_check_mark:'
@@ -72,7 +72,7 @@ data:
   - icon: ':x:'
     path: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
     title: test/library-checker/Polynomial/MultipointEvaluation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/Polynomial/Pow.test.cpp
     title: test/library-checker/Polynomial/Pow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -149,7 +149,7 @@ data:
   - library/formalpowerseries/ComposeEXP.hpp
   - library/setpowerseries/Base.hpp
   - library/setpowerseries/Compose.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/library-checker/SPS/ExpOfSetPowerSeries.test.cpp

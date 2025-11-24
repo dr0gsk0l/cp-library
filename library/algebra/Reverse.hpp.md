@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/algebra/Reverse.hpp\"\ntemplate<typename Algebra>\n\
@@ -59,8 +59,8 @@ data:
   - library/algebra/lazy/Reverse.hpp
   - library/tree/TreeLazy.hpp
   - library/tree/TreeMonoid.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2025-11-24 18:49:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - test/library-checker/DataStructure/PointSetRangeComposite.test.cpp

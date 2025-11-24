@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.hpp
     title: library/mod/Modint.hpp
   _extendedRequiredBy:
@@ -102,7 +102,7 @@ data:
   path: library/math/ModularSqrt.hpp
   requiredBy:
   - library/formalpowerseries/Sqrt.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/math/ModularSqrt.hpp

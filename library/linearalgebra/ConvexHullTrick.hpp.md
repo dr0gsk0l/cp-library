@@ -53,56 +53,59 @@ data:
     \u3092\u6271\u3046\n// \u50BE\u304D\u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\u5C11\u306B\
     \u306A\u308B\u3088\u3046\u306B\u4FDD\u5B58\n\ntemplate <typename T, Objective\
     \ OBJ>\nclass ConvexHullTrick : std::deque<Line<T>> {\n    using L = Line<T>;\n\
-    \    using std::deque<L>::back;\n    using std::deque<L>::front;\n    using std::deque<L>::push_back;\n\
-    \    using std::deque<L>::push_front;\n    using std::deque<L>::pop_back;\n  \
-    \  using std::deque<L>::pop_front;\n    using std::deque<L>::at;\n\n    static\
-    \ bool check(const L &l1, const L &l2, const L &l3) {\n        // l2 \u304C\u8981\
-    \u3089\u306A\u3044\u306A\u3089 true \u3092\u8FD4\u3059\n        // \u50BE\u304D\
-    \u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\u5C11\u306F\u4FDD\u8A3C\u3055\u308C\u3066\
-    \u308B\n        // \u4EA4\u70B9\u306E x \u5EA7\u6A19\u306F (l2.b-l1.b)/(l1.a-l2.a)\
-    \ \u3068 (l3.b-l2.b)/(l2.a-l3.a)\n        // \u3053\u308C\u304C >= \u3060\u3068\
-    \u8981\u3089\u306A\u3044\n        return (l2.b - l1.b) * (l2.a - l3.a) >= (l3.b\
-    \ - l2.b) * (l1.a - l2.a);\n    }\n\n    void internal_push_back(const L &l) {\n\
-    \        if (size()) {\n            if (back().a == l.a) {\n                if\
-    \ (back().b <= l.b)\n                    return;\n                else\n     \
-    \               pop_back();\n            }\n            while (size() >= 2) {\n\
-    \                L l1 = at(size() - 2), l2 = back();\n                if (check(l1,\
-    \ l2, l))\n                    pop_back();\n                else\n           \
-    \         break;\n            }\n        }\n        push_back(l);\n    }\n\n \
-    \   void internal_push_front(const L &l) {\n        if (size()) {\n          \
-    \  if (front().a == l.a) {\n                if (front().b <= l.b)\n          \
-    \          return;\n                else\n                    pop_front();\n \
-    \           }\n            while (size() >= 2) {\n                L l2 = at(0),\
-    \ l3 = at(1);\n                if (check(l, l2, l3))\n                    pop_front();\n\
-    \                else\n                    break;\n            }\n        }\n\
-    \        push_front(l);\n    }\n\n  public:\n    using value_type = L;\n    using\
-    \ std::deque<L>::size;\n\n    ConvexHullTrick() = default;\n    ConvexHullTrick(std::vector<L>\
+    \    using std::deque<L>::push_back;\n    using std::deque<L>::push_front;\n \
+    \   using std::deque<L>::pop_back;\n    using std::deque<L>::pop_front;\n\n  \
+    \  const L& at(int i) const { \n        return i >= 0 ? std::deque<L>::at(i) :\
+    \ std::deque<L>::at(size() + i);\n    }\n\n    static bool check(const L &l1,\
+    \ const L &l2, const L &l3) {\n        // l2 \u304C\u8981\u3089\u306A\u3044\u306A\
+    \u3089 true \u3092\u8FD4\u3059\n        // \u50BE\u304D\u304C\u72ED\u7FA9\u5358\
+    \u8ABF\u6E1B\u5C11\u306F\u4FDD\u8A3C\u3055\u308C\u3066\u308B\n        // \u4EA4\
+    \u70B9\u306E x \u5EA7\u6A19\u306F (l2.b-l1.b)/(l1.a-l2.a) \u3068 (l3.b-l2.b)/(l2.a-l3.a)\n\
+    \        // \u3053\u308C\u304C >= \u3060\u3068\u8981\u3089\u306A\u3044\n     \
+    \   return (l2.b - l1.b) * (l2.a - l3.a) >= (l3.b - l2.b) * (l1.a - l2.a);\n \
+    \   }\n\n    static T apply_objective(const T &value) {\n        if constexpr\
+    \ (OBJ == Objective::MINIMIZE)\n            return value;\n        else\n    \
+    \        return -value;\n    }\n\n    void internal_push_back(const L &l) {\n\
+    \        assert(!size() or at(-1).a >= l.a);\n\n        if(size() and at(-1).a\
+    \ == l.a) \n            if(at(-1).b <= l.b)\n                return;\n       \
+    \     else\n                pop_back();\n        \n        while (size() >= 2\
+    \ and check(at(-2), at(-1), l)) \n            pop_back();\n        \n        push_back(l);\n\
+    \    }\n\n    void internal_push_front(const L &l) {\n        assert(!size() or\
+    \ l.a >= at(0).a);\n\n        if(size() and at(0).a == l.a)\n            if(at(0).b\
+    \ <= l.b)\n                return;\n            else\n                pop_front();\n\
+    \n        while (size() >= 2 and check(l, at(0), at(1)))\n            pop_front();\n\
+    \        \n        push_front(l);\n    }\n  public:\n    using value_type = L;\n\
+    \    using std::deque<L>::size;\n\n    ConvexHullTrick() = default;\n    ConvexHullTrick(std::vector<L>\
     \ lines) {\n        if (OBJ == -1)\n            for (auto &l : lines)\n      \
-    \          l = -l;\n        std::sort(lines.begin(), lines.end());\n        for\
-    \ (const auto &l : lines)\n            internal_push_back(l);\n    }\n\n    void\
-    \ add(L l) {\n        if (OBJ == -1)\n            l = -l;\n        if (!size()\
-    \ or back().a >= l.a)\n            internal_push_back(l);\n        else if (l.a\
-    \ >= front().a)\n            internal_push_front(l);\n        else\n         \
-    \   assert(false);\n    }\n\n    void add(T a, T b) { add(L(a, b)); }\n\n    T\
-    \ query(T x) const {\n        assert(size());\n        int l = -1, r = size()\
+    \          l = -l;\n        std::ranges::sort(lines);\n        for (const auto\
+    \ &l : lines)\n            internal_push_back(l);\n    }\n\n    void add(L l)\
+    \ {\n        if (OBJ == -1)\n            l = -l;\n        if (!size() or at(-1).a\
+    \ >= l.a)\n            internal_push_back(l);\n        else if (l.a >= at(0).a)\n\
+    \            internal_push_front(l);\n        else\n            assert(false);\n\
+    \    }\n\n    void add(T a, T b) { add(L(a, b)); }\n\n    // return min_f{f(x)}\n\
+    \    T query(T x) const {\n        assert(size());\n        int l = -1, r = size()\
     \ - 1;\n        while (r - l > 1) {\n            int m = (l + r) >> 1;\n     \
-    \       (at(m)(x) >= at(m + 1)(x) ? l : r) = m;\n        }\n        return at(r)(x)\
-    \ * OBJ;\n    }\n\n    T query_monotone_inc(T x) {\n        assert(size());\n\
+    \       (at(m)(x) >= at(m + 1)(x) ? l : r) = m;\n        }\n        return apply_objective(at(r)(x));\n\
+    \    }\n\n    // return min_f{f(x)}\n    // \u4EFB\u610F\u306E X<x \u306B\u5BFE\
+    \u3057\u3066 f = argmin_f{f(X)} \u3068\u306A\u3089\u306A\u3044 f \u3092\u5168\u3066\
+    \u524A\u9664\u3059\u308B\n    T query_monotone_inc(T x) {\n        assert(size());\n\
     \        while (size() >= 2 and at(0)(x) >= at(1)(x))\n            pop_front();\n\
-    \        return at(0)(x) * OBJ;\n    }\n\n    T query_monotone_dec(T x) {\n  \
-    \      assert(size());\n        while (size() >= 2 and at(size() - 2)(x) <= back()(x))\n\
-    \            pop_back();\n        return back()(x) * OBJ;\n    }\n\n    std::vector<T>\
-    \ query(const std::vector<T> &xs) {\n        int n = xs.size();\n        std::vector<int>\
-    \ idx(n);\n        iota(idx.begin(), idx.end(), 0);\n        std::sort(idx.begin(),\
-    \ idx.end(),\n                  [&](int i, int j) { return xs[i] < xs[j]; });\n\
-    \        std::vector<T> ans(n);\n        for (int id : idx)\n            ans[id]\
-    \ = query_monotone_inc(xs[id]);\n        return ans;\n    }\n\n    friend std::ostream\
-    \ &operator<<(std::ostream &os,\n                                    const ConvexHullTrick\
-    \ &cht) {\n        os << \"[\";\n        for (int i = 0; i < cht.size(); i++)\n\
-    \            os << (OBJ == -1 ? -cht.at(i) : cht.at(i))\n               << \"\
-    ],\"[i + 1 < cht.size()];\n        if (!cht.size())\n            os << \"]\";\n\
-    \        return os;\n    }\n};\n} // namespace convex_hull_trick\ntemplate <typename\
-    \ T>\nusing MinConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
+    \        return apply_objective(at(0)(x));\n    }\n\n    // return min_f{f(x)}\n\
+    \    // \u4EFB\u610F\u306E X>x \u306B\u5BFE\u3057\u3066 f = argmin_f{f(X)} \u3068\
+    \u306A\u3089\u306A\u3044 f \u3092\u5168\u3066\u524A\u9664\u3059\u308B\n    T query_monotone_dec(T\
+    \ x) {\n        assert(size());\n        while (size() >= 2 and at(-2)(x) <= at(-1)(x))\n\
+    \            pop_back();\n        return apply_objective(at(-1)(x));\n    }\n\n\
+    \    std::vector<T> query(const std::vector<T> &xs) {\n        int n = xs.size();\n\
+    \        std::vector<int> idx(n);\n        std::iota(idx.begin(), idx.end(), 0);\n\
+    \        std::ranges::sort(idx, std::ranges::less{}, [&](int i) { return xs[i];\
+    \ });\n        std::vector<T> ans(n);\n        for (int id : idx)\n          \
+    \  ans[id] = query_monotone_inc(xs[id]); \n        return ans;\n    }\n\n    friend\
+    \ std::ostream &operator<<(std::ostream &os,\n                               \
+    \     const ConvexHullTrick &cht) {\n        os << \"[\";\n        for (int i\
+    \ = 0; i < cht.size(); i++)\n            os << (OBJ == -1 ? -cht.at(i) : cht.at(i))\n\
+    \               << \"],\"[i + 1 < cht.size()];\n        if (!cht.size())\n   \
+    \         os << \"]\";\n        return os;\n    }\n};\n} // namespace convex_hull_trick\n\
+    template <typename T>\nusing MinConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
     \                                       convex_hull_trick::Objective::MINIMIZE>;\n\
     template <typename T>\nusing MaxConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
     \                                       convex_hull_trick::Objective::MAXIMIZE>;\n"
@@ -112,67 +115,70 @@ data:
     \u3067\u306F\u6700\u5C0F\u5316\u554F\u984C\u306E\u307F\u3092\u6271\u3046\n// \u50BE\
     \u304D\u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\u5C11\u306B\u306A\u308B\u3088\u3046\
     \u306B\u4FDD\u5B58\n\ntemplate <typename T, Objective OBJ>\nclass ConvexHullTrick\
-    \ : std::deque<Line<T>> {\n    using L = Line<T>;\n    using std::deque<L>::back;\n\
-    \    using std::deque<L>::front;\n    using std::deque<L>::push_back;\n    using\
-    \ std::deque<L>::push_front;\n    using std::deque<L>::pop_back;\n    using std::deque<L>::pop_front;\n\
-    \    using std::deque<L>::at;\n\n    static bool check(const L &l1, const L &l2,\
-    \ const L &l3) {\n        // l2 \u304C\u8981\u3089\u306A\u3044\u306A\u3089 true\
-    \ \u3092\u8FD4\u3059\n        // \u50BE\u304D\u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\
-    \u5C11\u306F\u4FDD\u8A3C\u3055\u308C\u3066\u308B\n        // \u4EA4\u70B9\u306E\
-    \ x \u5EA7\u6A19\u306F (l2.b-l1.b)/(l1.a-l2.a) \u3068 (l3.b-l2.b)/(l2.a-l3.a)\n\
-    \        // \u3053\u308C\u304C >= \u3060\u3068\u8981\u3089\u306A\u3044\n     \
-    \   return (l2.b - l1.b) * (l2.a - l3.a) >= (l3.b - l2.b) * (l1.a - l2.a);\n \
-    \   }\n\n    void internal_push_back(const L &l) {\n        if (size()) {\n  \
-    \          if (back().a == l.a) {\n                if (back().b <= l.b)\n    \
-    \                return;\n                else\n                    pop_back();\n\
-    \            }\n            while (size() >= 2) {\n                L l1 = at(size()\
-    \ - 2), l2 = back();\n                if (check(l1, l2, l))\n                \
-    \    pop_back();\n                else\n                    break;\n         \
-    \   }\n        }\n        push_back(l);\n    }\n\n    void internal_push_front(const\
-    \ L &l) {\n        if (size()) {\n            if (front().a == l.a) {\n      \
-    \          if (front().b <= l.b)\n                    return;\n              \
-    \  else\n                    pop_front();\n            }\n            while (size()\
-    \ >= 2) {\n                L l2 = at(0), l3 = at(1);\n                if (check(l,\
-    \ l2, l3))\n                    pop_front();\n                else\n         \
-    \           break;\n            }\n        }\n        push_front(l);\n    }\n\n\
+    \ : std::deque<Line<T>> {\n    using L = Line<T>;\n    using std::deque<L>::push_back;\n\
+    \    using std::deque<L>::push_front;\n    using std::deque<L>::pop_back;\n  \
+    \  using std::deque<L>::pop_front;\n\n    const L& at(int i) const { \n      \
+    \  return i >= 0 ? std::deque<L>::at(i) : std::deque<L>::at(size() + i);\n   \
+    \ }\n\n    static bool check(const L &l1, const L &l2, const L &l3) {\n      \
+    \  // l2 \u304C\u8981\u3089\u306A\u3044\u306A\u3089 true \u3092\u8FD4\u3059\n\
+    \        // \u50BE\u304D\u304C\u72ED\u7FA9\u5358\u8ABF\u6E1B\u5C11\u306F\u4FDD\
+    \u8A3C\u3055\u308C\u3066\u308B\n        // \u4EA4\u70B9\u306E x \u5EA7\u6A19\u306F\
+    \ (l2.b-l1.b)/(l1.a-l2.a) \u3068 (l3.b-l2.b)/(l2.a-l3.a)\n        // \u3053\u308C\
+    \u304C >= \u3060\u3068\u8981\u3089\u306A\u3044\n        return (l2.b - l1.b) *\
+    \ (l2.a - l3.a) >= (l3.b - l2.b) * (l1.a - l2.a);\n    }\n\n    static T apply_objective(const\
+    \ T &value) {\n        if constexpr (OBJ == Objective::MINIMIZE)\n           \
+    \ return value;\n        else\n            return -value;\n    }\n\n    void internal_push_back(const\
+    \ L &l) {\n        assert(!size() or at(-1).a >= l.a);\n\n        if(size() and\
+    \ at(-1).a == l.a) \n            if(at(-1).b <= l.b)\n                return;\n\
+    \            else\n                pop_back();\n        \n        while (size()\
+    \ >= 2 and check(at(-2), at(-1), l)) \n            pop_back();\n        \n   \
+    \     push_back(l);\n    }\n\n    void internal_push_front(const L &l) {\n   \
+    \     assert(!size() or l.a >= at(0).a);\n\n        if(size() and at(0).a == l.a)\n\
+    \            if(at(0).b <= l.b)\n                return;\n            else\n \
+    \               pop_front();\n\n        while (size() >= 2 and check(l, at(0),\
+    \ at(1)))\n            pop_front();\n        \n        push_front(l);\n    }\n\
     \  public:\n    using value_type = L;\n    using std::deque<L>::size;\n\n    ConvexHullTrick()\
     \ = default;\n    ConvexHullTrick(std::vector<L> lines) {\n        if (OBJ ==\
-    \ -1)\n            for (auto &l : lines)\n                l = -l;\n        std::sort(lines.begin(),\
-    \ lines.end());\n        for (const auto &l : lines)\n            internal_push_back(l);\n\
-    \    }\n\n    void add(L l) {\n        if (OBJ == -1)\n            l = -l;\n \
-    \       if (!size() or back().a >= l.a)\n            internal_push_back(l);\n\
-    \        else if (l.a >= front().a)\n            internal_push_front(l);\n   \
-    \     else\n            assert(false);\n    }\n\n    void add(T a, T b) { add(L(a,\
-    \ b)); }\n\n    T query(T x) const {\n        assert(size());\n        int l =\
-    \ -1, r = size() - 1;\n        while (r - l > 1) {\n            int m = (l + r)\
-    \ >> 1;\n            (at(m)(x) >= at(m + 1)(x) ? l : r) = m;\n        }\n    \
-    \    return at(r)(x) * OBJ;\n    }\n\n    T query_monotone_inc(T x) {\n      \
-    \  assert(size());\n        while (size() >= 2 and at(0)(x) >= at(1)(x))\n   \
-    \         pop_front();\n        return at(0)(x) * OBJ;\n    }\n\n    T query_monotone_dec(T\
-    \ x) {\n        assert(size());\n        while (size() >= 2 and at(size() - 2)(x)\
-    \ <= back()(x))\n            pop_back();\n        return back()(x) * OBJ;\n  \
-    \  }\n\n    std::vector<T> query(const std::vector<T> &xs) {\n        int n =\
-    \ xs.size();\n        std::vector<int> idx(n);\n        iota(idx.begin(), idx.end(),\
-    \ 0);\n        std::sort(idx.begin(), idx.end(),\n                  [&](int i,\
-    \ int j) { return xs[i] < xs[j]; });\n        std::vector<T> ans(n);\n       \
-    \ for (int id : idx)\n            ans[id] = query_monotone_inc(xs[id]);\n    \
-    \    return ans;\n    }\n\n    friend std::ostream &operator<<(std::ostream &os,\n\
-    \                                    const ConvexHullTrick &cht) {\n        os\
-    \ << \"[\";\n        for (int i = 0; i < cht.size(); i++)\n            os << (OBJ\
-    \ == -1 ? -cht.at(i) : cht.at(i))\n               << \"],\"[i + 1 < cht.size()];\n\
-    \        if (!cht.size())\n            os << \"]\";\n        return os;\n    }\n\
-    };\n} // namespace convex_hull_trick\ntemplate <typename T>\nusing MinConvexHullTrick\
-    \ =\n    convex_hull_trick::ConvexHullTrick<T,\n                             \
-    \          convex_hull_trick::Objective::MINIMIZE>;\ntemplate <typename T>\nusing\
-    \ MaxConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n          \
-    \                             convex_hull_trick::Objective::MAXIMIZE>;"
+    \ -1)\n            for (auto &l : lines)\n                l = -l;\n        std::ranges::sort(lines);\n\
+    \        for (const auto &l : lines)\n            internal_push_back(l);\n   \
+    \ }\n\n    void add(L l) {\n        if (OBJ == -1)\n            l = -l;\n    \
+    \    if (!size() or at(-1).a >= l.a)\n            internal_push_back(l);\n   \
+    \     else if (l.a >= at(0).a)\n            internal_push_front(l);\n        else\n\
+    \            assert(false);\n    }\n\n    void add(T a, T b) { add(L(a, b)); }\n\
+    \n    // return min_f{f(x)}\n    T query(T x) const {\n        assert(size());\n\
+    \        int l = -1, r = size() - 1;\n        while (r - l > 1) {\n          \
+    \  int m = (l + r) >> 1;\n            (at(m)(x) >= at(m + 1)(x) ? l : r) = m;\n\
+    \        }\n        return apply_objective(at(r)(x));\n    }\n\n    // return\
+    \ min_f{f(x)}\n    // \u4EFB\u610F\u306E X<x \u306B\u5BFE\u3057\u3066 f = argmin_f{f(X)}\
+    \ \u3068\u306A\u3089\u306A\u3044 f \u3092\u5168\u3066\u524A\u9664\u3059\u308B\n\
+    \    T query_monotone_inc(T x) {\n        assert(size());\n        while (size()\
+    \ >= 2 and at(0)(x) >= at(1)(x))\n            pop_front();\n        return apply_objective(at(0)(x));\n\
+    \    }\n\n    // return min_f{f(x)}\n    // \u4EFB\u610F\u306E X>x \u306B\u5BFE\
+    \u3057\u3066 f = argmin_f{f(X)} \u3068\u306A\u3089\u306A\u3044 f \u3092\u5168\u3066\
+    \u524A\u9664\u3059\u308B\n    T query_monotone_dec(T x) {\n        assert(size());\n\
+    \        while (size() >= 2 and at(-2)(x) <= at(-1)(x))\n            pop_back();\n\
+    \        return apply_objective(at(-1)(x));\n    }\n\n    std::vector<T> query(const\
+    \ std::vector<T> &xs) {\n        int n = xs.size();\n        std::vector<int>\
+    \ idx(n);\n        std::iota(idx.begin(), idx.end(), 0);\n        std::ranges::sort(idx,\
+    \ std::ranges::less{}, [&](int i) { return xs[i]; });\n        std::vector<T>\
+    \ ans(n);\n        for (int id : idx)\n            ans[id] = query_monotone_inc(xs[id]);\
+    \ \n        return ans;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os,\n                                    const ConvexHullTrick &cht) {\n  \
+    \      os << \"[\";\n        for (int i = 0; i < cht.size(); i++)\n          \
+    \  os << (OBJ == -1 ? -cht.at(i) : cht.at(i))\n               << \"],\"[i + 1\
+    \ < cht.size()];\n        if (!cht.size())\n            os << \"]\";\n       \
+    \ return os;\n    }\n};\n} // namespace convex_hull_trick\ntemplate <typename\
+    \ T>\nusing MinConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
+    \                                       convex_hull_trick::Objective::MINIMIZE>;\n\
+    template <typename T>\nusing MaxConvexHullTrick =\n    convex_hull_trick::ConvexHullTrick<T,\n\
+    \                                       convex_hull_trick::Objective::MAXIMIZE>;\n"
   dependsOn:
   - build/pch/stdc++.hpp
   - library/linearalgebra/Linear.hpp
   isVerificationFile: false
   path: library/linearalgebra/ConvexHullTrick.hpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/2012.test.cpp

@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/mod/Modint.hpp
     title: library/mod/Modint.hpp
   - icon: ':heavy_check_mark:'
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/New/NumberOfSubsequence.test.cpp
   requiredBy: []
-  timestamp: '2025-11-18 08:06:48+09:00'
+  timestamp: '2025-11-24 18:49:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/New/NumberOfSubsequence.test.cpp

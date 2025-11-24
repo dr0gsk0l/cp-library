@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: build/pch/stdc++.hpp
     title: build/pch/stdc++.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/math/ExtraGCD.hpp
     title: library/math/ExtraGCD.hpp
   _extendedRequiredBy:
@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
     title: test/library-checker/DataStructure/PointSetRangeComposite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
     title: test/library-checker/DataStructure/QueueOperateAllComposite.test.cpp
   - icon: ':heavy_check_mark:'
@@ -63,9 +63,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/650.test.cpp
     title: test/yukicoder/650.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/math/ExtraGCD.hpp\"\nusing ll = long long;\nstd::pair<ll,\
@@ -145,8 +145,8 @@ data:
   requiredBy:
   - library/formalpowerseries/Sqrt.hpp
   - library/math/ModularSqrt.hpp
-  timestamp: '2025-11-18 08:06:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2025-11-24 18:49:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/Convolution/BitwiseXorConvolution.test.cpp
   - test/library-checker/Convolution/BitwiseAndConvolution.test.cpp
