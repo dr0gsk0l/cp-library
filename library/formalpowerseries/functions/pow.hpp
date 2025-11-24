@@ -7,37 +7,35 @@ namespace fps {
 
 template <typename T, int MX>
 FormalPowerSeries<T, MX> pow(FormalPowerSeries<T, MX> f, long long n) {
+    using FPS = FormalPowerSeries<T, MX>;
+
     assert(n >= 0);
-    if (n == 0) {
-        return {1};
-    }
-    if (n == 1) {
-        return f;
-    }
-
     f.shrink();
-    if (!f.size()) {
-        return f;
-    }
-    int d = 0;
-    while(d < f.size() && f[d] == 0) {
-        d++;
-    }
-    
-    if (d > 0 && (unsigned __int128)d * n >= MX) {
-        return FormalPowerSeries<T, MX>{};
-    }
-    f >>= d;
-    d *= n;
 
-    if (f[0] == 1) {
-        f = exp(n * log(f));
-    } else {
-        f = exp(log(f) * n);
-    }
-    f <<= d;
+    if(n == 0)
+        return FPS::unit();
+    if(n == 1)
+        return f;
     
-    return f;
+    if(f.size() == 0)
+        return f;
+    if(f.size() == 1)
+        return FPS{f[0].pow(n)};
+    
+    int d = f.order();
+    if (d > 0 && (unsigned __int128)d * n >= MX) 
+        return FPS(0);
+
+    // f(x) = x^d g(x) の時 f^n = x^{dn} g^n
+    f >>= d;
+
+    // f(x) = f_0 * g(x) のとき f^n = f_0^n g^n
+    auto f_0 = f[0];
+    if(f_0 != 1)
+        f /= f_0;
+
+    // f^n = exp(n log(f))
+    return f_0.pow(n) * fps::exp(n * fps::log(f)) << (d * n);
 }
 
 } // namespace fps

@@ -8,16 +8,14 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    int n;
-    std::cin >> n;
+    int n, q;
+    std::cin >> n >> q;
     Tree T(n);
     T.scan(0);
 
     HLD hld(T);
     hld.build();
 
-    int q;
-    std::cin >> q;
     while(q--){
         int u, v, k;
         std::cin >> u >> v >> k;

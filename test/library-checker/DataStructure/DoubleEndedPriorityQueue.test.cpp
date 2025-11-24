@@ -1,5 +1,5 @@
 #define PROBLEM                                                                \
-    "https://judge.yosupo.jp/problem/double_ended_std::priority_queue"
+    "https://judge.yosupo.jp/problem/double_ended_priority_queue"
 #include <bits/stdc++.h>
 
 #include "library/superstd/Multiset.hpp"
@@ -15,18 +15,25 @@ int main() {
     while (q--) {
         int t;
         std::cin >> t;
-        if (t == 0) {
-            int x;
-            std::cin >> x;
-            s.insert(x);
-        }
-        if (t == 1) {
-            int a = s.pick_mn();
-            std::cout << a << "\n";
-        }
-        if (t == 2) {
-            int a = s.pick_mx();
-            std::cout << a << "\n";
+        switch (t) {
+            case 0: {
+                int x;
+                std::cin >> x;
+                s.insert(x);
+                break;
+            }
+            case 1: {
+                int a = s.pick_mn();
+                std::cout << a << "\n";
+                break;
+            }
+            case 2: {
+                int a = s.pick_mx();
+                std::cout << a << "\n";
+                break;
+            }
+            default:
+                std::unreachable();
         }
     }
 }

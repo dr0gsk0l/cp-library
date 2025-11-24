@@ -1,5 +1,5 @@
 #define PROBLEM                                                                \
-    "https://judge.yosupo.jp/problem/std::queue_operate_all_composite"
+    "https://judge.yosupo.jp/problem/queue_operate_all_composite"
 #include <bits/stdc++.h>
 
 #include "library/algebra/Reverse.hpp"
@@ -22,18 +22,25 @@ int main() {
     while (q--) {
         int t;
         std::cin >> t;
-        if (t == 0) {
-            F f;
-            std::cin >> f;
-            S.push_back(f);
-        }
-        if (t == 1)
-            S.pop_front();
-        if (t == 2) {
-            int x;
-            std::cin >> x;
-            F f = S.prod();
-            std::cout << f(x) << "\n";
+        switch (t) {
+            case 0: {
+                F f;
+                std::cin >> f;
+                S.push_back(f);
+                break;
+            }
+            case 1:
+                S.pop_front();
+                break;
+            case 2: {
+                int x;
+                std::cin >> x;
+                F f = S.prod();
+                std::cout << f(x) << "\n";
+                break;
+            }
+            default:
+                std::unreachable();
         }
     }
 }

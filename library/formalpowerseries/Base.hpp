@@ -17,6 +17,7 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
     void strict(int n) {
         if (size() > n)
             resize(n);
+        shrink();
     }
     void shrink() {
         while (size() and back() == 0)
@@ -110,6 +111,15 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
         if (size() <= n)
             return *this;
         return FPS(Valarray<T>(this->begin(), this->begin() + n));
+    }
+
+    // 最小の非ゼロ次数（すべて 0 のときは size()）を返す
+    int order() const {
+        for (int i = 0; i < int(size()); i++) {
+            if (at(i) != 0)
+                return i;
+        }
+        return int(size());
     }
 
     FPS inv(int SZ = MX) const {
