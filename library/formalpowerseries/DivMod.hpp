@@ -1,4 +1,8 @@
 #pragma once
+#include <cassert>
+#include <ranges>
+#include <utility>
+#include <algorithm>
 #include "library/formalpowerseries/Base.hpp"
 template <typename FPS> std::pair<FPS, FPS> div_mod(FPS f, FPS g) {
     f.shrink();

@@ -1,3 +1,9 @@
+#include <cassert>
+#include <map>
+#include <ranges>
+#include <utility>
+#include <vector>
+#include <algorithm>
 template <typename TREE>
 std::pair<int, std::vector<int>> rooted_tree_isomorphism(TREE &t) {
     assert(~t.root);

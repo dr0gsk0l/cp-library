@@ -1,3 +1,6 @@
+#include <ranges>
+#include <vector>
+#include <algorithm>
 template <typename F>
 std::vector<int> internal_monotone_minima(int u, int d, int l, int r,
                                           const F &argmin) {

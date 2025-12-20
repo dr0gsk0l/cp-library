@@ -1,3 +1,6 @@
+#include <cassert>
+#include <utility>
+#include <vector>
 template <typename Monoid, int LOG> class Doubling {
     using X = typename Monoid::value_type;
     int n;

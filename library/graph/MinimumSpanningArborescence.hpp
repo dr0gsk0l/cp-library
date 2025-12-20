@@ -1,4 +1,9 @@
 #pragma once
+#include <numeric>
+#include <optional>
+#include <queue>
+#include <utility>
+#include <vector>
 #include "library/datastructure/unionfind/UnionFind.hpp"
 template <typename WG, typename W = typename WG::weight_type>
 std::optional<std::pair<W, std::vector<int>>>

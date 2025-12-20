@@ -1,4 +1,5 @@
 #pragma once
+#include <optional>
 // 合成の順番は関数と一緒だよ
 template <typename X> struct MonoidSet {
     using O = std::optional<X>;

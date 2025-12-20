@@ -1,4 +1,6 @@
 #pragma once
+#include <cassert>
+#include <vector>
 #include "library/algebra/Reverse.hpp"
 #include "library/segtree/SegmentTree.hpp"
 #include "library/tree/HLD.hpp"

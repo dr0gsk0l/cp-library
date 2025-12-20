@@ -1,5 +1,9 @@
 #pragma once
 
+#include <algorithm>
+#include <cassert>
+#include <utility>
+#include <vector>
 // 重み無し
 #include "library/flow/Dinic.hpp"
 class BipartiteMatching {

@@ -1,7 +1,11 @@
 #pragma once
+#include <cassert>
+#include <cstdint>
+#include <ranges>
+#include <vector>
+#include <algorithm>
 #include "library/graph/Graph.hpp"
 #include "library/graph/ReverseGraph.hpp"
-#define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename DirectedGraph> class SCC {
     int n;
     DirectedGraph G, R;
@@ -29,7 +33,9 @@ template <typename DirectedGraph> class SCC {
         assert(G.is_prepared());
         visit.reserve(n);
         R = reverse_graph(G);
-        REP_(v, n) if (!used[v]) dfs(v);
+        for (int v : std::views::iota(0, n))
+            if (!used[v])
+                dfs(v);
         std::ranges::fill(used, false);
         std::ranges::reverse(visit);
         int k = 0;
@@ -38,20 +44,24 @@ template <typename DirectedGraph> class SCC {
                 rdfs(v, k++);
         std::vector<std::vector<int>> edges(k);
         component.resize(k);
-        REP_(v, n) {
+        for (int v : std::views::iota(0, n)) {
             component[belong[v]].push_back(v);
             for (int to : G[v])
                 if (belong[v] != belong[to])
                     edges[belong[v]].push_back(belong[to]);
         }
         DAG = Graph(k);
-        REP_(from, k) {
+        for (int from : std::views::iota(0, k)) {
             std::ranges::sort(edges[from]);
-            REP_(i, edges[from].size())
-            if (!i || edges[from][i] != edges[from][i - 1])
-                DAG.add_arc(from, edges[from][i]);
+            bool first = true;
+            int prev = -1;
+            for (int to : edges[from]) {
+                if (first || to != prev)
+                    DAG.add_arc(from, to);
+                first = false;
+                prev = to;
+            }
         }
     }
     int operator[](int k) { return belong[k]; }
 };
-#undef REP_

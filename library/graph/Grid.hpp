@@ -1,6 +1,12 @@
 #pragma once
+#include <cassert>
+#include <optional>
+#include <ranges>
+#include <string>
+#include <type_traits>
+#include <utility>
+#include <vector>
 #include "library/graph/WeightedGraph.hpp"
-#define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename T> class Grid {
     const int h, w;
     std::optional<T> ban;
@@ -8,17 +14,18 @@ template <typename T> class Grid {
     static constexpr std::pair<int, int> d4[4] = {
         {1, 0}, {0, 1}, {-1, 0}, {0, -1}};
     template <typename vecvecT> void build(const vecvecT &grid) {
-        REP_(y, h) REP_(x, w) {
-            int p = id(y, x);
-            v[p] = grid[y][x];
-            if (ban and v[p] == ban.value())
-                continue;
-            REP_(d, 4) {
-                int y2 = y + d4[d].first, x2 = x + d4[d].second;
-                if (in(y2, x2) and (!ban or ban.value() != grid[y2][x2]))
-                    G.add_arc(p, id(y2, x2), d);
+        for (int y : std::views::iota(0, h))
+            for (int x : std::views::iota(0, w)) {
+                int p = id(y, x);
+                v[p] = grid[y][x];
+                if (ban and v[p] == ban.value())
+                    continue;
+                for (int d : std::views::iota(0, 4)) {
+                    int y2 = y + d4[d].first, x2 = x + d4[d].second;
+                    if (in(y2, x2) and (!ban || ban.value() != grid[y2][x2]))
+                        G.add_arc(p, id(y2, x2), d);
+                }
             }
-        }
         G.build();
     }
 
@@ -50,8 +57,9 @@ template <typename T> class Grid {
     }
 
     int find(const T &c) const {
-        REP_(i, h * w) if (v[i] == c) return i;
+        for (int i : std::views::iota(0, h * w))
+            if (v[i] == c)
+                return i;
         return -1;
     }
 };
-#undef REP_

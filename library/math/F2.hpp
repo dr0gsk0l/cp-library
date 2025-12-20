@@ -1,4 +1,9 @@
 #pragma once
+#include <cassert>
+#include <optional>
+#include <ranges>
+#include <vector>
+#include <algorithm>
 template <typename T, int LOG> class F2 {
     bool is_sorted;
     std::vector<T> B;

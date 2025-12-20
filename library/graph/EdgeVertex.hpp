@@ -1,4 +1,7 @@
 #pragma once
+#include <cassert>
+#include <tuple>
+#include <vector>
 #include "library/graph/Graph.hpp"
 class EdgeVertex {
     int n, N;

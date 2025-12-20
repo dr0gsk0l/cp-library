@@ -1,3 +1,8 @@
+#include <cassert>
+#include <functional>
+#include <queue>
+#include <utility>
+#include <vector>
 template <typename WG, typename T = typename WG::weight_type>
 std::pair<std::vector<T>, std::vector<int>> dijkstra(const WG &g, int s = 0) {
     assert(g.is_prepared());

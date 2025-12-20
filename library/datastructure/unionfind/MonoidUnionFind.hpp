@@ -1,3 +1,7 @@
+#include <cassert>
+#include <numeric>
+#include <utility>
+#include <vector>
 template <typename AbelMonoid> class UnionFind {
     using T = typename AbelMonoid::value_type;
     int n, num;

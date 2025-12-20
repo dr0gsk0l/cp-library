@@ -1,3 +1,8 @@
+#include <cassert>
+#include <numeric>
+#include <stack>
+#include <utility>
+#include <vector>
 template <typename AbelGroup> class UnionFind {
     using T = typename AbelGroup::value_type;
     int n, num;

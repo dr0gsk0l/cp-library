@@ -1,3 +1,5 @@
+#include <utility>
+#include <vector>
 template <typename X> struct GroupCntSum {
     using P = std::pair<X, X>;
     using value_type = P;

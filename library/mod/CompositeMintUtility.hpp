@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 // set_mod より後で宣言する
 template <typename MINT> class MintUtility {
     std::vector<std::vector<MINT>> nCk_{std::vector<MINT>{1}};

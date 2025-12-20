@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 #include "library/formalpowerseries/Base.hpp"
 #include "library/math/ModularSqrt.hpp"
 #include <optional>

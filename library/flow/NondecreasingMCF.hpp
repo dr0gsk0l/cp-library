@@ -1,8 +1,15 @@
 #pragma once
+#include <functional>
+#include <limits>
+#include <queue>
+#include <ranges>
+#include <utility>
+#include <vector>
+#include <algorithm>
+#include <type_traits>
 // 辺の重みが流量に対して単調増加な関数
 // 現在の流量を引数として、そこに新たに 1 流す時にかかるコストを返す関数を渡す
 #include "library/graph/WeightedGraph.hpp"
-#define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename TC> class NondecreasingMCF {
     using F = std::function<TC(int)>;
     struct EdgeInfo {
@@ -28,7 +35,7 @@ template <typename TC> class NondecreasingMCF {
                                   ? TC(1e30)
                                   : std::numeric_limits<TC>::max() / 2;
     //  std::numeric_limits<__int128 >::max() は AOJ でバグった
-    std::vector<std::pair<int, int>> pre; // pre[v]=[u,i] : G[u][i] で v に来た
+    std::vector<std::pair<int, size_t>> pre; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;
     std::priority_queue<std::pair<TC, int>, std::vector<std::pair<TC, int>>,
                         std::greater<std::pair<TC, int>>>
@@ -38,7 +45,7 @@ template <typename TC> class NondecreasingMCF {
     template <typename T> bool chmin(T &a, const T &b) {
         return (a > b and (a = b, true));
     }
-    bool SP_update(int from, int edge_id) {
+    bool SP_update(int from, size_t edge_id) {
         const auto &e = G[from][edge_id];
         if ((e.weight).cap == 0)
             return false;
@@ -60,9 +67,9 @@ template <typename TC> class NondecreasingMCF {
             que.pop();
             if (dist[v] < now)
                 continue;
-            REP_(i, G[v].size())
-            if (SP_update(v, i))
-                que.emplace(dist[G[v][i].to], G[v][i].to);
+            for (size_t i : std::views::iota(0uz, G[v].size()))
+                if (SP_update(v, i))
+                    que.emplace(dist[G[v][i].to], G[v][i].to);
         }
     }
 
@@ -71,15 +78,15 @@ template <typename TC> class NondecreasingMCF {
         std::ranges::fill(dist, INF);
         dist[s] = 0;
         std::queue<int> que;
-        REP_(i, n) if (!in_deg[i]) que.push(i);
+        for (int i : std::views::iota(0, n))
+            if (!in_deg[i])
+                que.push(i);
         while (que.size()) {
             int v = que.front();
             que.pop();
-            REP_(i, G[v].size()) {
-                SP_update(v, i);
-                if (!--in_deg[G[v][i].to])
+            for (size_t i : std::views::iota(0uz, G[v].size()))
+                if (SP_update(v, i) && !--in_deg[G[v][i].to])
                     que.push(G[v][i].to);
-            }
         }
     }
 
@@ -105,14 +112,16 @@ template <typename TC> class NondecreasingMCF {
             G.build();
         TC res = 0;
         std::ranges::fill(potential, 0);
-        for (int i = 0; i < f; i++) {
+        for (int _ : std::views::iota(0, f)) {
             if (negative)
                 DAG(s);
             else
                 dijkstra(s);
             if (dist[t] == INF)
                 return std::make_pair(res, false);
-            REP_(v, n) if (dist[v] != INF) potential[v] += dist[v];
+            for (int v : std::views::iota(0, n))
+                if (dist[v] != INF)
+                    potential[v] += dist[v];
             res += potential[t];
             for (int v = t; v != s; v = pre[v].first) {
                 auto &w = G[pre[v].first][pre[v].second].weight;
@@ -126,4 +135,3 @@ template <typename TC> class NondecreasingMCF {
         return std::make_pair(res, true);
     }
 };
-#undef REP_

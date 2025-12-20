@@ -1,4 +1,9 @@
 #pragma once
+#include <cassert>
+#include <iostream>
+#include <queue>
+#include <utility>
+#include <vector>
 #include "library/graph/WeightedGraph.hpp"
 template <typename T> struct WeightedTree : WeightedGraph<T> {
     using WeightedGraph<T>::WeightedGraph;

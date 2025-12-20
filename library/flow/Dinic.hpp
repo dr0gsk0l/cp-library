@@ -1,5 +1,13 @@
 #pragma once
 
+#include <algorithm>
+#include <cassert>
+#include <limits>
+#include <queue>
+#include <ranges>
+#include <tuple>
+#include <utility>
+#include <vector>
 // https://misawa.github.io/others/flow/dinic_time_complexity.html
 #include "library/graph/WeightedGraph.hpp"
 template <typename T> class Dinic {

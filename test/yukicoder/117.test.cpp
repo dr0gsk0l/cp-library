@@ -5,7 +5,7 @@
 #include "library/mod/Modint.hpp"
 
 using mint = Mint<long long, 1000'000'007>;
-MintUtility<mint> M;
+using MintUtil = MintUtility<mint>;
 
 mint solve() {
     std::string s;
@@ -16,10 +16,10 @@ mint solve() {
     int n = stoi(s.substr(2, comma - 1));
     int k = stoi(s.substr(comma + 1, s.size() - comma - 1));
     if (s[0] == 'C')
-        return M.nCk(n, k);
+        return MintUtil::nCk(n, k);
     if (s[0] == 'P')
-        return M.nPk(n, k);
-    return M.nHk(n, k);
+        return MintUtil::nPk(n, k);
+    return MintUtil::nHk(n, k);
 }
 
 int main() {

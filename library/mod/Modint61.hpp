@@ -1,5 +1,6 @@
 #pragma once
 #include <utility>
+#include <cmath>
 struct Modint61 {
     using ll = long long;
     static constexpr ll MOD = (1LL << 61) - 1;

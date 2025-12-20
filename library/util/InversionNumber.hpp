@@ -1,4 +1,5 @@
 #include <atcoder/fenwicktree>
+#include <vector>
 
 #include "library/util/Compress.hpp"
 

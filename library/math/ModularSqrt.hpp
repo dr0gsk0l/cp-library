@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 #include "library/mod/Modint.hpp"
 #include <optional>
 #include <random>

@@ -1,3 +1,9 @@
+#include <array>
+#include <cassert>
+#include <ranges>
+#include <vector>
+#include <algorithm>
+#include <type_traits>
 template <int LOG, typename COUNT> class BinaryTrie {
     static_assert(LOG <= 64, "Binary Trie overflow");
     using T = std::conditional_t<LOG <= 32, unsigned int, unsigned long long>;

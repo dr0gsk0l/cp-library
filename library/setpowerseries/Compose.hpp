@@ -1,3 +1,7 @@
+#include <algorithm>
+#include <cassert>
+#include <cmath>
+#include <ranges>
 // https://maspypy.com/%e9%9b%86%e5%90%88%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%e9%96%a2%e9%80%a3-2-%e5%a4%9a%e9%a0%85%e5%bc%8f%e3%81%a8%e3%81%ae%e5%90%88%e6%88%90
 #include "library/setpowerseries/Base.hpp"
 #include <vector>

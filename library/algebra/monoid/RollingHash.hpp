@@ -1,3 +1,7 @@
+#include <cstdint>
+#include <ranges>
+#include <utility>
+#include <vector>
 template <typename CHAR = char> struct MonoidRollingHash {
     using u64 = std::uint64_t;
     using u128 = unsigned __int128;
@@ -24,9 +28,7 @@ template <typename CHAR = char> struct MonoidRollingHash {
 
     template <typename STRING>
     static constexpr std::vector<X> to_vec(const STRING &s) {
-        std::vector<X> ret(s.size());
-        for (int i = 0; i < s.size(); i++)
-            ret[i] = to_X(s[i]);
-        return ret;
+        return std::ranges::to<std::vector>(
+            s | std::views::transform([](const auto &c) { return to_X(c); }));
     }
 };

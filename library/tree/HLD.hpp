@@ -1,4 +1,7 @@
 #pragma once
+#include <cassert>
+#include <utility>
+#include <vector>
 template <typename TREE> struct HLD {
     int n;
     TREE T;

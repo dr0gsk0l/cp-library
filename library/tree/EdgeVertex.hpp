@@ -1,4 +1,5 @@
 #pragma once
+#include <cassert>
 #include "library/tree/Tree.hpp"
 class EdgeVertex {
     int n, m;

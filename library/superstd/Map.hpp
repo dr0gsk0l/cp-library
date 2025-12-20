@@ -1,3 +1,4 @@
+#include <map>
 template <typename Key, typename Val> struct Map : std::map<Key, Val> {
     using std::map<Key, Val>::erase;
 

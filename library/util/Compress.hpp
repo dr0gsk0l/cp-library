@@ -1,4 +1,11 @@
 #pragma once
+#include <cassert>
+#include <iterator>
+#include <limits>
+#include <ostream>
+#include <ranges>
+#include <vector>
+#include <algorithm>
 template <typename T, bool Sentinel = false> class Compress {
     std::vector<T> v;
     bool prepared;

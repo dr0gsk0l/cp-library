@@ -1,3 +1,4 @@
+#include <numeric>
 template <typename X> struct MonoidLcm {
     using value_type = X;
     static constexpr X op(const X &x, const X &y) noexcept {

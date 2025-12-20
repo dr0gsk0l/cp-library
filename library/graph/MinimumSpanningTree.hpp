@@ -1,3 +1,9 @@
+#include <cassert>
+#include <numeric>
+#include <ranges>
+#include <utility>
+#include <vector>
+#include <algorithm>
 #include "library/datastructure/unionfind/UnionFind.hpp"
 template <typename WG, typename W = typename WG::weight_type>
 std::pair<W, std::vector<int>> minimum_spanning_tree(const WG &g) {

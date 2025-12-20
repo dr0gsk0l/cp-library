@@ -1,3 +1,6 @@
+#include <map>
+#include <string>
+#include <vector>
 template <typename T, typename U>
 T sparse_subsequence(const std::vector<U> &v) {
     std::map<U, T> mp;

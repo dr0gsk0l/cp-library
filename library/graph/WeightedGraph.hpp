@@ -1,4 +1,7 @@
 #pragma once
+#include <cassert>
+#include <iostream>
+#include <vector>
 template <typename T> struct WeightedEdge {
     WeightedEdge() = default;
     WeightedEdge(int from, int to, T weight)

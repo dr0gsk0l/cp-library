@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 struct Quotient{
   // f(l,r,k) : {x\in[l,r] | floor(n/x)=k} についての操作
   template<typename T,typename F>

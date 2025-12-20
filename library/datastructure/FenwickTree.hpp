@@ -1,4 +1,6 @@
 #pragma once
+#include <cassert>
+#include <vector>
 #include "library/algebra/group/Add.hpp"
 #include "library/algebra/group/Concepts.hpp"
 

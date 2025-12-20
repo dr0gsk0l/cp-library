@@ -1,4 +1,8 @@
 #pragma once
+#include <cassert>
+#include <istream>
+#include <ostream>
+#include <utility>
 template <typename T> struct Line {
     T a, b;
     Line() = default;

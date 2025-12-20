@@ -1,4 +1,5 @@
 #pragma once
+#include <concepts>
 
 template <class M>
 concept monoid = requires(typename M::value_type x) {

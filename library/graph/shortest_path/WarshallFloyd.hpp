@@ -1,3 +1,5 @@
+#include <limits>
+#include <vector>
 template <typename WG, typename T = typename WG::weight_type>
 std::vector<std::vector<T>> warshall_floyd(const WG &g) {
     int n = g.n;

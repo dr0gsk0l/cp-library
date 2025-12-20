@@ -1,4 +1,8 @@
 #pragma once
+#include <cassert>
+#include <map>
+#include <utility>
+#include <vector>
 #include "library/linearalgebra/Linear.hpp"
 namespace insert_convex_hull_trick {
 enum Objective {

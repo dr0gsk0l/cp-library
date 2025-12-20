@@ -1,3 +1,8 @@
+#include <cassert>
+#include <cstdint>
+#include <iostream>
+#include <limits>
+#include <map>
 template <typename T> class Multiset {
     using u32 = std::uint32_t;
     u32 size_;

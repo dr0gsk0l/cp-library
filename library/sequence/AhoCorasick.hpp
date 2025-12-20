@@ -1,4 +1,7 @@
 #pragma once
+#include <cassert>
+#include <queue>
+#include <vector>
 #include "library/sequence/Trie.hpp"
 template <typename CHAR, int SIGMA, typename AbelMonoid = GroupAdd<int>>
 class AhoCorasick : Trie<CHAR, SIGMA, AbelMonoid> {

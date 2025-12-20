@@ -1,105 +1,87 @@
 #pragma once
 #include "library/datastructure/FullyIndexableDictionary.hpp"
 #include "library/util/Compress.hpp"
-#define REP_(i, n) for (int i = 0; i < (n); i++)
-template <typename T, bool COMPRESS = true> class WaveletMatrix {
+#include <bit>
+#include <cassert>
+#include <concepts>
+#include <cstdint>
+#include <optional>
+#include <ranges>
+#include <tuple>
+#include <utility>
+#include <vector>
+template <std::integral T> class WaveletMatrix {
   protected:
-    using U = std::conditional_t<COMPRESS, int, T>;
-    static_assert(std::is_integral_v<U>, "Wavelet Matrix is only for integer");
-    int n, memo, log;
+    using u32 = std::uint32_t;
+
+    u32 n, memo, log;
     std::vector<FullyIndexableDictionary> mat;
     std::vector<int> zero_cnt;
     Compress<T, true> C;
     std::vector<T> data;
 
-    constexpr U comp(const T &x) const {
-        if constexpr (COMPRESS) {
-            return C.geq(x);
-        } else {
-            return x;
-        }
-    }
-    constexpr T uncomp(const U &a) {
-        if constexpr (COMPRESS) {
-            return C.r(a);
-        } else {
-            return a;
-        }
-    }
+    constexpr u32 comp(const T &x) const { return C.geq(x); }
+    constexpr T uncomp(const u32 &a) { return C.r(a); }
 
     // 0-indexed で下から i bit 目
-    inline bool low_bit(const U &a, int i) const { return (a >> i) & 1; }
+    inline bool low_bit(const u32 &a, int i) const { return (a >> i) & 1; }
     // 0-indexed で上から i bit 目
-    inline bool high_bit(const U &a, int i) const {
+    inline bool high_bit(const u32 &a, int i) const {
         return low_bit(a, log - i - 1);
     }
 
-    int nxt(int idx, int h, const U &a) {
+    int nxt(int idx, int h, const u32 &a) {
         // idx の位置に a があった場合上から h bit 目でどこに行くか
         bool bit = high_bit(a, h);
         return mat[h].rank(idx, bit) + (bit ? zero_cnt[h] : 0);
     }
 
   public:
-    WaveletMatrix(std::vector<T> v, int log_ = 0)
-        : n(v.size()), data(v), log(log_) {
-        std::vector<U> cv(n);
-        if constexpr (COMPRESS) {
-            C = Compress<T, true>(v);
-            for (int i = 0; i < n; i++)
-                cv[i] = C[v[i]];
-            while (C.size() >= (1ull << log))
-                log++;
-        } else {
-            cv = v;
-            T mx = 0;
-            for (const T &a : v) {
-                assert(a >= 0);
-                if (mx < a)
-                    mx = a;
-            }
-            while (mx >= (1ull << log))
-                log++;
-        }
+    WaveletMatrix(std::vector<T> v) : n(v.size()), data(v), C(v) {
+        std::vector<u32> cv(n);
+        for (auto &&[cx, x] : std::views::zip(cv, v))
+            cx = C[x];
+
+        log = std::bit_width(C.size());
         mat.resize(log);
         zero_cnt.resize(log);
-        std::vector<U> lv(n), rv(n);
-        REP_(h, log) {
-            mat[h] = FullyIndexableDictionary(n);
+
+        std::vector<u32> lv(n), rv(n);
+        for (int h : std::views::iota(0, log)) {
+            std::vector<unsigned int> ones(n);
             int l = 0, r = 0;
-            REP_(i, n)
-            if (high_bit(cv[i], h)) {
-                rv[r++] = cv[i];
-                mat[h].set(i);
-            } else
-                lv[l++] = cv[i];
+            for (int i : std::views::iota(0, n))
+                if (high_bit(cv[i], h)) {
+                    rv[r++] = cv[i];
+                    ones[i] = 1;
+                } else
+                    lv[l++] = cv[i];
+
             zero_cnt[h] = l;
-            mat[h].build();
+            mat[h] = FullyIndexableDictionary(std::move(ones));
             std::swap(lv, cv);
-            REP_(i, r) cv[l + i] = rv[i];
+            std::ranges::copy(rv.begin(), rv.begin() + r, cv.begin() + l);
         }
     }
 
     // [l,r) の x の個数
     int rank(int l, int r, const T &x) {
-        if constexpr (COMPRESS) {
-            if (!C.exist(x))
-                return 0;
-        }
-        U a = comp(x);
-        REP_(h, log) {
+        if (!C.exist(x))
+            return 0;
+        u32 a = comp(x);
+        for (int h : std::views::iota(0, log)) {
             l = nxt(l, h, a);
             r = nxt(r, h, a);
         }
         memo = l;
         return r - l;
     }
-    int rank(int r, const T &x) { return rank(x, 0, r); }
+    int rank(int r, const T &x) { return rank(0, r, x); }
 
     // k 番目の x の index
     int select(int k, const T &x) {
-        U a = comp(x);
-        if (rank(a, n) < k)
+        u32 a = comp(x);
+        if (rank(n, x) < k)
             return -1;
         k += memo;
         for (int h = log - 1; h >= 0; h--) {
@@ -115,10 +97,10 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
     T kth_largest(int l, int r, int k) {
         if (k < 0 or r - l <= k)
             return -1;
-        U res = 0;
-        REP_(h, log) {
-            int L = mat[h].rank(l);
-            int R = mat[h].rank(r);
+        u32 res = 0;
+        for (int h : std::views::iota(0, log)) {
+            const int L = mat[h].rank(l);
+            const int R = mat[h].rank(r);
             res <<= 1;
             if (R - L > k) {
                 l = L + zero_cnt[h];
@@ -138,11 +120,11 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
 
     // [l,r) で x 未満の個数
     int range_freq(int l, int r, const T &upper) {
-        U a = comp(upper);
+        u32 a = comp(upper);
         int res = 0;
-        REP_(h, log) {
+        for (int h : std::views::iota(0, log)) {
             if (high_bit(a, h)) {
-                int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
+                const int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
                 res += R - L;
             }
             l = nxt(l, h, a);
@@ -173,12 +155,7 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         return std::nullopt;
     }
     std::optional<T> gt(int l, int r, const T &x) {
-        T y;
-        if constexpr (COMPRESS) {
-            y = C.r(C.gt(x));
-        } else {
-            y = x + 1;
-        }
+        T y = C.r(C.gt(x));
         return geq(l, r, y);
     }
 
@@ -188,8 +165,8 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
     int height() const { return log; }
     std::vector<int> points(int idx) {
         std::vector<int> res(log);
-        U a = comp(data[idx]);
-        REP_(h, log) {
+        u32 a = comp(data[idx]);
+        for (int h : std::views::iota(0, log)) {
             idx = nxt(idx, h, a);
             res[h] = idx;
         }
@@ -198,8 +175,8 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
     std::vector<std::tuple<int, int, int>> intervals(int l, int r,
                                                      const T &upper) {
         std::vector<std::tuple<int, int, int>> res;
-        U a = comp(upper);
-        REP_(h, log) {
+        u32 a = comp(upper);
+        for (int h : std::views::iota(0, log)) {
             if (high_bit(a, h)) {
                 int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
                 res.emplace_back(h, L, R);
@@ -213,7 +190,7 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
                                                                  int k) {
         assert(0 <= k and k < r - l);
         std::vector<std::tuple<int, int, int>> res;
-        REP_(h, log) {
+        for (int h : std::views::iota(0, log)) {
             int L = mat[h].rank(l);
             int R = mat[h].rank(r);
             if (R - L > k) {
@@ -233,4 +210,3 @@ template <typename T, bool COMPRESS = true> class WaveletMatrix {
         return kth_largest_intervals(l, r, r - l - k - 1);
     }
 };
-#undef REP_

@@ -1,5 +1,7 @@
 #include <numeric>
 #include <vector>
+#include <cassert>
+#include <utility>
 
 class UnionFind {
     int n, num;

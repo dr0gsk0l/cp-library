@@ -1,9 +1,11 @@
+#include <cassert>
+#include <vector>
 template <typename MINT> class MintUtility {
-    std::vector<MINT> fact_ = {MINT::raw(1)};
-    std::vector<MINT> inv_fact_{MINT::raw(1)};
-    int S = 1; // 今のサイズ
+    inline static std::vector<MINT> fact_ = {MINT::raw(1)};
+    inline static std::vector<MINT> inv_fact_{MINT::raw(1)};
+    inline static int S = 1; // 今のサイズ
 
-    void extend(const int n) {
+    static void extend(const int n) {
         if (n < S)
             return;
         const int preS = S;
@@ -22,29 +24,29 @@ template <typename MINT> class MintUtility {
     }
 
   public:
-    MINT fact(const int n) {
+    static MINT fact(const int n) {
         assert(n >= 0);
         extend(n);
         return fact_[n];
     }
-    MINT inv_fact(const int n) {
+    static MINT inv_fact(const int n) {
         assert(n >= 0);
         extend(n);
         return inv_fact_[n];
     }
-    MINT nCk(const int n, const int k) {
+    static MINT nCk(const int n, const int k) {
         if (k < 0 || n < k)
             return MINT::raw(0);
         extend(n);
         return fact_[n] * inv_fact_[k] * inv_fact_[n - k];
     }
-    MINT nPk(const int n, const int k) {
+    static MINT nPk(const int n, const int k) {
         if (k < 0 || n < k)
             return MINT::raw(0);
         extend(n);
         return fact_[n] * inv_fact_[n - k];
     }
-    MINT nHk(const int n, const int k) {
-        return (n == 0 and k == 0 ? 1 : nCk(n + k - 1, k));
+    static MINT nHk(const int n, const int k) {
+        return (n == 0 and k == 0 ? MINT::raw(1) : nCk(n + k - 1, k));
     }
 };

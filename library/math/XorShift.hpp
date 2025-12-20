@@ -1,3 +1,4 @@
+#include <cstdint>
 class XorShift{
   uint64_t x;
 public:

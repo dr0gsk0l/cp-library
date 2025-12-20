@@ -1,3 +1,9 @@
+#include <cassert>
+#include <numeric>
+#include <optional>
+#include <tuple>
+#include <utility>
+#include <vector>
 class IntegerSumRuleUnionFind {
     using ll = long long;
     int n, num;

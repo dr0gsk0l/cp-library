@@ -1,6 +1,13 @@
 #pragma once
-#define REP_(i, n) for (int i = 0; i < (n); i++)
-#define REP2_(i, s, n) for (int i = (s); i < (n); i++)
+#include <cassert>
+#include <cmath>
+#include <cstddef>
+#include <istream>
+#include <optional>
+#include <ostream>
+#include <ranges>
+#include <utility>
+#include <vector>
 template <typename K> struct Matrix {
     using value_type = K;
     using vec = std::vector<K>;
@@ -16,12 +23,20 @@ template <typename K> struct Matrix {
 
     Matrix &operator+=(const Matrix &A) {
         assert(r == A.r && c == A.c);
-        REP_(i, r) REP_(j, c) M[i][j] += A[i][j];
+        for (size_t i : std::views::iota(0uz, r)) {
+            for (size_t j : std::views::iota(0uz, c)) {
+                M[i][j] += A[i][j];
+            }
+        }
         return *this;
     }
     Matrix &operator-=(const Matrix &A) {
         assert(r == A.r && c == A.c);
-        REP_(i, r) REP_(j, c) M[i][j] -= A[i][j];
+        for (size_t i : std::views::iota(0uz, r)) {
+            for (size_t j : std::views::iota(0uz, c)) {
+                M[i][j] -= A[i][j];
+            }
+        }
         return *this;
     }
     Matrix operator+(const Matrix &A) { return Matrix(M) += A; }
@@ -30,7 +45,13 @@ template <typename K> struct Matrix {
     friend Matrix operator*(const Matrix &A, const Matrix &B) {
         assert(A.c == B.r);
         Matrix res(A.r, B.c);
-        REP_(i, A.r) REP_(k, A.c) REP_(j, B.c) res[i][j] += A[i][k] * B[k][j];
+        for (size_t i : std::views::iota(0uz, A.r)) {
+            for (size_t k : std::views::iota(0uz, A.c)) {
+                for (size_t j : std::views::iota(0uz, B.c)) {
+                    res[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
         return res;
     }
     Matrix &operator*=(const Matrix &A) {
@@ -41,14 +62,19 @@ template <typename K> struct Matrix {
     bool operator==(const Matrix &A) {
         if (r != A.r || c != A.c)
             return false;
-        REP_(i, r) REP_(j, c) if (M[i][j] != A[i][j]) return false;
+        for (size_t i : std::views::iota(0uz, r))
+            for (size_t j : std::views::iota(0uz, c))
+                if (M[i][j] != A[i][j])
+                    return false;
         return true;
     }
     bool operator!=(const Matrix &A) { return !((*this) == A); }
 
     static Matrix I(size_t n) {
         Matrix res(n, n);
-        REP_(i, n) res[i][i] = K(1);
+        for (size_t i : std::views::iota(0uz, n)) {
+            res[i][i] = K(1);
+        }
         return res;
     }
 
@@ -66,19 +92,26 @@ template <typename K> struct Matrix {
 
     std::pair<int, int> GaussJordan() {
         int rnk = 0, cnt = 0;
-        REP_(k, c) {
-            if (M[rnk][k] == 0)
-                REP2_(i, rnk + 1, r)
-            if (M[i][k] != 0) {
-                std::swap(M[i], M[rnk]);
-                cnt ^= 1;
-                break;
+        for (int k : std::views::iota(0, static_cast<int>(c))) {
+            if (M[rnk][k] == 0) {
+                auto pivot_range = std::views::iota(rnk + 1, static_cast<int>(r));
+                auto pivot = std::ranges::find_if(
+                    pivot_range, [&](int i) { return M[i][k] != 0; });
+                if (pivot != pivot_range.end()) {
+                    std::swap(M[*pivot], M[rnk]);
+                    cnt ^= 1;
+                }
             }
             if (M[rnk][k] == 0)
                 continue;
-            REP_(i, r) if (i != rnk) {
+            for (size_t i : std::views::iota(0uz, r)) {
+                if (static_cast<int>(i) == rnk) {
+                    continue;
+                }
                 K x = M[i][k] / M[rnk][k];
-                REP_(j, c) M[i][j] -= M[rnk][j] * x;
+                for (size_t j : std::views::iota(0uz, c)) {
+                    M[i][j] -= M[rnk][j] * x;
+                }
             }
             if (++rnk == r)
                 break;
@@ -93,19 +126,33 @@ template <typename K> struct Matrix {
         if (rnk != r)
             return 0;
         K res = 1;
-        REP_(i, r) res *= A[i][i];
+        for (size_t i : std::views::iota(0uz, r)) {
+            res *= A[i][i];
+        }
         return (cnt ? -res : res);
     }
 
     std::optional<Matrix> inv() const {
         assert(r == c);
         Matrix A(r, c + c);
-        REP_(i, r) REP_(j, c) A[i][j] = M[i][j];
-        REP_(i, r) REP_(j, c) A[i][c + j] = K(i == j);
+        for (size_t i : std::views::iota(0uz, r)) {
+            for (size_t j : std::views::iota(0uz, c)) {
+                A[i][j] = M[i][j];
+            }
+            for (size_t j : std::views::iota(0uz, c)) {
+                A[i][c + j] = K(i == j);
+            }
+        }
         A.GaussJordan();
-        REP_(i, r) if (A[i][i] == 0) return std::nullopt;
+        for (size_t i : std::views::iota(0uz, r))
+            if (A[i][i] == 0)
+                return std::nullopt;
         Matrix res(r, c);
-        REP_(i, r) REP_(j, c) res[i][j] = A[i][c + j] / A[i][i];
+        for (size_t i : std::views::iota(0uz, r)) {
+            for (size_t j : std::views::iota(0uz, c)) {
+                res[i][j] = A[i][c + j] / A[i][i];
+            }
+        }
         return res;
     }
 
@@ -114,9 +161,11 @@ template <typename K> struct Matrix {
         return os;
     }
     friend std::istream &operator>>(std::istream &is, Matrix &M) {
-        REP_(i, M.r) REP_(j, M.c) is >> M.M[i][j];
+        for (size_t i : std::views::iota(0uz, M.r)) {
+            for (size_t j : std::views::iota(0uz, M.c)) {
+                is >> M.M[i][j];
+            }
+        }
         return is;
     }
 };
-#undef REP_
-#undef REP2_

@@ -1,4 +1,7 @@
 #pragma once
+#include <cmath>
+#include <istream>
+#include <vector>
 #include "library/r2/XY.hpp"
 namespace geometry {
 constexpr double EPS = 1e-10, PI = acos(-1);

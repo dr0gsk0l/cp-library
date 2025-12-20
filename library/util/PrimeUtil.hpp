@@ -1,4 +1,12 @@
 #pragma once
+#include <array>
+#include <cassert>
+#include <cstdint>
+#include <ranges>
+#include <utility>
+#include <vector>
+#include <algorithm>
+#include <type_traits>
 // 宣言はグローバルでする
 // https://twitter.com/climpet/status/1598974781138694144
 

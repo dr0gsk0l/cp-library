@@ -1,4 +1,9 @@
 #pragma once
+#include <cassert>
+#include <cmath>
+#include <istream>
+#include <numeric>
+#include <ostream>
 template <std::integral T> struct Fraction {
     T num, den;
     Fraction(T n = 0, T d = 1) : num(n), den(d) {

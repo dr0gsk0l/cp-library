@@ -1,3 +1,8 @@
+#include <cassert>
+#include <limits>
+#include <optional>
+#include <utility>
+#include <vector>
 // s からの最短距離が定まるなら最短距離, 無限に小さく出来るなら std::nullopt
 // そもそも到達出来ない場合は pre が -1 になっている
 template <typename WG, typename T = typename WG::weight_type>

@@ -1,4 +1,6 @@
 #pragma once
+#include <queue>
+#include <vector>
 #include "library/formalpowerseries/Base.hpp"
 template <typename FPS> class FPSProd {
     std::queue<FPS> que;

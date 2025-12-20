@@ -1,6 +1,9 @@
 #include <cassert>
 #include <stack>
 #include <vector>
+#include <cstddef>
+#include <numeric>
+#include <utility>
 
 class UndoUnionFind {
     size_t n, num;

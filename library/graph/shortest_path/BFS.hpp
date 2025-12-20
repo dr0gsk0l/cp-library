@@ -1,4 +1,8 @@
 #pragma once
+#include <cassert>
+#include <queue>
+#include <utility>
+#include <vector>
 template <typename GRAPH>
 std::pair<std::vector<int>, std::vector<int>> BFS(const GRAPH &g, int s = 0) {
     assert(g.is_prepared());

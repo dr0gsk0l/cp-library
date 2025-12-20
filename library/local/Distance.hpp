@@ -1,3 +1,7 @@
+#include <algorithm>
+#include <map>
+#include <queue>
+#include <vector>
 template <typename T> class Distance {
     std::map<T, int> d;
     std::queue<T> que;

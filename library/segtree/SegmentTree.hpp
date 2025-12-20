@@ -1,6 +1,9 @@
-#include "library/algebra/monoid/Concepts.hpp"
-
 #pragma once
+#include <cassert>
+#include <cmath>
+#include <ostream>
+#include <vector>
+#include "library/algebra/monoid/Concepts.hpp"
 template <monoid M> class SegmentTree {
     using X = typename M::value_type;
     std::vector<X> dat;

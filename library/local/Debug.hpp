@@ -1,3 +1,8 @@
+#include <iostream>
+#include <map>
+#include <ostream>
+#include <set>
+#include <utility>
 template <typename T>
 std::ostream &operator<<(std::ostream &os, const std::set<T> &se) {
     if (se.size) {

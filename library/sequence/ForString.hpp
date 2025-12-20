@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include <vector>
 template <char MARGIN> struct ForString {
     static constexpr char change(char c) { return c - MARGIN; }
     static constexpr char restore(char a) { return a + MARGIN; }

@@ -1,13 +1,15 @@
 #pragma once
+#include <cassert>
+#include <cmath>
+#include <ranges>
+#include <vector>
 #include "library/datastructure/FenwickTree.hpp"
 #include "library/datastructure/WaveletMatrix.hpp"
-#define REP_(i, n) for (int i = 0; i < (n); i++)
-template <typename T, group G>
-class GroupWaveletMatrix : WaveletMatrix<T, true> {
-    using super = WaveletMatrix<T, true>;
+template <typename T, group G> class GroupWaveletMatrix : WaveletMatrix<T> {
+    using super = WaveletMatrix<T>;
     using super::log, super::n, super::nxt, super::comp, super::data,
         super::high_bit, super::mat, super::zero_cnt;
-    using U = typename super::U;
+    using u32 = typename super::u32;
     using FT = FenwickTree<G>;
     using S = typename G::value_type;
     std::vector<FT> ft;
@@ -22,20 +24,21 @@ class GroupWaveletMatrix : WaveletMatrix<T, true> {
     }
     GroupWaveletMatrix(std::vector<T> v, const std::vector<S> &w)
         : GroupWaveletMatrix(v) {
-        for (int i = 0; i < n; i++)
+        for (int i : std::views::iota(0, n)) {
             add(i, w[i]);
+        }
     }
     void add(int idx, const S &val) {
-        U a = comp(data[idx]);
-        REP_(h, log) {
+        u32 a = comp(data[idx]);
+        for (int h : std::views::iota(0, log)) {
             idx = nxt(idx, h, a);
             ft[h].add(idx, val);
         }
     }
     S sum(int l, int r, const T &upper) {
-        U a = comp(upper);
+        u32 a = comp(upper);
         S res = G::unit();
-        REP_(h, log) {
+        for (int h : std::views::iota(0, log)) {
             if (high_bit(a, h)) {
                 int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
                 G::Rchop(res, ft[h].sum(L, R));
@@ -51,7 +54,7 @@ class GroupWaveletMatrix : WaveletMatrix<T, true> {
     S kth_largest_sum(int l, int r, int k) {
         assert(0 <= k and k < r - l);
         S res = G::unit();
-        REP_(h, log) {
+        for (int h : std::views::iota(0, log)) {
             int L = mat[h].rank(l);
             int R = mat[h].rank(r);
             if (R - L > k) {
@@ -67,4 +70,3 @@ class GroupWaveletMatrix : WaveletMatrix<T, true> {
         return res;
     }
 };
-#undef REP_

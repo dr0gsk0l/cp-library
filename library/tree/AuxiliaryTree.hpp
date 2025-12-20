@@ -1,5 +1,12 @@
 #pragma once
+#include <algorithm>
 
+#include <cassert>
+#include <cmath>
+#include <ranges>
+#include <stack>
+#include <utility>
+#include <vector>
 #include "library/tree/HLD.hpp"
 #include "library/tree/Tree.hpp"
 #include "library/tree/WeightedTree.hpp"

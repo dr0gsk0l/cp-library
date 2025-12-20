@@ -1,3 +1,5 @@
+#include <cassert>
+#include <vector>
 #include "library/algebra/group/Concepts.hpp"
 
 template <group G> struct CumulativeGroup {

@@ -1,3 +1,4 @@
+#include <cmath>
 template<typename X,bool COMMUTE=true>
 struct GroupMultiply{
   using value_type = X;

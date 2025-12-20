@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <cstddef>
+#include <numeric>
 
 template <class Select>
 std::vector<int> smawk(int h, int w, const Select &select) {

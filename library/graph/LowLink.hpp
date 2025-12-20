@@ -2,6 +2,8 @@
 #include <ranges>
 #include <utility>
 #include <vector>
+#include <algorithm>
+#include <cassert>
 
 #include "library/graph/Graph.hpp"
 

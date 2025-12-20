@@ -1,3 +1,8 @@
+#include <functional>
+#include <limits>
+#include <queue>
+#include <tuple>
+#include <vector>
 // reference:https://maspypy.com/slope-trick-1-解説編
 template <typename T> class SlopeTrick {
     static constexpr T MIN = std::numeric_limits<T>::lowest() / 2;

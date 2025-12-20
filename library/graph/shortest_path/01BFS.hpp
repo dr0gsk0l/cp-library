@@ -1,4 +1,8 @@
 #pragma once
+#include <cassert>
+#include <deque>
+#include <utility>
+#include <vector>
 #include "library/graph/WeightedGraph.hpp"
 template <typename WG, typename T = typename WG::weight_type>
 std::pair<std::vector<T>, std::vector<int>> bfs01(const WG &g, int s = 0) {

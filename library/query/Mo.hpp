@@ -1,3 +1,10 @@
+#include <algorithm>
+#include <cassert>
+#include <cmath>
+#include <numeric>
+#include <ranges>
+#include <utility>
+#include <vector>
 class Mo {
     int n;
     std::vector<std::pair<int, int>> lr;

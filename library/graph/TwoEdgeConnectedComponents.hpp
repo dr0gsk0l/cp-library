@@ -1,3 +1,4 @@
+#include <vector>
 #include "datastructure/unionfind/UnionFind.hpp"
 #include "graph/LowLink.hpp"
 

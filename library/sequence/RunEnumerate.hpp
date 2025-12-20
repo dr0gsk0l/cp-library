@@ -1,5 +1,12 @@
 #pragma once
 #include <atcoder/string>
+#include <algorithm>
+#include <queue>
+#include <ranges>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace atcoder;
 
 #define SIZE_(s) int(s.size())

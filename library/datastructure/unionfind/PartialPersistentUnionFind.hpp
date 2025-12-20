@@ -1,4 +1,9 @@
 #pragma once
+#include <algorithm>
+#include <limits>
+#include <numeric>
+#include <utility>
+#include <vector>
 // https://tiramister.net/blog/posts/persistent-unionfind/
 class PartialPersistentUnionFind {
     int now; // 現在時刻

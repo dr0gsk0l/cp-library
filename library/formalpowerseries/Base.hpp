@@ -1,4 +1,8 @@
 #pragma once
+#include <algorithm>
+#include <cassert>
+#include <cstddef>
+#include <vector>
 #include "library/util/Valarray.hpp"
 
 template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {

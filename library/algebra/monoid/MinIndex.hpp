@@ -1,4 +1,8 @@
 #pragma once
+#include <algorithm>
+#include <limits>
+#include <utility>
+#include <vector>
 template <typename X> struct MonoidMinIndex {
     using P = std::pair<X, int>;
     using value_type = P;

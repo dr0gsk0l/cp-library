@@ -1,4 +1,6 @@
 #pragma once
+#include <cassert>
+#include <cmath>
 #include "../Base.hpp"
 #include "./differential.hpp"
 #include "./integral.hpp"

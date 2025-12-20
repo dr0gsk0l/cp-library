@@ -1,3 +1,6 @@
+#include <cassert>
+#include <vector>
+#include <type_traits>
 template <typename T> struct CumulativeSum {
     using U = std::conditional_t<std::is_same_v<T, int>, long long, T>;
     std::vector<U> A;

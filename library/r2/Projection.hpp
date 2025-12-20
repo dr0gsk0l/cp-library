@@ -1,4 +1,7 @@
 #pragma once
+#include <limits>
+#include <utility>
+#include <vector>
 #include "library/r2/XY.hpp"
 #include "library/util/Compress.hpp"
 template <typename T> class Projection {

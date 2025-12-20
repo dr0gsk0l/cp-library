@@ -1,3 +1,6 @@
+#include <map>
+#include <utility>
+#include <vector>
 #include "library/datastructure/unionfind/UndoUnionFind.hpp"
 
 class OfflineDynamicConnectivity {

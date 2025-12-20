@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include <ranges>
+#include <algorithm>
 #include "library/geometry/Base.hpp"
 namespace geometry {
 double cross(Vector a, Vector b) {

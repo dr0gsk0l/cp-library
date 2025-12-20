@@ -1,4 +1,7 @@
 #pragma once
+#include <cmath>
+#include <istream>
+#include <ostream>
 #include "library/math/ExtraGCD.hpp"
 template <typename T, T MOD = 998244353> struct Mint {
     inline static constexpr T mod = MOD;

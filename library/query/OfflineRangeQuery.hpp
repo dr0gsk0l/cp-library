@@ -1,4 +1,6 @@
 #include <vector>
+#include <cstddef>
+#include <utility>
 
 class OfflineRangeQuery {
     size_t n, cnt;

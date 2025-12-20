@@ -1,5 +1,8 @@
 #pragma once
 
+#include <cassert>
+#include <cmath>
+#include <vector>
 template <typename Lazy> class LazySegmentTree {
     using MX = typename Lazy::MX;
     using MF = typename Lazy::MF;

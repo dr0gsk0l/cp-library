@@ -1,4 +1,11 @@
 #pragma once
+#include <cassert>
+#include <deque>
+#include <numeric>
+#include <ostream>
+#include <ranges>
+#include <vector>
+#include <algorithm>
 #include "library/linearalgebra/Linear.hpp"
 namespace convex_hull_trick {
 enum Objective {

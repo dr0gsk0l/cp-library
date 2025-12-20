@@ -1,3 +1,9 @@
+#include <cassert>
+#include <queue>
+#include <ranges>
+#include <tuple>
+#include <vector>
+#include <algorithm>
 template <typename TREE> class CentroidDecomposition {
     TREE T;
     std::vector<int> sz, pre, timing;

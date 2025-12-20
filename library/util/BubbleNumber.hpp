@@ -1,4 +1,8 @@
 #pragma once
+#include <cassert>
+#include <map>
+#include <queue>
+#include <vector>
 #include "library/util/InversionNumber.hpp"
 template <typename T>
 long long bubble_number(const std::vector<T> &v, const std::vector<T> &w) {

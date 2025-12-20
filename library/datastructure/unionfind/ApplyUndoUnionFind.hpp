@@ -1,4 +1,9 @@
-#include <bits/stdc++.h>
+#include <cassert>
+#include <cstddef>
+#include <numeric>
+#include <stack>
+#include <utility>
+#include <vector>
 
 template <typename AbelGroup> class UndoUnionFind {
     using T = typename AbelGroup::value_type;

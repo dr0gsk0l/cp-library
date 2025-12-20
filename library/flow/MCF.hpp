@@ -1,6 +1,14 @@
 #pragma once
+#include <cassert>
+#include <functional>
+#include <limits>
+#include <queue>
+#include <ranges>
+#include <tuple>
+#include <utility>
+#include <vector>
+#include <algorithm>
 #include "library/graph/WeightedGraph.hpp"
-#define REP_(i, n) for (int i = 0; i < (n); i++)
 template <typename TF, typename TC> class MCF {
     struct EdgeInfo {
         TF cap;
@@ -11,7 +19,7 @@ template <typename TF, typename TC> class MCF {
     WeightedGraph<EdgeInfo> G;
     std::vector<TC> potential, dist;
     static constexpr TC INF = std::numeric_limits<TC>::max() / 2;
-    std::vector<std::pair<int, int>> pre,
+    std::vector<std::pair<int, size_t>> pre,
         edge_memo; // pre[v]=[u,i] : G[u][i] で v に来た
     std::vector<int> in_deg, out_deg;
 
@@ -20,7 +28,7 @@ template <typename TF, typename TC> class MCF {
     template <typename T> bool chmin(T &a, const T &b) {
         return (a > b and (a = b, true));
     }
-    bool SP_update(int from, int edge_id) {
+    bool SP_update(int from, size_t edge_id) {
         if (dist[from] == INF)
             return false;
         const auto &e = G[from][edge_id];
@@ -47,9 +55,9 @@ template <typename TF, typename TC> class MCF {
             que.pop();
             if (dist[v] < now)
                 continue;
-            REP_(i, G[v].size())
-            if (SP_update(v, i))
-                que.emplace(dist[G[v][i].to], G[v][i].to);
+            for (size_t i : std::views::iota(0uz, G[v].size()))
+                if (SP_update(v, i))
+                    que.emplace(dist[G[v][i].to], G[v][i].to);
         }
     }
 
@@ -58,15 +66,15 @@ template <typename TF, typename TC> class MCF {
         std::ranges::fill(dist, INF);
         dist[s] = 0;
         std::queue<int> que;
-        REP_(i, n) if (!in_deg[i]) que.push(i);
+        for (int i : std::views::iota(0, n))
+            if (!in_deg[i])
+                que.push(i);
         while (que.size()) {
             int v = que.front();
             que.pop();
-            REP_(i, G[v].size()) {
-                SP_update(v, i);
-                if (!--in_deg[G[v][i].to])
+            for (size_t i : std::views::iota(0uz, G[v].size()))
+                if (SP_update(v, i) && !--in_deg[G[v][i].to])
                     que.push(G[v][i].to);
-            }
         }
     }
 
@@ -74,11 +82,13 @@ template <typename TF, typename TC> class MCF {
         negative = false;
         std::ranges::fill(dist, INF);
         dist[s] = 0;
-        REP_(_, n) {
+        for ([[maybe_unused]] int _ : std::views::iota(0, n)) {
             bool update = false;
-            REP_(v, n)
-            if (dist[v] < INF)
-                REP_(i, G[v].size()) if (SP_update(v, i)) update = true;
+            for (int v : std::views::iota(0, n))
+                if (dist[v] < INF)
+                    for (size_t i : std::views::iota(0uz, G[v].size()))
+                        if (SP_update(v, i))
+                            update = true;
             if (!update)
                 return;
         }
@@ -141,7 +151,9 @@ template <typename TF, typename TC> class MCF {
                 dijkstra();
             if (dist[t] == INF)
                 return std::make_pair(res, false);
-            REP_(v, n) if (dist[v] < INF) potential[v] += dist[v];
+            for (int v : std::views::iota(0, n))
+                if (dist[v] < INF)
+                    potential[v] += dist[v];
             TF d = f; // d:今回流す量
             for (int v = t; v != s; v = pre[v].first)
                 chmin(d, (G[pre[v].first][pre[v].second].weight).cap);
@@ -163,4 +175,3 @@ template <typename TF, typename TC> class MCF {
         return flow(lim);
     }
 };
-#undef REP_

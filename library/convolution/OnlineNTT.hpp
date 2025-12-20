@@ -1,6 +1,8 @@
 #pragma once
-#define REP_(i, n) for (int i = 0; i < (n); i++)
-#define RREP_(i, n) for (int i = (n)-1; i >= 0; i--)
+#include <algorithm>
+#include <cmath>
+#include <ranges>
+#include <vector>
 template <typename MINT> class OnlineNTT {
     static_assert(MINT::mod == 998244353);
     int d;
@@ -16,65 +18,79 @@ template <typename MINT> class OnlineNTT {
         // 1<<lg の DFT を行う
         const int n = 1 << lg;
         // f[n/2,n) , g[n/2,n) = 0 が保証されている
-        std::fill(x.begin(), x.begin() + n, 0);
-        REP_(h, lg)
-        REP_(S, 1 << h)
-        REP_(T, 1 << (lg - h - 1)) {
-            int l = (S << (lg - h)) | T;
-            int r = l | (1 << (lg - h - 1));
+        std::ranges::fill(x | std::views::take(n), 0);
+        for (int h : std::views::iota(0, lg)) {
+            const auto S_range = std::views::iota(0, 1 << h);
+            const auto T_range = std::views::iota(0, 1 << (lg - h - 1));
+            for (int S : S_range) {
+                for (int T : T_range) {
+                    const int l = (S << (lg - h)) | T;
+                    const int r = l | (1 << (lg - h - 1));
 
-            x[l] >>= 1;
-            (x[r] >>= 1) |= 1 << (lg - 1);
+                    x[l] >>= 1;
+                    (x[r] >>= 1) |= 1 << (lg - 1);
 
-            MINT a = f[l];
-            f[l] += f[r] * cs[lg][x[l]];
-            (f[r] *= cs[lg][x[r]]) += a;
+                    MINT a = f[l];
+                    f[l] += f[r] * cs[lg][x[l]];
+                    (f[r] *= cs[lg][x[r]]) += a;
 
-            a = g[l];
-            g[l] += g[r] * cs[lg][x[l]];
-            (g[r] *= cs[lg][x[r]]) += a;
+                    a = g[l];
+                    g[l] += g[r] * cs[lg][x[l]];
+                    (g[r] *= cs[lg][x[r]]) += a;
+                }
+            }
         }
     }
 
     void IDFT(std::vector<MINT> &f, const int lg) {
         const int n = 1 << lg;
-        std::fill(x.begin(), x.begin() + n, 0);
-        RREP_(h, lg)
-        REP_(S, 1 << h)
-        REP_(T, 1 << (lg - h - 1)) {
-            int l = (S << (lg - h)) | T;
-            int r = l | (1 << (lg - h - 1));
+        std::ranges::fill(x | std::views::take(n), 0);
+        for (int h : std::views::iota(0, lg) | std::views::reverse) {
+            const auto S_range = std::views::iota(0, 1 << h);
+            const auto T_range = std::views::iota(0, 1 << (lg - h - 1));
+            for (int S : S_range) {
+                for (int T : T_range) {
+                    const int l = (S << (lg - h)) | T;
+                    const int r = l | (1 << (lg - h - 1));
 
-            x[l] >>= 1;
-            (x[r] >>= 1) |= 1 << (lg - 1);
+                    x[l] >>= 1;
+                    (x[r] >>= 1) |= 1 << (lg - 1);
 
-            MINT a = f[l];
-            f[l] += f[r] * cs_inv[lg][x[l]];
-            (f[r] *= cs_inv[lg][x[r]]) += a;
+                    MINT a = f[l];
+                    f[l] += f[r] * cs_inv[lg][x[l]];
+                    (f[r] *= cs_inv[lg][x[r]]) += a;
+                }
+            }
         }
-        REP_(i, n) f[i] *= inv[lg];
+        for (int i : std::views::iota(0, n)) {
+            f[i] *= inv[lg];
+        }
     }
 
     void IDFT(std::vector<MINT> &f, std::vector<MINT> &g, const int lg) {
         const int n = 1 << lg;
-        std::fill(x.begin(), x.begin() + n, 0);
-        RREP_(h, lg)
-        REP_(S, 1 << h)
-        REP_(T, 1 << (lg - h - 1)) {
-            int l = (S << (lg - h)) | T;
-            int r = l | (1 << (lg - h - 1));
+        std::ranges::fill(x | std::views::take(n), 0);
+        for (int h : std::views::iota(0, lg) | std::views::reverse) {
+            const auto S_range = std::views::iota(0, 1 << h);
+            const auto T_range = std::views::iota(0, 1 << (lg - h - 1));
+            for (int S : S_range) {
+                for (int T : T_range) {
+                    const int l = (S << (lg - h)) | T;
+                    const int r = l | (1 << (lg - h - 1));
 
-            x[l] >>= 1;
-            (x[r] >>= 1) |= 1 << (lg - 1);
+                    x[l] >>= 1;
+                    (x[r] >>= 1) |= 1 << (lg - 1);
 
-            MINT a = f[l];
-            f[l] += f[r] * cs_inv[lg][x[l]];
-            (f[r] *= cs_inv[lg][x[r]]) += a;
-            a = g[l];
-            g[l] += g[r] * cs_inv[lg][x[l]];
-            (g[r] *= cs_inv[lg][x[r]]) += a;
+                    MINT a = f[l];
+                    f[l] += f[r] * cs_inv[lg][x[l]];
+                    (f[r] *= cs_inv[lg][x[r]]) += a;
+                    a = g[l];
+                    g[l] += g[r] * cs_inv[lg][x[l]];
+                    (g[r] *= cs_inv[lg][x[r]]) += a;
+                }
+            }
         }
-        REP_(i, n) {
+        for (int i : std::views::iota(0, n)) {
             f[i] *= inv[lg];
             g[i] *= inv[lg];
         }
@@ -91,21 +107,21 @@ template <typename MINT> class OnlineNTT {
         std::ranges::fill(change_f, 0);
         std::ranges::fill(change_g, 0);
 
-        REP_(h, F.size()) {
+        for (size_t h : std::views::iota(0uz, F.size())) {
             if (lst[h] + (1 << h) != d)
                 continue;
-            REP (i, 1 << h) {
+            for (int i : std::views::iota(0, 1 << h)) {
                 change_f[i] = f[d - (1 << h) + 1 + i];
                 change_g[i] = g[d - (1 << h) + 1 + i];
             }
             DFT(change_f, change_g, h + 1);
-            REP (i, 1 << (h + 1)) {
+            for (int i : std::views::iota(0, 1 << (h + 1))) {
                 change_f[i] *= G[h][i];
                 change_g[i] *= F[h][i];
             }
             IDFT(change_f, change_g, h + 1);
-            REP (i, (1 << (h + 1)) - 1) {
-                if (fst[h] + lst[h] + 1 + i >= fg.size())
+            for (int i : std::views::iota(0, (1 << (h + 1)) - 1)) {
+                if (fst[h] + lst[h] + 1 + i >= static_cast<int>(fg.size()))
                     break;
                 fg[fst[h] + lst[h] + 1 + i] += change_f[i] + change_g[i];
             }
@@ -117,7 +133,7 @@ template <typename MINT> class OnlineNTT {
             const int N = 1 << (lg + 1);
             F.emplace_back(std::vector<MINT>(N, 0));
             G.emplace_back(std::vector<MINT>(N, 0));
-            REP_(i, 1 << lg) {
+            for (int i : std::views::iota(0, 1 << lg)) {
                 F.back()[i] = f[d - (1 << lg) + 1 + i];
                 G.back()[i] = g[d - (1 << lg) + 1 + i];
             }
@@ -125,20 +141,28 @@ template <typename MINT> class OnlineNTT {
             x.resize(N);
             MINT c = MINT(3).pow((MINT::mod - 1) >> (lg + 1));
             cs.emplace_back(std::vector<MINT>(N));
-            REP_(i, N) cs.back()[i] = (i ? cs.back()[i - 1] * c : 1);
+            cs.back()[0] = 1;
+            for (int i : std::views::iota(1, N)) {
+                cs.back()[i] = cs.back()[i - 1] * c;
+            }
             DFT(F.back(), G.back(), lg + 1);
 
             tmp.resize(N);
-            REP_(i, N) tmp[i] = F.back()[i] * G.back()[i];
+            for (int i : std::views::iota(0, N)) {
+                tmp[i] = F.back()[i] * G.back()[i];
+            }
 
             c = c.inv();
             cs_inv.emplace_back(std::vector<MINT>(N));
-            REP_(i, N) cs_inv.back()[i] = (i ? cs_inv.back()[i - 1] * c : 1);
+            cs_inv.back()[0] = 1;
+            for (int i : std::views::iota(1, N)) {
+                cs_inv.back()[i] = cs_inv.back()[i - 1] * c;
+            }
             inv.push_back(MINT(N).inv());
             IDFT(tmp, lg + 1);
 
-            REP_(i, N - 1) {
-                if ((d_lst + 1) * 2 + i >= fg.size())
+            for (int i : std::views::iota(0, N - 1)) {
+                if ((d_lst + 1) * 2 + i >= static_cast<int>(fg.size()))
                     break;
                 fg[(d_lst + 1) * 2 + i] += tmp[i];
             }
@@ -155,5 +179,3 @@ template <typename MINT> class OnlineNTT {
         return fg[d++];
     }
 };
-#undef REP_
-#undef RREP_

@@ -1,5 +1,11 @@
 #pragma once
 
+#include <cassert>
+#include <cstddef>
+#include <numeric>
+#include <stack>
+#include <utility>
+#include <vector>
 // ある連結成分の各頂点に加算出来る
 template <typename AbelGroup> class ApplyUnionFind {
     using T = typename AbelGroup::value_type;

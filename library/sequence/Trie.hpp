@@ -1,4 +1,9 @@
 #pragma once
+#include <array>
+#include <cassert>
+#include <ranges>
+#include <vector>
+#include <algorithm>
 #include "library/algebra/group/Add.hpp"
 #include "library/sequence/ForString.hpp"
 template <typename CHAR, int SIGMA, typename AbelMonoid = GroupAdd<int>>

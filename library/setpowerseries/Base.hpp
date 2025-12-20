@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "library/bitwise/Ranked.hpp"
 #include "library/util/Valarray.hpp"
 

@@ -1,10 +1,11 @@
-// reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
 #pragma once
-#include "library/mod/Modint61.hpp"
-#include "library/sequence/ForString.hpp"
-
+#include <algorithm>
+#include <limits>
 #include <random>
 #include <vector>
+// reference: https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
+#include "library/mod/Modint61.hpp"
+#include "library/sequence/ForString.hpp"
 
 std::random_device rollonghash_rnd;
 std::mt19937 rollonghash_mt(rollonghash_rnd());

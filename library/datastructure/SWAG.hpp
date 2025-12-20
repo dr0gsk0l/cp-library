@@ -1,6 +1,6 @@
-#include "library/algebra/monoid/Concepts.hpp"
-
 #pragma once
+#include <stack>
+#include "library/algebra/monoid/Concepts.hpp"
 template <monoid M> class SWAG {
     using X = typename M::value_type;
 

@@ -1,3 +1,6 @@
+#include <cassert>
+#include <string>
+#include <tuple>
 class DateTime {
     static int day_of_week; // 1年1月1日の曜日
   public:

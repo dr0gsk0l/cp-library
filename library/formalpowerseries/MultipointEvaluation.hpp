@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "library/formalpowerseries/Base.hpp"
 #include "library/formalpowerseries/DivMod.hpp"
 template <typename FPS, typename T = typename FPS::value_type>

@@ -1,4 +1,6 @@
 #pragma once
+#include <cassert>
+#include <vector>
 #include "library/datastructure/FenwickTree.hpp"
 namespace factorial_number_system {
 // std::vector<int> で表す

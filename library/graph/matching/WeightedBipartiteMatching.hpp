@@ -1,4 +1,9 @@
 #pragma once
+#include <algorithm>
+#include <cassert>
+#include <tuple>
+#include <utility>
+#include <vector>
 #include "library/flow/MCF.hpp"
 // 重みの最大化
 template <typename TC> class WeightedBipartiteMatching {

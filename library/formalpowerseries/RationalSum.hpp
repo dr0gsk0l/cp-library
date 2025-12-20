@@ -1,4 +1,6 @@
 #pragma once
+#include <queue>
+#include <utility>
 #include "library/formalpowerseries/Base.hpp"
 template <typename FPS> class RationalSum {
     std::queue<std::pair<FPS, FPS>> que;

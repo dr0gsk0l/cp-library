@@ -1,3 +1,4 @@
+#include <vector>
 template <typename TREE, typename Data> class ReRooting {
     int n;
     TREE T;

@@ -1,4 +1,9 @@
 #pragma once
+#include <algorithm>
+#include <cassert>
+#include <queue>
+#include <utility>
+#include <vector>
 #include "library/graph/WeightedGraph.hpp"
 template <typename WG, typename T = typename WG::weight_type>
 std::pair<std::vector<T>, std::vector<int>> dial(const WG &g, int s = 0) {

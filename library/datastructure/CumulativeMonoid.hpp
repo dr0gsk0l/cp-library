@@ -1,3 +1,5 @@
+#include <cassert>
+#include <vector>
 #include "library/algebra/monoid/Concepts.hpp"
 
 template <monoid M> class CumulativeMonoid {

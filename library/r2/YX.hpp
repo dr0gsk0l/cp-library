@@ -1,4 +1,8 @@
 #pragma once
+#include <cmath>
+#include <istream>
+#include <ostream>
+#include <utility>
 template <typename T> struct YX {
     T y, x;
     YX() = default;

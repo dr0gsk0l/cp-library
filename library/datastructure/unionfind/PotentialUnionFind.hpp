@@ -1,4 +1,9 @@
 #pragma once
+#include <cassert>
+#include <numeric>
+#include <optional>
+#include <utility>
+#include <vector>
 template <typename AbelGroup> class PotentialUnionFind {
     using T = typename AbelGroup::value_type;
     int n, num;

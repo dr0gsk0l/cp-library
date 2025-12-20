@@ -1,3 +1,5 @@
+#include <cassert>
+#include <vector>
 template <typename T> class Imos {
     std::vector<T> data;
 

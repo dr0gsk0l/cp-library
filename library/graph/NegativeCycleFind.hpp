@@ -1,3 +1,4 @@
+#include <vector>
 // グラフ内に負閉路が存在するか
 template<typename WG>
 bool negative_cycle_find(const WG&g){
