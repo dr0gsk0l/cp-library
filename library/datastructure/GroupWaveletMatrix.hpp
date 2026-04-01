@@ -24,13 +24,13 @@ template <typename T, group G> class GroupWaveletMatrix : WaveletMatrix<T> {
     }
     GroupWaveletMatrix(std::vector<T> v, const std::vector<S> &w)
         : GroupWaveletMatrix(v) {
-        for (int i : std::views::iota(0, n)) {
+        for (u32 i : std::views::iota(u32{0}, n)) {
             add(i, w[i]);
         }
     }
     void add(int idx, const S &val) {
         u32 a = comp(data[idx]);
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             idx = nxt(idx, h, a);
             ft[h].add(idx, val);
         }
@@ -38,7 +38,7 @@ template <typename T, group G> class GroupWaveletMatrix : WaveletMatrix<T> {
     S sum(int l, int r, const T &upper) {
         u32 a = comp(upper);
         S res = G::unit();
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             if (high_bit(a, h)) {
                 int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
                 G::Rchop(res, ft[h].sum(L, R));
@@ -54,7 +54,7 @@ template <typename T, group G> class GroupWaveletMatrix : WaveletMatrix<T> {
     S kth_largest_sum(int l, int r, int k) {
         assert(0 <= k and k < r - l);
         S res = G::unit();
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             int L = mat[h].rank(l);
             int R = mat[h].rank(r);
             if (R - L > k) {

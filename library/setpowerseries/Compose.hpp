@@ -1,3 +1,4 @@
+#include <bit>
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -8,8 +9,9 @@
 
 template <typename SPS, typename T = typename SPS::value_type>
 SPS SPS_exp_comp(const std::vector<T> &f, const SPS &a) {
-    int N = a.size();
-    int n = bitwise::log2(N);
+    const std::size_t N = a.size();
+    assert(std::has_single_bit(N));
+    int n = static_cast<int>(std::countr_zero(N));
 
     std::vector<SPS> ret(n + 1);
     for (int d = n; d >= 0; d--) {
@@ -29,8 +31,9 @@ SPS SPS_exp_comp(const std::vector<T> &f, const SPS &a) {
 // sum_k f_k a^k
 template <typename SPS, typename T = typename SPS::value_type>
 SPS SPS_composition(const std::vector<T> &f, SPS a) {
-    int N = a.size();
-    int n = bitwise::log2(N);
+    const std::size_t N = a.size();
+    assert(std::has_single_bit(N));
+    int n = static_cast<int>(std::countr_zero(N));
 
     std::vector<T> c_pow(f.size() + 1, 1);
     for (int i = 1; i <= f.size(); i++)
@@ -49,8 +52,9 @@ SPS SPS_composition(const std::vector<T> &f, SPS a) {
 }
 
 template <typename SPS, typename T = typename SPS::value_type> SPS exp(SPS a) {
-    int N = a.size();
-    int n = bitwise::log2(N);
+    const std::size_t N = a.size();
+    assert(std::has_single_bit(N));
+    int n = static_cast<int>(std::countr_zero(N));
 
     SPS ret(N, 1);
     for (int d = n - 1; d >= 0; d--) {
@@ -64,7 +68,8 @@ template <typename SPS, typename T = typename SPS::value_type> SPS exp(SPS a) {
 }
 
 template <typename SPS, typename T = typename SPS::value_type> SPS log(SPS a) {
-    int n = bitwise::log2(a.size());
+    assert(std::has_single_bit(a.size()));
+    int n = static_cast<int>(std::countr_zero(a.size()));
     assert((1 << n) == a.size() and a[0] == 1);
     std::vector<T> lg(n + 1, 0);
     for (int k = 1; k <= n; k++)

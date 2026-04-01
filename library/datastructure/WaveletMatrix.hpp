@@ -42,15 +42,16 @@ template <std::integral T> class WaveletMatrix {
         for (auto &&[cx, x] : std::views::zip(cv, v))
             cx = C[x];
 
-        log = std::bit_width(C.size());
-        mat.resize(log);
+        log = std::bit_width(static_cast<u32>(C.size()));
+        mat.clear();
+        mat.reserve(log);
         zero_cnt.resize(log);
 
         std::vector<u32> lv(n), rv(n);
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             std::vector<unsigned int> ones(n);
-            int l = 0, r = 0;
-            for (int i : std::views::iota(0, n))
+            u32 l = 0, r = 0;
+            for (u32 i : std::views::iota(u32{0}, n))
                 if (high_bit(cv[i], h)) {
                     rv[r++] = cv[i];
                     ones[i] = 1;
@@ -58,7 +59,7 @@ template <std::integral T> class WaveletMatrix {
                     lv[l++] = cv[i];
 
             zero_cnt[h] = l;
-            mat[h] = FullyIndexableDictionary(std::move(ones));
+            mat.emplace_back(ones);
             std::swap(lv, cv);
             std::ranges::copy(rv.begin(), rv.begin() + r, cv.begin() + l);
         }
@@ -69,7 +70,7 @@ template <std::integral T> class WaveletMatrix {
         if (!C.exist(x))
             return 0;
         u32 a = comp(x);
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             l = nxt(l, h, a);
             r = nxt(r, h, a);
         }
@@ -98,7 +99,7 @@ template <std::integral T> class WaveletMatrix {
         if (k < 0 or r - l <= k)
             return -1;
         u32 res = 0;
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             const int L = mat[h].rank(l);
             const int R = mat[h].rank(r);
             res <<= 1;
@@ -122,7 +123,7 @@ template <std::integral T> class WaveletMatrix {
     int range_freq(int l, int r, const T &upper) {
         u32 a = comp(upper);
         int res = 0;
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             if (high_bit(a, h)) {
                 const int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
                 res += R - L;
@@ -166,7 +167,7 @@ template <std::integral T> class WaveletMatrix {
     std::vector<int> points(int idx) {
         std::vector<int> res(log);
         u32 a = comp(data[idx]);
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             idx = nxt(idx, h, a);
             res[h] = idx;
         }
@@ -176,7 +177,7 @@ template <std::integral T> class WaveletMatrix {
                                                      const T &upper) {
         std::vector<std::tuple<int, int, int>> res;
         u32 a = comp(upper);
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             if (high_bit(a, h)) {
                 int L = mat[h].rank(l, 0), R = mat[h].rank(r, 0);
                 res.emplace_back(h, L, R);
@@ -190,7 +191,7 @@ template <std::integral T> class WaveletMatrix {
                                                                  int k) {
         assert(0 <= k and k < r - l);
         std::vector<std::tuple<int, int, int>> res;
-        for (int h : std::views::iota(0, log)) {
+        for (u32 h : std::views::iota(u32{0}, log)) {
             int L = mat[h].rank(l);
             int R = mat[h].rank(r);
             if (R - L > k) {

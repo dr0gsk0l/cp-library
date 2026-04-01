@@ -7,8 +7,8 @@
 
 namespace fps {
 
-template <typename T>
-FormalPowerSeries<T> log(const FormalPowerSeries<T> &f, int n = -1) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX> log(const FormalPowerSeries<T, MX> &f, int n = -1) {
     if (n < 0)
         n = int(f.size());
     if (n == 0)

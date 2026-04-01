@@ -30,6 +30,12 @@ struct FormalPowerSeries : Valarray<FormalPowerSeries<T, MX>, T> {
     static FPS unit() { return {1}; }
     static FPS x() { return {0, 1}; }
 #pragma region operator
+    FPS operator-() const {
+        FPS res = *this;
+        for (size_t i = 0; i < res.size(); i++)
+            res[i] = -res[i];
+        return res;
+    }
     FPS &operator+=(const T &a) {
         if (!size())
             resize(1);
@@ -104,6 +110,11 @@ struct FormalPowerSeries : Valarray<FormalPowerSeries<T, MX>, T> {
                 return i;
         }
         return int(size());
+    }
+
+    void shrink() {
+        while (size() && back() == T(0))
+            pop_back();
     }
 
     FPS inv(int SZ = -1) const {

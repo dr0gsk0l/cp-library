@@ -6,8 +6,8 @@
 
 namespace fps {
 
-template <typename T>
-FormalPowerSeries<T> exp(const FormalPowerSeries<T> &f, int n = -1) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX> exp(const FormalPowerSeries<T, MX> &f, int n = -1) {
     // Return exp(f)
     if (n < 0)
         n = int(f.size());
@@ -15,14 +15,14 @@ FormalPowerSeries<T> exp(const FormalPowerSeries<T> &f, int n = -1) {
         return {};
 
     if (!f.size()) {
-        FormalPowerSeries<T> one(n, T(0));
+        FormalPowerSeries<T, MX> one(n, T(0));
         one[0] = 1;
         return one;
     }
 
     assert(f[0] == 0);
 
-    FormalPowerSeries<T> res = {1};
+    FormalPowerSeries<T, MX> res = {1};
     for (int m = 1; m < n; m <<= 1) {
         const int k = std::min(n, m << 1);
         res = (res * (f.pre(k) + 1 - log(res, k))).pre(k);
@@ -35,12 +35,13 @@ FormalPowerSeries<T> exp(const FormalPowerSeries<T> &f, int n = -1) {
     return res;
 }
 
-template <typename T> FormalPowerSeries<T> exp(const T &a, int n) {
+template <typename T, int MX = -1>
+FormalPowerSeries<T, MX> exp(const T &a, int n) {
     // Return exp(nx)
     if (n <= 0)
         return {};
 
-    FormalPowerSeries<T> res(n, T(0));
+    FormalPowerSeries<T, MX> res(n, T(0));
     res[0] = 1;
     for (int i = 1; i < n; i++)
         res[i] = res[i - 1] * a / i;

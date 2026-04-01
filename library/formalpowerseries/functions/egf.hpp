@@ -7,8 +7,8 @@ namespace fps {
 
 // Convert ordinary generating function f to exponential generating function.
 // g[i] = f[i] / i!
-template <typename T>
-FormalPowerSeries<T> to_egf(FormalPowerSeries<T> f) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX> to_egf(FormalPowerSeries<T, MX> f) {
     /*
     Return g s.t. g[i] = f[i] / i!
     */
@@ -18,8 +18,8 @@ FormalPowerSeries<T> to_egf(FormalPowerSeries<T> f) {
     return f;
 }
 
-template <typename T>
-FormalPowerSeries<T> from_egf(FormalPowerSeries<T> g) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX> from_egf(FormalPowerSeries<T, MX> g) {
     /*
     Return f s.t. f[i] = i!f[i]
     */

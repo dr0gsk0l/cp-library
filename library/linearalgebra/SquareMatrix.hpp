@@ -109,9 +109,10 @@ template <typename K, size_t N> struct SquareMatrix {
         int rnk = 0, cnt = 0;
         for (size_t k : std::views::iota(0uz, N)) {
             if (M[rnk][k] == 0) {
-                auto pivot_range = std::views::iota(rnk + 1, static_cast<int>(N));
+                auto pivot_range =
+                    std::views::iota(static_cast<size_t>(rnk + 1), N);
                 auto pivot = std::ranges::find_if(
-                    pivot_range, [&](int i) { return M[i][k] != 0; });
+                    pivot_range, [&](size_t i) { return M[i][k] != 0; });
                 if (pivot != pivot_range.end()) {
                     std::swap(M[*pivot], M[rnk]);
                     cnt ^= 1;
@@ -150,9 +151,9 @@ template <typename K, size_t N> struct SquareMatrix {
         SquareMatrix A(M), B(1);
         for (size_t k : std::views::iota(0uz, N)) {
             if (A[k][k] == 0) {
-                auto pivot_range = std::views::iota(k + 1, static_cast<int>(N));
+                auto pivot_range = std::views::iota(k + 1, N);
                 auto pivot = std::ranges::find_if(
-                    pivot_range, [&](int i) { return A[i][k] != 0; });
+                    pivot_range, [&](size_t i) { return A[i][k] != 0; });
                 if (pivot != pivot_range.end()) {
                     std::swap(A[*pivot], A[k]);
                     std::swap(B[*pivot], B[k]);

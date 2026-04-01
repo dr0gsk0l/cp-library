@@ -10,8 +10,9 @@
 namespace fps {
 
 
-template <typename T>
-FormalPowerSeries<T> internal_compositional_inverse(FormalPowerSeries<T> f) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX>
+internal_compositional_inverse(FormalPowerSeries<T, MX> f) {
     /*
     Args:
         n := len(f) >= 2
@@ -32,7 +33,7 @@ FormalPowerSeries<T> internal_compositional_inverse(FormalPowerSeries<T> f) {
     左辺は g(x) = n-1 に対する [xⁱ]power_projection(f, g)
     */
 
-    FormalPowerSeries<T> g{n - 1};
+    FormalPowerSeries<T, MX> g{n - 1};
     auto h = power_projection(f, g);
     if (h.size() < n)
         h.resize(n);
@@ -59,8 +60,8 @@ FormalPowerSeries<T> internal_compositional_inverse(FormalPowerSeries<T> f) {
 }
 
 // compositional inverse via Lagrange inversion using power_projection
-template <typename T>
-FormalPowerSeries<T> compositional_inverse(FormalPowerSeries<T> f) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX> compositional_inverse(FormalPowerSeries<T, MX> f) {
     /*
     Args:
         n := len(f) >= 2

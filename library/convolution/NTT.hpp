@@ -19,8 +19,8 @@ std::vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
         return res;
     }
 
-    const int N = std::bit_ceil(static_cast<unsigned>(M));
-    const int lg = std::countr_zero(N);
+    const size_t N = std::bit_ceil(M);
+    const int lg = static_cast<int>(std::countr_zero(N));
     f.resize(N, 0);
     g.resize(N, 0);
 
@@ -28,7 +28,7 @@ std::vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
     MINT c = MINT(3).pow((MINT::mod - 1) >> lg);
     std::vector<MINT> cs(N);
     cs[0] = 1;
-    for (int i : std::views::iota(1, N)) {
+    for (size_t i : std::views::iota(size_t{1}, N)) {
         cs[i] = cs[i - 1] * c;
     }
 
@@ -60,7 +60,7 @@ std::vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
     std::ranges::fill(x, 0);
     c = c.inv();
     cs[0] = 1;
-    for (int i : std::views::iota(1, N)) {
+    for (size_t i : std::views::iota(size_t{1}, N)) {
         cs[i] = cs[i - 1] * c;
     }
     for (int h : std::views::iota(0, lg) | std::views::reverse) {
@@ -81,7 +81,7 @@ std::vector<MINT> convolution(std::vector<MINT> f, std::vector<MINT> g) {
         }
     }
     f.resize(M);
-    MINT Ninv = MINT(N).inv();
+    MINT Ninv = MINT(static_cast<long long>(N)).inv();
     for (size_t i : std::views::iota(0uz, M)) {
         f[i] *= Ninv;
     }

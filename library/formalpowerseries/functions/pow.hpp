@@ -7,9 +7,10 @@
 
 namespace fps {
 
-template <typename T>
-FormalPowerSeries<T> pow(FormalPowerSeries<T> f, long long n, int m = -1) {
-    using FPS = FormalPowerSeries<T>;
+template <typename T, int MX>
+FormalPowerSeries<T, MX> pow(FormalPowerSeries<T, MX> f, long long n,
+                             int m = -1) {
+    using FPS = FormalPowerSeries<T, MX>;
     if (m < 0)
         m = int(f.size());
 

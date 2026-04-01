@@ -1,5 +1,6 @@
 #pragma once
 #include <cassert>
+#include <cstddef>
 #include <iterator>
 #include <limits>
 #include <ostream>
@@ -76,12 +77,12 @@ template <typename T, bool Sentinel = false> class Compress {
         assert(prepared);
         return (*std::ranges::lower_bound(v, a)) == a;
     }
-    int size() const { return v.size(); }
+    std::size_t size() const { return v.size(); }
     T max() const { return v.back(); }
     T min() const { return v[0]; }
 
     friend std::ostream &operator<<(std::ostream &os, const Compress &C) {
-        for (int i = 0; i < C.v.size(); i++)
+        for (std::size_t i = 0; i < C.v.size(); i++)
             os << C.v[i] << ":" << i << " ";
         return os;
     }

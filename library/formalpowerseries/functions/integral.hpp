@@ -4,8 +4,8 @@
 
 namespace fps {
 
-template <typename T>
-FormalPowerSeries<T> integral(FormalPowerSeries<T> f, int n = -1) {
+template <typename T, int MX>
+FormalPowerSeries<T, MX> integral(FormalPowerSeries<T, MX> f, int n = -1) {
     if (n < 0)
         n = int(f.size()) + 1;
     if (n <= 0)

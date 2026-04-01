@@ -1,6 +1,7 @@
 #pragma once
 #include <array>
 #include <cassert>
+#include <cstddef>
 #include <ranges>
 #include <vector>
 #include <algorithm>
@@ -90,7 +91,7 @@ class Trie {
         return res;
     }
     X prod() const { return nodes[0].suffix_val; }
-    int size() const { return nodes.size(); }
+    std::size_t size() const { return nodes.size(); }
 
     template <typename F>
     void query(const std::vector<CHAR> &v, const F &f, int l = 0, int r = -1) {

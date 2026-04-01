@@ -9,8 +9,8 @@
 
 namespace fps {
 
-template <typename T>
-void taylor_shift(FormalPowerSeries<T> &f, T c) {
+template <typename T, int MX>
+void taylor_shift(FormalPowerSeries<T, MX> &f, T c) {
     if (f.size() <= 1 || c == 0)
         return;
 

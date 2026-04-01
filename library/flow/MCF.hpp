@@ -55,7 +55,7 @@ template <typename TF, typename TC> class MCF {
             que.pop();
             if (dist[v] < now)
                 continue;
-            for (size_t i : std::views::iota(0uz, G[v].size()))
+            for (std::size_t i : std::views::iota(std::size_t{0}, G[v].size()))
                 if (SP_update(v, i))
                     que.emplace(dist[G[v][i].to], G[v][i].to);
         }
@@ -72,7 +72,7 @@ template <typename TF, typename TC> class MCF {
         while (que.size()) {
             int v = que.front();
             que.pop();
-            for (size_t i : std::views::iota(0uz, G[v].size()))
+            for (std::size_t i : std::views::iota(std::size_t{0}, G[v].size()))
                 if (SP_update(v, i) && !--in_deg[G[v][i].to])
                     que.push(G[v][i].to);
         }
@@ -86,7 +86,8 @@ template <typename TF, typename TC> class MCF {
             bool update = false;
             for (int v : std::views::iota(0, n))
                 if (dist[v] < INF)
-                    for (size_t i : std::views::iota(0uz, G[v].size()))
+                    for (std::size_t i :
+                         std::views::iota(std::size_t{0}, G[v].size()))
                         if (SP_update(v, i))
                             update = true;
             if (!update)

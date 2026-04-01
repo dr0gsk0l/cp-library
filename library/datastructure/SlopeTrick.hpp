@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <functional>
 #include <limits>
 #include <queue>
@@ -20,7 +21,7 @@ template <typename T> class SlopeTrick {
     T min_f;
     SlopeTrick() : add_l(0), add_r(0), min_f(0) {}
 
-    int size() const { return L.size() + R.size(); }
+    std::size_t size() const { return L.size() + R.size(); }
 
     std::tuple<T, T, T> get_min_range() const { return {L0(), R0(), min_f}; }
 
