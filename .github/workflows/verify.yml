@@ -19,14 +19,16 @@ jobs:
         submodules: true
         
     - name: Set up Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
 
     # ! dependents on other library
     - name: Update Submodules
       run: git submodule update --remote
 
     - name: Install dependencies
-      run: pip3 install -U online-judge-verify-helper
+      run: python3 -m pip install -U pip setuptools wheel online-judge-verify-helper
 
     - name: Install ccache
       run: sudo apt-get update && sudo apt-get install -y ccache
