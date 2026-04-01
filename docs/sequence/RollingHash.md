@@ -1,3 +1,7 @@
+---
+documentation_of: library/sequence/RollingHash.hpp
+---
+
 # RollingHash
 
 - パス: `library/sequence/RollingHash.hpp`

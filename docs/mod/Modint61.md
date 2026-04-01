@@ -1,3 +1,7 @@
+---
+documentation_of: library/mod/Modint61.hpp
+---
+
 # Modint61
 
 - パス: `library/mod/Modint61.hpp`

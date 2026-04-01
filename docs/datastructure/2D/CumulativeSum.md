@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/2D/CumulativeSum.hpp
+---
+
 # CumulativeSum2D
 
 ## 概要

@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/RollingHash.hpp
+---
+
 # RollingHash
 
 - パス: `library/algebra/monoid/RollingHash.hpp`

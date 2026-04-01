@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/CumulativeGroup.hpp
+---
+
 # CumulativeGroup
 
 ## 概要

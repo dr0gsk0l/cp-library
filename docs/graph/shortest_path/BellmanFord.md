@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/shortest_path/BellmanFord.hpp
+---
+
 # BellmanFord
 
 - パス: `library/graph/shortest_path/BellmanFord.hpp`

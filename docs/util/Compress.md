@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/Compress.hpp
+---
+
 # Compress
 
 - パス: `library/util/Compress.hpp`

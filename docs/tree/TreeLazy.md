@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/TreeLazy.hpp
+---
+
 # TreeLazy
 
 - パス: `library/tree/TreeLazy.hpp`

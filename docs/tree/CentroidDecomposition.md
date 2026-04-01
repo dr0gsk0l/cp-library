@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/CentroidDecomposition.hpp
+---
+
 # CentroidDecomposition
 
 - パス: `library/tree/CentroidDecomposition.hpp`

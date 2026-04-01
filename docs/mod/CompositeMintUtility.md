@@ -1,3 +1,7 @@
+---
+documentation_of: library/mod/CompositeMintUtility.hpp
+---
+
 # CompositeMintUtility
 
 - パス: `library/mod/CompositeMintUtility.hpp`

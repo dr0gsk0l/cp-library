@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/RationalSum.hpp
+---
+
 # RationalSum
 
 - パス: `library/formalpowerseries/RationalSum.hpp`

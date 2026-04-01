@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/EdgeVertex.hpp
+---
+
 # EdgeVertex
 
 - パス: `library/graph/EdgeVertex.hpp`

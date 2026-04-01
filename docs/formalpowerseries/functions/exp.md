@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/exp.hpp
+---
+
 # exp
 
 - パス: `library/formalpowerseries/functions/exp.hpp`

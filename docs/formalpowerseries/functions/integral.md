@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/integral.hpp
+---
+
 # integral
 
 - パス: `library/formalpowerseries/functions/integral.hpp`

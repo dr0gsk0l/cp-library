@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/input.hpp
+---
+
 # input
 
 - パス: `library/template/input.hpp`

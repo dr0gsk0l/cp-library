@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/Valarray.hpp
+---
+
 # Valarray
 
 - パス: `library/util/Valarray.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/linearalgebra/ConvexHullTrick.hpp
+---
+
 # ConvexHullTrick
 
 - パス: `library/linearalgebra/ConvexHullTrick.hpp`

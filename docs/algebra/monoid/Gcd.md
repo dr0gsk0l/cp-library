@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/Gcd.hpp
+---
+
 # Gcd
 
 - パス: `library/algebra/monoid/Gcd.hpp`

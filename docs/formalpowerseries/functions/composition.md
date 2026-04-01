@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/composition.hpp
+---
+
 # composition
 
 - パス: `library/formalpowerseries/functions/composition.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/taylor_shift.hpp
+---
+
 # taylor_shift
 
 - パス: `library/formalpowerseries/functions/taylor_shift.hpp`

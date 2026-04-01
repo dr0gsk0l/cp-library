@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/PartialPersistentUnionFind.hpp
+---
+
 # PartialPersistentUnionFind
 
 ## 概要

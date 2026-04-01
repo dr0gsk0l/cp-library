@@ -7,27 +7,34 @@
 
 namespace fps {
 
-template <typename T, int MX>
-FormalPowerSeries<T, MX> pow(FormalPowerSeries<T, MX> f, long long n) {
-    using FPS = FormalPowerSeries<T, MX>;
+template <typename T>
+FormalPowerSeries<T> pow(FormalPowerSeries<T> f, long long n, int m = -1) {
+    using FPS = FormalPowerSeries<T>;
+    if (m < 0)
+        m = int(f.size());
 
     assert(n >= 0);
-    f.shrink();
+    f.strict(m);
+    if (f.size() < size_t(m))
+        f.resize(m, T(0));
 
-    if (n == 0)
-        return FPS::unit();
+    if (m == 0)
+        return {};
+    if (n == 0) {
+        FPS one(m, T(0));
+        one[0] = 1;
+        return one;
+    }
     if (n == 1)
         return f;
 
-    if (f.size() == 0)
-        return f;
     if (f.size() == 1)
-        return FPS{f[0].pow(n)};
+        return FPS{f[0].pow(n)}.pre(m);
 
     int d = f.order();
 
-    if (d > 0 && n > MX / d)
-        return FPS(0);
+    if (d > 0 && n > m / d)
+        return FPS(m, T(0));
 
     // f(x) = x^d g(x) の時 f^n = x^{dn} g^n
     f >>= d;
@@ -38,7 +45,12 @@ FormalPowerSeries<T, MX> pow(FormalPowerSeries<T, MX> f, long long n) {
         f /= f_0;
 
     // f^n = exp(n log(f))
-    return f_0.pow(n) * fps::exp(n * fps::log(f)) << (d * n);
+    auto res = (f_0.pow(n) * fps::exp(n * fps::log(f, m), m)) << (d * n);
+    if (res.size() < size_t(m))
+        res.resize(m, T(0));
+    else
+        res.strict(m);
+    return res;
 }
 
 } // namespace fps

@@ -1,3 +1,7 @@
+---
+documentation_of: library/geometry/Base.hpp
+---
+
 # Base
 
 - パス: `library/geometry/Base.hpp`

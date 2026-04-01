@@ -1,3 +1,7 @@
+---
+documentation_of: library/query/OfflineDynamicConnectivity.hpp
+---
+
 # OfflineDynamicConnectivity
 
 - パス: `library/query/OfflineDynamicConnectivity.hpp`

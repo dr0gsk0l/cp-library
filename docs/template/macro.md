@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/macro.hpp
+---
+
 # macro
 
 - パス: `library/template/macro.hpp`

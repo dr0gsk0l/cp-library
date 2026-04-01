@@ -1,3 +1,7 @@
+---
+documentation_of: library/segtree/DualSegmentTree.hpp
+---
+
 # DualSegmentTree
 
 - パス: `library/segtree/DualSegmentTree.hpp`

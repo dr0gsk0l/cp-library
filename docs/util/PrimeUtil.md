@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/PrimeUtil.hpp
+---
+
 # PrimeUtil
 
 - パス: `library/util/PrimeUtil.hpp`

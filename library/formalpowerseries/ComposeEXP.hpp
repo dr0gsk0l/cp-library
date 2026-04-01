@@ -3,7 +3,6 @@
 #include "library/formalpowerseries/RationalSum.hpp"
 // f(e^x)
 template <typename FPS> void compose_exp(FPS &f) {
-    f.shrink();
     if (f.size() <= 1)
         return;
     RationalSum<FPS> RS;

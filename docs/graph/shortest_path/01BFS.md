@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/shortest_path/01BFS.hpp
+---
+
 # 01BFS
 
 - パス: `library/graph/shortest_path/01BFS.hpp`

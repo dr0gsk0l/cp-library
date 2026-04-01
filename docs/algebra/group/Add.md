@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/group/Add.hpp
+---
+
 # Add
 
 - パス: `library/algebra/group/Add.hpp`

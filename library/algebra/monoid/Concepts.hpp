@@ -8,3 +8,8 @@ concept monoid = requires(typename M::value_type x) {
     { M::Rchop(x, x) };
     { M::unit() } -> std::same_as<typename M::value_type>;
 };
+
+template <class M>
+concept commutative_monoid = monoid<M> and requires {
+    { M::commute } -> std::convertible_to<bool>;
+} and M::commute;

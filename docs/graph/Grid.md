@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/Grid.hpp
+---
+
 # Grid
 
 - パス: `library/graph/Grid.hpp`

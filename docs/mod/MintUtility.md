@@ -1,3 +1,7 @@
+---
+documentation_of: library/mod/MintUtility.hpp
+---
+
 # MintUtility
 
 - パス: `library/mod/MintUtility.hpp`

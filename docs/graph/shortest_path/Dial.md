@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/shortest_path/Dial.hpp
+---
+
 # Dial
 
 - パス: `library/graph/shortest_path/Dial.hpp`

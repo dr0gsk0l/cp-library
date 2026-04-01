@@ -1,3 +1,7 @@
+---
+documentation_of: library/math/ExtraGCD.hpp
+---
+
 # ExtraGCD
 
 - パス: `library/math/ExtraGCD.hpp`

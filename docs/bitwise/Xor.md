@@ -1,3 +1,7 @@
+---
+documentation_of: library/bitwise/Xor.hpp
+---
+
 # Xor
 
 - パス: `library/bitwise/Xor.hpp`

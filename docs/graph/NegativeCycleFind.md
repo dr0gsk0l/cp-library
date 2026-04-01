@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/NegativeCycleFind.hpp
+---
+
 # NegativeCycleFind
 
 - パス: `library/graph/NegativeCycleFind.hpp`

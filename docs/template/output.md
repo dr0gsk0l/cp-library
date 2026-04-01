@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/output.hpp
+---
+
 # output
 
 - パス: `library/template/output.hpp`

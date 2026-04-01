@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/SlopeTrick.hpp
+---
+
 # SlopeTrick
 
 ## 概要

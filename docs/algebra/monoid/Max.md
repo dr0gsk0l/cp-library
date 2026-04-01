@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/Max.hpp
+---
+
 # Max
 
 - パス: `library/algebra/monoid/Max.hpp`

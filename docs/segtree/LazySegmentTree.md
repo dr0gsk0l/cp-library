@@ -1,3 +1,7 @@
+---
+documentation_of: library/segtree/LazySegmentTree.hpp
+---
+
 # LazySegmentTree
 
 - パス: `library/segtree/LazySegmentTree.hpp`

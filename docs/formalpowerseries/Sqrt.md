@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/Sqrt.hpp
+---
+
 # Sqrt
 
 - パス: `library/formalpowerseries/Sqrt.hpp`

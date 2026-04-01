@@ -1,3 +1,7 @@
+---
+documentation_of: library/flow/NondecreasingMCF.hpp
+---
+
 # NondecreasingMCF
 
 - パス: `library/flow/NondecreasingMCF.hpp`

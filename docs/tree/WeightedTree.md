@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/WeightedTree.hpp
+---
+
 # WeightedTree
 
 - パス: `library/tree/WeightedTree.hpp`

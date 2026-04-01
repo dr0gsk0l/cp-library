@@ -1,3 +1,7 @@
+---
+documentation_of: library/superstd/Map.hpp
+---
+
 # Map
 
 - パス: `library/superstd/Map.hpp`

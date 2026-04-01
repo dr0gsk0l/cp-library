@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/Prod.hpp
+---
+
 # Prod
 
 - パス: `library/formalpowerseries/Prod.hpp`

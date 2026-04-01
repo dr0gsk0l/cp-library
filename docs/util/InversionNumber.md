@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/InversionNumber.hpp
+---
+
 # InversionNumber
 
 - パス: `library/util/InversionNumber.hpp`

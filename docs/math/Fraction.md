@@ -1,3 +1,7 @@
+---
+documentation_of: library/math/Fraction.hpp
+---
+
 # Fraction
 
 - パス: `library/math/Fraction.hpp`

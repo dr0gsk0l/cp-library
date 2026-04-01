@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/original_istream.hpp
+---
+
 # original_istream
 
 - パス: `library/template/original_istream.hpp`

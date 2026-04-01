@@ -1,3 +1,7 @@
+---
+documentation_of: library/bitwise/Ranked.hpp
+---
+
 # Ranked
 
 - パス: `library/bitwise/Ranked.hpp`

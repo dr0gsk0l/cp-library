@@ -1,3 +1,7 @@
+---
+documentation_of: library/sequence/RunEnumerate.hpp
+---
+
 # RunEnumerate
 
 - パス: `library/sequence/RunEnumerate.hpp`

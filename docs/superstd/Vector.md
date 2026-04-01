@@ -1,3 +1,7 @@
+---
+documentation_of: library/superstd/Vector.hpp
+---
+
 # Vector
 
 - パス: `library/superstd/Vector.hpp`

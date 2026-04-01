@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/ApplyUnionFind.hpp
+---
+
 # ApplyUnionFind
 
 ## 概要

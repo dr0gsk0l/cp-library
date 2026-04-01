@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/DivMod.hpp
+---
+
 # DivMod
 
 - パス: `library/formalpowerseries/DivMod.hpp`

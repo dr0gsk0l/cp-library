@@ -1,3 +1,7 @@
+---
+documentation_of: library/datetime/DateTime.hpp
+---
+
 # DateTime
 
 - パス: `library/datetime/DateTime.hpp`

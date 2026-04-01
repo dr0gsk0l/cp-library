@@ -1,6 +1,6 @@
 ---
 title: monotone_minima
-documentation_of: library/convex/MonotoneMinima.cpp
+documentation_of: library/convex/MonotoneMinima.hpp
 docs: https://speakerdeck.com/tatyam_prime/monge-noshou-yin-shu
 ---
 # monotone

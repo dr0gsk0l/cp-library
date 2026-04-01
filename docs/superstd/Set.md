@@ -1,3 +1,7 @@
+---
+documentation_of: library/superstd/Set.hpp
+---
+
 # Set
 
 - パス: `library/superstd/Set.hpp`

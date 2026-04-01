@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/Grid8.hpp
+---
+
 # Grid8
 
 - パス: `library/graph/Grid8.hpp`

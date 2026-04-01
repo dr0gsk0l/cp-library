@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/compositional_inverse.hpp
+---
+
 # compositional_inverse
 
 - パス: `library/formalpowerseries/functions/compositional_inverse.hpp`

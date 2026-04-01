@@ -1,3 +1,7 @@
+---
+documentation_of: library/r2/YX.hpp
+---
+
 # YX
 
 - パス: `library/r2/YX.hpp`

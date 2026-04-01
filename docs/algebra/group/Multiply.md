@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/group/Multiply.hpp
+---
+
 # Multiply
 
 - パス: `library/algebra/group/Multiply.hpp`

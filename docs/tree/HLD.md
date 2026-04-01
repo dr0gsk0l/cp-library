@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/HLD.hpp
+---
+
 # HLD
 
 - パス: `library/tree/HLD.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/CumulativeMonoid.hpp
+---
+
 # CumulativeMonoid
 
 ## 概要

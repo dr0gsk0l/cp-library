@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/pow.hpp
+---
+
 # pow
 
 - パス: `library/formalpowerseries/functions/pow.hpp`

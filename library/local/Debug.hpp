@@ -15,7 +15,7 @@ std::ostream &operator<<(std::ostream &os, const std::set<T> &se) {
 }
 
 template <typename T>
-std::ostream &operator<<(std::ostream &os, const unordered_std::set<T> &se) {
+std::ostream &operator<<(std::ostream &os, const std::unordered_set<T> &se) {
     os << "{";
     for (const auto &p : se)
         os << p << ",";
@@ -30,15 +30,9 @@ std::ostream &operator<<(std::ostream &os, const std::map<T, U> &mp) {
     return os;
 }
 template <typename T, typename U>
-std::ostream &operator<<(std::ostream &os, const unordered_std::map<T, U> &mp) {
+std::ostream &operator<<(std::ostream &os, const std::unordered_map<T, U> &mp) {
     for (const auto &[key, val] : mp)
         os << "[" << key << ":" << val << "]";
-    return os;
-}
-
-template <typename T, typename U>
-std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &P) {
-    os << "[" << P.first << "," << P.second << "]";
     return os;
 }
 

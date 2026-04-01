@@ -1,3 +1,7 @@
+---
+documentation_of: library/sequence/ForString.hpp
+---
+
 # ForString
 
 - パス: `library/sequence/ForString.hpp`

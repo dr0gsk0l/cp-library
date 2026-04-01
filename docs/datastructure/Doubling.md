@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/Doubling.hpp
+---
+
 # Doubling
 
 ## 概要

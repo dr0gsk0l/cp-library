@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/template.hpp
+---
+
 # template
 
 - パス: `library/util/template.hpp`

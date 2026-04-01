@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/Permutation.hpp
+---
+
 # Permutation
 
 - パス: `library/util/Permutation.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/math/XorShift.hpp
+---
+
 # XorShift
 
 - パス: `library/math/XorShift.hpp`

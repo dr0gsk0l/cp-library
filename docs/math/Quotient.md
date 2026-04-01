@@ -1,3 +1,7 @@
+---
+documentation_of: library/math/Quotient.hpp
+---
+
 # Quotient
 
 - パス: `library/math/Quotient.hpp`

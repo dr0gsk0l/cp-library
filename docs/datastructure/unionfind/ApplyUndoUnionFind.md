@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/ApplyUndoUnionFind.hpp
+---
+
 # ApplyUndoUnionFind
 
 ## 概要

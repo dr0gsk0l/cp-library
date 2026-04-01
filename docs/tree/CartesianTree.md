@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/CartesianTree.hpp
+---
+
 # CartesianTree
 
 - パス: `library/tree/CartesianTree.hpp`

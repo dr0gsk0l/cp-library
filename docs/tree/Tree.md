@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/Tree.hpp
+---
+
 # Tree
 
 - パス: `library/tree/Tree.hpp`

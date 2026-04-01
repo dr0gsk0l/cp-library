@@ -1,3 +1,7 @@
+---
+documentation_of: library/bitwise/And.hpp
+---
+
 # And
 
 - パス: `library/bitwise/And.hpp`

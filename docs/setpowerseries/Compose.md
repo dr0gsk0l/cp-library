@@ -1,3 +1,7 @@
+---
+documentation_of: library/setpowerseries/Compose.hpp
+---
+
 # Compose
 
 - パス: `library/setpowerseries/Compose.hpp`

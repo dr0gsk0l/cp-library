@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/PotentialUnionFind.hpp
+---
+
 # PotentialUnionFind
 
 ## 概要

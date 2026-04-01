@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/group/Affine.hpp
+---
+
 # Affine
 
 - パス: `library/algebra/group/Affine.hpp`

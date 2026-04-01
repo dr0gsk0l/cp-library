@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/power_projection.hpp
+---
+
 # power_projection
 
 - パス: `library/formalpowerseries/functions/power_projection.hpp`

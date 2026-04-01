@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/MultipointEvaluation.hpp
+---
+
 # MultipointEvaluation
 
 - パス: `library/formalpowerseries/MultipointEvaluation.hpp`

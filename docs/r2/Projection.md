@@ -1,3 +1,7 @@
+---
+documentation_of: library/r2/Projection.hpp
+---
+
 # Projection
 
 - パス: `library/r2/Projection.hpp`

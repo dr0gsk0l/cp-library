@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/log.hpp
+---
+
 # log
 
 - パス: `library/formalpowerseries/functions/log.hpp`

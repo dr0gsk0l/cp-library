@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/group/Concepts.hpp
+---
+
 # Concepts
 
 - パス: `library/algebra/group/Concepts.hpp`

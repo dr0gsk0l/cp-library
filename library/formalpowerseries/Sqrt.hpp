@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include <cmath>
 #include "library/formalpowerseries/Base.hpp"
 #include "library/math/ModularSqrt.hpp"
@@ -6,19 +7,22 @@
 
 // Computes the square root of a formal power series f.
 // Returns std::nullopt if the square root does not exist.
-template <typename FPS> std::optional<FPS> sqrt(FPS f) {
+template <typename FPS> std::optional<FPS> sqrt(FPS f, int n = -1) {
     using T = typename FPS::value_type;
-    f.shrink();
-    if (f.size() == 0) {
-        return FPS(0);
-    }
+    if (n < 0)
+        n = int(f.size());
+    if (n == 0)
+        return FPS{};
+    f.strict(n);
+    if (f.size() < size_t(n))
+        f.resize(n, T(0));
 
     int d = 0;
     while (d < f.size() && f[d] == 0) {
         d++;
     }
     if (d == f.size()) {
-        return FPS(0);
+        return FPS(n, T(0));
     }
 
     if (d % 2 != 0) {
@@ -33,13 +37,17 @@ template <typename FPS> std::optional<FPS> sqrt(FPS f) {
     }
 
     FPS res(1, *s0);
-    int n = 1;
-    constexpr int MX = FPS::max_size;
-    while (n < MX) {
-        n <<= 1;
-        res = (res + f.pre(n) * res.inv(n)) / 2;
+    int m = 1;
+    while (m < n) {
+        m <<= 1;
+        const int k = std::min(n, m);
+        res = ((res + f.pre(k) * res.inv(k)) / 2).pre(k);
     }
-    res.strict(MX);
+    if (res.size() < size_t(n))
+        res.resize(n, T(0));
+    else
+        res.strict(n);
     res <<= (d / 2);
+    res.strict(n);
     return res;
 }

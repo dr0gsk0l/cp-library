@@ -5,55 +5,31 @@
 #include <vector>
 #include "library/util/Valarray.hpp"
 
-template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
+template <typename T, int MX = -1>
+struct FormalPowerSeries : Valarray<FormalPowerSeries<T, MX>, T> {
+    using Base = Valarray<FormalPowerSeries<T, MX>, T>;
     using FPS = FormalPowerSeries;
-    static constexpr int max_size = MX;
-    using Valarray<T>::Valarray;
-    using Valarray<T>::size;
-    using Valarray<T>::resize;
-    using Valarray<T>::at;
-    using Valarray<T>::begin;
-    using Valarray<T>::end;
-    using Valarray<T>::back;
-    using Valarray<T>::pop_back;
+    using Base::Base;
+    using Base::size;
+    using Base::resize;
+    using Base::at;
+    using Base::begin;
+    using Base::end;
+    using Base::back;
+    using Base::pop_back;
+    using Base::operator+=;
+    using Base::operator-=;
     using value_type = T;
 
-    void strict(int n) {
-        if (size() > n)
-            resize(n);
-        shrink();
-    }
-    void shrink() {
-        while (size() and back() == 0)
-            pop_back();
-    }
+    void strict(int n) { resize(std::min(size(), size_t(std::max(0, n)))); }
 
     FormalPowerSeries() = default;
 
-    FormalPowerSeries(const std::vector<T> &f) : Valarray<T>(f) {
-        strict(MX);
-        shrink();
-    }
+    FormalPowerSeries(const std::vector<T> &f) : Base(f) {}
 
     static FPS unit() { return {1}; }
     static FPS x() { return {0, 1}; }
 #pragma region operator
-    FPS operator-() const { return FPS(Valarray<T>::operator-()); }
-
-    FPS &operator+=(const FPS &g) {
-        Valarray<T>::operator+=(g);
-        shrink();
-        return *this;
-    }
-    FPS operator+(const FPS &g) const { return FPS(*this) += g; }
-
-    FPS &operator-=(const FPS &g) {
-        Valarray<T>::operator-=(g);
-        shrink();
-        return *this;
-    }
-    FPS operator-(const FPS &g) const { return FPS(*this) -= g; }
-
     FPS &operator+=(const T &a) {
         if (!size())
             resize(1);
@@ -83,16 +59,18 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
     FPS operator*(const T &a) const { return FPS(*this) *= a; }
     friend FPS operator*(const T &a, const FPS &f) { return f * a; }
 
-    FPS operator/(const FPS &g) const { return (*this) * g.inv(); }
+    FPS operator/(const FPS &g) const { return (*this) * g.inv(int(size())); }
     FPS &operator/=(const FPS &g) { return (*this) = (*this) / g; }
 
     FPS &operator/=(const T &a) { return *this *= a.inv(); }
     FPS operator/(const T &a) { return FPS(*this) /= a; }
 
     FPS &operator<<=(const int d) {
-        if (d >= MX)
+        if (d <= 0)
+            return *this;
+        if (size() == 0)
             return *this = FPS(0);
-        resize(std::min(MX, int(size()) + d));
+        resize(int(size()) + d);
         for (int i = int(size()) - 1 - d; i >= 0; i--)
             at(i + d) = at(i);
         for (int i = d - 1; i >= 0; i--)
@@ -101,6 +79,8 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
     }
     FPS operator<<(const int d) const { return FPS(*this) <<= d; }
     FPS &operator>>=(const int d) {
+        if (d <= 0)
+            return *this;
         if (d >= size())
             return *this = FPS(0);
         for (size_t i = d; i < size(); i++)
@@ -114,7 +94,7 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
     FPS pre(int n) const {
         if (size() <= n)
             return *this;
-        return FPS(Valarray<T>(this->begin(), this->begin() + n));
+        return FPS(this->begin(), this->begin() + n);
     }
 
     // 最小の非ゼロ次数（すべて 0 のときは size()）を返す
@@ -126,7 +106,9 @@ template <typename T, int MX> struct FormalPowerSeries : Valarray<T> {
         return int(size());
     }
 
-    FPS inv(int SZ = MX) const {
+    FPS inv(int SZ = -1) const {
+        if (SZ < 0)
+            SZ = int(size());
         assert(size() and at(0) != 0);
         FPS res = {at(0).inv()};
         for (int n = 1; n < SZ; n <<= 1) {

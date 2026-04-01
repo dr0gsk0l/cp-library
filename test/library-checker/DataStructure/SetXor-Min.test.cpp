@@ -7,7 +7,7 @@ int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    BinaryTrie<30, int> BT;
+    BinaryTrie<30> BT;
     int q;
     std::cin >> q;
     while (q--) {

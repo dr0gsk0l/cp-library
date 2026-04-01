@@ -1,3 +1,7 @@
+---
+documentation_of: library/geometry/UtilFunction.hpp
+---
+
 # UtilFunction
 
 - パス: `library/geometry/UtilFunction.hpp`

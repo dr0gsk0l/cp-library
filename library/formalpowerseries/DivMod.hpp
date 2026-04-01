@@ -1,12 +1,14 @@
 #pragma once
+#include "library/formalpowerseries/Base.hpp"
+#include <algorithm>
 #include <cassert>
 #include <ranges>
 #include <utility>
-#include <algorithm>
-#include "library/formalpowerseries/Base.hpp"
 template <typename FPS> std::pair<FPS, FPS> div_mod(FPS f, FPS g) {
-    f.shrink();
-    g.shrink();
+    while (!f.empty() && f.back() == typename FPS::value_type(0))
+        f.pop_back();
+    while (!g.empty() && g.back() == typename FPS::value_type(0))
+        g.pop_back();
     assert(g.size());
     if (f.size() < g.size())
         return {FPS(0), f};
@@ -21,4 +23,3 @@ template <typename FPS> std::pair<FPS, FPS> div_mod(FPS f, FPS g) {
     std::ranges::reverse(g);
     return {q, f - q * g};
 }
-#undef REVERSE_

@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/MaxIndex.hpp
+---
+
 # MaxIndex
 
 - パス: `library/algebra/monoid/MaxIndex.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/TwoEdgeConnectedComponents.hpp
+---
+
 # TwoEdgeConnectedComponents
 
 - パス: `library/graph/TwoEdgeConnectedComponents.hpp`

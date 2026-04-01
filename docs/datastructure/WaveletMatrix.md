@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/WaveletMatrix.hpp
+---
+
 # WaveletMatrix
 
 ## 概要

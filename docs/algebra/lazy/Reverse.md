@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/lazy/Reverse.hpp
+---
+
 # Reverse
 
 - パス: `library/algebra/lazy/Reverse.hpp`

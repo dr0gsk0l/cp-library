@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/Set.hpp
+---
+
 # Set
 
 - パス: `library/algebra/monoid/Set.hpp`

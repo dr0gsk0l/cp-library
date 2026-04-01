@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/IntegerSumRuleUnionFind.hpp
+---
+
 # IntegerSumRuleUnionFind
 
 ## 概要

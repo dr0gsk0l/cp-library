@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/CumulativeSum.hpp
+---
+
 # CumulativeSum
 
 ## 概要

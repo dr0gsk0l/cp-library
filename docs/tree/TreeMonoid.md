@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/TreeMonoid.hpp
+---
+
 # TreeMonoid
 
 - パス: `library/tree/TreeMonoid.hpp`

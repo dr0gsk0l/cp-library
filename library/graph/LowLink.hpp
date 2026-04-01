@@ -15,20 +15,24 @@ class LowLink {
     static inline void chmin(int &a, int b) { a = std::min(a, b); }
 
     void dfs(int p, int v) {
-        ord[v] = cnt++;
-        for (int to : g[v])
-            if (~ord[to]) {
-                if (to != p)
-                    chmin(low_link[v], to);
-            } else {
+        ord[v] = low_link[v] = cnt++;
+        bool used_parent_edge = false;
+        for (int to : g[v]) {
+            if (to == p && !used_parent_edge) {
+                used_parent_edge = true;
+                continue;
+            }
+            if (ord[to] < 0) {
                 dfs(v, to);
                 chmin(low_link[v], low_link[to]);
+            } else {
+                chmin(low_link[v], ord[to]);
             }
+        }
     }
 
   public:
     LowLink(const Graph &g) : g(g), ord(g.n, -1), low_link(g.n), cnt(0) {
-        std::iota(low_link.begin(), low_link.end(), 0);
         assert(g.is_prepared());
         for (int v = 0; v < g.n; v++)
             if (ord[v] < 0)

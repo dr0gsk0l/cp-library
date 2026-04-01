@@ -1,6 +1,6 @@
 ---
 title: AhoCorasick
-documentation_of: library///sequence/AhoCorasick.cpp
+documentation_of: library/sequence/AhoCorasick.hpp
 ---
 * ```add(const std::vector<CHAR>&v,int num=1)```  
 数列 $v$ を $num$ 個追加

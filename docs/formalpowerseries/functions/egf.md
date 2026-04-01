@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/egf.hpp
+---
+
 # egf
 
 - パス: `library/formalpowerseries/functions/egf.hpp`

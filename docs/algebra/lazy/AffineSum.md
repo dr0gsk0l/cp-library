@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/lazy/AffineSum.hpp
+---
+
 # AffineSum
 
 - パス: `library/algebra/lazy/AffineSum.hpp`

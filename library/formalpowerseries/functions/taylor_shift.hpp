@@ -9,9 +9,8 @@
 
 namespace fps {
 
-template <typename T, int MX>
-void taylor_shift(FormalPowerSeries<T, MX> &f, T c) {
-    f.shrink();
+template <typename T>
+void taylor_shift(FormalPowerSeries<T> &f, T c) {
     if (f.size() <= 1 || c == 0)
         return;
 
@@ -20,7 +19,7 @@ void taylor_shift(FormalPowerSeries<T, MX> &f, T c) {
     f = from_egf(f);
 
     std::ranges::reverse(f);
-    f *= exp<T, MX>(c).pre(n);
+    f *= exp(c, int(n));
     f.strict(n);
     std::ranges::reverse(f);
 

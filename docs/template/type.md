@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/type.hpp
+---
+
 # type
 
 - パス: `library/template/type.hpp`

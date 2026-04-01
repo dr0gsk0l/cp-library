@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/shortest_path/Dijkstra.hpp
+---
+
 # Dijkstra
 
 - パス: `library/graph/shortest_path/Dijkstra.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/monotone/MonotoneMinima.hpp
+---
+
 # MonotoneMinima
 
 - パス: `library/monotone/MonotoneMinima.hpp`

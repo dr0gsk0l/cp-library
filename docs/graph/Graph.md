@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/Graph.hpp
+---
+
 # Graph
 
 - パス: `library/graph/Graph.hpp`

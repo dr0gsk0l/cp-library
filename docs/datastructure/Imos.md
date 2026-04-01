@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/Imos.hpp
+---
+
 # Imos
 
 ## 概要

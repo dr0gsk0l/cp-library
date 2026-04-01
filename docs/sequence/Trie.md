@@ -1,3 +1,7 @@
+---
+documentation_of: library/sequence/Trie.hpp
+---
+
 # Trie
 
 - パス: `library/sequence/Trie.hpp`

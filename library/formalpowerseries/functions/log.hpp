@@ -7,10 +7,17 @@
 
 namespace fps {
 
-template <typename T, int MX>
-FormalPowerSeries<T, MX> log(const FormalPowerSeries<T, MX> &f) {
+template <typename T>
+FormalPowerSeries<T> log(const FormalPowerSeries<T> &f, int n = -1) {
+    if (n < 0)
+        n = int(f.size());
+    if (n == 0)
+        return {};
     assert(f.size() and f[0] == 1);
-    return integral(differential(f) / f);
+    auto df = differential(f).pre(n - 1);
+    auto res = integral((df * f.inv(n)).pre(n), n);
+    res.strict(n);
+    return res;
 }
 
 } // namespace fps

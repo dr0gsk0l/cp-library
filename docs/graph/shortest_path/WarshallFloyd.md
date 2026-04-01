@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/shortest_path/WarshallFloyd.hpp
+---
+
 # WarshallFloyd
 
 - パス: `library/graph/shortest_path/WarshallFloyd.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/UnionFind.hpp
+---
+
 # UnionFind
 
 ## 概要

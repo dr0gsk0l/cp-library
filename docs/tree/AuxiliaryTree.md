@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/AuxiliaryTree.hpp
+---
+
 # AuxiliaryTree
 
 - パス: `library/tree/AuxiliaryTree.hpp`

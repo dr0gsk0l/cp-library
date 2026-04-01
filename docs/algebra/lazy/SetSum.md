@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/lazy/SetSum.hpp
+---
+
 # SetSum
 
 - パス: `library/algebra/lazy/SetSum.hpp`

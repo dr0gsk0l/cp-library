@@ -1,3 +1,7 @@
+---
+documentation_of: library/linearalgebra/Linear.hpp
+---
+
 # Linear
 
 - パス: `library/linearalgebra/Linear.hpp`

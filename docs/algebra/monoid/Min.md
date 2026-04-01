@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/Min.hpp
+---
+
 # Min
 
 - パス: `library/algebra/monoid/Min.hpp`

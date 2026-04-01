@@ -1,3 +1,7 @@
+---
+documentation_of: library/math/ModularSqrt.hpp
+---
+
 # ModularSqrt
 
 - パス: `library/math/ModularSqrt.hpp`

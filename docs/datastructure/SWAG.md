@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/SWAG.hpp
+---
+
 # SWAG
 
 ## 概要

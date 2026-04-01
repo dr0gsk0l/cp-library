@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/lazy/AddSum.hpp
+---
+
 # AddSum
 
 - パス: `library/algebra/lazy/AddSum.hpp`

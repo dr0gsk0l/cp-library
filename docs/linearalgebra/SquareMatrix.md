@@ -1,3 +1,7 @@
+---
+documentation_of: library/linearalgebra/SquareMatrix.hpp
+---
+
 # SquareMatrix
 
 - パス: `library/linearalgebra/SquareMatrix.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/FenwickTree.hpp
+---
+
 # FenwickTree
 
 ## 概要

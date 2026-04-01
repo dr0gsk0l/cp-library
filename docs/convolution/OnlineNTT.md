@@ -1,3 +1,7 @@
+---
+documentation_of: library/convolution/OnlineNTT.hpp
+---
+
 # OnlineNTT
 
 - パス: `library/convolution/OnlineNTT.hpp`

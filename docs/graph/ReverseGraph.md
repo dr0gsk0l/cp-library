@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/ReverseGraph.hpp
+---
+
 # ReverseGraph
 
 - パス: `library/graph/ReverseGraph.hpp`

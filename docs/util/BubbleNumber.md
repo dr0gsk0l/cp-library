@@ -1,3 +1,7 @@
+---
+documentation_of: library/util/BubbleNumber.hpp
+---
+
 # BubbleNumber
 
 - パス: `library/util/BubbleNumber.hpp`

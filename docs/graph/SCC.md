@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/SCC.hpp
+---
+
 # SCC
 
 - パス: `library/graph/SCC.hpp`

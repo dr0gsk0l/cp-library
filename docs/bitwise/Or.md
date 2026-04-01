@@ -1,3 +1,7 @@
+---
+documentation_of: library/bitwise/Or.hpp
+---
+
 # Or
 
 - パス: `library/bitwise/Or.hpp`

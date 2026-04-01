@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/Reverse.hpp
+---
+
 # Reverse
 
 - パス: `library/algebra/Reverse.hpp`

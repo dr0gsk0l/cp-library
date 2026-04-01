@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/unionfind/MonoidUnionFind.hpp
+---
+
 # MonoidUnionFind
 
 ## 概要

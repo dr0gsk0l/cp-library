@@ -1,3 +1,7 @@
+---
+documentation_of: library/flow/MCF.hpp
+---
+
 # MCF
 
 - パス: `library/flow/MCF.hpp`

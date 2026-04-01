@@ -1,3 +1,7 @@
+---
+documentation_of: library/math/FactorialNumberSystem.hpp
+---
+
 # FactorialNumberSystem
 
 - パス: `library/math/FactorialNumberSystem.hpp`

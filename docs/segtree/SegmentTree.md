@@ -1,3 +1,7 @@
+---
+documentation_of: library/segtree/SegmentTree.hpp
+---
+
 # SegmentTree
 
 - パス: `library/segtree/SegmentTree.hpp`

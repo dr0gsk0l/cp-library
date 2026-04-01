@@ -1,3 +1,7 @@
+---
+documentation_of: library/linearalgebra/Matrix.hpp
+---
+
 # Matrix
 
 - パス: `library/linearalgebra/Matrix.hpp`

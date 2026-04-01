@@ -1,3 +1,7 @@
+---
+documentation_of: library/local/Debug.hpp
+---
+
 # Debug
 
 - パス: `library/local/Debug.hpp`

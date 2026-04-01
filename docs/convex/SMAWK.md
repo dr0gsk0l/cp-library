@@ -1,6 +1,6 @@
 ---
 title: SMAWK
-documentation_of: library/convex/SMAWK.cpp
+documentation_of: library/convex/SMAWK.hpp
 docs: https://speakerdeck.com/tatyam_prime/monge-noshou-yin-shu
 ---
 # totally monotone

@@ -1,3 +1,7 @@
+---
+documentation_of: library/geometry/Judge.hpp
+---
+
 # Judge
 
 - パス: `library/geometry/Judge.hpp`

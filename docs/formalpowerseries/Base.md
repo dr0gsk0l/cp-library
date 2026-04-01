@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/Base.hpp
+---
+
 # Base
 
 - パス: `library/formalpowerseries/Base.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/base.hpp
+---
+
 # base
 
 - パス: `library/template/base.hpp`

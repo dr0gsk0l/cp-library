@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/Lcm.hpp
+---
+
 # Lcm
 
 - パス: `library/algebra/monoid/Lcm.hpp`

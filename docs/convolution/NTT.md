@@ -1,3 +1,7 @@
+---
+documentation_of: library/convolution/NTT.hpp
+---
+
 # NTT
 
 - パス: `library/convolution/NTT.hpp`

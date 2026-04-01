@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/matching/WeightedBipartiteMatching.hpp
+---
+
 # WeightedBipartiteMatching
 
 - パス: `library/graph/matching/WeightedBipartiteMatching.hpp`

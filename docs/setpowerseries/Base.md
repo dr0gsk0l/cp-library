@@ -1,3 +1,7 @@
+---
+documentation_of: library/setpowerseries/Base.hpp
+---
+
 # Base
 
 - パス: `library/setpowerseries/Base.hpp`

@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/GroupWaveletMatrix.hpp
+---
+
 # GroupWaveletMatrix
 
 ## 概要

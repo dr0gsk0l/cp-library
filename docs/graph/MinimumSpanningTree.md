@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/MinimumSpanningTree.hpp
+---
+
 # MinimumSpanningTree
 
 - パス: `library/graph/MinimumSpanningTree.hpp`

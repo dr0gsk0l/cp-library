@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/binary_search_tree/Treap.hpp
+---
+
 # Treap
 
 ## 概要

@@ -1,3 +1,7 @@
+---
+documentation_of: library/tree/RootedTreeIsomorphism.hpp
+---
+
 # RootedTreeIsomorphism
 
 - パス: `library/tree/RootedTreeIsomorphism.hpp`

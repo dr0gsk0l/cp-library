@@ -1,6 +1,6 @@
 ---
 title: OfflineRangeQuery
-documentation_of: library/datastructure/OfflineRangeQuery.cpp
+documentation_of: library/query/OfflineRangeQuery.hpp
 ---
 Offline Dynamic Connectivity の一般化  
 可換群の作用 $f$ を時刻 $[l,r)$ に作用させるクエリをオフラインで捌く．

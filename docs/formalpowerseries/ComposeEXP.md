@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/ComposeEXP.hpp
+---
+
 # ComposeEXP
 
 - パス: `library/formalpowerseries/ComposeEXP.hpp`

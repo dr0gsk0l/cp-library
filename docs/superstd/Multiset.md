@@ -1,3 +1,7 @@
+---
+documentation_of: library/superstd/Multiset.hpp
+---
+
 # Multiset
 
 - パス: `library/superstd/Multiset.hpp`

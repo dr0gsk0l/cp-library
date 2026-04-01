@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/group/CntSum.hpp
+---
+
 # CntSum
 
 - パス: `library/algebra/group/CntSum.hpp`

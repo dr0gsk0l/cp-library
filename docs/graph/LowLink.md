@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/LowLink.hpp
+---
+
 # LowLink
 
 - パス: `library/graph/LowLink.hpp`

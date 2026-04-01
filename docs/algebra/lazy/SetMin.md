@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/lazy/SetMin.hpp
+---
+
 # SetMin
 
 - パス: `library/algebra/lazy/SetMin.hpp`

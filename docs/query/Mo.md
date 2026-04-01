@@ -1,3 +1,7 @@
+---
+documentation_of: library/query/Mo.hpp
+---
+
 # Mo
 
 - パス: `library/query/Mo.hpp`

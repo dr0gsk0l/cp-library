@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/matching/BipartiteMatching.hpp
+---
+
 # BipartiteMatching
 
 - パス: `library/graph/matching/BipartiteMatching.hpp`

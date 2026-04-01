@@ -1,3 +1,7 @@
+---
+documentation_of: library/template/util_func.hpp
+---
+
 # util_func
 
 - パス: `library/template/util_func.hpp`

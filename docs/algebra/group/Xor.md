@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/group/Xor.hpp
+---
+
 # Xor
 
 - パス: `library/algebra/group/Xor.hpp`

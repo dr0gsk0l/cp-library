@@ -1,3 +1,7 @@
+---
+documentation_of: library/formalpowerseries/functions/differential.hpp
+---
+
 # differential
 
 - パス: `library/formalpowerseries/functions/differential.hpp`

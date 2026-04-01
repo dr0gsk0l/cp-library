@@ -1,3 +1,7 @@
+---
+documentation_of: library/algebra/monoid/MinIndex.hpp
+---
+
 # MinIndex
 
 - パス: `library/algebra/monoid/MinIndex.hpp`

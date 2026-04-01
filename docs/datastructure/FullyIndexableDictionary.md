@@ -1,3 +1,7 @@
+---
+documentation_of: library/datastructure/FullyIndexableDictionary.hpp
+---
+
 # FullyIndexableDictionary
 
 ## 概要

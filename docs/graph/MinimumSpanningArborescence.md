@@ -1,3 +1,7 @@
+---
+documentation_of: library/graph/MinimumSpanningArborescence.hpp
+---
+
 # MinimumSpanningArborescence
 
 - パス: `library/graph/MinimumSpanningArborescence.hpp`
